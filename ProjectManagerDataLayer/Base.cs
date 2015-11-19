@@ -10,7 +10,6 @@ namespace ProjectManagerDataLayer
     {
         static public List<T> Items = new List<T>();
         public Guid Id;
-        public string Name;
         public Base()
         {
             Id = Guid.NewGuid();

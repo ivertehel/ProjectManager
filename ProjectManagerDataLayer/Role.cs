@@ -8,5 +8,6 @@ namespace ProjectManagerDataLayer
 {
     public class Role : Base<Role>
     {
+        public string Name { get; set; }
     }
 }

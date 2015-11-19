@@ -8,6 +8,6 @@ namespace ProjectManagerDataLayer
 {
     public class Country : Base<Country>
     {
-        
+        string Name { get; set; }
     }
 }

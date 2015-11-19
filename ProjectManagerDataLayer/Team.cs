@@ -8,6 +8,7 @@ namespace ProjectManagerDataLayer
 {
     public class Team : Base<Team>
     {
+        public string Name;
         private Guid _teamLeadId;
         public Employee TeamLead
         {

@@ -8,6 +8,7 @@ namespace ProjectManagerDataLayer
 {
     public class Project : Base<Project>
     {
+        public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string StartDate { get; set; }
@@ -31,7 +32,7 @@ namespace ProjectManagerDataLayer
         {
             get
             {
-                return (from items in Client.Items where items.Id == _clientId select items).FirstOrDefault();
+                return (Client)(from items in Client.Items where items.Id == _clientId select items).FirstOrDefault();
             }
             set
             {

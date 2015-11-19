@@ -8,6 +8,12 @@ namespace ProjectManagerDataLayer
 {
     public class Client : Base<Client>
     {
+        public Client()
+        {
+            var newUser = new User();
+            User = newUser;
+            User.Items.Add(newUser);
+        }
         public decimal Account { get; set; }
         private Guid userId;
         public User User

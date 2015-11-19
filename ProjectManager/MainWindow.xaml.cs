@@ -25,10 +25,9 @@ namespace ProjectManager
         public MainWindow()
         {
             InitializeComponent();
-            var user = new User() { Name = "Vasua", Login = "123" };
-            User.Items.Add(user);
-            var client = new Client() { User = user };
-            Client.Items.Add(client);
+            var newClient = new Client();
+            Client.Items.Add(newClient);
+            User.Items.Add(new User());
         }
     }
 }

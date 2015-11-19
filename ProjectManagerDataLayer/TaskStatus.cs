@@ -8,5 +8,6 @@ namespace ProjectManagerDataLayer
 {
     public class TaskStatus : Base<TaskStatus>
     {
+        public string Name { get; set; }
     }
 }

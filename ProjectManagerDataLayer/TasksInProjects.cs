@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjectManagerDataLayer
 {
-    public class TasksInProjects
+    public class TasksInProjects : Base<TasksInProjects>
     {
-        public Guid Id;
-        public TasksInProjects()
-        {
-            Id = Guid.NewGuid();
-        }
 
         private Guid _taskId;
         public Task Task
