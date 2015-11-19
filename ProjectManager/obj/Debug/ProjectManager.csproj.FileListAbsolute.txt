@@ -1,0 +1,16 @@
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.exe.config
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.exe
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.csprojResolveAssemblyReference.cache
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\MainWindow.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\App.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager_MarkupCompile.cache
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager_MarkupCompile.lref
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\MainWindow.baml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.g.resources
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.Properties.Resources.resources
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.csproj.GenerateResource.Cache
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.exe
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManagerDataLayer.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManagerDataLayer.pdb

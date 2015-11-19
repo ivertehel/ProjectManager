@@ -1,0 +1,5 @@
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerDataLayer\bin\Debug\ProjectManagerDataLayer.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerDataLayer\bin\Debug\ProjectManagerDataLayer.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerDataLayer\obj\Debug\ProjectManagerDataLayer.csprojResolveAssemblyReference.cache
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerDataLayer\obj\Debug\ProjectManagerDataLayer.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerDataLayer\obj\Debug\ProjectManagerDataLayer.pdb
