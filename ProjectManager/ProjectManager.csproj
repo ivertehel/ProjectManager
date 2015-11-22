@@ -96,9 +96,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjectManagerDataLayer\ProjectManagerDataLayer.csproj">
-      <Project>{78e836be-193a-4850-b4aa-528389f9e794}</Project>
-      <Name>ProjectManagerDataLayer</Name>
+    <ProjectReference Include="..\PMDataLayer\PMDataLayer.csproj">
+      <Project>{e07a5241-6bbd-46fc-a8fe-000b2bd7ab14}</Project>
+      <Name>PMDataLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

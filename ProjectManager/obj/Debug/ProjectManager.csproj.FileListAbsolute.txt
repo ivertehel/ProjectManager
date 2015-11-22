@@ -12,5 +12,5 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectM
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.csproj.GenerateResource.Cache
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.exe
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.pdb
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManagerDataLayer.dll
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManagerDataLayer.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMDataLayer.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMDataLayer.pdb

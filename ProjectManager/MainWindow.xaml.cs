@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ProjectManagerDataLayer;
+using PMDataLayer;
 
 namespace ProjectManager
 {
@@ -24,9 +24,29 @@ namespace ProjectManager
         public MainWindow()
         {
             InitializeComponent();
-            var newClient = new Client();
-            Client.Items.Add(newClient);
-            User.Items.Add(new User());
+            var newUser = new User()
+            {
+                Name = "Alex",
+                Birthday = DateTime.Now,
+                Country = "Ukraine",
+                Email = "alex@ex.ua",
+                Login = "alex",
+                Password = "qwerty",
+                Role = "Client",
+                Skype = "alex123",
+                Surname = "Alexeev"
+            };
+            Client c = new Client() { Account = 100, User =  newUser };
+
+
+            User.Items.Add(newUser);
+
+
+            Client.Items.Add(c);
+
+            Team t = new Team() { Name = "Shark", Description = ".NET team" };
+            
+
         }
     }
 }
