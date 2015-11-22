@@ -39,5 +39,12 @@ namespace ProjectManagerDataLayer
                 _clientId = value.Id;
             }
         }
+        public IEnumerable<Comment> Comments
+        {
+            get
+            {
+                return (from items in Comment.Items where items.Project.Id == Id select items);
+            }
+        }
     }
 }

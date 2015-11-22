@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectManagerDataLayer
+namespace PMDataLayer
 {
-    public class Position : Base<Position>
+    public class PositionInCompany : Base<PositionInCompany>
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -14,7 +14,7 @@ namespace ProjectManagerDataLayer
         {
             get
             {
-                return (from items in Employee.Items where items.Position.Id == Id select items);
+                return from items in Employee_PositionInCompany.Items where items.PositionInCompany.Id == Id select items.Employee;
             }
         }
     }

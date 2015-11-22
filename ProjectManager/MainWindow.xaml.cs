@@ -21,7 +21,6 @@ namespace ProjectManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        Client c;
         public MainWindow()
         {
             InitializeComponent();

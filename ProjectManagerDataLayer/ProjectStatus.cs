@@ -9,5 +9,13 @@ namespace ProjectManagerDataLayer
     public class ProjectStatus : Base<ProjectStatus>
     {
         public string Name { get; set; }
+        public IEnumerable<Project> Projects
+        {
+            get
+            {
+                return (from items in Project.Items where items.Status.Id == Id select items);
+            }
+        }
+            
     }
 }

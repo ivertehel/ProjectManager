@@ -42,5 +42,19 @@ namespace ProjectManagerDataLayer
                 _roleId = value.Id;
             }
         }
+        public IEnumerable<Message> Inbox
+        {
+            get
+            {
+                return (from items in Message.Items where items.ToUser.Id == Id select items);
+            }
+        }
+        public IEnumerable<Message> Sentbox
+        {
+            get
+            {
+                return (from items in Message.Items where items.FromUser.Id == Id select items);
+            }
+        }
     }
 }

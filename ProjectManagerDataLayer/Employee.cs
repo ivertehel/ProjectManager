@@ -47,5 +47,12 @@ namespace ProjectManagerDataLayer
                 _teamId = value.Id;
             }
         }
+        public IEnumerable<Task> Tasks
+        {
+            get
+            {
+                return (from items in Task.Items where items.Employee.Id == Id select items);
+            }
+        }
     }
 }

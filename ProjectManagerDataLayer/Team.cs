@@ -22,5 +22,12 @@ namespace ProjectManagerDataLayer
                 _teamLeadId = value.Id;
             }
         }
+        public IEnumerable<Employee> Employees
+        {
+            get
+            {
+                return (from items in Employee.Items where items.Team.Id == Id select items);
+            }
+        }
     }
 }
