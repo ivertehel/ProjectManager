@@ -8,11 +8,18 @@ namespace PMDataLayer
 {
     public class Base<T> where T : Base<T>
     {
-        static public List<T> Items = new List<T>();
-        public Guid Id { get; set; }
+        static Base()
+        {
+            Items = new List<T>();
+        }
+
         public Base()
         {
             Id = Guid.NewGuid();
         }
+
+        public static List<T> Items { get; set; }
+
+        public Guid Id { get; set; }
     }
 }

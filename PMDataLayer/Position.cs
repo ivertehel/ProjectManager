@@ -9,6 +9,7 @@ namespace PMDataLayer
     public class Position : Base<Position>
     {
         public string Name { get; set; }
+
         public string Description { get; set; }
     }
 }

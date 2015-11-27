@@ -8,24 +8,41 @@ namespace PMDataLayer
 {
     public class Comment : Base<Comment>
     {
+        private Guid _userId;
+
+        public enum Owners
+        {
+            /// <summary>
+            /// Represents an order
+            /// </summary>
+            Order,
+
+            /// <summary>
+            /// Represents a project
+            /// </summary>
+            Project,
+
+            /// <summary>
+            /// Represents a task
+            /// </summary>
+            Task,
+
+            /// <summary>
+            /// Represents a report
+            /// </summary>
+            Report
+        }
+
         public string Message { get; set; }
+
         public DateTime DateTime { get; set; }
 
-        private Guid _userId;
         public User User
         {
-            get
-            {
-                return User.Items.Where(items => items.Id == _userId).FirstOrDefault();
-            }
-            set
-            {
-                _userId = value.Id;
-            }
+            get { return User.Items.Where(items => items.Id == _userId).FirstOrDefault(); }
+            set { _userId = value.Id; }
         }
-        public Owners Owner { get; set; }
 
-        public enum Owners { Order, Project, Task, Report};
-    
+        public Owners Owner { get; set; }
     }
 }
