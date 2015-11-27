@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Employee_Project : Base<Employee_Project>
+    public class User_Project : Base<User_Project>
     {
 
-        private Guid _employeeId;
-        public Employee Employee
+        private Guid _userId;
+        public User User
         {
             get
             {
-                return (from items in Employee.Items where items.Id == _employeeId select items).FirstOrDefault();
+                return User.Items.Where(items => items.Id == _userId).FirstOrDefault();
             }
             set
             {
-                _employeeId = value.Id;
+                _userId = value.Id;
             }
         }
 
@@ -27,7 +27,7 @@ namespace PMDataLayer
         {
             get
             {
-                return (from items in Project.Items where items.Id == _projectId select items).FirstOrDefault();
+                return Project.Items.Where(items => items.Id == _projectId).FirstOrDefault();
             }
             set
             {
@@ -37,11 +37,11 @@ namespace PMDataLayer
 
 
         private Guid _positionId;
-        public PositionInWork PositionInWork
+        public Position Position
         {
             get
             {
-                return (from items in PositionInWork.Items where items.Id == _positionId select items).FirstOrDefault();
+                return Position.Items.Where(items => items.Id == _positionId).FirstOrDefault();
             }
             set
             {

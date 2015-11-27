@@ -13,23 +13,29 @@ namespace PMDataLayer
         public DateTime DateTime { get; set; }
         public string Status { get; set; }
 
+        private Guid _userId;
+        public User User
+        {
+            get
+            {
+                return User.Items.Where(items => items.Id == _userId).FirstOrDefault();
+            }
+            set
+            {
+                _userId = value.Id;
+            }
+        }
+
         private Guid _orderId;
         public Order Order
         {
             get
             {
-                return (from items in Order.Items where items.Id == _orderId select items).FirstOrDefault();
+                return Order.Items.Where(items => items.Id == _orderId).FirstOrDefault();
             }
             set
             {
                 _orderId = value.Id;
-            }
-        }
-        public IEnumerable<Comment> Comments
-        {
-            get
-            {
-                return from items in Comment.Items where items.Report.Id == Id select items;
             }
         }
     }

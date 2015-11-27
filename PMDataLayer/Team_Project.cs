@@ -13,7 +13,7 @@ namespace PMDataLayer
         {
             get
             {
-                return (from items in Project.Items where items.Id == _projectId select items).FirstOrDefault();
+                return Project.Items.Where(items => items.Id == _projectId).FirstOrDefault();
             }
             set
             {
@@ -26,7 +26,7 @@ namespace PMDataLayer
         {
             get
             {
-                return (from items in Team.Items where items.Id == _teamId select items).FirstOrDefault();
+                return Team.Items.Where(items => items.Id == _teamId).FirstOrDefault();
             }
             set
             {

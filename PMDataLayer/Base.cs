@@ -9,7 +9,7 @@ namespace PMDataLayer
     public class Base<T> where T : Base<T>
     {
         static public List<T> Items = new List<T>();
-        public Guid Id;
+        public Guid Id { get; set; }
         public Base()
         {
             Id = Guid.NewGuid();

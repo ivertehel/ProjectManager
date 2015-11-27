@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -36,17 +35,12 @@ namespace ProjectManager
                 Skype = "alex123",
                 Surname = "Alexeev"
             };
-            Client c = new Client() { Account = 100, User =  newUser };
-
-
+            Client c = new Client() { Account = 100, User = newUser };
             User.Items.Add(newUser);
-
-
             Client.Items.Add(c);
-
             Team t = new Team() { Name = "Shark", Description = ".NET team" };
-            
-
+            Task t1 = new Task();
+            t1.Owner = Task.Owners.Team;
         }
     }
 }

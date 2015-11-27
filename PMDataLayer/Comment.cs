@@ -11,70 +11,21 @@ namespace PMDataLayer
         public string Message { get; set; }
         public DateTime DateTime { get; set; }
 
-        private Guid _fromUserId;
+        private Guid _userId;
         public User User
         {
             get
             {
-                return (from items in User.Items where items.Id == _fromUserId select items).FirstOrDefault();
+                return User.Items.Where(items => items.Id == _userId).FirstOrDefault();
             }
             set
             {
-                _fromUserId = value.Id;
+                _userId = value.Id;
             }
         }
+        public Owners Owner { get; set; }
 
-        private Guid _orderId;
-        public Order Order
-        {
-            get
-            {
-                return (from items in Order.Items where items.Id == _orderId select items).FirstOrDefault();
-            }
-            set
-            {
-                _orderId = value.Id;
-            }
-        }
-
-
-        private Guid _projectId;
-        public Project Project
-        {
-            get
-            {
-                return (from items in Project.Items where items.Id == _projectId select items).FirstOrDefault();
-            }
-            set
-            {
-                _projectId = value.Id;
-            }
-        }
-
-        private Guid _tasktId;
-        public Task Task
-        {
-            get
-            {
-                return (from items in Task.Items where items.Id == _tasktId select items).FirstOrDefault();
-            }
-            set
-            {
-                _tasktId = value.Id;
-            }
-        }
-
-        private Guid _reportId;
-        public Report Report
-        {
-            get
-            {
-                return (from items in Report.Items where items.Id == _reportId select items).FirstOrDefault();
-            }
-            set
-            {
-                _reportId = value.Id;
-            }
-        }
+        public enum Owners { Order, Project, Task, Report};
+    
     }
 }

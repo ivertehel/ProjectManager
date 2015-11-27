@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class AuthenticationTry : Base<AuthenticationTry>
+    public class Position : Base<Position>
     {
-        public string Login { get; set; }
-        public int Number { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }
