@@ -40,21 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthenticationTry.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Comment.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="EmployeeTeam_PositionInWork.cs" />
-    <Compile Include="Employee_PositionInCompany.cs" />
-    <Compile Include="Employee_Project.cs" />
-    <Compile Include="Employee_Skill.cs" />
-    <Compile Include="Employee_Task.cs" />
-    <Compile Include="Employee_Team.cs" />
+    <Compile Include="User_Project.cs" />
+    <Compile Include="User_Skill.cs" />
+    <Compile Include="User_Team.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Order.cs" />
-    <Compile Include="PositionInCompany.cs" />
-    <Compile Include="PositionInWork.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Project_Project.cs" />
     <Compile Include="Project_Skill.cs" />
@@ -63,7 +57,6 @@
     <Compile Include="Task.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="Team_Project.cs" />
-    <Compile Include="Team_Task.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
