@@ -31,5 +31,15 @@ namespace PMDataLayer
             get { return Order.Items.Where(items => items.Id == _orderId).FirstOrDefault(); }
             set { _orderId = value.Id; }
         }
+
+        public IEnumerable<User> Users
+        {
+            get { return User.Items.Where(items => items.Id == User.Id); }
+        }
+
+        public IEnumerable<Order> Orders
+        {
+            get { return Order.Items.Where(items => items.Id == User.Id); }
+        }
     }
 }

@@ -11,5 +11,15 @@ namespace PMDataLayer
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        public IEnumerable<Project> Projects
+        {
+            get { return from items in Team_Project.Items where items.Team.Id == Id select items.Project; }
+        }
+
+        public IEnumerable<User_Team> Users
+        {
+            get { return from items in User_Team.Items where items.Team.Id == Id select items; }
+        }
     }
 }

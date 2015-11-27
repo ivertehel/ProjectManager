@@ -33,5 +33,35 @@ namespace PMDataLayer
             get { return User.Items.Where(items => items.Id == _leaderId).FirstOrDefault(); }
             set { _leaderId = value.Id; }
         }
+
+        public IEnumerable<Project> ChildProjects
+        {
+            get { return from items in Project_Project.Items where items.ParrentProject.Id == Id select items.ChildProject; }
+        }
+
+        public IEnumerable<Project> ParrentProjects
+        {
+            get { return from items in Project_Project.Items where items.ChildProject.Id == Id select items.ParrentProject; }
+        }
+
+        public IEnumerable<User_Project> Users
+        {
+            get { return from items in User_Project.Items where items.Project.Id == Id select items; }
+        }
+
+        public IEnumerable<Skill> Skills
+        {
+            get { return from items in Project_Skill.Items where items.Project.Id == Id select items.Skill; }
+        }
+
+        public IEnumerable<Team> Teams
+        {
+            get { return from items in Team_Project.Items where items.Project.Id == Id select items.Team; }
+        }
+
+        public IEnumerable<Task> Tasks
+        {
+            get { return Task.Items.Where(items => items.Project.Id == Id); }
+        }
     }
 }

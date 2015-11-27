@@ -21,5 +21,15 @@ namespace PMDataLayer
         public string Status { get; set; }
 
         public bool IsPrivate { get; set; }
+
+        public IEnumerable<Project> Projects
+        {
+            get { return Project.Items.Where(items => items.Order.Id == Id); }
+        }
+
+        public IEnumerable<Report> Reports
+        {
+            get { return Report.Items.Where(items => items.Order.Id == Id); }
+        }
     }
 }

@@ -20,7 +20,6 @@ namespace ProjectManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int Hui;
         public MainWindow()
         {
             InitializeComponent();

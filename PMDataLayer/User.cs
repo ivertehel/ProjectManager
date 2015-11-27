@@ -31,5 +31,40 @@ namespace PMDataLayer
         public string Status { get; set; }
 
         public string Description { get; set; }
+
+        public IEnumerable<Skill> Skills
+        {
+            get { return from items in User_Skill.Items where items.User.Id == Id select items.Skill; }
+        }
+
+        public IEnumerable<Report> Reports
+        {
+            get { return Report.Items.Where(items => items.User.Id == Id); }
+        }
+
+        public IEnumerable<Message> Inbox
+        {
+            get { return Message.Items.Where(items => items.ToUser.Id == Id); }
+        }
+
+        public IEnumerable<Message> Sentbox
+        {
+            get { return Message.Items.Where(items => items.FromUser.Id == Id); }
+        }
+
+        public IEnumerable<Project> Projects
+        {
+            get { return from items in User_Project.Items where items.User.Id == Id select items.Project; }
+        }
+
+        public IEnumerable<Comment> Comments
+        {
+            get { return Comment.Items.Where(items => items.User.Id == Id); }
+        }
+
+        public IEnumerable<Team> Teams
+        {
+            get { return from items in User_Team.Items where items.User.Id == Id select items.Team; }
+        }
     }
 }

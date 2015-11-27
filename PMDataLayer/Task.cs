@@ -33,5 +33,15 @@ namespace PMDataLayer
         }
 
         public Owners Owner { get; set; }
+
+        public IEnumerable<Task> UsersTasks
+        {
+            get { return Task.Items.Where(items => items.Owner == Owners.User); }
+        }
+
+        public IEnumerable<Task> TeamsTasks
+        {
+            get { return Task.Items.Where(items => items.Owner == Owners.Team); }
+        }
     }
 }
