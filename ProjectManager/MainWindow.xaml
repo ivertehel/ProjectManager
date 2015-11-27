@@ -7,6 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" VerticalAlignment="Top">
+            <Label Content="Project Manager" FontSize="20"/>
+        </Grid>
+        <Grid Grid.Row="1" VerticalAlignment="Top">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Column="0" Content="Projects"></Button>
+                <Button Grid.Column="1" Content="Clients"></Button>
+                <Button Grid.Column="2" Content="Employees"></Button>
+                <Button Grid.Column="3" Content="Teams"></Button>
+                <Button Grid.Column="4" Content="Reports"></Button>
+                <Button Grid.Column="5" Content="Messages"></Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
