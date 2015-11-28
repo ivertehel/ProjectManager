@@ -50,7 +50,7 @@
     <timestamps>
       <styleCop>2015.11.27 19:51:34.398</styleCop>
       <settingsFile>2015.11.27 19:51:34.371</settingsFile>
-      <sourceFile>2015.11.28 00:41:30.181</sourceFile>
+      <sourceFile>2015.11.28 01:58:22.482</sourceFile>
       <parser>2015.11.27 19:51:34.398</parser>
       <StyleCop.CSharp.DocumentationRules>2015.11.27 19:51:34.398</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1511543750</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -67,7 +67,13 @@
       <StyleCop.CSharp.SpacingRules>2015.11.27 19:51:34.398</StyleCop.CSharp.SpacingRules>
       <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
     </timestamps>
-    <violations />
+    <violations>
+      <violation namespace="StyleCop.CSharp.CsParser" rule="SyntaxException" ruleCheckId="SA0102">
+        <context>A syntax error has been discovered in file C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\MainWindow.xaml.cs on line 49.</context>
+        <line>49</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
   </sourcecode>
   <project key="631027406">
     <configuration>DEBUG;TRACE</configuration>

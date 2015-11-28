@@ -8,6 +8,13 @@ namespace PMDataLayer
 {
     public class User : Base<User>
     {
+        public enum Roles
+        {
+            Administrator,
+            Client,
+            Employee
+        }
+
         public string Name { get; set; }
 
         public string Surname { get; set; }
@@ -26,7 +33,7 @@ namespace PMDataLayer
 
         public string Image { get; set; }
 
-        public string Role { get; set; }
+        public Roles Role { get; set; }
 
         public string Status { get; set; }
 

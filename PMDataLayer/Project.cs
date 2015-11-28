@@ -12,6 +12,14 @@ namespace PMDataLayer
 
         private Guid _leaderId;
 
+        public enum Statuses
+        {
+            Done,
+            InProgress,
+            Open,
+            Discarded
+        }
+
         public string Name { get; set; }
 
         public string Description { get; set; }
@@ -20,7 +28,7 @@ namespace PMDataLayer
 
         public DateTime ReleaseDate { get; set; }
 
-        public string Status { get; set; }
+        public Statuses Status { get; set; }
 
         public Order Order
         {

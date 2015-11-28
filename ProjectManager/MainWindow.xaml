@@ -9,12 +9,16 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" VerticalAlignment="Top" Grid.Column="0">
             <Label Content="Project Manager" FontSize="20"/>
         </Grid>
-        <Grid Grid.Row="1" VerticalAlignment="Top">
+        <Grid Grid.Row="1" VerticalAlignment="Top" Grid.Column="0">
             <Grid HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -24,7 +28,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Button Grid.Column="0" Content="Projects"></Button>
                 <Button Grid.Column="1" Content="Clients"></Button>
                 <Button Grid.Column="2" Content="Employees"></Button>
@@ -32,6 +36,9 @@
                 <Button Grid.Column="4" Content="Reports"></Button>
                 <Button Grid.Column="5" Content="Messages"></Button>
             </Grid>
+        </Grid>
+        <Grid Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="0">
+            <DataGrid Name="ProjectsDataGrid" ColumnWidth="*" HorizontalScrollBarVisibility="Hidden"/>
         </Grid>
     </Grid>
 </Window>

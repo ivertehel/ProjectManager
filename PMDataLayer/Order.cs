@@ -8,6 +8,14 @@ namespace PMDataLayer
 {
     public class Order : Base<Order>
     {
+        public enum Statuses
+        {
+            Done,
+            InProgress,
+            Open,
+            Discarded
+        }
+
         public string Name { get; set; }
 
         public string Description { get; set; }
@@ -18,7 +26,7 @@ namespace PMDataLayer
 
         public DateTime ReleaseDate { get; set; }
 
-        public string Status { get; set; }
+        public Statuses Status { get; set; }
 
         public bool IsPrivate { get; set; }
 

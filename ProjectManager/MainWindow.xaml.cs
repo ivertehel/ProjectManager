@@ -15,32 +15,59 @@ using PMDataLayer;
 
 namespace ProjectManager
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            var newUser = new User()
+            InitDataLayer();
+        }
+
+        private void InitDataLayer()
+        {
+            Order o1 = new Order()
+            {
+                Name = "Skype",
+                Description = "Make a program like skype",
+                Price = 1000,
+                ReleaseDate = new DateTime(2015, 12, 31),
+                StartDate = new DateTime(2015, 11, 29),
+                Status = Order.Statuses.Open,
+                IsPrivate = false
+            };
+            Order.Items.Add(o1);
+
+            User u1 = new User()
             {
                 Name = "Alex",
-                Birthday = DateTime.Now,
-                Country = "Ukraine",
-                Email = "alex@ex.ua",
-                Login = "alex",
+                Birthday = new DateTime(1993, 11, 11),
+                Country = "Kiev",
+                Description = ".NET developer",
+                Email = "lalka@ex.ua",
+                Image = "Hui",
+                Login = "Alex_hui",
                 Password = "qwerty",
-                Role = "Client",
-                Skype = "alex123",
-                Surname = "Alexeev"
+                Role = User.Roles.Employee,
+                Skype = "alex_hui",
+                Surname = "Alexeevich",
+                Status = ""
             };
-            Client c = new Client() { Account = 100, User = newUser };
-            User.Items.Add(newUser);
-            Client.Items.Add(c);
-            Team t = new Team() { Name = "Shark", Description = ".NET team" };
-            Task t1 = new Task();
-            t1.Owner = Task.Owners.Team;
+            User.Items.Add(u1);
+
+            Project p1 = new Project()
+            {
+                Name = "Make a WPF app",
+                Description = "Add some grids",
+                ReleaseDate = new DateTime(2015, 12, 31),
+                StartDate = new DateTime(2015, 11, 29),
+                Status = Project.Statuses.Open,
+                Order = o1,
+                Leader = u1
+            };
+            Project.Items.Add(p1);
+            ProjectsDataGrid.ItemsSource = from items in Order.Items
+                                           select new { ProjectName = items.Name, Description = items.Description, Price = items.Price, StartDate = items.StartDate, ReleaseDate = items.ReleaseDate, Status = items.Status};
+            
         }
     }
 }
