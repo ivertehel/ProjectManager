@@ -36,6 +36,21 @@ namespace ProjectManager
                 IsPrivate = false
             };
             Order.Items.Add(o1);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+            Order.Items.Add(o1.Clone() as Order);
+
 
             User u1 = new User()
             {
@@ -65,9 +80,15 @@ namespace ProjectManager
                 Leader = u1
             };
             Project.Items.Add(p1);
+
+
+
             ProjectsDataGrid.ItemsSource = from items in Order.Items
-                                           select new { ProjectName = items.Name, Description = items.Description, Price = items.Price, StartDate = items.StartDate, ReleaseDate = items.ReleaseDate, Status = items.Status};
-            
+                                           select new { ProjectName = items.Name, Description = items.Description, Price = items.Price,
+                                               StartDate = items.StartDate.ToShortDateString(),
+                                               ReleaseDate = items.ReleaseDate.ToShortDateString(), Status = items.Status};
+
+
         }
     }
 }

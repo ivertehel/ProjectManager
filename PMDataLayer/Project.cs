@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Project : Base<Project>
+    public class Project : Base<Project>, ICloneable
     {
         private Guid _orderId;
 
@@ -70,6 +71,13 @@ namespace PMDataLayer
         public IEnumerable<Task> Tasks
         {
             get { return Task.Items.Where(items => items.Project.Id == Id); }
+        }
+
+        public object Clone()
+        {
+            Project newProject = this.MemberwiseClone() as Project;
+            newProject.Id = new Guid();
+            return newProject;
         }
     }
 }

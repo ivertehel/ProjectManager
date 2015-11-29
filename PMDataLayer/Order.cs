@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Order : Base<Order>
+    public class Order : Base<Order>, ICloneable
     {
         public enum Statuses
         {
@@ -38,6 +38,13 @@ namespace PMDataLayer
         public IEnumerable<Report> Reports
         {
             get { return Report.Items.Where(items => items.Order.Id == Id); }
+        }
+
+        public object Clone()
+        {
+            Order newOrder = this.MemberwiseClone() as Order;
+            newOrder.Id = new Guid();
+            return newOrder;
         }
     }
 }

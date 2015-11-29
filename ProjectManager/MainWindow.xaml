@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" MinHeight="150" MinWidth="470">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/MainBackground.png"></ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -16,7 +19,10 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" VerticalAlignment="Top" Grid.Column="0">
-            <Label Content="Project Manager" FontSize="20"/>
+            <Grid.Background>
+                <SolidColorBrush Color="SkyBlue" Opacity="0.4"></SolidColorBrush>
+            </Grid.Background>
+            <Label Content="Project Manager" FontSize="25" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1" VerticalAlignment="Top" Grid.Column="0">
             <Grid HorizontalAlignment="Stretch">
@@ -29,12 +35,36 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0" Content="Projects"></Button>
-                <Button Grid.Column="1" Content="Clients"></Button>
-                <Button Grid.Column="2" Content="Employees"></Button>
-                <Button Grid.Column="3" Content="Teams"></Button>
-                <Button Grid.Column="4" Content="Reports"></Button>
-                <Button Grid.Column="5" Content="Messages"></Button>
+                <Button Grid.Column="0" Content="Projects" TextBlock.FontSize="15">
+                    <Button.Background>
+                        <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
+                    </Button.Background>
+                </Button>
+                <Button Grid.Column="1" Content="Clients" TextBlock.FontSize="15">
+                    <Button.Background>
+                        <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
+                    </Button.Background>
+                </Button>
+                <Button Grid.Column="2" Content="Employees" TextBlock.FontSize="15">
+                    <Button.Background>
+                        <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
+                    </Button.Background>
+                </Button>
+                <Button Grid.Column="3" Content="Teams" TextBlock.FontSize="15">
+                    <Button.Background>
+                        <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
+                    </Button.Background>
+                </Button>
+                <Button Grid.Column="4" Content="Reports" TextBlock.FontSize="15">
+                    <Button.Background>
+                        <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
+                    </Button.Background>
+                </Button>
+                <Button Grid.Column="5" Content="Messages" TextBlock.FontSize="15">
+                    <Button.Background>
+                        <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
+                    </Button.Background>
+                </Button>
             </Grid>
         </Grid>
         <Grid Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="0">
