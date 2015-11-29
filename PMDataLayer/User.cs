@@ -15,6 +15,12 @@ namespace PMDataLayer
             Employee
         }
 
+        public enum States
+        {
+            Male,
+            Female
+        }
+
         public string Name { get; set; }
 
         public string Surname { get; set; }
@@ -38,6 +44,8 @@ namespace PMDataLayer
         public string Status { get; set; }
 
         public string Description { get; set; }
+
+        public States State { get; set; }
 
         public IEnumerable<Skill> Skills
         {

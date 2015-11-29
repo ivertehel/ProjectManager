@@ -20,6 +20,7 @@ namespace ProjectManager
         public MainWindow()
         {
             InitializeComponent();
+            ProjectsButton.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0xAC, 0xF0, 0xFF));
             InitDataLayer();
         }
 
@@ -51,7 +52,6 @@ namespace ProjectManager
             Order.Items.Add(o1.Clone() as Order);
             Order.Items.Add(o1.Clone() as Order);
 
-
             User u1 = new User()
             {
                 Name = "Alex",
@@ -81,14 +81,7 @@ namespace ProjectManager
             };
             Project.Items.Add(p1);
 
-
-
-            ProjectsDataGrid.ItemsSource = from items in Order.Items
-                                           select new { ProjectName = items.Name, Description = items.Description, Price = items.Price,
-                                               StartDate = items.StartDate.ToShortDateString(),
-                                               ReleaseDate = items.ReleaseDate.ToShortDateString(), Status = items.Status};
-
-
+            ProjectsDataGrid.ItemsSource = from items in Order.Items select new { ProjectName = items.Name, Description = items.Description, Price = items.Price, StartDate = items.StartDate.ToShortDateString(), ReleaseDate = items.ReleaseDate.ToShortDateString(), Status = items.Status };
         }
     }
 }
