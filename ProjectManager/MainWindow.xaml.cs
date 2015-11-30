@@ -24,13 +24,20 @@ namespace ProjectManager
             if (ProjectsDataGrid.Items.Count == 0)
             {
                 initDataLayer();
+                ButtonPanel = new List<Button>();
+                Layers = new List<Grid>();
+                Layers.AddRange(new[] { ProjectsGrid, ClientsGrid });
+                ButtonPanel.AddRange(new[] { ProjectsButton, ClientsButton, EmployeesButton, TeamsButton, ReportsButton, MessagesButton });
                 LoadViewLayer(ViewLayers.Projects);
                 ProjectDetailsGrid.Visibility = Visibility.Hidden;
                 //ProjectsGrid.Visibility = Visibility.Hidden;
                 ClientsGrid.Visibility = Visibility.Hidden;
+
             }
         }
 
+       public List<Button> ButtonPanel;
+        public List<Grid> Layers;
         public enum ViewLayers
         {
             Projects,
@@ -45,10 +52,25 @@ namespace ProjectManager
 
         public void LoadViewLayer(ViewLayers layer)
         {
+            foreach (var item in ButtonPanel)
+            {
+                item.Background = (new SolidColorBrush(Colors.SkyBlue));
+            }
+            foreach (var item in Layers)
+            {
+                item.Visibility = Visibility.Hidden;
+            }
             if (layer == ViewLayers.Projects)
             {
                 ProjectsButton.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0xAC, 0xF0, 0xFF));
                 ProjectsDataGrid.ItemsSource = from items in Order.Items select new { ProjectName = items.Name, Description = items.Description, Price = items.Price, StartDate = items.StartDate.ToShortDateString(), ReleaseDate = items.ReleaseDate.ToShortDateString(), Status = items.Status };
+                (from items in Layers where items == ProjectsGrid select items).FirstOrDefault().Visibility = Visibility.Visible;
+            }
+            else if (layer == ViewLayers.Clients)
+            {
+                ClientsButton.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0xAC, 0xF0, 0xFF));
+                (from items in Layers where items == ClientsGrid select items).FirstOrDefault().Visibility = Visibility.Visible;
+
             }
         }
 
@@ -451,6 +473,17 @@ namespace ProjectManager
 
         private void ClientsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
+
+        }
+
+        private void ProjectsButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadViewLayer(ViewLayers.Projects);
+        }
+
+        private void ClientsButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadViewLayer(ViewLayers.Clients);
 
         }
     }
