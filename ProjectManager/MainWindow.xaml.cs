@@ -71,7 +71,7 @@ namespace ProjectManager
 
             if (order == null)
             {
-                MessageBox.Show("Unknown error");
+
                 return;
             }
             
