@@ -30,6 +30,8 @@ namespace PMDataLayer
 
         public bool IsPrivate { get; set; }
 
+        public Client Client { get; set; }
+
         public IEnumerable<Project> Projects
         {
             get { return Project.Items.Where(items => items.Order.Id == Id); }

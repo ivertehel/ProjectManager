@@ -6,6 +6,34 @@
         xmlns:local="clr-namespace:ProjectManager"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" MinHeight="300" MinWidth="470">
+    <Window.Resources>
+        <Style x:Key="ProfileButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter x:Name="PART_Content"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"></ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="SkyBlue"/>
+                    <Setter Property="Opacity" Value="0.8"/>
+
+                    <Setter Property="BorderBrush" Value="SkyBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
 
         <Grid.Background>
@@ -80,7 +108,7 @@
 
 
         <Grid Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="0" Margin="15,0,15,0">
-            <DataGrid Name="ProjectsDataGrid" ColumnWidth="*" HorizontalScrollBarVisibility="Hidden"/>
+            <DataGrid Name="ProjectsDataGrid" ColumnWidth="*" HorizontalScrollBarVisibility="Hidden" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged"/>
         </Grid>
 
         <!-- *********************************************************    -->
@@ -126,7 +154,7 @@
                 </Grid>
 
                 <Grid Grid.Row="1">
-                    <RichTextBox x:Name="ProjectOtherInfoDetailsGrid" IsReadOnly="True" VerticalScrollBarVisibility="Visible">
+                    <RichTextBox x:Name="ProjectOtherInfoDetailsGrid" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16">
                         <RichTextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0.2"/>
                         </RichTextBox.Background>
@@ -246,35 +274,43 @@
                                 <Image Source="Assets/MaleAvatar.jpg" Width="100" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="20,5,20,20"/>
                             </Grid>
                             <Grid Grid.Row="1"/>
-                                <Grid Grid.Row="2"/>
-                                    <Grid Grid.Row="3"/>
+                            <Grid Grid.Row="2"/>
+                            <Grid Grid.Row="3"/>
                         </Grid>
                     </Grid>
                     <!-- Third -->
-                        <Grid Grid.Column="2">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Label x:Name="CustomerNameDetailsGrid" Content="Cusomer: CustomerName" FontSize="14"></Label>
+                    <Grid Grid.Column="2">
+
+                        <Button Style="{StaticResource ProfileButtonStyle}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Top">
+                            <!--<Button.Background>
+                                <SolidColorBrush Color="White" Opacity="0.1"/>
+                            </Button.Background>-->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Label x:Name="CustomerNameDetailsGrid" Content="Cusomer: CustomerName" FontSize="14"></Label>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Label x:Name="StartDateDetailsGrid" Content="Start date: " FontSize="14"></Label>
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <Label x:Name="ReleaseDateDetailsGrid" Content="Release date: " FontSize="14"></Label>
+                                </Grid>
+                                <Grid Grid.Row="3">
+                                    <Label x:Name="PriceDetailsGrid" Content="Price: " FontSize="14"></Label>
+                                </Grid>
                             </Grid>
-                            <Grid Grid.Row="1">
-                                <Label x:Name="StartDateDetailsGrid" Content="Start date: " FontSize="14"></Label>
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <Label x:Name="ReleaseDateDetailsGrid" Content="Release date: " FontSize="14"></Label>
-                            </Grid>
-                            <Grid Grid.Row="3">
-                                <Label x:Name="PriceDetailsGrid" Content="Price: " FontSize="14"></Label>
-                            </Grid>
-                        </Grid>
+                        </Button>
                     </Grid>
-
                 </Grid>
-            </Grid>
 
+            </Grid>
         </Grid>
+
+    </Grid>
 </Window>

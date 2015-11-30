@@ -53,7 +53,7 @@
     <timestamps>
       <styleCop>2015.11.27 19:51:34.398</styleCop>
       <settingsFile>2015.11.27 19:51:34.371</settingsFile>
-      <sourceFile>2015.11.29 19:28:14.611</sourceFile>
+      <sourceFile>2015.11.30 10:04:29.197</sourceFile>
       <parser>2015.11.27 19:51:34.398</parser>
       <StyleCop.CSharp.DocumentationRules>2015.11.27 19:51:34.398</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1511543750</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -73,7 +73,7 @@
     <violations>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="UseStringEmptyForEmptyStrings" ruleCheckId="SA1122">
         <context>Use string.Empty rather than "".</context>
-        <line>67</line>
+        <line>90</line>
         <warning>False</warning>
       </violation>
     </violations>
