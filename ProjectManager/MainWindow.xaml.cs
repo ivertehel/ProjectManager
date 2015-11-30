@@ -23,7 +23,7 @@ namespace ProjectManager
             InitializeComponent();
             initDataLayer();
             LoadViewLayer(ViewLayers.Projects);
-
+            ProjectDetailsGrid.Visibility = Visibility.Hidden;
         }
 
         public enum ViewLayers
@@ -98,52 +98,90 @@ namespace ProjectManager
 
         private void initDataLayer()
         {
-            User u1 = new User()
+            User e1 = new User()
             {
-                Name = "Alex",
-                Birthday = new DateTime(1993, 11, 11),
-                Country = "Kiev",
+                Name = "Ivan",
+                Surname = "Vertegel",
+                Birthday = new DateTime(1994, 10, 13),
+                Country = "Ukraine",
                 Description = ".NET developer",
-                Email = "lalka@ex.ua",
-                Image = "Hui",
-                Login = "Alex_hui",
+                Email = "ivanvertegel@outlook.com",
+                Image = "Assets/MaleAvatar.jpg",
+                Login = "vsailor",
                 Password = "qwerty",
                 Role = User.Roles.Employee,
-                Skype = "alex_hui",
-                Surname = "Alexeevich",
-                Status = ""
+                Skype = "sirius9764",
+                State = User.States.Male,
+                Status = User.Statuses.Ready
             };
 
-            User.Items.Add(u1);
-
-            User u2 = new User()
+            User e2 = new User()
             {
-                Name = "Grant",
-                Birthday = new DateTime(1990, 4, 11),
-                Country = "USA",
-                Description = "",
-                Email = "lalka@ex.ua",
-                Image = "Hui",
-                Login = "Grant_hui",
+                Name = "Denis",
+                Surname = "Pikushiy",
+                Birthday = new DateTime(1995, 08, 17),
+                Country = "Ukraine",
+                Description = ".NET developer",
+                Email = "datrax@ex.ua",
+                Image = "Assets/MaleAvatar.jpg",
+                Login = "datrax",
+                Password = "qwerty",
+                Role = User.Roles.Employee,
+                Skype = "dat_rax",
+                State = User.States.Male,
+                Status = User.Statuses.Ready
+            };
+
+            User e3 = new User()
+            {
+                Name = "Krystyna",
+                Surname = "Romanyshyn",
+                Birthday = new DateTime(1995, 04, 12),
+                Country = "Ukraine",
+                Description = "QA Engineer",
+                Email = "khrystyna1204@gmail.com",
+                Image = "Assets/MaleAvatar.jpg",
+                Login = "khrystyna1204",
+                Password = "qwerty",
+                Role = User.Roles.Employee,
+                Skype = "khrystyna1204",
+                State = User.States.Female,
+                Status = User.Statuses.Ready
+            };
+
+            User.Items.Add(e1);
+            User.Items.Add(e2);
+            User.Items.Add(e3);
+
+
+            User u1 = new User()
+            {
+                Name = "Olga",
+                Surname = "Karpushin",
+                Country = "Israel",
+                Description = "Low budget",
+                Image = "Assets/MaleAvatar.jpg",
+                Login = "sharksoft ",
                 Password = "qwerty",
                 Role = User.Roles.Client,
-                Skype = "grant_hui",
-                Surname = "Black",
-                Status = ""
+                Skype = "sharksoft",
+                State = User.States.Female,
             };
-
-            User.Items.Add(u2);
+            User.Items.Add(u1);
 
             Client c1 = new Client()
             {
                 Account = 0m,
-                User = u2
+                User = u1
             };
+
+            Client.Items.Add(c1);
+
             Order o1 = new Order()
             {
-                Name = "Skype",
-                Description = "Make a program like skype",
-                Price = 1000,
+                Name = "Unity 3d Eggsckatcher game",
+                Description = "I need Unity 3d Eggsckatcher game like this: https://play.google.com/store/apps/details?id=com.nomoc.wolfonfarmI need Unity 3d Eggsckatcher game like this: https://play.google.com/store/apps/details?id=com.nomoc.wolfonfarmI need Unity 3d Eggsckatcher game like this: https://play.google.com/store/apps/details?id=com.nomoc.wolfonfarmI need Unity 3d Eggsckatcher game like this: https://play.google.com/store/apps/details?id=com.nomoc.wolfonfarm",
+                Price = 50,
                 ReleaseDate = new DateTime(2015, 12, 31),
                 StartDate = new DateTime(2015, 11, 29),
                 Status = Order.Statuses.Open,
@@ -164,26 +202,15 @@ namespace ProjectManager
             Order.Items.Add(o1.Clone() as Order);
             Order.Items.Add(o1.Clone() as Order);
             Order.Items.Add(o1.Clone() as Order);
-            Order.Items.Add(o1.Clone() as Order);
 
-           
 
-            Project p1 = new Project()
-            {
-                Name = "Make a WPF app",
-                Description = "Add some grids",
-                ReleaseDate = new DateTime(2015, 12, 31),
-                StartDate = new DateTime(2015, 11, 29),
-                Status = Project.Statuses.Open,
-                Order = o1,
-                Leader = u1
-            };
-            Project.Items.Add(p1);
+
 
         }
 
         private void ProjectsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
+            ProjectDetailsGrid.Visibility = Visibility.Visible;
             fillOrderInfo();
         }
     }

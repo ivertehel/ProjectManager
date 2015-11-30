@@ -21,6 +21,14 @@ namespace PMDataLayer
             Female
         }
 
+        public enum Statuses
+        {
+            InWork,
+            NotReady,
+            Ready,
+            UnInvited
+        }
+
         public string Name { get; set; }
 
         public string Surname { get; set; }
@@ -41,7 +49,7 @@ namespace PMDataLayer
 
         public Roles Role { get; set; }
 
-        public string Status { get; set; }
+        public Statuses Status { get; set; }
 
         public string Description { get; set; }
 
