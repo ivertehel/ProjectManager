@@ -35,7 +35,6 @@
         </Style>
     </Window.Resources>
     <Grid>
-
         <Grid.Background>
             <ImageBrush ImageSource="Assets/MainBackground.png"></ImageBrush>
         </Grid.Background>
@@ -43,7 +42,6 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -105,212 +103,246 @@
         </Grid>
 
 
-
-
-        <Grid Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="0" Margin="15,0,15,0">
-            <DataGrid Name="ProjectsDataGrid" ColumnWidth="*" HorizontalScrollBarVisibility="Hidden" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged"/>
-        </Grid>
-
-        <!-- *********************************************************    -->
-        <!--                        DETAILS                               -->
-        <!-- *********************************************************    -->
-
-
-        <Grid Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" x:Name="ProjectDetailsGrid" Margin="15,0,15,15">
-            <Grid.Background>
-                <SolidColorBrush Color="SkyBlue" Opacity="0.8"/>
-            </Grid.Background>
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--                                                 Projects grid                                                        -->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <Grid Name="ProjectsGrid" Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-
-
-
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <Label x:Name="ProjectNameDetailsGrid" Content="Unknown Name" TextBlock.FontSize="20" HorizontalAlignment="Left" Margin="15,0,0,0"/>
-                </Grid>
-                <Grid Grid.Column="1">
-                    <Label x:Name="ProjectStatusDetailsGrid" Content="Unknown Status" TextBlock.FontSize="18"  HorizontalAlignment="Right" Margin="0,0,15,0"/>
-                </Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="0" Margin="15,0,15,0">
+                <DataGrid Name="ProjectsDataGrid" ColumnWidth="*" HorizontalScrollBarVisibility="Hidden" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged"/>
             </Grid>
 
+            <!-- *********************************************************    -->
+            <!--                        DETAILS                               -->
+            <!-- *********************************************************    -->
 
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" x:Name="ProjectDetailsGrid" Margin="15,0,15,15">
+                <Grid.Background>
+                    <SolidColorBrush Color="SkyBlue" Opacity="0.8"/>
+                </Grid.Background>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
+
+
                 <Grid Grid.Row="0">
-                    <Label Content="Description:" Margin="15,0,0,0" TextBlock.FontSize="18"/>
-                </Grid>
-
-                <Grid Grid.Row="1">
-                    <RichTextBox x:Name="ProjectOtherInfoDetailsGrid" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16">
-                        <RichTextBox.Background>
-                            <SolidColorBrush Color="White" Opacity="0.2"/>
-                        </RichTextBox.Background>
-                        <FlowDocument>
-                            <Paragraph>
-                                Unknown
-                            </Paragraph>
-                        </FlowDocument>
-
-                    </RichTextBox>
-                </Grid>
-                <!--           last row                     -->
-                <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <!-- FIRST -->
                     <Grid Grid.Column="0">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0">
-                                    <Label Content="Skills:" Margin="15,0,0,0" FontSize="14"/>
-                                </Grid>
-                                <Grid Grid.Column="1">
-                                    <RichTextBox x:Name="SkillsTextBoxDetailsGrid" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
-                                        <RichTextBox.BorderBrush>
-                                            <DrawingBrush Opacity="0"></DrawingBrush>
-                                        </RichTextBox.BorderBrush>
-                                        <RichTextBox.Background>
-                                            <SolidColorBrush Color="White" Opacity="0"/>
-                                        </RichTextBox.Background>
-                                        <FlowDocument>
-                                            <Paragraph>
-                                                .NET, JavaScript
-                                            </Paragraph>
-                                        </FlowDocument>
-                                    </RichTextBox>
-                                </Grid>
-                            </Grid>
-
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0">
-                                    <Label Content="Teams:" Margin="15,0,0,0" FontSize="14"/>
-                                </Grid>
-                                <Grid Grid.Column="1">
-                                    <RichTextBox x:Name="TeamsTextBoxDetailsGrid" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
-                                        <RichTextBox.BorderBrush>
-                                            <DrawingBrush Opacity="0"></DrawingBrush>
-                                        </RichTextBox.BorderBrush>
-                                        <RichTextBox.Background>
-                                            <SolidColorBrush Color="White" Opacity="0"/>
-                                        </RichTextBox.Background>
-                                        <FlowDocument>
-                                            <Paragraph>
-                                                .NET-1, .NET-2
-                                            </Paragraph>
-                                        </FlowDocument>
-                                    </RichTextBox>
-                                </Grid>
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0">
-                                    <Label Content="Employees:" Margin="15,0,0,0" FontSize="14"/>
-                                </Grid>
-                                <Grid Grid.Column="1">
-                                    <RichTextBox x:Name="EmployeesTextBoxDetailsGrid" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
-                                        <RichTextBox.BorderBrush>
-                                            <DrawingBrush Opacity="0"></DrawingBrush>
-                                        </RichTextBox.BorderBrush>
-                                        <RichTextBox.Background>
-                                            <SolidColorBrush Color="White" Opacity="0"/>
-                                        </RichTextBox.Background>
-                                        <FlowDocument>
-                                            <Paragraph>
-                                                Alex Black, Thomas Anderson, Mike White
-                                            </Paragraph>
-                                        </FlowDocument>
-                                    </RichTextBox>
-                                </Grid>
-
-                            </Grid>
-                            <Grid Grid.Row="3" HorizontalAlignment="Left">
-                                <Button x:Name="ShowProjectDetailsGrid" Content="Technical Task" Margin="20,0,0,0" MinWidth="200"/>
-                            </Grid>
-                        </Grid>
+                        <Label x:Name="ProjectNameDetailsGrid" Content="Unknown Name" TextBlock.FontSize="20" HorizontalAlignment="Left" Margin="15,0,0,0"/>
                     </Grid>
-                    <!-- Second -->
                     <Grid Grid.Column="1">
-                        <Grid Grid.Column="2" VerticalAlignment="Top">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="2*"/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Image Source="Assets/MaleAvatar.jpg" Width="100" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="20,5,20,20"/>
-                            </Grid>
-                            <Grid Grid.Row="1"/>
-                            <Grid Grid.Row="2"/>
-                            <Grid Grid.Row="3"/>
-                        </Grid>
+                        <Label x:Name="ProjectStatusDetailsGrid" Content="Unknown Status" TextBlock.FontSize="18" FontWeight="Bold"  HorizontalAlignment="Right" Margin="0,0,15,0"/>
                     </Grid>
-                    <!-- Third -->
-                    <Grid Grid.Column="2">
+                </Grid>
 
-                        <Button Style="{StaticResource ProfileButtonStyle}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Top">
-                            <!--<Button.Background>
-                                <SolidColorBrush Color="White" Opacity="0.1"/>
-                            </Button.Background>-->
+
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Label Content="Description:" Margin="15,0,0,0" TextBlock.FontSize="18"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <RichTextBox x:Name="ProjectOtherInfoDetailsGrid" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16">
+                            <RichTextBox.Background>
+                                <SolidColorBrush Color="White" Opacity="0.2"/>
+                            </RichTextBox.Background>
+                            <FlowDocument>
+                                <Paragraph>
+                                    Unknown
+                                </Paragraph>
+                            </FlowDocument>
+
+                        </RichTextBox>
+                    </Grid>
+                    <!--           last row                     -->
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- FIRST -->
+                        <Grid Grid.Column="0">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0">
-                                    <Label x:Name="CustomerNameDetailsGrid" Content="Cusomer: CustomerName" FontSize="14"></Label>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Label Content="Skills:" Margin="15,0,0,0" FontSize="14"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <RichTextBox x:Name="SkillsTextBoxDetailsGrid" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                            <RichTextBox.BorderBrush>
+                                                <DrawingBrush Opacity="0"></DrawingBrush>
+                                            </RichTextBox.BorderBrush>
+                                            <RichTextBox.Background>
+                                                <SolidColorBrush Color="White" Opacity="0"/>
+                                            </RichTextBox.Background>
+                                            <FlowDocument>
+                                                <Paragraph>
+                                                    .NET, JavaScript
+                                                </Paragraph>
+                                            </FlowDocument>
+                                        </RichTextBox>
+                                    </Grid>
                                 </Grid>
+
                                 <Grid Grid.Row="1">
-                                    <Label x:Name="StartDateDetailsGrid" Content="Start date: " FontSize="14"></Label>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Label Content="Teams:" Margin="15,0,0,0" FontSize="14"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <RichTextBox x:Name="TeamsTextBoxDetailsGrid" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                            <RichTextBox.BorderBrush>
+                                                <DrawingBrush Opacity="0"></DrawingBrush>
+                                            </RichTextBox.BorderBrush>
+                                            <RichTextBox.Background>
+                                                <SolidColorBrush Color="White" Opacity="0"/>
+                                            </RichTextBox.Background>
+                                            <FlowDocument>
+                                                <Paragraph>
+                                                    .NET-1, .NET-2
+                                                </Paragraph>
+                                            </FlowDocument>
+                                        </RichTextBox>
+                                    </Grid>
                                 </Grid>
                                 <Grid Grid.Row="2">
-                                    <Label x:Name="ReleaseDateDetailsGrid" Content="Release date: " FontSize="14"></Label>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Label Content="Employees:" Margin="15,0,0,0" FontSize="14"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <RichTextBox x:Name="EmployeesTextBoxDetailsGrid" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                            <RichTextBox.BorderBrush>
+                                                <DrawingBrush Opacity="0"></DrawingBrush>
+                                            </RichTextBox.BorderBrush>
+                                            <RichTextBox.Background>
+                                                <SolidColorBrush Color="White" Opacity="0"/>
+                                            </RichTextBox.Background>
+                                            <FlowDocument>
+                                                <Paragraph>
+                                                    Alex Black, Thomas Anderson, Mike White
+                                                </Paragraph>
+                                            </FlowDocument>
+                                        </RichTextBox>
+                                    </Grid>
+
                                 </Grid>
-                                <Grid Grid.Row="3">
-                                    <Label x:Name="PriceDetailsGrid" Content="Price: " FontSize="14"></Label>
+                                <Grid Grid.Row="3" HorizontalAlignment="Left">
+                                    <Button x:Name="ShowProjectDetailsGrid" Content="Technical Task" Margin="20,0,0,0" MinWidth="200"/>
                                 </Grid>
                             </Grid>
-                        </Button>
-                    </Grid>
-                </Grid>
+                        </Grid>
+                        <!-- Second -->
+                        <Grid Grid.Column="1">
+                            <Grid Grid.Column="2" VerticalAlignment="Top">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="2*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Image Name="ProfileImageProjectDetailsGrid" Source="Assets/MaleAvatar.jpg" Width="100" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="20,5,20,20"/>
+                                </Grid>
+                                <Grid Grid.Row="1"/>
+                                <Grid Grid.Row="2"/>
+                                <Grid Grid.Row="3"/>
+                            </Grid>
+                        </Grid>
+                        <!-- Third -->
+                        <Grid Grid.Column="2">
 
+                            <Button Style="{StaticResource ProfileButtonStyle}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Top">
+                                <!--<Button.Background>
+                                <SolidColorBrush Color="White" Opacity="0.1"/>
+                            </Button.Background>-->
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Label x:Name="CustomerNameDetailsGrid" Content="Cusomer: CustomerName" FontSize="14"></Label>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Label x:Name="StartDateDetailsGrid" Content="Start date: " FontSize="14"></Label>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Label x:Name="ReleaseDateDetailsGrid" Content="Release date: " FontSize="14"></Label>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <Label x:Name="PriceDetailsGrid" Content="Price: " FontSize="14"></Label>
+                                    </Grid>
+                                </Grid>
+                            </Button>
+                        </Grid>
+                    </Grid>
+
+                </Grid>
             </Grid>
         </Grid>
 
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--                                                 Projects grid                                                        -->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <Grid Name="ClientsGrid" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="0" Margin="15,0,15,0">
+                <DataGrid Name="ClientsDataGrid" ColumnWidth="*" HorizontalScrollBarVisibility="Hidden" SelectedCellsChanged="ClientsDataGrid_SelectedCellsChanged"/>
+            </Grid>
+
+        </Grid>
     </Grid>
 </Window>
