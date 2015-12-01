@@ -55,20 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\ClientsUserControl.xaml.cs">
+    <Compile Include="View\UserControls\ClientsUserControl.xaml.cs">
       <DependentUpon>ClientsUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MenuBarUserControl.xaml.cs">
+    <Compile Include="View\UserControls\MenuBarUserControl.xaml.cs">
       <DependentUpon>MenuBarUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProjectsUserControl.xaml.cs">
+    <Compile Include="View\UserControls\ProjectsUserControl.xaml.cs">
       <DependentUpon>ProjectsUserControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\ClientsUserControl.xaml">
+    <Page Include="View\UserControls\ClientsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MenuBarUserControl.xaml">
+    <Page Include="View\UserControls\MenuBarUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -84,7 +84,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\ProjectsUserControl.xaml">
+    <Page Include="View\UserControls\ProjectsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

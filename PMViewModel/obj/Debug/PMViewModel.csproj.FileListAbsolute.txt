@@ -4,3 +4,4 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\PMViewModel\bin\Debug\PMDataLayer
 C:\Users\ivanv\Documents\GitHub\ProjectManager\PMViewModel\bin\Debug\PMDataLayer.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\PMViewModel\obj\Debug\PMViewModel.dll
 C:\Users\ivanv\Documents\GitHub\ProjectManager\PMViewModel\obj\Debug\PMViewModel.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\PMViewModel\obj\Debug\PMViewModel.csprojResolveAssemblyReference.cache

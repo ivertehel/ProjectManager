@@ -40,10 +40,10 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Label x:Name="ProjectNameDetailsGrid" Content="Unknown Name" TextBlock.FontSize="20" HorizontalAlignment="Left" Margin="15,0,0,0"/>
+                    <Label x:Name="ProjectNameDetailsGrid" Content="{Binding Path=Name}" TextBlock.FontSize="20" HorizontalAlignment="Left" Margin="15,0,0,0"/>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Label x:Name="ProjectStatusDetailsGrid" Content="Unknown Status" TextBlock.FontSize="18" FontWeight="Bold"  HorizontalAlignment="Right" Margin="0,0,15,0"/>
+                    <Label x:Name="ProjectStatusDetailsGrid" Content="{Binding Path=ProjectStatus}" TextBlock.FontSize="18" FontWeight="Bold"  HorizontalAlignment="Right" Margin="0,0,15,0"/>
                 </Grid>
             </Grid>
 
@@ -61,17 +61,11 @@
                 </Grid>
 
                 <Grid Grid.Row="1">
-                    <RichTextBox x:Name="ProjectOtherInfoDetailsGrid" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16">
-                        <RichTextBox.Background>
+                    <TextBox x:Name="ProjectOtherInfoDetailsGrid" IsReadOnly="True" Margin="18,0,18,0" Text="{Binding Path=Description, Mode=OneWay}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16">
+                        <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0.2"/>
-                        </RichTextBox.Background>
-                        <FlowDocument>
-                            <Paragraph>
-                                Unknown
-                            </Paragraph>
-                        </FlowDocument>
-
-                    </RichTextBox>
+                        </TextBox.Background>
+                    </TextBox>
                 </Grid>
                 <!--           last row                     -->
                 <Grid Grid.Row="2">
@@ -98,7 +92,7 @@
                                     <Label Content="Skills:" Margin="15,0,0,0" FontSize="14"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox x:Name="SkillsTextBoxDetailsGrid" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                    <TextBox x:Name="SkillsTextBoxDetailsGrid" Text="{Binding Path=Skills, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
                                         <TextBox.BorderBrush>
                                             <DrawingBrush Opacity="0"></DrawingBrush>
                                         </TextBox.BorderBrush>
@@ -118,7 +112,7 @@
                                     <Label Content="Teams:" Margin="15,0,0,0" FontSize="14"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox x:Name="TeamsTextBoxDetailsGrid" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                    <TextBox x:Name="TeamsTextBoxDetailsGrid" Text="{Binding Path=Teams, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
                                         <TextBox.BorderBrush>
                                             <DrawingBrush Opacity="0"></DrawingBrush>
                                         </TextBox.BorderBrush>
@@ -137,7 +131,7 @@
                                     <Label Content="Employees:" Margin="15,0,0,0" FontSize="14"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox x:Name="EmployeesTextBoxDetailsGrid" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                    <TextBox x:Name="EmployeesTextBoxDetailsGrid" Text="{Binding Path=Employees, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
                                         <TextBox.BorderBrush>
                                             <DrawingBrush Opacity="0"></DrawingBrush>
                                         </TextBox.BorderBrush>
@@ -173,7 +167,7 @@
                     <!-- Third -->
                     <Grid Grid.Column="2">
                         <!--Style="{StaticResource ProfileButtonStyle}"-->
-                        <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Top">
+                        <Button VerticalAlignment="Stretch" Margin="0,0,18,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Top">
                             <!--<Button.Background>
                                 <SolidColorBrush Color="White" Opacity="0.1"/>
                             </Button.Background>-->
@@ -185,16 +179,16 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0">
-                                    <Label x:Name="CustomerNameDetailsGrid" Content="Cusomer: CustomerName" FontSize="14"></Label>
+                                    <Label x:Name="CustomerNameDetailsGrid" Content="{Binding Path=CustomerName}" FontSize="14"></Label>
                                 </Grid>
                                 <Grid Grid.Row="1">
-                                    <Label x:Name="StartDateDetailsGrid" Content="Start date: " FontSize="14"></Label>
+                                    <Label x:Name="StartDateDetailsGrid" Content="{Binding Path=StartDate}" FontSize="14"></Label>
                                 </Grid>
                                 <Grid Grid.Row="2">
-                                    <Label x:Name="ReleaseDateDetailsGrid" Content="Release date: " FontSize="14"></Label>
+                                    <Label x:Name="ReleaseDateDetailsGrid" Content="{Binding Path=ReleaseDate}" FontSize="14"></Label>
                                 </Grid>
                                 <Grid Grid.Row="3">
-                                    <Label x:Name="PriceDetailsGrid" Content="Price: " FontSize="14"></Label>
+                                    <Label x:Name="PriceDetailsGrid" Content="{Binding Path=Price}" FontSize="14"></Label>
                                 </Grid>
                             </Grid>
                         </Button>

@@ -22,6 +22,7 @@ namespace PMViewModel
             {
                 _ordersCollection.Add(item);
             }
+            SelectedOrder = OrdersCollection[1];
         }
 
         public ProjectsUserControlVM()
@@ -31,14 +32,178 @@ namespace PMViewModel
 
         public Order SelectedOrder { get; set; }
 
+        /// <summary>
+        /// Skills of selected order
+        /// </summary>
         public string Skills
         {
             get
             {
-                
+                if (SelectedOrder == null)
+                    return string.Empty;
+
+                string skills = string.Empty;
+                List<Skill> s = new List<Skill>();
+                foreach (var item in SelectedOrder.Projects)
+                {
+                    IEnumerable<Skill> inProj = from items in item.Skills where !s.Exists(x => x.Id == items.Id) select items;
+                    s.AddRange(inProj);
+                }
+                for (int i = 0; i < s.Count; i++)
+                {
+                    skills += (s[i].Name + ((i < s.Count - 1) ? ", " : " "));
+                }
+                return skills;
             }
         }
 
+        /// <summary>
+        /// Teams of selected order
+        /// </summary>
+        public string Teams
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return string.Empty;
+
+                string teams = string.Empty;
+                List<Team> t = new List<Team>();
+                foreach (var item in SelectedOrder.Projects)
+                {
+                    IEnumerable<Team> inProj = from items in item.Teams where !t.Exists(x => x.Id == items.Id) select items;
+                    t.AddRange(inProj);
+                }
+                foreach (var item in t)
+                {
+                    teams += (item.Name + " ");
+                }
+                return teams;
+            }
+        }
+
+        /// <summary>
+        /// Employees of selected order
+        /// </summary>
+        public string Employees
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return string.Empty;
+
+                string employees = "";
+                List<User> e = new List<User>();
+                foreach (var item in SelectedOrder.Projects)
+                {
+                    IEnumerable<User> inProj = from items in item.Users where !e.Exists(x => x.Id == items.Id) select items.User;
+                    e.AddRange(inProj);
+                }
+                foreach (var item in e)
+                {
+                    employees += (item.Name + " " + item.Surname + " ");
+                }
+                return employees;
+            }
+        }
+
+        /// <summary>
+        /// Customer name of selected order
+        /// </summary>
+        public string CustomerName
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return string.Empty;
+                return "Customer: " + SelectedOrder.Client.User.Name;
+            }
+        }
+
+        /// <summary>
+        /// Status of selected order
+        /// </summary>
+        public Order.Statuses ProjectStatus
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return Order.Statuses.Open;
+
+                return SelectedOrder.Status;
+            }
+
+        }
+
+        /// <summary>
+        /// Release date of selected order
+        /// </summary>
+        public string ReleaseDate
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return string.Empty;
+
+                return "Release date: " + SelectedOrder.ReleaseDate.ToShortDateString();
+            }
+        }
+
+        /// <summary>
+        /// Start date of selected order
+        /// </summary>
+        public string StartDate
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return string.Empty;
+
+                return "Start date: " + SelectedOrder.StartDate.ToShortDateString();
+            }
+        }
+
+        /// <summary>
+        /// Price of selected order
+        /// </summary>
+        public string Price
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return string.Empty;
+
+                return "Price: " + SelectedOrder.Price + " USD";
+            }
+        }
+
+        /// <summary>
+        /// Description of selected order
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return string.Empty;
+
+                return SelectedOrder.Description;
+            }
+        }
+
+        /// <summary>
+        /// Description of selected order
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return string.Empty;
+
+                return SelectedOrder.Name;
+            }
+        }
 
         public void GenerateData()
         {

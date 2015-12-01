@@ -53,7 +53,7 @@
             <StackPanel Name="MenuBarStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
         </Grid>
         <Grid Name="ProjectsGrid" Grid.Row="2">
-            <StackPanel Name="ProjectsStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
+            <StackPanel Name="BodyStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
         </Grid>
         <Grid Name="ClientsGrid" Grid.Row="2">
             <StackPanel Name="ClientstackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
