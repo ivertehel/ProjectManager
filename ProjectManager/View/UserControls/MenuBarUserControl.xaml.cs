@@ -24,5 +24,41 @@ namespace PMView.View
         {
             InitializeComponent();
         }
+
+        private void loadUserControl(UIElement userControl)
+        {
+            Skeleton.Body.Children.Clear();
+            Skeleton.Body.Children.Add(userControl);
+        }
+
+        private void ProjectsButton_Click(object sender, RoutedEventArgs e)
+        {
+            loadUserControl(new ProjectsUserControl());
+        }
+
+        private void ClientsButton_Click(object sender, RoutedEventArgs e)
+        {
+            loadUserControl(new ClientsUserControl());
+        }
+
+        private void EmployeesButton_Click(object sender, RoutedEventArgs e)
+        {
+            loadUserControl(new EmployeesUserControl());
+        }
+
+        private void TeamsButton_Click(object sender, RoutedEventArgs e)
+        {
+            loadUserControl(new TeamsUserControl());
+        }
+
+        private void ReportsButton_Click(object sender, RoutedEventArgs e)
+        {
+            loadUserControl(new ReportsUserControl());
+        }
+
+        private void MessagesButton_Click(object sender, RoutedEventArgs e)
+        {
+            loadUserControl(new MessagesUserControl());
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace PMView {
     /// <summary>
     /// MainWindow
     /// </summary>
-    public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
+    public partial class Skeleton : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
         #line 53 "..\..\..\View\MainWindow.xaml"

@@ -55,16 +55,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\UserControls\ClientsUserControl.xaml.cs">
+    <Compile Include="View\UserControls\Bodys\ClientsUserControl.xaml.cs">
       <DependentUpon>ClientsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Bodys\EmployeesUserControl.xaml.cs">
+      <DependentUpon>EmployeesUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\MenuBarUserControl.xaml.cs">
       <DependentUpon>MenuBarUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\ProjectsUserControl.xaml.cs">
+    <Compile Include="View\UserControls\Bodys\MessagesUserControl.xaml.cs">
+      <DependentUpon>MessagesUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Bodys\ProjectsUserControl.xaml.cs">
       <DependentUpon>ProjectsUserControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\UserControls\ClientsUserControl.xaml">
+    <Compile Include="View\UserControls\Bodys\ReportsUserControl.xaml.cs">
+      <DependentUpon>ReportsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Bodys\TeamsUserControl.xaml.cs">
+      <DependentUpon>TeamsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\UserControls\Bodys\ClientsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\Bodys\EmployeesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -72,7 +88,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="View\Skeleton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -80,11 +96,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="View\Skeleton.xaml.cs">
+      <DependentUpon>Skeleton.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\UserControls\ProjectsUserControl.xaml">
+    <Page Include="View\UserControls\Bodys\MessagesUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\Bodys\ProjectsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\Bodys\ReportsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\Bodys\TeamsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

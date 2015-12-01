@@ -15,7 +15,13 @@ namespace PMViewModel
 
         public ProjectsUserControlVM()
         {
-            GenerateData();
+            if (User.Items.Count == 0)
+                GenerateData();
+
+            foreach (var item in Order.Items)
+            {
+                OrdersCollection.Add(item);
+            }
             SelectedOrder = OrdersCollection[0];
         }
 
@@ -520,11 +526,6 @@ namespace PMViewModel
             };
 
             Project_Skill.Items.AddRange(new[] { ps1, ps2, ps3, ps4, ps5 });
-
-            foreach (var item in Order.Items)
-            {
-                OrdersCollection.Add(item);
-            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Window x:Class="PMView.MainWindow"
+﻿<Window x:Class="PMView.Skeleton"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -52,11 +52,11 @@
         <Grid Grid.Row="1" VerticalAlignment="Top" Grid.Column="0" Margin="15, 0,15,0">
             <StackPanel Name="MenuBarStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
         </Grid>
-        <Grid Name="ProjectsGrid" Grid.Row="2">
+        <Grid Name="ProjectsGrid" Grid.Row="2" HorizontalAlignment="Stretch">
             <StackPanel Name="BodyStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
         </Grid>
-        <Grid Name="ClientsGrid" Grid.Row="2">
-            <StackPanel Name="ClientstackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
+        <Grid Name="ClientsGrid" Grid.Row="2" VerticalAlignment="Stretch">
+            <StackPanel Name="ClientstackPanel" Visibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
         </Grid>
     </Grid>
 </Window>

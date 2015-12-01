@@ -17,32 +17,32 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="ProjectsButton" Grid.Column="0" Content="Projects" TextBlock.FontSize="15">
+            <Button x:Name="ProjectsButton" Grid.Column="0" Content="Projects" TextBlock.FontSize="15" Click="ProjectsButton_Click">
                 <Button.Background>
                     <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="ClientsButton" Grid.Column="1" Content="Clients" TextBlock.FontSize="15">
+            <Button x:Name="ClientsButton" Grid.Column="1" Content="Clients" TextBlock.FontSize="15" Click="ClientsButton_Click">
                 <Button.Background>
                     <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="EmployeesButton" Grid.Column="2" Content="Employees" TextBlock.FontSize="15">
+            <Button x:Name="EmployeesButton" Grid.Column="2" Content="Employees" TextBlock.FontSize="15" Click="EmployeesButton_Click">
                 <Button.Background>
                     <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="TeamsButton" Grid.Column="3" Content="Teams" TextBlock.FontSize="15">
+            <Button x:Name="TeamsButton" Grid.Column="3" Content="Teams" TextBlock.FontSize="15" Click="TeamsButton_Click">
                 <Button.Background>
                     <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="ReportsButton" Grid.Column="4" Content="Reports" TextBlock.FontSize="15">
+            <Button x:Name="ReportsButton" Grid.Column="4" Content="Reports" TextBlock.FontSize="15" Click="ReportsButton_Click">
                 <Button.Background>
                     <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="MessagesButton" Grid.Column="5" Content="Messages" TextBlock.FontSize="15">
+            <Button x:Name="MessagesButton" Grid.Column="5" Content="Messages" TextBlock.FontSize="15" Click="MessagesButton_Click">
                 <Button.Background>
                     <SolidColorBrush Color="SkyBlue" Opacity="0.75"/>
                 </Button.Background>
