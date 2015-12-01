@@ -2,32 +2,58 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PMViewModel
 {
-    public class ProjectsUserControlVM
+    public class ProjectsUserControlVM : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         private ObservableCollection<Order> _ordersCollection = new ObservableCollection<Order>();
 
-        public ObservableCollection<Order> OrdersCollection {
+        public ObservableCollection<Order> OrdersCollection
+        {
             get { return _ordersCollection; }
         }
 
-        public void LoadData()
+        public void LoadData(int index)
         {
-            foreach (var item in Order.Items)
-            {
-                _ordersCollection.Add(item);
-            }
-            SelectedOrder = OrdersCollection[1];
+            if (!(index >= 0 && index < OrdersCollection.Count))
+                return;
+
+            SelectedOrder = OrdersCollection[index];
+            LoadDetails();
         }
 
         public ProjectsUserControlVM()
         {
             GenerateData();
+            SelectedOrder = OrdersCollection[0];
+
+        }
+
+        public void LoadDetails()
+        {
+            OnPropertyChanged("Skills");
+            OnPropertyChanged("Teams");
+            OnPropertyChanged("Employees");
+            OnPropertyChanged("CustomerName");
+            OnPropertyChanged("ProjectStatus");
+            OnPropertyChanged("ReleaseDate");
+            OnPropertyChanged("StartDate");
+            OnPropertyChanged("Price");
+            OnPropertyChanged("Description");
+            OnPropertyChanged("Name");
         }
 
         public Order SelectedOrder { get; set; }
@@ -492,6 +518,11 @@ namespace PMViewModel
             };
 
             Project_Skill.Items.AddRange(new[] { ps1, ps2, ps3, ps4, ps5 });
+
+            foreach (var item in Order.Items)
+            {
+                OrdersCollection.Add(item);
+            }
         }
     }
 }

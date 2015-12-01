@@ -28,7 +28,11 @@ namespace PMView.View
             InitializeComponent();
             _projectsUserControlVM = new ProjectsUserControlVM();
             DataContext = _projectsUserControlVM;
-            _projectsUserControlVM.LoadData();
+        }
+
+        private void ProjectsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            _projectsUserControlVM.LoadData(((DataGrid)(sender)).SelectedIndex);
         }
     }
 }

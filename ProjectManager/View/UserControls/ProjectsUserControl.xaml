@@ -15,7 +15,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="0" Margin="15,0,15,0">
-            <DataGrid Name="ProjectsDataGrid" ColumnWidth="*" HorizontalScrollBarVisibility="Hidden" ItemsSource="{Binding Path=OrdersCollection}"/>
+            <DataGrid Name="ProjectsDataGrid" ColumnWidth="*" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" ItemsSource="{Binding Path=OrdersCollection}"/>
         </Grid>
 
         <!-- *********************************************************    -->
