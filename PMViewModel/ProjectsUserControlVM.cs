@@ -1,60 +1,25 @@
-﻿using PMDataLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMDataLayer;
 
 namespace PMViewModel
 {
     public class ProjectsUserControlVM : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         private ObservableCollection<Order> _ordersCollection = new ObservableCollection<Order>();
-
-        public ObservableCollection<Order> OrdersCollection
-        {
-            get { return _ordersCollection; }
-        }
-
-        public void LoadData(int index)
-        {
-            if (!(index >= 0 && index < OrdersCollection.Count))
-                return;
-
-            SelectedOrder = OrdersCollection[index];
-            LoadDetails();
-        }
 
         public ProjectsUserControlVM()
         {
             GenerateData();
             SelectedOrder = OrdersCollection[0];
-
         }
 
-        public void LoadDetails()
-        {
-            OnPropertyChanged("Skills");
-            OnPropertyChanged("Teams");
-            OnPropertyChanged("Employees");
-            OnPropertyChanged("CustomerName");
-            OnPropertyChanged("ProjectStatus");
-            OnPropertyChanged("ReleaseDate");
-            OnPropertyChanged("StartDate");
-            OnPropertyChanged("Price");
-            OnPropertyChanged("Description");
-            OnPropertyChanged("Name");
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public Order SelectedOrder { get; set; }
 
@@ -75,10 +40,12 @@ namespace PMViewModel
                     IEnumerable<Skill> inProj = from items in item.Skills where !s.Exists(x => x.Id == items.Id) select items;
                     s.AddRange(inProj);
                 }
+
                 for (int i = 0; i < s.Count; i++)
                 {
-                    skills += (s[i].Name + ((i < s.Count - 1) ? ", " : " "));
+                    skills += s[i].Name + (i < s.Count - 1 ? ", " : " ");
                 }
+
                 return skills;
             }
         }
@@ -100,10 +67,12 @@ namespace PMViewModel
                     IEnumerable<Team> inProj = from items in item.Teams where !t.Exists(x => x.Id == items.Id) select items;
                     t.AddRange(inProj);
                 }
+
                 foreach (var item in t)
                 {
-                    teams += (item.Name + " ");
+                    teams += item.Name + " ";
                 }
+
                 return teams;
             }
         }
@@ -118,17 +87,19 @@ namespace PMViewModel
                 if (SelectedOrder == null)
                     return string.Empty;
 
-                string employees = "";
+                string employees = string.Empty;
                 List<User> e = new List<User>();
                 foreach (var item in SelectedOrder.Projects)
                 {
                     IEnumerable<User> inProj = from items in item.Users where !e.Exists(x => x.Id == items.Id) select items.User;
                     e.AddRange(inProj);
                 }
+
                 foreach (var item in e)
                 {
-                    employees += (item.Name + " " + item.Surname + " ");
+                    employees += item.Name + " " + item.Surname + " ";
                 }
+
                 return employees;
             }
         }
@@ -158,7 +129,6 @@ namespace PMViewModel
 
                 return SelectedOrder.Status;
             }
-
         }
 
         /// <summary>
@@ -231,6 +201,39 @@ namespace PMViewModel
             }
         }
 
+        public ObservableCollection<Order> OrdersCollection
+        {
+            get { return _ordersCollection; }
+        }
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void LoadData(int index)
+        {
+            if (!(index >= 0 && index < OrdersCollection.Count))
+                return;
+            SelectedOrder = OrdersCollection[index];
+            LoadDetails();
+        }
+
+        public void LoadDetails()
+        {
+            OnPropertyChanged("Skills");
+            OnPropertyChanged("Teams");
+            OnPropertyChanged("Employees");
+            OnPropertyChanged("CustomerName");
+            OnPropertyChanged("ProjectStatus");
+            OnPropertyChanged("ReleaseDate");
+            OnPropertyChanged("StartDate");
+            OnPropertyChanged("Price");
+            OnPropertyChanged("Description");
+            OnPropertyChanged("Name");
+        }
+
         public void GenerateData()
         {
             User e1 = new User()
@@ -287,7 +290,6 @@ namespace PMViewModel
             User.Items.Add(e1);
             User.Items.Add(e2);
             User.Items.Add(e3);
-
 
             User u1 = new User()
             {

@@ -15,13 +15,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="0" Margin="15,0,15,0">
-            <DataGrid Name="ProjectsDataGrid" ColumnWidth="*" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" ItemsSource="{Binding Path=OrdersCollection}"/>
+            <DataGrid Name="ProjectsDataGrid" ColumnWidth="*" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden"/>
         </Grid>
-
-        <!-- *********************************************************    -->
-        <!--                        DETAILS                               -->
-        <!-- *********************************************************    -->
-
 
         <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" x:Name="ProjectDetailsGrid" Margin="15,0,15,15">
             <Grid.Background>
@@ -40,10 +35,10 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Label x:Name="ProjectNameDetailsGrid" Content="{Binding Path=Name}" TextBlock.FontSize="20" HorizontalAlignment="Left" Margin="15,0,0,0"/>
+                    <Label Content="{Binding Path=Name}" TextBlock.FontSize="20" HorizontalAlignment="Left" Margin="15,0,0,0"/>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Label x:Name="ProjectStatusDetailsGrid" Content="{Binding Path=ProjectStatus}" TextBlock.FontSize="18" FontWeight="Bold"  HorizontalAlignment="Right" Margin="0,0,15,0"/>
+                    <Label Content="{Binding Path=ProjectStatus}" TextBlock.FontSize="18" FontWeight="Bold"  HorizontalAlignment="Right" Margin="0,0,15,0"/>
                 </Grid>
             </Grid>
 
@@ -61,7 +56,7 @@
                 </Grid>
 
                 <Grid Grid.Row="1">
-                    <TextBox x:Name="ProjectOtherInfoDetailsGrid" IsReadOnly="True" Margin="18,0,18,0" Text="{Binding Path=Description, Mode=OneWay}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16">
+                    <TextBox IsReadOnly="True" Margin="18,0,18,0" Text="{Binding Path=Description, Mode=OneWay}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16">
                         <TextBox.Background>
                             <SolidColorBrush Color="White" Opacity="0.2"/>
                         </TextBox.Background>
@@ -92,7 +87,7 @@
                                     <Label Content="Skills:" Margin="15,0,0,0" FontSize="14"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox x:Name="SkillsTextBoxDetailsGrid" Text="{Binding Path=Skills, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                    <TextBox Text="{Binding Path=Skills, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
                                         <TextBox.BorderBrush>
                                             <DrawingBrush Opacity="0"></DrawingBrush>
                                         </TextBox.BorderBrush>
@@ -112,7 +107,7 @@
                                     <Label Content="Teams:" Margin="15,0,0,0" FontSize="14"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox x:Name="TeamsTextBoxDetailsGrid" Text="{Binding Path=Teams, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                    <TextBox Text="{Binding Path=Teams, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
                                         <TextBox.BorderBrush>
                                             <DrawingBrush Opacity="0"></DrawingBrush>
                                         </TextBox.BorderBrush>
@@ -131,7 +126,7 @@
                                     <Label Content="Employees:" Margin="15,0,0,0" FontSize="14"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox x:Name="EmployeesTextBoxDetailsGrid" Text="{Binding Path=Employees, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                    <TextBox Text="{Binding Path=Employees, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
                                         <TextBox.BorderBrush>
                                             <DrawingBrush Opacity="0"></DrawingBrush>
                                         </TextBox.BorderBrush>
@@ -143,7 +138,7 @@
 
                             </Grid>
                             <Grid Grid.Row="3" HorizontalAlignment="Left">
-                                <Button x:Name="ShowProjectDetailsGrid" Content="Technical Task" Margin="20,0,0,0" MinWidth="200"/>
+                                <Button Content="Technical Task" Margin="20,0,0,0" MinWidth="200"/>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -157,7 +152,7 @@
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <Image Name="ProfileImageProjectDetailsGrid" Source="/Assets/MaleAvatar.jpg" Width="100" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="20,5,20,20"/>
+                                <Image Name="ProfileImage" Source="/Assets/MaleAvatar.jpg" Width="100" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="20,5,20,20"/>
                             </Grid>
                             <Grid Grid.Row="1"/>
                             <Grid Grid.Row="2"/>
@@ -166,11 +161,7 @@
                     </Grid>
                     <!-- Third -->
                     <Grid Grid.Column="2">
-                        <!--Style="{StaticResource ProfileButtonStyle}"-->
                         <Button VerticalAlignment="Stretch" Margin="0,0,18,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Top">
-                            <!--<Button.Background>
-                                <SolidColorBrush Color="White" Opacity="0.1"/>
-                            </Button.Background>-->
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"/>
@@ -179,16 +170,16 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0">
-                                    <Label x:Name="CustomerNameDetailsGrid" Content="{Binding Path=CustomerName}" FontSize="14"></Label>
+                                    <Label Content="{Binding Path=CustomerName}" FontSize="14"></Label>
                                 </Grid>
                                 <Grid Grid.Row="1">
-                                    <Label x:Name="StartDateDetailsGrid" Content="{Binding Path=StartDate}" FontSize="14"></Label>
+                                    <Label Content="{Binding Path=StartDate}" FontSize="14"></Label>
                                 </Grid>
                                 <Grid Grid.Row="2">
-                                    <Label x:Name="ReleaseDateDetailsGrid" Content="{Binding Path=ReleaseDate}" FontSize="14"></Label>
+                                    <Label Content="{Binding Path=ReleaseDate}" FontSize="14"></Label>
                                 </Grid>
                                 <Grid Grid.Row="3">
-                                    <Label x:Name="PriceDetailsGrid" Content="{Binding Path=Price}" FontSize="14"></Label>
+                                    <Label Content="{Binding Path=Price}" FontSize="14"></Label>
                                 </Grid>
                             </Grid>
                         </Button>
