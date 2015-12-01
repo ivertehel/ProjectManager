@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectManager.Properties
+namespace PMView.Properties
 {
 
 

@@ -55,7 +55,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="View\ClientsUserControl.xaml.cs">
+      <DependentUpon>ClientsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuBarUserControl.xaml.cs">
+      <DependentUpon>MenuBarUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectsUserControl.xaml.cs">
+      <DependentUpon>ProjectsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\ClientsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MenuBarUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,10 +80,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ProjectsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -96,16 +117,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PMDataLayer\PMDataLayer.csproj">
-      <Project>{e07a5241-6bbd-46fc-a8fe-000b2bd7ab14}</Project>
-      <Name>PMDataLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\MainBackground.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\MaleAvatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PMDataLayer\PMDataLayer.csproj">
+      <Project>{e07a5241-6bbd-46fc-a8fe-000b2bd7ab14}</Project>
+      <Name>PMDataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PMViewModel\PMViewModel.csproj">
+      <Project>{79176816-445e-406b-886b-7ea5fb7b4ee4}</Project>
+      <Name>PMViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

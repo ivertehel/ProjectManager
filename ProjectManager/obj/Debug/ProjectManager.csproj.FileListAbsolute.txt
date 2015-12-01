@@ -2,11 +2,8 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectM
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.exe
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.csprojResolveAssemblyReference.cache
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\MainWindow.g.cs
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\App.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager_MarkupCompile.cache
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager_MarkupCompile.lref
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\MainWindow.baml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.g.resources
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.Properties.Resources.resources
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.csproj.GenerateResource.Cache
@@ -14,3 +11,8 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectM
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMDataLayer.dll
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMDataLayer.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\MainWindow.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\MainWindow.baml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\App.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\ProjectsUserControl.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\ProjectsUserControl.baml
