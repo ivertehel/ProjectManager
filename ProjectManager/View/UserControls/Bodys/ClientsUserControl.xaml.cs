@@ -1,5 +1,4 @@
-﻿using PMViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMViewModel;
 
 namespace PMView.View
 {
@@ -22,11 +22,11 @@ namespace PMView.View
     public partial class ClientsUserControl : UserControl
     {
         private ClientsUserControlVM _projectsUserControlVM;
+
         public ClientsUserControl()
         {
             InitializeComponent();
-            //ClientsDataGrid.ItemsSource = from items in _projectsUserControlVM.OrdersCollection select new { Name = items.Name, Description = items.Description, StartDate = items.StartDate.ToShortDateString(), ReleaseDate = items.ReleaseDate.ToShortDateString(), Price = items.Price, Status = items.Status };
-
+            ////ClientsDataGrid.ItemsSource = from items in _projectsUserControlVM.OrdersCollection select new { Name = items.Name, Description = items.Description, StartDate = items.StartDate.ToShortDateString(), ReleaseDate = items.ReleaseDate.ToShortDateString(), Price = items.Price, Status = items.Status };
         }
     }
 }
