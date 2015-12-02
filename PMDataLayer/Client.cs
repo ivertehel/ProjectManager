@@ -17,5 +17,10 @@ namespace PMDataLayer
             get { return User.Items.Where(items => items.Id == _userId).FirstOrDefault(); }
             set { _userId = value.Id; }
         }
+
+        public IEnumerable<Order> Orders
+        {
+            get { return from items in Order.Items where items.Client.Id == _userId select items; }
+        }
     }
 }

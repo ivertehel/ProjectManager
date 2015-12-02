@@ -28,7 +28,7 @@ namespace PMView.View
             InitializeComponent();
             _projectsUserControlVM = new ProjectsUserControlVM();
             DataContext = _projectsUserControlVM;
-            ProjectsDataGrid.ItemsSource = from items in _projectsUserControlVM.OrdersCollection select new { Name = items.Name, Description = items.Description, StartDate = items.StartDate.ToShortDateString(), ReleaseDate = items.ReleaseDate.ToShortDateString(), Price = items.Price, Status = items.Status };
+            ProjectsDataGrid.ItemsSource = _projectsUserControlVM.ProjectModels;
         }
 
         private void ProjectsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)

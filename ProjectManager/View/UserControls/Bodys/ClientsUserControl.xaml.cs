@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace PMView.View
     /// </summary>
     public partial class ClientsUserControl : UserControl
     {
+        private ClientsUserControlVM _projectsUserControlVM;
         public ClientsUserControl()
         {
             InitializeComponent();
+            //ClientsDataGrid.ItemsSource = from items in _projectsUserControlVM.OrdersCollection select new { Name = items.Name, Description = items.Description, StartDate = items.StartDate.ToShortDateString(), ReleaseDate = items.ReleaseDate.ToShortDateString(), Price = items.Price, Status = items.Status };
+
         }
     }
 }

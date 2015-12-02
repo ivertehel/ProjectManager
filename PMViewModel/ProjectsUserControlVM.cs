@@ -213,6 +213,19 @@ namespace PMViewModel
             get { return _ordersCollection; }
         }
 
+        public List<ProjectModel> ProjectModels
+        {
+            get
+            {
+                var projectModels = new List<ProjectModel>();
+                foreach (var item in OrdersCollection)
+                {
+                    projectModels.Add(new ProjectModel() { Name = item.Name, Price = item.Price.ToString(), ReleaseDate = item.ReleaseDate.ToShortDateString(), StartDate = item.StartDate.ToShortDateString(), Status = item.Status } );
+                }
+                return projectModels;
+            }
+        }
+
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)

@@ -151,10 +151,6 @@
     <Resource Include="Assets\MaleAvatar.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PMDataLayer\PMDataLayer.csproj">
-      <Project>{e07a5241-6bbd-46fc-a8fe-000b2bd7ab14}</Project>
-      <Name>PMDataLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PMViewModel\PMViewModel.csproj">
       <Project>{79176816-445e-406b-886b-7ea5fb7b4ee4}</Project>
       <Name>PMViewModel</Name>
