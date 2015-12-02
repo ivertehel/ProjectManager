@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMView.View"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800" HorizontalAlignment="Stretch">
-    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
@@ -14,14 +14,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Column="0" Margin="15,0,15,0">
+        <Grid Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Column="0">
             <DataGrid Grid.Row="0" Name="ProjectsDataGrid" ColumnWidth="*" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible"/>
         </Grid>
 
-        <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" x:Name="ProjectDetailsGrid" Margin="15,0,15,15">
-            <Grid.Background>
-                <SolidColorBrush Color="SkyBlue" Opacity="0.8"/>
-            </Grid.Background>
+        <Grid Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Column="0" x:Name="ProjectDetailsGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
@@ -29,7 +26,7 @@
 
 
 
-            <Grid Grid.Row="0" HorizontalAlignment="Stretch">
+            <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
@@ -44,11 +41,11 @@
 
 
 
-            <Grid Grid.Row="1" HorizontalAlignment="Stretch">
+            <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0" HorizontalAlignment="Stretch">
@@ -63,20 +60,20 @@
                     </TextBox>
                 </Grid>
                 <!--           last row                     -->
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="2" VerticalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <!-- FIRST -->
-                    <Grid Grid.Column="0">
-                        <Grid>
+                    <Grid Grid.Column="0" VerticalAlignment="Stretch">
+                        <Grid VerticalAlignment="Stretch">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
                                 <Grid.ColumnDefinitions>
@@ -137,14 +134,18 @@
                                 </Grid>
 
                             </Grid>
-                            <Grid Grid.Row="3" HorizontalAlignment="Left">
-                                <Button Content="Technical Task" Margin="20,0,0,0" MinWidth="200"/>
+                            <Grid Grid.Row="3" HorizontalAlignment="Stretch">
+                                <Button Content="Technical Task" Margin="20,0,0,0" HorizontalAlignment="Stretch">
+                                    <Button.Background>
+                                        <SolidColorBrush Color="SkyBlue"></SolidColorBrush>
+                                    </Button.Background>
+                                </Button>
                             </Grid>
                         </Grid>
                     </Grid>
                     <!-- Second -->
                     <Grid Grid.Column="1">
-                        <Grid Grid.Column="2" VerticalAlignment="Top">
+                        <Grid Grid.Column="2" VerticalAlignment="Stretch">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="2*"/>
@@ -161,8 +162,11 @@
                     </Grid>
                     <!-- Third -->
                     <Grid Grid.Column="2">
-                        <Button VerticalAlignment="Stretch" Margin="0,0,18,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" VerticalContentAlignment="Top">
+                        <Border Name="TaskButton" VerticalAlignment="Stretch" Margin="0,5,18,0" Opacity="0.8" HorizontalAlignment="Stretch" MouseDown="TaskButton_Click" MouseEnter="TaskButton_MouseEnter" MouseLeave="TaskButton_MouseLeave">
                             <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
+                                </Grid.Background>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
@@ -170,19 +174,19 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0">
-                                    <Label Content="{Binding Path=CustomerName}" FontSize="14"></Label>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Path=CustomerName, Mode=OneWay}" FontSize="14" Background="Transparent"></TextBlock>
                                 </Grid>
                                 <Grid Grid.Row="1">
-                                    <Label Content="{Binding Path=StartDate}" FontSize="14"></Label>
+                                    <TextBlock TextWrapping="Wrap"  Text="{Binding Path=StartDate, Mode=OneWay}" FontSize="14" Background="Transparent"></TextBlock>
                                 </Grid>
                                 <Grid Grid.Row="2">
-                                    <Label Content="{Binding Path=ReleaseDate}" FontSize="14"></Label>
+                                    <TextBlock TextWrapping="Wrap"  Text="{Binding Path=ReleaseDate, Mode=OneWay}" FontSize="14"  Background="Transparent"></TextBlock>
                                 </Grid>
                                 <Grid Grid.Row="3">
-                                    <Label Content="{Binding Path=Price}" FontSize="14"></Label>
+                                    <TextBlock TextWrapping="Wrap"  Text="{Binding Path=Price, Mode=OneWay}" FontSize="14" Background="Transparent"></TextBlock>
                                 </Grid>
                             </Grid>
-                        </Button>
+                        </Border>
                     </Grid>
                 </Grid>
 

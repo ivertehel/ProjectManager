@@ -22,6 +22,7 @@ namespace PMViewModel
             {
                 OrdersCollection.Add(item);
             }
+
             SelectedOrder = OrdersCollection[0];
         }
 
@@ -119,7 +120,7 @@ namespace PMViewModel
             {
                 if (SelectedOrder == null)
                     return string.Empty;
-                return "Customer: " + SelectedOrder.Client.User.Name;
+                return "Customer: " + SelectedOrder.Client.User.Name + " " + SelectedOrder.Client.User.Surname;
             }
         }
 

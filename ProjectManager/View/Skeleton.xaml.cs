@@ -19,16 +19,13 @@ namespace PMView
 {
     public partial class Skeleton : Window
     { 
-        public static StackPanel Body { get; set; }
-
         public Skeleton()
         {
             InitializeComponent();
-            MenuBarUserControl mainBarUserControl = new MenuBarUserControl();
-            MenuBarStackPanel.Children.Add(mainBarUserControl);
-            ProjectsUserControl projectsUserControl = new ProjectsUserControl();
-            BodyStackPanel.Children.Add(projectsUserControl);
             Body = BodyStackPanel;
+            MenuBarStackPanel.Children.Add(new MenuBarUserControl());
         }
+
+        public static StackPanel Body { get; set; }
     }
 }

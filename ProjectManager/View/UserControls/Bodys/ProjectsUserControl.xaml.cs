@@ -35,5 +35,20 @@ namespace PMView.View
         {
             _projectsUserControlVM.LoadData(((DataGrid)sender).SelectedIndex);
         }
+
+        private void TaskButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Task");
+        }
+
+        private void TaskButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TaskButton.Opacity = 1;
+        }
+
+        private void TaskButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            TaskButton.Opacity = 0.8;
+        }
     }
 }

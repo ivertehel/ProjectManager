@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMView"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" MinHeight="300" MinWidth="470">
+        Title="MainWindow">
     <Window.Resources>
         <Style x:Key="ProfileButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="Transparent"/>
@@ -34,7 +34,7 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid VerticalAlignment="Stretch">
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/MainBackground.png"></ImageBrush>
         </Grid.Background>
@@ -43,16 +43,19 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" VerticalAlignment="Top" Grid.Column="0">
+        <Grid Grid.Row="0" VerticalAlignment="Stretch" Grid.Column="0">
             <Grid.Background>
                 <SolidColorBrush Color="SkyBlue" Opacity="0.4"></SolidColorBrush>
             </Grid.Background>
             <Label Content="Project Manager" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
-        <Grid Grid.Row="1" VerticalAlignment="Top" Grid.Column="0" Margin="15, 0,15,0">
+        <Grid Grid.Row="1" VerticalAlignment="Stretch" Grid.Column="0" Margin="15, 0,15,0">
             <StackPanel Name="MenuBarStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
         </Grid>
-        <Grid Name="ProjectsGrid" Grid.Row="2" HorizontalAlignment="Stretch">
+        <Grid Name="ProjectsGrid" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="15, 0,15,15">
+            <Grid.Background>
+                <SolidColorBrush Color="SkyBlue" Opacity="0.8"/>
+            </Grid.Background>
             <StackPanel Name="BodyStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></StackPanel>
         </Grid>
         <Grid Name="ClientsGrid" Grid.Row="2" VerticalAlignment="Stretch">
