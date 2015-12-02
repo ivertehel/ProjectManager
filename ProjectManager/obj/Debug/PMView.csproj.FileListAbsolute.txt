@@ -12,8 +12,6 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.c
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.exe
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.csprojResolveAssemblyReference.cache
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMViewModel.dll
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMViewModel.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UserControls\MenuBarUserControl.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UserControls\MenuBarUserControl.baml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\Skeleton.g.cs

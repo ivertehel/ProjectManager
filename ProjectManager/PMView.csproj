@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\ClientsUserControlVM.cs" />
+    <Compile Include="ViewModel\ProjectModel.cs" />
+    <Compile Include="ViewModel\ProjectsUserControlVM.cs" />
     <Compile Include="View\UserControls\Bodys\ClientsUserControl.xaml.cs">
       <DependentUpon>ClientsUserControl.xaml</DependentUpon>
     </Compile>
@@ -151,9 +154,9 @@
     <Resource Include="Assets\MaleAvatar.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PMViewModel\PMViewModel.csproj">
-      <Project>{79176816-445e-406b-886b-7ea5fb7b4ee4}</Project>
-      <Name>PMViewModel</Name>
+    <ProjectReference Include="..\PMDataLayer\PMDataLayer.csproj">
+      <Project>{e07a5241-6bbd-46fc-a8fe-000b2bd7ab14}</Project>
+      <Name>PMDataLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMDataLayer;
 
-namespace PMViewModel
+namespace PMView.View
 {
     public class ProjectModel
     {

@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="ClientsUserControlVM.cs" />
     <Compile Include="ProjectsUserControlVM.cs" />
-    <Compile Include="ProjectModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

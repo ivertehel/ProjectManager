@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMView", "ProjectManager\PM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMDataLayer", "PMDataLayer\PMDataLayer.csproj", "{E07A5241-6BBD-46FC-A8FE-000B2BD7AB14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMViewModel", "PMViewModel\PMViewModel.csproj", "{79176816-445E-406B-886B-7EA5FB7B4EE4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{E07A5241-6BBD-46FC-A8FE-000B2BD7AB14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E07A5241-6BBD-46FC-A8FE-000B2BD7AB14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E07A5241-6BBD-46FC-A8FE-000B2BD7AB14}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79176816-445E-406B-886B-7EA5FB7B4EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79176816-445E-406B-886B-7EA5FB7B4EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79176816-445E-406B-886B-7EA5FB7B4EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79176816-445E-406B-886B-7EA5FB7B4EE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
