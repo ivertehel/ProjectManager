@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using PMDataLayer;
 
 namespace PMView.View
@@ -14,6 +13,13 @@ namespace PMView.View
         private ObservableCollection<Order> _ordersCollection = new ObservableCollection<Order>();
 
         private ObservableCollection<Project> _projectsCollection = new ObservableCollection<Project>();
+
+        private ObservableCollection<User> _employeesCollection = new ObservableCollection<User>();
+
+        private ObservableCollection<Team> _teamsCollection = new ObservableCollection<Team>();
+
+        private ObservableCollection<Task> _taskCollection = new ObservableCollection<Task>();
+
 
         public ProjectsUserControlVM()
         {
@@ -25,7 +31,7 @@ namespace PMView.View
                 OrdersCollection.Add(item);
             }
 
-            LoadData(0);
+            LoadData();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -62,14 +68,13 @@ namespace PMView.View
         /// <summary>
         /// Teams of selected order
         /// </summary>
-        public string Teams
+        public List<Team> Teams
         {
             get
             {
                 if (SelectedOrder == null)
-                    return string.Empty;
+                    return new List<Team>();
 
-                string teams = string.Empty;
                 List<Team> t = new List<Team>();
                 foreach (var item in SelectedOrder.Projects)
                 {
@@ -77,41 +82,40 @@ namespace PMView.View
                     t.AddRange(inProj);
                 }
 
-                foreach (var item in t)
-                {
-                    teams += item.Name + " ";
-                }
-
-                return teams;
+                return t;
             }
         }
 
         /// <summary>
         /// Employees of selected order
         /// </summary>
-        public string Employees
+        public List<User> Employees
         {
             get
             {
                 if (SelectedOrder == null)
-                    return string.Empty;
-
-                string employees = string.Empty;
+                    return null;
                 List<User> e = new List<User>();
                 foreach (var item in SelectedOrder.Projects)
                 {
                     IEnumerable<User> inProj = from items in item.Users where !e.Exists(x => x.Id == items.Id) select items.User;
                     e.AddRange(inProj);
                 }
-
-                foreach (var item in e)
-                {
-                    employees += item.Name + " " + item.Surname + " ";
-                }
-
-                return employees;
+                return e;
             }
         }
+
+        //public List<Task> Tasks
+        //{
+        //    get
+        //    {
+        //        if (SelectedOrder == null)
+        //            return new List<Task>();
+        //        List<Task> t = new List<Task>();
+                
+        //        foreach (var item in SelectedOrder.T)
+        //    }
+        //}
 
         /// <summary>
         /// Customer name of selected order
@@ -210,6 +214,11 @@ namespace PMView.View
             }
         }
 
+        public IEnumerable<Project> Projects
+        {
+            get { return from items in Project_Project.Items where items.ParrentProject == null && items.ChildProject.Order == SelectedOrder select items.ChildProject; }
+        }
+
         public ObservableCollection<Order> OrdersCollection
         {
             get { return _ordersCollection; }
@@ -220,13 +229,28 @@ namespace PMView.View
             get { return _projectsCollection; }
         }
 
+        public ObservableCollection<User> EmployeesCollection
+        {
+            get { return _employeesCollection; }
+        }
+
+        public ObservableCollection<Team> TeamsCollection
+        {
+            get { return _teamsCollection; }
+        }
+
+        public ObservableCollection<Task> TasksCollection
+        {
+            get { return _taskCollection; }
+        }
+
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void LoadData(int index)
+        public void LoadData(int index = 0)
         {
             if (!(index >= 0 && index < OrdersCollection.Count))
                 return;
@@ -234,11 +258,24 @@ namespace PMView.View
             LoadDetails();
 
             ProjectsCollection.Clear();
-            var projects = from items in Project_Project.Items where items.ParrentProject == null && items.ChildProject.Order == SelectedOrder select items.ChildProject;
-
+            var projects = Projects;
             foreach (var item in projects)
             {
                 ProjectsCollection.Add(item);
+            }
+
+            EmployeesCollection.Clear();
+            var emp = Employees;
+            foreach (var item in emp)
+            {
+                EmployeesCollection.Add(item);
+            }
+
+            TeamsCollection.Clear();
+            var tm = Teams;
+            foreach (var item in tm)
+            {
+                TeamsCollection.Add(item);
             }
         }
 
@@ -308,10 +345,28 @@ namespace PMView.View
                 State = User.States.Female,
                 Status = User.Statuses.Ready
             };
+            User e4 = new User()
+            {
+                Name = "Panteleymon",
+                Surname = "Golobudko",
+                Birthday = new DateTime(1989, 03, 01),
+                Country = "Ukraine",
+                Description = "Junior Java developer",
+                Email = "hacapet@haca.com",
+                Image = "Assets/MaleAvatar.jpg",
+                Login = "hacapet89",
+                Password = "qwerty",
+                Role = User.Roles.Employee,
+                Skype = "hacapet89",
+                State = User.States.Male,
+                Status = User.Statuses.Ready
+            };
 
             User.Items.Add(e1);
             User.Items.Add(e2);
             User.Items.Add(e3);
+            User.Items.Add(e4);
+
 
             User u1 = new User()
             {
@@ -417,7 +472,12 @@ namespace PMView.View
                 Name = "QA engineer"
             };
 
-            Position.Items.AddRange(new[] { teamLeadPosition, position1, position2 });
+            Position position4 = new Position()
+            {
+                Name = "Junior Java developer"
+            };
+
+            Position.Items.AddRange(new[] { teamLeadPosition, position1, position2, position4, position3 });
 
             User_Team ut1 = new User_Team()
             {
@@ -426,6 +486,7 @@ namespace PMView.View
                 Postion = teamLeadPosition,
                 Team = t1
             };
+
 
             User_Team ut2 = new User_Team()
             {
@@ -451,7 +512,16 @@ namespace PMView.View
                 Position = position3,
                 Project = p1
             };
+            User_Project up2 = new User_Project()
+            {
+                User = e4,
+                Position = position4,
+                Project = p1
+            };
+
             User_Project.Items.Add(up);
+            User_Project.Items.Add(up2);
+
 
             Skill s1 = new Skill()
             {

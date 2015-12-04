@@ -34,12 +34,12 @@ namespace PMDataLayer
 
         public Owners Owner { get; set; }
 
-        public IEnumerable<Task> UsersTasks
+        public static IEnumerable<Task> UsersTasks
         {
             get { return Task.Items.Where(items => items.Owner == Owners.User); }
         }
 
-        public IEnumerable<Task> TeamsTasks
+        public static IEnumerable<Task> TeamsTasks
         {
             get { return Task.Items.Where(items => items.Owner == Owners.Team); }
         }

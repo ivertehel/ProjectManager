@@ -21,5 +21,10 @@ namespace PMDataLayer
         {
             get { return from items in User_Team.Items where items.Team.Id == Id select items; }
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

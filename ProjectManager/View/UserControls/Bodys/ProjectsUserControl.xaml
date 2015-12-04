@@ -11,6 +11,8 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -87,73 +89,61 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0">
-                                    <Label Content="Skills:" FontSize="14"/>
-                                </Grid>
-                                <Grid Grid.Column="1">
-                                    <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Skills, Mode=OneWay}" IsReadOnly="True" FontSize="14">
-                                        <TextBox.BorderBrush>
-                                            <DrawingBrush Opacity="0"></DrawingBrush>
-                                        </TextBox.BorderBrush>
-                                        <TextBox.Background>
-                                            <SolidColorBrush Color="White" Opacity="0"/>
-                                        </TextBox.Background>
-                                    </TextBox>
-                                </Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="0" Grid.Column="0">
+                                <Label Content="Skills:" FontSize="14"/>
+                            </Grid>
+                            <Grid Grid.Row="0" Grid.Column="1">
+                                <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Skills, Mode=OneWay}" IsReadOnly="True" FontSize="14">
+                                    <TextBox.BorderBrush>
+                                        <DrawingBrush Opacity="0"></DrawingBrush>
+                                    </TextBox.BorderBrush>
+                                    <TextBox.Background>
+                                        <SolidColorBrush Color="White" Opacity="0"/>
+                                    </TextBox.Background>
+                                </TextBox>
                             </Grid>
 
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0">
-                                    <Label Content="Teams:" FontSize="14"/>
-                                </Grid>
-                                <Grid Grid.Column="1">
-                                    <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Teams, Mode=OneWay}" IsReadOnly="True" FontSize="14">
-                                        <TextBox.BorderBrush>
-                                            <DrawingBrush Opacity="0"></DrawingBrush>
-                                        </TextBox.BorderBrush>
-                                        <TextBox.Background>
-                                            <SolidColorBrush Color="White" Opacity="0"/>
-                                        </TextBox.Background>
-                                    </TextBox>
-                                </Grid>
+                            <Grid Grid.Row="1" Grid.Column="0">
+                                <Label Content="Teams:" FontSize="14"/>
                             </Grid>
-                            <Grid Grid.Row="2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0">
-                                    <Label Content="Employees:"  FontSize="14"/>
-                                </Grid>
-                                <Grid Grid.Column="1">
-                                    <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Employees, Mode=OneWay}" IsReadOnly="True" FontSize="14">
-                                        <TextBox.BorderBrush>
-                                            <DrawingBrush Opacity="0"></DrawingBrush>
-                                        </TextBox.BorderBrush>
-                                        <TextBox.Background>
-                                            <SolidColorBrush Color="White" Opacity="0"/>
-                                        </TextBox.Background>
-                                    </TextBox>
-                                </Grid>
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <ListBox FontSize="14" Name="TeamsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                    <ListBox.BorderBrush>
+                                        <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                                    </ListBox.BorderBrush>
+                                    <ListBox.Background>
+                                        <SolidColorBrush Opacity="0"/>
+                                    </ListBox.Background>
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel />
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                </ListBox>
+                            </Grid>
 
+                            <Grid Grid.Row="2" Grid.Column="0" Margin="0,5,0,0">
+                                <Label Content="Employees:"  FontSize="14"/>
                             </Grid>
-                            <Grid Grid.Row="3" HorizontalAlignment="Stretch">
-                                <Button Content="Technical Task"  HorizontalAlignment="Stretch">
-                                    <Button.Background>
-                                        <SolidColorBrush Color="SkyBlue"></SolidColorBrush>
-                                    </Button.Background>
-                                </Button>
+                            <Grid Grid.Row="2" Grid.Column="1" Margin="0,5,0,0">
+                                <ListBox FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                    <ListBox.BorderBrush>
+                                        <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                                    </ListBox.BorderBrush>
+                                    <ListBox.Background>
+                                        <SolidColorBrush Opacity="0"/>
+                                    </ListBox.Background>
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel />
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                </ListBox>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -176,10 +166,10 @@
                     </Grid>
                     <!-- Third -->
                     <Grid Grid.Column="2">
-                        <Border Name="TaskButton"  Opacity="0.8" HorizontalAlignment="Stretch" MouseDown="TaskButton_Click" MouseEnter="TaskButton_MouseEnter" MouseLeave="TaskButton_MouseLeave">
+                        <Border Name="TaskButton"  Opacity="0.8" Margin="0,5,0,0" HorizontalAlignment="Stretch" MouseDown="TaskButton_Click" MouseEnter="TaskButton_MouseEnter" MouseLeave="TaskButton_MouseLeave">
                             <Grid>
                                 <Grid.Background>
-                                    <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
+                                    <SolidColorBrush Color="SkyBlue" Opacity="0.1"></SolidColorBrush>
                                 </Grid.Background>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"/>
@@ -206,8 +196,35 @@
 
             </Grid>
         </Grid>
-        <Grid Grid.Row="2" HorizontalAlignment="Stretch" Grid.Column="0">
-            <ListBox Name="SubProjectsDataGrid" MaxHeight="200" Margin="18,0,18,0"/>
+        <Grid Grid.Row="2" HorizontalAlignment="Stretch" Grid.Column="0"  Margin="18,0,18,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Content="Modules:" TextBlock.FontSize="18"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <DataGrid Name="SubProjectsDataGrid" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>
+                </Grid>
+            </Grid>
+          
+           
+        </Grid>
+        <Grid Grid.Row="3" HorizontalAlignment="Stretch" Grid.Column="0"  Margin="18,0,18,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Content="Tasks:" TextBlock.FontSize="18"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <!--<DataGrid Name="TasksDataGrid" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>-->
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>

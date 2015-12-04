@@ -23,12 +23,14 @@ namespace PMView.View
         private ProjectsUserControlVM _projectsUserControlVM;
 
         public ProjectsUserControl()
-        {
+        {  
             InitializeComponent();
             _projectsUserControlVM = new ProjectsUserControlVM();
             DataContext = _projectsUserControlVM;
             ProjectsDataGrid.ItemsSource = _projectsUserControlVM.OrdersCollection;
             SubProjectsDataGrid.ItemsSource = _projectsUserControlVM.ProjectsCollection;
+            EmployeesListBox.ItemsSource = _projectsUserControlVM.EmployeesCollection;
+            TeamsListBox.ItemsSource = _projectsUserControlVM.TeamsCollection;
         }
 
         private void ProjectsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
