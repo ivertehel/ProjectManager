@@ -21,10 +21,10 @@ namespace PMView
         public Skeleton()
         {
             InitializeComponent();
-            Body = BodyStackPanel;
-            MenuBarStackPanel.Children.Add(new MenuBarUserControl());
+            Body = BodyGrid;
+            MenuBarGrid.Children.Add(new MenuBarUserControl());
         }
 
-        public static StackPanel Body { get; set; }
+        public static Grid Body { get; set; }
     }
 }

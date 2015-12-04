@@ -79,5 +79,10 @@ namespace PMDataLayer
             newProject.Id = new Guid();
             return newProject;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

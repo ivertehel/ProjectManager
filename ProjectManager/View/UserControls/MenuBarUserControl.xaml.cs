@@ -69,7 +69,7 @@ namespace PMView.View
 
         private void MessagesButton_Click(object sender, RoutedEventArgs e)
         {
-            ////loadUserControl(new MessagesUserControl(), MessagesButton);
+            loadUserControl(new MessagesUserControl(), MessagesButton);
         }
     }
 }

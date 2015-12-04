@@ -8,82 +8,86 @@
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Column="0">
-            <DataGrid Grid.Row="0" Name="ProjectsDataGrid" ColumnWidth="*" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Header">
-                       
-                     
-
-                    </DataGridTextColumn>
+        <Grid Grid.Row="0" HorizontalAlignment="Stretch" Grid.Column="0">
+            <DataGrid Grid.Row="0"  Name="ProjectsDataGrid" ColumnWidth="*"  SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300"/>
+            <!--<DataGrid.Columns>
+                    -->
+            <!--<DataGridTextColumn Binding="{_projectsUserControlVM}"-->
+            <!--
                 </DataGrid.Columns>
-                
-            </DataGrid>
+                    -->
+            <!--<DataGrid.Columns>
+                    <DataGridTextColumn  Header="Start date" Binding="{Binding Path=StartDate, Mode=OneWay}"/>
+                </DataGrid.Columns>-->
+            <!--
+            </DataGrid>-->
 
         </Grid>
 
-        <Grid Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Column="0" x:Name="ProjectDetailsGrid">
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" Grid.Column="0" x:Name="ProjectDetailsGrid" VerticalAlignment="Top" Margin="18,0,18,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
 
 
-            <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+            <Grid Grid.Row="0" HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Label Content="{Binding Path=Name}" TextBlock.FontSize="20" HorizontalAlignment="Left" Margin="15,0,0,0"/>
+                    <Label Content="{Binding Path=Name}" TextBlock.FontSize="20" HorizontalAlignment="Left"/>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Label Content="{Binding Path=ProjectStatus}" TextBlock.FontSize="18" FontWeight="Bold"  HorizontalAlignment="Right" Margin="0,0,15,0"/>
+                    <Label Content="{Binding Path=ProjectStatus}" TextBlock.FontSize="18" FontWeight="Bold"  HorizontalAlignment="Right"/>
                 </Grid>
             </Grid>
 
 
 
-            <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid Grid.Row="1" HorizontalAlignment="Stretch">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0" HorizontalAlignment="Stretch">
-                    <Label Content="Description:" Margin="15,0,0,0" TextBlock.FontSize="18"/>
+                    <Label Content="Description:" TextBlock.FontSize="18"/>
                 </Grid>
 
                 <Grid Grid.Row="1" HorizontalAlignment="Stretch">
-                    <TextBox MaxLines="5" TextWrapping="Wrap" IsReadOnly="True" Margin="18,0,18,0" Text="{Binding Path=Description, Mode=OneWay}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16">
+                    <TextBox MaxLines="5" TextWrapping="Wrap" IsReadOnly="True" Text="{Binding Path=Description, Mode=OneWay}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16">
                         <TextBox.Background>
-                            <SolidColorBrush Color="White" Opacity="0.2"/>
+                            <SolidColorBrush Color="White" Opacity="0.1"/>
                         </TextBox.Background>
                     </TextBox>
                 </Grid>
                 <!--           last row                     -->
-                <Grid Grid.Row="2" VerticalAlignment="Stretch">
+                <Grid Grid.Row="2" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <!-- FIRST -->
-                    <Grid Grid.Column="0" VerticalAlignment="Stretch">
-                        <Grid VerticalAlignment="Stretch">
+                    <Grid Grid.Column="0">
+                        <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
                                 <Grid.ColumnDefinitions>
@@ -91,10 +95,10 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
-                                    <Label Content="Skills:" Margin="15,0,0,0" FontSize="14"/>
+                                    <Label Content="Skills:" FontSize="14"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Skills, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                    <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Skills, Mode=OneWay}" IsReadOnly="True" FontSize="14">
                                         <TextBox.BorderBrush>
                                             <DrawingBrush Opacity="0"></DrawingBrush>
                                         </TextBox.BorderBrush>
@@ -111,10 +115,10 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
-                                    <Label Content="Teams:" Margin="15,0,0,0" FontSize="14"/>
+                                    <Label Content="Teams:" FontSize="14"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Teams, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                    <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Teams, Mode=OneWay}" IsReadOnly="True" FontSize="14">
                                         <TextBox.BorderBrush>
                                             <DrawingBrush Opacity="0"></DrawingBrush>
                                         </TextBox.BorderBrush>
@@ -130,10 +134,10 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
-                                    <Label Content="Employees:" Margin="15,0,0,0" FontSize="14"/>
+                                    <Label Content="Employees:"  FontSize="14"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Employees, Mode=OneWay}" IsReadOnly="True" Margin="0,4,0,0" FontSize="14">
+                                    <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Employees, Mode=OneWay}" IsReadOnly="True" FontSize="14">
                                         <TextBox.BorderBrush>
                                             <DrawingBrush Opacity="0"></DrawingBrush>
                                         </TextBox.BorderBrush>
@@ -145,7 +149,7 @@
 
                             </Grid>
                             <Grid Grid.Row="3" HorizontalAlignment="Stretch">
-                                <Button Content="Technical Task" Margin="20,0,0,0" HorizontalAlignment="Stretch">
+                                <Button Content="Technical Task"  HorizontalAlignment="Stretch">
                                     <Button.Background>
                                         <SolidColorBrush Color="SkyBlue"></SolidColorBrush>
                                     </Button.Background>
@@ -155,7 +159,7 @@
                     </Grid>
                     <!-- Second -->
                     <Grid Grid.Column="1">
-                        <Grid Grid.Column="2" VerticalAlignment="Stretch">
+                        <Grid Grid.Column="2">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="2*"/>
@@ -163,7 +167,7 @@
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <Image Name="ProfileImage" Source="/Assets/MaleAvatar.jpg" Width="100" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="20,5,20,20"/>
+                                <Image Name="ProfileImage" Source="/Assets/MaleAvatar.jpg" Width="100"  HorizontalAlignment="Stretch" Margin="20,5,20,20"/>
                             </Grid>
                             <Grid Grid.Row="1"/>
                             <Grid Grid.Row="2"/>
@@ -172,7 +176,7 @@
                     </Grid>
                     <!-- Third -->
                     <Grid Grid.Column="2">
-                        <Border Name="TaskButton" VerticalAlignment="Stretch" Margin="0,5,18,0" Opacity="0.8" HorizontalAlignment="Stretch" MouseDown="TaskButton_Click" MouseEnter="TaskButton_MouseEnter" MouseLeave="TaskButton_MouseLeave">
+                        <Border Name="TaskButton"  Opacity="0.8" HorizontalAlignment="Stretch" MouseDown="TaskButton_Click" MouseEnter="TaskButton_MouseEnter" MouseLeave="TaskButton_MouseLeave">
                             <Grid>
                                 <Grid.Background>
                                     <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
@@ -201,6 +205,9 @@
                 </Grid>
 
             </Grid>
+        </Grid>
+        <Grid Grid.Row="2" HorizontalAlignment="Stretch" Grid.Column="0">
+            <ListBox Name="SubProjectsDataGrid" MaxHeight="200" Margin="18,0,18,0"/>
         </Grid>
     </Grid>
 </UserControl>

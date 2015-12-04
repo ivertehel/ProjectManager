@@ -13,6 +13,8 @@ namespace PMView.View
     {
         private ObservableCollection<Order> _ordersCollection = new ObservableCollection<Order>();
 
+        private ObservableCollection<Project> _projectsCollection = new ObservableCollection<Project>();
+
         public ProjectsUserControlVM()
         {
             if (User.Items.Count == 0)
@@ -23,7 +25,7 @@ namespace PMView.View
                 OrdersCollection.Add(item);
             }
 
-            SelectedOrder = OrdersCollection[0];
+            LoadData(0);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -213,18 +215,9 @@ namespace PMView.View
             get { return _ordersCollection; }
         }
 
-        public List<ProjectModel> ProjectModels
+        public ObservableCollection<Project> ProjectsCollection
         {
-            get
-            {
-                var projectModels = new List<ProjectModel>();
-                foreach (var item in OrdersCollection)
-                {
-                    projectModels.Add(new ProjectModel() { Name = item.Name, Price = item.Price.ToString(), ReleaseDate = item.ReleaseDate.ToShortDateString(), StartDate = item.StartDate.ToShortDateString(), Status = item.Status });
-                }
-
-                return projectModels;
-            }
+            get { return _projectsCollection; }
         }
 
         public void OnPropertyChanged(string propertyName)
@@ -239,6 +232,14 @@ namespace PMView.View
                 return;
             SelectedOrder = OrdersCollection[index];
             LoadDetails();
+
+            ProjectsCollection.Clear();
+            var projects = from items in Project_Project.Items where items.ParrentProject == null && items.ChildProject.Order == SelectedOrder select items.ChildProject;
+
+            foreach (var item in projects)
+            {
+                ProjectsCollection.Add(item);
+            }
         }
 
         public void LoadDetails()
@@ -372,6 +373,13 @@ namespace PMView.View
                 Status = Project.Statuses.InProgress
             };
             Project.Items.Add(p1);
+
+            Project_Project pp1 = new Project_Project()
+            {
+                ChildProject = p1
+            };
+
+            Project_Project.Items.Add(pp1);
 
             Team t1 = new Team()
             {

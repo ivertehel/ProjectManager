@@ -9,6 +9,8 @@ namespace PMView.View
 {
     public class ProjectModel
     {
+        public Order Order { get; set; }
+
         public string Name { get; set; }
 
         public string StartDate { get; set; }
