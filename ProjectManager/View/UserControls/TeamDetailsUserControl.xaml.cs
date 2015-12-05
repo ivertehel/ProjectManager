@@ -1,5 +1,4 @@
-﻿using PMDataLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,22 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMView.View;
-
-namespace PMView
+namespace PMView.View
 {
     /// <summary>
-    /// Interaction logic for TeamsDetails.xaml
+    /// Interaction logic for TeamDetailsUserControl.xaml
     /// </summary>
-    public partial class TeamsDetails : Window
+    public partial class TeamDetailsUserControl : UserControl
     {
-        TeamDetailsVM _teamDetailsVM;
-        public TeamsDetails(Team team)
+        public TeamDetailsUserControl()
         {
             InitializeComponent();
-            _teamDetailsVM = new TeamDetailsVM(team);
-            DataContext = _teamDetailsVM;
         }
     }
 }

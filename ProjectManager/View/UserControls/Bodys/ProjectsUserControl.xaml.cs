@@ -57,7 +57,10 @@ namespace PMView.View
 
         private void TeamsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (TeamsListBox.SelectedItem != null)
             (new TeamsDetails(TeamsListBox.SelectedItem as Team)).Show();
+
+            TeamsListBox.SelectedItem = null;
         }
     }
 }

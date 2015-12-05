@@ -16,6 +16,8 @@ namespace PMView.View
 
         public TeamDetailsVM(Team team)
         {
+            if (team == null)
+                return;
             CurrentTeam = team;
             var users = team.Users.ToList();
             for (int i=0; i<users.Count; i++)

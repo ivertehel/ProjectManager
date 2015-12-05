@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMView"
+        xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
         mc:Ignorable="d"
         Title="TeamsDetails" Height="300" Width="300">
     <Window.Resources>
@@ -34,6 +35,7 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
+
     <Grid VerticalAlignment="Stretch">
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/MainBackground.png"></ImageBrush>
@@ -48,6 +50,23 @@
             <RowDefinition Height="auto"/>
 
         </Grid.RowDefinitions>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type localData:User_Team}">
+                <Border BorderBrush="Azure">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="{Binding User}" FontSize="14" FontWeight="Bold" />
+                        <TextBlock Grid.Row="1" Text="{Binding Position}" FontSize="14" FontWeight="Bold" />
+
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </Grid.Resources>
+
         <Grid Grid.Row="0" VerticalAlignment="Top">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
@@ -69,8 +88,10 @@
         <Grid Grid.Row="5" VerticalAlignment="Top" Margin="15,0,0,0">
             <TextBlock Text="Employees:" FontSize="18"/>
         </Grid>
+
         <Grid Grid.Row="6" VerticalAlignment="Top" Margin="15,0,0,0">
-            <ListBox FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox ItemsSource="{Binding Path=Employees}" 
+                         FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
                 <ListBox.BorderBrush>
                     <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                 </ListBox.BorderBrush>
