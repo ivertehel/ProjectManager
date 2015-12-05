@@ -349,7 +349,7 @@ namespace PMView.View
 
             User e3 = new User()
             {
-                Name = "Krystyna",
+                Name = "Khrystyna",
                 Surname = "Romanyshyn",
                 Birthday = new DateTime(1995, 04, 12),
                 Country = "Ukraine",

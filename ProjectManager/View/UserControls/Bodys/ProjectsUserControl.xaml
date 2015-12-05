@@ -112,7 +112,7 @@
                                 <Label Content="Teams:" FontSize="14"/>
                             </Grid>
                             <Grid Grid.Row="1" Grid.Column="1">
-                                <ListBox FontSize="14" Name="TeamsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <ListBox FontSize="14" Name="TeamsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="TeamsListBox_SelectionChanged">
                                     <ListBox.BorderBrush>
                                         <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                                     </ListBox.BorderBrush>

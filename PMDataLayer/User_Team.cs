@@ -33,5 +33,10 @@ namespace PMDataLayer
             get { return Position.Items.Where(items => items.Id == _positionId).FirstOrDefault(); }
             set { _positionId = value.Id; }
         }
+
+        public override string ToString()
+        {
+            return User.ToString();
+        }
     }
 }

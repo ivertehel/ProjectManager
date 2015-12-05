@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMDataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,5 +55,9 @@ namespace PMView.View
             TaskButton.Opacity = 0.8;
         }
 
+        private void TeamsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            (new TeamsDetails(TeamsListBox.SelectedItem as Team)).Show();
+        }
     }
 }
