@@ -78,23 +78,22 @@
             </Grid.Background>
             <Label Content="Project Manager" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="15,15,15,15">
+            <Grid.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"></SolidColorBrush>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
+            <Grid Grid.Column="0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
 
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" VerticalAlignment="Top" Margin="15,0,0,0">
@@ -132,10 +131,10 @@
 
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" Margin="15,0,0,0">
+            <Grid Grid.Column="1" VerticalAlignment="Stretch" Margin="15,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <TextBlock Text="Skills:" FontSize="18"/>
