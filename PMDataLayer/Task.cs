@@ -10,6 +10,8 @@ namespace PMDataLayer
     {
         private Guid _projectId;
 
+        public Guid OwnerId { get; set; }
+
         public enum Owners
         {
             Team,

@@ -31,6 +31,7 @@ namespace PMView.View
             SubProjectsDataGrid.ItemsSource = _projectsUserControlVM.ProjectsCollection;
             EmployeesListBox.ItemsSource = _projectsUserControlVM.EmployeesCollection;
             TeamsListBox.ItemsSource = _projectsUserControlVM.TeamsCollection;
+            TasksDataGrid.ItemsSource = _projectsUserControlVM.TasksCollection;
         }
 
         private void ProjectsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)

@@ -105,17 +105,28 @@ namespace PMView.View
             }
         }
 
-        //public List<Task> Tasks
-        //{
-        //    get
-        //    {
-        //        if (SelectedOrder == null)
-        //            return new List<Task>();
-        //        List<Task> t = new List<Task>();
-                
-        //        foreach (var item in SelectedOrder.T)
-        //    }
-        //}
+        public List<Task> Tasks
+        {
+            get
+            {
+                if (SelectedOrder == null)
+                    return new List<Task>();
+
+                List<Task> t = new List<Task>();
+                foreach (var team in Teams)
+                {
+                    var tasks = from items in Task.TeamsTasks where items.OwnerId == team.Id select items;
+                    t.AddRange(tasks);
+                }
+
+                foreach (var employee in Employees)
+                {
+                    var tasks = from items in Task.UsersTasks where items.OwnerId == employee.Id select items;
+                    t.AddRange(tasks);
+                }
+                return t;
+            }
+        }
 
         /// <summary>
         /// Customer name of selected order
@@ -276,6 +287,13 @@ namespace PMView.View
             foreach (var item in tm)
             {
                 TeamsCollection.Add(item);
+            }
+
+            TasksCollection.Clear();
+            var tsk = Tasks;
+            foreach (var item in tsk)
+            {
+                TasksCollection.Add(item);
             }
         }
 
@@ -443,6 +461,20 @@ namespace PMView.View
             };
 
             Team.Items.Add(t1);
+
+            Task task1 = new Task()
+            {
+                Name = "Create a main menu",
+                Description = "Main menu with the next buttons: Start game, Continue game, Levels, Settings, Quit",
+                Hours = 5,
+                Owner = Task.Owners.Team,
+                OwnerId = t1.Id,
+                Priority = 1,
+                Project = p1,
+                Status = "Active"
+            };
+
+            Task.Items.Add(task1);
 
             Team_Project tp1 = new Team_Project()
             {

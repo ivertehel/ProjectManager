@@ -222,7 +222,7 @@
                     <Label Content="Tasks:" TextBlock.FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <!--<DataGrid Name="TasksDataGrid" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>-->
+                    <DataGrid Name="TasksDataGrid" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>
                 </Grid>
             </Grid>
         </Grid>
