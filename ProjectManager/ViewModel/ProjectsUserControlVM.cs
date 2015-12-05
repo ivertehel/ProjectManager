@@ -31,7 +31,7 @@ namespace PMView.View
                 OrdersCollection.Add(item);
             }
 
-            LoadData();
+            LoadData(OrdersCollection[0]);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -261,11 +261,11 @@ namespace PMView.View
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void LoadData(int index = 0)
+        public void LoadData(Order order)
         {
-            if (!(index >= 0 && index < OrdersCollection.Count))
+            if (order== null)
                 return;
-            SelectedOrder = OrdersCollection[index];
+            SelectedOrder = order;
             LoadDetails();
 
             ProjectsCollection.Clear();

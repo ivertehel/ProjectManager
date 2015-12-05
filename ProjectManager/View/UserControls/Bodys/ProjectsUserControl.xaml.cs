@@ -37,7 +37,7 @@ namespace PMView.View
 
         private void ProjectsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            _projectsUserControlVM.LoadData(((DataGrid)sender).SelectedIndex);
+            _projectsUserControlVM.LoadData((Order)((DataGrid)sender).SelectedItem);
         }
 
         private void TaskButton_Click(object sender, RoutedEventArgs e)
