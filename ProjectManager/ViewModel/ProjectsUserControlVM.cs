@@ -535,8 +535,15 @@ namespace PMView.View
                 Position = position2,
                 Team = t1
             };
+            User_Team ut4 = new User_Team()
+            {
+                User = e3,
+                IsLeader = true,
+                Position = position3,
+                Team = t1
+            };
 
-            User_Team.Items.AddRange(new[] { ut1, ut2, ut3 });
+            User_Team.Items.AddRange(new[] { ut1, ut2, ut3, ut4 });
 
             User_Project up = new User_Project()
             {
@@ -584,7 +591,7 @@ namespace PMView.View
             User_Skill us1 = new User_Skill()
             {
                 User = e1,
-                Skill = s1
+                Skill = s1,
             };
 
             User_Skill us2 = new User_Skill()

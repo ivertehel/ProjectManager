@@ -36,14 +36,13 @@
         </Style>
     </Window.Resources>
 
-    <Grid VerticalAlignment="Stretch">
+    <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/MainBackground.png"></ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-
         </Grid.RowDefinitions>
         <Grid.Resources>
             <DataTemplate DataType="{x:Type localData:User_Team}">
@@ -73,56 +72,93 @@
             </DataTemplate>
         </Grid.Resources>
 
-        <Grid Grid.Row="0" VerticalAlignment="Top">
+        <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
             <Label Content="Project Manager" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
-        <Grid Grid.Row="1" VerticalAlignment="Stretch">
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" VerticalAlignment="Top" Margin="15,0,0,0">
-                <TextBlock Text="Team:" FontSize="18"/>
-            </Grid>
-            <Grid Grid.Row="1" VerticalAlignment="Top" Margin="15,0,0,0">
-                <TextBlock TextWrapping="Wrap" Text="{Binding Path=Name}" FontSize="12"/>
-            </Grid>
-            <Grid Grid.Row="2" VerticalAlignment="Top" Margin="15,0,0,0">
-                <TextBlock Text="Description:" FontSize="18"/>
-            </Grid>
-            <Grid Grid.Row="3" VerticalAlignment="Top" Margin="15,0,0,0">
-                <TextBlock TextWrapping="Wrap" Text="{Binding Path=Description}" FontSize="12"/>
-            </Grid>
-            <Grid Grid.Row="4" VerticalAlignment="Top" Margin="15,0,0,0">
-                <TextBlock Text="Employees:" FontSize="18"/>
+            <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" VerticalAlignment="Top" Margin="15,0,0,0">
+                    <TextBlock Text="Team:" FontSize="18"/>
+                </Grid>
+                <Grid Grid.Row="1" VerticalAlignment="Top" Margin="15,0,0,0">
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Path=Name}" FontSize="12"/>
+                </Grid>
+                <Grid Grid.Row="2" VerticalAlignment="Top" Margin="15,0,0,0">
+                    <TextBlock Text="Description:" FontSize="18"/>
+                </Grid>
+                <Grid Grid.Row="3" VerticalAlignment="Top" Margin="15,0,0,0">
+                    <TextBlock TextWrapping="Wrap" Text="{Binding Path=Description}" FontSize="12"/>
+                </Grid>
+                <Grid Grid.Row="4" VerticalAlignment="Top" Margin="15,0,0,0">
+                    <TextBlock Text="Employees:" FontSize="18"/>
+                </Grid>
+
+                <Grid Grid.Row="5" VerticalAlignment="Stretch" Margin="15,0,0,0">
+                    <ListBox ItemsSource="{Binding Path=EmployeesCollection}" 
+                         FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" >
+                        <ListBox.BorderBrush>
+                            <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                        </ListBox.BorderBrush>
+                        <ListBox.Background>
+                            <SolidColorBrush Opacity="0"/>
+                        </ListBox.Background>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </Grid>
+
             </Grid>
 
-            <Grid Grid.Row="5" VerticalAlignment="Stretch" Margin="15,0,0,0">
-                <ListBox ItemsSource="{Binding Path=EmployeesCollection}" 
-                         FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" >
-                    <ListBox.BorderBrush>
-                        <SolidColorBrush Opacity="0" Color="SkyBlue"/>
-                    </ListBox.BorderBrush>
-                    <ListBox.Background>
-                        <SolidColorBrush Opacity="0"/>
-                    </ListBox.Background>
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel />
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>
+            <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" Margin="15,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock Text="Skills:" FontSize="18"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <ListBox ItemsSource="{Binding Path=SkillsCollection}" 
+                         FontSize="14" Name="SkillsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" >
+                        <ListBox.BorderBrush>
+                            <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                        </ListBox.BorderBrush>
+                        <ListBox.Background>
+                            <SolidColorBrush Opacity="0"/>
+                        </ListBox.Background>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </Grid>
             </Grid>
         </Grid>
-   
+
     </Grid>
 </Window>
 

@@ -12,6 +12,8 @@ namespace PMView.View
     {
         private ObservableCollection<User_Team> _employeesCollection = new ObservableCollection<User_Team>();
 
+        private ObservableCollection<Skill> _skillsCollection = new ObservableCollection<Skill>();
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public TeamDetailsVM(Team team)
@@ -33,6 +35,17 @@ namespace PMView.View
                 if (!exist)
                 _employeesCollection.Add(users[i]);
             }
+
+            foreach (var employee in _employeesCollection)
+            {
+                var skills = from items in User_Skill.Items where items.User.Id == employee.User.Id select items;
+                foreach (var item in skills)
+                {
+                    while (_skillsCollection.All(items=>item.Skill!=items))
+                    _skillsCollection.Add(item.Skill);
+                }
+            }
+
 
             LoadData();
         }
@@ -59,6 +72,11 @@ namespace PMView.View
         public ObservableCollection<User_Team> EmployeesCollection
         {
             get { return _employeesCollection; }
+        }
+
+        public ObservableCollection<Skill> SkillsCollection
+        {
+            get { return _skillsCollection; }
         }
 
         private void LoadData()

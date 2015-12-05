@@ -20,7 +20,7 @@ namespace PMDataLayer
 
         public User User
         {
-            get { return User.Items.Where(items => items.Id == _skillId).FirstOrDefault(); }
+            get { return User.Items.Where(items => items.Id == _userId).FirstOrDefault(); }
             set { _userId = value.Id; }
         }
     }

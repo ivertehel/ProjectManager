@@ -19,5 +19,10 @@ namespace PMDataLayer
         {
             get { return from items in Project_Skill.Items where items.Skill.Id == Id select items.Project; }
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
