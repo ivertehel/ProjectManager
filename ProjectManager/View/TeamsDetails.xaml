@@ -52,16 +52,22 @@
         </Grid.RowDefinitions>
         <Grid.Resources>
             <DataTemplate DataType="{x:Type localData:User_Team}">
-                <Border BorderBrush="Azure">
-                    <Grid>
+                <Border BorderBrush="Azure"  VerticalAlignment="Top">
+                    <Grid VerticalAlignment="Top">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="{Binding User}" FontSize="14" FontWeight="Bold" />
-                        <TextBlock Grid.Row="1" Text="{Binding Position}" FontSize="14" FontWeight="Bold" />
-
+                        <ListBox Grid.Row="1" ItemsSource="{Binding Positions}"  VerticalAlignment="Top">
+                            <ListBox.BorderBrush>
+                                <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                            </ListBox.BorderBrush>
+                            <ListBox.Background>
+                                <SolidColorBrush Opacity="0"/>
+                            </ListBox.Background>
+                        </ListBox>
                     </Grid>
                 </Border>
             </DataTemplate>
@@ -90,19 +96,14 @@
         </Grid>
 
         <Grid Grid.Row="6" VerticalAlignment="Top" Margin="15,0,0,0">
-            <ListBox ItemsSource="{Binding Path=Employees}" 
-                         FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+            <ListBox ItemsSource="{Binding Path=EmployeesCollection}" 
+                         FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Auto"  VerticalAlignment="Top" >
                 <ListBox.BorderBrush>
                     <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                 </ListBox.BorderBrush>
                 <ListBox.Background>
                     <SolidColorBrush Opacity="0"/>
                 </ListBox.Background>
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel />
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
             </ListBox>
         </Grid>
     </Grid>

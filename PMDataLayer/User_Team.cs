@@ -28,10 +28,15 @@ namespace PMDataLayer
             set { _userId = value.Id; }
         }
 
-        public Position Postion
+        public Position Position
         {
             get { return Position.Items.Where(items => items.Id == _positionId).FirstOrDefault(); }
             set { _positionId = value.Id; }
+        }
+
+        public IEnumerable<Position> Positions
+        {
+            get { return from items in User_Team.Items where items._userId == _userId select items.Position; }
         }
 
         public override string ToString()

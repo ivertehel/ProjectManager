@@ -14,7 +14,7 @@ namespace PMDataLayer
 
         public IEnumerable<User_Team> UsersInTeams
         {
-            get { return User_Team.Items.Where(items => items.Postion.Id == Id); }
+            get { return User_Team.Items.Where(items => items.Position.Id == Id); }
         }
 
         public IEnumerable<User_Project> UsersInProjects

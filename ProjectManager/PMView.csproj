@@ -82,9 +82,6 @@
     <Compile Include="View\UserControls\Bodys\TeamsUserControl.xaml.cs">
       <DependentUpon>TeamsUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\TeamDetailsUserControl.xaml.cs">
-      <DependentUpon>TeamDetailsUserControl.xaml</DependentUpon>
-    </Compile>
     <Page Include="View\TeamsDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -126,10 +123,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UserControls\Bodys\TeamsUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\TeamDetailsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

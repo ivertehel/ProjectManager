@@ -515,7 +515,7 @@ namespace PMView.View
             {
                 User = e1,
                 IsLeader = true,
-                Postion = teamLeadPosition,
+                Position = teamLeadPosition,
                 Team = t1
             };
 
@@ -524,7 +524,7 @@ namespace PMView.View
             {
                 User = e1,
                 IsLeader = true,
-                Postion = position1,
+                Position = position1,
                 Team = t1
             };
 
@@ -532,7 +532,7 @@ namespace PMView.View
             {
                 User = e2,
                 IsLeader = true,
-                Postion = position2,
+                Position = position2,
                 Team = t1
             };
 
