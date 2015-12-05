@@ -19,7 +19,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" HorizontalAlignment="Stretch" Grid.Column="0">
-            <DataGrid Grid.Row="0"  Name="ProjectsDataGrid" ColumnWidth="*"  SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300"/>
+            <DataGrid Grid.Row="0"  Name="ProjectsDataGrid" ColumnWidth="*" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+            </DataGrid>
             <!--<DataGrid.Columns>
                     -->
             <!--<DataGridTextColumn Binding="{_projectsUserControlVM}"-->
