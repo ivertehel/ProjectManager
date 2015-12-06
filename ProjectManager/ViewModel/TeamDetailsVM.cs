@@ -14,6 +14,8 @@ namespace PMView.View
 
         private ObservableCollection<Skill> _skillsCollection = new ObservableCollection<Skill>();
 
+        private ObservableCollection<Position> _positionsCollection = new ObservableCollection<Position>();
+
         private ProjectsUserControlVM _projectsUserControlVM;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -50,9 +52,11 @@ namespace PMView.View
                 }
             }
 
-
+            LoadPositions();
             LoadData();
         }
+
+        public User SelectedEmployee { get; set; }
 
         public Team CurrentTeam { get; private set; }
 
@@ -76,6 +80,11 @@ namespace PMView.View
             }
         }
 
+        public ObservableCollection<Position> PositionsCollection
+        {
+            get { return _positionsCollection; }
+        }
+
         public IEnumerable<User_Team> Employees
         {
             get { return CurrentTeam.Users; }
@@ -91,6 +100,21 @@ namespace PMView.View
         public ObservableCollection<Skill> SkillsCollection
         {
             get { return _skillsCollection; }
+        }
+
+        public void LoadPositions()
+        {
+            _positionsCollection.Clear();
+            foreach (var item in _employeesCollection)
+            {
+                if (item.User == SelectedEmployee)
+                {
+                    foreach (var position in item.Positions)
+                    {
+                        _positionsCollection.Add(position);
+                    }
+                }
+            }
         }
 
         private void LoadData()

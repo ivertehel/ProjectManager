@@ -86,6 +86,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+
             <Grid Grid.Column="0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
@@ -114,7 +115,7 @@
 
                 <Grid Grid.Row="5" VerticalAlignment="Stretch" Margin="15,0,0,0">
                     <ListBox ItemsSource="{Binding Path=EmployeesCollection}" 
-                         FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" >
+                         FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="EmployeesListBox_SelectionChanged">
                         <ListBox.BorderBrush>
                             <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                         </ListBox.BorderBrush>
@@ -134,6 +135,7 @@
             <Grid Grid.Column="1" VerticalAlignment="Stretch" Margin="15,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
@@ -142,6 +144,22 @@
                 <Grid Grid.Row="1">
                     <ListBox ItemsSource="{Binding Path=SkillsCollection}" 
                          FontSize="14" Name="SkillsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" >
+                        <ListBox.BorderBrush>
+                            <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                        </ListBox.BorderBrush>
+                        <ListBox.Background>
+                            <SolidColorBrush Opacity="0"/>
+                        </ListBox.Background>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <ListBox ItemsSource="{Binding Path=PositionsCollection}" 
+                         FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" >
                         <ListBox.BorderBrush>
                             <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                         </ListBox.BorderBrush>

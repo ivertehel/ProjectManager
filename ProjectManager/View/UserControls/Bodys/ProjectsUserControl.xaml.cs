@@ -24,7 +24,7 @@ namespace PMView.View
         private ProjectsUserControlVM _projectsUserControlVM;
 
         public ProjectsUserControl()
-        {  
+        {
             InitializeComponent();
             _projectsUserControlVM = new ProjectsUserControlVM();
             DataContext = _projectsUserControlVM;
@@ -61,7 +61,7 @@ namespace PMView.View
             if (TeamsListBox.SelectedItem != null)
             (new TeamsDetails(TeamsListBox.SelectedItem as Team, _projectsUserControlVM)).Show();
 
-            //TeamsListBox.SelectedItem = null;
+            TeamsListBox.SelectedItem = null;
         }
     }
 }

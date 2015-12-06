@@ -22,11 +22,18 @@ namespace PMView
     public partial class TeamsDetails : Window
     {
         TeamDetailsVM _teamDetailsVM;
+
         public TeamsDetails(Team team, ProjectsUserControlVM projectsUserControlVM)
         {
             InitializeComponent();
             _teamDetailsVM = new TeamDetailsVM(team, projectsUserControlVM);
             DataContext = _teamDetailsVM;
+        }
+
+        private void EmployeesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _teamDetailsVM.SelectedEmployee = (EmployeesListBox.SelectedItem as User_Team).User;
+            _teamDetailsVM.LoadPositions();
         }
     }
 }
