@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace PMView.View
 {
@@ -121,10 +122,6 @@ namespace PMView.View
                 return;
             if (position == null)
                 return;
-            if (!PositionsCollection.All(items => items != position))
-            {
-                return;
-            }
 
             User_Team ut = new User_Team()
             {
@@ -135,6 +132,26 @@ namespace PMView.View
             };
 
             User_Team.Items.Add(ut);
+            EmployeesCollection = new ObservableCollection<User_Team>();
+            LoadPositions();
+            LoadData();
+        }
+
+        public void RemovePosition(Position position)
+        {
+            if (SelectedEmployee == null)
+                return;
+            if (position == null)
+                return;
+            if (PositionsCollection.Count == 1)
+            {
+                MessageBox.Show("At least one position should be exist");
+                return;
+            }
+            var ut = (from items in User_Team.Items where items.User == SelectedEmployee && items.Position == position select items).FirstOrDefault();
+            User_Team.Items.Remove(ut);
+     
+            
             EmployeesCollection = new ObservableCollection<User_Team>();
             LoadPositions();
             LoadData();

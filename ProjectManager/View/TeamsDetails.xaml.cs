@@ -44,5 +44,14 @@ namespace PMView
         {
             _teamDetailsVM.AddPosition(PositionToAddListBox.SelectedItem as Position);
         }
+
+        private void PositionListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PositionListBox.SelectedItem == null)
+                return;
+
+            _teamDetailsVM.RemovePosition(PositionListBox.SelectedItem as Position);
+            PositionListBox.SelectedItem = null;
+        }
     }
 }
