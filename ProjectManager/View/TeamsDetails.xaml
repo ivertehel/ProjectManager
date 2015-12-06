@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMView"
         xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
         mc:Ignorable="d"
-        Title="TeamsDetails" Height="300" Width="300">
+        Title="TeamsDetails" Height="500" Width="850">
     <Window.Resources>
         <Style x:Key="ProfileButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="Transparent"/>
@@ -136,6 +136,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
@@ -157,21 +158,53 @@
                         </ListBox.ItemsPanel>
                     </ListBox>
                 </Grid>
-                <Grid Grid.Row="2">
-                    <ListBox ItemsSource="{Binding Path=PositionsCollection}" 
-                         FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" >
-                        <ListBox.BorderBrush>
-                            <SolidColorBrush Opacity="0" Color="SkyBlue"/>
-                        </ListBox.BorderBrush>
-                        <ListBox.Background>
-                            <SolidColorBrush Opacity="0"/>
-                        </ListBox.Background>
-                        <ListBox.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel />
-                            </ItemsPanelTemplate>
-                        </ListBox.ItemsPanel>
-                    </ListBox>
+
+                <Grid Grid.Row="2" Name="PositionsGrid" Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" HorizontalAlignment="Left">
+                        <TextBlock Text="Add/Remove employee's positions:" FontSize="18"/>
+                    </Grid>
+                    <Grid Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,5,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="0,0,5,0">
+                            <TextBlock Text="Employee's positions:" FontSize="15"/>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
+                            <TextBlock Text="Add positions:" FontSize="15"/>
+                        </Grid>
+                        <Grid Grid.Column="0" Grid.Row="1" Margin="0,0,5,0">
+                            <ListBox ItemsSource="{Binding Path=PositionsCollection}" 
+                         FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top">
+                                <ListBox.BorderBrush>
+                                    <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
+                                </ListBox.BorderBrush>
+                                <ListBox.Background>
+                                    <SolidColorBrush Opacity="0.8" Color="White"/>
+                                </ListBox.Background>
+                            </ListBox>
+                        </Grid>
+                        <Grid  Grid.Column="1" Grid.Row="1">
+                            <ListBox Grid.Column="1" ItemsSource="{Binding Path=PositionsToAddCollection}" 
+                         FontSize="14" Name="PositionToAddListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top">
+                                <ListBox.BorderBrush>
+                                    <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
+                                </ListBox.BorderBrush>
+                                <ListBox.Background>
+                                    <SolidColorBrush Opacity="0.8" Color="White"/>
+                                </ListBox.Background>
+                            </ListBox>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>

@@ -16,6 +16,8 @@ namespace PMView.View
 
         private ObservableCollection<Position> _positionsCollection = new ObservableCollection<Position>();
 
+        private ObservableCollection<Position> _positionsToAddCollection = new ObservableCollection<Position>();
+
         private ProjectsUserControlVM _projectsUserControlVM;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -85,6 +87,11 @@ namespace PMView.View
             get { return _positionsCollection; }
         }
 
+        public ObservableCollection<Position> PositionsToAddCollection
+        {
+            get { return _positionsToAddCollection; }
+        }
+
         public IEnumerable<User_Team> Employees
         {
             get { return CurrentTeam.Users; }
@@ -114,6 +121,16 @@ namespace PMView.View
                         _positionsCollection.Add(position);
                     }
                 }
+            }
+
+            if (SelectedEmployee == null)
+                return;
+
+            _positionsToAddCollection.Clear();
+            foreach (var item in Position.Items)
+            {
+                if (!_positionsCollection.Contains(item))
+                    _positionsToAddCollection.Add(item);
             }
         }
 

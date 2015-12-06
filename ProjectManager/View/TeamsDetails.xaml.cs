@@ -32,6 +32,10 @@ namespace PMView
 
         private void EmployeesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (EmployeesListBox.SelectedItem == null)
+                return;
+
+            PositionsGrid.Visibility = Visibility.Visible;
             _teamDetailsVM.SelectedEmployee = (EmployeesListBox.SelectedItem as User_Team).User;
             _teamDetailsVM.LoadPositions();
         }
