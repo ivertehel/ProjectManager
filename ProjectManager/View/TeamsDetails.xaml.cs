@@ -39,5 +39,10 @@ namespace PMView
             _teamDetailsVM.SelectedEmployee = (EmployeesListBox.SelectedItem as User_Team).User;
             _teamDetailsVM.LoadPositions();
         }
+
+        private void PositionToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _teamDetailsVM.AddPosition(PositionToAddListBox.SelectedItem as Position);
+        }
     }
 }

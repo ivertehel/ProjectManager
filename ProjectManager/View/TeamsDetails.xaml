@@ -195,7 +195,7 @@
                         </Grid>
                         <Grid  Grid.Column="1" Grid.Row="1">
                             <ListBox Grid.Column="1" ItemsSource="{Binding Path=PositionsToAddCollection}" 
-                         FontSize="14" Name="PositionToAddListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top">
+                         FontSize="14" Name="PositionToAddListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="PositionToAddListBox_SelectionChanged">
                                 <ListBox.BorderBrush>
                                     <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
                                 </ListBox.BorderBrush>

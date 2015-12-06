@@ -29,20 +29,8 @@ namespace PMView.View
 
             _projectsUserControlVM = control;
             CurrentTeam = team;
-            var users = team.Users.ToList();
-            for (int i=0; i<users.Count; i++)
-            {
-                bool exist = false;
-                for (int j = 0; j < _employeesCollection.Count; j++)
-                {
-                    if (_employeesCollection[j].User == users[i].User)
-                    {
-                        exist = true;
-                    }
-                }
-                if (!exist)
-                _employeesCollection.Add(users[i]);
-            }
+
+            EmployeesCollection = new ObservableCollection<User_Team>();
 
             foreach (var employee in _employeesCollection)
             {
@@ -97,16 +85,59 @@ namespace PMView.View
             get { return CurrentTeam.Users; }
         }
 
-        public Team SelectedTeam { get; set; }
-
         public ObservableCollection<User_Team> EmployeesCollection
         {
             get { return _employeesCollection; }
+            set
+            {
+                var users = CurrentTeam.Users.ToList();
+                if (_employeesCollection.Count != 0)
+                    _employeesCollection.Clear();
+
+                for (int i = 0; i < users.Count; i++)
+                {
+                    bool exist = false;
+                    for (int j = 0; j < _employeesCollection.Count; j++)
+                    {
+                        if (_employeesCollection[j].User == users[i].User)
+                        {
+                            exist = true;
+                        }
+                    }
+                    if (!exist)
+                        _employeesCollection.Add(users[i]);
+                }
+            }
         }
 
         public ObservableCollection<Skill> SkillsCollection
         {
             get { return _skillsCollection; }
+        }
+
+        public void AddPosition(Position position)
+        {
+            if (SelectedEmployee == null)
+                return;
+            if (position == null)
+                return;
+            if (!PositionsCollection.All(items => items != position))
+            {
+                return;
+            }
+
+            User_Team ut = new User_Team()
+            {
+                IsLeader = true,
+                Position = position,
+                Team = CurrentTeam,
+                User = SelectedEmployee
+            };
+
+            User_Team.Items.Add(ut);
+            EmployeesCollection = new ObservableCollection<User_Team>();
+            LoadPositions();
+            LoadData();
         }
 
         public void LoadPositions()
