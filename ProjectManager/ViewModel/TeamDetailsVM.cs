@@ -122,6 +122,9 @@ namespace PMView.View
                 return;
             if (position == null)
                 return;
+            var pos = (from items in User_Team.Items where items.Team == CurrentTeam && items.User == SelectedEmployee && items.Position == position select items).FirstOrDefault();
+            if (pos != null)
+                throw new Exception("This position is already exist");
 
             User_Team ut = new User_Team()
             {
@@ -145,8 +148,7 @@ namespace PMView.View
                 return;
             if (PositionsCollection.Count == 1)
             {
-                MessageBox.Show("At least one position should be exist");
-                return;
+                throw new Exception("At least one position should be exist");
             }
             var ut = (from items in User_Team.Items where items.User == SelectedEmployee && items.Position == position select items).FirstOrDefault();
             User_Team.Items.Remove(ut);
@@ -170,9 +172,6 @@ namespace PMView.View
                     }
                 }
             }
-
-            if (SelectedEmployee == null)
-                return;
 
             _positionsToAddCollection.Clear();
             foreach (var item in Position.Items)

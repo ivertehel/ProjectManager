@@ -41,8 +41,20 @@ namespace PMView
         }
 
         private void PositionToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            _teamDetailsVM.AddPosition(PositionToAddListBox.SelectedItem as Position);
+        { 
+            
+            if (PositionToAddListBox.SelectedItem == null)
+                return;
+
+            try
+            {
+                _teamDetailsVM.AddPosition(PositionToAddListBox.SelectedItem as Position);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void PositionListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -50,8 +62,15 @@ namespace PMView
             if (PositionListBox.SelectedItem == null)
                 return;
 
-            _teamDetailsVM.RemovePosition(PositionListBox.SelectedItem as Position);
-            PositionListBox.SelectedItem = null;
+            try
+            { 
+                _teamDetailsVM.RemovePosition(PositionListBox.SelectedItem as Position);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

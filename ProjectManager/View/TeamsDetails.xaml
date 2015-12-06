@@ -183,26 +183,26 @@
                             <TextBlock Text="Add positions:" FontSize="15"/>
                         </Grid>
                         <Grid Grid.Column="0" Grid.Row="1" Margin="0,0,5,0">
-                            <ListBox ItemsSource="{Binding Path=PositionsCollection}" 
+                            <ComboBox ItemsSource="{Binding Path=PositionsCollection}" 
                          FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="PositionListBox_SelectionChanged">
-                                <ListBox.BorderBrush>
+                                <ComboBox.BorderBrush>
                                     <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
-                                </ListBox.BorderBrush>
-                                <ListBox.Background>
+                                </ComboBox.BorderBrush>
+                                <ComboBox.Background>
                                     <SolidColorBrush Opacity="0.8" Color="White"/>
-                                </ListBox.Background>
-                            </ListBox>
+                                </ComboBox.Background>
+                            </ComboBox>
                         </Grid>
                         <Grid  Grid.Column="1" Grid.Row="1">
-                            <ListBox Grid.Column="1" ItemsSource="{Binding Path=PositionsToAddCollection}" 
+                            <ComboBox Grid.Column="1" ItemsSource="{Binding Path=PositionsToAddCollection}" 
                          FontSize="14" Name="PositionToAddListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="PositionToAddListBox_SelectionChanged">
-                                <ListBox.BorderBrush>
+                                <ComboBox.BorderBrush>
                                     <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
-                                </ListBox.BorderBrush>
-                                <ListBox.Background>
+                                </ComboBox.BorderBrush>
+                                <ComboBox.Background>
                                     <SolidColorBrush Opacity="0.8" Color="White"/>
-                                </ListBox.Background>
-                            </ListBox>
+                                </ComboBox.Background>
+                            </ComboBox>
                         </Grid>
                     </Grid>
                 </Grid>
