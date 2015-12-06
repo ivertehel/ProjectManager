@@ -100,13 +100,13 @@
                     <TextBlock Text="Team:" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1" VerticalAlignment="Top" Margin="15,0,0,0">
-                    <TextBlock TextWrapping="Wrap" Text="{Binding Path=Name}" FontSize="12"/>
+                    <TextBox TextWrapping="Wrap" Text="{Binding Path=Name, Mode=TwoWay}" FontSize="12"/>
                 </Grid>
                 <Grid Grid.Row="2" VerticalAlignment="Top" Margin="15,0,0,0">
                     <TextBlock Text="Description:" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="3" VerticalAlignment="Top" Margin="15,0,0,0">
-                    <TextBlock TextWrapping="Wrap" Text="{Binding Path=Description}" FontSize="12"/>
+                    <TextBox TextWrapping="Wrap" Text="{Binding Path=Description, Mode=TwoWay}" FontSize="12"/>
                 </Grid>
                 <Grid Grid.Row="4" VerticalAlignment="Top" Margin="15,0,0,0">
                     <TextBlock Text="Employees:" FontSize="18"/>

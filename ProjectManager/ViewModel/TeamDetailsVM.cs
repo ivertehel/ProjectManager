@@ -14,12 +14,16 @@ namespace PMView.View
 
         private ObservableCollection<Skill> _skillsCollection = new ObservableCollection<Skill>();
 
+        private ProjectsUserControlVM _projectsUserControlVM;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public TeamDetailsVM(Team team)
+        public TeamDetailsVM(Team team, ProjectsUserControlVM control)
         {
             if (team == null)
                 return;
+
+            _projectsUserControlVM = control;
             CurrentTeam = team;
             var users = team.Users.ToList();
             for (int i=0; i<users.Count; i++)
@@ -55,11 +59,21 @@ namespace PMView.View
         public string Name
         {
             get { return CurrentTeam.Name; }
+            set
+            {
+                CurrentTeam.Name = value;
+                _projectsUserControlVM.LoadData();
+            }
         }
 
         public string Description
         {
             get { return CurrentTeam.Description; }
+            set
+            {
+                CurrentTeam.Description = value;
+                _projectsUserControlVM.LoadData();
+            }
         }
 
         public IEnumerable<User_Team> Employees

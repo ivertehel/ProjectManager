@@ -22,10 +22,10 @@ namespace PMView
     public partial class TeamsDetails : Window
     {
         TeamDetailsVM _teamDetailsVM;
-        public TeamsDetails(Team team)
+        public TeamsDetails(Team team, ProjectsUserControlVM projectsUserControlVM)
         {
             InitializeComponent();
-            _teamDetailsVM = new TeamDetailsVM(team);
+            _teamDetailsVM = new TeamDetailsVM(team, projectsUserControlVM);
             DataContext = _teamDetailsVM;
         }
     }

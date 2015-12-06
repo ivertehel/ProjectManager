@@ -37,7 +37,8 @@ namespace PMView.View
 
         private void ProjectsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            _projectsUserControlVM.LoadData((Order)((DataGrid)sender).SelectedItem);
+            _projectsUserControlVM.SelectedOrder = ProjectsDataGrid.SelectedItem as Order;
+            _projectsUserControlVM.LoadData();
         }
 
         private void TaskButton_Click(object sender, RoutedEventArgs e)
@@ -58,9 +59,9 @@ namespace PMView.View
         private void TeamsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (TeamsListBox.SelectedItem != null)
-            (new TeamsDetails(TeamsListBox.SelectedItem as Team)).Show();
+            (new TeamsDetails(TeamsListBox.SelectedItem as Team, _projectsUserControlVM)).Show();
 
-            TeamsListBox.SelectedItem = null;
+            //TeamsListBox.SelectedItem = null;
         }
     }
 }

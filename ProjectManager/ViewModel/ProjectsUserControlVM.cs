@@ -30,8 +30,8 @@ namespace PMView.View
             {
                 OrdersCollection.Add(item);
             }
-
-            LoadData(OrdersCollection[0]);
+            SelectedOrder = OrdersCollection[0];
+            LoadData();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -258,14 +258,16 @@ namespace PMView.View
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
+            {
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
-        public void LoadData(Order order)
+        public void LoadData()
         {
-            if (order== null)
+            if (SelectedOrder== null)
                 return;
-            SelectedOrder = order;
+
             LoadDetails();
 
             ProjectsCollection.Clear();
