@@ -177,7 +177,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="0,0,5,0">
-                            <TextBlock Text="Employee's positions:" FontSize="15"/>
+                            <TextBlock Text="Remove positions:" FontSize="15"/>
                         </Grid>
                         <Grid Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
                             <TextBlock Text="Add positions:" FontSize="15"/>
