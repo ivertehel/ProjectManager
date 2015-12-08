@@ -1,11 +1,11 @@
-﻿using PMDataLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using PMDataLayer;
 
 namespace PMView.View
 {
@@ -23,8 +23,6 @@ namespace PMView.View
 
         private ProjectsUserControlVM _projectsUserControlVM;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public TeamDetailsVM(Team team, ProjectsUserControlVM control)
         {
             if (team == null)
@@ -40,16 +38,17 @@ namespace PMView.View
                 var skills = from items in User_Skill.Items where items.User.Id == employee.User.Id select items;
                 foreach (var item in skills)
                 {
-                    while (_skillsCollection.All(items=>item.Skill!=items))
+                    while (_skillsCollection.All(items => item.Skill != items))
                     _skillsCollection.Add(item.Skill);
                 }
             }
-
 
             LoadOrdersCollection();
             LoadPositions();
             LoadData();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public User SelectedEmployee { get; set; }
 
@@ -114,6 +113,7 @@ namespace PMView.View
                             exist = true;
                         }
                     }
+
                     if (!exist)
                         _employeesCollection.Add(users[i]);
                 }
@@ -172,10 +172,10 @@ namespace PMView.View
             {
                 throw new Exception("At least one position should be exist");
             }
+
             var ut = (from items in User_Team.Items where items.User == SelectedEmployee && items.Position == position select items).FirstOrDefault();
             User_Team.Items.Remove(ut);
      
-            
             EmployeesCollection = new ObservableCollection<User_Team>();
             LoadPositions();
             LoadData();
@@ -203,18 +203,17 @@ namespace PMView.View
             }
         }
 
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         private void LoadData()
         {
             OnPropertyChanged("Name");
             OnPropertyChanged("Description");
             OnPropertyChanged("Employees");
-        }
-
-
-        public void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

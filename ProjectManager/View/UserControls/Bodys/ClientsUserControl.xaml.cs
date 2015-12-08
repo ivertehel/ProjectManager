@@ -20,8 +20,6 @@ namespace PMView.View
     /// </summary>
     public partial class ClientsUserControl : UserControl
     {
-        private ClientsUserControlVM _projectsUserControlVM;
-
         public ClientsUserControl()
         {
             InitializeComponent();

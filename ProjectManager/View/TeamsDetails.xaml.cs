@@ -1,5 +1,4 @@
-﻿using PMDataLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PMDataLayer;
 using PMView.View;
 
 namespace PMView
@@ -21,9 +21,7 @@ namespace PMView
     /// </summary>
     public partial class TeamsDetails : Window
     {
-        TeamDetailsVM _teamDetailsVM;
-
-        ProjectsUserControlVM _projectsUserControlVM;
+        private TeamDetailsVM _teamDetailsVM;
 
         public TeamsDetails(Team team, ProjectsUserControlVM projectsUserControlVM)
         {
@@ -43,8 +41,7 @@ namespace PMView
         }
 
         private void PositionToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        { 
-            
+        {          
             if (PositionToAddListBox.SelectedItem == null)
                 return;
 
@@ -56,7 +53,6 @@ namespace PMView
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void PositionListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -72,7 +68,6 @@ namespace PMView
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void DataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
@@ -81,7 +76,6 @@ namespace PMView
             EmptyWindow ew = new EmptyWindow(order.Name);
             ew.Body.Children.Add(new ProjectsUserControl(order));
             ew.Show();
-
         }
     }
 }

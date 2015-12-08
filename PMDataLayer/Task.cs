@@ -10,13 +10,23 @@ namespace PMDataLayer
     {
         private Guid _projectId;
 
-        public Guid OwnerId { get; set; }
-
         public enum Owners
         {
             Team,
             User
         }
+
+        public static IEnumerable<Task> UsersTasks
+        {
+            get { return Task.Items.Where(items => items.Owner == Owners.User); }
+        }
+
+        public static IEnumerable<Task> TeamsTasks
+        {
+            get { return Task.Items.Where(items => items.Owner == Owners.Team); }
+        }
+
+        public Guid OwnerId { get; set; }
 
         public string Name { get; set; }
 
@@ -35,15 +45,5 @@ namespace PMDataLayer
         }
 
         public Owners Owner { get; set; }
-
-        public static IEnumerable<Task> UsersTasks
-        {
-            get { return Task.Items.Where(items => items.Owner == Owners.User); }
-        }
-
-        public static IEnumerable<Task> TeamsTasks
-        {
-            get { return Task.Items.Where(items => items.Owner == Owners.Team); }
-        }
     }
 }

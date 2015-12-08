@@ -20,7 +20,6 @@ namespace PMView.View
 
         private ObservableCollection<Task> _taskCollection = new ObservableCollection<Task>();
 
-
         public ProjectsUserControlVM()
         {
             if (User.Items.Count == 0)
@@ -30,6 +29,7 @@ namespace PMView.View
             {
                 OrdersCollection.Add(item);
             }
+
             SelectedOrder = OrdersCollection[0];
             LoadData();
         }
@@ -107,6 +107,7 @@ namespace PMView.View
                     IEnumerable<User> inProj = from items in item.Users where !e.Exists(x => x.Id == items.Id) select items.User;
                     e.AddRange(inProj);
                 }
+
                 return e;
             }
         }
@@ -130,6 +131,7 @@ namespace PMView.View
                     var tasks = from items in Task.UsersTasks where items.OwnerId == employee.Id select items;
                     t.AddRange(tasks);
                 }
+
                 return t;
             }
         }
@@ -271,7 +273,7 @@ namespace PMView.View
 
         public void LoadData()
         {
-            if (SelectedOrder== null)
+            if (SelectedOrder == null)
                 return;
 
             LoadDetails();
@@ -392,7 +394,6 @@ namespace PMView.View
             User.Items.Add(e2);
             User.Items.Add(e3);
             User.Items.Add(e4);
-
 
             User u1 = new User()
             {
@@ -527,7 +528,6 @@ namespace PMView.View
                 Team = t1
             };
 
-
             User_Team ut2 = new User_Team()
             {
                 User = e1,
@@ -568,7 +568,6 @@ namespace PMView.View
 
             User_Project.Items.Add(up);
             User_Project.Items.Add(up2);
-
 
             Skill s1 = new Skill()
             {
