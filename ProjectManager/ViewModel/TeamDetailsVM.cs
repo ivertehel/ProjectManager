@@ -19,6 +19,8 @@ namespace PMView.View
 
         private ObservableCollection<Position> _positionsToAddCollection = new ObservableCollection<Position>();
 
+        private ObservableCollection<Order> _ordersCollection = new ObservableCollection<Order>();
+
         private ProjectsUserControlVM _projectsUserControlVM;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -43,6 +45,8 @@ namespace PMView.View
                 }
             }
 
+
+            LoadOrdersCollection();
             LoadPositions();
             LoadData();
         }
@@ -57,7 +61,7 @@ namespace PMView.View
             set
             {
                 CurrentTeam.Name = value;
-                _projectsUserControlVM.LoadData();
+                _projectsUserControlVM.LoadData();    
             }
         }
 
@@ -69,6 +73,11 @@ namespace PMView.View
                 CurrentTeam.Description = value;
                 _projectsUserControlVM.LoadData();
             }
+        }
+
+        public ObservableCollection<Order> OrdersCollection
+        {
+            get { return _ordersCollection; }
         }
 
         public ObservableCollection<Position> PositionsCollection
@@ -114,6 +123,19 @@ namespace PMView.View
         public ObservableCollection<Skill> SkillsCollection
         {
             get { return _skillsCollection; }
+        }
+
+        public void LoadOrdersCollection()
+        {
+            _ordersCollection.Clear();
+            var orders = from items in Team_Project.Items where items.Team == CurrentTeam select items.Project.Order;
+            foreach (var item in orders)
+            {
+                if ((from items in orders where items == item select items).Count() == 1)
+                {
+                    _ordersCollection.Add(item);
+                }
+            }
         }
 
         public void AddPosition(Position position)

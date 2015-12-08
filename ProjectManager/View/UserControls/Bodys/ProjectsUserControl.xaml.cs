@@ -28,11 +28,15 @@ namespace PMView.View
             InitializeComponent();
             _projectsUserControlVM = new ProjectsUserControlVM();
             DataContext = _projectsUserControlVM;
-            ProjectsDataGrid.ItemsSource = _projectsUserControlVM.OrdersCollection;
-            SubProjectsDataGrid.ItemsSource = _projectsUserControlVM.ProjectsCollection;
-            EmployeesListBox.ItemsSource = _projectsUserControlVM.EmployeesCollection;
-            TeamsListBox.ItemsSource = _projectsUserControlVM.TeamsCollection;
-            TasksDataGrid.ItemsSource = _projectsUserControlVM.TasksCollection;
+        }
+
+        public ProjectsUserControl(Order order)
+        {
+            InitializeComponent();
+            _projectsUserControlVM = new ProjectsUserControlVM(order);
+            DataContext = _projectsUserControlVM;
+            ProjectsDataGrid.DataContext = null;
+            ProjectsDataGrid.Visibility = Visibility.Hidden;
         }
 
         private void ProjectsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)

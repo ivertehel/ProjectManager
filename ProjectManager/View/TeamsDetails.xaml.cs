@@ -23,6 +23,8 @@ namespace PMView
     {
         TeamDetailsVM _teamDetailsVM;
 
+        ProjectsUserControlVM _projectsUserControlVM;
+
         public TeamsDetails(Team team, ProjectsUserControlVM projectsUserControlVM)
         {
             InitializeComponent();
@@ -70,6 +72,15 @@ namespace PMView
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void DataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            var order = OrdersDataGrid.SelectedItem as Order;
+            EmptyWindow ew = new EmptyWindow(order.Name);
+            ew.Body.Children.Add(new ProjectsUserControl(order));
+            ew.Show();
 
         }
     }

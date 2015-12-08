@@ -34,6 +34,12 @@ namespace PMView.View
             LoadData();
         }
 
+        public ProjectsUserControlVM(Order order) : this()
+        {
+            SelectedOrder = order;
+            LoadData();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Order SelectedOrder { get; set; }

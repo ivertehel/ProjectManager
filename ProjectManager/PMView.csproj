@@ -58,6 +58,9 @@
     <Compile Include="ViewModel\ClientsUserControlVM.cs" />
     <Compile Include="ViewModel\ProjectsUserControlVM.cs" />
     <Compile Include="ViewModel\TeamDetailsVM.cs" />
+    <Compile Include="View\EmptyWindow.xaml.cs">
+      <DependentUpon>EmptyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TeamsDetails.xaml.cs">
       <DependentUpon>TeamsDetails.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,10 @@
     <Compile Include="View\UserControls\Bodys\TeamsUserControl.xaml.cs">
       <DependentUpon>TeamsUserControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\EmptyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TeamsDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

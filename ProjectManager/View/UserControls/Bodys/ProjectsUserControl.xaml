@@ -19,7 +19,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" HorizontalAlignment="Stretch" Grid.Column="0">
-            <DataGrid Grid.Row="0"  Name="ProjectsDataGrid" ColumnWidth="*" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+            <DataGrid Grid.Row="0"  Name="ProjectsDataGrid" ItemsSource="{Binding OrdersCollection}" ColumnWidth="*" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
             </DataGrid>
             <!--<DataGrid.Columns>
                     -->
@@ -113,7 +113,7 @@
                                 <Label Content="Teams:" FontSize="14"/>
                             </Grid>
                             <Grid Grid.Row="1" Grid.Column="1">
-                                <ListBox FontSize="14" Name="TeamsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="TeamsListBox_SelectionChanged">
+                                <ListBox FontSize="14" Name="TeamsListBox" ItemsSource="{Binding TeamsCollection}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="TeamsListBox_SelectionChanged">
                                     <ListBox.BorderBrush>
                                         <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                                     </ListBox.BorderBrush>
@@ -132,7 +132,7 @@
                                 <Label Content="Employees:"  FontSize="14"/>
                             </Grid>
                             <Grid Grid.Row="2" Grid.Column="1" Margin="0,5,0,0">
-                                <ListBox FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <ListBox FontSize="14" Name="EmployeesListBox" ItemsSource="{Binding EmployeesCollection}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                     <ListBox.BorderBrush>
                                         <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                                     </ListBox.BorderBrush>
@@ -207,7 +207,7 @@
                     <Label Content="Modules:" TextBlock.FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <DataGrid Name="SubProjectsDataGrid" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>
+                    <DataGrid Name="SubProjectsDataGrid" ItemsSource="{Binding ProjectsCollection}" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>
                 </Grid>
             </Grid>
           
@@ -223,7 +223,7 @@
                     <Label Content="Tasks:" TextBlock.FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <DataGrid Name="TasksDataGrid" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>
+                    <DataGrid Name="TasksDataGrid" ItemsSource="{Binding TasksCollection}" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>
                 </Grid>
             </Grid>
         </Grid>

@@ -42,7 +42,10 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.Resources>
             <DataTemplate DataType="{x:Type localData:User_Team}">
@@ -76,9 +79,9 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
-            <Label Content="Project Manager" FontSize="30" HorizontalAlignment="Center"/>
+            <Label Content="Team properties" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
-        <Grid Grid.Row="1" Margin="15,15,15,15">
+        <Grid Grid.Row="1" Margin="15,15,15,0">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.5"></SolidColorBrush>
             </Grid.Background>
@@ -207,6 +210,18 @@
                     </Grid>
                 </Grid>
             </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Margin="15,0,15,0">
+            <Grid.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"></SolidColorBrush>
+            </Grid.Background>
+            <TextBlock Text="Orders:" FontSize="18" Margin="15,0,15,10"/>
+        </Grid>
+        <Grid Grid.Row="3" Margin="15,0,15,15">
+            <Grid.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"></SolidColorBrush>
+            </Grid.Background>
+            <DataGrid Name="OrdersDataGrid" ItemsSource="{Binding OrdersCollection}" ColumnWidth="*" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300" SelectedCellsChanged="DataGrid_SelectedCellsChanged"/>
         </Grid>
 
     </Grid>

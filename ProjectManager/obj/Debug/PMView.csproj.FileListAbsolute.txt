@@ -30,3 +30,5 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\Use
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UserControls\Bodys\TeamsUserControl.baml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\TeamsDetails.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\TeamsDetails.baml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\EmptyWindow.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\EmptyWindow.baml
