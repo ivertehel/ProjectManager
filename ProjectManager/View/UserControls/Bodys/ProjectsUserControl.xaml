@@ -22,32 +22,20 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" HorizontalAlignment="Stretch" Grid.Column="0">
-            <DataGrid Grid.Row="0"  Name="ProjectsDataGrid"
+            <DataGrid Grid.Row="0" Name="ProjectsDataGrid"
                       ItemsSource="{Binding OrdersCollection}" ColumnWidth="*"
                       SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged"
                       IsReadOnly="True" AutoGenerateColumns="False"
                       HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
                 <DataGrid.Columns>
-                    <DataGridTextColumn  Header="Project's name" Binding="{Binding Path=Name, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Project name" Binding="{Binding Path=Name, Mode=OneWay}"/>
                     <DataGridTextColumn  Header="Description" Binding="{Binding Path=Description, Mode=OneWay}"/>
                     <DataGridTextColumn  Header="Start date" Binding="{Binding Path=StartDate, Mode=OneWay}"/>
                     <DataGridTextColumn  Header="Release date" Binding="{Binding Path=ReleaseDate, Mode=OneWay}"/>
                     <DataGridTextColumn  Header="Price" Binding="{Binding Path=Price, Mode=OneWay}"/>
-                    <DataGridTextColumn  Header="Status" Binding="{Binding Path=ReleaseDate, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <!--<DataGrid.Columns>
-                    -->
-            <!--<DataGridTextColumn Binding="{_projectsUserControlVM}"-->
-            <!--
-                </DataGrid.Columns>
-                    -->
-            <!--<DataGrid.Columns>
-                    <DataGridTextColumn  Header="Start date" Binding="{Binding Path=StartDate, Mode=OneWay}"/>
-                </DataGrid.Columns>-->
-            <!--
-            </DataGrid>-->
-
         </Grid>
 
         <Grid Grid.Row="1" HorizontalAlignment="Stretch" Grid.Column="0" x:Name="ProjectDetailsGrid" VerticalAlignment="Top" Margin="18,0,18,0">
@@ -222,7 +210,18 @@
                     <Label Content="Modules:" TextBlock.FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <DataGrid Name="SubProjectsDataGrid" ItemsSource="{Binding ProjectsCollection}" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>
+                    <DataGrid Grid.Row="0"
+                      ItemsSource="{Binding ProjectsCollection}" ColumnWidth="*"
+                      IsReadOnly="True" AutoGenerateColumns="False"
+                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn  Header="Module name" Binding="{Binding Path=Name, Mode=OneWay}"/>
+                            <DataGridTextColumn  Header="Description" Binding="{Binding Path=Description, Mode=OneWay}"/>
+                            <DataGridTextColumn  Header="Start date" Binding="{Binding Path=StartDate, Mode=OneWay}"/>
+                            <DataGridTextColumn  Header="Release date" Binding="{Binding Path=ReleaseDate, Mode=OneWay}"/>
+                            <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </Grid>
           
@@ -238,7 +237,17 @@
                     <Label Content="Tasks:" TextBlock.FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <DataGrid Name="TasksDataGrid" ItemsSource="{Binding TasksCollection}" MaxHeight="200"  ColumnWidth="*" IsReadOnly="True"/>
+                    <DataGrid Name="TasksDataGrid" ItemsSource="{Binding TasksCollection}" ColumnWidth="*"
+                      IsReadOnly="True" AutoGenerateColumns="False"
+                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn  Header="Priority" Binding="{Binding Path=Priority, Mode=OneWay}"/>
+                            <DataGridTextColumn  Header="Task name" Binding="{Binding Path=Name, Mode=OneWay}"/>
+                            <DataGridTextColumn  Header="Description" Binding="{Binding Path=Description, Mode=OneWay}"/>
+                            <DataGridTextColumn  Header="Hours" Binding="{Binding Path=Hours, Mode=OneWay}"/>
+                            <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </Grid>
         </Grid>
