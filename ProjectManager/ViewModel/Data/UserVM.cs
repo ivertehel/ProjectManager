@@ -18,6 +18,12 @@ namespace PMView.View.WrapperVM
             _user = user;
         }
 
+        public User User
+        {
+            get { return _user; }
+            set { _user = value; }
+        }
+
         public string Name
         {
             get { return _user.Name; }

@@ -16,7 +16,7 @@ namespace PMView.View
 
         private ObservableCollection<Project> _projectsCollection = new ObservableCollection<Project>();
 
-        private ObservableCollection<User> _employeesCollection = new ObservableCollection<User>();
+        private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
         private ObservableCollection<TeamVM> _teamsCollection = new ObservableCollection<TeamVM>();
 
@@ -76,23 +76,6 @@ namespace PMView.View
             }
         }
 
-        public List<User> Employees
-        {
-            get
-            {
-                if (SelectedOrder == null)
-                    return null;
-                List<User> e = new List<User>();
-                foreach (var item in SelectedOrder.Order.Projects)
-                {
-                    IEnumerable<User> inProj = from items in item.Users where !e.Exists(x => x.Id == items.Id) select items.User;
-                    e.AddRange(inProj);
-                }
-
-                return e;
-            }
-        }
-
         public List<Task> Tasks
         {
             get
@@ -107,9 +90,9 @@ namespace PMView.View
                     t.AddRange(tasks);
                 }
 
-                foreach (var employee in Employees)
+                foreach (var employee in _employeesCollection)
                 {
-                    var tasks = from items in Task.UsersTasks where items.OwnerId == employee.Id select items;
+                    var tasks = from items in Task.UsersTasks where items.OwnerId == employee.User.Id select items;
                     t.AddRange(tasks);
                 }
 
@@ -208,9 +191,29 @@ namespace PMView.View
             get { return _projectsCollection; }
         }
 
-        public ObservableCollection<User> EmployeesCollection
+        public ObservableCollection<UserVM> EmployeesCollection
         {
-            get { return _employeesCollection; }
+            get
+            {
+                _employeesCollection.Clear();
+                if (SelectedOrder == null)
+                    return _employeesCollection;
+
+                _employeesCollection.Clear();
+                List<User> e = new List<User>();
+                foreach (var item in SelectedOrder.Order.Projects)
+                {
+                    IEnumerable<User> inProj = from items in item.Users where !e.Exists(x => x.Id == items.Id) select items.User;
+                    e.AddRange(inProj);
+                }
+
+                _employeesCollection.Clear();
+                foreach (var item in e)
+                {
+                    _employeesCollection.Add(new UserVM(item));
+                }
+                return _employeesCollection;
+            }
         }
 
         public ObservableCollection<TeamVM> TeamsCollection
@@ -264,26 +267,11 @@ namespace PMView.View
 
             LoadDetails();
 
-            ProjectsCollection.Clear();
-            var projects = Projects;
-            foreach (var item in projects)
-            {
-                ProjectsCollection.Add(item);
-            }
-
-
-            //EmployeesCollection.Clear();
-            //var emp = Employees;
-            //foreach (var item in emp)
+            //ProjectsCollection.Clear();
+            //var projects = Projects;
+            //foreach (var item in projects)
             //{
-            //    EmployeesCollection.Add(item);
-            //}
-
-            //TeamsCollection.Clear();
-            //var tm = Teams;
-            //foreach (var item in tm)
-            //{
-            //    TeamsCollection.Add(item);
+            //    ProjectsCollection.Add(item);
             //}
 
             //TasksCollection.Clear();
@@ -297,6 +285,7 @@ namespace PMView.View
         public void LoadDetails()
         {
             OnPropertyChanged("TeamsCollection");
+            OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("Skills");
             OnPropertyChanged("Teams");
             OnPropertyChanged("Employees");

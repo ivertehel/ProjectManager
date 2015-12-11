@@ -90,15 +90,6 @@ namespace PMDataLayer
             get { return from items in User_Team.Items where items.User.Id == Id select items.Team; }
         }
 
-        ////public IEnumerable<Task> Tasks
-        ////{
-        ////    get
-        ////    {
-        ////        from items in Task.UsersTasks where items.
-        ////    }
-
-        ////}
-
         public override string ToString()
         {
             return Name + " " + Surname;
