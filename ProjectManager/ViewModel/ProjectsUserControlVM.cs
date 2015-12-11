@@ -14,7 +14,7 @@ namespace PMView.View
     {
         private ObservableCollection<OrderVM> _ordersCollection = new ObservableCollection<OrderVM>();
 
-        private ObservableCollection<Project> _projectsCollection = new ObservableCollection<Project>();
+        private ObservableCollection<ProjectVM> _projectsCollection = new ObservableCollection<ProjectVM>();
 
         private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
@@ -186,7 +186,7 @@ namespace PMView.View
             get { return _ordersCollection; }
         }
 
-        public ObservableCollection<Project> ProjectsCollection
+        public ObservableCollection<ProjectVM> ProjectsCollection
         {
             get { return _projectsCollection; }
         }
