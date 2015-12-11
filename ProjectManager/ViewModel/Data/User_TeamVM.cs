@@ -10,35 +10,61 @@ namespace PMView.View.WrapperVM
 {
     public class User_TeamVM : BaseVM
     {
-        private Team _team;
+        private User_Team _userteam;
 
-        private User _user;
-
-        private Position _position;
-
-        private User_Team _userTeam;
-
-        public User_TeamVM(User_Team  userTeam)
+        public User_TeamVM(User_Team userteam)
         {
-            _userTeam = userTeam;
+            _userteam = userteam;
         }
 
-        public Team Team
+        public User_Team UserTeam
         {
-            get { return _team; }
-            set { _team = value; }
-        }
-
-        public User User
-        {
-            get { return _user; }
-            set { _user = value; }
+            get { return _userteam; }
+            set { _userteam = value; }
         }
 
         public Position Position
         {
-            get { return _position; }
-            set { _position = value; }
+            get
+            {
+                return _userteam.Position;
+            }
+            set
+            {
+                _userteam.Position = value;
+                OnPropertyChanged("Position");
+            }
+        }
+
+        public Team Team
+        {
+            get
+            {
+                return _userteam.Team;
+            }
+            set
+            {
+                _userteam.Team = value;
+                OnPropertyChanged("Team");
+            }
+        }
+
+        public User User
+        {
+            get
+            {
+                return _userteam.User;
+            }
+            set
+            {
+                _userteam.User = value;
+                OnPropertyChanged("User");
+            }
+        }
+
+        public IEnumerable<Position> Positions
+        {
+            get { return _userteam.Positions; }
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using PMDataLayer;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -12,25 +13,30 @@ namespace PMView.View.WrapperVM
     {
         private Team _team;
 
-        private string _name;
 
-        private string _description;
 
         public TeamVM(Team team)
         {
             _team = team;
-        } 
+        }
+
+        public Team Team
+        {
+            get { return _team; }
+            set { _team = value; }
+        }
 
         public string Name
         {
             get
             {
-                return _name;
+                return _team.Name;
             }
             set
             {
-                _name = value;
-                OnPropertyChanged("Name");
+                _team.Name = value;
+              //  OnPropertyChanged("Name");
+                OnPropertyChanged("TeamsCollection");
             }
         }
 
@@ -38,13 +44,28 @@ namespace PMView.View.WrapperVM
         {
             get
             {
-                return _description;
+                return _team.Description;
             }
             set
             {
-                _description = value;
+                _team.Description = value;
                 OnPropertyChanged("Description");
             }
+        }
+
+        public IEnumerable<Project> Projects
+        {
+            get { return _team.Projects; }
+        }
+
+        public IEnumerable<User_Team> Users
+        {
+            get { return from items in User_Team.Items where items.Team.Id == _team.Id select items; }
+        }
+
+        public override string ToString()
+        {
+            return _team.ToString();
         }
     }
 }
