@@ -25,7 +25,12 @@
                       IsReadOnly="True" AutoGenerateColumns="False"
                       HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
                 <DataGrid.Columns>
+                    <DataGridTextColumn  Header="Project's name" Binding="{Binding Path=Name, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Description" Binding="{Binding Path=Description, Mode=OneWay}"/>
                     <DataGridTextColumn  Header="Start date" Binding="{Binding Path=StartDate, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Release date" Binding="{Binding Path=ReleaseDate, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Price" Binding="{Binding Path=Price, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Status" Binding="{Binding Path=ReleaseDate, Mode=OneWay}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <!--<DataGrid.Columns>
