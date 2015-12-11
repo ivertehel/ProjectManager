@@ -5,12 +5,14 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using PMDataLayer;
+using Core;
+using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
     public class ProjectsUserControlVM : INotifyPropertyChanged
     {
-        private ObservableCollection<Order> _ordersCollection = new ObservableCollection<Order>();
+        private ObservableCollection<OrderVM> _ordersCollection = new ObservableCollection<OrderVM>();
 
         private ObservableCollection<Project> _projectsCollection = new ObservableCollection<Project>();
 
@@ -20,29 +22,49 @@ namespace PMView.View
 
         private ObservableCollection<Task> _taskCollection = new ObservableCollection<Task>();
 
+        private OrderVM _selectedOrder;
+
         public ProjectsUserControlVM()
         {
+            Logger.Info("First screen","Main screen has been open");
             if (User.Items.Count == 0)
                 GenerateData();
 
             foreach (var item in Order.Items)
             {
-                OrdersCollection.Add(item);
+                OrdersCollection.Add(new OrderVM(item));
             }
 
-            SelectedOrder = OrdersCollection[0];
-            LoadData();
+            SelectedOrder = OrdersCollection[1];
         }
 
         public ProjectsUserControlVM(Order order) : this()
         {
-            SelectedOrder = order;
+            SelectedOrder.Order = order;
             LoadData();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Order SelectedOrder { get; set; }
+        public OrderVM SelectedOrder
+        {
+            get
+            {
+                return _selectedOrder;
+            }
+            set
+            {
+                _selectedOrder = value;
+                OnPropertyChanged("Skills");
+                OnPropertyChanged("CustomerName");
+                OnPropertyChanged("ProjectStatus");
+                OnPropertyChanged("ReleaseDate");
+                OnPropertyChanged("StartDate");
+                OnPropertyChanged("Price");
+                OnPropertyChanged("Description");
+                OnPropertyChanged("Name");
+            }
+        }
 
         /// <summary>
         /// Skills of selected order
@@ -56,7 +78,7 @@ namespace PMView.View
 
                 string skills = string.Empty;
                 List<Skill> s = new List<Skill>();
-                foreach (var item in SelectedOrder.Projects)
+                foreach (var item in SelectedOrder.Order.Projects)
                 {
                     IEnumerable<Skill> inProj = from items in item.Skills where !s.Exists(x => x.Id == items.Id) select items;
                     s.AddRange(inProj);
@@ -82,7 +104,7 @@ namespace PMView.View
                     return new List<Team>();
 
                 List<Team> t = new List<Team>();
-                foreach (var item in SelectedOrder.Projects)
+                foreach (var item in SelectedOrder.Order.Projects)
                 {
                     IEnumerable<Team> inProj = from items in item.Teams where !t.Exists(x => x.Id == items.Id) select items;
                     t.AddRange(inProj);
@@ -102,7 +124,7 @@ namespace PMView.View
                 if (SelectedOrder == null)
                     return null;
                 List<User> e = new List<User>();
-                foreach (var item in SelectedOrder.Projects)
+                foreach (var item in SelectedOrder.Order.Projects)
                 {
                     IEnumerable<User> inProj = from items in item.Users where !e.Exists(x => x.Id == items.Id) select items.User;
                     e.AddRange(inProj);
@@ -235,10 +257,10 @@ namespace PMView.View
 
         public IEnumerable<Project> Projects
         {
-            get { return from items in Project_Project.Items where items.ParrentProject == null && items.ChildProject.Order == SelectedOrder select items.ChildProject; }
+            get { return from items in Project_Project.Items where items.ParrentProject == null && items.ChildProject.Order == SelectedOrder.Order select items.ChildProject; }
         }
 
-        public ObservableCollection<Order> OrdersCollection
+        public ObservableCollection<OrderVM> OrdersCollection
         {
             get { return _ordersCollection; }
         }

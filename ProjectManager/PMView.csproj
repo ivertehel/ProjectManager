@@ -56,6 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\ClientsUserControlVM.cs" />
+    <Compile Include="ViewModel\Data\BaseVM.cs" />
+    <Compile Include="ViewModel\Data\OrderVM.cs" />
+    <Compile Include="ViewModel\Data\TeamVM.cs" />
+    <Compile Include="ViewModel\Data\User_TeamVM.cs" />
     <Compile Include="ViewModel\ProjectsUserControlVM.cs" />
     <Compile Include="ViewModel\TeamDetailsVM.cs" />
     <Compile Include="View\EmptyWindow.xaml.cs">
@@ -168,6 +172,10 @@
     <Resource Include="Assets\MaleAvatar.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{2b6b7b7b-e028-4410-9ad9-10199ae81aca}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PMDataLayer\PMDataLayer.csproj">
       <Project>{e07a5241-6bbd-46fc-a8fe-000b2bd7ab14}</Project>
       <Name>PMDataLayer</Name>

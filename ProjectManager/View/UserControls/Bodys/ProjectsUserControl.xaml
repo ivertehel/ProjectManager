@@ -19,7 +19,14 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" HorizontalAlignment="Stretch" Grid.Column="0">
-            <DataGrid Grid.Row="0"  Name="ProjectsDataGrid" ItemsSource="{Binding OrdersCollection}" ColumnWidth="*" SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+            <DataGrid Grid.Row="0"  Name="ProjectsDataGrid"
+                      ItemsSource="{Binding OrdersCollection}" ColumnWidth="*"
+                      SelectedCellsChanged="ProjectsDataGrid_SelectedCellsChanged"
+                      IsReadOnly="True" AutoGenerateColumns="False"
+                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+                <DataGrid.Columns>
+                    <DataGridTextColumn  Header="Start date" Binding="{Binding Path=StartDate, Mode=OneWay}"/>
+                </DataGrid.Columns>
             </DataGrid>
             <!--<DataGrid.Columns>
                     -->

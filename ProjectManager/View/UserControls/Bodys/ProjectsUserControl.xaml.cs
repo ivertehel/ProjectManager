@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMDataLayer;
+using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
@@ -41,7 +42,7 @@ namespace PMView.View
 
         private void ProjectsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            _projectsUserControlVM.SelectedOrder = ProjectsDataGrid.SelectedItem as Order;
+            _projectsUserControlVM.SelectedOrder = ProjectsDataGrid.SelectedItem as OrderVM;
             _projectsUserControlVM.LoadData();
         }
 

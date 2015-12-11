@@ -32,3 +32,5 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\Tea
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\TeamsDetails.baml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\EmptyWindow.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\EmptyWindow.baml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Core.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Core.pdb
