@@ -59,6 +59,7 @@
     <Compile Include="ViewModel\Data\BaseVM.cs" />
     <Compile Include="ViewModel\Data\OrderVM.cs" />
     <Compile Include="ViewModel\Data\TeamVM.cs" />
+    <Compile Include="ViewModel\Data\UserVM.cs" />
     <Compile Include="ViewModel\Data\User_TeamVM.cs" />
     <Compile Include="ViewModel\ProjectsUserControlVM.cs" />
     <Compile Include="ViewModel\TeamDetailsVM.cs" />

@@ -48,27 +48,10 @@ namespace PMView.View
 
         public OrderVM SelectedOrder
         {
-            get
-            {
-                return _selectedOrder;
-            }
-            set
-            {
-                _selectedOrder = value;
-                //OnPropertyChanged("Skills");
-                //OnPropertyChanged("CustomerName");
-                //OnPropertyChanged("ProjectStatus");
-                //OnPropertyChanged("ReleaseDate");
-                //OnPropertyChanged("StartDate");
-                //OnPropertyChanged("Price");
-                //OnPropertyChanged("Description");
-                //OnPropertyChanged("Name");
-            }
+            get { return _selectedOrder; }
+            set { _selectedOrder = value; }
         }
 
-        /// <summary>
-        /// Skills of selected order
-        /// </summary>
         public string Skills
         {
             get
@@ -93,9 +76,6 @@ namespace PMView.View
             }
         }
 
-        /// <summary>
-        /// Employees of selected order
-        /// </summary>
         public List<User> Employees
         {
             get
@@ -137,9 +117,6 @@ namespace PMView.View
             }
         }
 
-        /// <summary>
-        /// Customer name of selected order
-        /// </summary>
         public string CustomerName
         {
             get
@@ -150,9 +127,6 @@ namespace PMView.View
             }
         }
 
-        /// <summary>
-        /// Status of selected order
-        /// </summary>
         public Order.Statuses ProjectStatus
         {
             get
@@ -164,9 +138,6 @@ namespace PMView.View
             }
         }
 
-        /// <summary>
-        /// Release date of selected order
-        /// </summary>
         public string ReleaseDate
         {
             get
@@ -178,9 +149,6 @@ namespace PMView.View
             }
         }
 
-        /// <summary>
-        /// Start date of selected order
-        /// </summary>
         public string StartDate
         {
             get
@@ -192,9 +160,6 @@ namespace PMView.View
             }
         }
 
-        /// <summary>
-        /// Price of selected order
-        /// </summary>
         public string Price
         {
             get
@@ -206,9 +171,6 @@ namespace PMView.View
             }
         }
 
-        /// <summary>
-        /// Description of selected order
-        /// </summary>
         public string Description
         {
             get
@@ -220,9 +182,6 @@ namespace PMView.View
             }
         }
 
-        /// <summary>
-        /// Description of selected order
-        /// </summary>
         public string Name
         {
             get
