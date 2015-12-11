@@ -94,34 +94,6 @@ namespace PMView.View
         }
 
         /// <summary>
-        /// Teams of selected order
-        /// </summary>
-        public List<TeamVM> Teams
-        {
-            get
-            {
-                if (SelectedOrder == null)
-                    return new List<TeamVM>();
-
-                List<Team> t = new List<Team>();
-                foreach (var item in SelectedOrder.Order.Projects)
-                {
-                    IEnumerable<Team> inProj = from items in item.Teams where !t.Exists(x => x.Id == items.Id) select items;
-                    t.AddRange(inProj);
-                }
-
-                List<TeamVM> teams = new List<TeamVM>();
-
-                foreach (var item in t)
-                {
-                    teams.Add(new TeamVM(item));
-                }
-
-                return teams;
-            }
-        }
-
-        /// <summary>
         /// Employees of selected order
         /// </summary>
         public List<User> Employees
@@ -149,7 +121,7 @@ namespace PMView.View
                     return new List<Task>();
 
                 List<Task> t = new List<Task>();
-                foreach (var team in Teams)
+                foreach (var team in _teamsCollection)
                 {
                     var tasks = from items in Task.TeamsTasks where items.OwnerId == team.Team.Id select items;
                     t.AddRange(tasks);
@@ -286,7 +258,23 @@ namespace PMView.View
         {
             get
             {
-                var teams = Teams;
+                if (SelectedOrder == null)
+                    return _teamsCollection;
+
+                List<Team> t = new List<Team>();
+                foreach (var item in SelectedOrder.Order.Projects)
+                {
+                    IEnumerable<Team> inProj = from items in item.Teams where !t.Exists(x => x.Id == items.Id) select items;
+                    t.AddRange(inProj);
+                }
+
+                List<TeamVM> teams = new List<TeamVM>();
+
+                foreach (var item in t)
+                {
+                    teams.Add(new TeamVM(item));
+                }
+
                 _teamsCollection.Clear();
                 foreach (var item in teams)
                 {

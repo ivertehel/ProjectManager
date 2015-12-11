@@ -75,10 +75,7 @@ namespace PMView.View
             set
             {
                 CurrentTeam.Name = value;
-                OnPropertyChanged("Name");
                 _projectsUserControlVM.OnPropertyChanged("TeamsCollection");
-
-                //     _projectsUserControlVM.LoadData();    
             }
         }
 

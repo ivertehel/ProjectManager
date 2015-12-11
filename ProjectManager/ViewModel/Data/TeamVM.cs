@@ -35,7 +35,6 @@ namespace PMView.View.WrapperVM
             set
             {
                 _team.Name = value;
-              //  OnPropertyChanged("Name");
             }
         }
 
@@ -48,7 +47,6 @@ namespace PMView.View.WrapperVM
             set
             {
                 _team.Description = value;
-                OnPropertyChanged("Description");
             }
         }
 
