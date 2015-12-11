@@ -1,6 +1,7 @@
 ﻿using PMDataLayer;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -10,52 +11,47 @@ namespace PMView.View.WrapperVM
 {
     public class User_TeamVM : BaseVM
     {
-        private User_Team _userteam;
+        private User_Team _userTeam;
 
-        public User_TeamVM(User_Team userteam)
+        public User_TeamVM(User_Team userTeam)
         {
-            _userteam = userteam;
+            _userTeam = userTeam;
         }
 
-        public User_Team UserTeam
+        public User_Team User_Team
         {
-            get { return _userteam; }
-            set { _userteam = value; }
+            get { return _userTeam; }
+            set { _userTeam = value; }
         }
 
-        public Position Position
-        {
-            get { return _userteam.Position; }
-            set
-            {
-                _userteam.Position = value;
-                OnPropertyChanged("Position");
-            }
-        }
+        public bool IsLeader { get; set; }
 
         public Team Team
         {
-            get { return _userteam.Team; }
-            set
-            {
-                _userteam.Team = value;
-                OnPropertyChanged("Team");
-            }
+            get { return _userTeam.Team; }
+            set { _userTeam.Team = value; }
         }
 
         public User User
         {
-            get { return _userteam.User; }
-            set
-            {
-                _userteam.User = value;
-                OnPropertyChanged("User");
-            }
+            get { return _userTeam.User; }
+            set { _userTeam.User = value; }
+        }
+
+        public Position Position
+        {
+            get { return _userTeam.Position; }
+            set { _userTeam.Position = value; }
         }
 
         public IEnumerable<Position> Positions
         {
-            get { return _userteam.Positions; }
+            get { return _userTeam.Positions; }
+        }
+
+        public override string ToString()
+        {
+            return _userTeam.ToString();
         }
     }
 }
