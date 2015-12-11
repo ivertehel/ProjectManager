@@ -25,106 +25,50 @@ namespace PMView.View.WrapperVM
 
         public string Name
         {
-            get
-            {
-                return _order.Name;
-            }
-            set
-            {
-                _order.Name = value;
-                OnPropertyChanged("Name");
-            }
+            get { return _order.Name; }
+            set { _order.Name = value; }
         }
 
         public string Description
         {
-            get
-            {
-                return _order.Description;
-            }
-            set
-            {
-                _order.Description = value;
-                OnPropertyChanged("Description");
-            }
+            get { return _order.Description; }
+            set { _order.Description = value; }
         }
 
         public decimal Price
         {
-            get
-            {
-                return _order.Price;
-            }
-            set
-            {
-                _order.Price = value;
-                OnPropertyChanged("Price");
-            }
+            get { return _order.Price; }
+            set { _order.Price = value; }
         }
 
         public DateTime StartDate
         {
-            get
-            {
-                return _order.StartDate;
-            }
-            set
-            {
-                _order.StartDate = value;
-                OnPropertyChanged("StartDate");
-            }
+            get { return _order.StartDate; }
+            set { _order.StartDate = value; }
         }
 
         public DateTime ReleaseDate
         {
-            get
-            {
-                return _order.ReleaseDate;
-            }
-            set
-            {
-                _order.ReleaseDate = value;
-                OnPropertyChanged("ReleaseDate");
-            }
+            get { return _order.ReleaseDate; }
+            set { _order.ReleaseDate = value; }
         }
 
         public Order.Statuses Status
         {
-            get
-            {
-                return _order.Status;
-            }
-            set
-            {
-                _order.Status = value;
-                OnPropertyChanged("Status");
-            }
+            get { return _order.Status; }
+            set { _order.Status = value; }
         }
 
         public bool IsPrivate
         {
-            get
-            {
-                return _order.IsPrivate;
-            }
-            set
-            {
-                _order.IsPrivate = value;
-                OnPropertyChanged("IsPrivate");
-            }
+            get { return _order.IsPrivate; }
+            set { _order.IsPrivate = value; }
         }
 
         public Client Client
         {
-            get
-            {
-                return _order.Client;
-            }
-            set
-            {
-                _order.Client = value;
-                OnPropertyChanged("Client");
-            }
+            get { return _order.Client; }
+            set { _order.Client = value; }
         }
     }
 }

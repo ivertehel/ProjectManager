@@ -55,14 +55,14 @@ namespace PMView.View
             set
             {
                 _selectedOrder = value;
-                OnPropertyChanged("Skills");
-                OnPropertyChanged("CustomerName");
-                OnPropertyChanged("ProjectStatus");
-                OnPropertyChanged("ReleaseDate");
-                OnPropertyChanged("StartDate");
-                OnPropertyChanged("Price");
-                OnPropertyChanged("Description");
-                OnPropertyChanged("Name");
+                //OnPropertyChanged("Skills");
+                //OnPropertyChanged("CustomerName");
+                //OnPropertyChanged("ProjectStatus");
+                //OnPropertyChanged("ReleaseDate");
+                //OnPropertyChanged("StartDate");
+                //OnPropertyChanged("Price");
+                //OnPropertyChanged("Description");
+                //OnPropertyChanged("Name");
             }
         }
 
@@ -311,7 +311,7 @@ namespace PMView.View
             {
                 ProjectsCollection.Add(item);
             }
-            OnPropertyChanged("TeamsCollection");
+
 
             //EmployeesCollection.Clear();
             //var emp = Employees;
@@ -337,6 +337,7 @@ namespace PMView.View
 
         public void LoadDetails()
         {
+            OnPropertyChanged("TeamsCollection");
             OnPropertyChanged("Skills");
             OnPropertyChanged("Teams");
             OnPropertyChanged("Employees");

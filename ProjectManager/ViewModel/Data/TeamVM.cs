@@ -13,8 +13,6 @@ namespace PMView.View.WrapperVM
     {
         private Team _team;
 
-
-
         public TeamVM(Team team)
         {
             _team = team;
@@ -28,26 +26,14 @@ namespace PMView.View.WrapperVM
 
         public string Name
         {
-            get
-            {
-                return _team.Name;
-            }
-            set
-            {
-                _team.Name = value;
-            }
+            get { return _team.Name; }
+            set { _team.Name = value; }
         }
 
         public string Description
         {
-            get
-            {
-                return _team.Description;
-            }
-            set
-            {
-                _team.Description = value;
-            }
+            get { return _team.Description; }
+            set { _team.Description = value; }
         }
 
         public IEnumerable<Project> Projects

@@ -8,19 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-        <Grid.Resources>
-            <DataTemplate DataType="{x:Type WrapperVM:TeamVM}">
-                <Border BorderBrush="Azure"  VerticalAlignment="Top">
-                    <Grid VerticalAlignment="Top">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Text="{Binding Name}" FontSize="14" FontWeight="Bold" />
-                    </Grid>
-                </Border>
-            </DataTemplate>
-        </Grid.Resources>
+
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

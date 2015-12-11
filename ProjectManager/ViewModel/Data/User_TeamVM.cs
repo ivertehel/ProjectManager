@@ -25,10 +25,7 @@ namespace PMView.View.WrapperVM
 
         public Position Position
         {
-            get
-            {
-                return _userteam.Position;
-            }
+            get { return _userteam.Position; }
             set
             {
                 _userteam.Position = value;
@@ -38,10 +35,7 @@ namespace PMView.View.WrapperVM
 
         public Team Team
         {
-            get
-            {
-                return _userteam.Team;
-            }
+            get { return _userteam.Team; }
             set
             {
                 _userteam.Team = value;
@@ -51,10 +45,7 @@ namespace PMView.View.WrapperVM
 
         public User User
         {
-            get
-            {
-                return _userteam.User;
-            }
+            get { return _userteam.User; }
             set
             {
                 _userteam.User = value;
