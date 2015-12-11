@@ -36,7 +36,6 @@ namespace PMView.View.WrapperVM
             {
                 _team.Name = value;
               //  OnPropertyChanged("Name");
-                OnPropertyChanged("TeamsCollection");
             }
         }
 

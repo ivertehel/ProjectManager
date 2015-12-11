@@ -35,7 +35,7 @@ namespace PMView.View
                 OrdersCollection.Add(new OrderVM(item));
             }
 
-            SelectedOrder = OrdersCollection[1];
+            SelectedOrder = OrdersCollection[0];
         }
 
         public ProjectsUserControlVM(Order order) : this()
@@ -284,7 +284,17 @@ namespace PMView.View
 
         public ObservableCollection<TeamVM> TeamsCollection
         {
-            get { return _teamsCollection; }
+            get
+            {
+                var teams = Teams;
+                _teamsCollection.Clear();
+                foreach (var item in teams)
+                {
+                    if (!_teamsCollection.Contains(item))
+                        _teamsCollection.Add(item);
+                }
+                return _teamsCollection;
+            }
         }
 
         public ObservableCollection<Task> TasksCollection
@@ -313,6 +323,7 @@ namespace PMView.View
             {
                 ProjectsCollection.Add(item);
             }
+            OnPropertyChanged("TeamsCollection");
 
             //EmployeesCollection.Clear();
             //var emp = Employees;
@@ -321,12 +332,12 @@ namespace PMView.View
             //    EmployeesCollection.Add(item);
             //}
 
-            TeamsCollection.Clear();
-            var tm = Teams;
-            foreach (var item in tm)
-            {
-                TeamsCollection.Add(item);
-            }
+            //TeamsCollection.Clear();
+            //var tm = Teams;
+            //foreach (var item in tm)
+            //{
+            //    TeamsCollection.Add(item);
+            //}
 
             //TasksCollection.Clear();
             //var tsk = Tasks;
