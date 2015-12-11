@@ -20,7 +20,7 @@ namespace PMView.View
 
         private ObservableCollection<TeamVM> _teamsCollection = new ObservableCollection<TeamVM>();
 
-        private ObservableCollection<Task> _taskCollection = new ObservableCollection<Task>();
+        private ObservableCollection<TaskVM> _tasksCollection = new ObservableCollection<TaskVM>();
 
         private OrderVM _selectedOrder;
 
@@ -30,10 +30,6 @@ namespace PMView.View
             if (User.Items.Count == 0)
                 GenerateData();
 
-            foreach (var item in Order.Items)
-            {
-                OrdersCollection.Add(new OrderVM(item));
-            }
 
             SelectedOrder = OrdersCollection[0];
         }
@@ -73,30 +69,6 @@ namespace PMView.View
                 }
 
                 return skills;
-            }
-        }
-
-        public List<Task> Tasks
-        {
-            get
-            {
-                if (SelectedOrder == null)
-                    return new List<Task>();
-
-                List<Task> t = new List<Task>();
-                foreach (var team in _teamsCollection)
-                {
-                    var tasks = from items in Task.TeamsTasks where items.OwnerId == team.Team.Id select items;
-                    t.AddRange(tasks);
-                }
-
-                foreach (var employee in _employeesCollection)
-                {
-                    var tasks = from items in Task.UsersTasks where items.OwnerId == employee.User.Id select items;
-                    t.AddRange(tasks);
-                }
-
-                return t;
             }
         }
 
@@ -176,19 +148,31 @@ namespace PMView.View
             }
         }
 
-        public IEnumerable<Project> Projects
-        {
-            get { return from items in Project_Project.Items where items.ParrentProject == null && items.ChildProject.Order == SelectedOrder.Order select items.ChildProject; }
-        }
-
         public ObservableCollection<OrderVM> OrdersCollection
         {
-            get { return _ordersCollection; }
+            get
+            {
+                _ordersCollection.Clear();
+                foreach (var item in Order.Items)
+                {
+                    _ordersCollection.Add(new OrderVM(item));
+                }
+                return _ordersCollection;
+            }
         }
 
         public ObservableCollection<ProjectVM> ProjectsCollection
         {
-            get { return _projectsCollection; }
+            get
+            {
+                _projectsCollection.Clear();
+                var projects = from items in Project_Project.Items where items.ParrentProject == null && items.ChildProject.Order == SelectedOrder.Order select items.ChildProject;
+                foreach (var item in projects)
+                {
+                    _projectsCollection.Add(new ProjectVM(item));
+                }
+                return _projectsCollection;
+            }
         }
 
         public ObservableCollection<UserVM> EmployeesCollection
@@ -247,9 +231,33 @@ namespace PMView.View
             }
         }
 
-        public ObservableCollection<Task> TasksCollection
+        public ObservableCollection<TaskVM> TasksCollection
         {
-            get { return _taskCollection; }
+            get
+            {
+                if (SelectedOrder == null)
+                    return _tasksCollection;
+
+                List<Task> t = new List<Task>();
+                foreach (var team in _teamsCollection)
+                {
+                    var tasks = from items in Task.TeamsTasks where items.OwnerId == team.Team.Id select items;
+                    t.AddRange(tasks);
+                }
+
+                foreach (var employee in _employeesCollection)
+                {
+                    var tasks = from items in Task.UsersTasks where items.OwnerId == employee.User.Id select items;
+                    t.AddRange(tasks);
+                }
+                _tasksCollection.Clear();
+
+                foreach (var item in t)
+                {
+                    _tasksCollection.Add(new TaskVM(item));
+                }
+                return _tasksCollection;
+            }
         }
 
         public void OnPropertyChanged(string propertyName)
@@ -267,25 +275,14 @@ namespace PMView.View
 
             LoadDetails();
 
-            //ProjectsCollection.Clear();
-            //var projects = Projects;
-            //foreach (var item in projects)
-            //{
-            //    ProjectsCollection.Add(item);
-            //}
-
-            //TasksCollection.Clear();
-            //var tsk = Tasks;
-            //foreach (var item in tsk)
-            //{
-            //    TasksCollection.Add(item);
-            //}
         }
 
         public void LoadDetails()
         {
             OnPropertyChanged("TeamsCollection");
             OnPropertyChanged("EmployeesCollection");
+            OnPropertyChanged("ProjectsCollection");
+            OnPropertyChanged("TasksCollection");
             OnPropertyChanged("Skills");
             OnPropertyChanged("Teams");
             OnPropertyChanged("Employees");

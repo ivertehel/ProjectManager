@@ -58,6 +58,8 @@
     <Compile Include="ViewModel\ClientsUserControlVM.cs" />
     <Compile Include="ViewModel\Data\BaseVM.cs" />
     <Compile Include="ViewModel\Data\OrderVM.cs" />
+    <Compile Include="ViewModel\Data\ProjectVM.cs" />
+    <Compile Include="ViewModel\Data\TaskVM.cs" />
     <Compile Include="ViewModel\Data\TeamVM.cs" />
     <Compile Include="ViewModel\Data\UserVM.cs" />
     <Compile Include="ViewModel\Data\User_TeamVM.cs" />
