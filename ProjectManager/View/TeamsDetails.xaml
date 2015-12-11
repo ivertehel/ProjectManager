@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMView"
         xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
+        xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
         mc:Ignorable="d"
         Title="TeamsDetails" Height="500" Width="850">
     <Window.Resources>
@@ -48,7 +49,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.Resources>
-            <DataTemplate DataType="{x:Type localData:User_Team}">
+            <DataTemplate DataType="{x:Type WrapperVM:User_TeamVM}">
                 <Border BorderBrush="Azure"  VerticalAlignment="Top">
                     <Grid VerticalAlignment="Top">
                         <Grid.RowDefinitions>
@@ -104,7 +105,7 @@
                     <TextBlock Text="Team:" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1" VerticalAlignment="Top" Margin="15,0,0,0">
-                    <TextBox TextWrapping="Wrap" Text="{Binding Path=Name, Mode=TwoWay}" FontSize="12"/>
+                    <TextBox TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" FontSize="12"/>
                 </Grid>
                 <Grid Grid.Row="2" VerticalAlignment="Top" Margin="15,0,0,0">
                     <TextBlock Text="Description:" FontSize="18"/>

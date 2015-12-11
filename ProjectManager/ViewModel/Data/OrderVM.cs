@@ -1,13 +1,14 @@
 ﻿using PMDataLayer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PMView.View.WrapperVM
 {
-    public class OrderVM : BaseVM
+    public class OrderVM : BaseVM, INotifyPropertyChanged
     {
         private Order _order;
 

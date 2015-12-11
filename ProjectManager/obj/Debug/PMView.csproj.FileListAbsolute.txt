@@ -34,3 +34,4 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\Emp
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\EmptyWindow.baml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Core.dll
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Core.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\GeneratedInternalTypeHelper.g.cs

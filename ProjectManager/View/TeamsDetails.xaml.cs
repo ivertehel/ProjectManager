@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PMDataLayer;
 using PMView.View;
+using PMView.View.WrapperVM;
 
 namespace PMView
 {
@@ -23,10 +24,10 @@ namespace PMView
     {
         private TeamDetailsVM _teamDetailsVM;
 
-        public TeamsDetails(Team team, ProjectsUserControlVM projectsUserControlVM)
+        public TeamsDetails(TeamVM team, ProjectsUserControlVM projectsUserControlVM)
         {
             InitializeComponent();
-            _teamDetailsVM = new TeamDetailsVM(team, projectsUserControlVM);
+            _teamDetailsVM = new TeamDetailsVM(team.Team, projectsUserControlVM);
             DataContext = _teamDetailsVM;
         }
 

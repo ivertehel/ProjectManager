@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using PMDataLayer;
+using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
@@ -23,14 +24,16 @@ namespace PMView.View
 
         private ProjectsUserControlVM _projectsUserControlVM;
 
+        private TeamVM _currentTeam;
+
         public TeamDetailsVM(Team team, ProjectsUserControlVM control)
         {
             if (team == null)
                 return;
 
             _projectsUserControlVM = control;
-            CurrentTeam = team;
-
+            CurrentTeam = new TeamVM(team);
+            OnPropertyChanged("Name");
             EmployeesCollection = new ObservableCollection<User_Team>();
 
             foreach (var employee in _employeesCollection)
@@ -43,16 +46,28 @@ namespace PMView.View
                 }
             }
 
-            LoadOrdersCollection();
-            LoadPositions();
-            LoadData();
+            //LoadOrdersCollection();
+            //LoadPositions();
+            //LoadData();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public User SelectedEmployee { get; set; }
 
-        public Team CurrentTeam { get; private set; }
+        public TeamVM CurrentTeam
+        {
+            get
+            {
+                return _currentTeam;
+            }
+            set
+            {
+                _currentTeam = value;
+                OnPropertyChanged("Name");
+                OnPropertyChanged("Description");
+            }
+        }
 
         public string Name
         {
@@ -60,7 +75,9 @@ namespace PMView.View
             set
             {
                 CurrentTeam.Name = value;
-                _projectsUserControlVM.LoadData();    
+                OnPropertyChanged("Name");
+
+                //     _projectsUserControlVM.LoadData();    
             }
         }
 
@@ -127,39 +144,39 @@ namespace PMView.View
 
         public void LoadOrdersCollection()
         {
-            _ordersCollection.Clear();
-            var orders = from items in Team_Project.Items where items.Team == CurrentTeam select items.Project.Order;
-            foreach (var item in orders)
-            {
-                if ((from items in orders where items == item select items).Count() == 1)
-                {
-                    _ordersCollection.Add(item);
-                }
-            }
+            //_ordersCollection.Clear();
+            //var orders = from items in Team_Project.Items where items.Team == CurrentTeam select items.Project.Order;
+            //foreach (var item in orders)
+            //{
+            //    if ((from items in orders where items == item select items).Count() == 1)
+            //    {
+            //        _ordersCollection.Add(item);
+            //    }
+            //}
         }
 
         public void AddPosition(Position position)
         {
-            if (SelectedEmployee == null)
-                return;
-            if (position == null)
-                return;
-            var pos = (from items in User_Team.Items where items.Team == CurrentTeam && items.User == SelectedEmployee && items.Position == position select items).FirstOrDefault();
-            if (pos != null)
-                throw new Exception("This position is already exist");
+            //if (SelectedEmployee == null)
+            //    return;
+            //if (position == null)
+            //    return;
+            //var pos = (from items in User_Team.Items where items.Team == CurrentTeam && items.User == SelectedEmployee && items.Position == position select items).FirstOrDefault();
+            //if (pos != null)
+            //    throw new Exception("This position is already exist");
 
-            User_Team ut = new User_Team()
-            {
-                IsLeader = true,
-                Position = position,
-                Team = CurrentTeam,
-                User = SelectedEmployee
-            };
+            //User_Team ut = new User_Team()
+            //{
+            //    IsLeader = true,
+            //    Position = position,
+            //    Team = CurrentTeam,
+            //    User = SelectedEmployee
+            //};
 
-            User_Team.Items.Add(ut);
-            EmployeesCollection = new ObservableCollection<User_Team>();
-            LoadPositions();
-            LoadData();
+            //User_Team.Items.Add(ut);
+            //EmployeesCollection = new ObservableCollection<User_Team>();
+            //LoadPositions();
+            //LoadData();
         }
 
         public void RemovePosition(Position position)
