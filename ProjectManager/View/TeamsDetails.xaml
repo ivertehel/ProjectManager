@@ -105,7 +105,7 @@
                     <TextBlock Text="Team:" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1" VerticalAlignment="Top" Margin="15,0,0,0">
-                    <TextBox TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" FontSize="12"/>
+                    <TextBox TextWrapping="Wrap" Text="{Binding Path=Name, Mode=TwoWay}" FontSize="12"/>
                 </Grid>
                 <Grid Grid.Row="2" VerticalAlignment="Top" Margin="15,0,0,0">
                     <TextBlock Text="Description:" FontSize="18"/>
@@ -118,7 +118,7 @@
                 </Grid>
 
                 <Grid Grid.Row="5" VerticalAlignment="Stretch" Margin="15,0,0,0">
-                    <ListBox ItemsSource="{Binding Path=EmployeesCollection}" 
+                    <ListBox ItemsSource="{Binding EmployeesCollection}" 
                          FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="EmployeesListBox_SelectionChanged">
                         <ListBox.BorderBrush>
                             <SolidColorBrush Opacity="0" Color="SkyBlue"/>
@@ -147,7 +147,7 @@
                     <TextBlock Text="Skills:" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <ListBox ItemsSource="{Binding Path=SkillsCollection}" 
+                    <ListBox ItemsSource="{Binding SkillsCollection}" 
                          FontSize="14" Name="SkillsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" >
                         <ListBox.BorderBrush>
                             <SolidColorBrush Opacity="0" Color="SkyBlue"/>
@@ -187,7 +187,7 @@
                             <TextBlock Text="Add positions:" FontSize="15"/>
                         </Grid>
                         <Grid Grid.Column="0" Grid.Row="1" Margin="0,0,5,0">
-                            <ComboBox ItemsSource="{Binding Path=PositionsCollection}" 
+                            <ComboBox ItemsSource="{Binding PositionsCollection}" 
                          FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="PositionListBox_SelectionChanged">
                                 <ComboBox.BorderBrush>
                                     <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
@@ -198,7 +198,7 @@
                             </ComboBox>
                         </Grid>
                         <Grid  Grid.Column="1" Grid.Row="1">
-                            <ComboBox Grid.Column="1" ItemsSource="{Binding Path=PositionsToAddCollection}" 
+                            <ComboBox Grid.Column="1" ItemsSource="{Binding PositionsToAddCollection}" 
                          FontSize="14" Name="PositionToAddListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="PositionToAddListBox_SelectionChanged">
                                 <ComboBox.BorderBrush>
                                     <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
@@ -222,7 +222,20 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.5"></SolidColorBrush>
             </Grid.Background>
-            <DataGrid Name="OrdersDataGrid" ItemsSource="{Binding OrdersCollection}" ColumnWidth="*" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300" SelectedCellsChanged="DataGrid_SelectedCellsChanged"/>
+            <DataGrid Name="OrdersDataGrid"
+                      ItemsSource="{Binding OrdersCollection}" ColumnWidth="*"
+                      SelectedCellsChanged="DataGrid_SelectedCellsChanged"
+                      IsReadOnly="True" AutoGenerateColumns="False"
+                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+                <DataGrid.Columns>
+                    <DataGridTextColumn  Header="Project name" Binding="{Binding Path=Name, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Description" Binding="{Binding Path=Description, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Start date" Binding="{Binding Path=StartDate, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Release date" Binding="{Binding Path=ReleaseDate, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Price" Binding="{Binding Path=Price, Mode=OneWay}"/>
+                    <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
 
     </Grid>

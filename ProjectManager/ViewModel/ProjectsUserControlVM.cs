@@ -274,7 +274,6 @@ namespace PMView.View
                 return;
 
             LoadDetails();
-
         }
 
         public void LoadDetails()

@@ -12,110 +12,122 @@ namespace PMView.View
 {
     public class TeamDetailsVM : INotifyPropertyChanged
     {
-        private ObservableCollection<User_Team> _employeesCollection = new ObservableCollection<User_Team>();
+        private ObservableCollection<User_TeamVM> _employeesCollection = new ObservableCollection<User_TeamVM>();
 
-        private ObservableCollection<Skill> _skillsCollection = new ObservableCollection<Skill>();
+        private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
 
-        private ObservableCollection<Position> _positionsCollection = new ObservableCollection<Position>();
+        private ObservableCollection<PositionVM> _positionsCollection = new ObservableCollection<PositionVM>();
 
-        private ObservableCollection<Position> _positionsToAddCollection = new ObservableCollection<Position>();
+        private ObservableCollection<PositionVM> _positionsToAddCollection = new ObservableCollection<PositionVM>();
 
-        private ObservableCollection<Order> _ordersCollection = new ObservableCollection<Order>();
+        private ObservableCollection<OrderVM> _ordersCollection = new ObservableCollection<OrderVM>();
 
         private ProjectsUserControlVM _projectsUserControlVM;
 
         private TeamVM _currentTeam;
 
-        public TeamDetailsVM(Team team, ProjectsUserControlVM control)
+        private UserVM _selectedEmployee;
+
+        public TeamDetailsVM(TeamVM team, ProjectsUserControlVM control)
         {
             if (team == null)
                 return;
 
             _projectsUserControlVM = control;
-            CurrentTeam = new TeamVM(team);
-            OnPropertyChanged("Name");
-            EmployeesCollection = new ObservableCollection<User_Team>();
-
-            foreach (var employee in _employeesCollection)
-            {
-                var skills = from items in User_Skill.Items where items.User.Id == employee.User.Id select items;
-                foreach (var item in skills)
-                {
-                    while (_skillsCollection.All(items => item.Skill != items))
-                    _skillsCollection.Add(item.Skill);
-                }
-            }
-
-            //LoadOrdersCollection();
-            //LoadPositions();
-            //LoadData();
+            CurrentTeam = team;
+            LoadData();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public User SelectedEmployee { get; set; }
+        public UserVM SelectedEmployee
+        {
+            get { return _selectedEmployee; }
+            set { _selectedEmployee = value; }
+        }
 
         public TeamVM CurrentTeam
         {
-            get
-            {
-                return _currentTeam;
-            }
-            set
-            {
-                _currentTeam = value;
-                OnPropertyChanged("Name");
-                OnPropertyChanged("Description");
-            }
+            get { return _currentTeam; }
+            set { _currentTeam = value; }
         }
 
         public string Name
         {
             get { return CurrentTeam.Name; }
-            set
-            {
-                CurrentTeam.Name = value;
-                _projectsUserControlVM.OnPropertyChanged("TeamsCollection");
-            }
+            set { CurrentTeam.Name = value; _projectsUserControlVM.OnPropertyChanged("TeamsCollection"); }
         }
 
         public string Description
         {
             get { return CurrentTeam.Description; }
-            set
+            set { CurrentTeam.Description = value; }
+        }
+
+        public ObservableCollection<OrderVM> OrdersCollection
+        {
+            get
             {
-                CurrentTeam.Description = value;
-                _projectsUserControlVM.LoadData();
+                _ordersCollection.Clear();
+                var orders = from items in Team_Project.Items where items.Team == CurrentTeam.Team select items.Project.Order;
+                foreach (var item in orders)
+                {
+                    if ((from items in orders where items == item select items).Count() == 1)
+                    {
+                        _ordersCollection.Add(new OrderVM(item));
+                    }
+                }
+
+                return _ordersCollection;
             }
         }
 
-        public ObservableCollection<Order> OrdersCollection
+        public ObservableCollection<PositionVM> PositionsCollection
         {
-            get { return _ordersCollection; }
+            get
+            {
+                _positionsCollection.Clear();
+                foreach (var item in _employeesCollection)
+                {
+                    if (item.User == SelectedEmployee.User)
+                    {
+                        foreach (var position in item.Positions)
+                        {
+                            _positionsCollection.Add(new PositionVM(position));
+                        }
+                    }
+                }
+                return _positionsCollection;
+            }
         }
 
-        public ObservableCollection<Position> PositionsCollection
+        public ObservableCollection<PositionVM> PositionsToAddCollection
         {
-            get { return _positionsCollection; }
+            get
+            {
+                _positionsToAddCollection.Clear();
+                foreach (var position in Position.Items)
+                {
+                    bool exist = false;
+                    foreach (var item in _positionsCollection)
+                    {
+                        if (item.Position.Name == position.Name)
+                        {
+                            exist = true;
+                        }
+                    }
+                    if (!exist)
+                        _positionsToAddCollection.Add(new PositionVM(position));
+                }
+                return _positionsToAddCollection;
+            }
         }
 
-        public ObservableCollection<Position> PositionsToAddCollection
+        public ObservableCollection<User_TeamVM> EmployeesCollection
         {
-            get { return _positionsToAddCollection; }
-        }
-
-        public IEnumerable<User_Team> Employees
-        {
-            get { return CurrentTeam.Users; }
-        }
-
-        public ObservableCollection<User_Team> EmployeesCollection
-        {
-            get { return _employeesCollection; }
-            set
+            get
             {
                 var users = CurrentTeam.Users.ToList();
-                if (_employeesCollection.Count != 0)
                     _employeesCollection.Clear();
 
                 for (int i = 0; i < users.Count; i++)
@@ -130,54 +142,52 @@ namespace PMView.View
                     }
 
                     if (!exist)
-                        _employeesCollection.Add(users[i]);
+                        _employeesCollection.Add(new User_TeamVM(users[i]));
                 }
+
+                return _employeesCollection;
             }
         }
 
-        public ObservableCollection<Skill> SkillsCollection
+        public ObservableCollection<SkillVM> SkillsCollection
         {
-            get { return _skillsCollection; }
+            get
+            {
+                _skillsCollection.Clear();
+                foreach (var employee in _employeesCollection)
+                {
+                    var skills = from items in User_Skill.Items where items.User.Id == employee.User.Id select items;
+                    foreach (var item in skills)
+                    {
+                        while (_skillsCollection.All(items => item.Skill != items.Skill))
+                            _skillsCollection.Add(new SkillVM(item.Skill));
+                    }
+                }
+                return _skillsCollection;
+            }
         }
 
-        public void LoadOrdersCollection()
+        public void AddPosition(PositionVM position)
         {
-            //_ordersCollection.Clear();
-            //var orders = from items in Team_Project.Items where items.Team == CurrentTeam select items.Project.Order;
-            //foreach (var item in orders)
-            //{
-            //    if ((from items in orders where items == item select items).Count() == 1)
-            //    {
-            //        _ordersCollection.Add(item);
-            //    }
-            //}
+            if (SelectedEmployee == null)
+                return;
+            if (position == null)
+                return;
+            var pos = (from items in User_Team.Items where items.Team == CurrentTeam.Team && items.User == SelectedEmployee.User && items.Position.Name == position.Name select items).FirstOrDefault();
+
+            User_Team ut = new User_Team()
+            {
+                IsLeader = true,
+                Position = position.Position,
+                Team = CurrentTeam.Team,
+                User = SelectedEmployee.User
+            };
+
+            User_Team.Items.Add(ut);
+            LoadData();
         }
 
-        public void AddPosition(Position position)
-        {
-            //if (SelectedEmployee == null)
-            //    return;
-            //if (position == null)
-            //    return;
-            //var pos = (from items in User_Team.Items where items.Team == CurrentTeam && items.User == SelectedEmployee && items.Position == position select items).FirstOrDefault();
-            //if (pos != null)
-            //    throw new Exception("This position is already exist");
-
-            //User_Team ut = new User_Team()
-            //{
-            //    IsLeader = true,
-            //    Position = position,
-            //    Team = CurrentTeam,
-            //    User = SelectedEmployee
-            //};
-
-            //User_Team.Items.Add(ut);
-            //EmployeesCollection = new ObservableCollection<User_Team>();
-            //LoadPositions();
-            //LoadData();
-        }
-
-        public void RemovePosition(Position position)
+        public void RemovePosition(PositionVM position)
         {
             if (SelectedEmployee == null)
                 return;
@@ -188,34 +198,9 @@ namespace PMView.View
                 throw new Exception("At least one position should be exist");
             }
 
-            var ut = (from items in User_Team.Items where items.User == SelectedEmployee && items.Position == position select items).FirstOrDefault();
+            var ut = (from items in User_Team.Items where items.User == SelectedEmployee.User && items.Position.Name == position.Name select items).FirstOrDefault();
             User_Team.Items.Remove(ut);
-     
-            EmployeesCollection = new ObservableCollection<User_Team>();
-            LoadPositions();
             LoadData();
-        }
-
-        public void LoadPositions()
-        {
-            _positionsCollection.Clear();
-            foreach (var item in _employeesCollection)
-            {
-                if (item.User == SelectedEmployee)
-                {
-                    foreach (var position in item.Positions)
-                    {
-                        _positionsCollection.Add(position);
-                    }
-                }
-            }
-
-            _positionsToAddCollection.Clear();
-            foreach (var item in Position.Items)
-            {
-                if (!_positionsCollection.Contains(item))
-                    _positionsToAddCollection.Add(item);
-            }
         }
 
         public void OnPropertyChanged(string propertyName)
@@ -224,11 +209,15 @@ namespace PMView.View
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             OnPropertyChanged("Name");
             OnPropertyChanged("Description");
-            OnPropertyChanged("Employees");
+            OnPropertyChanged("OrdersCollection");
+            OnPropertyChanged("EmployeesCollection");
+            OnPropertyChanged("PositionsCollection");
+            OnPropertyChanged("PositionsToAddCollection");
+            OnPropertyChanged("SkillsCollection");
         }
     }
 }

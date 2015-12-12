@@ -27,7 +27,7 @@ namespace PMView
         public TeamsDetails(TeamVM team, ProjectsUserControlVM projectsUserControlVM)
         {
             InitializeComponent();
-            _teamDetailsVM = new TeamDetailsVM(team.Team, projectsUserControlVM);
+            _teamDetailsVM = new TeamDetailsVM(team, projectsUserControlVM);
             DataContext = _teamDetailsVM;
         }
 
@@ -37,8 +37,8 @@ namespace PMView
                 return;
 
             PositionsGrid.Visibility = Visibility.Visible;
-            _teamDetailsVM.SelectedEmployee = (EmployeesListBox.SelectedItem as User_Team).User;
-            _teamDetailsVM.LoadPositions();
+            _teamDetailsVM.SelectedEmployee = new UserVM((EmployeesListBox.SelectedItem as User_TeamVM).User);
+            _teamDetailsVM.LoadData();
         }
 
         private void PositionToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -48,7 +48,9 @@ namespace PMView
 
             try
             {
-                _teamDetailsVM.AddPosition(PositionToAddListBox.SelectedItem as Position);
+                _teamDetailsVM.AddPosition(PositionToAddListBox.SelectedItem as PositionVM);
+                _teamDetailsVM.LoadData();
+
             }
             catch (Exception ex)
             {
@@ -63,7 +65,9 @@ namespace PMView
 
             try
             { 
-                _teamDetailsVM.RemovePosition(PositionListBox.SelectedItem as Position);
+                _teamDetailsVM.RemovePosition(PositionListBox.SelectedItem as PositionVM);
+                _teamDetailsVM.LoadData();
+
             }
             catch (Exception ex)
             {
@@ -73,9 +77,9 @@ namespace PMView
 
         private void DataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            var order = OrdersDataGrid.SelectedItem as Order;
+            var order = OrdersDataGrid.SelectedItem as OrderVM;
             EmptyWindow ew = new EmptyWindow(order.Name);
-            ew.Body.Children.Add(new ProjectsUserControl(order));
+            ew.Body.Children.Add(new ProjectsUserControl(order.Order));
             ew.Show();
         }
     }
