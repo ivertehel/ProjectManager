@@ -215,9 +215,14 @@ namespace PMView.View
             OnPropertyChanged("Description");
             OnPropertyChanged("OrdersCollection");
             OnPropertyChanged("EmployeesCollection");
+            OnPropertyChanged("SkillsCollection");
+            ChangePositions();
+        }
+
+        public void ChangePositions()
+        {
             OnPropertyChanged("PositionsCollection");
             OnPropertyChanged("PositionsToAddCollection");
-            OnPropertyChanged("SkillsCollection");
         }
     }
 }

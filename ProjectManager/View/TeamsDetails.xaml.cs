@@ -38,7 +38,7 @@ namespace PMView
 
             PositionsGrid.Visibility = Visibility.Visible;
             _teamDetailsVM.SelectedEmployee = new UserVM((EmployeesListBox.SelectedItem as User_TeamVM).User);
-            _teamDetailsVM.LoadData();
+            _teamDetailsVM.ChangePositions();
         }
 
         private void PositionToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -49,7 +49,7 @@ namespace PMView
             try
             {
                 _teamDetailsVM.AddPosition(PositionToAddListBox.SelectedItem as PositionVM);
-                _teamDetailsVM.LoadData();
+                _teamDetailsVM.ChangePositions();
 
             }
             catch (Exception ex)
@@ -66,7 +66,7 @@ namespace PMView
             try
             { 
                 _teamDetailsVM.RemovePosition(PositionListBox.SelectedItem as PositionVM);
-                _teamDetailsVM.LoadData();
+                _teamDetailsVM.ChangePositions();
 
             }
             catch (Exception ex)
