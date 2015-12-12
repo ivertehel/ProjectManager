@@ -98,6 +98,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
 
                 </Grid.RowDefinitions>
@@ -113,11 +114,35 @@
                 <Grid Grid.Row="3" VerticalAlignment="Top" Margin="15,0,0,0">
                     <TextBox TextWrapping="Wrap" Text="{Binding Path=Description, Mode=TwoWay}" FontSize="12"/>
                 </Grid>
-                <Grid Grid.Row="4" VerticalAlignment="Top" Margin="15,0,0,0">
+                <Grid Grid.Row="4" VerticalAlignment="Top" Margin="15,5,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Button Name="SaveButton" Content="Save" Margin="0,0,5,0" Click="SaveButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="IsEnabled" Value="{Binding Path=ButtonsActive}" />
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Button Name="RetrieveButton" Content="Retrieve" Margin="5,0,0,0" Click="RetrieveButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="IsEnabled" Value="{Binding Path=ButtonsActive}" />
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="5" VerticalAlignment="Top" Margin="15,0,0,0">
                     <TextBlock Text="Employees:" FontSize="18"/>
                 </Grid>
 
-                <Grid Grid.Row="5" VerticalAlignment="Stretch" Margin="15,0,0,0">
+                <Grid Grid.Row="6" VerticalAlignment="Stretch" Margin="15,0,0,0">
                     <ListBox ItemsSource="{Binding EmployeesCollection}" 
                          FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="EmployeesListBox_SelectionChanged">
                         <ListBox.BorderBrush>

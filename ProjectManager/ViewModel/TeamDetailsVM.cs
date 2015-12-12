@@ -24,6 +24,12 @@ namespace PMView.View
 
         private ProjectsUserControlVM _projectsUserControlVM;
 
+        private string _name;
+
+        private string _description;
+
+        private bool _buttonsActive = false;
+
         private TeamVM _currentTeam;
 
         private UserVM _selectedEmployee;
@@ -35,6 +41,8 @@ namespace PMView.View
 
             _projectsUserControlVM = control;
             CurrentTeam = team;
+            _name = CurrentTeam.Name;
+            _description = CurrentTeam.Description;
             LoadData();
         }
 
@@ -52,16 +60,37 @@ namespace PMView.View
             set { _currentTeam = value; }
         }
 
+        public bool ButtonsActive
+        {
+            get
+            {
+                return _buttonsActive;
+            }
+            set
+            {
+                _buttonsActive = value;
+                OnPropertyChanged("ButtonsActive");
+            }
+        }
+
         public string Name
         {
-            get { return CurrentTeam.Name; }
-            set { CurrentTeam.Name = value; _projectsUserControlVM.OnPropertyChanged("TeamsCollection"); }
+            get { return _name; }
+            set
+            {
+                _name = value;
+                ButtonsActive = true;
+            }
         }
 
         public string Description
         {
-            get { return CurrentTeam.Description; }
-            set { CurrentTeam.Description = value; }
+            get { return _description; }
+            set
+            {
+                _description = value;
+                ButtonsActive = true;
+            }
         }
 
         public ObservableCollection<OrderVM> OrdersCollection
@@ -207,6 +236,25 @@ namespace PMView.View
         {
             if (PropertyChanged != null)
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void ButtonSaveClick()
+        {
+            CurrentTeam.Name = _name;
+            CurrentTeam.Description = _description;
+            _projectsUserControlVM.OnPropertyChanged("TeamsCollection");
+            OnPropertyChanged("Name");
+            OnPropertyChanged("Description");
+            ButtonsActive = false;
+        }
+
+        public void ButtonRetrieveClick()
+        {
+            Name = CurrentTeam.Name;
+            Description = CurrentTeam.Description;
+            OnPropertyChanged("Name");
+            OnPropertyChanged("Description");
+            ButtonsActive = false;
         }
 
         public void LoadData()

@@ -82,5 +82,15 @@ namespace PMView
             ew.Body.Children.Add(new ProjectsUserControl(order.Order));
             ew.Show();
         }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            _teamDetailsVM.ButtonSaveClick();
+        }
+
+        private void RetrieveButton_Click(object sender, RoutedEventArgs e)
+        {
+            _teamDetailsVM.ButtonRetrieveClick();
+        }
     }
 }
