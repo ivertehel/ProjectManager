@@ -10,7 +10,7 @@ using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
-    public class TeamDetailsVM : INotifyPropertyChanged
+    public class TeamDetailsVM : INotifyPropertyChanged, IDataErrorInfo
     {
         private ObservableCollection<User_TeamVM> _employeesCollection = new ObservableCollection<User_TeamVM>();
 
@@ -90,6 +90,35 @@ namespace PMView.View
             {
                 _description = value;
                 ButtonsActive = true;
+            }
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                string error = String.Empty;
+                switch (columnName)
+                {
+                    case "Name":
+                        if (Name == string.Empty)
+                        {
+                            error = "Name can't be empty";
+                        }
+                        else if (Name[0] == ' ')
+                        {
+                            error = "Name can't start off space";
+                        }
+                        if (Team.Items.Where(items => items.Name == Name && CurrentTeam.Name != Name).Count() != 0)
+                        {
+                            error = "This team is already exist";
+                        }
+                        break;
+                    case "Description":
+                        //Обработка ошибок для свойства Name
+                        break;
+                }
+                return error;
             }
         }
 
@@ -193,6 +222,14 @@ namespace PMView.View
                     }
                 }
                 return _skillsCollection;
+            }
+        }
+
+        public string Error
+        {
+            get
+            {
+                throw new NotImplementedException();
             }
         }
 

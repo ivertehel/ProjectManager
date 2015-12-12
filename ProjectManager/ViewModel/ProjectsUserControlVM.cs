@@ -442,7 +442,13 @@ namespace PMView.View
                 Description = "Unity3D developers"
             };
 
+            Team t2 = new Team()
+            {
+                Name = "Java-1",
+                Description = "Java developers"
+            };
             Team.Items.Add(t1);
+            Team.Items.Add(t2);
 
             Task task1 = new Task()
             {

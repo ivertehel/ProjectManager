@@ -9,6 +9,14 @@
         mc:Ignorable="d"
         Title="TeamsDetails" Height="500" Width="850">
     <Window.Resources>
+        <ControlTemplate x:Key="validationFailed">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderBrush="Red" BorderThickness="2" Opacity="0.3">
+                    <AdornedElementPlaceholder />
+                </Border>
+                <TextBlock Foreground="Red" FontSize="16" FontWeight="Bold">!</TextBlock>
+            </StackPanel>
+        </ControlTemplate>
         <Style x:Key="ProfileButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
@@ -106,7 +114,13 @@
                     <TextBlock Text="Team:" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1" VerticalAlignment="Top" Margin="15,0,0,0">
-                    <TextBox TextWrapping="Wrap" Text="{Binding Path=Name, Mode=TwoWay}" FontSize="12"/>
+                    <TextBox TextWrapping="Wrap" FontSize="12" Validation.ErrorTemplate="{StaticResource validationFailed}">
+                        <Binding Path="Name">
+                            <Binding.ValidationRules>
+                                <DataErrorValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
                 </Grid>
                 <Grid Grid.Row="2" VerticalAlignment="Top" Margin="15,0,0,0">
                     <TextBlock Text="Description:" FontSize="18"/>
