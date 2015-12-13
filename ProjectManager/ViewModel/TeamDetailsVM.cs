@@ -113,10 +113,29 @@ namespace PMView.View
                         {
                             error = "This team is already exist";
                         }
+                        ButtonsActive = false;
                         break;
                     case "Description":
-                        //Обработка ошибок для свойства Name
+                        if (Description == string.Empty)
+                        {
+                            error = "Description can't be empty";
+                        }
+                        else if (Description[0] == ' ')
+                        {
+                            error = "Description can't start off space";
+                        }
+                        ButtonsActive = false;
+
                         break;
+                }
+                if (Name == string.Empty || Description == string.Empty || error != string.Empty || (Name == CurrentTeam.Name && Description == CurrentTeam.Description))
+                {
+                    ButtonsActive = false;
+                }
+                else
+                {
+                    ButtonsActive = true;
+
                 }
                 return error;
             }

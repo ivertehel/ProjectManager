@@ -14,7 +14,8 @@
                 <Border BorderBrush="Red" BorderThickness="2" Opacity="0.3">
                     <AdornedElementPlaceholder />
                 </Border>
-                <TextBlock Foreground="Red" FontSize="16" FontWeight="Bold">!</TextBlock>
+                <TextBlock Foreground="Red" FontSize="15" FontWeight="Bold" Text="!">
+                </TextBlock>
             </StackPanel>
         </ControlTemplate>
         <Style x:Key="ProfileButtonStyle" TargetType="{x:Type Button}">
@@ -40,6 +41,16 @@
                     <Setter Property="Opacity" Value="0.8"/>
 
                     <Setter Property="BorderBrush" Value="SkyBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={RelativeSource Self},
+                    Path=(Validation.Errors)[0].ErrorContent}" />
+                    <Setter Property="Foreground" Value="Red" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -126,7 +137,13 @@
                     <TextBlock Text="Description:" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="3" VerticalAlignment="Top" Margin="15,0,0,0">
-                    <TextBox TextWrapping="Wrap" Text="{Binding Path=Description, Mode=TwoWay}" FontSize="12"/>
+                    <TextBox TextWrapping="Wrap" FontSize="12" Validation.ErrorTemplate="{StaticResource validationFailed}">
+                        <Binding Path="Description">
+                            <Binding.ValidationRules>
+                                <DataErrorValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
                 </Grid>
                 <Grid Grid.Row="4" VerticalAlignment="Top" Margin="15,5,0,5">
                     <Grid.ColumnDefinitions>
