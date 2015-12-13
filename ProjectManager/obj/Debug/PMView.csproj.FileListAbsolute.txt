@@ -35,3 +35,5 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\Emp
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Core.dll
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Core.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UsersDetails.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UsersDetails.baml

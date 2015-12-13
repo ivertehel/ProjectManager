@@ -170,7 +170,7 @@
                     </Grid>
                     <!-- Third -->
                     <Grid Grid.Column="2">
-                        <Border Name="TaskButton"  Opacity="0.8" Margin="0,5,0,0" HorizontalAlignment="Stretch" MouseDown="TaskButton_Click" MouseEnter="TaskButton_MouseEnter" MouseLeave="TaskButton_MouseLeave">
+                        <Border Name="CustomerProfileButton"  Opacity="0.8" Margin="0,5,0,0" HorizontalAlignment="Stretch" MouseDown="CustomerProfileButton_MouseDown" MouseEnter="CustomerProfileButton_MouseEnter" MouseLeave="CustomerProfileButton_MouseLeave">
                             <Grid>
                                 <Grid.Background>
                                     <SolidColorBrush Color="SkyBlue" Opacity="0.1"></SolidColorBrush>

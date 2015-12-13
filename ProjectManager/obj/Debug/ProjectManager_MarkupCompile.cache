@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\App.xaml
-102116843194
+111917684322
 
-26205061403
+29-790887116
 151959512189
-View\EmptyWindow.xaml;View\TeamsDetails.xaml;View\UserControls\Bodys\ClientsUserControl.xaml;View\UserControls\Bodys\EmployeesUserControl.xaml;View\UserControls\MenuBarUserControl.xaml;View\Skeleton.xaml;View\UserControls\Bodys\MessagesUserControl.xaml;View\UserControls\Bodys\ProjectsUserControl.xaml;View\UserControls\Bodys\ReportsUserControl.xaml;View\UserControls\Bodys\TeamsUserControl.xaml;
+View\EmptyWindow.xaml;View\TeamsDetails.xaml;View\UserControls\Bodys\ClientsUserControl.xaml;View\UserControls\Bodys\EmployeesUserControl.xaml;View\UserControls\MenuBarUserControl.xaml;View\Skeleton.xaml;View\UserControls\Bodys\MessagesUserControl.xaml;View\UserControls\Bodys\ProjectsUserControl.xaml;View\UserControls\Bodys\ReportsUserControl.xaml;View\UserControls\Bodys\TeamsUserControl.xaml;View\UsersDetails.xaml;
 
 False
 

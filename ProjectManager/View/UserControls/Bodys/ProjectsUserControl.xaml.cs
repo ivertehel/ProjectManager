@@ -46,27 +46,29 @@ namespace PMView.View
             _projectsUserControlVM.LoadData();
         }
 
-        private void TaskButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Task");
-        }
-
-        private void TaskButton_MouseEnter(object sender, MouseEventArgs e)
-        {
-            TaskButton.Opacity = 1;
-        }
-
-        private void TaskButton_MouseLeave(object sender, MouseEventArgs e)
-        {
-            TaskButton.Opacity = 0.8;
-        }
-
         private void TeamsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (TeamsListBox.SelectedItem != null)
             (new TeamsDetails(TeamsListBox.SelectedItem as TeamVM, _projectsUserControlVM)).Show();
 
             TeamsListBox.SelectedItem = null;
+        }
+
+        private void CustomerProfileButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            (new UsersDetails(new UserVM(_projectsUserControlVM.SelectedOrder.Client.User))).Show();
+
+        }
+
+        private void CustomerProfileButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CustomerProfileButton.Opacity = 1;
+        }
+
+        private void CustomerProfileButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CustomerProfileButton.Opacity = 0.8;
+
         }
     }
 }

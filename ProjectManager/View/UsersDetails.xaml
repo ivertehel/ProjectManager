@@ -1,0 +1,36 @@
+﻿<Window x:Class="PMView.UsersDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMView"
+        xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
+        xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
+        mc:Ignorable="d"
+        Title="TeamsDetails" Height="500" Width="850">
+
+    <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/MainBackground.png"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <Grid.Background>
+                <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
+            </Grid.Background>
+            <Label Content="User properties" FontSize="30" HorizontalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <TextBox Text="{Binding Name}"/>
+        </Grid>
+        <Grid Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <TextBox Text="{Binding Surname}"/>
+        </Grid>
+    </Grid>
+</Window>
+
