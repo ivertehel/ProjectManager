@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMView"
         mc:Ignorable="d"
-        Title="MainWindow">
+        Title="Project Manager"
+        Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="ProfileButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="Transparent"/>

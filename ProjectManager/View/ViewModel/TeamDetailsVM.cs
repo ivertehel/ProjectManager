@@ -41,8 +41,7 @@ namespace PMView.View
 
             _projectsUserControlVM = control;
             CurrentTeam = team;
-            _name = CurrentTeam.Name;
-            _description = CurrentTeam.Description;
+            ButtonRetrieveClick();
             LoadData();
         }
 

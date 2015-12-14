@@ -25,12 +25,23 @@ namespace PMView
 
         private UserDetailsVM _userDetailsVM;
 
-        public UsersDetails(IUser user)
+        public UsersDetails(IUser user, ProjectsUserControlVM projectsUserControlVM)
         {
             InitializeComponent();
             _user = user;
-            _userDetailsVM = new UserDetailsVM(user as UserVM);
+            _userDetailsVM = new UserDetailsVM(user as UserVM, projectsUserControlVM);
             DataContext = _userDetailsVM;
+        }
+
+        private void RetrieveButton_Click(object sender, RoutedEventArgs e)
+        {
+            _userDetailsVM.ButtonRetrieveClick();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            _userDetailsVM.ButtonSaveClick();
+            
         }
     }
 }

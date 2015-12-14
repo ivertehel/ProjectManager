@@ -7,7 +7,7 @@
         xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
         mc:Ignorable="d"
-        Title="TeamsDetails" Height="500" Width="850">
+        Title="Team Details" Height="500" Width="850"  WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ControlTemplate x:Key="validationFailed">
             <StackPanel Orientation="Horizontal">

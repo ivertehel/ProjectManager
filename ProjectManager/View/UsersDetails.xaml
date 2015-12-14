@@ -7,7 +7,7 @@
         xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
         mc:Ignorable="d"
-        Title="TeamsDetails" Height="600" Width="750">
+        Title="User details" Height="600" Width="750"  WindowStartupLocation="CenterScreen">
 
     <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
         <Grid.Background>
@@ -53,6 +53,8 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Text="Name:" FontSize="18"/>
                 <TextBox Grid.Row="1" Text="{Binding Name}"/>
@@ -72,7 +74,30 @@
                 <TextBox Grid.Row="15" Text="{Binding Skype}"/>
                 <TextBlock Grid.Row="16" Text="Description:" FontSize="18"/>
                 <TextBox Grid.Row="17" MaxLines="3" TextWrapping="Wrap" Text="{Binding Description}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16"/>
-
+                <Grid Grid.Row="18" Margin="0,5,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Button Name="SaveButton" Content="Save" Margin="0,0,5,0" Click="SaveButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="IsEnabled" Value="{Binding Path=ButtonsActive}" />
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Button Name="RetrieveButton" Content="Retrieve" Margin="5,0,0,0" Click="RetrieveButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="IsEnabled" Value="{Binding Path=ButtonsActive}" />
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
+                </Grid>
             </Grid>
 
 

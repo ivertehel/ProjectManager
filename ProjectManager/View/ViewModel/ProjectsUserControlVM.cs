@@ -403,7 +403,6 @@ namespace PMView.View
                 IsPrivate = false,
                 Client = c1
             };
-            Order.Items.Add(o1);
 
             Order o2 = new Order()
             {
@@ -417,6 +416,7 @@ namespace PMView.View
                 Client = c1
             };
             Order.Items.Add(o2);
+            Order.Items.Add(o1);
 
             Project p1 = new Project()
             {

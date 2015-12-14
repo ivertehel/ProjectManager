@@ -14,17 +14,54 @@ namespace PMView.View
     {
         private UserVM _currentEmployee;
 
+        private string _name;
+
+        private string _surname;
+
+        private User.States _state;
+
+        private string _country;
+
+        private DateTime _birthday;
+
+        private string _email;
+
+        private string _skype;
+
+        private string _login;
+
+        private string _description;
+
+        private bool _buttonsActive = false;
+
+        private ProjectsUserControlVM _projectsUserControlVM;
+
         private ObservableCollection<User.States> states = new ObservableCollection<User.States>();
 
-        public UserDetailsVM(UserVM user)
+        public UserDetailsVM(UserVM user, ProjectsUserControlVM projectsUserControlVM)
         {
             if (user == null)
                 return;
+            _projectsUserControlVM = projectsUserControlVM;
             CurrentEmployee = user;
+            ButtonRetrieveClick();
             LoadData();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public bool ButtonsActive
+        {
+            get
+            {
+                return _buttonsActive;
+            }
+            set
+            {
+                _buttonsActive = value;
+                OnPropertyChanged("ButtonsActive");
+            }
+        }
 
         public UserVM CurrentEmployee
         {
@@ -34,20 +71,32 @@ namespace PMView.View
 
         public string Name
         {
-            get { return CurrentEmployee.Name; }
-            set { CurrentEmployee.Name = value; }
+            get { return _name; }
+            set
+            {
+                _name = value;
+                ButtonsActive = true;
+            }
         }
 
         public string Surname
         {
-            get { return CurrentEmployee.Surname; }
-            set { CurrentEmployee.Surname = value; }
+            get { return _surname; }
+            set
+            {
+                _surname = value;
+                ButtonsActive = true;
+            }
         }
 
         public User.States State
         {
-            get { return CurrentEmployee.State; }
-            set { CurrentEmployee.State = value; }
+            get { return _state; }
+            set
+            {
+                _state = value;
+                ButtonsActive = true;
+            }
         }
 
         public ObservableCollection<User.States> States
@@ -65,38 +114,63 @@ namespace PMView.View
 
         public string Country
         {
-            get { return CurrentEmployee.Country; }
-            set { CurrentEmployee.Country = value; }
+            get { return _country; }
+            set
+            {
+                ButtonsActive = true;
+                _country = value;
+            }
         }
 
         public DateTime Birthday
         {
-            get { return CurrentEmployee.Birthday; }
-            set { CurrentEmployee.Birthday = value; }
+            get { return _birthday; }
+            set
+            {
+                ButtonsActive = true;
+                _birthday = value;
+            }
         }
 
         public string Email
         {
-            get { return CurrentEmployee.Email; }
-            set { CurrentEmployee.Email = value; }
+            get { return _email; }
+            set
+            {
+                ButtonsActive = true;
+                _email = value;
+            }
         }
 
         public string Skype
         {
-            get { return CurrentEmployee.Skype; }
-            set { CurrentEmployee.Skype = value; }
+            get { return _skype; }
+            set
+            {
+                ButtonsActive = true;
+                _skype = value;
+            }
         }
+    
 
         public string Login
         {
-            get { return CurrentEmployee.Login; }
-            set { CurrentEmployee.Login = value; }
+            get { return _login; }
+            set
+            {
+                ButtonsActive = true;
+                _login = value;
+            }
         }
 
         public string Description
         {
-            get { return CurrentEmployee.Description; }
-            set { CurrentEmployee.Description = value; }
+            get { return _description; }
+            set
+            {
+                ButtonsActive = true;
+                _description = value;
+            }
         }
 
         public List<string> Countries
@@ -113,13 +187,45 @@ namespace PMView.View
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-   
+        public void ButtonSaveClick()
+        {
+            CurrentEmployee.Name = _name;
+            CurrentEmployee.Surname = _surname;
+            CurrentEmployee.State = _state;
+            CurrentEmployee.Country = _country;
+            CurrentEmployee.Birthday = _birthday;
+            CurrentEmployee.Email = _email;
+            CurrentEmployee.Login = _login;
+            CurrentEmployee.Description = _login;
+            LoadData();
+        }
+
+        public void ButtonRetrieveClick()
+        {
+            _name = CurrentEmployee.Name;
+            _surname = CurrentEmployee.Surname;
+            _state = CurrentEmployee.State;
+            _country = CurrentEmployee.Country;
+            _birthday = CurrentEmployee.Birthday;
+            _email = CurrentEmployee.Email;
+            _login = CurrentEmployee.Login;
+            _description = CurrentEmployee.Description;
+            LoadData();
+
+        }
 
         public void LoadData()
         {
             OnPropertyChanged("Name");
             OnPropertyChanged("Surname");
-
+            OnPropertyChanged("State");
+            OnPropertyChanged("Country");
+            OnPropertyChanged("Birthday");
+            OnPropertyChanged("Email");
+            OnPropertyChanged("Login");
+            OnPropertyChanged("Description");
+            ButtonsActive = false;
+            _projectsUserControlVM.LoadData();
         }
 
     }

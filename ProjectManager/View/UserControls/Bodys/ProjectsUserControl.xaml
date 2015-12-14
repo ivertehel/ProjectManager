@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PMView.View"
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
+             >
     <Grid>
 
 
