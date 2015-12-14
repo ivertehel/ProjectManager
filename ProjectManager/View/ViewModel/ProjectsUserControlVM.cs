@@ -26,7 +26,7 @@ namespace PMView.View
 
         public ProjectsUserControlVM()
         {
-            Logger.Info("First screen","Main screen has been opened");
+            Logger.Info("Details screen","Project details have been loaded");
             if (User.Items.Count == 0)
                 GenerateData();
 
@@ -36,6 +36,8 @@ namespace PMView.View
 
         public ProjectsUserControlVM(Order order) : this()
         {
+            Logger.Info("Order screen", "Details of " + order.Name + " order have been loaded");
+
             SelectedOrder.Order = order;
             LoadData();
         }

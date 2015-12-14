@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows;
 using PMDataLayer;
 using PMView.View.WrapperVM;
+using Core;
 
 namespace PMView.View
 {
@@ -39,6 +40,7 @@ namespace PMView.View
             if (team == null)
                 return;
 
+            Logger.Info("Team details screen", "Team details have been loaded");
             _projectsUserControlVM = control;
             CurrentTeam = team;
             ButtonRetrieveClick();

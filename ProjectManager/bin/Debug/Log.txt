@@ -1,4 +1,24 @@
-14.12.2015 | 23:57:37:261 | Info | First screen | Main screen has been open
-15.12.2015 | 0:02:12:31 | Info | First screen | Main screen has been open
-15.12.2015 | 0:04:22:462 | Info | First screen | Main screen has been open
-15.12.2015 | 0:04:39:361 | Info | First screen | Main screen has been opened
+15.12.2015 | 0:19:51:80 | Info | Projects screen | Main screen has been opened
+15.12.2015 | 0:21:11:516 | Info | Projects screen | Main screen has been opened
+15.12.2015 | 0:24:26:681 | Info | Main screen | Main screen has been opened
+15.12.2015 | 0:24:41:129 | Info | Main screen | Main screen has been opened
+15.12.2015 | 0:25:49:611 | Info | Main screen | Main screen has been opened
+15.12.2015 | 0:29:45:300 | Info | Main screen | Main screen has been opened
+15.12.2015 | 0:29:50:363 | Info | Team details screen | Team details screen has been opened
+15.12.2015 | 0:29:52:893 | Info | Main screen | Main screen has been opened
+15.12.2015 | 0:29:52:894 | Info | Orders screen | Team details screen has been opened
+15.12.2015 | 0:30:40:455 | Info | Team details screen | Team details screen has been opened
+15.12.2015 | 0:30:48:9 | Info | Main screen | Main screen has been opened
+15.12.2015 | 0:30:48:10 | Info | Orders screen | Team details screen has been opened
+15.12.2015 | 0:34:16:272 | Info | Main screen | Main screen has been opened
+15.12.2015 | 0:34:19:302 | Info | Team details screen | Team details screen has been opened
+15.12.2015 | 0:34:22:204 | Info | Main screen | Main screen has been opened
+15.12.2015 | 0:34:22:205 | Info | Orders screen | Team details screen has been opened
+15.12.2015 | 0:38:51:447 | Info | Details screen | Project details has been loaded
+15.12.2015 | 0:38:55:25 | Info | Team details screen | Team details screen has been opened
+15.12.2015 | 0:38:58:503 | Info | Details screen | Project details has been loaded
+15.12.2015 | 0:38:58:504 | Info | Order screen | Details of Android Matches Puzzle game order has been opened
+15.12.2015 | 0:40:57:677 | Info | Details screen | Project details have been loaded
+15.12.2015 | 0:41:01:437 | Info | Team details screen | Team details have been loaded
+15.12.2015 | 0:41:03:843 | Info | Details screen | Project details have been loaded
+15.12.2015 | 0:41:03:844 | Info | Order screen | Details of Android Matches Puzzle game order have been loaded
