@@ -12,15 +12,12 @@ namespace Core
     {
         private static Logger _instance;
 
-        private StringWriter _writer;
-
-        private FileStream _file;
+        private StreamWriter _writer;
 
         private Logger()
         {
-            string logFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFile");
-            _file = new FileStream(logFileName, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
-            var writer = new BinaryWriter(_file);
+            string logFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log.txt");
+            _writer = File.AppendText(logFileName);
         }
 
         public static Logger Instance
@@ -28,7 +25,9 @@ namespace Core
             get
             {
                 if (_instance == null)
+                {
                     _instance = new Logger();
+                }
 
                 return _instance;
             }
@@ -55,8 +54,8 @@ namespace Core
             {
                 if (_writer == null)
                     return;
-
-                _writer.Write(string.Format("{0} | {1} | {2} | {3}", DateTime.Now.ToLongTimeString(), level, title, message));
+                _writer.Write(string.Format("{0} | {1}:{2} | {3} | {4} | {5}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), DateTime.Now.Millisecond, level, title, message) + System.Environment.NewLine);
+                _writer.Close();
             }
             catch (Exception ex)
             {
