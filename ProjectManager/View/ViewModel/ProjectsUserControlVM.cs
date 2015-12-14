@@ -380,6 +380,7 @@ namespace PMView.View
                 Role = User.Roles.Client,
                 Skype = "sharksoft",
                 State = User.States.Female,
+                Birthday = new DateTime(1985, 5, 25)
             };
             User.Items.Add(u1);
 

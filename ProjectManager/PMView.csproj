@@ -55,23 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModel\ClientsUserControlVM.cs" />
-    <Compile Include="ViewModel\Data\BaseVM.cs" />
-    <Compile Include="ViewModel\Data\OrderVM.cs" />
-    <Compile Include="ViewModel\Data\PositionVM.cs" />
-    <Compile Include="ViewModel\Data\ProjectVM.cs" />
-    <Compile Include="ViewModel\Data\SkillVM.cs" />
-    <Compile Include="ViewModel\Data\TaskVM.cs" />
-    <Compile Include="ViewModel\Data\TeamVM.cs" />
-    <Compile Include="ViewModel\Data\UserVM.cs" />
-    <Compile Include="ViewModel\Data\User_TeamVM.cs" />
-    <Compile Include="ViewModel\ProjectsUserControlVM.cs" />
-    <Compile Include="ViewModel\TeamDetailsVM.cs" />
-    <Compile Include="ViewModel\UserDetailsVM.cs" />
+    <Compile Include="View\ViewModel\ClientsUserControlVM.cs" />
+    <Compile Include="View\ViewModel\Data\BaseVM.cs" />
+    <Compile Include="View\ViewModel\Data\OrderVM.cs" />
+    <Compile Include="View\ViewModel\Data\PositionVM.cs" />
+    <Compile Include="View\ViewModel\Data\ProjectVM.cs" />
+    <Compile Include="View\ViewModel\Data\SkillVM.cs" />
+    <Compile Include="View\ViewModel\Data\TaskVM.cs" />
+    <Compile Include="View\ViewModel\Data\TeamVM.cs" />
+    <Compile Include="View\ViewModel\Data\UserVM.cs" />
+    <Compile Include="View\ViewModel\Data\User_TeamVM.cs" />
+    <Compile Include="View\ViewModel\ProjectsUserControlVM.cs" />
+    <Compile Include="View\ViewModel\TeamDetailsVM.cs" />
+    <Compile Include="View\ViewModel\UserDetailsVM.cs" />
     <Compile Include="View\EmptyWindow.xaml.cs">
       <DependentUpon>EmptyWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\IUser.cs" />
+    <Compile Include="View\ViewModel\IUser.cs" />
     <Compile Include="View\TeamsDetails.xaml.cs">
       <DependentUpon>TeamsDetails.xaml</DependentUpon>
     </Compile>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace PMDataLayer
 {
     public class User : Base<User>
     {
+        private static List<string> _countries;
+
         public enum Roles
         {
             Administrator,
@@ -88,6 +91,24 @@ namespace PMDataLayer
         public IEnumerable<Team> Teams
         {
             get { return from items in User_Team.Items where items.User.Id == Id select items.Team; }
+        }
+
+        static User()
+        {
+            _countries = new List<string>();
+            using (StreamReader reader = new StreamReader("Countries.txt"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    _countries.Add(reader.ReadLine());
+                }
+                reader.Close();
+            }
+        }
+
+        public static List<string> Countries
+        {
+            get { return _countries; }
         }
 
         public override string ToString()
