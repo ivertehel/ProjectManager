@@ -26,7 +26,7 @@ namespace PMView.View
 
         public ProjectsUserControlVM()
         {
-            Logger.Info("First screen","Main screen has been open");
+            Logger.Info("First screen","Main screen has been opened");
             if (User.Items.Count == 0)
                 GenerateData();
 

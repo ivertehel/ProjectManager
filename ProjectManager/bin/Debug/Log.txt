@@ -1,1 +1,4 @@
 14.12.2015 | 23:57:37:261 | Info | First screen | Main screen has been open
+15.12.2015 | 0:02:12:31 | Info | First screen | Main screen has been open
+15.12.2015 | 0:04:22:462 | Info | First screen | Main screen has been open
+15.12.2015 | 0:04:39:361 | Info | First screen | Main screen has been opened

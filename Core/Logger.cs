@@ -55,7 +55,6 @@ namespace Core
                 if (_writer == null)
                     return;
                 _writer.Write(string.Format("{0} | {1}:{2} | {3} | {4} | {5}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), DateTime.Now.Millisecond, level, title, message) + System.Environment.NewLine);
-                _writer.Close();
             }
             catch (Exception ex)
             {
