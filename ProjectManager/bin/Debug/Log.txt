@@ -1,24 +1,13 @@
-15.12.2015 | 0:19:51:80 | Info | Projects screen | Main screen has been opened
-15.12.2015 | 0:21:11:516 | Info | Projects screen | Main screen has been opened
-15.12.2015 | 0:24:26:681 | Info | Main screen | Main screen has been opened
-15.12.2015 | 0:24:41:129 | Info | Main screen | Main screen has been opened
-15.12.2015 | 0:25:49:611 | Info | Main screen | Main screen has been opened
-15.12.2015 | 0:29:45:300 | Info | Main screen | Main screen has been opened
-15.12.2015 | 0:29:50:363 | Info | Team details screen | Team details screen has been opened
-15.12.2015 | 0:29:52:893 | Info | Main screen | Main screen has been opened
-15.12.2015 | 0:29:52:894 | Info | Orders screen | Team details screen has been opened
-15.12.2015 | 0:30:40:455 | Info | Team details screen | Team details screen has been opened
-15.12.2015 | 0:30:48:9 | Info | Main screen | Main screen has been opened
-15.12.2015 | 0:30:48:10 | Info | Orders screen | Team details screen has been opened
-15.12.2015 | 0:34:16:272 | Info | Main screen | Main screen has been opened
-15.12.2015 | 0:34:19:302 | Info | Team details screen | Team details screen has been opened
-15.12.2015 | 0:34:22:204 | Info | Main screen | Main screen has been opened
-15.12.2015 | 0:34:22:205 | Info | Orders screen | Team details screen has been opened
-15.12.2015 | 0:38:51:447 | Info | Details screen | Project details has been loaded
-15.12.2015 | 0:38:55:25 | Info | Team details screen | Team details screen has been opened
-15.12.2015 | 0:38:58:503 | Info | Details screen | Project details has been loaded
-15.12.2015 | 0:38:58:504 | Info | Order screen | Details of Android Matches Puzzle game order has been opened
-15.12.2015 | 0:40:57:677 | Info | Details screen | Project details have been loaded
-15.12.2015 | 0:41:01:437 | Info | Team details screen | Team details have been loaded
-15.12.2015 | 0:41:03:843 | Info | Details screen | Project details have been loaded
-15.12.2015 | 0:41:03:844 | Info | Order screen | Details of Android Matches Puzzle game order have been loaded
+16.12.2015 | 10:22:37:466 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+16.12.2015 | 10:22:37:466 | Info | User details screen | Details of user sharksoft  has been loaded
+16.12.2015 | 10:22:37:466 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+16.12.2015 | 10:22:39:857 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+16.12.2015 | 10:22:39:857 | Info | Order screen | Details of Android Matches Puzzle game have been loaded

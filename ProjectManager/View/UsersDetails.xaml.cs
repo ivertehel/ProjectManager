@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PMView.View;
 using PMView.View.WrapperVM;
+using Core;
 
 namespace PMView
 {
@@ -31,17 +32,18 @@ namespace PMView
             _user = user;
             _userDetailsVM = new UserDetailsVM(user as UserVM, projectsUserControlVM);
             DataContext = _userDetailsVM;
+
         }
 
         private void RetrieveButton_Click(object sender, RoutedEventArgs e)
         {
             _userDetailsVM.ButtonRetrieveClick();
+
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             _userDetailsVM.ButtonSaveClick();
-            
         }
     }
 }

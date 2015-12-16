@@ -280,6 +280,7 @@ namespace PMView.View
 
         public void LoadDetails()
         {
+            Logger.Info("Order screen", "Details of " + SelectedOrder.Name + " have been loaded");
             OnPropertyChanged("TeamsCollection");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("ProjectsCollection");

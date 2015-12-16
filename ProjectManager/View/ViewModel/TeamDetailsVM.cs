@@ -270,6 +270,8 @@ namespace PMView.View
             };
 
             User_Team.Items.Add(ut);
+            Logger.Info("Team details screen", "Position " + ut.Position + " has been added to " + SelectedEmployee.Login);
+
             LoadData();
         }
 
@@ -286,6 +288,8 @@ namespace PMView.View
 
             var ut = (from items in User_Team.Items where items.User == SelectedEmployee.User && items.Position.Name == position.Name select items).FirstOrDefault();
             User_Team.Items.Remove(ut);
+            Logger.Info("Team details screen", "Position " + ut.Position + " has been removed from " + SelectedEmployee.Login);
+
             LoadData();
         }
 
@@ -297,12 +301,19 @@ namespace PMView.View
 
         public void ButtonSaveClick()
         {
+            Logger.Info("Team details screen", "Details of team has been changed:" + Environment.NewLine
+               + "Name : " + CurrentTeam.Name + "  to " + _name + Environment.NewLine
+                + "Description : "+ CurrentTeam.Description + "  to " + _description
+                 );
+
             CurrentTeam.Name = _name;
             CurrentTeam.Description = _description;
             _projectsUserControlVM.OnPropertyChanged("TeamsCollection");
             OnPropertyChanged("Name");
             OnPropertyChanged("Description");
             ButtonsActive = false;
+
+
         }
 
         public void ButtonRetrieveClick()

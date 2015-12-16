@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMDataLayer;
 using PMView.View.WrapperVM;
+using Core;
 
 namespace PMView.View
 {

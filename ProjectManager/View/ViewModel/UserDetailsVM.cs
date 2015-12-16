@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows;
 using PMDataLayer;
 using PMView.View.WrapperVM;
+using Core;
 
 namespace PMView.View
 {
@@ -45,6 +46,8 @@ namespace PMView.View
             _projectsUserControlVM = projectsUserControlVM;
             CurrentEmployee = user;
             ButtonRetrieveClick();
+            Logger.Info("User details screen", "Details of user " + user.Login + " has been loaded");
+
             LoadData();
         }
 
@@ -151,7 +154,7 @@ namespace PMView.View
                 _skype = value;
             }
         }
-    
+
 
         public string Login
         {
@@ -189,6 +192,16 @@ namespace PMView.View
 
         public void ButtonSaveClick()
         {
+            Logger.Info("User details screen", "Details of user has been changed:" + Environment.NewLine
+            +"Name : "+ CurrentEmployee.Name + "  to " + _name + Environment.NewLine
+            + "Surname : " + CurrentEmployee.Surname + "  to " + _surname + Environment.NewLine
+            + "State : " + CurrentEmployee.State + "  to " + _state + Environment.NewLine
+            + "Country : " + CurrentEmployee.Country + "  to " + _country + Environment.NewLine
+            + "Birthday : " + CurrentEmployee.Birthday + "  to " + _birthday + Environment.NewLine
+            + "Email : "+ CurrentEmployee.Email + "  to " + _email + Environment.NewLine
+            + "Login : " + CurrentEmployee.Login + "  to " + _login + Environment.NewLine
+            + "Description : " + CurrentEmployee.Description + "  to " + _description
+            );
             CurrentEmployee.Name = _name;
             CurrentEmployee.Surname = _surname;
             CurrentEmployee.State = _state;
