@@ -11,3 +11,17 @@ Email :   to
 Login : sharksoft   to sharksoft 
 Description : Low budget  to Low budget
 16.12.2015 | 10:22:39:857 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+18.12.2015 | 22:27:13:177 | Info | Details screen | Project details have been loaded
+18.12.2015 | 22:27:16:486 | Info | Team details screen | Team details have been loaded
+18.12.2015 | 22:28:35:95 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+18.12.2015 | 22:28:35:607 | Info | Order screen | Details of Android Eggsckatcher game have been loaded
+18.12.2015 | 22:28:36:103 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+18.12.2015 | 22:28:36:971 | Info | Team details screen | Team details have been loaded
+18.12.2015 | 22:33:18:299 | Info | Details screen | Project details have been loaded
+18.12.2015 | 22:33:21:70 | Info | Team details screen | Team details have been loaded
+18.12.2015 | 22:33:43:748 | Info | Details screen | Project details have been loaded
+18.12.2015 | 22:33:49:83 | Info | Team details screen | Team details have been loaded
+18.12.2015 | 22:34:35:118 | Info | Details screen | Project details have been loaded
+18.12.2015 | 22:34:41:134 | Info | Team details screen | Team details have been loaded
+18.12.2015 | 22:34:46:424 | Info | Team details screen | Position Unity3D developer has been added to vsailor
+18.12.2015 | 22:34:47:327 | Info | Team details screen | Position Junior Java developer has been added to vsailor

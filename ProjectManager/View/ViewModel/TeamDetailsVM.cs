@@ -44,7 +44,10 @@ namespace PMView.View
             _projectsUserControlVM = control;
             CurrentTeam = team;
             ButtonRetrieveClick();
-            LoadData();
+            OnPropertyChanged("Name");
+            OnPropertyChanged("Description");
+            OnPropertyChanged("OrdersCollection");
+            OnPropertyChanged("EmployeesCollection");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -164,6 +167,8 @@ namespace PMView.View
         {
             get
             {
+                if (SelectedEmployee == null)
+                    return null;
                 _positionsCollection.Clear();
                 foreach (var item in _employeesCollection)
                 {
