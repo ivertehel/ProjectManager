@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMView.View.WrapperVM;
 using PMDataLayer;
+using PMView.View.WrapperVM;
 using Core;
 
 namespace PMView.View
@@ -58,6 +58,7 @@ namespace PMView.View
         private void CustomerProfileButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             (new UsersDetails(new UserVM(_projectsUserControlVM.SelectedOrder.Client.User), _projectsUserControlVM)).Show();
+
         }
 
         private void CustomerProfileButton_MouseEnter(object sender, MouseEventArgs e)

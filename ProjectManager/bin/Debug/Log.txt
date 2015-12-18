@@ -1,15 +1,13 @@
-16.12.2015 | 20:18:57:581 | Info | Details screen | Project details have been loaded
-16.12.2015 | 20:19:04:383 | Info | Order screen | Details of Android Eggsckatcher game have been loaded
-16.12.2015 | 20:19:05:553 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
-16.12.2015 | 20:21:08:289 | Info | Details screen | Project details have been loaded
-16.12.2015 | 20:21:12:61 | Info | Team details screen | Team details have been loaded
-16.12.2015 | 20:23:01:576 | Info | Details screen | Project details have been loaded
-16.12.2015 | 20:23:03:659 | Info | Team details screen | Team details have been loaded
-16.12.2015 | 20:23:14:198 | Info | Team details screen | Details of team has been changed: 
- 
-                Name : Unity3D-1 to Unity3D-123 
- 
-                Description: Unity3D developers to Unity3D developers
-16.12.2015 | 20:24:40:263 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
-16.12.2015 | 20:24:40:263 | Info | User details screen | Details of user sharksoft  has been loaded
-16.12.2015 | 20:24:40:263 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+16.12.2015 | 10:22:37:466 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+16.12.2015 | 10:22:37:466 | Info | User details screen | Details of user sharksoft  has been loaded
+16.12.2015 | 10:22:37:466 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+16.12.2015 | 10:22:39:857 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+16.12.2015 | 10:22:39:857 | Info | Order screen | Details of Android Matches Puzzle game have been loaded

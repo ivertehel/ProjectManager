@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Client : Entity<Client>
+    public class Client : Base<Client>
     {
         private Guid _userId;
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Project : Entity<Project>, ICloneable
+    public class Project : Base<Project>, ICloneable
     {
         private Guid _orderId;
 

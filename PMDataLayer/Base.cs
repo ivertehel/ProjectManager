@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Entity<T> where T : Entity<T>
+    public class Base<T> where T : Base<T>
     {
-        static Entity()
+        static Base()
         {
             Items = new List<T>();
         }
 
-        public Entity()
+        public Base()
         {
             Id = Guid.NewGuid();
         }
@@ -21,10 +21,5 @@ namespace PMDataLayer
         public static List<T> Items { get; set; }
 
         public Guid Id { get; set; }
-
-        private string GetConnectionString()
-        {
-            return @"Data Source=ivan-laptop\sqlexpress;Initial Catalog=ProjectManagerDB;Integrated Security=True";
-        }
     }
 }

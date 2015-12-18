@@ -126,7 +126,7 @@
                 </Grid>
                 <Grid Grid.Row="1" VerticalAlignment="Top" Margin="15,0,0,0">
                     <TextBox TextWrapping="Wrap" FontSize="12" Validation.ErrorTemplate="{StaticResource validationFailed}">
-                        <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                        <Binding Path="Name">
                             <Binding.ValidationRules>
                                 <DataErrorValidationRule />
                             </Binding.ValidationRules>
