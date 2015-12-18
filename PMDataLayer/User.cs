@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class User : Base<User>
+    public class User : Entity<User>
     {
         private static List<string> _countries;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Team : Base<Team>
+    public class Team : Entity<Team>
     {
         public string Name { get; set; }
 

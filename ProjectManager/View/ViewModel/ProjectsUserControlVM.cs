@@ -26,7 +26,8 @@ namespace PMView.View
 
         public ProjectsUserControlVM()
         {
-            Logger.Info("Details screen","Project details have been loaded");
+            Logger.Info("Details screen", "Project details have been loaded");
+
             if (User.Items.Count == 0)
                 GenerateData();
 

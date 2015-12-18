@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class User_Skill : Base<User_Skill>
+    public class User_Skill : Entity<User_Skill>
     {
         private Guid _skillId;
 

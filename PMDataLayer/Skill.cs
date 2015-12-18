@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Skill : Base<Skill>
+    public class Skill : Entity<Skill>
     {
         public string Name { get; set; }
 

@@ -16,6 +16,8 @@ namespace Core
 
         private Logger()
         {
+            _writer = File.AppendText(_logFileName);
+
         }
 
         public static Logger Instance
@@ -45,15 +47,15 @@ namespace Core
         {
             Instance.WriteMessage("Info", title, message);
         }
-
+        StreamWriter _writer;
         private void WriteMessage(string level, string title, string message)
         {
+            string s = Guid.NewGuid().ToString();
             try
             {
-                using (StreamWriter _writer = File.AppendText(_logFileName))
-                {
-                    _writer.Write(string.Format("{0} | {1}:{2} | {3} | {4} | {5}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), DateTime.Now.Millisecond, level, title, message) + System.Environment.NewLine);
-                }
+                // DateTime.Now.ToString();
+                _writer.Write(string.Format("{0} | {1}:{2} | {3} | {4} | {5}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), DateTime.Now.Millisecond, level, title, message) + System.Environment.NewLine);
+                _writer.Flush();
             }
             catch (Exception ex)
             {
