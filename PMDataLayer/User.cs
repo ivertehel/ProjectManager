@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -7,9 +9,13 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class User : Base<User>
+    public class User : Entity<User>
     {
         private static List<string> _countries;
+
+        private static SqlDataAdapter _productAdapter;
+
+        private static DataSet _dataSet = new DataSet();
 
         public enum Roles
         {
@@ -111,9 +117,53 @@ namespace PMDataLayer
             get { return _countries; }
         }
 
+        public static void Update()
+        {
+            if (_productAdapter == null)
+            {
+                string connectionString = GetConnectionString();
+                SqlConnection connection = new SqlConnection(connectionString);
+
+                string selectUsersSQL = "SELECT * FROM Users";
+                SqlCommand selectProductCommand = new SqlCommand(selectUsersSQL, connection);
+
+                _productAdapter = new SqlDataAdapter(selectUsersSQL, connection);
+
+                CreateUpdateCommand(_productAdapter);
+            }
+
+            User.Items.Clear();
+
+            _productAdapter.Fill(_dataSet, "Users");
+
+            foreach (DataRow row in _dataSet.Tables["Users"].Rows)
+            {
+                User user = new User();
+                user.Name = row["Name"].ToString();
+                user.Password = row["Password"].ToString();
+                user.Email = row["Email"].ToString();
+                user.Skype = row["Skype"].ToString();
+                user.Surname = row["Surname"].ToString();
+                User.Items.Add(user);
+            }
+        }
+
         public override string ToString()
         {
             return Name + " " + Surname;
+        }
+
+        private static string GetConnectionString()
+        {
+            return @"Data Source=ivan-desktop\sqlexpress;Initial Catalog=ProjectManagerDB;Integrated Security=True";
+        }
+
+        private static void CreateUpdateCommand(SqlDataAdapter adapter)
+        {
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
+            adapter.UpdateCommand = commandBuilder.GetUpdateCommand();
+            adapter.InsertCommand = commandBuilder.GetInsertCommand();
+            adapter.DeleteCommand = commandBuilder.GetDeleteCommand();
         }
     }
 }

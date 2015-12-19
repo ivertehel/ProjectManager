@@ -25,6 +25,13 @@ namespace PMView.View
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public Client SelectedClient { get; set; }
 
         public ObservableCollection<Client> ClientsCollection

@@ -25,3 +25,11 @@ Description : Low budget  to Low budget
 18.12.2015 | 22:34:41:134 | Info | Team details screen | Team details have been loaded
 18.12.2015 | 22:34:46:424 | Info | Team details screen | Position Unity3D developer has been added to vsailor
 18.12.2015 | 22:34:47:327 | Info | Team details screen | Position Junior Java developer has been added to vsailor
+19.12.2015 | 13:53:51:326 | Info | Details screen | Project details have been loaded
+19.12.2015 | 13:53:59:17 | Info | Order screen | Details of Android Eggsckatcher game have been loaded
+19.12.2015 | 13:53:59:671 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+19.12.2015 | 13:54:00:525 | Info | Team details screen | Team details have been loaded
+19.12.2015 | 14:58:19:277 | Info | Details screen | Project details have been loaded
+19.12.2015 | 15:05:22:119 | Info | Details screen | Project details have been loaded
+19.12.2015 | 15:08:45:643 | Info | Details screen | Project details have been loaded
+19.12.2015 | 15:19:24:903 | Info | Details screen | Project details have been loaded

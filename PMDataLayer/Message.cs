@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Message : Base<Message>
+    public class Message : Entity<Message>
     {
         private Guid _fromUserId;
 

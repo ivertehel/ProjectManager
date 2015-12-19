@@ -299,6 +299,7 @@ namespace PMView.View
 
         public void GenerateData()
         {
+            User.Update();
             User e1 = new User()
             {
                 Name = "Ivan",

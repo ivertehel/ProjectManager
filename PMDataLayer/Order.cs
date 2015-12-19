@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Order : Base<Order>, ICloneable
+    public class Order : Entity<Order>, ICloneable
     {
         public enum Statuses
         {

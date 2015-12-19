@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class Comment : Base<Comment>
+    public class Comment : Entity<Comment>
     {
         private Guid _userId;
 
