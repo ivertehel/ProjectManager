@@ -59,3 +59,364 @@ Description : Low budget  to Low budget
 20.12.2015 | 8:14:48:941 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
 20.12.2015 | 8:14:48:944 | Info | User details screen | Details of user sharksoft  has been loaded
 20.12.2015 | 8:14:48:945 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:30:07:149 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:32:09:976 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:32:37:473 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:34:07:76 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:34:27:738 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:34:37:275 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:34:37:282 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 8:34:37:283 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:35:50:367 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:37:14:536 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:38:29:550 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:38:34:896 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:38:35:3 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:38:35:763 | Info | Order screen | Details of Android Eggsckatcher game have been loaded
+20.12.2015 | 8:38:36:769 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:38:37:347 | Info | Order screen | Details of Android Eggsckatcher game have been loaded
+20.12.2015 | 8:38:37:739 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:38:40:551 | Info | Order screen | Details of Android Eggsckatcher game have been loaded
+20.12.2015 | 8:38:40:979 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:38:41:563 | Info | Order screen | Details of Android Eggsckatcher game have been loaded
+20.12.2015 | 8:38:42:155 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:38:43:575 | Info | Order screen | Details of Android Eggsckatcher game have been loaded
+20.12.2015 | 8:38:44:91 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:40:41:628 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:40:43:320 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:40:43:328 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 8:40:43:329 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:41:01:479 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:41:05:18 | Info | Team details screen | Team details have been loaded
+20.12.2015 | 8:41:10:225 | Info | Team details screen | Team details have been loaded
+20.12.2015 | 8:46:10:3 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:46:14:277 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:46:14:286 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 8:46:14:286 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:46:16:982 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 8:46:16:986 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:46:38:932 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Male  to Female
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to Low budget
+20.12.2015 | 8:46:38:935 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:51:00:622 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:51:27:707 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:51:30:554 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:51:30:562 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 8:51:30:563 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:51:34:370 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 8:51:34:372 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:52:23:372 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:52:35:200 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:52:35:213 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 8:52:35:214 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:52:37:797 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 8:52:37:799 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:53:10:181 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:53:12:701 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:53:12:715 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 8:53:12:716 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:53:15:107 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 8:53:15:109 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:54:47:781 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:54:50:61 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:54:50:69 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 8:54:50:70 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:54:53:725 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 8:54:53:735 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:55:45:685 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:55:47:413 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:55:47:421 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 8:55:47:422 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:55:49:945 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 8:55:49:947 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:56:11:552 | Info | Details screen | Project details have been loaded
+20.12.2015 | 8:56:13:626 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:56:13:639 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 8:56:13:640 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:56:16:545 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 8:56:16:547 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 8:56:28:97 | Info | Details screen | Project details have been loaded
+20.12.2015 | 9:09:03:359 | Info | Details screen | Project details have been loaded
+20.12.2015 | 9:09:05:570 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:09:05:577 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 9:09:05:578 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:09:08:302 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 9:09:49:99 | Info | Details screen | Project details have been loaded
+20.12.2015 | 9:09:51:657 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:09:51:666 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 9:09:51:667 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:09:53:876 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 9:10:08:1 | Info | Details screen | Project details have been loaded
+20.12.2015 | 9:10:10:314 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:10:10:323 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 9:10:10:324 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:10:13:2 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Female
+Country : Israel  to Jamaica
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 9:12:42:768 | Info | Details screen | Project details have been loaded
+20.12.2015 | 9:12:44:742 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:12:44:750 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 9:12:44:751 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:12:47:928 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 9:15:19:617 | Info | Details screen | Project details have been loaded
+20.12.2015 | 9:15:21:970 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:15:21:979 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 9:15:21:980 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:15:24:615 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Female
+Country : Israel  to Jamaica
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 9:19:06:54 | Info | Details screen | Project details have been loaded
+20.12.2015 | 9:19:08:184 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:19:08:191 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 9:19:08:192 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:19:11:88 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 9:27:41:970 | Info | Details screen | Project details have been loaded
+20.12.2015 | 9:27:44:76 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:27:44:85 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 9:27:44:85 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:27:46:599 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 | 9:30:09:11 | Info | Details screen | Project details have been loaded
+20.12.2015 | 9:30:10:814 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:30:10:823 | Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 | 9:30:10:823 | Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 | 9:30:13:718 | Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 0:00:00 | 09:36:46.3595984:359 | Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 09:37:50.7880307:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 09:38:34.0144145:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 09:52:06.1768577:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 09:52:08.5943045:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 09:52:08.6023062:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 09:52:08.6033079:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 09:52:12.5954299:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : Low budget  to Low budget
+20.12.2015 0:00:00 | 09:52:12.9650133:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 09:55:15.9002173:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 09:55:17.9495537:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 09:55:17.9575539:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 09:55:17.9575539:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 09:55:21.7743921:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Male  to Female
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+20.12.2015 0:00:00 | 09:55:21.9189135:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 09:55:38.9147081:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 09:55:40.9194080:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 09:55:40.9274112:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 09:55:40.9274112:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:05:14.3349423:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 10:05:18.1959286:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:05:18.2089296:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 10:05:18.2089296:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:05:25.8800558:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+20.12.2015 0:00:00 | 10:05:25.9630682:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:05:32.1296592:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 10:05:34.5272268:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:05:34.5347357:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 10:05:34.5357374:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:05:39.3040347:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Male  to Female
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+20.12.2015 0:00:00 | 10:05:39.3760597:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:05:44.9098950:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 10:05:47.0146088:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:05:47.0226100:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 10:05:47.0236088:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:13:07.9493734:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 10:13:10.0328114:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:13:10.0438162:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 10:13:10.0448121:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:13:56.4608986:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 10:13:58.1957885:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:13:58.2037940:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 10:13:58.2037940:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:14:35.0284782:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 10:14:40.2609945:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:14:40.2699984:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 10:14:40.2699984:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:15:03.7561674:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+20.12.2015 0:00:00 | 10:15:03.8282057:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:15:08.8132679:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 10:15:10.8863414:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:15:10.8943411:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 10:15:10.8953443:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:15:15.2261197:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Male  to Female
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+20.12.2015 0:00:00 | 10:15:15.2961398:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:15:29.6648369:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Female
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to olga@karpushin
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+20.12.2015 0:00:00 | 10:15:29.6758393:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:15:34.1896728:Info | Details screen | Project details have been loaded
+20.12.2015 0:00:00 | 10:15:36.1838391:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+20.12.2015 0:00:00 | 10:15:36.1948420:Info | User details screen | Details of user sharksoft  has been loaded
+20.12.2015 0:00:00 | 10:15:36.1958423:Info | Order screen | Details of Android Matches Puzzle game have been loaded

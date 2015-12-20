@@ -301,18 +301,13 @@ namespace PMView.View
         public void GenerateData()
         {
             User.Update();
+            Client.Update();
             User e1 = User.Items.Where(item => item.Login == "vsailor").FirstOrDefault();
             User e2 = User.Items.Where(item => item.Login == "datrax").FirstOrDefault();
             User e3 = User.Items.Where(item => item.Login == "khrystyna1204").FirstOrDefault();
             User e4 = User.Items.Where(item => item.Login == "hacapet89").FirstOrDefault();
             User u1 = User.Items.Where(item => item.Role == User.Roles.Client).FirstOrDefault();
-            Client c1 = new Client()
-            {
-                Account = 0m,
-                User = u1
-            };
-
-            Client.Items.Add(c1);
+            Client c1 = Client.Items.Where(item => item.User.Id == u1.Id).FirstOrDefault();
 
             Order o1 = new Order()
             {

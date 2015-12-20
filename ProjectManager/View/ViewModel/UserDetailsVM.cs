@@ -210,6 +210,7 @@ namespace PMView.View
             CurrentEmployee.Email = _email;
             CurrentEmployee.Login = _login;
             CurrentEmployee.Description = _login;
+            User.Update();
             LoadData();
         }
 

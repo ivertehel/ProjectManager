@@ -52,7 +52,7 @@ namespace Core
             {
                 using (StreamWriter _writer = File.AppendText(_logFileName))
                 {
-                    _writer.Write(string.Format("{0} | {1}:{2} | {3} | {4} | {5}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), DateTime.Now.Millisecond, level, title, message) + System.Environment.NewLine);
+                    _writer.Write(string.Format("{0} | {1}:{2} | {3} | {4}", DateTime.Now.Date, DateTime.Now.TimeOfDay, level, title, message) + System.Environment.NewLine);
                 }
             }
             catch (Exception ex)
