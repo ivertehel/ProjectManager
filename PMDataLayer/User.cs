@@ -152,8 +152,8 @@ namespace PMDataLayer
                 createAdapter("SELECT * FROM Users");
 
             _adapter.Fill(_dataSet, "Users");
-            DataRow newUsersRow = _dataSet.Tables["Users"].NewRow();
 
+            DataRow newUsersRow = _dataSet.Tables["Users"].NewRow();
             newUsersRow["Id"] = user.Id;
             newUsersRow["Name"] = user.Name;
             newUsersRow["Surname"] = user.Surname;

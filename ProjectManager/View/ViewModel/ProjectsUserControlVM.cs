@@ -7,6 +7,7 @@ using System.Text;
 using PMDataLayer;
 using Core;
 using PMView.View.WrapperVM;
+using System.Windows;
 
 namespace PMView.View
 {
@@ -299,94 +300,12 @@ namespace PMView.View
 
         public void GenerateData()
         {
-            User e1 = new User()
-            {
-                Name = "Ivan",
-                Surname = "Vertegel",
-                Birthday = new DateTime(1994, 10, 13),
-                Country = "Ukraine",
-                Description = ".NET developer",
-                Email = "ivanvertegel@outlook.com",
-                Image = null,
-                Login = "vsailor",
-                Password = "qwerty",
-                Role = User.Roles.Employee,
-                Skype = "sirius9764",
-                State = User.States.Male,
-                Status = User.Statuses.Ready
-            };
             User.Update();
-            User e2 = new User()
-            {
-                Name = "Denis",
-                Surname = "Pikushiy",
-                Birthday = new DateTime(1995, 08, 17),
-                Country = "Ukraine",
-                Description = ".NET developer",
-                Email = "datrax@ex.ua",
-                Image = null,
-                Login = "datrax",
-                Password = "qwerty",
-                Role = User.Roles.Employee,
-                Skype = "dat_rax",
-                State = User.States.Male,
-                Status = User.Statuses.Ready
-            };
-
-            User e3 = new User()
-            {
-                Name = "Khrystyna",
-                Surname = "Romanyshyn",
-                Birthday = new DateTime(1995, 04, 12),
-                Country = "Ukraine",
-                Description = "QA Engineer",
-                Email = "khrystyna1204@gmail.com",
-                Image = null,
-                Login = "khrystyna1204",
-                Password = "qwerty",
-                Role = User.Roles.Employee,
-                Skype = "khrystyna1204",
-                State = User.States.Female,
-                Status = User.Statuses.Ready
-            };
-            User e4 = new User()
-            {
-                Name = "Panteleymon",
-                Surname = "Golobudko",
-                Birthday = new DateTime(1989, 03, 01),
-                Country = "Ukraine",
-                Description = "Junior Java developer",
-                Email = "hacapet@haca.com",
-                Image = null,
-                Login = "hacapet89",
-                Password = "qwerty",
-                Role = User.Roles.Employee,
-                Skype = "hacapet89",
-                State = User.States.Male,
-                Status = User.Statuses.Ready
-            };
-
-            User.Items.Add(e1);
-            User.Items.Add(e2);
-            User.Items.Add(e3);
-            User.Items.Add(e4);
-
-            User u1 = new User()
-            {
-                Name = "Olga",
-                Surname = "Karpushin",
-                Country = "Israel",
-                Description = "Low budget",
-                Image = null,
-                Login = "sharksoft ",
-                Password = "qwerty",
-                Role = User.Roles.Client,
-                Skype = "sharksoft",
-                State = User.States.Female,
-                Birthday = new DateTime(1985, 5, 25)
-            };
-            User.Items.Add(u1);
-
+            User e1 = User.Items.Where(item => item.Login == "vsailor").FirstOrDefault();
+            User e2 = User.Items.Where(item => item.Login == "datrax").FirstOrDefault();
+            User e3 = User.Items.Where(item => item.Login == "khrystyna1204").FirstOrDefault();
+            User e4 = User.Items.Where(item => item.Login == "hacapet89").FirstOrDefault();
+            User u1 = User.Items.Where(item => item.Role == User.Roles.Client).FirstOrDefault();
             Client c1 = new Client()
             {
                 Account = 0m,
