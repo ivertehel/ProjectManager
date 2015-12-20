@@ -299,7 +299,6 @@ namespace PMView.View
 
         public void GenerateData()
         {
-            User.Update();
             User e1 = new User()
             {
                 Name = "Ivan",
@@ -308,7 +307,7 @@ namespace PMView.View
                 Country = "Ukraine",
                 Description = ".NET developer",
                 Email = "ivanvertegel@outlook.com",
-                Image = "Assets/MaleAvatar.jpg",
+                Image = null,
                 Login = "vsailor",
                 Password = "qwerty",
                 Role = User.Roles.Employee,
@@ -316,7 +315,7 @@ namespace PMView.View
                 State = User.States.Male,
                 Status = User.Statuses.Ready
             };
-
+            User.Update();
             User e2 = new User()
             {
                 Name = "Denis",
@@ -325,7 +324,7 @@ namespace PMView.View
                 Country = "Ukraine",
                 Description = ".NET developer",
                 Email = "datrax@ex.ua",
-                Image = "Assets/MaleAvatar.jpg",
+                Image = null,
                 Login = "datrax",
                 Password = "qwerty",
                 Role = User.Roles.Employee,
@@ -342,7 +341,7 @@ namespace PMView.View
                 Country = "Ukraine",
                 Description = "QA Engineer",
                 Email = "khrystyna1204@gmail.com",
-                Image = "Assets/MaleAvatar.jpg",
+                Image = null,
                 Login = "khrystyna1204",
                 Password = "qwerty",
                 Role = User.Roles.Employee,
@@ -358,7 +357,7 @@ namespace PMView.View
                 Country = "Ukraine",
                 Description = "Junior Java developer",
                 Email = "hacapet@haca.com",
-                Image = "Assets/MaleAvatar.jpg",
+                Image = null,
                 Login = "hacapet89",
                 Password = "qwerty",
                 Role = User.Roles.Employee,
@@ -378,7 +377,7 @@ namespace PMView.View
                 Surname = "Karpushin",
                 Country = "Israel",
                 Description = "Low budget",
-                Image = "Assets/MaleAvatar.jpg",
+                Image = null,
                 Login = "sharksoft ",
                 Password = "qwerty",
                 Role = User.Roles.Client,

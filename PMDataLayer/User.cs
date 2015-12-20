@@ -13,10 +13,6 @@ namespace PMDataLayer
     {
         private static List<string> _countries;
 
-        private static SqlDataAdapter _productAdapter;
-
-        private static DataSet _dataSet = new DataSet();
-
         public enum Roles
         {
             Administrator,
@@ -54,7 +50,7 @@ namespace PMDataLayer
 
         public string Country { get; set; }
 
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
 
         public Roles Role { get; set; }
 
@@ -119,51 +115,68 @@ namespace PMDataLayer
 
         public static void Update()
         {
-            if (_productAdapter == null)
-            {
-                string connectionString = GetConnectionString();
-                SqlConnection connection = new SqlConnection(connectionString);
-
-                string selectUsersSQL = "SELECT * FROM Users";
-                SqlCommand selectProductCommand = new SqlCommand(selectUsersSQL, connection);
-
-                _productAdapter = new SqlDataAdapter(selectUsersSQL, connection);
-
-                CreateUpdateCommand(_productAdapter);
-            }
+            if (_adapter == null)
+                createAdapter("SELECT * FROM Users");
 
             User.Items.Clear();
 
-            _productAdapter.Fill(_dataSet, "Users");
+            _adapter.Fill(_dataSet, "Users");
 
             foreach (DataRow row in _dataSet.Tables["Users"].Rows)
             {
                 User user = new User();
+                user.Id = (Guid)row["Id"];
                 user.Name = row["Name"].ToString();
+                user.Surname = row["Surname"].ToString();
                 user.Password = row["Password"].ToString();
+                user.Login = row["Login"].ToString();
+                user.Birthday = Convert.ToDateTime(row["Birthday"]);
                 user.Email = row["Email"].ToString();
                 user.Skype = row["Skype"].ToString();
-                user.Surname = row["Surname"].ToString();
+                user.Country = row["Country"].ToString();
+                user.Image = Entity<User>.GetBytes(row["Image"].ToString());
+                string role = row["Role"].ToString();
+                user.Role = role == "Administrator" ? Roles.Administrator : role == "Client" ? Roles.Client : Roles.Employee;
+                string status = row["Status"].ToString();
+                user.Status = status == null || status == string.Empty ? Statuses.Ready : status == "InWork" ? Statuses.InWork :
+                    status == "NotReady" ? Statuses.NotReady : status == "Ready" ? Statuses.Ready : Statuses.UnInvited;
+                user.Description = row["Description"].ToString();
+                user.State = row["State"].ToString() == "Male" ? States.Male : States.Female;
                 User.Items.Add(user);
             }
+        }
+
+        public static void Insert(User user)
+        {
+            if (_adapter == null)
+                createAdapter("SELECT * FROM Users");
+
+            _adapter.Fill(_dataSet, "Users");
+            DataRow newUsersRow = _dataSet.Tables["Users"].NewRow();
+
+            newUsersRow["Id"] = user.Id;
+            newUsersRow["Name"] = user.Name;
+            newUsersRow["Surname"] = user.Surname;
+            newUsersRow["Password"] = user.Password;
+            newUsersRow["Login"] = user.Login;
+            newUsersRow["Birthday"] = user.Birthday;
+            newUsersRow["Email"] = user.Email;
+            newUsersRow["Skype"] = user.Skype;
+            newUsersRow["Country"] = user.Country;
+            newUsersRow["Image"] = user.Image;
+            newUsersRow["Role"] = user.Role;
+            newUsersRow["Status"] = user.Status;
+            newUsersRow["Description"] = user.Description;
+            newUsersRow["State"] = user.State;
+
+            _dataSet.Tables["Users"].Rows.Add(newUsersRow);
+            _adapter.Update(_dataSet.Tables["Users"]);
+
         }
 
         public override string ToString()
         {
             return Name + " " + Surname;
-        }
-
-        private static string GetConnectionString()
-        {
-            return @"Data Source=ivan-desktop\sqlexpress;Initial Catalog=ProjectManagerDB;Integrated Security=True";
-        }
-
-        private static void CreateUpdateCommand(SqlDataAdapter adapter)
-        {
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
-            adapter.UpdateCommand = commandBuilder.GetUpdateCommand();
-            adapter.InsertCommand = commandBuilder.GetInsertCommand();
-            adapter.DeleteCommand = commandBuilder.GetDeleteCommand();
         }
     }
 }

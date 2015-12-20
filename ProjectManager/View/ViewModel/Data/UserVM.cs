@@ -72,7 +72,7 @@ namespace PMView.View.WrapperVM
             set { _user.Country = value; }
         }
 
-        public string Image
+        public byte[] Image
         {
             get { return _user.Image; }
             set { _user.Image = value; }
