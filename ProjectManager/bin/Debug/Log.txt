@@ -620,3 +620,198 @@ Description : sharksoft   to sharksoft
 21.12.2015 0:00:00 | 08:27:38.2944141:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 21.12.2015 0:00:00 | 08:27:38.3039204:Info | User details screen | Details of user sharksoft  has been loaded
 21.12.2015 0:00:00 | 08:27:38.3944206:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 09:43:45.3909285:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 09:43:53.8844381:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 09:43:57.2188119:Info | Team details screen | Position .NET developer has been removed from vsailor
+21.12.2015 0:00:00 | 09:44:01.3223668:Info | Team details screen | Position QA engineer has been added to vsailor
+21.12.2015 0:00:00 | 09:44:01.3764031:Info | Team details screen | Position .NET developer has been added to vsailor
+21.12.2015 0:00:00 | 09:45:15.8641199:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 09:45:19.1026798:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 09:45:22.9979895:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 09:45:32.8796324:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:45:36.7618530:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:46:33.8171876:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 09:46:36.9419006:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 09:46:40.1713984:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 09:46:41.7053720:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:46:42.8244945:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:46:44.0814589:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 09:46:44.1570090:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 09:46:45.0735767:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 09:46:46.0432348:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:46:47.9750738:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 09:46:48.4136705:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 09:46:48.4472064:Info | Team details screen | Position QA engineer has been removed from datrax
+21.12.2015 0:00:00 | 09:46:49.5596228:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 09:46:50.9733415:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 09:46:51.9318537:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:46:52.8540834:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 09:47:02.6235319:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 09:47:05.4738613:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 09:47:07.9227481:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 09:47:08.6132819:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:08.9080503:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 09:47:10.4721101:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 09:47:10.5231457:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:11.1332338:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:13.1615769:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:13.7763596:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:14.3785951:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:14.6306836:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 09:47:15.8133696:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 09:47:15.8522279:Info | Team details screen | Position QA engineer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:16.4069622:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:16.4479988:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:17.5229840:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 09:47:18.1270797:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:18.7530104:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:19.7748150:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:19.8193454:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:20.5859078:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:21.3115768:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:21.3508524:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:23.0304434:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:23.5470876:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:24.5435361:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:24.7806249:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 09:47:25.6498078:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:26.1127805:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 09:47:26.1572181:Info | Team details screen | Position QA engineer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:26.2042471:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:27.1608799:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 09:47:27.8614968:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:28.9795110:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:29.7432548:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:29.7887892:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:30.5908811:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:32.9232386:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:34.9524819:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:37.1631062:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:38.0727317:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:38.9727077:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:39.4902136:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:39.9578633:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:39.9926680:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 09:47:41.9836133:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:42.5368423:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:43.0626417:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:47:43.3071970:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 09:48:42.0425250:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 09:48:45.1045674:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 09:48:47.6101824:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 09:48:47.6632171:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 09:54:33.3038490:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 09:54:39.6633531:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 09:54:54.6495025:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 09:55:02.8174069:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 09:57:25.5439411:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 09:57:36.4288404:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 09:58:42.3790672:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 09:58:44.9616534:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 09:58:47.3833055:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 09:58:47.4143321:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 09:58:48.8751311:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 09:58:48.9196692:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 09:58:49.6844526:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 09:58:49.7339850:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 09:58:50.4475109:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 09:58:50.4800389:Info | Team details screen | Position QA engineer has been removed from datrax
+21.12.2015 0:00:00 | 09:58:51.2333621:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 09:58:51.2648869:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 09:58:52.2052272:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 09:58:52.2672684:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 09:58:53.1401901:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 09:58:53.1802273:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 09:58:53.6547012:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 09:58:53.6987227:Info | Team details screen | Position QA engineer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:16.9773373:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 10:02:20.2798541:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 10:02:23.7453818:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:02:23.7979154:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:02:24.7323364:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 10:02:24.7813835:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:25.5184310:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:02:25.5494511:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:02:25.5974860:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 10:02:26.3418618:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:26.3727862:Info | Team details screen | Position QA engineer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:27.0925132:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:02:27.1325402:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 10:02:27.9171076:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:27.9666447:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:29.1090558:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:02:29.1405887:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 10:02:30.0082300:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:30.0527604:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 10:02:30.7081867:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 10:02:31.5697543:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:31.6102944:Info | Team details screen | Position QA engineer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:32.4786858:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:02:32.5155885:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:02:33.2669331:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 10:02:33.3049044:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:33.9617719:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:02:33.9986600:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:02:34.6322868:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 10:02:34.6733221:Info | Team details screen | Position QA engineer has been removed from datrax
+21.12.2015 0:00:00 | 10:02:35.2210377:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:02:35.2510435:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:02:56.1665272:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 10:02:59.6507529:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 10:03:11.7482487:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:04:55.3723166:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 10:04:58.1703836:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 10:05:01.3673227:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:05:01.4218589:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:06:26.8873961:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 10:06:29.5258735:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 10:06:31.4909850:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:06:32.4660856:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:06:33.2160699:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 10:06:34.3230481:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:07:26.5889512:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 10:07:29.1109442:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 10:07:31.5884967:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:07:33.0336353:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:07:37.7888581:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:07:37.8513564:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:07:38.5940136:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 10:07:38.6410550:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 10:07:39.6862777:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 10:07:40.1184894:Info | Team details screen | Position .NET developer has been removed from datrax
+21.12.2015 0:00:00 | 10:07:40.6631560:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 10:07:41.0540531:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 10:07:41.0948874:Info | Team details screen | Position QA engineer has been removed from datrax
+21.12.2015 0:00:00 | 10:07:41.7181480:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 10:07:42.7745093:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:07:43.9381472:Info | Team details screen | Position Unity3D developer has been added to datrax
+21.12.2015 0:00:00 | 10:07:57.0868693:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 10:08:00.0421846:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 10:08:02.7342942:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:08:02.7873349:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:08:04.0431010:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 10:08:05.5264068:Info | Team details screen | Position Unity3D developer has been removed from datrax
+21.12.2015 0:00:00 | 10:08:06.8084172:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:08:06.8559479:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:08:07.9282381:Info | Team details screen | Position Team Lead has been removed from datrax
+21.12.2015 0:00:00 | 10:08:08.5068652:Info | Team details screen | Position Junior Java developer has been removed from datrax
+21.12.2015 0:00:00 | 10:09:00.5957185:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 10:09:03.6862003:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 10:09:06.4076901:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:09:07.2673569:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:09:08.4358583:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:09:10.2454749:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:09:10.7076658:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:09:11.9039190:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:09:13.7265886:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:09:15.1033918:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:09:15.4472932:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:09:15.8770931:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:10:36.6631141:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 10:10:40.6774159:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 10:10:43.1847367:Info | Team details screen | Position QA engineer has been added to datrax
+21.12.2015 0:00:00 | 10:10:44.6619329:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:10:45.5066120:Info | Team details screen | Position Junior Java developer has been added to datrax
+21.12.2015 0:00:00 | 10:10:45.5591644:Info | Team details screen | Position Team Lead has been added to datrax
+21.12.2015 0:00:00 | 10:10:46.4572374:Info | Team details screen | Position .NET developer has been added to datrax
+21.12.2015 0:00:00 | 10:10:46.5027651:Info | Team details screen | Position .NET developer has been added to datrax

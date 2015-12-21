@@ -64,6 +64,28 @@ namespace PMView.View
             set { _currentTeam = value; }
         }
 
+        public PositionVM PositionSelectedItem
+        {
+            get { return null; }
+            set
+            {
+                if (value != null)
+                RemovePosition(value);
+                OnPropertyChanged("PositionsToAddCollection");
+            }
+        }
+
+        public PositionVM PositionToAddSelectedItem
+        {
+            get { return null; }
+            set
+            {
+                if (value != null)
+                AddPosition(value);
+                OnPropertyChanged("PositionsCollection");
+            }
+        }
+
         public bool ButtonsActive
         {
             get
@@ -167,8 +189,6 @@ namespace PMView.View
         {
             get
             {
-                if (SelectedEmployee == null)
-                    return null;
                 _positionsCollection.Clear();
                 foreach (var item in _employeesCollection)
                 {
@@ -264,6 +284,8 @@ namespace PMView.View
                 return;
             if (position == null)
                 return;
+            PositionsToAddCollection.Remove(position);
+
             var pos = (from items in User_Team.Items where items.Team == CurrentTeam.Team && items.User == SelectedEmployee.User && items.Position.Name == position.Name select items).FirstOrDefault();
 
             User_Team ut = new User_Team()
@@ -276,10 +298,9 @@ namespace PMView.View
 
             User_Team.Items.Add(ut);
             Logger.Info("Team details screen", "Position " + ut.Position + " has been added to " + SelectedEmployee.Login);
-
             LoadData();
+            OnPropertyChanged("PositionsCollection");
         }
-
         public void RemovePosition(PositionVM position)
         {
             if (SelectedEmployee == null)
@@ -296,6 +317,8 @@ namespace PMView.View
             Logger.Info("Team details screen", "Position " + ut.Position + " has been removed from " + SelectedEmployee.Login);
 
             LoadData();
+            OnPropertyChanged("PositionsToAddCollection");
+
         }
 
         public void OnPropertyChanged(string propertyName)
@@ -337,7 +360,6 @@ namespace PMView.View
             OnPropertyChanged("OrdersCollection");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("SkillsCollection");
-            ChangePositions();
         }
 
         public void ChangePositions()

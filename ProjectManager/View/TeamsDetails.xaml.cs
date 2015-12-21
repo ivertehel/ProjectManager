@@ -42,42 +42,6 @@ namespace PMView
             _teamDetailsVM.ChangePositions();
         }
 
-        private void PositionToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {          
-            if (PositionToAddListBox.SelectedItem == null)
-                return;
-
-            try
-            {
-                _teamDetailsVM.AddPosition(PositionToAddListBox.SelectedItem as PositionVM);
-                _teamDetailsVM.ChangePositions();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void PositionListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (PositionListBox.SelectedItem == null)
-                return;
-
-            try
-            { 
-                _teamDetailsVM.RemovePosition(PositionListBox.SelectedItem as PositionVM);
-                _teamDetailsVM.ChangePositions();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void DataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             var order = OrdersDataGrid.SelectedItem as OrderVM;

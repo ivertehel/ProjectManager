@@ -243,26 +243,26 @@
                             <TextBlock Text="Add positions:" FontSize="15"/>
                         </Grid>
                         <Grid Grid.Column="0" Grid.Row="1" Margin="0,0,5,0">
-                            <ComboBox ItemsSource="{Binding PositionsCollection}" 
-                         FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="PositionListBox_SelectionChanged">
-                                <ComboBox.BorderBrush>
+                            <ListBox ItemsSource="{Binding PositionsCollection}" SelectedItem="{Binding PositionSelectedItem}"
+                         FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top">
+                                <ListBox.BorderBrush>
                                     <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
-                                </ComboBox.BorderBrush>
-                                <ComboBox.Background>
+                                </ListBox.BorderBrush>
+                                <ListBox.Background>
                                     <SolidColorBrush Opacity="0.8" Color="White"/>
-                                </ComboBox.Background>
-                            </ComboBox>
+                                </ListBox.Background>
+                            </ListBox>
                         </Grid>
                         <Grid  Grid.Column="1" Grid.Row="1">
-                            <ComboBox Grid.Column="1" ItemsSource="{Binding PositionsToAddCollection}" 
-                         FontSize="14" Name="PositionToAddListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectionChanged="PositionToAddListBox_SelectionChanged">
-                                <ComboBox.BorderBrush>
+                            <ListBox Grid.Column="1" ItemsSource="{Binding PositionsToAddCollection}" SelectedItem="{Binding PositionToAddSelectedItem}"
+                         FontSize="14" Name="PositionToAddListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top">
+                                <ListBox.BorderBrush>
                                     <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
-                                </ComboBox.BorderBrush>
-                                <ComboBox.Background>
+                                </ListBox.BorderBrush>
+                                <ListBox.Background>
                                     <SolidColorBrush Opacity="0.8" Color="White"/>
-                                </ComboBox.Background>
-                            </ComboBox>
+                                </ListBox.Background>
+                            </ListBox>
                         </Grid>
                     </Grid>
                 </Grid>
