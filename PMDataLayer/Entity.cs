@@ -57,7 +57,7 @@ namespace PMDataLayer
 
         protected static string getConnectionString()
         {
-            return @"Data Source=ivan-desktop\sqlexpress;Initial Catalog=ProjectManagerDB;Integrated Security=True";
+            return @"Data Source=IVAN-LAPTOP\SQLEXPRESS;AttachDbFilename=C:\ProjectManagerDB\ProjectManagerDB.mdf;Integrated Security=True";
         }
     }
 }

@@ -420,3 +420,9 @@ Description : sharksoft   to sharksoft
 20.12.2015 0:00:00 | 10:15:36.1838391:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 20.12.2015 0:00:00 | 10:15:36.1948420:Info | User details screen | Details of user sharksoft  has been loaded
 20.12.2015 0:00:00 | 10:15:36.1958423:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 05:57:04.6864667:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 05:59:09.0662702:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 05:59:15.5128880:Info | Order screen | Details of Android Eggsckatcher game have been loaded
+21.12.2015 0:00:00 | 05:59:16.8163537:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 05:59:17.3989202:Info | Order screen | Details of Android Eggsckatcher game have been loaded
+21.12.2015 0:00:00 | 05:59:17.9983688:Info | Order screen | Details of Android Matches Puzzle game have been loaded
