@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Windows;
 using PMDataLayer;
 using Core;
 using PMView.View.WrapperVM;
+using System.Windows;
 
 namespace PMView.View
 {
@@ -27,9 +27,10 @@ namespace PMView.View
 
         public ProjectsUserControlVM()
         {
-            Logger.Info("Details screen", "Project details have been loaded");
+            Logger.Info("Details screen","Project details have been loaded");
             if (User.Items.Count == 0)
                 GenerateData();
+
 
             SelectedOrder = OrdersCollection[0];
         }
@@ -159,7 +160,6 @@ namespace PMView.View
                 {
                     _ordersCollection.Add(new OrderVM(item));
                 }
-
                 return _ordersCollection;
             }
         }
@@ -174,7 +174,6 @@ namespace PMView.View
                 {
                     _projectsCollection.Add(new ProjectVM(item));
                 }
-
                 return _projectsCollection;
             }
         }
@@ -200,7 +199,6 @@ namespace PMView.View
                 {
                     _employeesCollection.Add(new UserVM(item));
                 }
-
                 return _employeesCollection;
             }
         }
@@ -227,13 +225,11 @@ namespace PMView.View
                 }
 
                 _teamsCollection.Clear();
-
                 foreach (var item in teams)
                 {
                     if (!_teamsCollection.Contains(item))
                         _teamsCollection.Add(item);
                 }
-
                 return _teamsCollection;
             }
         }
@@ -257,14 +253,12 @@ namespace PMView.View
                     var tasks = from items in Task.UsersTasks where items.OwnerId == employee.User.Id select items;
                     t.AddRange(tasks);
                 }
-
                 _tasksCollection.Clear();
 
                 foreach (var item in t)
                 {
                     _tasksCollection.Add(new TaskVM(item));
                 }
-
                 return _tasksCollection;
             }
         }

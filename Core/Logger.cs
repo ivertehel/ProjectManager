@@ -12,7 +12,7 @@ namespace Core
     {
         private static Logger _instance;
 
-        private string _logFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log.txt");
+        string _logFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log.txt");
 
         private Logger()
         {

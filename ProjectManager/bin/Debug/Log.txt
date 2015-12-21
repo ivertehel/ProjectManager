@@ -420,5 +420,3 @@ Description : sharksoft   to sharksoft
 20.12.2015 0:00:00 | 10:15:36.1838391:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 20.12.2015 0:00:00 | 10:15:36.1948420:Info | User details screen | Details of user sharksoft  has been loaded
 20.12.2015 0:00:00 | 10:15:36.1958423:Info | Order screen | Details of Android Matches Puzzle game have been loaded
-21.12.2015 0:00:00 | 05:53:46.9964778:Info | Details screen | Project details have been loaded
-21.12.2015 0:00:00 | 05:55:01.0210731:Info | Details screen | Project details have been loaded

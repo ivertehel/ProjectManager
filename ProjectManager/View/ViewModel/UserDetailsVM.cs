@@ -55,7 +55,10 @@ namespace PMView.View
 
         public bool ButtonsActive
         {
-            get { return _buttonsActive; }
+            get
+            {
+                return _buttonsActive;
+            }
             set
             {
                 _buttonsActive = value;
@@ -108,7 +111,6 @@ namespace PMView.View
                 {
                     states.Add(state);
                 }
-
                 return states;
             }
         }
@@ -153,6 +155,7 @@ namespace PMView.View
             }
         }
 
+
         public string Login
         {
             get { return _login; }
@@ -189,15 +192,16 @@ namespace PMView.View
 
         public void ButtonSaveClick()
         {
-            Logger.Info("User details screen", $@"Details of user has been changed: {Environment.NewLine}
-            Name : {CurrentEmployee.Name} to {_name}{Environment.NewLine}
-            Surname : {CurrentEmployee.Surname} to {_surname}{Environment.NewLine}
-            State : {CurrentEmployee.State} to {_state}{Environment.NewLine}
-            Country : {CurrentEmployee.Country} to {_country}{Environment.NewLine}
-            Birthday : {CurrentEmployee.Birthday} to {_birthday}{Environment.NewLine}
-            Email : {CurrentEmployee.Email} to {_email}{Environment.NewLine}
-            Login : {CurrentEmployee.Login} to {_login}{Environment.NewLine}
-            Description : {CurrentEmployee.Description} to {_description}");
+            Logger.Info("User details screen", "Details of user has been changed:" + Environment.NewLine
+            +"Name : "+ CurrentEmployee.Name + "  to " + _name + Environment.NewLine
+            + "Surname : " + CurrentEmployee.Surname + "  to " + _surname + Environment.NewLine
+            + "State : " + CurrentEmployee.State + "  to " + _state + Environment.NewLine
+            + "Country : " + CurrentEmployee.Country + "  to " + _country + Environment.NewLine
+            + "Birthday : " + CurrentEmployee.Birthday + "  to " + _birthday + Environment.NewLine
+            + "Email : "+ CurrentEmployee.Email + "  to " + _email + Environment.NewLine
+            + "Login : " + CurrentEmployee.Login + "  to " + _login + Environment.NewLine
+            + "Description : " + CurrentEmployee.Description + "  to " + _description
+            );
             CurrentEmployee.Name = _name;
             CurrentEmployee.Surname = _surname;
             CurrentEmployee.State = _state;
@@ -221,6 +225,7 @@ namespace PMView.View
             _login = CurrentEmployee.Login;
             _description = CurrentEmployee.Description;
             LoadData();
+
         }
 
         public void LoadData()
@@ -236,5 +241,6 @@ namespace PMView.View
             ButtonsActive = false;
             _projectsUserControlVM.LoadData();
         }
+
     }
 }

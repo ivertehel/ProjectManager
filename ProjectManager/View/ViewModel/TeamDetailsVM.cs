@@ -66,7 +66,10 @@ namespace PMView.View
 
         public bool ButtonsActive
         {
-            get { return _buttonsActive; }
+            get
+            {
+                return _buttonsActive;
+            }
             set
             {
                 _buttonsActive = value;
@@ -91,6 +94,54 @@ namespace PMView.View
             {
                 _description = value;
                 ButtonsActive = true;
+            }
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                string error = String.Empty;
+                switch (columnName)
+                {
+                    case "Name":
+                        if (Name == string.Empty)
+                        {
+                            error = "Name can't be empty";
+                        }
+                        else if (Name[0] == ' ')
+                        {
+                            error = "Name can't start off space";
+                        }
+                        if (Team.Items.Where(items => items.Name == Name && CurrentTeam.Name != Name).Count() != 0)
+                        {
+                            error = "This team is already exist";
+                        }
+                        ButtonsActive = false;
+                        break;
+                    case "Description":
+                        if (Description == string.Empty)
+                        {
+                            error = "Description can't be empty";
+                        }
+                        else if (Description[0] == ' ')
+                        {
+                            error = "Description can't start off space";
+                        }
+                        ButtonsActive = false;
+
+                        break;
+                }
+                if (Name == string.Empty || Description == string.Empty || error != string.Empty || (Name == CurrentTeam.Name && Description == CurrentTeam.Description))
+                {
+                    ButtonsActive = false;
+                }
+                else
+                {
+                    ButtonsActive = true;
+
+                }
+                return error;
             }
         }
 
@@ -129,7 +180,6 @@ namespace PMView.View
                         }
                     }
                 }
-
                 return _positionsCollection;
             }
         }
@@ -149,11 +199,9 @@ namespace PMView.View
                             exist = true;
                         }
                     }
-
                     if (!exist)
                         _positionsToAddCollection.Add(new PositionVM(position));
                 }
-
                 return _positionsToAddCollection;
             }
         }
@@ -198,7 +246,6 @@ namespace PMView.View
                             _skillsCollection.Add(new SkillVM(item.Skill));
                     }
                 }
-
                 return _skillsCollection;
             }
         }
@@ -208,42 +255,6 @@ namespace PMView.View
             get
             {
                 throw new NotImplementedException();
-            }
-        }
-
-        public string this[string columnName]
-        {
-            get
-            {
-                string error = string.Empty;
-                switch (columnName)
-                {
-                    case "Name":
-                        if (Name == string.Empty)
-                            error = "Name can't be empty";
-                        else if (Name[0] == ' ')
-                            error = "Name can't start off space";
-
-                        if (Team.Items.Where(items => items.Name == Name && CurrentTeam.Name != Name).Count() != 0)
-                            error = "This team is already exist";
-
-                        ButtonsActive = false;
-                        break;
-                    case "Description":
-                        if (Description == string.Empty)
-                            error = "Description can't be empty";
-                        else if (Description[0] == ' ')
-                            error = "Description can't start off space";
-                        ButtonsActive = false;
-
-                        break;
-                }
-
-                if (Name == string.Empty || Description == string.Empty || error != string.Empty || (Name == CurrentTeam.Name && Description == CurrentTeam.Description))
-                    ButtonsActive = false;
-                else
-                    ButtonsActive = true;
-                return error;
             }
         }
 
@@ -295,9 +306,10 @@ namespace PMView.View
 
         public void ButtonSaveClick()
         {
-            Logger.Info("Team details screen", $@"Details of team has been changed: {Environment.NewLine} 
-            Name : {CurrentTeam.Name} to {_name}{Environment.NewLine}
-            Description : {CurrentTeam.Description} to {_description}");
+            Logger.Info("Team details screen", "Details of team has been changed:" + Environment.NewLine
+               + "Name : " + CurrentTeam.Name + "  to " + _name + Environment.NewLine
+                + "Description : "+ CurrentTeam.Description + "  to " + _description
+                 );
 
             CurrentTeam.Name = _name;
             CurrentTeam.Description = _description;
@@ -305,6 +317,8 @@ namespace PMView.View
             OnPropertyChanged("Name");
             OnPropertyChanged("Description");
             ButtonsActive = false;
+
+
         }
 
         public void ButtonRetrieveClick()
