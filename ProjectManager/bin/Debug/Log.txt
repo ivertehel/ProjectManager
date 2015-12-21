@@ -610,3 +610,13 @@ Description : sharksoft   to sharksoft
 21.12.2015 0:00:00 | 07:52:55.1081839:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 21.12.2015 0:00:00 | 07:52:55.1497161:Info | User details screen | Details of user sharksoft  has been loaded
 21.12.2015 0:00:00 | 07:52:55.2477811:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 08:14:31.9298567:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 08:15:09.5201039:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 08:15:55.7879832:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 08:26:09.4906818:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 08:26:16.0859580:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 08:26:16.8882312:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 08:27:30.0313765:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 08:27:38.2944141:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 08:27:38.3039204:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 08:27:38.3944206:Info | Order screen | Details of Android Matches Puzzle game have been loaded
