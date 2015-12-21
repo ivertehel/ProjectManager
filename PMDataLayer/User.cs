@@ -163,6 +163,7 @@ namespace PMDataLayer
                     rows[i]["Description"] = User.Items[i].Description;
                     rows[i]["State"] = User.Items[i].State;
                 }
+                
                 _adapter.Update(_dataSet, "Users");
             }
         }
@@ -192,7 +193,7 @@ namespace PMDataLayer
 
             _dataSet.Tables["Users"].Rows.Add(newUsersRow);
             _adapter.Update(_dataSet.Tables["Users"]);
-
+            
         }
 
         public override string ToString()

@@ -62,12 +62,12 @@ namespace PMDataLayer
 
             _adapter.Fill(_dataSet, "Clients");
 
-            DataRow newUsersRow = _dataSet.Tables["Clients"].NewRow();
-            newUsersRow["Id"] = client.Id;
-            newUsersRow["Account"] = client.Account;
-            newUsersRow["User_Id"] = client._userId;
+            DataRow newClientsRow = _dataSet.Tables["Clients"].NewRow();
+            newClientsRow["Id"] = client.Id;
+            newClientsRow["Account"] = client.Account;
+            newClientsRow["User_Id"] = client._userId;
 
-            _dataSet.Tables["Clients"].Rows.Add(newUsersRow);
+            _dataSet.Tables["Clients"].Rows.Add(newClientsRow);
             _adapter.Update(_dataSet.Tables["Clients"]);
 
         }

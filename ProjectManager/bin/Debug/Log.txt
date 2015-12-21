@@ -426,3 +426,187 @@ Description : sharksoft   to sharksoft
 21.12.2015 0:00:00 | 05:59:16.8163537:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 21.12.2015 0:00:00 | 05:59:17.3989202:Info | Order screen | Details of Android Eggsckatcher game have been loaded
 21.12.2015 0:00:00 | 05:59:17.9983688:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 06:00:19.2305389:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:00:56.7222481:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 06:00:56.7702813:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 06:00:56.7702813:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 06:01:00.4374927:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email : olga@karpushin  to olga@karpushin
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+21.12.2015 0:00:00 | 06:01:00.8158037:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 06:01:09.5263076:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:01:13.2794623:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 06:01:13.3181183:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 06:01:13.3186191:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 06:01:36.1747853:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 06:01:44.3952776:Info | Team details screen | Position Team Lead has been removed from vsailor
+21.12.2015 0:00:00 | 06:02:07.5389587:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 06:02:07.9760518:Info | Order screen | Details of Android Eggsckatcher game have been loaded
+21.12.2015 0:00:00 | 06:02:08.4605127:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 06:02:09.5876927:Info | Order screen | Details of Android Eggsckatcher game have been loaded
+21.12.2015 0:00:00 | 06:02:10.2155717:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 06:36:41.1363290:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:37:04.7860413:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:37:45.6653318:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:38:12.0804522:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:38:32.5845505:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:39:11.5414240:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:39:44.6020552:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:40:01.2537641:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:40:16.5447061:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:40:31.0382495:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:42:14.2773866:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:45:51.7452882:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:47:59.3346190:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:48:49.8058762:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:50:00.7673721:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:50:17.2063421:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:52:11.3872051:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:52:52.5306288:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:56:04.5536625:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:56:53.9913808:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 06:57:09.8897814:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:00:22.3802308:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:00:48.9785715:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:06:37.2273428:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:06:51.0790885:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:09:50.7574569:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:12:38.6546516:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:16:54.6417260:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:17:40.2358869:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:19:11.9225771:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:22:35.1806858:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:24:30.0496934:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:25:26.3060783:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:28:01.2302263:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:28:59.2928610:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:29:55.5655960:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:30:49.9893769:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:33:57.8276150:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:35:03.1731064:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:35:10.6183921:Info | Order screen | Details of Android Eggsckatcher game have been loaded
+21.12.2015 0:00:00 | 07:36:54.2660060:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:37:05.5133447:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:37:47.8038355:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:39:32.9227058:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:40:03.4745066:Info | Order screen | Details of Android Eggsckatcher game have been loaded
+21.12.2015 0:00:00 | 07:40:03.9745038:Info | Order screen | Details of Android Eggsckatcher game have been loaded
+21.12.2015 0:00:00 | 07:40:04.4317381:Info | Order screen | Details of Android Eggsckatcher game have been loaded
+21.12.2015 0:00:00 | 07:40:04.8306538:Info | Order screen | Details of Android Eggsckatcher game have been loaded
+21.12.2015 0:00:00 | 07:40:12.6064902:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:40:19.1063942:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:41:24.6169826:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:41:28.9767510:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:41:31.1138620:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 07:41:34.7669821:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to Unity3D-12
+Description : Unity3D developers  to Unity3D developers
+21.12.2015 0:00:00 | 07:42:04.6586196:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:42:11.0008007:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 07:42:16.1195020:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to Unity3D-1ew
+Description : Unity3D developers  to Unity3D developers
+21.12.2015 0:00:00 | 07:42:18.7565486:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 07:42:21.6651167:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 07:43:24.5710150:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:43:28.5493322:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:43:28.5973641:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 07:43:28.7149566:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:43:35.3824498:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Male  to Female
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email : olga@karpushin  to olga@karpushin
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+21.12.2015 0:00:00 | 07:43:35.3969595:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:43:44.7730335:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:43:48.3512591:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:43:48.3871825:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 07:43:48.5185182:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:43:55.6752426:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email : olga@karpushin  to olga@karpushin
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+21.12.2015 0:00:00 | 07:43:55.6827455:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:43:59.7832865:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:43:59.7867939:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 07:43:59.7882936:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:44:04.1885653:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email : olga@karpushin  to olga@karpushin
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+21.12.2015 0:00:00 | 07:44:15.3117068:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:44:24.5466852:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:44:30.0298443:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:44:30.0608645:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 07:44:30.1234299:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:44:34.3931591:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Male  to Female
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email : olga@karpushin  to olga@karpushin
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+21.12.2015 0:00:00 | 07:44:34.4035369:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:44:36.8695073:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:44:36.8995332:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 07:44:48.7713285:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:44:55.6935244:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:44:55.6975305:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 07:44:55.6985299:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:44:58.1703909:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Female  to Male
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email : olga@karpushin  to olga@karpushin
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+21.12.2015 0:00:00 | 07:44:58.1778993:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:45:01.2178343:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:45:01.2563825:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 07:52:16.6087361:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:52:20.3418430:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:52:21.1959377:Info | Team details screen | Team details have been loaded
+21.12.2015 0:00:00 | 07:52:29.5921589:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to Unity3D-1
+Description : Unity3D developers  to Unity3D developers5
+21.12.2015 0:00:00 | 07:52:31.6906208:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:52:31.6941231:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 07:52:31.8146705:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:52:43.1661650:Info | User details screen | Details of user has been changed:
+Name : Olga  to Olga
+Surname : Karpushin  to Karpushin
+State : Male  to Female
+Country : Israel  to Israel
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email : olga@karpushin  to olga@karpushin
+Login : sharksoft   to sharksoft 
+Description : sharksoft   to sharksoft 
+21.12.2015 0:00:00 | 07:52:43.1766711:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:52:50.9411069:Info | Details screen | Project details have been loaded
+21.12.2015 0:00:00 | 07:52:55.1081839:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+21.12.2015 0:00:00 | 07:52:55.1497161:Info | User details screen | Details of user sharksoft  has been loaded
+21.12.2015 0:00:00 | 07:52:55.2477811:Info | Order screen | Details of Android Matches Puzzle game have been loaded

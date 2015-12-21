@@ -38,7 +38,6 @@ namespace PMView
         private void RetrieveButton_Click(object sender, RoutedEventArgs e)
         {
             _userDetailsVM.ButtonRetrieveClick();
-
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)

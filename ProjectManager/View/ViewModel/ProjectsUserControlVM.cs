@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using PMDataLayer;
 using Core;
 using PMView.View.WrapperVM;
-using System.Windows;
 
 namespace PMView.View
 {
@@ -27,10 +27,9 @@ namespace PMView.View
 
         public ProjectsUserControlVM()
         {
-            Logger.Info("Details screen","Project details have been loaded");
+            Logger.Info("Details screen", "Project details have been loaded");
             if (User.Items.Count == 0)
                 GenerateData();
-
 
             SelectedOrder = OrdersCollection[0];
         }
@@ -160,6 +159,7 @@ namespace PMView.View
                 {
                     _ordersCollection.Add(new OrderVM(item));
                 }
+
                 return _ordersCollection;
             }
         }
@@ -174,6 +174,7 @@ namespace PMView.View
                 {
                     _projectsCollection.Add(new ProjectVM(item));
                 }
+
                 return _projectsCollection;
             }
         }
@@ -199,6 +200,7 @@ namespace PMView.View
                 {
                     _employeesCollection.Add(new UserVM(item));
                 }
+
                 return _employeesCollection;
             }
         }
@@ -225,11 +227,13 @@ namespace PMView.View
                 }
 
                 _teamsCollection.Clear();
+
                 foreach (var item in teams)
                 {
                     if (!_teamsCollection.Contains(item))
                         _teamsCollection.Add(item);
                 }
+
                 return _teamsCollection;
             }
         }
@@ -253,12 +257,14 @@ namespace PMView.View
                     var tasks = from items in Task.UsersTasks where items.OwnerId == employee.User.Id select items;
                     t.AddRange(tasks);
                 }
+
                 _tasksCollection.Clear();
 
                 foreach (var item in t)
                 {
                     _tasksCollection.Add(new TaskVM(item));
                 }
+
                 return _tasksCollection;
             }
         }
@@ -308,32 +314,22 @@ namespace PMView.View
             User e4 = User.Items.Where(item => item.Login == "hacapet89").FirstOrDefault();
             User u1 = User.Items.Where(item => item.Role == User.Roles.Client).FirstOrDefault();
             Client c1 = Client.Items.Where(item => item.User.Id == u1.Id).FirstOrDefault();
+            Order.Update();
+            Order o2 = Order.Items[0];
+            //Order o2 = new Order()
+            //{
+            //    Name = "Android Matches Puzzle game",
+            //    Description = "I need Matches Puzzel game for Unity 3d. Like https://play.google.com/store/apps/details?id=vn.bigfox.pencils",
+            //    Price = 80,
+            //    ReleaseDate = new DateTime(2015, 9, 18),
+            //    StartDate = new DateTime(2015, 7, 15),
+            //    Status = Order.Statuses.Done,
+            //    IsPrivate = false,
+            //    Client = c1
+            //};
+            //Order.Insert(o1);
+            //Order.Insert(o2);
 
-            Order o1 = new Order()
-            {
-                Name = "Android Eggsckatcher game",
-                Description = "I need Unity 3d Eggsckatcher game like this: https://play.google.com/store/apps/details?id=com.nomoc.wolfonfarm",
-                Price = 50,
-                ReleaseDate = new DateTime(2015, 12, 31),
-                StartDate = new DateTime(2015, 11, 29),
-                Status = Order.Statuses.InProgress,
-                IsPrivate = false,
-                Client = c1
-            };
-
-            Order o2 = new Order()
-            {
-                Name = "Android Matches Puzzle game",
-                Description = "I need Matches Puzzel game for Unity 3d. Like https://play.google.com/store/apps/details?id=vn.bigfox.pencils",
-                Price = 80,
-                ReleaseDate = new DateTime(2015, 9, 18),
-                StartDate = new DateTime(2015, 7, 15),
-                Status = Order.Statuses.Done,
-                IsPrivate = false,
-                Client = c1
-            };
-            Order.Items.Add(o2);
-            Order.Items.Add(o1);
 
             Project p1 = new Project()
             {

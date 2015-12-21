@@ -2,4 +2,3 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\PMDataLayer\bin\Debug\PMDataLayer
 C:\Users\ivanv\Documents\GitHub\ProjectManager\PMDataLayer\bin\Debug\PMDataLayer.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\PMDataLayer\obj\Debug\PMDataLayer.dll
 C:\Users\ivanv\Documents\GitHub\ProjectManager\PMDataLayer\obj\Debug\PMDataLayer.pdb
-C:\Users\ivanv\Documents\GitHub\ProjectManager\PMDataLayer\obj\Debug\PMDataLayer.csprojResolveAssemblyReference.cache

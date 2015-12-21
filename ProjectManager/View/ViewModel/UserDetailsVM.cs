@@ -47,7 +47,7 @@ namespace PMView.View
             CurrentEmployee = user;
             ButtonRetrieveClick();
             Logger.Info("User details screen", "Details of user " + user.Login + " has been loaded");
-
+            User.Update();
             LoadData();
         }
 
