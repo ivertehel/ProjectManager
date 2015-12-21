@@ -51,6 +51,7 @@ namespace PMDataLayer
                     rows[i]["Account"] = Client.Items[i].Account;
                     rows[i]["User_Id"] = Client.Items[i].User.Id;
                 }
+
                 _adapter.Update(_dataSet, "Clients");
             }
         }
@@ -69,7 +70,6 @@ namespace PMDataLayer
 
             _dataSet.Tables["Clients"].Rows.Add(newUsersRow);
             _adapter.Update(_dataSet.Tables["Clients"]);
-
         }
     }
 }

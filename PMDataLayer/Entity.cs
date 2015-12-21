@@ -18,11 +18,16 @@ namespace PMDataLayer
         public Entity()
         {
             Id = Guid.NewGuid();
+            _dataSet = new DataSet();
         }
 
         public static List<T> Items { get; set; }
 
         public Guid Id { get; set; }
+
+        protected static SqlDataAdapter _adapter { get; set; }
+
+        protected static DataSet _dataSet { get; set; }
 
         public static byte[] GetBytes(string str)
         {
@@ -30,10 +35,6 @@ namespace PMDataLayer
             System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
             return bytes;
         }
-
-        protected static SqlDataAdapter _adapter;
-
-        protected static DataSet _dataSet = new DataSet();
 
         protected static void createCommand(SqlDataAdapter adapter)
         {
@@ -57,7 +58,7 @@ namespace PMDataLayer
 
         protected static string getConnectionString()
         {
-            return @"Data Source=ivan-desktop\sqlexpress;Initial Catalog=ProjectManagerDB;Integrated Security=True";
+            return @"Data Source=IVAN-LAPTOP\SQLEXPRESS;AttachDbFilename=C:\ProjectManagerDB\ProjectManagerDB.mdf;Integrated Security=True";
         }
     }
 }

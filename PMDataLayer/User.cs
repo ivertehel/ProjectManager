@@ -13,6 +13,20 @@ namespace PMDataLayer
     {
         private static List<string> _countries;
 
+        static User()
+        {
+            _countries = new List<string>();
+            using (StreamReader reader = new StreamReader("Countries.txt"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    _countries.Add(reader.ReadLine());
+                }
+
+                reader.Close();
+            }
+        }
+
         public enum Roles
         {
             Administrator,
@@ -32,6 +46,11 @@ namespace PMDataLayer
             NotReady,
             Ready,
             UnInvited
+        }
+
+        public static List<string> Countries
+        {
+            get { return _countries; }
         }
 
         public string Name { get; set; }
@@ -95,24 +114,6 @@ namespace PMDataLayer
             get { return from items in User_Team.Items where items.User.Id == Id select items.Team; }
         }
 
-        static User()
-        {
-            _countries = new List<string>();
-            using (StreamReader reader = new StreamReader("Countries.txt"))
-            {
-                while (!reader.EndOfStream)
-                {
-                    _countries.Add(reader.ReadLine());
-                }
-                reader.Close();
-            }
-        }
-
-        public static List<string> Countries
-        {
-            get { return _countries; }
-        }
-
         public static void Update()
         {
             if (_adapter == null)
@@ -163,6 +164,7 @@ namespace PMDataLayer
                     rows[i]["Description"] = User.Items[i].Description;
                     rows[i]["State"] = User.Items[i].State;
                 }
+
                 _adapter.Update(_dataSet, "Users");
             }
         }
@@ -192,7 +194,6 @@ namespace PMDataLayer
 
             _dataSet.Tables["Users"].Rows.Add(newUsersRow);
             _adapter.Update(_dataSet.Tables["Users"]);
-
         }
 
         public override string ToString()

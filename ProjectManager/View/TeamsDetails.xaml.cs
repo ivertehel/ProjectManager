@@ -51,8 +51,6 @@ namespace PMView
             {
                 _teamDetailsVM.AddPosition(PositionToAddListBox.SelectedItem as PositionVM);
                 _teamDetailsVM.ChangePositions();
-
-
             }
             catch (Exception ex)
             {
@@ -69,8 +67,6 @@ namespace PMView
             { 
                 _teamDetailsVM.RemovePosition(PositionListBox.SelectedItem as PositionVM);
                 _teamDetailsVM.ChangePositions();
-
-
             }
             catch (Exception ex)
             {
@@ -89,13 +85,11 @@ namespace PMView
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             _teamDetailsVM.ButtonSaveClick();
-
         }
 
         private void RetrieveButton_Click(object sender, RoutedEventArgs e)
         {
             _teamDetailsVM.ButtonRetrieveClick();
-
         }
     }
 }
