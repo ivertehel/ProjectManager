@@ -761,3 +761,8 @@ Description :   to
 03.01.2016 0:00:00 | 19:38:16.9432297:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 03.01.2016 0:00:00 | 19:38:16.9432297:Info | User details screen | Details of user  has been loaded
 03.01.2016 0:00:00 | 19:38:16.9432297:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 19:47:08.2407861:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 19:47:10.4569454:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 19:47:10.4569454:Info | User details screen | Details of user  has been loaded
+03.01.2016 0:00:00 | 19:47:10.5572410:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 19:49:16.7826594:Info | Team details screen | Team details have been loaded

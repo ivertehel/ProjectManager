@@ -173,16 +173,8 @@ namespace PMView.View
                     case "Name":
                         error = _checkNameTemplate(columnName, Name);
                         break;
-                    case "Description":
-                        if (Description == string.Empty)
-                        {
-                            error = "Description can't be empty";
-                        }
-                        else if (Description[0] == ' ')
-                        {
-                            error = "Description can't start off space";
-                        }
-
+                    case "Surname":
+                        error = _checkNameTemplate(columnName, Surname);
                         break;
                 }
                 return error;
