@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -57,7 +58,7 @@ namespace PMDataLayer
 
         protected static string getConnectionString()
         {
-            return @"Data Source=IVAN-LAPTOP\SQLEXPRESS;AttachDbFilename=C:\ProjectManagerDB\ProjectManagerDB.mdf;Integrated Security=True";
+            return ConfigurationManager.AppSettings["MSSqlConnectionString"];
         }
     }
 }

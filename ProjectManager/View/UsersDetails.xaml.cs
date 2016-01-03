@@ -44,5 +44,20 @@ namespace PMView
         {
             _userDetailsVM.ButtonSaveClick();
         }
+
+        private void SomeProperty_Changed(object sender, TextChangedEventArgs e)
+        {
+            _userDetailsVM.OneOrMoreFieldsWereUpdated();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            _userDetailsVM.ButtonsActive = false;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _userDetailsVM.OneOrMoreFieldsWereUpdated();
+        }
     }
 }
