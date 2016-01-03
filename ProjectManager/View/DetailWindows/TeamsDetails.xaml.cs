@@ -41,21 +41,21 @@ namespace PMView
 
             PositionsGrid.Visibility = Visibility.Visible;
             _teamDetailsVM.SelectedEmployee = new UserVM((EmployeesListBox.SelectedItem as User_TeamVM).User);
-            List<CheckBox> positions = new List<CheckBox>();
+            _positions = new List<CheckBox>();
             var employeesPositions = _teamDetailsVM.EmployeesPositions;
 
             foreach (var item in Position.Items)
             {
                 var cb = new CheckBox();
                 cb.Content = item.Name;
-                positions.Add(cb);
-                cb.IsChecked = employeesPositions.Contains(item.Name) ? true : false;
+                _positions.Add(cb);
+                cb.IsChecked = employeesPositions.Contains(item.Name) ? false : true;
                 cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
 
             }
 
             PositionListBox.Items.Clear();
-            foreach (var item in positions)
+            foreach (var item in _positions)
             {
                 PositionListBox.Items.Add(item);
             }
@@ -73,9 +73,10 @@ namespace PMView
         {
             try
             {
-                _teamDetailsVM.ButtonSaveClick();
+                _teamDetailsVM.ButtonSaveClick(_positions.Where(items => items.IsChecked == true).Select(item => item.Content.ToString()).ToArray());
+                _teamDetailsVM.LoadData();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

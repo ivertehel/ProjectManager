@@ -385,3 +385,225 @@ Description :   to
 03.01.2016 0:00:00 | 17:55:16.6747032:Info | Team details screen | Team details have been loaded
 03.01.2016 0:00:00 | 17:55:57.6090588:Info | Details screen | Project details have been loaded
 03.01.2016 0:00:00 | 17:55:59.7719605:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:01:12.0063720:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:01:14.0679804:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:01:18.8949220:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to 
+Description : Unity3D developers  to Unity3D developers
+03.01.2016 0:00:00 | 18:01:29.9558304:Info | Team details screen | Details of team has been changed:
+Name :   to wqfqqwf
+Description : Unity3D developers  to Unity3D developers
+03.01.2016 0:00:00 | 18:01:33.8954651:Info | Team details screen | Details of team has been changed:
+Name : wqfqqwf  to wqfqqwf
+Description : Unity3D developers  to 
+03.01.2016 0:00:00 | 18:01:48.1420073:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:01:49.7711715:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:01:52.4663290:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to 
+Description : Unity3D developers  to Unity3D developers
+03.01.2016 0:00:00 | 18:02:02.7181880:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:02:05.0745579:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:02:09.5159414:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to 
+Description : Unity3D developers  to Unity3D developers
+03.01.2016 0:00:00 | 18:02:29.0560469:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:02:30.5218710:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:02:34.7498625:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to 
+Description : Unity3D developers  to Unity3D developers
+03.01.2016 0:00:00 | 18:02:48.4654070:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:02:50.5035473:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:02:53.8691322:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to 
+Description : Unity3D developers  to Unity3D developers
+03.01.2016 0:00:00 | 18:04:08.6898094:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:04:11.1779731:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:04:14.1160658:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to 
+Description : Unity3D developers  to Unity3D developers
+03.01.2016 0:00:00 | 18:04:46.3767041:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:04:48.4285988:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:04:51.7390878:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to 
+Description : Unity3D developers  to Unity3D developers
+03.01.2016 0:00:00 | 18:05:00.9952497:Info | Team details screen | Details of team has been changed:
+Name : Unity3D-1  to 
+Description : Unity3D developers  to Unity3D developers
+03.01.2016 0:00:00 | 18:06:21.5773364:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:06:23.3617976:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:12:26.3918543:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:12:28.5333859:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:18:00.4949373:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:18:03.4540623:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:18:06.8723938:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:18:09.9992365:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:18:14.3308609:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:18:16.3849951:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:24:57.0752583:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:25:20.5362831:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:25:24.1958764:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:25:27.4375856:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:27:27.4138715:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:27:29.0427983:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:27:32.2697344:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:43:40.0683679:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:43:42.7228569:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:43:45.8699114:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:43:48.1062362:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 18:43:48.1062362:Info | User details screen | Details of user  has been loaded
+03.01.2016 0:00:00 | 18:43:48.1596250:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 18:43:50.5658472:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:43:58.0515464:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:44:00.7435108:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:44:09.2148578:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:44:11.8912867:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:44:23.5336168:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:44:25.8953317:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:44:31.4936497:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:44:33.5299823:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:44:52.3815133:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:44:54.6192801:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:45:11.3026400:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:45:13.6088796:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:45:29.5635893:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:45:31.8381548:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:46:12.5151785:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:46:14.2679550:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:46:41.0849836:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:46:42.6393994:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:46:50.6387468:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:52:46.3309648:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:52:48.4875786:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:52:51.6794700:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:52:56.5460062:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:53:01.1898673:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:53:05.7387914:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:53:19.7255027:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:53:32.8611248:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:53:35.0357937:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:55:02.1222874:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:56:04.9912748:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:56:06.6918727:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:56:10.9388379:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:56:14.6984972:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:56:18.2888129:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:56:21.9993391:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:56:25.4783045:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:57:00.7778066:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:57:02.3201208:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:57:06.6253957:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 18:57:15.8521397:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 18:57:17.2712029:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 18:57:20.5607827:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers

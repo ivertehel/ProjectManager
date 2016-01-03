@@ -62,28 +62,6 @@ namespace PMView.View
             set { _currentTeam = value; }
         }
 
-        public PositionVM PositionSelectedItem
-        {
-            get { return null; }
-            set
-            {
-                if (value != null)
-                RemovePosition(value);
-                OnPropertyChanged("PositionsToAddCollection");
-            }
-        }
-
-        public PositionVM PositionToAddSelectedItem
-        {
-            get { return null; }
-            set
-            {
-                if (value != null)
-                AddPosition(value);
-                OnPropertyChanged("PositionsCollection");
-            }
-        }
-
         public bool ButtonsActive
         {
             get
@@ -239,70 +217,47 @@ namespace PMView.View
             }
         }
 
-        public void AddPosition(PositionVM position)
-        {
-            if (SelectedEmployee == null)
-                return;
-            if (position == null)
-                return;
-            ////NotExistPositionsCollection.Remove(position);
-
-            var pos = (from items in User_Team.Items where items.Team == CurrentTeam.Team && items.User == SelectedEmployee.User && items.Position.Name == position.Name select items).FirstOrDefault();
-
-            User_Team ut = new User_Team()
-            {
-                IsLeader = true,
-                Position = position.Position,
-                Team = CurrentTeam.Team,
-                User = SelectedEmployee.User
-            };
-
-            User_Team.Items.Add(ut);
-            Logger.Info("Team details screen", "Position " + ut.Position + " has been added to " + SelectedEmployee.Login);
-            LoadData();
-            OnPropertyChanged("PositionsCollection");
-        }
-        public void RemovePosition(PositionVM position)
-        {
-            if (SelectedEmployee == null)
-                return;
-            if (position == null)
-                return;
-            ////if (ExistsPositionsCollection.Count == 1)
-            ////{
-            ////    throw new Exception("At least one position should be exist");
-            ////}
-
-            var ut = (from items in User_Team.Items where items.User == SelectedEmployee.User && items.Position.Name == position.Name select items).FirstOrDefault();
-            User_Team.Items.Remove(ut);
-            Logger.Info("Team details screen", "Position " + ut.Position + " has been removed from " + SelectedEmployee.Login);
-
-            LoadData();
-            OnPropertyChanged("PositionsToAddCollection");
-
-        }
-
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void ButtonSaveClick()
+        public void ButtonSaveClick(string[] positions)
         {
-            Logger.Info("Team details screen", "Details of team has been changed:" + Environment.NewLine
-               + "Name : " + CurrentTeam.Name + "  to " + _name + Environment.NewLine
-                + "Description : "+ CurrentTeam.Description + "  to " + _description
-                 );
-
+            var error = this["Name"];
+            if (error == string.Empty)
+                error = this["Description"];
+            if (error != string.Empty)
+            {
+                throw new Exception(error);
+            }
+            Logger.Info("Team details screen", $@"Details of team has been changed: {Environment.NewLine} 
+            Name : {CurrentTeam.Name} to {_name} {Environment.NewLine} 
+            Description : {CurrentTeam.Description} to {_description}");
+            _savePositions(positions);
             CurrentTeam.Name = _name;
             CurrentTeam.Description = _description;
             _projectsUserControlVM.OnPropertyChanged("TeamsCollection");
             OnPropertyChanged("Name");
             OnPropertyChanged("Description");
             ButtonsActive = false;
+        }
 
-
+        private void _savePositions(string[] positions)
+        {
+            User_Team.Items.RemoveAll(items => items.User == SelectedEmployee.User);
+            for (int i = 0; i < positions.Count(); i++)
+            {
+                User_Team ut = new User_Team()
+                {
+                    IsLeader = false,
+                    Position = Position.Items.Where(item => item.Name == positions[i]).FirstOrDefault(),
+                    Team = CurrentTeam.Team,
+                    User = SelectedEmployee.User
+                };
+                User_Team.Items.Add(ut);
+            }
         }
 
         public void ButtonRetrieveClick()
