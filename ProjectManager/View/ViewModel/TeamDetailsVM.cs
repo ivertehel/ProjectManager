@@ -246,6 +246,8 @@ namespace PMView.View
 
         private void _savePositions(string[] positions)
         {
+            if (positions.Count() == 0)
+                throw new Exception("Employee must have at least one position");
             User_Team.Items.RemoveAll(items => items.User == SelectedEmployee.User);
             for (int i = 0; i < positions.Count(); i++)
             {

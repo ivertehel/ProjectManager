@@ -11,7 +11,7 @@ using Core;
 
 namespace PMView.View
 {
-    public class UserDetailsVM : INotifyPropertyChanged
+    public class UserDetailsVM : INotifyPropertyChanged, IDataErrorInfo
     {
         private UserVM _currentEmployee;
 
@@ -155,6 +155,60 @@ namespace PMView.View
             }
         }
 
+        public string Error
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                string error = string.Empty;
+                switch (columnName)
+                {
+                    case "Name":
+                        error = _checkNameTemplate(columnName, Name);
+                        break;
+                    case "Description":
+                        if (Description == string.Empty)
+                        {
+                            error = "Description can't be empty";
+                        }
+                        else if (Description[0] == ' ')
+                        {
+                            error = "Description can't start off space";
+                        }
+
+                        break;
+                }
+                return error;
+            }
+        }
+
+        private string _checkNameTemplate(string fieldName, string value)
+        {
+            if (value == string.Empty)
+                return $"{fieldName} can't be empty";
+            if (value[0] == ' ')
+                return $"{fieldName} can't start off space";
+            if (value.Length < 2)
+                return $"{fieldName} must contains 2 or more letters";
+            if (Name.ToUpper()[0] != Name[0])
+                return $"{fieldName} must start from upper letter";
+            foreach (var item in value)
+            {
+                if (!(item >= 'A' && item <= 'Z') && !(item >= 'a' && item <= 'z') && !(item >= 'А' && item <= 'Я') && !(item >= 'а' && item <= 'я'))
+                {
+                    return $"{fieldName} can contain letter only";
+                }
+            }
+            return string.Empty;
+        }
+
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -164,12 +218,12 @@ namespace PMView.View
         public void ButtonSaveClick()
         {
             Logger.Info("User details screen", "Details of user has been changed:" + Environment.NewLine
-            +"Name : "+ CurrentEmployee.Name + "  to " + _name + Environment.NewLine
+            + "Name : " + CurrentEmployee.Name + "  to " + _name + Environment.NewLine
             + "Surname : " + CurrentEmployee.Surname + "  to " + _surname + Environment.NewLine
             + "State : " + CurrentEmployee.State + "  to " + _state + Environment.NewLine
             + "Country : " + CurrentEmployee.Country + "  to " + _country + Environment.NewLine
             + "Birthday : " + CurrentEmployee.Birthday + "  to " + _birthday + Environment.NewLine
-            + "Email : "+ CurrentEmployee.Email + "  to " + _email + Environment.NewLine
+            + "Email : " + CurrentEmployee.Email + "  to " + _email + Environment.NewLine
             + "Login : " + CurrentEmployee.Login + "  to " + _login + Environment.NewLine
             + "Description : " + CurrentEmployee.Description + "  to " + _description
             );

@@ -9,6 +9,27 @@
         mc:Ignorable="d"
         Title="User details" Height="400" Width="550"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
 
+    <Window.Resources>
+        <ControlTemplate x:Key="validationFailed">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderBrush="Red" BorderThickness="2" Opacity="0.3">
+                    <AdornedElementPlaceholder />
+                </Border>
+                <TextBlock Foreground="Red" FontSize="15" FontWeight="Bold" Text="!">
+                </TextBlock>
+            </StackPanel>
+        </ControlTemplate>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={RelativeSource Self},
+                    Path=(Validation.Errors)[0].ErrorContent}" />
+                    <Setter Property="Foreground" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/MainBackground.png"></ImageBrush>
@@ -60,9 +81,21 @@
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" Text="Name:" FontSize="18"/>
-                        <TextBox Grid.Row="1" Text="{Binding Name}" TextChanged="SomeProperty_Changed"/>
+                        <TextBox Grid.Row="1" Validation.ErrorTemplate="{StaticResource validationFailed}" TextChanged="SomeProperty_Changed">
+                            <Binding Path="Name">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <TextBlock Grid.Row="2" Text="Surname:" FontSize="18"/>
-                        <TextBox Grid.Row="3" Text="{Binding Surname}" TextChanged="SomeProperty_Changed"/>
+                        <TextBox Grid.Row="3" Validation.ErrorTemplate="{StaticResource validationFailed}" TextChanged="SomeProperty_Changed">
+                            <Binding Path="Surname">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox>
                         <TextBlock Grid.Row="4" Text="State:" FontSize="18"/>
                         <ComboBox Grid.Row="5" ItemsSource="{Binding States}" SelectedItem="{Binding State}" SelectionChanged="ComboBox_SelectionChanged"/>
                         <TextBlock Grid.Row="6" Text="Nationality:" FontSize="18"/>
