@@ -302,3 +302,70 @@ Description :   to
 03.01.2016 0:00:00 | 16:00:47.9266148:Info | Team details screen | Position QA engineer has been added to vsailor
 03.01.2016 0:00:00 | 16:00:47.9578680:Info | Team details screen | Position Team Lead has been added to vsailor
 03.01.2016 0:00:00 | 16:00:47.9960789:Info | Team details screen | Position Team Lead has been added to vsailor
+03.01.2016 0:00:00 | 16:04:32.6787862:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 16:04:34.4104723:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 16:04:34.4194778:Info | User details screen | Details of user  has been loaded
+03.01.2016 0:00:00 | 16:04:34.4725151:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 16:09:49.7343368:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 16:09:51.7743941:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 16:10:44.3533527:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 16:10:46.6485893:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 16:10:52.9875745:Info | Team details screen | Position QA engineer has been added to vsailor
+03.01.2016 0:00:00 | 16:12:22.8572577:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 16:12:24.7702777:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 16:16:09.5051402:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 16:16:11.2920565:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 16:16:11.3076822:Info | User details screen | Details of user  has been loaded
+03.01.2016 0:00:00 | 16:16:11.3389355:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 16:16:14.2070659:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 16:17:46.8942331:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 16:17:48.8129979:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:03:34.0000152:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:03:36.1766487:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:07:31.1215698:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:07:33.7264140:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:07:44.1604828:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:07:45.8007488:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:08:36.8593073:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:08:39.0008679:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:12:08.7833941:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:12:14.0042142:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:12:28.4093613:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:12:29.9655757:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:16:33.5930161:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:16:36.0151389:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:18:24.8205577:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:18:26.8915167:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:20:17.2521924:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:20:20.2851485:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:21:30.1689885:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:21:33.9065947:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:21:46.4589147:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:21:48.1738054:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:22:15.2113769:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:22:51.7008876:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:22:53.7508571:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:26:19.4950784:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:26:21.4373397:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:27:28.2066939:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:27:30.3223582:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:28:48.5768853:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:28:50.5494645:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:29:31.9857113:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:29:34.1156561:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:29:49.6558569:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:29:51.7372772:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:30:14.3906548:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:30:17.3444661:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:30:27.9064899:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:30:30.6858837:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:31:06.9895835:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:31:09.4313451:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:31:38.6052669:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:31:41.8077607:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:35:00.8502547:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:35:02.4993150:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:37:46.7844508:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:37:49.0567084:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:39:34.2940544:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:39:36.4903945:Info | Team details screen | Team details have been loaded

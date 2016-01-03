@@ -39,7 +39,21 @@ namespace PMView
 
             PositionsGrid.Visibility = Visibility.Visible;
             _teamDetailsVM.SelectedEmployee = new UserVM((EmployeesListBox.SelectedItem as User_TeamVM).User);
-            _teamDetailsVM.ChangePositions();
+            List<CheckBox> positions = new List<CheckBox>();
+            var employeesPositions = _teamDetailsVM.EmployeesPositions;
+
+            foreach (var item in Position.Items)
+            {
+                var cb = new CheckBox();
+                cb.Content = item.Name;
+                positions.Add(cb);
+                cb.IsChecked = employeesPositions.Contains(item.Name) ? true : false;
+            }
+            PositionListBox.Items.Clear();
+            foreach (var item in positions)
+            {
+                PositionListBox.Items.Add(item);
+            }
         }
 
         private void DataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
@@ -52,7 +66,14 @@ namespace PMView
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            _teamDetailsVM.ButtonSaveClick();
+            try
+            {
+                _teamDetailsVM.ButtonSaveClick();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -60,6 +81,17 @@ namespace PMView
         {
             _teamDetailsVM.ButtonRetrieveClick();
 
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _teamDetailsVM.ButtonsActive = true;
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            _teamDetailsVM.ButtonsActive = false;
         }
     }
 }

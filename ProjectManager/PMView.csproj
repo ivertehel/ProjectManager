@@ -68,11 +68,11 @@
     <Compile Include="View\ViewModel\ProjectsUserControlVM.cs" />
     <Compile Include="View\ViewModel\TeamDetailsVM.cs" />
     <Compile Include="View\ViewModel\UserDetailsVM.cs" />
-    <Compile Include="View\EmptyWindow.xaml.cs">
+    <Compile Include="View\DetailWindows\EmptyWindow.xaml.cs">
       <DependentUpon>EmptyWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewModel\IUser.cs" />
-    <Compile Include="View\TeamsDetails.xaml.cs">
+    <Compile Include="View\DetailWindows\TeamsDetails.xaml.cs">
       <DependentUpon>TeamsDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Bodys\ClientsUserControl.xaml.cs">
@@ -96,14 +96,14 @@
     <Compile Include="View\UserControls\Bodys\TeamsUserControl.xaml.cs">
       <DependentUpon>TeamsUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UsersDetails.xaml.cs">
+    <Compile Include="View\DetailWindows\UsersDetails.xaml.cs">
       <DependentUpon>UsersDetails.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\EmptyWindow.xaml">
+    <Page Include="View\DetailWindows\EmptyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TeamsDetails.xaml">
+    <Page Include="View\DetailWindows\TeamsDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,7 +147,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UsersDetails.xaml">
+    <Page Include="View\DetailWindows\UsersDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

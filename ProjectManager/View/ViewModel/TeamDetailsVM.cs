@@ -17,13 +17,11 @@ namespace PMView.View
 
         private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
 
-        private ObservableCollection<PositionVM> _positionsCollection = new ObservableCollection<PositionVM>();
-
-        private ObservableCollection<PositionVM> _positionsToAddCollection = new ObservableCollection<PositionVM>();
-
         private ObservableCollection<OrderVM> _ordersCollection = new ObservableCollection<OrderVM>();
 
         private ProjectsUserControlVM _projectsUserControlVM;
+
+        private List<string> _employeesPositions = new List<string>();
 
         private string _name;
 
@@ -139,7 +137,6 @@ namespace PMView.View
                         {
                             error = "This team is already exist";
                         }
-                        ButtonsActive = false;
                         break;
                     case "Description":
                         if (Description == string.Empty)
@@ -150,18 +147,8 @@ namespace PMView.View
                         {
                             error = "Description can't start off space";
                         }
-                        ButtonsActive = false;
 
                         break;
-                }
-                if (Name == string.Empty || Description == string.Empty || error != string.Empty || (Name == CurrentTeam.Name && Description == CurrentTeam.Description))
-                {
-                    ButtonsActive = false;
-                }
-                else
-                {
-                    ButtonsActive = true;
-
                 }
                 return error;
             }
@@ -185,44 +172,18 @@ namespace PMView.View
             }
         }
 
-        public ObservableCollection<PositionVM> PositionsCollection
+        public List<string> EmployeesPositions
         {
             get
             {
-                _positionsCollection.Clear();
-                foreach (var item in _employeesCollection)
+                _employeesPositions.Clear();
+                var user = _employeesCollection.FirstOrDefault(item => item.User == SelectedEmployee.User);
+                foreach (var item in Position.Items)
                 {
-                    if (item.User == SelectedEmployee.User)
-                    {
-                        foreach (var position in item.Positions)
-                        {
-                            _positionsCollection.Add(new PositionVM(position));
-                        }
-                    }
+                    if(!user.Positions.Contains(item))
+                        _employeesPositions.Add(item.Name);
                 }
-                return _positionsCollection;
-            }
-        }
-
-        public ObservableCollection<PositionVM> PositionsToAddCollection
-        {
-            get
-            {
-                _positionsToAddCollection.Clear();
-                foreach (var position in Position.Items)
-                {
-                    bool exist = false;
-                    foreach (var item in _positionsCollection)
-                    {
-                        if (item.Position.Name == position.Name)
-                        {
-                            exist = true;
-                        }
-                    }
-                    if (!exist)
-                        _positionsToAddCollection.Add(new PositionVM(position));
-                }
-                return _positionsToAddCollection;
+                return _employeesPositions;             
             }
         }
 
@@ -284,7 +245,7 @@ namespace PMView.View
                 return;
             if (position == null)
                 return;
-            PositionsToAddCollection.Remove(position);
+            ////NotExistPositionsCollection.Remove(position);
 
             var pos = (from items in User_Team.Items where items.Team == CurrentTeam.Team && items.User == SelectedEmployee.User && items.Position.Name == position.Name select items).FirstOrDefault();
 
@@ -307,10 +268,10 @@ namespace PMView.View
                 return;
             if (position == null)
                 return;
-            if (PositionsCollection.Count == 1)
-            {
-                throw new Exception("At least one position should be exist");
-            }
+            ////if (ExistsPositionsCollection.Count == 1)
+            ////{
+            ////    throw new Exception("At least one position should be exist");
+            ////}
 
             var ut = (from items in User_Team.Items where items.User == SelectedEmployee.User && items.Position.Name == position.Name select items).FirstOrDefault();
             User_Team.Items.Remove(ut);
@@ -360,12 +321,6 @@ namespace PMView.View
             OnPropertyChanged("OrdersCollection");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("SkillsCollection");
-        }
-
-        public void ChangePositions()
-        {
-            OnPropertyChanged("PositionsCollection");
-            OnPropertyChanged("PositionsToAddCollection");
         }
     }
 }
