@@ -25,6 +25,8 @@ namespace PMView
     {
         private TeamDetailsVM _teamDetailsVM;
 
+        private List<CheckBox> _positions;
+
         public TeamsDetails(TeamVM team, ProjectsUserControlVM projectsUserControlVM)
         {
             InitializeComponent();
@@ -48,7 +50,10 @@ namespace PMView
                 cb.Content = item.Name;
                 positions.Add(cb);
                 cb.IsChecked = employeesPositions.Contains(item.Name) ? true : false;
+                cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
+
             }
+
             PositionListBox.Items.Clear();
             foreach (var item in positions)
             {
@@ -92,6 +97,11 @@ namespace PMView
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _teamDetailsVM.ButtonsActive = false;
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            _teamDetailsVM.ButtonsActive = true;
         }
     }
 }

@@ -369,3 +369,19 @@ Description :   to
 03.01.2016 0:00:00 | 17:37:49.0567084:Info | Team details screen | Team details have been loaded
 03.01.2016 0:00:00 | 17:39:34.2940544:Info | Details screen | Project details have been loaded
 03.01.2016 0:00:00 | 17:39:36.4903945:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:41:17.9758351:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:41:19.9298315:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:42:31.5774241:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:42:33.5483317:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:43:01.7013448:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:43:03.6100196:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:44:02.0724321:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:44:03.9938902:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:44:25.4792247:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:44:28.3109998:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:46:12.4439342:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:46:15.8948044:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:55:14.5431654:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:55:16.6747032:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 17:55:57.6090588:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 17:55:59.7719605:Info | Team details screen | Team details have been loaded

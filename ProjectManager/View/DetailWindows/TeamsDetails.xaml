@@ -198,14 +198,14 @@
                 <Grid Grid.Row="2" Name="PositionsGrid" Visibility="Hidden">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" HorizontalAlignment="Stretch">
                         <TextBlock Text="Positions:" FontSize="18"/>
                     </Grid>
                     <Grid Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,5,5">
                         <ListBox 
-                         FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top">
+                         FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
                             <ListBox.BorderBrush>
                                 <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
                             </ListBox.BorderBrush>
