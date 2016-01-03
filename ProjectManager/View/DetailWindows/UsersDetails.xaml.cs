@@ -42,7 +42,14 @@ namespace PMView
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            _userDetailsVM.ButtonSaveClick();
+            try
+            {
+                _userDetailsVM.ButtonSaveClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void SomeProperty_Changed(object sender, TextChangedEventArgs e)

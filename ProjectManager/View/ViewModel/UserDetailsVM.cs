@@ -209,6 +209,13 @@ namespace PMView.View
 
         public void ButtonSaveClick()
         {
+            var error = this["Name"];
+            if (error == string.Empty)
+                error = this["Surname"];
+            if (error != string.Empty)
+            {
+                throw new Exception(error);
+            }
             Logger.Info("User details screen", "Details of user has been changed:" + Environment.NewLine
             + "Name : " + CurrentEmployee.Name + "  to " + _name + Environment.NewLine
             + "Surname : " + CurrentEmployee.Surname + "  to " + _surname + Environment.NewLine
@@ -219,6 +226,7 @@ namespace PMView.View
             + "Login : " + CurrentEmployee.Login + "  to " + _login + Environment.NewLine
             + "Description : " + CurrentEmployee.Description + "  to " + _description
             );
+            
             CurrentEmployee.Name = _name;
             CurrentEmployee.Surname = _surname;
             CurrentEmployee.State = _state;

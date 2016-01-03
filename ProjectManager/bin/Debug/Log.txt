@@ -766,3 +766,88 @@ Description :   to
 03.01.2016 0:00:00 | 19:47:10.4569454:Info | User details screen | Details of user  has been loaded
 03.01.2016 0:00:00 | 19:47:10.5572410:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 03.01.2016 0:00:00 | 19:49:16.7826594:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 19:52:51.5440087:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 19:52:55.7894486:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 19:52:58.5085296:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 21:24:51.9885050:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 21:24:58.8229340:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:24:58.8229340:Info | User details screen | Details of user  has been loaded
+03.01.2016 0:00:00 | 21:24:58.8606946:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:25:10.9923542:Info | User details screen | Details of user has been changed:
+Name : S2  to Asdfg
+Surname : 2  to Sasd
+State : Female  to Female
+Country : Italy  to Italy
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login :   to 
+Description :   to 
+03.01.2016 0:00:00 | 21:25:11.0393931:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:25:26.2340594:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:25:26.2497528:Info | User details screen | Details of user  has been loaded
+03.01.2016 0:00:00 | 21:25:26.2497528:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:29:02.3791023:Info | User details screen | Details of user has been changed:
+Name : Asdfg  to Asdfg112431325432rv q3 erdf qerg qreg qer
+Surname : Sasd  to Sasd
+State : Female  to Female
+Country : Italy  to Italy
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login :   to 
+Description :   to 
+03.01.2016 0:00:00 | 21:29:02.4260249:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:31:50.7894062:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 21:31:53.2343494:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:31:53.2509767:Info | User details screen | Details of user  has been loaded
+03.01.2016 0:00:00 | 21:31:53.3189897:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:32:11.4291133:Info | User details screen | Details of user has been changed:
+Name : Asdfg112431325432rv q3 erdf qerg qreg qer  to Szfwsegwerbg
+Surname : Sasd  to Sasd
+State : Female  to Female
+Country : Italy  to Italy
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login :   to 
+Description :   to 
+03.01.2016 0:00:00 | 21:32:11.4457226:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:32:25.0200931:Info | User details screen | Details of user has been changed:
+Name : Szfwsegwerbg  to Szfwsegwerbg
+Surname : Sasd  to Sasd
+State : Female  to Female
+Country : Italy  to Italy
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 
+Login :   to 
+Description :   to 
+03.01.2016 0:00:00 | 21:32:25.0200931:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:32:34.4870560:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:32:36.7322764:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:32:38.7896615:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:32:44.8746252:Info | User details screen | Details of user has been changed:
+Name : Szfwsegwerbg  to Szfwsegwerbg
+Surname : Sasd  to Sasd
+State : Female  to Female
+Country : Italy  to Italy
+Birthday : 25.05.1985 0:00:00  to 25.05.1985 0:00:00
+Email :   to 1
+Login :   to 1
+Description :   to 1
+03.01.2016 0:00:00 | 21:32:44.8746252:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:32:46.4787300:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:32:46.4787300:Info | User details screen | Details of user 1 has been loaded
+03.01.2016 0:00:00 | 21:32:46.4787300:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 21:32:54.4312519:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 21:33:14.8184165:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 21:33:23.4789100:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
