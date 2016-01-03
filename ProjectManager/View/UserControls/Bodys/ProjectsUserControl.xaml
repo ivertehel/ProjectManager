@@ -219,7 +219,7 @@
                     <Label Content="Modules:" TextBlock.FontSize="18"/>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Button Content="Add" MinWidth="100" Margin="10,10,0,10">
+                        <Button Content="Add" MinWidth="100" Margin="10,10,0,10" Click="AddProject_Click">
                             <Button.Background>
                                 <DrawingBrush Opacity="0.5"/>
                             </Button.Background>

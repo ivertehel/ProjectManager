@@ -874,3 +874,42 @@ Description :   to 1
 03.01.2016 0:00:00 | 22:00:54.6654175:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 03.01.2016 0:00:00 | 22:00:54.6694180:Info | User details screen | Details of user 1 has been loaded
 03.01.2016 0:00:00 | 22:00:54.6954447:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 22:31:09.1064093:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 22:46:12.3481125:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 22:48:03.8163630:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 22:48:20.3443814:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 22:50:11.6154686:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 22:51:08.1184614:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 22:53:25.2272053:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 22:54:47.8896638:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:20:04.5025342:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:21:58.5166183:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:22:35.7924967:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:23:07.5444116:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:23:21.4419906:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:24:01.0373344:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:25:35.5488243:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:27:05.6616064:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:39:58.0273569:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:45:08.5124938:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:46:17.9818279:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:46:57.6026152:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:47:44.7776796:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:47:55.7831230:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:50:39.4403010:Info | Details screen | Project details have been loaded
+03.01.2016 0:00:00 | 23:51:21.5999600:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 23:51:21.6079636:Info | User details screen | Details of user 1 has been loaded
+03.01.2016 0:00:00 | 23:51:21.6319821:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 23:51:26.6425720:Info | Team details screen | Team details have been loaded
+03.01.2016 0:00:00 | 23:51:31.1636187:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+03.01.2016 0:00:00 | 23:51:34.7309529:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 23:51:35.1698181:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 23:51:35.6098131:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 23:51:37.0342957:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 23:51:37.6258772:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 23:51:38.2514693:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+03.01.2016 0:00:00 | 23:51:38.6989594:Info | Order screen | Details of Android Matches Puzzle game have been loaded

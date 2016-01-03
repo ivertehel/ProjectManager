@@ -17,7 +17,7 @@ namespace PMDataLayer
         {
             Done,
             InProgress,
-            Open,
+            Opened,
             Discarded
         }
 

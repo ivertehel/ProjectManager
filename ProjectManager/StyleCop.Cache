@@ -371,4 +371,33 @@
   <project key="631027406">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <sourcecode name="ProjectModuleEditVM.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2015.11.27 19:51:34.398</styleCop>
+      <settingsFile>2015.11.27 19:51:34.371</settingsFile>
+      <sourceFile>2016.01.03 23:16:30.106</sourceFile>
+      <parser>2015.11.27 19:51:34.398</parser>
+      <StyleCop.CSharp.DocumentationRules>2015.11.27 19:51:34.398</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1511543750</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2015.11.27 19:51:34.398</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2015.11.27 19:51:34.398</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2015.11.27 19:51:34.398</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2015.11.27 19:51:34.398</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2015.11.27 19:51:34.398</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2015.11.27 19:51:34.398</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.CsParser" rule="SyntaxException" ruleCheckId="SA0102">
+        <context>A syntax error has been discovered in file C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\ViewModel\ProjectModuleEditVM.cs on line 32.</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
 </stylecopresultscache>

@@ -71,5 +71,10 @@ namespace PMView.View
             CustomerProfileButton.Opacity = 0.8;
 
         }
+
+        private void AddProject_Click(object sender, RoutedEventArgs e)
+        {
+            (new ProjectModuleEdit(_projectsUserControlVM)).Show();
+        }
     }
 }

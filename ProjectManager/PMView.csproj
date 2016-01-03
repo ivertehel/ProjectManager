@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\DetailWindows\ProjectModuleEdit.xaml.cs">
+      <DependentUpon>ProjectModuleEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewModel\ClientsUserControlVM.cs" />
     <Compile Include="View\ViewModel\Data\BaseVM.cs" />
     <Compile Include="View\ViewModel\Data\OrderVM.cs" />
@@ -65,6 +68,7 @@
     <Compile Include="View\ViewModel\Data\TeamVM.cs" />
     <Compile Include="View\ViewModel\Data\UserVM.cs" />
     <Compile Include="View\ViewModel\Data\User_TeamVM.cs" />
+    <Compile Include="View\ViewModel\ProjectModuleEditVM.cs" />
     <Compile Include="View\ViewModel\ProjectsUserControlVM.cs" />
     <Compile Include="View\ViewModel\TeamDetailsVM.cs" />
     <Compile Include="View\ViewModel\UserDetailsVM.cs" />
@@ -100,6 +104,10 @@
       <DependentUpon>UsersDetails.xaml</DependentUpon>
     </Compile>
     <Page Include="View\DetailWindows\EmptyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DetailWindows\ProjectModuleEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

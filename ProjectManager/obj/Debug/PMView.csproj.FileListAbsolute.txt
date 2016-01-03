@@ -37,3 +37,5 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\Det
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\UsersDetails.baml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\EmptyWindow.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\EmptyWindow.baml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\ProjectModuleEdit.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\ProjectModuleEdit.baml
