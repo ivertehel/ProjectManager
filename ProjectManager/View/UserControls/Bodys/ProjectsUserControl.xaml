@@ -211,7 +211,20 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
                     <Label Content="Modules:" TextBlock.FontSize="18"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Button Content="Add" MinWidth="100" Margin="10,10,0,10">
+                            <Button.Background>
+                                <DrawingBrush Opacity="0.5"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
                 </Grid>
                 <Grid Grid.Row="1">
                     <DataGrid Grid.Row="0"
