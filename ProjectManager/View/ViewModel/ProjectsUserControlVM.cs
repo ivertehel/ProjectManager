@@ -28,15 +28,8 @@ namespace PMView.View
         public ProjectsUserControlVM()
         {
             Logger.Info("Details screen", "Project details have been loaded");
-            try
-            {
-                if (User.Items.Count == 0)
-                    GenerateData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            if (User.Items.Count == 0)
+                GenerateData();
 
             SelectedOrder = OrdersCollection[0];
         }

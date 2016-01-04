@@ -52,13 +52,3 @@
 04.01.2016 0:00:00 | 13:15:48.8277410:Info | Details screen | Project details have been loaded
 04.01.2016 0:00:00 | 13:16:17.6166680:Info | Details screen | Project details have been loaded
 04.01.2016 0:00:00 | 13:16:50.1730510:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 13:53:36.6711735:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 13:54:53.8415610:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 13:56:44.4594354:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 13:57:09.5398859:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 13:57:39.6551770:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 13:58:57.5784846:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 14:01:44.3678575:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 14:02:46.3226801:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 14:04:52.5111334:Info | Details screen | Project details have been loaded
-04.01.2016 0:00:00 | 14:06:35.9910958:Info | Details screen | Project details have been loaded

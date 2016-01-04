@@ -52,6 +52,8 @@ namespace PMDataLayer
             SqlCommand selectProductCommand = new SqlCommand(selectSQL, connection);
 
             _adapter = new SqlDataAdapter(selectSQL, connection);
+
+            createCommand(_adapter);
         }
 
         protected static string getConnectionString()
