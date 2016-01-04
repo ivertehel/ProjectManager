@@ -37,7 +37,7 @@ namespace PMView.View
 
         private ProjectsUserControlVM _projectsUserControlVM;
 
-        private ObservableCollection<User.States> states = new ObservableCollection<User.States>();
+        private ObservableCollection<User.States> _states = new ObservableCollection<User.States>();
 
         public UserDetailsVM(UserVM user, ProjectsUserControlVM projectsUserControlVM)
         {
@@ -101,12 +101,12 @@ namespace PMView.View
         {
             get
             {
-                states.Clear();
-                foreach (User.States state in Enum.GetValues(typeof(User.States)))
-                {
-                    states.Add(state);
-                }
-                return states;
+                if (_states.Count == 0)
+                    foreach (User.States state in Enum.GetValues(typeof(User.States)))
+                    {
+                        _states.Add(state);
+                    }
+                return _states;
             }
         }
 
@@ -216,7 +216,7 @@ namespace PMView.View
             {
                 throw new Exception(error);
             }
-            Logger.Info("User details screen", 
+            Logger.Info("User details screen",
                 $@"Details of user has been changed:{Environment.NewLine}
                 Name : {CurrentEmployee.Name} to {_name}{Environment.NewLine}
                 Surname : {CurrentEmployee.Surname} to {_surname}{Environment.NewLine}
@@ -227,7 +227,7 @@ namespace PMView.View
                 Login : {CurrentEmployee.Login} to {_login}{Environment.NewLine}
                 Description : {CurrentEmployee.Description} to {_description}"
             );
-            
+
             CurrentEmployee.Name = _name;
             CurrentEmployee.Surname = _surname;
             CurrentEmployee.State = _state;

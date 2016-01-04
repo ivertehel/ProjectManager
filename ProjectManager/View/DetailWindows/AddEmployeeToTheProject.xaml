@@ -1,0 +1,202 @@
+﻿<Window x:Class="PMView.AddEmployeeToTheProject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMView"
+        xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
+        xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
+        mc:Ignorable="d"
+        Title="Add employee to the module" Height="400" Width="550"  WindowStartupLocation="CenterScreen">
+
+
+    <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/MainBackground.png"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <Grid.Background>
+                <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
+            </Grid.Background>
+            <Label Content="Add employee to the module" FontSize="30" HorizontalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="15,15,15,15">
+            <Grid.Background>
+                <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="0,0,0,15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" Margin="0,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Name:" FontSize="18"/>
+                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                                <Binding Path="Name">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="10,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Surname:" FontSize="18"/>
+                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                                <Binding Path="Surname">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
+                        </Grid>
+                        <Grid Grid.Column="2" Margin="10,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Login:" FontSize="18"/>
+                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                                <Binding Path="Login">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
+                        </Grid>
+                        <Grid Grid.Column="3" Margin="10,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Skype:" FontSize="18"/>
+                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                                <Binding Path="Skype">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="0,0,0,15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" Margin="0,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Nationality:" FontSize="18"/>
+                            <ComboBox Grid.Row="1" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{Binding Countries}"/>
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="10,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Status:" FontSize="18"/>
+                            <ComboBox Grid.Row="1" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{Binding Statuses}"/>
+                        </Grid>
+                        <Grid Grid.Column="2" Margin="10,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="State:" FontSize="18"/>
+                            <ComboBox Grid.Row="1" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{Binding States}"/>
+
+                        </Grid>
+                        <Grid Grid.Column="3" Margin="10,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="E-mail:" FontSize="18"/>
+                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                                <Binding Path="Email">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" HorizontalAlignment="Stretch">
+                        <TextBlock Text="Skills:" FontSize="18"/>
+                    </Grid>
+                    <Grid Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,5,5">
+                        <ListBox 
+                         FontSize="14" Name="SkillsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <ListBox.BorderBrush>
+                                <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
+                            </ListBox.BorderBrush>
+                            <ListBox.Background>
+                                <SolidColorBrush Opacity="0.8" Color="White"/>
+                            </ListBox.Background>
+                        </ListBox>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <DataGrid
+                      ItemsSource="{Binding EmployeesCollection}" ColumnWidth="*"
+                      IsReadOnly="True" AutoGenerateColumns="False"
+                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300"
+                      RowHeight="20">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn  Header="Name" Binding="{Binding Path=Name, Mode=OneWay}"/>
+                        <DataGridTextColumn  Header="Surname" Binding="{Binding Path=Surname, Mode=OneWay}"/>
+                        <DataGridTextColumn  Header="Login" Binding="{Binding Path=Login, Mode=OneWay}"/>
+                        <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
+                        <DataGridTextColumn  Header="E-mail" Binding="{Binding Path=Email, Mode=OneWay}"/>
+                        <DataGridTextColumn  Header="Skype" Binding="{Binding Path=Skype, Mode=OneWay}"/>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</Window>
+

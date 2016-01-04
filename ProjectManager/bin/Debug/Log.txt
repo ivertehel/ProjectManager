@@ -913,3 +913,41 @@ Description :   to 1
 03.01.2016 0:00:00 | 23:51:37.6258772:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 03.01.2016 0:00:00 | 23:51:38.2514693:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 03.01.2016 0:00:00 | 23:51:38.6989594:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+04.01.2016 0:00:00 | 07:53:27.0682228:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:39:34.6049611:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:40:21.3099059:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:41:09.6534544:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:43:03.2321320:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:43:34.2306836:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:46:19.5744477:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:47:14.3505384:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:50:28.3561631:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:51:35.7613435:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:55:03.9196182:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 08:56:01.2626852:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:04:03.4990365:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:04:42.8533713:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:06:06.1119711:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:06:54.7292333:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:07:20.5351772:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:08:39.9449607:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:09:10.4126531:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:09:43.0290464:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:10:13.3275060:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:10:58.6392343:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:11:43.7142666:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:12:12.8037648:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:15:05.2702060:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:16:11.8401048:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:17:24.8722376:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:18:00.9396666:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:36:54.9617056:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:39:51.8359614:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:41:31.0029445:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:54:58.6841692:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:58:57.1103799:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 09:59:34.1324402:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 10:00:50.0804579:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 10:01:28.5486502:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 10:01:47.9414015:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 10:03:06.4548157:Info | Details screen | Project details have been loaded
