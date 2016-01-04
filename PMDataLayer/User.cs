@@ -15,7 +15,7 @@ namespace PMDataLayer
 
         public enum Roles
         {
-            NotChoosen,
+            NotChosen,
             Administrator,
             Client,
             Employee
@@ -23,14 +23,14 @@ namespace PMDataLayer
 
         public enum States
         {
-            NotChoosen,
+            NotChosen,
             Male,
             Female
         }
 
         public enum Statuses
         {
-            NotChoosen,
+            NotChosen,
             InWork,
             NotReady,
             Ready,

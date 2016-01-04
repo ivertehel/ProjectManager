@@ -105,7 +105,7 @@ namespace PMView
         {
             States.SelectedIndex = 0;
             Statuses.SelectedIndex = 0;
-            Countries.SelectedIndex = 0;
+            Countries.SelectedItem = "NotChosen";
         }
     }
 }

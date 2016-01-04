@@ -89,9 +89,9 @@ namespace PMView.View
             get
             {
                 List<string> usedCountries = (from items in User.Items where items.Role == User.Roles.Employee select items.Country).ToList();
-                usedCountries.RemoveAll(item => usedCountries.Count(value => value == item) == 0 && item != "NotChoosen");
+                usedCountries.RemoveAll(item => usedCountries.Count(value => value == item) == 0);
+                usedCountries.Add("NotChosen");
                 usedCountries.Sort();
-
                 // repeats deleting
                 for (int i = 0; i < usedCountries.Count; i++)
                 {
@@ -191,13 +191,13 @@ namespace PMView.View
             if (!string.IsNullOrEmpty(Email))
                 employees.RemoveAll(item => !item.Email.StartsWith(Email));
 
-            if (!string.IsNullOrEmpty(Country))
+            if (Country != "NotChosen")
                 employees.RemoveAll(item => item.Country != Country);
 
-            if (Status != User.Statuses.NotChoosen)
+            if (Status != User.Statuses.NotChosen)
                 employees.RemoveAll(item => item.Status != Status);
 
-            if (State != User.States.NotChoosen)
+            if (State != User.States.NotChosen)
                 employees.RemoveAll(item => item.State != State);
 
             _employeesCollection.Clear();
