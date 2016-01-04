@@ -53,11 +53,6 @@ namespace PMView
             
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
             _addEmployeeToTheProjectVM.Name = Name.Text;
@@ -92,6 +87,25 @@ namespace PMView
         {
             _addEmployeeToTheProjectVM.Country = Countries.SelectedValue.ToString();
             _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+        }
+
+        private void Statuses_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.Status = (User.Statuses)Statuses.SelectedValue;
+            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+        }
+
+        private void States_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.State = (User.States)States.SelectedValue;
+            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            States.SelectedIndex = 0;
+            Statuses.SelectedIndex = 0;
+            Countries.SelectedIndex = 0;
         }
     }
 }

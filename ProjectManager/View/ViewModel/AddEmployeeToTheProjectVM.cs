@@ -24,6 +24,8 @@ namespace PMView.View
         private ObservableCollection<User.Statuses> _statuses = new ObservableCollection<User.Statuses>();
         private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
         private string _country;
+        private User.Statuses _status;
+        private User.States _state;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -76,14 +78,20 @@ namespace PMView.View
             set { _country = value; }
         }
 
+        public User.Statuses Status
+        {
+            get { return _status; }
+            set { _status = value; }
+        }
+
         public List<string> Countries
         {
             get
             {
                 List<string> usedCountries = (from items in User.Items where items.Role == User.Roles.Employee select items.Country).ToList();
-                usedCountries.RemoveAll(item => usedCountries.Count(value => value == item) == 0);
+                usedCountries.RemoveAll(item => usedCountries.Count(value => value == item) == 0 && item != "NotChoosen");
                 usedCountries.Sort();
-                
+
                 // repeats deleting
                 for (int i = 0; i < usedCountries.Count; i++)
                 {
@@ -159,6 +167,12 @@ namespace PMView.View
             }
         }
 
+        public User.States State
+        {
+            get { return _state; }
+            set { _state = value; }
+        }
+
         private void filterEmployeesCollection()
         {
             var employees = _employeesCollection.ToList();
@@ -179,6 +193,12 @@ namespace PMView.View
 
             if (!string.IsNullOrEmpty(Country))
                 employees.RemoveAll(item => item.Country != Country);
+
+            if (Status != User.Statuses.NotChoosen)
+                employees.RemoveAll(item => item.Status != Status);
+
+            if (State != User.States.NotChoosen)
+                employees.RemoveAll(item => item.State != State);
 
             _employeesCollection.Clear();
             foreach (var item in employees)

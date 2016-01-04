@@ -2,4 +2,3 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\Core\bin\Debug\Core.dll
 C:\Users\ivanv\Documents\GitHub\ProjectManager\Core\bin\Debug\Core.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\Core\obj\Debug\Core.dll
 C:\Users\ivanv\Documents\GitHub\ProjectManager\Core\obj\Debug\Core.pdb
-C:\Users\ivanv\Documents\GitHub\ProjectManager\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache

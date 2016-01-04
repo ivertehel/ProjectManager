@@ -7,7 +7,7 @@
         xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
         mc:Ignorable="d"
-        Title="Add employee to the module" Height="400" Width="550"  WindowStartupLocation="CenterScreen">
+        Title="Add employee to the module" Height="400" Width="650"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
 
 
     <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
@@ -123,7 +123,7 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="Status:" FontSize="18"/>
-                            <ComboBox Grid.Row="1" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{Binding Statuses}"/>
+                            <ComboBox Grid.Row="1" Name="Statuses" SelectionChanged="Statuses_SelectionChanged" ItemsSource="{Binding Statuses}"/>
                         </Grid>
                         <Grid Grid.Column="2" Margin="10,0,10,0">
                             <Grid.RowDefinitions>
@@ -131,7 +131,7 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="State:" FontSize="18"/>
-                            <ComboBox Grid.Row="1" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{Binding States}"/>
+                            <ComboBox Grid.Row="1" Name="States" SelectionChanged="States_SelectionChanged" ItemsSource="{Binding States}"/>
 
                         </Grid>
                         <Grid Grid.Column="3" Margin="10,0,10,0">
