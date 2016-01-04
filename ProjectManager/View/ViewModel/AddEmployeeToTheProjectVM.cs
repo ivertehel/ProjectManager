@@ -30,6 +30,7 @@ namespace PMView.View
         private ObservableCollection<UserVM> _employeesToAddCollection = new ObservableCollection<UserVM>();
         private UserVM _selectedEmployeeToDelete;
         private bool _removeButton;
+        private bool _addButton;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -100,6 +101,12 @@ namespace PMView.View
             set { _removeButton = value; }
         }
 
+        public bool AddButton
+        {
+            get { return _addButton; }
+            set { _addButton = value; }
+        }
+
         public UserVM SelectedEmployeeToDelete
         {
             get { return _selectedEmployeeToDelete; }
@@ -110,12 +117,15 @@ namespace PMView.View
                     if (_employeesToAddCollection.Where(item => item.Name == value.Name && item.Surname == value.Surname && item.Login == value.Login).Count() > 0)
                     {
                         RemoveButton = true;
+                        AddButton = false;
                     }
                     else
                     {
                         RemoveButton = false;
+                        AddButton = true;
                     }
                     OnPropertyChanged("RemoveButton");
+                    OnPropertyChanged("AddButton");
                 }
                 _selectedEmployeeToDelete = value;
             }
@@ -176,10 +186,9 @@ namespace PMView.View
             }
         }
 
-        public void ButtonActive(UserVM selectedEmployeeToDelete)
+        public void ActivateButtons(UserVM selectedEmployeeToDelete)
         {
             SelectedEmployeeToDelete = selectedEmployeeToDelete;
-
         }
 
         public ObservableCollection<User.States> States
@@ -215,6 +224,8 @@ namespace PMView.View
             if (_employeesToAddCollection.Where(item=>item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login).Count() ==0)
             {
                 _employeesToAddCollection.Add(user);
+                AddButton = false;
+                OnPropertyChanged("AddButton");
                 OnPropertyChanged("EmployeesCollection");
                 OnPropertyChanged("EmployeesToAddCollection");
             }
@@ -229,6 +240,8 @@ namespace PMView.View
             if (_employeesToAddCollection.Where(item => item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login).Count() != 0)
             {
                 _employeesToAddCollection.Remove(_employeesToAddCollection.FirstOrDefault(item => item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login));
+                RemoveButton = false;
+                OnPropertyChanged("RemoveButton");
                 OnPropertyChanged("EmployeesToAddCollection");
             }
         }

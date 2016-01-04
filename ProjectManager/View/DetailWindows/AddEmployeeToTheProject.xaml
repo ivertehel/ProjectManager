@@ -219,7 +219,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Name="AddButton" Click="AddButton_Click" Grid.Column="0" Content="Add" Margin="0,5,10,5"/>
+                <Button Name="AddButton" Click="AddButton_Click" IsEnabled="{Binding Path=AddButton}" Grid.Column="0" Content="Add" Margin="0,5,10,5"/>
                 <Button Name="RemoveButton" Click="RemoveButton_Click" IsEnabled="{Binding Path=RemoveButton}"  Grid.Column="1" Content="Remove"  Margin="10,5,10,5"/>
                 <Button Grid.Column="2" Content="Profile"  Margin="10,5,10,5"/>
                 <Button Grid.Column="3" Content="Save all"  Margin="10,5,0,5"/>

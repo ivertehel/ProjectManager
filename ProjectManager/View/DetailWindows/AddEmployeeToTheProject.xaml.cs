@@ -141,7 +141,7 @@ namespace PMView
             if (EmployeesCollectionDataGrid.SelectedItem != null)
             {
                 _selectedEmployeeToAdd = (UserVM)EmployeesCollectionDataGrid.SelectedItem;
-                _addEmployeeToTheProjectVM.ButtonActive(_selectedEmployeeToAdd);
+                _addEmployeeToTheProjectVM.ActivateButtons(_selectedEmployeeToAdd);
             }
             EmployeesToAddListBox.SelectedItem = null;
             EmployeesCollectionDataGrid.SelectedItem = null;
@@ -152,7 +152,7 @@ namespace PMView
             if (EmployeesToAddListBox.SelectedItem != null)
             {
                 _selectedEmployeeToAdd = (UserVM)EmployeesToAddListBox.SelectedItem;
-                _addEmployeeToTheProjectVM.ButtonActive(_selectedEmployeeToAdd);
+                _addEmployeeToTheProjectVM.ActivateButtons(_selectedEmployeeToAdd);
             }
             EmployeesCollectionDataGrid.SelectedItem = null;
             EmployeesToAddListBox.SelectedItem = null;

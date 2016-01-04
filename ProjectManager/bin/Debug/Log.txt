@@ -127,3 +127,11 @@
 04.01.2016 0:00:00 | 18:40:56.1268620:Info | Details screen | Project details have been loaded
 04.01.2016 0:00:00 | 18:40:58.5532516:Info | Team details screen | Team details have been loaded
 04.01.2016 0:00:00 | 18:41:36.8895600:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:46:31.4685308:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:47:38.1008131:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:48:18.3133188:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:49:15.3407921:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:50:12.7014393:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:50:45.2808934:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+04.01.2016 0:00:00 | 18:50:45.2808934:Info | User details screen | Details of user 1 has been loaded
+04.01.2016 0:00:00 | 18:50:45.2965149:Info | Order screen | Details of Android Matches Puzzle game have been loaded

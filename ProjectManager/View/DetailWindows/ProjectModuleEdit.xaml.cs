@@ -48,11 +48,6 @@ namespace PMView
             //throw new NotImplementedException();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void AddEmployeeToTheProject_Click(object sender, RoutedEventArgs e)
         {
             (new AddEmployeeToTheProject(_projectModuleEditVM)).Show();
