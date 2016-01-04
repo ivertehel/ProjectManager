@@ -50,7 +50,9 @@ namespace PMView
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            
+            _addEmployeeToTheProjectVM.SelectedSkills.Clear();
+            _addEmployeeToTheProjectVM.SelectedSkills.AddRange((from items in _skills where items.IsChecked == true select items.Content.ToString()).ToList());
+            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void Name_TextChanged(object sender, TextChangedEventArgs e)

@@ -26,6 +26,7 @@ namespace PMView.View
         private string _country;
         private User.Statuses _status;
         private User.States _state;
+        private List<string> _selectedSkills = new List<string>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -40,6 +41,12 @@ namespace PMView.View
             {
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        public List<string> SelectedSkills
+        {
+            get { return _selectedSkills; }
+            set { _selectedSkills = value; }
         }
 
         public string Name
@@ -199,6 +206,16 @@ namespace PMView.View
 
             if (State != User.States.NotChosen)
                 employees.RemoveAll(item => item.State != State);
+
+            if (_selectedSkills.Count != 0)
+            {
+                List<string> skillNames = new List<string>();
+
+                foreach (var item in _selectedSkills)
+                {
+                    employees.RemoveAll(employee => employee.Skills.Where(skill => skill.Name == item).FirstOrDefault() == null);
+                }
+            }
 
             _employeesCollection.Clear();
             foreach (var item in employees)

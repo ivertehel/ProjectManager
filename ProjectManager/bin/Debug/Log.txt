@@ -62,3 +62,26 @@
 04.01.2016 0:00:00 | 15:23:25.3502998:Info | User details screen | Details of user 1 has been loaded
 04.01.2016 0:00:00 | 15:23:25.4248561:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 04.01.2016 0:00:00 | 15:23:51.1711043:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 15:36:43.6718030:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 15:36:47.7291043:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+04.01.2016 0:00:00 | 15:36:47.7421113:Info | User details screen | Details of user 1 has been loaded
+04.01.2016 0:00:00 | 15:36:47.8326932:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+04.01.2016 0:00:00 | 15:54:39.1941901:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 15:54:56.3570299:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 15:55:49.5873589:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 15:57:01.3200352:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 15:57:43.4221265:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 15:57:47.7699066:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+04.01.2016 0:00:00 | 15:57:47.7769104:Info | User details screen | Details of user 1 has been loaded
+04.01.2016 0:00:00 | 15:57:47.8526000:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+04.01.2016 0:00:00 | 16:00:12.9446278:Info | Team details screen | Team details have been loaded
+04.01.2016 0:00:00 | 16:00:52.0328967:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+04.01.2016 0:00:00 | 16:01:25.2637786:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
