@@ -45,7 +45,7 @@ namespace PMView
 
         private void AddEmployeeToTheProject_Click(object sender, RoutedEventArgs e)
         {
-            (new AddEmployeeToTheProject(_projectModuleEditVM, _projectModuleEditVM.ProjectVM)).Show();
+            (new AddEmployeeToTheProject(_projectModuleEditVM, _projectModuleEditVM)).Show();
         }
 
     }

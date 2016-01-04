@@ -34,15 +34,14 @@ namespace PMView.View
         private bool _profileButton;
         private ILoadData _lastScreen;
         private bool _saveButton;
-        private ProjectsUserControlVM _projectUserControlVM;
         private ProjectVM _projectVM;
+        private ProjectModuleEditVM _projectModuleEditVM;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public AddEmployeeToTheProjectVM(ILoadData lastScreen, ProjectVM projectVM)
+        public AddEmployeeToTheProjectVM(ILoadData lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
-            _projectVM = projectVM;
-            _projectUserControlVM = lastScreen as ProjectsUserControlVM;
+            _projectModuleEditVM = projectModuleEditVM;
             _lastScreen = lastScreen;
             LoadData();
         }
@@ -262,15 +261,14 @@ namespace PMView.View
 
         public void SaveButtonClick()
         {
+            _projectModuleEditVM.EmployeesCollection.Clear();
             foreach (var item in _employeesToAddCollection)
             {
-                //User_Project up = new User_Project()
-                //{
-                //    Position = Position.Items[0],
-                //    Project = Project.Items.A
-                //}
-                //User_Project.Items.Add();
+                _projectModuleEditVM.EmployeesCollection.Add(item);
             }
+            SaveButton = false;
+            OnPropertyChanged("SaveButton");
+            LoadData();
         }
 
         public void RemoveButtonClick(UserVM user)

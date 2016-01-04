@@ -28,16 +28,16 @@ namespace PMView
 
         private List<CheckBox> _skills = new List<CheckBox>();
 
-
+        private ProjectModuleEditVM _projectModuleEditVM;
 
         private UserVM _selectedEmployeeToAdd;
 
-        public AddEmployeeToTheProject(ILoadData lastScreen, ProjectVM projectVM)
+        public AddEmployeeToTheProject(ILoadData lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
             InitializeComponent();
             _lastScreen = lastScreen;
-
-            _addEmployeeToTheProjectVM = new AddEmployeeToTheProjectVM(lastScreen, projectVM);
+            _projectModuleEditVM = projectModuleEditVM;
+            _addEmployeeToTheProjectVM = new AddEmployeeToTheProjectVM(lastScreen, projectModuleEditVM);
             DataContext = _addEmployeeToTheProjectVM;
             foreach (var item in Skill.Items)
             {

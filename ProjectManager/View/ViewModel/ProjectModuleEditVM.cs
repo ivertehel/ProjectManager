@@ -24,7 +24,7 @@ namespace PMView.View
         private List<string> _statuses = new List<string>();
 
         private ProjectsUserControlVM _projectsUserControlVM;
-        private ObservableCollection<UserVM> _employeesCollection;
+        private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
         private ProjectVM _projectVM = new ProjectVM(new Project());
 
@@ -62,10 +62,8 @@ namespace PMView.View
 
         public ObservableCollection<UserVM> EmployeesCollection
         {
-            get
-            {
-                return _employeesCollection;
-            }
+            get { return _employeesCollection; }
+            set { _employeesCollection = value; }
         }
 
         public OrderVM CurrentOrder
