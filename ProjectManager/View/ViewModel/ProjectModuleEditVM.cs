@@ -24,9 +24,23 @@ namespace PMView.View
         private List<string> _statuses = new List<string>();
 
         private ProjectsUserControlVM _projectsUserControlVM;
+        private ObservableCollection<UserVM> _employeesCollection;
+
+        private ProjectVM _projectVM = new ProjectVM(new Project());
+
+        public ProjectsUserControlVM ProjectUserControlVM
+        {
+            get { return _projectsUserControlVM; }
+        }
+
+        public ProjectVM ProjectVM
+        {
+            get { return _projectVM; }
+        }
 
         public ProjectModuleEditVM(ILoadData lastScreen, ProjectsUserControlVM projectsUserControlVM)
         {
+            _projectVM.Order = projectsUserControlVM.SelectedOrder.Order;
             _projectsUserControlVM = projectsUserControlVM;
             _lastScreen = lastScreen;
             _currentOrder = projectsUserControlVM.SelectedOrder;
@@ -50,7 +64,7 @@ namespace PMView.View
         {
             get
             {
-                return _projectsUserControlVM.EmployeesCollection;
+                return _employeesCollection;
             }
         }
 
@@ -62,20 +76,20 @@ namespace PMView.View
 
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get { return _projectVM.Name; }
+            set { _projectVM.Name = value; }
         }
 
         public DateTime StartDate
         {
-            get { return _startDate; }
-            set { _startDate = value; }
+            get { return _projectVM.StartDate; }
+            set { _projectVM.StartDate = value; }
         }
 
         public DateTime ReleaseDate
         {
-            get { return _releaseDate; }
-            set { _releaseDate = value; }
+            get { return _projectVM.ReleaseDate; }
+            set { _projectVM.ReleaseDate = value; }
         }
 
         public void LoadData()
