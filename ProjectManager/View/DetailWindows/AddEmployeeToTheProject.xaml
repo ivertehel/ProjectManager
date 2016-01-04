@@ -7,10 +7,37 @@
         xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
         mc:Ignorable="d"
-        Title="Add employee to the module" Height="400" Width="650"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Add employees to the module" Height="600" Width="750"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
 
 
     <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type WrapperVM:UserVM}">
+                <Border BorderBrush="Azure"  VerticalAlignment="Top">
+                    <Grid VerticalAlignment="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="{Binding User}" FontSize="14" FontWeight="Bold" />
+                        <ListBox Grid.Row="1" ItemsSource="{Binding Positions}"  VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <ListBox.BorderBrush>
+                                <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                            </ListBox.BorderBrush>
+                            <ListBox.Background>
+                                <SolidColorBrush Opacity="0"/>
+                            </ListBox.Background>
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                        </ListBox>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </Grid.Resources>
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/MainBackground.png"></ImageBrush>
         </Grid.Background>
@@ -22,15 +49,17 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
-            <Label Content="Add employee to the module" FontSize="30" HorizontalAlignment="Center"/>
+            <Label Content="Add employees to the module" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="15,15,15,15">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
@@ -80,9 +109,6 @@
                             <TextBlock Grid.Row="0" Text="Login:" FontSize="18"/>
                             <TextBox Grid.Row="1" Name="Login" TextChanged="Login_TextChanged">
                                 <Binding Path="Login">
-                                    <Binding.ValidationRules>
-                                        <DataErrorValidationRule />
-                                    </Binding.ValidationRules>
                                 </Binding>
                             </TextBox>
                         </Grid>
@@ -94,9 +120,6 @@
                             <TextBlock Grid.Row="0" Text="Skype:" FontSize="18"/>
                             <TextBox Grid.Row="1" Name="Skype" TextChanged="Skype_TextChanged">
                                 <Binding Path="Skype">
-                                    <Binding.ValidationRules>
-                                        <DataErrorValidationRule />
-                                    </Binding.ValidationRules>
                                 </Binding>
                             </TextBox>
                         </Grid>
@@ -172,11 +195,11 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid
+                <DataGrid Name="EmployeesCollectionDataGrid"
                       ItemsSource="{Binding EmployeesCollection}" ColumnWidth="*"
                       IsReadOnly="True" AutoGenerateColumns="False"
                       HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300"
-                      RowHeight="20">
+                      RowHeight="20"  SelectedItem="{Binding Path=SelectedEmployeeToDelete}" SelectionChanged="EmployeesCollectionDataGrid_SelectionChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn  Header="Name" Binding="{Binding Path=Name, Mode=OneWay}"/>
                         <DataGridTextColumn  Header="Surname" Binding="{Binding Path=Surname, Mode=OneWay}"/>
@@ -188,6 +211,34 @@
                     </DataGrid.Columns>
 
                 </DataGrid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="AddButton" Click="AddButton_Click" Grid.Column="0" Content="Add" Margin="0,5,10,5"/>
+                <Button Name="RemoveButton" Click="RemoveButton_Click" IsEnabled="{Binding Path=RemoveButton}"  Grid.Column="1" Content="Remove"  Margin="10,5,10,5"/>
+                <Button Grid.Column="2" Content="Profile"  Margin="10,5,10,5"/>
+                <Button Grid.Column="3" Content="Save all"  Margin="10,5,0,5"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <ListBox ItemsSource="{Binding EmployeesToAddCollection}" 
+                         FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectedItem="{Binding Path=SelectedEmployeeToDelete}" Name="EmployeesToAddListBox" SelectionChanged="EmployeesToAddListBox_SelectionChanged">
+                    <ListBox.BorderBrush>
+                        <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                    </ListBox.BorderBrush>
+                    <ListBox.Background>
+                        <SolidColorBrush Opacity="0"/>
+                    </ListBox.Background>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
             </Grid>
 
         </Grid>

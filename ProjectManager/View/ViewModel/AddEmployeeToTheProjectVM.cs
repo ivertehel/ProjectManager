@@ -27,6 +27,9 @@ namespace PMView.View
         private User.Statuses _status;
         private User.States _state;
         private List<string> _selectedSkills = new List<string>();
+        private ObservableCollection<UserVM> _employeesToAddCollection = new ObservableCollection<UserVM>();
+        private UserVM _selectedEmployeeToDelete;
+        private bool _removeButton;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -89,6 +92,33 @@ namespace PMView.View
         {
             get { return _status; }
             set { _status = value; }
+        }
+
+        public bool RemoveButton
+        {
+            get { return _removeButton; }
+            set { _removeButton = value; }
+        }
+
+        public UserVM SelectedEmployeeToDelete
+        {
+            get { return _selectedEmployeeToDelete; }
+            set
+            {
+                if (value != null)
+                {
+                    if (_employeesToAddCollection.Where(item => item.Name == value.Name && item.Surname == value.Surname && item.Login == value.Login).Count() > 0)
+                    {
+                        RemoveButton = true;
+                    }
+                    else
+                    {
+                        RemoveButton = false;
+                    }
+                    OnPropertyChanged("RemoveButton");
+                }
+                _selectedEmployeeToDelete = value;
+            }
         }
 
         public List<string> Countries
@@ -171,6 +201,37 @@ namespace PMView.View
                 }
                 filterEmployeesCollection();
                 return _employeesCollection;
+            }
+        }
+
+        public void AddButtonClick(UserVM user)
+        {
+            if (_employeesToAddCollection.Where(item=>item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login).Count() ==0)
+            {
+                _employeesToAddCollection.Add(user);
+                OnPropertyChanged("EmployeesCollection");
+                OnPropertyChanged("EmployeesToAddCollection");
+            }
+            else
+            {
+                throw new Exception("This employee is already exist");
+            }
+        }
+
+        public void RemoveButtonClick(UserVM user)
+        {
+            if (_employeesToAddCollection.Where(item => item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login).Count() != 0)
+            {
+                _employeesToAddCollection.Remove(_employeesToAddCollection.FirstOrDefault(item => item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login));
+                OnPropertyChanged("EmployeesToAddCollection");
+            }
+        }
+
+        public ObservableCollection<UserVM> EmployeesToAddCollection
+        {
+            get
+            {
+                return _employeesToAddCollection;
             }
         }
 

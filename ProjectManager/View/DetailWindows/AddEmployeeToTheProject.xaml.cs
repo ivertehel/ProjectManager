@@ -1,5 +1,6 @@
 ﻿using PMDataLayer;
 using PMView.View;
+using PMView.View.WrapperVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,8 @@ namespace PMView
         private ProjectModuleEditVM _projectModuleEditVM;
 
         private List<CheckBox> _skills = new List<CheckBox>();
+
+        private UserVM _selectedEmployeeToAdd;
 
         public AddEmployeeToTheProject(ProjectModuleEditVM projectModuleEditVM)
         {
@@ -108,6 +111,41 @@ namespace PMView
             States.SelectedIndex = 0;
             Statuses.SelectedIndex = 0;
             Countries.SelectedItem = "NotChosen";
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _addEmployeeToTheProjectVM.AddButtonClick((UserVM)EmployeesCollectionDataGrid.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            var select = (UserVM)EmployeesCollectionDataGrid.SelectedItem;
+            if (select == null)
+                select = (UserVM)EmployeesToAddListBox.SelectedItem;
+            if (select == null)
+                select = _selectedEmployeeToAdd;
+            if (select != null)
+                _addEmployeeToTheProjectVM.RemoveButtonClick(select);
+        }
+
+        private void EmployeesCollectionDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.SelectedEmployeeToDelete = null;
+        }
+
+        private void EmployeesToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (EmployeesToAddListBox.SelectedItem != null)
+                _selectedEmployeeToAdd = (UserVM)EmployeesToAddListBox.SelectedItem;
+            EmployeesToAddListBox.SelectedItem = null;
         }
     }
 }
