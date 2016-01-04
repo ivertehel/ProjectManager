@@ -176,6 +176,12 @@ namespace PMView.View
             }
         }
 
+        public void ButtonActive(UserVM selectedEmployeeToDelete)
+        {
+            SelectedEmployeeToDelete = selectedEmployeeToDelete;
+
+        }
+
         public ObservableCollection<User.States> States
         {
             get

@@ -117,7 +117,7 @@ namespace PMView
         {
             try
             {
-                _addEmployeeToTheProjectVM.AddButtonClick((UserVM)EmployeesCollectionDataGrid.SelectedItem);
+                _addEmployeeToTheProjectVM.AddButtonClick(_selectedEmployeeToAdd);
             }
             catch (Exception ex)
             {
@@ -138,17 +138,24 @@ namespace PMView
 
         private void EmployeesCollectionDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (EmployeesToAddListBox.SelectedItem != null)
-                _addEmployeeToTheProjectVM.SelectedEmployeeToDelete = null;
-            _selectedEmployeeToAdd = (UserVM)EmployeesCollectionDataGrid.SelectedItem;
+            if (EmployeesCollectionDataGrid.SelectedItem != null)
+            {
+                _selectedEmployeeToAdd = (UserVM)EmployeesCollectionDataGrid.SelectedItem;
+                _addEmployeeToTheProjectVM.ButtonActive(_selectedEmployeeToAdd);
+            }
+            EmployeesToAddListBox.SelectedItem = null;
+            EmployeesCollectionDataGrid.SelectedItem = null;
         }
 
         private void EmployeesToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (EmployeesToAddListBox.SelectedItem != null)
+            {
                 _selectedEmployeeToAdd = (UserVM)EmployeesToAddListBox.SelectedItem;
-            EmployeesToAddListBox.SelectedItem = null;
+                _addEmployeeToTheProjectVM.ButtonActive(_selectedEmployeeToAdd);
+            }
             EmployeesCollectionDataGrid.SelectedItem = null;
+            EmployeesToAddListBox.SelectedItem = null;
         }
     }
 }

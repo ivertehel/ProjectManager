@@ -199,7 +199,7 @@
                       ItemsSource="{Binding EmployeesCollection}" ColumnWidth="*"
                       IsReadOnly="True" AutoGenerateColumns="False"
                       HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300"
-                      RowHeight="20"  SelectedItem="{Binding Path=SelectedEmployeeToDelete}" SelectionChanged="EmployeesCollectionDataGrid_SelectionChanged">
+                      RowHeight="20"  SelectionChanged="EmployeesCollectionDataGrid_SelectionChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn  Header="Name" Binding="{Binding Path=Name, Mode=OneWay}"/>
                         <DataGridTextColumn  Header="Surname" Binding="{Binding Path=Surname, Mode=OneWay}"/>
@@ -226,7 +226,7 @@
             </Grid>
             <Grid Grid.Row="3">
                 <ListBox ItemsSource="{Binding EmployeesToAddCollection}" 
-                         FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" SelectedItem="{Binding Path=SelectedEmployeeToDelete}" Name="EmployeesToAddListBox" SelectionChanged="EmployeesToAddListBox_SelectionChanged">
+                         FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" Name="EmployeesToAddListBox" SelectionChanged="EmployeesToAddListBox_SelectionChanged">
                     <ListBox.BorderBrush>
                         <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                     </ListBox.BorderBrush>

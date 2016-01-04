@@ -119,3 +119,11 @@
 04.01.2016 0:00:00 | 18:10:01.8986776:Info | Details screen | Project details have been loaded
 04.01.2016 0:00:00 | 18:22:04.8772133:Info | Details screen | Project details have been loaded
 04.01.2016 0:00:00 | 18:26:46.3505773:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:32:09.8968798:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:32:12.3468821:Info | Team details screen | Team details have been loaded
+04.01.2016 0:00:00 | 18:33:41.6367596:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:34:38.7183121:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:35:44.5344682:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:40:56.1268620:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:40:58.5532516:Info | Team details screen | Team details have been loaded
+04.01.2016 0:00:00 | 18:41:36.8895600:Info | Details screen | Project details have been loaded
