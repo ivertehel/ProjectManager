@@ -138,7 +138,9 @@ namespace PMView
 
         private void EmployeesCollectionDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.SelectedEmployeeToDelete = null;
+            if (EmployeesToAddListBox.SelectedItem != null)
+                _addEmployeeToTheProjectVM.SelectedEmployeeToDelete = null;
+            _selectedEmployeeToAdd = (UserVM)EmployeesCollectionDataGrid.SelectedItem;
         }
 
         private void EmployeesToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -146,6 +148,7 @@ namespace PMView
             if (EmployeesToAddListBox.SelectedItem != null)
                 _selectedEmployeeToAdd = (UserVM)EmployeesToAddListBox.SelectedItem;
             EmployeesToAddListBox.SelectedItem = null;
+            EmployeesCollectionDataGrid.SelectedItem = null;
         }
     }
 }

@@ -117,3 +117,5 @@
 04.01.2016 0:00:00 | 18:06:52.9473236:Info | Details screen | Project details have been loaded
 04.01.2016 0:00:00 | 18:08:31.2254151:Info | Details screen | Project details have been loaded
 04.01.2016 0:00:00 | 18:10:01.8986776:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:22:04.8772133:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 18:26:46.3505773:Info | Details screen | Project details have been loaded
