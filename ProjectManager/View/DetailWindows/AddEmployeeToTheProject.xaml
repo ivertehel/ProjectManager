@@ -7,7 +7,7 @@
         xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
         mc:Ignorable="d"
-        Title="Add employees to the module" Height="600" Width="750"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Add/Edit employees in the module" Height="600" Width="750"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
 
 
     <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
@@ -49,14 +49,14 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
-            <Label Content="Add employees to the module" FontSize="30" HorizontalAlignment="Center"/>
+            <Label Content="Add/Edit employees in the module" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="15,15,15,15">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>

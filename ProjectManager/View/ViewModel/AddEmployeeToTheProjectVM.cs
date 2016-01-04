@@ -41,6 +41,10 @@ namespace PMView.View
 
         public AddEmployeeToTheProjectVM(ILoadData lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
+            foreach (var item in projectModuleEditVM.EmployeesCollection)
+            {
+                _employeesToAddCollection.Add(item);
+            }
             _projectModuleEditVM = projectModuleEditVM;
             _lastScreen = lastScreen;
             LoadData();
