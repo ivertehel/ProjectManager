@@ -53,14 +53,39 @@ namespace PMView
             
         }
 
-        private void SomeProperty_Changed(object sender, TextChangedEventArgs e)
-        {
-           
-        }
-
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void Name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.Name = Name.Text;
+            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+        }
+
+        private void Surname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.Surname = Surname.Text;
+            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+        }
+
+        private void Login_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.Login = Login.Text;
+            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+        }
+
+        private void Skype_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.Skype = Skype.Text;
+            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+        }
+
+        private void Email_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.Email = Email.Text;
+            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
         }
     }
 }

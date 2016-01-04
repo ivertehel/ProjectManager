@@ -56,11 +56,8 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="Name:" FontSize="18"/>
-                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                            <TextBox Grid.Row="1" Name="Name" TextChanged="Name_TextChanged">
                                 <Binding Path="Name">
-                                    <Binding.ValidationRules>
-                                        <DataErrorValidationRule />
-                                    </Binding.ValidationRules>
                                 </Binding>
                             </TextBox>
                         </Grid>
@@ -70,11 +67,8 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="Surname:" FontSize="18"/>
-                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                            <TextBox Grid.Row="1" Name="Surname" TextChanged="Surname_TextChanged">
                                 <Binding Path="Surname">
-                                    <Binding.ValidationRules>
-                                        <DataErrorValidationRule />
-                                    </Binding.ValidationRules>
                                 </Binding>
                             </TextBox>
                         </Grid>
@@ -84,7 +78,7 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="Login:" FontSize="18"/>
-                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                            <TextBox Grid.Row="1" Name="Login" TextChanged="Login_TextChanged">
                                 <Binding Path="Login">
                                     <Binding.ValidationRules>
                                         <DataErrorValidationRule />
@@ -98,7 +92,7 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="Skype:" FontSize="18"/>
-                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                            <TextBox Grid.Row="1" Name="Skype" TextChanged="Skype_TextChanged">
                                 <Binding Path="Skype">
                                     <Binding.ValidationRules>
                                         <DataErrorValidationRule />
@@ -146,7 +140,7 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="E-mail:" FontSize="18"/>
-                            <TextBox Grid.Row="1" TextChanged="SomeProperty_Changed">
+                            <TextBox Grid.Row="1" Name="Email" TextChanged="Email_TextChanged">
                                 <Binding Path="Email">
                                     <Binding.ValidationRules>
                                         <DataErrorValidationRule />
