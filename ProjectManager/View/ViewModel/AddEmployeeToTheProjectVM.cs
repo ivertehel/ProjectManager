@@ -128,11 +128,38 @@ namespace PMView.View
             get
             {
                 var users = User.Items.Where(item => item.Role == User.Roles.Employee);
+                _employeesCollection.Clear();
                 foreach (var item in users)
                 {
                     _employeesCollection.Add(new UserVM(item));
                 }
+                filterEmployeesCollection();
                 return _employeesCollection;
+            }
+        }
+
+        private void filterEmployeesCollection()
+        {
+            var employees = _employeesCollection.ToList();
+            if (!string.IsNullOrEmpty(Name))
+                employees.RemoveAll(item => !item.Name.StartsWith(Name));
+
+            if (!string.IsNullOrEmpty(Surname))
+                employees.RemoveAll(item => !item.Surname.StartsWith(Surname));
+
+            if (!string.IsNullOrEmpty(Login))
+                employees.RemoveAll(item => !item.Login.StartsWith(Login));
+
+            if (!string.IsNullOrEmpty(Skype))
+                employees.RemoveAll(item => !item.Skype.StartsWith(Skype));
+
+            if (!string.IsNullOrEmpty(Email))
+                employees.RemoveAll(item => !item.Email.StartsWith(Email));
+
+            _employeesCollection.Clear();
+            foreach (var item in employees)
+            {
+                _employeesCollection.Add(item);
             }
         }
     }
