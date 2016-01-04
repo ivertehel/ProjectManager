@@ -21,7 +21,7 @@ namespace PMView
     /// </summary>
     public partial class ProjectModuleEdit : Window
     {
-        private ProjectsUserControlVM _projectsUserControlVM;
+        private ILoadData _lastScreen;
 
         private ProjectModuleEditVM _projectModuleEditVM;
 
@@ -30,11 +30,11 @@ namespace PMView
             InitializeComponent();
         }
 
-        public ProjectModuleEdit(ProjectsUserControlVM projectsUserControlVM)
+        public ProjectModuleEdit(ILoadData lastScreen)
         {
             InitializeComponent();
-            _projectsUserControlVM = projectsUserControlVM;
-            _projectModuleEditVM = new ProjectModuleEditVM(_projectsUserControlVM.SelectedOrder);
+            _lastScreen = lastScreen;
+            _projectModuleEditVM = new ProjectModuleEditVM(lastScreen);
             DataContext = _projectModuleEditVM;
         }
 
@@ -50,7 +50,8 @@ namespace PMView
 
         private void AddEmployeeToTheProject_Click(object sender, RoutedEventArgs e)
         {
-            (new AddEmployeeToTheProject(_projectModuleEditVM)).Show();
+            _projectModuleEditVM.AddEmployeesToTheModuleButton();
         }
+
     }
 }

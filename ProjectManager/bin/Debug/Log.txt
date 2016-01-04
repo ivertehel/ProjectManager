@@ -182,3 +182,45 @@
 04.01.2016 0:00:00 | 19:11:04.5560573:Info | User details screen | Details of user vsailor has been loaded
 04.01.2016 0:00:00 | 19:11:14.9687288:Info | User details screen | Details of user datrax has been loaded
 04.01.2016 0:00:00 | 19:11:21.3389743:Info | User details screen | Details of user datrax has been loaded
+04.01.2016 0:00:00 | 19:12:22.2442045:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 19:38:11.0998800:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 19:38:23.4037374:Info | User details screen | Details of user khrystyna1204 has been loaded
+04.01.2016 0:00:00 | 19:38:31.9427847:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystyna to Khrystynas
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : Ukraine to Ukraine
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+04.01.2016 0:00:00 | 19:41:31.7997811:Info | Details screen | Project details have been loaded
+04.01.2016 0:00:00 | 19:41:43.8818510:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+04.01.2016 0:00:00 | 19:41:43.8818510:Info | User details screen | Details of user khrystyna1204 has been loaded
+04.01.2016 0:00:00 | 19:41:43.8974747:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+04.01.2016 0:00:00 | 19:41:53.8080353:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystynas to Khrystyna
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : Ukraine to Ukraine
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+04.01.2016 0:00:00 | 19:41:53.8236607:Info | Order screen | Details of Android Matches Puzzle game have been loaded

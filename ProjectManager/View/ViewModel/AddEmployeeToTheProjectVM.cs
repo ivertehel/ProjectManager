@@ -32,12 +32,13 @@ namespace PMView.View
         private bool _removeButton;
         private bool _addButton;
         private bool _profileButton;
+        private ILoadData _lastScreen;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public AddEmployeeToTheProjectVM()
+        public AddEmployeeToTheProjectVM(ILoadData lastScreen)
         {
-
+            _lastScreen = lastScreen;
         }
 
         public void OnPropertyChanged(string propertyName)
@@ -320,6 +321,7 @@ namespace PMView.View
         {
             OnPropertyChanged("EmployeesToAddCollection");
             OnPropertyChanged("EmployeesCollection");
+            _lastScreen.LoadData();
         }
     }
 }

@@ -24,17 +24,17 @@ namespace PMView
     {
         private AddEmployeeToTheProjectVM _addEmployeeToTheProjectVM;
 
-        private ProjectModuleEditVM _projectModuleEditVM;
+        private ILoadData _lastScreen;
 
         private List<CheckBox> _skills = new List<CheckBox>();
 
         private UserVM _selectedEmployeeToAdd;
 
-        public AddEmployeeToTheProject(ProjectModuleEditVM projectModuleEditVM)
+        public AddEmployeeToTheProject(ILoadData lastScreen)
         {
             InitializeComponent();
-            _projectModuleEditVM = projectModuleEditVM;
-            _addEmployeeToTheProjectVM = new AddEmployeeToTheProjectVM();
+            _lastScreen = lastScreen;
+            _addEmployeeToTheProjectVM = new AddEmployeeToTheProjectVM(lastScreen);
             DataContext = _addEmployeeToTheProjectVM;
             foreach (var item in Skill.Items)
             {

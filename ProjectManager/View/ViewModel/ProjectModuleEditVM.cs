@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace PMView.View
 {
-    public class ProjectModuleEditVM
+    public class ProjectModuleEditVM : ILoadData
     {
         private string _name;
 
@@ -19,13 +19,16 @@ namespace PMView.View
 
         private OrderVM _currentOrder;
 
+        private ILoadData _lastScreen;
+
         private List<string> _statuses = new List<string>();
 
         private ObservableCollection<User_TeamVM> _employeesCollection = new ObservableCollection<User_TeamVM>();
 
-        public ProjectModuleEditVM(OrderVM selectedOrder)
+        public ProjectModuleEditVM(ILoadData lastScreen)
         {
-            _currentOrder = selectedOrder;
+            _lastScreen = lastScreen;
+            _currentOrder = (lastScreen as ProjectsUserControlVM).SelectedOrder;
             _startDate = DateTime.Now;
             _releaseDate = DateTime.Now.AddDays(31);
             _statuses.Add(Project.Statuses.Discarded.ToString());
@@ -42,10 +45,19 @@ namespace PMView.View
             }
         }
 
-        public ObservableCollection<User_TeamVM> EmployeesCollection
+        public void AddEmployeesToTheModuleButton()
         {
-            get { return _employeesCollection; }
+            (new AddEmployeeToTheProject(this)).Show();
         }
+
+        ////public ObservableCollection<User_TeamVM> EmployeesCollection
+        ////{
+        ////    get
+        ////    {
+        ////        _employeesCollection.Clear();
+
+        ////    }
+        ////}
 
         public OrderVM CurrentOrder
         {
@@ -69,6 +81,11 @@ namespace PMView.View
         {
             get { return _releaseDate; }
             set { _releaseDate = value; }
+        }
+
+        public void LoadData()
+        {
+            _lastScreen.LoadData();
         }
     }
 }

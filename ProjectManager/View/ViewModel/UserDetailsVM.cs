@@ -11,7 +11,7 @@ using Core;
 
 namespace PMView.View
 {
-    public class UserDetailsVM : INotifyPropertyChanged, IDataErrorInfo
+    public class UserDetailsVM : INotifyPropertyChanged, IDataErrorInfo, ILoadData
     {
         private UserVM _currentEmployee;
 
