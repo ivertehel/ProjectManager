@@ -35,16 +35,16 @@ namespace PMView.View
 
         private bool _buttonsActive = false;
 
-        private ProjectsUserControlVM _projectsUserControlVM;
+        private ILoadData _lastScreen;
 
         private ObservableCollection<User.States> _states = new ObservableCollection<User.States>();
 
-        public UserDetailsVM(UserVM user, ProjectsUserControlVM projectsUserControlVM)
+        public UserDetailsVM(UserVM user, ILoadData lastScreen)
         {
             if (user == null)
                 return;
 
-            _projectsUserControlVM = projectsUserControlVM;
+            _lastScreen = lastScreen;
             CurrentEmployee = user;
             ButtonRetrieveClick();
             Logger.Info("User details screen", "Details of user " + user.Login + " has been loaded");
@@ -266,7 +266,7 @@ namespace PMView.View
             OnPropertyChanged("Email");
             OnPropertyChanged("Login");
             OnPropertyChanged("Description");
-            _projectsUserControlVM.LoadData();
+            _lastScreen.LoadData();
             ButtonsActive = false;
         }
 

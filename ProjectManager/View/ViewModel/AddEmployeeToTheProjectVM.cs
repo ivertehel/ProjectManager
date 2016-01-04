@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMView.View
 {
-    public class AddEmployeeToTheProjectVM : INotifyPropertyChanged
+    public class AddEmployeeToTheProjectVM : INotifyPropertyChanged, ILoadData
     {
         private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
@@ -31,6 +31,7 @@ namespace PMView.View
         private UserVM _selectedEmployeeToDelete;
         private bool _removeButton;
         private bool _addButton;
+        private bool _profileButton;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -107,6 +108,12 @@ namespace PMView.View
             set { _addButton = value; }
         }
 
+        public bool ProfileButton
+        {
+            get { return _profileButton; }
+            set { _profileButton = value; }
+        }
+
         public UserVM SelectedEmployeeToDelete
         {
             get { return _selectedEmployeeToDelete; }
@@ -124,8 +131,10 @@ namespace PMView.View
                         RemoveButton = false;
                         AddButton = true;
                     }
+                    ProfileButton = true;
                     OnPropertyChanged("RemoveButton");
                     OnPropertyChanged("AddButton");
+                    OnPropertyChanged("ProfileButton");
                 }
                 _selectedEmployeeToDelete = value;
             }
@@ -225,9 +234,10 @@ namespace PMView.View
             {
                 _employeesToAddCollection.Add(user);
                 AddButton = false;
+                ProfileButton = false;
                 OnPropertyChanged("AddButton");
-                OnPropertyChanged("EmployeesCollection");
-                OnPropertyChanged("EmployeesToAddCollection");
+                OnPropertyChanged("ProfileButton");
+                LoadData();
             }
             else
             {
@@ -241,8 +251,10 @@ namespace PMView.View
             {
                 _employeesToAddCollection.Remove(_employeesToAddCollection.FirstOrDefault(item => item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login));
                 RemoveButton = false;
+                ProfileButton = false;
                 OnPropertyChanged("RemoveButton");
-                OnPropertyChanged("EmployeesToAddCollection");
+                OnPropertyChanged("ProfileButton");
+                LoadData();
             }
         }
 
@@ -302,6 +314,12 @@ namespace PMView.View
             {
                 _employeesCollection.Add(item);
             }
+        }
+
+        public void LoadData()
+        {
+            OnPropertyChanged("EmployeesToAddCollection");
+            OnPropertyChanged("EmployeesCollection");
         }
     }
 }

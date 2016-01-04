@@ -26,11 +26,11 @@ namespace PMView
 
         private UserDetailsVM _userDetailsVM;
 
-        public UsersDetails(IUser user, ProjectsUserControlVM projectsUserControlVM)
+        public UsersDetails(IUser user, ILoadData lastScreen)
         {
             InitializeComponent();
             _user = user;
-            _userDetailsVM = new UserDetailsVM(user as UserVM, projectsUserControlVM);
+            _userDetailsVM = new UserDetailsVM(user as UserVM, lastScreen);
             DataContext = _userDetailsVM;
 
         }

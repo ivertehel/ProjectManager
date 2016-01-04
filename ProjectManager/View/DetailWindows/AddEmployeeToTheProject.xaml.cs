@@ -157,5 +157,11 @@ namespace PMView
             EmployeesCollectionDataGrid.SelectedItem = null;
             EmployeesToAddListBox.SelectedItem = null;
         }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_selectedEmployeeToAdd != null)
+                (new UsersDetails(_selectedEmployeeToAdd, _addEmployeeToTheProjectVM)).Show();
+        }
     }
 }

@@ -64,6 +64,7 @@
     <Compile Include="View\ViewModel\AddEmployeeToTheProjectVM.cs" />
     <Compile Include="View\ViewModel\ClientsUserControlVM.cs" />
     <Compile Include="View\ViewModel\Data\BaseVM.cs" />
+    <Compile Include="View\ViewModel\ILoadData.cs" />
     <Compile Include="View\ViewModel\Data\OrderVM.cs" />
     <Compile Include="View\ViewModel\Data\PositionVM.cs" />
     <Compile Include="View\ViewModel\Data\ProjectVM.cs" />

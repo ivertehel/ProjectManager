@@ -11,7 +11,7 @@ using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
-    public class ProjectsUserControlVM : INotifyPropertyChanged
+    public class ProjectsUserControlVM : INotifyPropertyChanged, ILoadData
     {
         private ObservableCollection<OrderVM> _ordersCollection = new ObservableCollection<OrderVM>();
 
