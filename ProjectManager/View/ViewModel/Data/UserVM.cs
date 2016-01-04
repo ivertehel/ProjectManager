@@ -141,5 +141,30 @@ namespace PMView.View.WrapperVM
         {
             return Name + " " + Surname;
         }
+
+        public override bool Equals(object obj)
+        {
+            var item = obj as User;
+            if (item == User)
+                return true;
+            var userVM = obj as UserVM;
+
+            if (item != null)
+            {
+                if (item.Name == Name && item.Surname == Surname && item.Skype == Skype && item.State.ToString() == State.ToString()
+               && item.Status.ToString() == Status.ToString() && item.Description == Description && item.Country == Country)
+                    return true;
+
+            }
+            if (userVM != null)
+            {
+                if (userVM.Name == Name && userVM.Surname == Surname && userVM.Skype == Skype && userVM.State.ToString() == State.ToString()
+               && userVM.Status.ToString() == Status.ToString() && userVM.Description == Description && userVM.Country == Country)
+                    return true;
+            }
+
+           
+            return false;
+        }
     }
 }

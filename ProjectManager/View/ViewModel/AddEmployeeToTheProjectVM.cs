@@ -33,12 +33,16 @@ namespace PMView.View
         private bool _addButton;
         private bool _profileButton;
         private ILoadData _lastScreen;
+        private bool _saveButton;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public AddEmployeeToTheProjectVM(ILoadData lastScreen)
         {
             _lastScreen = lastScreen;
+            foreach (var item in (lastScreen as ProjectModuleEditVM).EmployeesCollection)
+                _employeesToAddCollection.Add(item);
+            LoadData();
         }
 
         public void OnPropertyChanged(string propertyName)
@@ -107,6 +111,12 @@ namespace PMView.View
         {
             get { return _addButton; }
             set { _addButton = value; }
+        }
+
+        public bool SaveButton
+        {
+            get { return _saveButton; }
+            set { _saveButton = value; }
         }
 
         public bool ProfileButton
@@ -231,13 +241,15 @@ namespace PMView.View
 
         public void AddButtonClick(UserVM user)
         {
-            if (_employeesToAddCollection.Where(item=>item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login).Count() ==0)
+            if (_employeesToAddCollection.Where(item=>item.Equals(user)).Count() ==0)
             {
                 _employeesToAddCollection.Add(user);
                 AddButton = false;
                 ProfileButton = false;
+                SaveButton = true;
                 OnPropertyChanged("AddButton");
                 OnPropertyChanged("ProfileButton");
+                OnPropertyChanged("SaveButton");
                 LoadData();
             }
             else
@@ -246,15 +258,26 @@ namespace PMView.View
             }
         }
 
+        public void SaveButtonClick()
+        {
+            foreach (var item in _employeesToAddCollection)
+            {
+                User_Team.Items.RemoveAll(user => user.User.Equals(item.User));
+            }
+        }
+
         public void RemoveButtonClick(UserVM user)
         {
             if (_employeesToAddCollection.Where(item => item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login).Count() != 0)
             {
-                _employeesToAddCollection.Remove(_employeesToAddCollection.FirstOrDefault(item => item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login));
+                var toDelete = _employeesToAddCollection.First(item => item.Equals(user));
+                _employeesToAddCollection.Remove(toDelete);
                 RemoveButton = false;
                 ProfileButton = false;
+                SaveButton = false;
                 OnPropertyChanged("RemoveButton");
                 OnPropertyChanged("ProfileButton");
+                OnPropertyChanged("SaveButton");
                 LoadData();
             }
         }

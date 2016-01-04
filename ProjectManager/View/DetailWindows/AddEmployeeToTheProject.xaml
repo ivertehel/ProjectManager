@@ -222,7 +222,7 @@
                 <Button Name="AddButton" Click="AddButton_Click" IsEnabled="{Binding Path=AddButton}" Grid.Column="0" Content="Add" Margin="0,5,10,5"/>
                 <Button Name="RemoveButton" Click="RemoveButton_Click" IsEnabled="{Binding Path=RemoveButton}"  Grid.Column="1" Content="Remove"  Margin="10,5,10,5"/>
                 <Button Grid.Column="2" Name="ProfileButton" IsEnabled="{Binding Path=ProfileButton}"  Click="ProfileButton_Click" Content="Profile"  Margin="10,5,10,5"/>
-                <Button Grid.Column="3" Content="Save all"  Margin="10,5,0,5"/>
+                <Button Grid.Column="3" Name="SaveAllButton" IsEnabled="{Binding Path=SaveButton}" Click="SaveAllButton_Click" Content="Save all"  Margin="10,5,0,5"/>
             </Grid>
             <Grid Grid.Row="3">
                 <ListBox ItemsSource="{Binding EmployeesToAddCollection}" 

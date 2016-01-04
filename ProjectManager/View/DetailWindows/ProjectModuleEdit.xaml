@@ -32,7 +32,7 @@
     </Window.Resources>
     <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
         <Grid.Resources>
-            <DataTemplate DataType="{x:Type WrapperVM:User_TeamVM}">
+            <DataTemplate DataType="{x:Type WrapperVM:UserVM}">
                 <Border BorderBrush="Azure"  VerticalAlignment="Top">
                     <Grid VerticalAlignment="Top">
                         <Grid.RowDefinitions>

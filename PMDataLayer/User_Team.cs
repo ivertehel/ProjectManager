@@ -43,5 +43,15 @@ namespace PMDataLayer
         {
             return User.ToString();
         }
+
+        public override bool Equals(object obj)
+        {
+            var item = obj as User_Team;
+            if (item == null)
+                return false;
+            if (item.Id == Id)
+                return true;
+            return false;
+        }
     }
 }

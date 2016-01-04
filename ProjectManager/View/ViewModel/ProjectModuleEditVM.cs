@@ -23,12 +23,13 @@ namespace PMView.View
 
         private List<string> _statuses = new List<string>();
 
-        private ObservableCollection<User_TeamVM> _employeesCollection = new ObservableCollection<User_TeamVM>();
+        private ProjectsUserControlVM _projectsUserControlVM;
 
-        public ProjectModuleEditVM(ILoadData lastScreen)
+        public ProjectModuleEditVM(ILoadData lastScreen, ProjectsUserControlVM projectsUserControlVM)
         {
+            _projectsUserControlVM = projectsUserControlVM;
             _lastScreen = lastScreen;
-            _currentOrder = (lastScreen as ProjectsUserControlVM).SelectedOrder;
+            _currentOrder = projectsUserControlVM.SelectedOrder;
             _startDate = DateTime.Now;
             _releaseDate = DateTime.Now.AddDays(31);
             _statuses.Add(Project.Statuses.Discarded.ToString());
@@ -45,19 +46,13 @@ namespace PMView.View
             }
         }
 
-        public void AddEmployeesToTheModuleButton()
+        public ObservableCollection<UserVM> EmployeesCollection
         {
-            (new AddEmployeeToTheProject(this)).Show();
+            get
+            {
+                return _projectsUserControlVM.EmployeesCollection;
+            }
         }
-
-        ////public ObservableCollection<User_TeamVM> EmployeesCollection
-        ////{
-        ////    get
-        ////    {
-        ////        _employeesCollection.Clear();
-
-        ////    }
-        ////}
 
         public OrderVM CurrentOrder
         {
