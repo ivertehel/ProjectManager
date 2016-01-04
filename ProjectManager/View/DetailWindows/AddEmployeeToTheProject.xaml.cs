@@ -87,5 +87,11 @@ namespace PMView
             _addEmployeeToTheProjectVM.Email = Email.Text;
             _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
         }
+
+        private void Countries_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.Country = Countries.SelectedValue.ToString();
+            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+        }
     }
 }

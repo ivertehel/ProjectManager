@@ -115,7 +115,7 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="Nationality:" FontSize="18"/>
-                            <ComboBox Grid.Row="1" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{Binding Countries}"/>
+                            <ComboBox Grid.Row="1" Name="Countries" SelectionChanged="Countries_SelectionChanged"  ItemsSource="{Binding Countries}"/>
                         </Grid>
                         <Grid Grid.Column="1" Margin="10,0,10,0">
                             <Grid.RowDefinitions>
@@ -181,9 +181,10 @@
                         <DataGridTextColumn  Header="Name" Binding="{Binding Path=Name, Mode=OneWay}"/>
                         <DataGridTextColumn  Header="Surname" Binding="{Binding Path=Surname, Mode=OneWay}"/>
                         <DataGridTextColumn  Header="Login" Binding="{Binding Path=Login, Mode=OneWay}"/>
-                        <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
                         <DataGridTextColumn  Header="E-mail" Binding="{Binding Path=Email, Mode=OneWay}"/>
                         <DataGridTextColumn  Header="Skype" Binding="{Binding Path=Skype, Mode=OneWay}"/>
+                        <DataGridTextColumn  Header="Nationality" Binding="{Binding Path=Country, Mode=OneWay}"/>
+                        <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
                     </DataGrid.Columns>
 
                 </DataGrid>

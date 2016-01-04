@@ -23,6 +23,7 @@ namespace PMView.View
         private ObservableCollection<User.States> _states = new ObservableCollection<User.States>();
         private ObservableCollection<User.Statuses> _statuses = new ObservableCollection<User.Statuses>();
         private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
+        private string _country;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -69,11 +70,31 @@ namespace PMView.View
             set { _skype = value; }
         }
 
+        public string Country
+        {
+            get { return _country; }
+            set { _country = value; }
+        }
+
         public List<string> Countries
         {
             get
             {
-                return User.Countries;
+                List<string> usedCountries = (from items in User.Items where items.Role == User.Roles.Employee select items.Country).ToList();
+                usedCountries.RemoveAll(item => usedCountries.Count(value => value == item) == 0);
+                usedCountries.Sort();
+                
+                // repeats deleting
+                for (int i = 0; i < usedCountries.Count; i++)
+                {
+                    var save = usedCountries[i];
+                    if (usedCountries.Count(items => items == save) > 1)
+                    {
+                        usedCountries.RemoveAll(items => items == save);
+                        usedCountries.Add(save);
+                    }
+                }
+                return usedCountries;
             }
         }
 
@@ -155,6 +176,9 @@ namespace PMView.View
 
             if (!string.IsNullOrEmpty(Email))
                 employees.RemoveAll(item => !item.Email.StartsWith(Email));
+
+            if (!string.IsNullOrEmpty(Country))
+                employees.RemoveAll(item => item.Country != Country);
 
             _employeesCollection.Clear();
             foreach (var item in employees)
