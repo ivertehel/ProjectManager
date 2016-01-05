@@ -80,11 +80,15 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Button Name="AddButton" IsEnabled="{Binding Path=AddButton}" Click="AddButton_Click" Grid.Column="0" Content="Add" Margin="0,5,10,5"/>
                     <Button Name="EditButton" IsEnabled="{Binding Path=EditButton}" Click="EditButton_Click"  Grid.Column="1" Content="Edit"  Margin="10,5,10,5"/>
                     <Button Grid.Column="2" Name="RemoveButton" IsEnabled="{Binding Path=RemoveButton}" Click="RemoveButton_Click" Content="Remove"  Margin="10,5,0,5"/>
-                    <Button Grid.Column="3" Name="SaveAllButton" IsEnabled="{Binding Path=SaveButton}" Click="SaveAllButton_Click" Content="Save all"  Margin="10,5,0,5"/>
+                    <Button Grid.Column="3" Name="SaveButton" IsEnabled="{Binding Path=SaveButton}" Click="SaveButton_Click" Content="Save"  Margin="10,5,0,5"/>
+                    <Button Grid.Column="4" Name="CancelAllButton" IsEnabled="{Binding Path=CancelAllChangesButton}" Click="CancelAllButton_Click"  Content="Cancel"  Margin="10,5,0,5"/>
+                    <Button Grid.Column="5" Name="SaveAllButton" IsEnabled="{Binding Path=SaveAllChangesButton}" Click="SaveAllButton_Click" Content="Save all"  Margin="10,5,0,5"/>
 
                 </Grid>
             </Grid>

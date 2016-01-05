@@ -49,17 +49,27 @@ namespace PMView
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _skillWindowVM.RemoveButtonClick();
         }
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
-            _skillWindowVM.SaveButtonClick();
+            _skillWindowVM.SaveAllButtonClick();
         }
 
         private void SkillNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             _skillWindowVM.Name = SkillNameTextBox.Text;
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            _skillWindowVM.SaveButtonClick();
+        }
+
+        private void CancelAllButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

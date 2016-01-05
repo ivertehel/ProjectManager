@@ -22,6 +22,10 @@ namespace PMView
         private bool _saveButton;
         private SkillVM _selectedSkill;
         private bool _editing;
+        private bool _somethingChanged = false;
+        private ObservableCollection<SkillVM> _savedCollection;
+        private bool _saveAllChangesButton;
+        private bool _cancelAllChangesButton;
 
         public SkillWindowVM()
         {
@@ -29,16 +33,25 @@ namespace PMView
             EditButton = false;
             RemoveButton = false;
             SaveButton = false;
+            CancelAllChangesButton = false;
+            SaveAllChangesButton = false;
         }
+
+
 
         public ObservableCollection<SkillVM> SkillsCollection
         {
             get
             {
+                if (_savedCollection != null)
+                    return _savedCollection;
+
                 _skillsCollection.Clear();
+                _savedCollection = new ObservableCollection<SkillVM>();
                 foreach (var item in SkillVM.Skills)
                 {
                     _skillsCollection.Add(item);
+                    _savedCollection.Add(item);
                 }
 
                 return _skillsCollection;
@@ -55,6 +68,58 @@ namespace PMView
             }
         }
 
+
+        public bool SaveAllChangesButton
+        {
+            get { return _saveAllChangesButton; }
+            set
+            {
+                _saveAllChangesButton = value;
+                OnPropertyChanged("SaveAllChangesButton");
+            }
+        }
+
+        internal void RemoveButtonClick()
+        {
+            SaveAllChangesButton = true;
+            Editing = false;
+            AddButton = false;
+            EditButton = false;
+            RemoveButton = false;
+            SaveButton = false;
+            _somethingChanged = true;
+            if (SelectedSkill != null)
+            {
+                SkillsCollection.Remove(SkillsCollection.First(item=>item.Name == SelectedSkill.Name));
+            }
+            Name = string.Empty;
+            SelectedSkill = null;
+            OnPropertyChanged("SkillsCollection");
+            OnPropertyChanged("Name");
+        }
+
+        internal void SaveButtonClick()
+        {
+            SaveAllChangesButton = true;
+            SaveButton = false;
+            getSkillByName(SelectedSkill.Name).Name = Name;
+            OnPropertyChanged("SkillsCollection");
+            Name = string.Empty;
+            OnPropertyChanged("Name");
+        }
+
+        public bool CancelAllChangesButton
+        {
+            get { return _cancelAllChangesButton; }
+            set
+            {
+                _cancelAllChangesButton = value;
+                _savedCollection = null;
+                OnPropertyChanged("SkillsCollection");
+                OnPropertyChanged("CancelAllChangesButton");
+            }
+        }
+
         public bool EditButton
         {
             get { return _editButton; }
@@ -65,25 +130,36 @@ namespace PMView
             }
         }
 
-        internal void SaveButtonClick()
+        internal void SaveAllButtonClick()
         {
-            Editing = false;
-            AddButton = false;
-            EditButton = false;
-            RemoveButton = false;
-            SaveButton = false;
-            if (SelectedSkill != null)
+            foreach (var item in _savedCollection)
             {
-                var skill = (from items in Skill.Items where items.Name == SelectedSkill.Name select items).FirstOrDefault();
-                if (skill == null)
-                    throw new Exception("Unknown error");
-
-                skill.Name = Name;
+                var find = Skill.Items.FirstOrDefault(skill => skill.Id == item.Skill.Id);
+                if (find == null)
+                {
+                    Skill.Items.Add(item.Skill);
+                }
+                else
+                {
+                    find.Name = item.Name;
+                }
             }
-            Name = string.Empty;
-            SelectedSkill = null;
+            List<Skill> toDelete = new List<Skill>();
+            foreach (var item in Skill.Items)
+            {
+                var find = _savedCollection.FirstOrDefault(skill => skill.Skill.Id == item.Id);
+                if (find == null)
+                {
+                    toDelete.Add(item);
+                }
+            }
+            foreach (var item in toDelete)
+            {
+                Skill.Items.RemoveAll(skill => skill.Id == item.Id);
+            }
+            _savedCollection = null;
+            SaveAllChangesButton = false;
             OnPropertyChanged("SkillsCollection");
-            OnPropertyChanged("Name");
         }
 
         public bool RemoveButton
@@ -134,7 +210,8 @@ namespace PMView
                     AddButton = false;
                     EditButton = false;
                     RemoveButton = false;
-                    SaveButton = false;
+                    if (!_somethingChanged)
+                        SaveButton = false;
                     Editing = false;
                     return;
                 }
@@ -143,7 +220,7 @@ namespace PMView
                 {
                     if (IsExist(value))
                     {
-                        SelectedSkill = GetSkillByName(value);
+                        SelectedSkill = getSkillByName(value);
                         AddButton = false;
                         EditButton = true;
                         RemoveButton = true;
@@ -188,14 +265,21 @@ namespace PMView
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private SkillVM GetSkillByName(string skillName)
+        private SkillVM getSkillByName(string skillName)
         {
-            return SkillVM.Skills.Where(item => item.Name == skillName).FirstOrDefault();
+            if (_somethingChanged)
+            {
+                return _savedCollection.Where(item => item.Name == skillName).FirstOrDefault();
+            }
+            else
+            {
+                return SkillVM.Skills.Where(item => item.Name == skillName).FirstOrDefault();
+            }
         }
 
         private bool IsExist(string skillName)
         {
-            return GetSkillByName(skillName) == null ? false : true;
+            return getSkillByName(skillName) == null ? false : true;
         }
     }
 }
