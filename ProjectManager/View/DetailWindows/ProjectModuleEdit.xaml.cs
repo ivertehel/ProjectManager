@@ -24,6 +24,7 @@ namespace PMView
         private ILoadData _lastScreen;
 
         private ProjectModuleEditVM _projectModuleEditVM;
+        private List<CheckBox> _skills = new List<CheckBox>();
 
         public ProjectModuleEdit(ProjectsUserControlVM projectsUserControlVM)
         {
@@ -31,6 +32,25 @@ namespace PMView
             _lastScreen = projectsUserControlVM;
             _projectModuleEditVM = new ProjectModuleEditVM(_lastScreen, projectsUserControlVM);
             DataContext = _projectModuleEditVM;
+            fillCheckboxList();
+        }
+
+        private void fillCheckboxList()
+        {
+            _skills.Clear();
+            foreach (var item in SkillVM.Skills)
+            {
+                var cb = new CheckBox();
+                cb.Content = item.Name;
+                _skills.Add(cb);
+                cb.IsChecked = false;
+            }
+
+            SkillsListBox.Items.Clear();
+            foreach (var item in _skills)
+            {
+                SkillsListBox.Items.Add(item);
+            }
         }
 
         private void SomeProperty_Changed(object sender, TextChangedEventArgs e)

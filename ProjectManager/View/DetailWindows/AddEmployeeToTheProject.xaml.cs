@@ -39,7 +39,7 @@ namespace PMView
             _projectModuleEditVM = projectModuleEditVM;
             _addEmployeeToTheProjectVM = new AddEmployeeToTheProjectVM(lastScreen, projectModuleEditVM);
             DataContext = _addEmployeeToTheProjectVM;
-            foreach (var item in Skill.Items)
+            foreach (var item in SkillVM.Skills)
             {
                 var cb = new CheckBox();
                 cb.Content = item.Name;

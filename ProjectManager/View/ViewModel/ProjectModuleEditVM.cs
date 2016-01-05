@@ -75,6 +75,12 @@ namespace PMView.View
             set { _projectVM.Name = value; }
         }
 
+        public string Description
+        {
+            get { return _projectVM.Description; }
+            set { _projectVM.Description = value; }
+        }
+
         public DateTime StartDate
         {
             get { return _projectVM.StartDate; }
