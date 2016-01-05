@@ -61,5 +61,10 @@ namespace PMView.View.WrapperVM
         {
             return Name;
         }
+
+        public SkillVM Clone()
+        {
+            return new SkillVM(new Skill() { Name = Name, Id = Skill.Id });
+        }
     }
 }

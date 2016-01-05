@@ -53,7 +53,7 @@ namespace PMView
                 foreach (var item in SkillVM.Skills)
                 {
                     _skillsCollection.Add(item);
-                    _savedCollection.Add(item);
+                    _savedCollection.Add(item.Clone());
                 }
 
                 return _skillsCollection;
@@ -296,11 +296,13 @@ namespace PMView
         {
             if (_somethingChanged)
             {
-                return _savedCollection.Where(item => item.Name == skillName).FirstOrDefault();
+                var find = _savedCollection.Where(item => item.Name == skillName).FirstOrDefault();
+                return find;
             }
             else
             {
-                return SkillVM.Skills.Where(item => item.Name == skillName).FirstOrDefault();
+                var find = _savedCollection.Where(item => item.Name == skillName).FirstOrDefault();
+                return find;
             }
         }
 
