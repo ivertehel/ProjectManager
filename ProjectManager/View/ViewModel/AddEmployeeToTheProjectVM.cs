@@ -324,19 +324,19 @@ namespace PMView.View
         {
             var employees = _employeesCollection.ToList();
             if (!string.IsNullOrEmpty(Name))
-                employees.RemoveAll(item => !item.Name.StartsWith(Name));
+                employees.RemoveAll(item => !item.Name.ToUpper().StartsWith(Name.ToUpper()));
 
             if (!string.IsNullOrEmpty(Surname))
-                employees.RemoveAll(item => !item.Surname.StartsWith(Surname));
+                employees.RemoveAll(item => !item.Surname.ToUpper().StartsWith(Surname.ToUpper()));
 
             if (!string.IsNullOrEmpty(Login))
-                employees.RemoveAll(item => !item.Login.StartsWith(Login));
+                employees.RemoveAll(item => !item.Login.ToUpper().StartsWith(Login.ToUpper()));
 
             if (!string.IsNullOrEmpty(Skype))
-                employees.RemoveAll(item => !item.Skype.StartsWith(Skype));
+                employees.RemoveAll(item => !item.Skype.ToUpper().StartsWith(Skype.ToUpper()));
 
             if (!string.IsNullOrEmpty(Email))
-                employees.RemoveAll(item => !item.Email.StartsWith(Email));
+                employees.RemoveAll(item => !item.Email.ToUpper().StartsWith(Email.ToUpper()));
 
             if (Country != "NotChosen")
                 employees.RemoveAll(item => item.Country != Country);

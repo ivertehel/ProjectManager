@@ -195,7 +195,14 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
-                <DataGrid Name="EmployeesCollectionDataGrid"
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock FontSize="18" Text="Chose employee to add him into module or to edit employee"/>
+                </Grid>
+                <DataGrid Grid.Row="1" Name="EmployeesCollectionDataGrid"
                       ItemsSource="{Binding EmployeesCollection}" ColumnWidth="*"
                       IsReadOnly="True" AutoGenerateColumns="False"
                       HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300"

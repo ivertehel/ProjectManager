@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using PMView.View.WrapperVM;
 using PMDataLayer;
+using System.ComponentModel;
 
 namespace PMView.View
 {
-    public class ProjectModuleEditVM : ILoadData
+    public class ProjectModuleEditVM : ILoadData, INotifyPropertyChanged
     {
-        private DateTime _startDate;
-
-        private DateTime _releaseDate;
-
         private OrderVM _currentOrder;
 
         private ILoadData _lastScreen;
@@ -26,14 +23,16 @@ namespace PMView.View
 
         private ProjectVM _projectVM = new ProjectVM(new Project());
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public ProjectModuleEditVM(ILoadData lastScreen, ProjectsUserControlVM projectsUserControlVM)
         {
             _projectVM.Order = projectsUserControlVM.SelectedOrder.Order;
             _projectsUserControlVM = projectsUserControlVM;
             _lastScreen = lastScreen;
             _currentOrder = projectsUserControlVM.SelectedOrder;
-            _startDate = DateTime.Now;
-            _releaseDate = DateTime.Now.AddDays(31);
+            _projectVM.StartDate = DateTime.Now;
+            _projectVM.ReleaseDate = DateTime.Now.AddDays(31);
             _statuses.Add(Project.Statuses.Discarded.ToString());
             _statuses.Add(Project.Statuses.Done.ToString());
             _statuses.Add(Project.Statuses.InProgress.ToString());
@@ -91,6 +90,15 @@ namespace PMView.View
         public void LoadData()
         {
             _lastScreen.LoadData();
+            OnPropertyChanged("EmployeesCollection");
+        }
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }
