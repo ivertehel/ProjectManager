@@ -317,7 +317,6 @@ namespace PMView.View
             Order.Update();
             Order o2 = Order.Items[0];
             
-
             Project p1 = new Project()
             {
                 Name = "Android game Matches Puzzle",

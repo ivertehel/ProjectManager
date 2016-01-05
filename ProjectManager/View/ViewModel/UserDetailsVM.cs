@@ -53,21 +53,11 @@ namespace PMView.View
             ButtonsActive = false;
         }
 
-        
-
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OneOrMoreFieldsWereUpdated()
-        {
-            ButtonsActive = true;
-        }
 
         public bool ButtonsActive
         {
-            get
-            {
-                return _buttonsActive;
-            }
+            get { return _buttonsActive; }
             set
             {
                 _buttonsActive = value;
@@ -108,6 +98,7 @@ namespace PMView.View
                     {
                         _states.Add(state);
                     }
+
                 return _states;
             }
         }
@@ -135,7 +126,6 @@ namespace PMView.View
             get { return _skype; }
             set { _skype = value; }
         }
-
 
         public string Login
         {
@@ -179,34 +169,20 @@ namespace PMView.View
                         error = _checkNameTemplate(columnName, Surname);
                         break;
                 }
+
                 return error;
             }
-        }
-
-        private string _checkNameTemplate(string fieldName, string value)
-        {
-            if (value == string.Empty)
-                return $"{fieldName} can't be empty";
-            if (value[0] == ' ')
-                return $"{fieldName} can't start off space";
-            if (value.Length < 2)
-                return $"{fieldName} must contains 2 or more letters";
-            if (Name.ToUpper()[0] != Name[0])
-                return $"{fieldName} must start from upper letter";
-            foreach (var item in value)
-            {
-                if (!(item >= 'A' && item <= 'Z') && !(item >= 'a' && item <= 'z') && !(item >= 'А' && item <= 'Я') && !(item >= 'а' && item <= 'я'))
-                {
-                    return $"{fieldName} can contain letter only";
-                }
-            }
-            return string.Empty;
         }
 
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void OneOrMoreFieldsWereUpdated()
+        {
+            ButtonsActive = true;
         }
 
         public void ButtonSaveClick()
@@ -218,6 +194,7 @@ namespace PMView.View
             {
                 throw new Exception(error);
             }
+
             Logger.Info("User details screen",
                 $@"Details of user has been changed:{Environment.NewLine}
                 Name : {CurrentUser.Name} to {_name}{Environment.NewLine}
@@ -272,5 +249,25 @@ namespace PMView.View
             ButtonsActive = false;
         }
 
+        private string _checkNameTemplate(string fieldName, string value)
+        {
+            if (value == string.Empty)
+                return $"{fieldName} can't be empty";
+            if (value[0] == ' ')
+                return $"{fieldName} can't start off space";
+            if (value.Length < 2)
+                return $"{fieldName} must contains 2 or more letters";
+            if (Name.ToUpper()[0] != Name[0])
+                return $"{fieldName} must start from upper letter";
+            foreach (var item in value)
+            {
+                if (!(item >= 'A' && item <= 'Z') && !(item >= 'a' && item <= 'z') && !(item >= 'А' && item <= 'Я') && !(item >= 'а' && item <= 'я'))
+                {
+                    return $"{fieldName} can contain letter only";
+                }
+            }
+
+            return string.Empty;
+        }
     }
 }

@@ -64,10 +64,7 @@ namespace PMView.View
 
         public bool ButtonsActive
         {
-            get
-            {
-                return _buttonsActive;
-            }
+            get { return _buttonsActive; }
             set
             {
                 _buttonsActive = value;
@@ -92,43 +89,6 @@ namespace PMView.View
             {
                 _description = value;
                 ButtonsActive = true;
-            }
-        }
-
-        public string this[string columnName]
-        {
-            get
-            {
-                string error = String.Empty;
-                switch (columnName)
-                {
-                    case "Name":
-                        if (Name == string.Empty)
-                        {
-                            error = "Name can't be empty";
-                        }
-                        else if (Name[0] == ' ')
-                        {
-                            error = "Name can't start off space";
-                        }
-                        if (Team.Items.Where(items => items.Name == Name && CurrentTeam.Name != Name).Count() != 0)
-                        {
-                            error = "This team is already exist";
-                        }
-                        break;
-                    case "Description":
-                        if (Description == string.Empty)
-                        {
-                            error = "Description can't be empty";
-                        }
-                        else if (Description[0] == ' ')
-                        {
-                            error = "Description can't start off space";
-                        }
-
-                        break;
-                }
-                return error;
             }
         }
 
@@ -158,9 +118,10 @@ namespace PMView.View
                 var user = _employeesCollection.FirstOrDefault(item => item.User == SelectedEmployee.User);
                 foreach (var item in Position.Items)
                 {
-                    if(!user.Positions.Contains(item))
+                    if (!user.Positions.Contains(item))
                         _employeesPositions.Add(item.Name);
                 }
+
                 return _employeesPositions;             
             }
         }
@@ -205,6 +166,7 @@ namespace PMView.View
                             _skillsCollection.Add(new SkillVM(item.Skill));
                     }
                 }
+
                 return _skillsCollection;
             }
         }
@@ -214,6 +176,46 @@ namespace PMView.View
             get
             {
                 throw new NotImplementedException();
+            }
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                string error = string.Empty;
+                switch (columnName)
+                {
+                    case "Name":
+                        if (Name == string.Empty)
+                        {
+                            error = "Name can't be empty";
+                        }
+                        else if (Name[0] == ' ')
+                        {
+                            error = "Name can't start off space";
+                        }
+
+                        if (Team.Items.Where(items => items.Name == Name && CurrentTeam.Name != Name).Count() != 0)
+                        {
+                            error = "This team is already exist";
+                        }
+
+                        break;
+                    case "Description":
+                        if (Description == string.Empty)
+                        {
+                            error = "Description can't be empty";
+                        }
+                        else if (Description[0] == ' ')
+                        {
+                            error = "Description can't start off space";
+                        }
+
+                        break;
+                }
+
+                return error;
             }
         }
 
@@ -232,6 +234,7 @@ namespace PMView.View
             {
                 throw new Exception(error);
             }
+
             Logger.Info("Team details screen", $@"Details of team has been changed: {Environment.NewLine} 
             Name : {CurrentTeam.Name} to {_name} {Environment.NewLine} 
             Description : {CurrentTeam.Description} to {_description}");
@@ -242,24 +245,6 @@ namespace PMView.View
             OnPropertyChanged("Name");
             OnPropertyChanged("Description");
             ButtonsActive = false;
-        }
-
-        private void _savePositions(string[] positions)
-        {
-            if (positions.Count() == 0)
-                throw new Exception("Employee must have at least one position");
-            User_Team.Items.RemoveAll(items => items.User == SelectedEmployee.User);
-            for (int i = 0; i < positions.Count(); i++)
-            {
-                User_Team ut = new User_Team()
-                {
-                    IsLeader = false,
-                    Position = Position.Items.Where(item => item.Name == positions[i]).FirstOrDefault(),
-                    Team = CurrentTeam.Team,
-                    User = SelectedEmployee.User
-                };
-                User_Team.Items.Add(ut);
-            }
         }
 
         public void ButtonRetrieveClick()
@@ -278,6 +263,24 @@ namespace PMView.View
             OnPropertyChanged("OrdersCollection");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("SkillsCollection");
+        }
+
+        private void _savePositions(string[] positions)
+        {
+            if (positions.Count() == 0)
+                throw new Exception("Employee must have at least one position");
+            User_Team.Items.RemoveAll(items => items.User == SelectedEmployee.User);
+            for (int i = 0; i < positions.Count(); i++)
+            {
+                User_Team ut = new User_Team()
+                {
+                    IsLeader = false,
+                    Position = Position.Items.Where(item => item.Name == positions[i]).FirstOrDefault(),
+                    Team = CurrentTeam.Team,
+                    User = SelectedEmployee.User
+                };
+                User_Team.Items.Add(ut);
+            }
         }
     }
 }

@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using PMView.View.WrapperVM;
 using PMDataLayer;
-using System.Collections.ObjectModel;
 
 namespace PMView.View
 {
     public class ProjectModuleEditVM : ILoadData
     {
-        private string _name;
-
         private DateTime _startDate;
 
         private DateTime _releaseDate;
@@ -28,16 +26,6 @@ namespace PMView.View
 
         private ProjectVM _projectVM = new ProjectVM(new Project());
 
-        public ProjectsUserControlVM ProjectUserControlVM
-        {
-            get { return _projectsUserControlVM; }
-        }
-
-        public ProjectVM ProjectVM
-        {
-            get { return _projectVM; }
-        }
-
         public ProjectModuleEditVM(ILoadData lastScreen, ProjectsUserControlVM projectsUserControlVM)
         {
             _projectVM.Order = projectsUserControlVM.SelectedOrder.Order;
@@ -50,6 +38,16 @@ namespace PMView.View
             _statuses.Add(Project.Statuses.Done.ToString());
             _statuses.Add(Project.Statuses.InProgress.ToString());
             _statuses.Add(Project.Statuses.Opened.ToString());
+        }
+
+        public ProjectsUserControlVM ProjectUserControlVM
+        {
+            get { return _projectsUserControlVM; }
+        }
+
+        public ProjectVM ProjectVM
+        {
+            get { return _projectVM; }
         }
 
         public List<string> Statuses

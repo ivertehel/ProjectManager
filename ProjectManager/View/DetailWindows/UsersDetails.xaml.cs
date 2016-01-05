@@ -22,7 +22,7 @@ namespace PMView
     /// </summary>
     public partial class UsersDetails : Window
     {
-        protected IUser _user;
+        private IUser _user;
 
         private UserDetailsVM _userDetailsVM;
 
@@ -34,7 +34,6 @@ namespace PMView
             _user = user;
             _userDetailsVM = new UserDetailsVM(user as UserVM, lastScreen);
             DataContext = _userDetailsVM;
-
         }
 
         public UsersDetails(IEmployee employee, ILoadData lastScreen) : this(employee as IUser, lastScreen)

@@ -58,7 +58,6 @@ namespace PMView.View
         private void CustomerProfileButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             (new UsersDetails(new UserVM(_projectsUserControlVM.SelectedOrder.Client.User) as IUser, _projectsUserControlVM)).Show();
-
         }
 
         private void CustomerProfileButton_MouseEnter(object sender, MouseEventArgs e)
@@ -69,7 +68,6 @@ namespace PMView.View
         private void CustomerProfileButton_MouseLeave(object sender, MouseEventArgs e)
         {
             CustomerProfileButton.Opacity = 0.8;
-
         }
 
         private void AddProject_Click(object sender, RoutedEventArgs e)

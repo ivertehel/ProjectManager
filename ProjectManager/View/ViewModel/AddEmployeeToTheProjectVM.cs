@@ -1,12 +1,12 @@
-﻿using PMDataLayer;
-using PMView.View.WrapperVM;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMDataLayer;
+using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
@@ -34,10 +34,7 @@ namespace PMView.View
         private bool _profileButton;
         private ILoadData _lastScreen;
         private bool _saveButton;
-        private ProjectVM _projectVM;
         private ProjectModuleEditVM _projectModuleEditVM;
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public AddEmployeeToTheProjectVM(ILoadData lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
@@ -45,18 +42,13 @@ namespace PMView.View
             {
                 _employeesToAddCollection.Add(item);
             }
+
             _projectModuleEditVM = projectModuleEditVM;
             _lastScreen = lastScreen;
             LoadData();
         }
 
-        public void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public List<string> SelectedSkills
         {
@@ -147,11 +139,13 @@ namespace PMView.View
                         RemoveButton = false;
                         AddButton = true;
                     }
+
                     ProfileButton = true;
                     OnPropertyChanged("RemoveButton");
                     OnPropertyChanged("AddButton");
                     OnPropertyChanged("ProfileButton");
                 }
+
                 _selectedEmployeeToDelete = value;
             }
         }
@@ -164,6 +158,7 @@ namespace PMView.View
                 usedCountries.RemoveAll(item => usedCountries.Count(value => value == item) == 0);
                 usedCountries.Add("NotChosen");
                 usedCountries.Sort();
+
                 // repeats deleting
                 for (int i = 0; i < usedCountries.Count; i++)
                 {
@@ -174,10 +169,10 @@ namespace PMView.View
                         usedCountries.Add(save);
                     }
                 }
+
                 return usedCountries;
             }
         }
-
 
         public ObservableCollection<User.Statuses> Statuses
         {
@@ -189,6 +184,7 @@ namespace PMView.View
                         if (status != User.Statuses.UnInvited)
                             _statuses.Add(status);
                     }
+
                 return _statuses;
             }
         }
@@ -207,13 +203,9 @@ namespace PMView.View
                             _skillsCollection.Add(new SkillVM(item.Skill));
                     }
                 }
+
                 return _skillsCollection;
             }
-        }
-
-        public void ActivateButtons(UserVM selectedEmployeeToDelete)
-        {
-            SelectedEmployeeToDelete = selectedEmployeeToDelete;
         }
 
         public ObservableCollection<User.States> States
@@ -225,6 +217,7 @@ namespace PMView.View
                     {
                         _states.Add(state);
                     }
+
                 return _states;
             }
         }
@@ -239,14 +232,42 @@ namespace PMView.View
                 {
                     _employeesCollection.Add(new UserVM(item));
                 }
+
                 filterEmployeesCollection();
                 return _employeesCollection;
             }
         }
 
+        public ObservableCollection<UserVM> EmployeesToAddCollection
+        {
+            get
+            {
+                return _employeesToAddCollection;
+            }
+        }
+
+        public User.States State
+        {
+            get { return _state; }
+            set { _state = value; }
+        }
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public void ActivateButtons(UserVM selectedEmployeeToDelete)
+        {
+            SelectedEmployeeToDelete = selectedEmployeeToDelete;
+        }
+
         public void AddButtonClick(UserVM user)
         {
-            if (_employeesToAddCollection.Where(item=>item.Equals(user)).Count() ==0)
+            if (_employeesToAddCollection.Where(item => item.Equals(user)).Count() == 0)
             {
                 _employeesToAddCollection.Add(user);
                 AddButton = false;
@@ -270,6 +291,7 @@ namespace PMView.View
             {
                 _projectModuleEditVM.EmployeesCollection.Add(item);
             }
+
             SaveButton = false;
             OnPropertyChanged("SaveButton");
             LoadData();
@@ -291,18 +313,11 @@ namespace PMView.View
             }
         }
 
-        public ObservableCollection<UserVM> EmployeesToAddCollection
+        public void LoadData()
         {
-            get
-            {
-                return _employeesToAddCollection;
-            }
-        }
-
-        public User.States State
-        {
-            get { return _state; }
-            set { _state = value; }
+            OnPropertyChanged("EmployeesToAddCollection");
+            OnPropertyChanged("EmployeesCollection");
+            _lastScreen.LoadData();
         }
 
         private void filterEmployeesCollection()
@@ -347,13 +362,6 @@ namespace PMView.View
             {
                 _employeesCollection.Add(item);
             }
-        }
-
-        public void LoadData()
-        {
-            OnPropertyChanged("EmployeesToAddCollection");
-            OnPropertyChanged("EmployeesCollection");
-            _lastScreen.LoadData();
         }
     }
 }

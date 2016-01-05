@@ -51,7 +51,6 @@ namespace PMView
                 _positions.Add(cb);
                 cb.IsChecked = employeesPositions.Contains(item.Name) ? false : true;
                 cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
-
             }
 
             PositionListBox.Items.Clear();
@@ -80,19 +79,16 @@ namespace PMView
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void RetrieveButton_Click(object sender, RoutedEventArgs e)
         {
             _teamDetailsVM.ButtonRetrieveClick();
-
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             _teamDetailsVM.ButtonsActive = true;
-
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

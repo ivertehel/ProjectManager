@@ -1,7 +1,4 @@
-﻿using PMDataLayer;
-using PMView.View;
-using PMView.View.WrapperVM;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PMDataLayer;
+using PMView.View;
+using PMView.View.WrapperVM;
 
 namespace PMView
 {
@@ -47,6 +47,7 @@ namespace PMView
                 cb.IsChecked = false;
                 cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
             }
+
             SkillsListBox.Items.Clear();
             foreach (var item in _skills)
             {
@@ -146,6 +147,7 @@ namespace PMView
                 _selectedEmployeeToAdd = (UserVM)EmployeesCollectionDataGrid.SelectedItem;
                 _addEmployeeToTheProjectVM.ActivateButtons(_selectedEmployeeToAdd);
             }
+
             EmployeesToAddListBox.SelectedItem = null;
             EmployeesCollectionDataGrid.SelectedItem = null;
         }
@@ -157,6 +159,7 @@ namespace PMView
                 _selectedEmployeeToAdd = (UserVM)EmployeesToAddListBox.SelectedItem;
                 _addEmployeeToTheProjectVM.ActivateButtons(_selectedEmployeeToAdd);
             }
+
             EmployeesCollectionDataGrid.SelectedItem = null;
             EmployeesToAddListBox.SelectedItem = null;
         }

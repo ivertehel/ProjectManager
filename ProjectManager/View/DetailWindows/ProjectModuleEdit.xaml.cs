@@ -35,18 +35,17 @@ namespace PMView
 
         private void SomeProperty_Changed(object sender, TextChangedEventArgs e)
         {
-            //throw new NotImplementedException();
+            ////throw new NotImplementedException();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //throw new NotImplementedException();
+            ////throw new NotImplementedException();
         }
 
         private void AddEmployeeToTheProject_Click(object sender, RoutedEventArgs e)
         {
             (new AddEmployeeToTheProject(_projectModuleEditVM, _projectModuleEditVM)).Show();
         }
-
     }
 }

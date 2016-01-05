@@ -1,5 +1,4 @@
-﻿using PMDataLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMDataLayer;
 
 namespace PMView.View
 {
@@ -39,6 +39,7 @@ namespace PMView.View
                 cb.IsChecked = false;
                 cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
             }
+
             SkillsListBox.Items.Clear();
             foreach (var item in _skills)
             {
