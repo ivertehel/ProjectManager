@@ -61,6 +61,10 @@
     <Compile Include="View\DetailWindows\ProjectModuleEdit.xaml.cs">
       <DependentUpon>ProjectModuleEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DetailWindows\SkillWindow.xaml.cs">
+      <DependentUpon>SkillWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewModel\SkillWindowVM.cs" />
     <Compile Include="View\UserControls\EmployeeDetailsUserControl.xaml.cs">
       <DependentUpon>EmployeeDetailsUserControl.xaml</DependentUpon>
     </Compile>
@@ -122,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DetailWindows\ProjectModuleEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DetailWindows\SkillWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

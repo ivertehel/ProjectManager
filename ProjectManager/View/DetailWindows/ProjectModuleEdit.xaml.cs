@@ -67,5 +67,10 @@ namespace PMView
         {
             (new AddEmployeeToTheProject(_projectModuleEditVM, _projectModuleEditVM)).Show();
         }
+
+        private void AddSkill_Click(object sender, RoutedEventArgs e)
+        {
+            (new SkillWindow()).Show();
+        }
     }
 }
