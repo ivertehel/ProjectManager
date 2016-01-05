@@ -145,8 +145,11 @@ namespace PMView.View.WrapperVM
         public override bool Equals(object obj)
         {
             var item = obj as User;
-            if (item == User)
-                return true;
+            if (item != null)
+            {
+                if (item.Id == User.Id)
+                    return true;
+            }
             var userVM = obj as UserVM;
 
             if (item != null)

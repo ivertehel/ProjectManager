@@ -7,7 +7,7 @@
         xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
         mc:Ignorable="d"
-        Title="User details" MinHeight="400" MinWidth="550"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="User details" Name="Form" MinHeight="450" MinWidth="650" Height="400" Width="550"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
 
     <Window.Resources>
         <ControlTemplate x:Key="validationFailed">
@@ -36,7 +36,7 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <Grid.Background>
@@ -44,7 +44,7 @@
             </Grid.Background>
             <Label Content="User properties" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
-        <Grid Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="15,15,15,15">
+        <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,15,15,15">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
@@ -52,74 +52,84 @@
 
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="3*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" VerticalAlignment="Top">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0" Grid.Row="1" Margin="0,0,10,0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Text="Name:" FontSize="18"/>
-                        <TextBox Grid.Row="1" Validation.ErrorTemplate="{StaticResource validationFailed}" TextChanged="SomeProperty_Changed">
-                            <Binding Path="Name">
-                                <Binding.ValidationRules>
-                                    <DataErrorValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox>
-                        <TextBlock Grid.Row="2" Text="Surname:" FontSize="18"/>
-                        <TextBox Grid.Row="3" Validation.ErrorTemplate="{StaticResource validationFailed}" TextChanged="SomeProperty_Changed">
-                            <Binding Path="Surname">
-                                <Binding.ValidationRules>
-                                    <DataErrorValidationRule />
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox>
-                        <TextBlock Grid.Row="4" Text="State:" FontSize="18"/>
-                        <ComboBox Grid.Row="5" ItemsSource="{Binding States}" SelectedItem="{Binding State}" SelectionChanged="ComboBox_SelectionChanged"/>
-                        <TextBlock Grid.Row="6" Text="Nationality:" FontSize="18"/>
-                        <ComboBox Grid.Row="7" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country}" SelectionChanged="ComboBox_SelectionChanged"/>
+                <Grid Grid.Row="0" VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Grid.Row="1" Margin="0,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Name:" FontSize="18"/>
+                            <TextBox Grid.Row="1" Validation.ErrorTemplate="{StaticResource validationFailed}" TextChanged="SomeProperty_Changed">
+                                <Binding Path="Name">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
+                            <TextBlock Grid.Row="2" Text="Surname:" FontSize="18"/>
+                            <TextBox Grid.Row="3" Validation.ErrorTemplate="{StaticResource validationFailed}" TextChanged="SomeProperty_Changed">
+                                <Binding Path="Surname">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
+                            <TextBlock Grid.Row="4" Text="State:" FontSize="18"/>
+                            <ComboBox Grid.Row="5" ItemsSource="{Binding States}" SelectedItem="{Binding State}" SelectionChanged="ComboBox_SelectionChanged"/>
+                            <TextBlock Grid.Row="6" Text="Nationality:" FontSize="18"/>
+                            <ComboBox Grid.Row="7" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country}" SelectionChanged="ComboBox_SelectionChanged"/>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="2"  Margin="10,0,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Birthday:" FontSize="18"/>
+                            <DatePicker Grid.Row="1" DisplayDate="{Binding Birthday}" SelectedDate="{Binding Birthday}" SelectedDateChanged="ComboBox_SelectionChanged"/>
+                            <TextBlock Grid.Row="2" Text="Login:" FontSize="18"/>
+                            <TextBox Grid.Row="3" Text="{Binding Login}" TextChanged="SomeProperty_Changed"/>
+                            <TextBlock Grid.Row="4" Text="E-mail:" FontSize="18"/>
+                            <TextBox Grid.Row="5" Text="{Binding Email}" TextChanged="SomeProperty_Changed"/>
+                            <TextBlock Grid.Row="6" Text="Skype:" FontSize="18"/>
+                            <TextBox Grid.Row="7" Text="{Binding Skype}" TextChanged="SomeProperty_Changed"/>
+                        </Grid>
                     </Grid>
-                    <Grid Grid.Column="1" Grid.Row="2"  Margin="10,0,0,0">
+                    <Grid Grid.Row="1" VerticalAlignment="Stretch">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Text="Birthday:" FontSize="18"/>
-                        <DatePicker Grid.Row="1" DisplayDate="{Binding Birthday}" SelectedDate="{Binding Birthday}" SelectedDateChanged="ComboBox_SelectionChanged"/>
-                        <TextBlock Grid.Row="2" Text="Login:" FontSize="18"/>
-                        <TextBox Grid.Row="3" Text="{Binding Login}" TextChanged="SomeProperty_Changed"/>
-                        <TextBlock Grid.Row="4" Text="E-mail:" FontSize="18"/>
-                        <TextBox Grid.Row="5" Text="{Binding Email}" TextChanged="SomeProperty_Changed"/>
-                        <TextBlock Grid.Row="6" Text="Skype:" FontSize="18"/>
-                        <TextBox Grid.Row="7" Text="{Binding Skype}" TextChanged="SomeProperty_Changed"/>
+                        <TextBlock Grid.Row="0" Text="Description:" FontSize="18"/>
+                        <TextBox Grid.Row="1" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Description}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16" TextChanged="SomeProperty_Changed"/>
                     </Grid>
                 </Grid>
-                <TextBlock Grid.Row="1" VerticalAlignment="Top" Text="Description:" FontSize="18"/>
-                <TextBox Grid.Row="2" VerticalAlignment="Top" MaxLines="3" TextWrapping="Wrap" Text="{Binding Description}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16" TextChanged="SomeProperty_Changed"/>
-                <Grid Grid.Row="3" VerticalAlignment="Top" Name="EmployeesGrid"></Grid>
-                <Grid Grid.Row="4" Margin="0,5,0,5">
+                <Grid Grid.Row="1" Name="EmployeesGrid"></Grid>
+                <Grid Grid.Row="2" Margin="0,5,0,5" VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>

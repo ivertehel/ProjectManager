@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMDataLayer;
+using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
@@ -30,13 +31,13 @@ namespace PMView.View
             InitializeComponent();
             _employeeDetailsUserControlVM = new EmployeeDetailsUserControlVM(employee, lastScreen);
             DataContext = _employeeDetailsUserControlVM;
-
+            var currentUser = employee as UserVM;
             foreach (var item in Skill.Items)
             {
                 var cb = new CheckBox();
                 cb.Content = item.Name;
                 _skills.Add(cb);
-                cb.IsChecked = false;
+                cb.IsChecked = User_Skill.Items.Where(user_skill => currentUser.Equals(user_skill.User) && item.Name == user_skill.Skill.Name).Count() != 0 ? true : false;
                 cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
             }
 
