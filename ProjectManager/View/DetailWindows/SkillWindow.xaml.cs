@@ -44,7 +44,7 @@ namespace PMView
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _skillWindowVM.AddButtonClick();
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
@@ -69,7 +69,7 @@ namespace PMView
 
         private void CancelAllButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _skillWindowVM.CancelAllChangesButtonClick();
         }
     }
 }

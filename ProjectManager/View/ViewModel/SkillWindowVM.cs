@@ -58,6 +58,30 @@ namespace PMView
             }
         }
 
+        internal void AddButtonClick()
+        {
+            _savedCollection.Add(new SkillVM(new Skill() { Name = Name }));
+            AddButton = false;
+            Name = string.Empty;
+            OnPropertyChanged("SkillsCollection");
+            OnPropertyChanged("Name");
+            SaveAllChangesButton = true;
+            _somethingChanged = true;
+        }
+
+        internal void CancelAllChangesButtonClick()
+        {
+            Name = string.Empty;
+            OnPropertyChanged("Name");
+            _savedCollection = null;
+            _somethingChanged = false;
+            CancelAllChangesButton = false;
+            SaveAllChangesButton = false;
+            OnPropertyChanged("CancelAllChangesButton");
+            OnPropertyChanged("SkillsCollection");
+
+        }
+
         public bool AddButton
         {
             get { return _addButton; }
@@ -75,6 +99,7 @@ namespace PMView
             set
             {
                 _saveAllChangesButton = value;
+                CancelAllChangesButton = value;
                 OnPropertyChanged("SaveAllChangesButton");
             }
         }
@@ -90,7 +115,7 @@ namespace PMView
             _somethingChanged = true;
             if (SelectedSkill != null)
             {
-                SkillsCollection.Remove(SkillsCollection.First(item=>item.Name == SelectedSkill.Name));
+                _savedCollection.Remove(_savedCollection.First(item=>item.Name == SelectedSkill.Name));
             }
             Name = string.Empty;
             SelectedSkill = null;
@@ -114,8 +139,6 @@ namespace PMView
             set
             {
                 _cancelAllChangesButton = value;
-                _savedCollection = null;
-                OnPropertyChanged("SkillsCollection");
                 OnPropertyChanged("CancelAllChangesButton");
             }
         }
@@ -155,6 +178,8 @@ namespace PMView
             }
             foreach (var item in toDelete)
             {
+                User_Skill.Items.RemoveAll(skill => skill.Skill.Id == item.Id);
+                Project_Skill.Items.RemoveAll(skill => skill.Skill.Id == item.Id);
                 Skill.Items.RemoveAll(skill => skill.Id == item.Id);
             }
             _savedCollection = null;
