@@ -11,20 +11,21 @@ using Core;
 
 namespace PMView.View
 {
-    public class EmployeeDetailsVM
+    public class EmployeeDetailsUserControlVM : ILoadData
     {
         private UserVM _currentEmployee;
 
         private ILoadData _lastScreen;
 
-        public EmployeeDetailsVM(IEmployee employee, ILoadData lastScreen)
+        public EmployeeDetailsUserControlVM(IEmployee employee, ILoadData lastScreen)
         {
             _currentEmployee = employee as UserVM;
             _lastScreen = lastScreen;
         }
 
-
-
-
+        public void LoadData()
+        {
+            _lastScreen.LoadData();
+        }
     }
 }

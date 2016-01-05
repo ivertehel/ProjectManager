@@ -26,7 +26,7 @@ namespace PMView
 
         private UserDetailsVM _userDetailsVM;
 
-        private EmployeeDetailsVM _employeeDetailsVM;
+        private EmployeeDetailsUserControlVM _employeeDetailsVM;
 
         public UsersDetails(IUser user, ILoadData lastScreen)
         {
@@ -40,8 +40,8 @@ namespace PMView
         public UsersDetails(IEmployee employee, ILoadData lastScreen) : this(employee as IUser, lastScreen)
         {
             InitializeComponent();
-            _employeeDetailsVM = new EmployeeDetailsVM(employee, lastScreen);
-            EmployeesGrid.Children.Add(new EmployeeDetailsUserControl());
+            _employeeDetailsVM = new EmployeeDetailsUserControlVM(employee, lastScreen);
+            EmployeesGrid.Children.Add(new EmployeeDetailsUserControl(employee, lastScreen));
         }
 
         protected void RetrieveButton_Click(object sender, RoutedEventArgs e)
