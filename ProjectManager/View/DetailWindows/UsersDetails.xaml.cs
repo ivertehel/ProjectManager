@@ -28,6 +28,8 @@ namespace PMView
 
         private EmployeeDetailsUserControlVM _employeeDetailsVM;
 
+        private EmployeeDetailsUserControl _employeeDetailsUserControl;
+
         public UsersDetails(IUser user, ILoadData lastScreen)
         {
             InitializeComponent();
@@ -41,8 +43,10 @@ namespace PMView
             InitializeComponent();
             Form.MinHeight = 650;
             Form.MinWidth = 800;
+            Title.Text = "Employee properties";
             _employeeDetailsVM = new EmployeeDetailsUserControlVM(employee, lastScreen);
-            EmployeesGrid.Children.Add(new EmployeeDetailsUserControl(employee, lastScreen));
+            _employeeDetailsUserControl = new EmployeeDetailsUserControl(employee, lastScreen, _userDetailsVM);
+            EmployeesGrid.Children.Add(_employeeDetailsUserControl);
         }
 
         protected void RetrieveButton_Click(object sender, RoutedEventArgs e)
@@ -55,6 +59,8 @@ namespace PMView
             try
             {
                 _userDetailsVM.ButtonSaveClick();
+                if (_employeeDetailsVM != null)
+                    _employeeDetailsUserControl.SaveChanges();
             }
             catch (Exception ex)
             {

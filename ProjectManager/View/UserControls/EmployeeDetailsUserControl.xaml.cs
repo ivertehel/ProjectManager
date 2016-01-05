@@ -24,21 +24,32 @@ namespace PMView.View
     {
         private EmployeeDetailsUserControlVM _employeeDetailsUserControlVM;
 
+        private UserVM _currentUser;
+
         private List<CheckBox> _skills = new List<CheckBox>();
 
-        public EmployeeDetailsUserControl(IEmployee employee, ILoadData lastScreen)
+        private UserDetailsVM _userDetailsVM;
+
+        public EmployeeDetailsUserControl(IEmployee employee, ILoadData lastScreen, UserDetailsVM userDetailsVM)
         {
             InitializeComponent();
+            _userDetailsVM = userDetailsVM;
+            _currentUser = employee as UserVM;
             _employeeDetailsUserControlVM = new EmployeeDetailsUserControlVM(employee, lastScreen);
             DataContext = _employeeDetailsUserControlVM;
-            var currentUser = employee as UserVM;
-            foreach (var item in Skill.Items)
+            LoadSkills();
+
+        }
+
+        public void LoadSkills()
+        {
+            foreach (var item in SkillVM.Skills)
             {
                 var cb = new CheckBox();
-                cb.Content = item.Name;
+                cb.Content = item;
                 _skills.Add(cb);
-                cb.IsChecked = User_Skill.Items.Where(user_skill => currentUser.Equals(user_skill.User) && item.Name == user_skill.Skill.Name).Count() != 0 ? true : false;
                 cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
+                cb.IsChecked = _employeeDetailsUserControlVM.GetSkills(_currentUser).Where(skill => skill == item.Name).Count() != 0 ? true : false;
             }
 
             SkillsListBox.Items.Clear();
@@ -50,7 +61,19 @@ namespace PMView.View
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            _userDetailsVM.OneOrMoreFieldsWereUpdated();
+        }
+
+        public void SaveChanges()
+        {
+            List<string> newSkills = new List<string>();
+            foreach (var item in _skills)
+            {
+                if (item.IsChecked == true)
+                    newSkills.Add(item.Content.ToString());
+            }
+
+            _employeeDetailsUserControlVM.SaveChanges(newSkills);
         }
     }
 }

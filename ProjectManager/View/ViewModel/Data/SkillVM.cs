@@ -13,6 +13,8 @@ namespace PMView.View.WrapperVM
     {
         private Skill _skill;
 
+        private static List<SkillVM> _skills = new List<SkillVM>();
+
         public SkillVM(Skill skill)
         {
             _skill = skill;
@@ -22,6 +24,20 @@ namespace PMView.View.WrapperVM
         {
             get { return _skill; }
             set { _skill = value; }
+        }
+
+        public static List<SkillVM> Skills
+        {
+            get
+            {
+                _skills.Clear();
+                foreach (var item in Skill.Items)
+                {
+                    _skills.Add(new SkillVM(item));
+                }
+
+                return _skills; 
+            }
         }
 
         public string Name

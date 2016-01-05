@@ -42,7 +42,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
-            <Label Content="User properties" FontSize="30" HorizontalAlignment="Center"/>
+            <TextBlock Text="User properties" Name="Title" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,15,15,15">
             <Grid.Background>
