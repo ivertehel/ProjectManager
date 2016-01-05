@@ -164,7 +164,7 @@ namespace PMView
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
             if (_selectedEmployeeToAdd != null)
-                (new UsersDetails(_selectedEmployeeToAdd, _addEmployeeToTheProjectVM)).Show();
+                (new UsersDetails(_selectedEmployeeToAdd as IEmployee, _addEmployeeToTheProjectVM)).Show();
         }
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)

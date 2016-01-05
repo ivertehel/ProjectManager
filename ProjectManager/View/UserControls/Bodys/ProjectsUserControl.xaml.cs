@@ -57,7 +57,7 @@ namespace PMView.View
 
         private void CustomerProfileButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            (new UsersDetails(new UserVM(_projectsUserControlVM.SelectedOrder.Client.User), _projectsUserControlVM)).Show();
+            (new UsersDetails(new UserVM(_projectsUserControlVM.SelectedOrder.Client.User) as IUser, _projectsUserControlVM)).Show();
 
         }
 

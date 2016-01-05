@@ -50,11 +50,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="15,0,15,15">
+            <Grid Margin="15,0,15,15">
 
 
                 <Grid.RowDefinitions>
@@ -122,8 +118,9 @@
                         <TextBox Grid.Row="7" Text="{Binding Skype}" TextChanged="SomeProperty_Changed"/>
                     </Grid>
                 </Grid>
-                <TextBlock Grid.Row="2" Text="Description:" FontSize="18"/>
-                <TextBox Grid.Row="3" MaxLines="3" TextWrapping="Wrap" Text="{Binding Description}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16" TextChanged="SomeProperty_Changed"/>
+                <TextBlock Grid.Row="1" Text="Description:" FontSize="18"/>
+                <TextBox Grid.Row="2" MaxLines="3" TextWrapping="Wrap" Text="{Binding Description}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16" TextChanged="SomeProperty_Changed"/>
+                <Grid Grid.Row="3" Name="EmployeesGrid"></Grid>
                 <Grid Grid.Row="4" Margin="0,5,0,5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>

@@ -39,19 +39,21 @@ namespace PMView.View
 
         private ObservableCollection<User.States> _states = new ObservableCollection<User.States>();
 
-        public UserDetailsVM(UserVM user, ILoadData lastScreen)
+        public UserDetailsVM(IUser user, ILoadData lastScreen)
         {
             if (user == null)
                 return;
 
             _lastScreen = lastScreen;
-            CurrentEmployee = user;
+            CurrentUser = user as UserVM;
             ButtonRetrieveClick();
-            Logger.Info("User details screen", "Details of user " + user.Login + " has been loaded");
+            Logger.Info("User details screen", "Details of user " + CurrentUser.Login + " has been loaded");
             User.Update();
             LoadData();
             ButtonsActive = false;
         }
+
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -73,7 +75,7 @@ namespace PMView.View
             }
         }
 
-        public UserVM CurrentEmployee
+        public UserVM CurrentUser
         {
             get { return _currentEmployee; }
             set { _currentEmployee = value; }
@@ -218,40 +220,40 @@ namespace PMView.View
             }
             Logger.Info("User details screen",
                 $@"Details of user has been changed:{Environment.NewLine}
-                Name : {CurrentEmployee.Name} to {_name}{Environment.NewLine}
-                Surname : {CurrentEmployee.Surname} to {_surname}{Environment.NewLine}
-                State : {CurrentEmployee.State} to {_state}{Environment.NewLine}
-                Country : {CurrentEmployee.Country} to {_country}{Environment.NewLine}
-                Birthday : {CurrentEmployee.Birthday} to {_birthday}{Environment.NewLine}
-                Email : {CurrentEmployee.Email} to {_email}{Environment.NewLine}
-                Login : {CurrentEmployee.Login} to {_login}{Environment.NewLine}
-                Description : {CurrentEmployee.Description} to {_description}"
+                Name : {CurrentUser.Name} to {_name}{Environment.NewLine}
+                Surname : {CurrentUser.Surname} to {_surname}{Environment.NewLine}
+                State : {CurrentUser.State} to {_state}{Environment.NewLine}
+                Country : {CurrentUser.Country} to {_country}{Environment.NewLine}
+                Birthday : {CurrentUser.Birthday} to {_birthday}{Environment.NewLine}
+                Email : {CurrentUser.Email} to {_email}{Environment.NewLine}
+                Login : {CurrentUser.Login} to {_login}{Environment.NewLine}
+                Description : {CurrentUser.Description} to {_description}"
             );
 
-            CurrentEmployee.Name = _name;
-            CurrentEmployee.Surname = _surname;
-            CurrentEmployee.State = _state;
-            CurrentEmployee.Country = _country;
-            CurrentEmployee.Birthday = _birthday;
-            CurrentEmployee.Email = _email;
-            CurrentEmployee.Login = _login;
-            CurrentEmployee.Skype = _skype;
-            CurrentEmployee.Description = _description;
+            CurrentUser.Name = _name;
+            CurrentUser.Surname = _surname;
+            CurrentUser.State = _state;
+            CurrentUser.Country = _country;
+            CurrentUser.Birthday = _birthday;
+            CurrentUser.Email = _email;
+            CurrentUser.Login = _login;
+            CurrentUser.Skype = _skype;
+            CurrentUser.Description = _description;
             User.Update();
             LoadData();
         }
 
         public void ButtonRetrieveClick()
         {
-            _name = CurrentEmployee.Name;
-            _surname = CurrentEmployee.Surname;
-            _state = CurrentEmployee.State;
-            _skype = CurrentEmployee.Skype;
-            _country = CurrentEmployee.Country;
-            _birthday = CurrentEmployee.Birthday;
-            _email = CurrentEmployee.Email;
-            _login = CurrentEmployee.Login;
-            _description = CurrentEmployee.Description;
+            _name = CurrentUser.Name;
+            _surname = CurrentUser.Surname;
+            _state = CurrentUser.State;
+            _skype = CurrentUser.Skype;
+            _country = CurrentUser.Country;
+            _birthday = CurrentUser.Birthday;
+            _email = CurrentUser.Email;
+            _login = CurrentUser.Login;
+            _description = CurrentUser.Description;
             LoadData();
         }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PMView.View.WrapperVM
 {
-    public class UserVM : BaseVM, IUser
+    public class UserVM : BaseVM, IUser, IEmployee
     {
         private User _user;
 

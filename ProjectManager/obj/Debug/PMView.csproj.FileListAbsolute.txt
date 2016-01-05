@@ -41,3 +41,5 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\Det
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\ProjectModuleEdit.baml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\AddEmployeeToTheProject.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\AddEmployeeToTheProject.baml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UserControls\EmployeeDetailsUserControl.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UserControls\EmployeeDetailsUserControl.baml

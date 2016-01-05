@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("countries.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/detailwindows/addemployeetotheproject.xaml")]
 
 

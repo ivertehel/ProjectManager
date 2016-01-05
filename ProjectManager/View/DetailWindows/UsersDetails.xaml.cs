@@ -22,9 +22,11 @@ namespace PMView
     /// </summary>
     public partial class UsersDetails : Window
     {
-        private IUser _user;
+        protected IUser _user;
 
         private UserDetailsVM _userDetailsVM;
+
+        private EmployeeDetailsVM _employeeDetailsVM;
 
         public UsersDetails(IUser user, ILoadData lastScreen)
         {
@@ -35,12 +37,19 @@ namespace PMView
 
         }
 
-        private void RetrieveButton_Click(object sender, RoutedEventArgs e)
+        public UsersDetails(IEmployee employee, ILoadData lastScreen) : this(employee as IUser, lastScreen)
+        {
+            InitializeComponent();
+            _employeeDetailsVM = new EmployeeDetailsVM(employee, lastScreen);
+            EmployeesGrid.Children.Add(new EmployeeDetailsUserControl());
+        }
+
+        protected void RetrieveButton_Click(object sender, RoutedEventArgs e)
         {
             _userDetailsVM.ButtonRetrieveClick();
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        protected void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -52,17 +61,17 @@ namespace PMView
             }
         }
 
-        private void SomeProperty_Changed(object sender, TextChangedEventArgs e)
+        protected void SomeProperty_Changed(object sender, TextChangedEventArgs e)
         {
             _userDetailsVM.OneOrMoreFieldsWereUpdated();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        protected void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _userDetailsVM.ButtonsActive = false;
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        protected void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _userDetailsVM.OneOrMoreFieldsWereUpdated();
         }

@@ -61,9 +61,14 @@
     <Compile Include="View\DetailWindows\ProjectModuleEdit.xaml.cs">
       <DependentUpon>ProjectModuleEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\EmployeeDetailsUserControl.xaml.cs">
+      <DependentUpon>EmployeeDetailsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewModel\AddEmployeeToTheProjectVM.cs" />
     <Compile Include="View\ViewModel\ClientsUserControlVM.cs" />
     <Compile Include="View\ViewModel\Data\BaseVM.cs" />
+    <Compile Include="View\ViewModel\EmployeeDetailsVM.cs" />
+    <Compile Include="View\ViewModel\IEmployee.cs" />
     <Compile Include="View\ViewModel\ILoadData.cs" />
     <Compile Include="View\ViewModel\Data\OrderVM.cs" />
     <Compile Include="View\ViewModel\Data\PositionVM.cs" />
@@ -129,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UserControls\Bodys\EmployeesUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\EmployeeDetailsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
