@@ -19,7 +19,7 @@ namespace PMView
     /// <summary>
     /// Interaction logic for ProjectModuleEdit.xaml
     /// </summary>
-    public partial class ProjectModuleEdit : Window
+    public partial class ProjectModuleEdit : Window, ILoadData
     {
         private ILoadData _lastScreen;
 
@@ -30,7 +30,7 @@ namespace PMView
         {
             InitializeComponent();
             _lastScreen = projectsUserControlVM;
-            _projectModuleEditVM = new ProjectModuleEditVM(_lastScreen, projectsUserControlVM);
+            _projectModuleEditVM = new ProjectModuleEditVM(this, projectsUserControlVM);
             DataContext = _projectModuleEditVM;
             fillCheckboxList();
         }
@@ -70,7 +70,13 @@ namespace PMView
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)
         {
-            (new SkillWindow()).Show();
+            (new SkillWindow(_projectModuleEditVM)).Show();
+        }
+
+        public void LoadData()
+        {
+            fillCheckboxList();
+            _lastScreen.LoadData();
         }
     }
 }

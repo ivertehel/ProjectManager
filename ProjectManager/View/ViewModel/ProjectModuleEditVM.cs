@@ -97,6 +97,7 @@ namespace PMView.View
         {
             _lastScreen.LoadData();
             OnPropertyChanged("EmployeesCollection");
+
         }
 
         public void OnPropertyChanged(string propertyName)

@@ -11,7 +11,7 @@ using Core;
 
 namespace PMView
 {
-    public class SkillWindowVM : INotifyPropertyChanged
+    public class SkillWindowVM : INotifyPropertyChanged, ILoadData
     {
         private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
         private string _name;
@@ -26,9 +26,11 @@ namespace PMView
         private ObservableCollection<SkillVM> _savedCollection;
         private bool _saveAllChangesButton;
         private bool _cancelAllChangesButton;
+        private ILoadData _lastScreen;
 
-        public SkillWindowVM()
+        public SkillWindowVM(ILoadData lastScreen)
         {
+            _lastScreen = lastScreen;
             AddButton = false;
             EditButton = false;
             RemoveButton = false;
@@ -184,7 +186,7 @@ namespace PMView
             }
             _savedCollection = null;
             SaveAllChangesButton = false;
-            OnPropertyChanged("SkillsCollection");
+            LoadData();
         }
 
         public bool RemoveButton
@@ -305,6 +307,12 @@ namespace PMView
         private bool IsExist(string skillName)
         {
             return getSkillByName(skillName) == null ? false : true;
+        }
+
+        public void LoadData()
+        {
+            OnPropertyChanged("SkillsCollection");
+            _lastScreen.LoadData();
         }
     }
 }
