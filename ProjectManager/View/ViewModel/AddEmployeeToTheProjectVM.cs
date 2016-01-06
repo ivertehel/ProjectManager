@@ -68,6 +68,7 @@ namespace PMView.View
 
                     foreach (var item in User_Project.Items)
                     {
+                        if (_projectModuleEditVM.ProjectVM != null && _projectModuleEditVM.ProjectVM.Project.Id == item.Project.Id)
                         _savedPositions.Add(new User_ProjectVM(item));
                     }
                 }

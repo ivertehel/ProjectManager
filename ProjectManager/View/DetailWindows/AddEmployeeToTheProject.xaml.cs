@@ -181,7 +181,7 @@ namespace PMView
             }
 
             EmployeesCollectionDataGrid.SelectedItem = null;
-            EmployeesToAddListBox.SelectedItem = null;
+            //EmployeesToAddListBox.SelectedItem = null;
         }
 
         private void PositionCheckBox_Checked(object sender, RoutedEventArgs e)
