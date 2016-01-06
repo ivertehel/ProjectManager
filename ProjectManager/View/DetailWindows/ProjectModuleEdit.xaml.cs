@@ -56,12 +56,12 @@ namespace PMView
 
         private void SomeProperty_Changed(object sender, TextChangedEventArgs e)
         {
-            ////throw new NotImplementedException();
+            _projectModuleEditVM.SaveButton = true;
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LeadersCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ////throw new NotImplementedException();
+            _projectModuleEditVM.SelectedLeader = LeadersCollection.SelectedItem as UserVM;
         }
 
         private void AddEmployeeToTheProject_Click(object sender, RoutedEventArgs e)
@@ -85,6 +85,7 @@ namespace PMView
             try
             {
                 _projectModuleEditVM.AddProject();
+                MessageBox.Show("Module was saved", "Module information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
@@ -92,14 +93,19 @@ namespace PMView
             }
         }
 
-        private void LeadersCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            _projectModuleEditVM.SelectedLeader = LeadersCollection.SelectedItem as UserVM;
-        }
-
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void StateCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

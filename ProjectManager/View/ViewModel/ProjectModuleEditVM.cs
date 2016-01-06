@@ -26,6 +26,7 @@ namespace PMView.View
         private UserVM _selectedLeader;
         private Project.Statuses _status;
         private Project _project;
+        private bool _saveButton = false;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -47,13 +48,21 @@ namespace PMView.View
         public Project.Statuses Status
         {
             get { return _status; }
-            set { _status = value; }
+            set
+            {
+                _status = value;
+                SaveButton = true;
+            }
         }
 
         public UserVM SelectedLeader
         {
             get { return _selectedLeader; }
-            set { _selectedLeader = value; }
+            set
+            {
+                _selectedLeader = value;
+                SaveButton = true;
+            }
         }
 
         public ObservableCollection<UserVM> LeadersCollection
@@ -66,7 +75,6 @@ namespace PMView.View
                     if (_leadersCollection.FirstOrDefault(leader => leader.User.Id == item.User.Id) == null)
                         _leadersCollection.Add(item);
                 }
-
                 return _leadersCollection;
             }
         }
@@ -92,7 +100,11 @@ namespace PMView.View
         public ObservableCollection<UserVM> EmployeesCollection
         {
             get { return _employeesCollection; }
-            set { _employeesCollection = value; }
+            set
+            {
+                _employeesCollection = value;
+                SaveButton = true;
+            }
         }
 
         public OrderVM CurrentOrder
@@ -104,25 +116,53 @@ namespace PMView.View
         public string Name
         {
             get { return _projectVM.Name; }
-            set { _projectVM.Name = value; }
+            set
+            {
+                _projectVM.Name = value;
+                SaveButton = true;
+            }
         }
 
         public string Description
         {
             get { return _projectVM.Description; }
-            set { _projectVM.Description = value; }
+            set
+            {
+                _projectVM.Description = value;
+                SaveButton = true;
+            }
         }
 
         public DateTime StartDate
         {
             get { return _projectVM.StartDate; }
-            set { _projectVM.StartDate = value; }
+            set
+            {
+                _projectVM.StartDate = value;
+                _projectVM.ReleaseDate = value;
+                OnPropertyChanged("ReleaseDate");
+                SaveButton = true;
+            }
         }
 
         public DateTime ReleaseDate
         {
             get { return _projectVM.ReleaseDate; }
-            set { _projectVM.ReleaseDate = value; }
+            set
+            {
+                _projectVM.ReleaseDate = value;
+                SaveButton = true;
+            }
+        }
+
+        public bool SaveButton
+        {
+            get { return _saveButton; }
+            set
+            {
+                _saveButton = value;
+                OnPropertyChanged("SaveButton");
+            }
         }
 
         public void AddProject()
@@ -166,6 +206,7 @@ namespace PMView.View
                 _project.Status = Status;
             }
             LoadData();
+            SaveButton = true;
         }
 
         public void LoadData()

@@ -1778,3 +1778,27 @@
 06.01.2016 0:00:00 | 12:10:21.7443357:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 06.01.2016 0:00:00 | 12:10:27.3760271:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 06.01.2016 0:00:00 | 12:10:33.1928157:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:21:37.9083526:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:34:41.3243163:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:43:17.0550468:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:43:39.9232631:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:44:54.0201973:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:45:47.5923137:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:48:09.1208422:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:48:33.4827303:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:48:40.3763012:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:48:42.4436250:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:48:53.3582421:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:50:50.0572093:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:50:58.5496521:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:51:09.1532114:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:51:29.0989352:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:51:56.2771300:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:52:25.1207075:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 13:53:30.8164418:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:53:35.2049401:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:53:36.2312894:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:53:44.1655855:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:54:07.8377510:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:54:18.4780267:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 13:54:56.8241448:Info | Order screen | Details of Android Matches Puzzle game have been loaded

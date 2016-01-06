@@ -119,9 +119,9 @@
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock VerticalAlignment="Center" Text="Start date:" FontSize="18"  Grid.Column="0" Margin="0,0,10,0"/>
-                                <DatePicker Grid.Column="1" DisplayDate="{Binding StartDate}" SelectedDate="{Binding StartDate}" SelectedDateChanged="ComboBox_SelectionChanged"/>
+                                <DatePicker Grid.Column="1" DisplayDate="{Binding StartDate}" SelectedDate="{Binding StartDate}"/>
                                 <TextBlock VerticalAlignment="Center" Text="Finish date:" FontSize="18" Margin="10,0,10,0" Grid.Column="2"/>
-                                <DatePicker Grid.Column="3" DisplayDate="{Binding ReleaseDate}" SelectedDate="{Binding ReleaseDate}" SelectedDateChanged="ComboBox_SelectionChanged"/>
+                                <DatePicker Grid.Column="3" DisplayDate="{Binding ReleaseDate}" SelectedDate="{Binding ReleaseDate}"/>
                                 <TextBlock Grid.Column="4" VerticalAlignment="Center" Text="Leader:" FontSize="18" Margin="10,0,10,0"/>
                                 <ComboBox Grid.Column="5" MinWidth="100" VerticalAlignment="Center" SelectedItem="{Binding SelectedLeader}" SelectionChanged="LeadersCollection_SelectionChanged" Name="LeadersCollection" ItemsSource="{Binding Path=LeadersCollection}" Margin="10,0,10,0"/>
                                 <Grid Grid.Column="6"  HorizontalAlignment="Right" MinWidth="100">
@@ -139,7 +139,7 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Grid.Row="0" Text="Description:" FontSize="18"/>
-                                <TextBox Grid.Row="1" MaxLines="3" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Description}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16" Name="Description"/>
+                                <TextBox Grid.Row="1" MaxLines="3" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Description}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16" Name="Description" TextChanged="SomeProperty_Changed"/>
                             </Grid>
                         </Grid>
                         <Grid Grid.Column="1" Margin="10,0,0,0">
@@ -254,12 +254,12 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Name="CancelButton" MinWidth="100" Click="CancelButton_Click"  Content="Cancel"  Margin="10,5,0,5">
+                        <Button Grid.Column="0" Name="CancelButton" MinWidth="100" IsEnabled="{Binding Path=CancelAllChangesButton}"  Content="Back" Click="CancelButton_Click"  Margin="10,5,0,5">
                             <Button.Background>
                                 <SolidColorBrush Color="White" Opacity="0.5"/>
                             </Button.Background>
                         </Button>
-                        <Button Grid.Column="1" Name="SaveButton" MinWidth="100" Click="SaveButton_Click" Content="Save module"  Margin="10,5,0,5">
+                        <Button Grid.Column="1" Name="SaveButton" MinWidth="100" IsEnabled="{Binding Path=SaveButton}" Click="SaveButton_Click" Content="Add module"  Margin="10,5,0,5">
                             <Button.Background>
                                 <SolidColorBrush Color="White" Opacity="0.5"/>
                             </Button.Background>
