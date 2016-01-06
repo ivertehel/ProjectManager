@@ -3,6 +3,7 @@
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\AddEmployeeToTheProject.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\EmptyWindow.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\ProjectModuleEdit.xaml;;
+FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\SkillWindow.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\TeamsDetails.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\UserControls\Bodys\ClientsUserControl.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\UserControls\Bodys\EmployeesUserControl.xaml;;
@@ -14,5 +15,4 @@ FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\UserControls
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\UserControls\Bodys\ReportsUserControl.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\UserControls\Bodys\TeamsUserControl.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\UsersDetails.xaml;;
-FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\SkillWindow.xaml;;
 

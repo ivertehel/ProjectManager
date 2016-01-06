@@ -16,12 +16,15 @@ namespace PMView.View
 
         private ILoadData _lastScreen;
 
-        private List<string> _statuses = new List<string>();
+        private List<Project.Statuses> _statuses = new List<Project.Statuses>();
 
         private ProjectsUserControlVM _projectsUserControlVM;
         private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
         private ProjectVM _projectVM = new ProjectVM(new Project());
+        private ObservableCollection<UserVM> _leadersCollection = new ObservableCollection<UserVM>();
+        private UserVM _selectedLeader;
+        private Project.Statuses _status;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -33,10 +36,38 @@ namespace PMView.View
             _currentOrder = projectsUserControlVM.SelectedOrder;
             _projectVM.StartDate = DateTime.Now;
             _projectVM.ReleaseDate = DateTime.Now.AddDays(31);
-            _statuses.Add(Project.Statuses.Discarded.ToString());
-            _statuses.Add(Project.Statuses.Done.ToString());
-            _statuses.Add(Project.Statuses.InProgress.ToString());
-            _statuses.Add(Project.Statuses.Opened.ToString());
+
+            foreach (Project.Statuses status in Enum.GetValues(typeof(Project.Statuses)))
+            {
+                _statuses.Add(status);
+            }
+        }
+
+        public Project.Statuses Status
+        {
+            get { return _status; }
+            set { _status = value; }
+        }
+
+        public UserVM SelectedLeader
+        {
+            get { return _selectedLeader; }
+            set { _selectedLeader = value; }
+        }
+
+        public ObservableCollection<UserVM> LeadersCollection
+        {
+            get
+            {
+                _leadersCollection.Clear();
+                foreach (var item in EmployeesCollection)
+                {
+                    if (_leadersCollection.FirstOrDefault(leader => leader.User.Id == item.User.Id) == null)
+                        _leadersCollection.Add(item);
+                }
+
+                return _leadersCollection;
+            }
         }
 
         public ProjectsUserControlVM ProjectUserControlVM
@@ -49,7 +80,7 @@ namespace PMView.View
             get { return _projectVM; }
         }
 
-        public List<string> Statuses
+        public List<Project.Statuses> Statuses
         {
             get
             {
@@ -93,11 +124,34 @@ namespace PMView.View
             set { _projectVM.ReleaseDate = value; }
         }
 
+        public void AddProject()
+        {
+            if (string.IsNullOrEmpty(Name) || Name[0] == ' ')
+                throw new Exception("Name can't be empty or start from space");
+            if (CurrentOrder == null)
+                throw new Exception("Order was deleted");
+            if (Status == Project.Statuses.InProgress && SelectedLeader == null)
+            {
+                throw new Exception("Module or project must contain leader");
+            }
+
+            //Project p = new Project()
+            //{
+            //    Name = Name,
+            //    Description = Description,
+            //    Leader = SelectedLeader.User,
+            //    StartDate = StartDate,
+            //    ReleaseDate = ReleaseDate,
+            //    Order = CurrentOrder.Order,
+            //    Status = Status.Value
+            //};
+        }
+
         public void LoadData()
         {
             _lastScreen.LoadData();
             OnPropertyChanged("EmployeesCollection");
-
+            OnPropertyChanged("LeadersCollection");
         }
 
         public void OnPropertyChanged(string propertyName)

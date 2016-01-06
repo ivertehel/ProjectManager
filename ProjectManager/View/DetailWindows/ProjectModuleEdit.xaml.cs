@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PMView.View;
 using PMView.View.WrapperVM;
+using PMDataLayer;
 
 namespace PMView
 {
@@ -77,6 +78,23 @@ namespace PMView
         {
             fillCheckboxList();
             _lastScreen.LoadData();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _projectModuleEditVM.AddProject();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void LeadersCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _projectModuleEditVM.SelectedLeader = LeadersCollection.SelectedItem as UserVM;
         }
     }
 }
