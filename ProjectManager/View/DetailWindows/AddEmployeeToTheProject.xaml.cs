@@ -20,7 +20,7 @@ namespace PMView
     /// <summary>
     /// Interaction logic for AddEmployeeToTheProject.xaml
     /// </summary>
-    public partial class AddEmployeeToTheProject : Window
+    public partial class AddEmployeeToTheProject : Window, ILoadData
     {
         private AddEmployeeToTheProjectVM _addEmployeeToTheProjectVM;
 
@@ -40,20 +40,7 @@ namespace PMView
             _projectModuleEditVM = projectModuleEditVM;
             _addEmployeeToTheProjectVM = new AddEmployeeToTheProjectVM(lastScreen, projectModuleEditVM);
             DataContext = _addEmployeeToTheProjectVM;
-            foreach (var item in SkillVM.Skills)
-            {
-                var cb = new CheckBox();
-                cb.Content = item.Name;
-                _skills.Add(cb);
-                cb.IsChecked = false;
-                cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
-            }
-
-            SkillsListBox.Items.Clear();
-            foreach (var item in _skills)
-            {
-                SkillsListBox.Items.Add(item);
-            }
+            fillCheckboxList();
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
@@ -123,6 +110,7 @@ namespace PMView
             try
             {
                 _addEmployeeToTheProjectVM.AddButtonClick(_selectedEmployeeToAdd);
+                HelpText.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
             {
@@ -213,6 +201,36 @@ namespace PMView
         {
             _addEmployeeToTheProjectVM.SavePositionsClick((from items in _positions where items.IsChecked == true select items.Content.ToString()).ToList());
             _addEmployeeToTheProjectVM.SavePositionButton = false;
+        }
+
+        private void AddSkill_Click(object sender, RoutedEventArgs e)
+        {
+            (new SkillWindow(this)).Show();
+        }
+
+        private void fillCheckboxList()
+        {
+            _skills.Clear();
+            foreach (var item in SkillVM.Skills)
+            {
+                var cb = new CheckBox();
+                cb.Content = item.Name;
+                _skills.Add(cb);
+                cb.IsChecked = false;
+                cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
+            }
+
+            SkillsListBox.Items.Clear();
+            foreach (var item in _skills)
+            {
+                SkillsListBox.Items.Add(item);
+            }
+        }
+
+        public void LoadData()
+        {
+            fillCheckboxList();
+            _lastScreen.LoadData();
         }
     }
 }

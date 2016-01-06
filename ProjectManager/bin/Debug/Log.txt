@@ -2074,3 +2074,180 @@
 06.01.2016 0:00:00 | 22:17:35.4237933:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 06.01.2016 0:00:00 | 22:17:38.1129112:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 06.01.2016 0:00:00 | 22:17:46.6874753:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:20:34.7142865:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:20:41.1934439:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:20:51.7391134:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:21:16.0920789:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:21:19.5006517:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:21:22.8315609:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:21:31.5122997:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:22:11.2964343:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:22:15.3833786:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:22:24.0512463:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:25:11.9732650:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:25:16.6641131:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:25:26.6025945:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:25:40.4261821:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:26:02.3378600:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:26:09.3102526:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:27:15.4046172:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:27:21.4054160:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:27:29.7450939:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:27:38.5534346:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:27:53.4740420:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+06.01.2016 0:00:00 | 22:28:05.2215529:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:28:06.9570776:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:28:10.9152914:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+06.01.2016 0:00:00 | 22:28:14.9202965:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+06.01.2016 0:00:00 | 22:28:20.9839653:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-1 
+ 
+            Description : Unity3D developers to Unity3D developers
+06.01.2016 0:00:00 | 22:28:27.0882092:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to Unity3D-12 
+ 
+            Description : Unity3D developers to Unity3D developers
+06.01.2016 0:00:00 | 22:28:30.4317149:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers to Unity3D developers 
+06.01.2016 0:00:00 | 22:28:38.1839174:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers  to Unity3D developers 
+06.01.2016 0:00:00 | 22:28:40.9118879:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers  to Unity3D developers 
+06.01.2016 0:00:00 | 22:30:07.1439650:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers  to Unity3D developers 
+06.01.2016 0:00:00 | 22:31:14.4275411:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:31:20.3894258:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:33:20.5310289:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:33:23.4529500:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:35:43.9884294:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:35:46.5103214:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:38:27.1167980:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:38:31.1342781:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:38:45.0561749:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:38:47.8825301:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:38:56.8479865:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:40:30.1167407:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:40:31.8004152:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:41:25.3803599:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:41:27.9418648:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:41:41.5846538:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:41:44.2968710:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:43:01.5551096:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:43:03.3323465:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:45:00.3584413:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:45:02.1310238:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:48:01.4847894:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:48:03.8249394:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:48:07.8774293:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1 to  
+ 
+            Description : Unity3D developers to 
+06.01.2016 0:00:00 | 22:48:15.1056568:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:48:21.2274381:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Ivan to  
+ 
+            Description : asdgfvweg to 
+06.01.2016 0:00:00 | 22:48:24.1782486:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:48:31.0757457:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : fgxyhgvjkkjh to  
+ 
+            Description : jhgvcujvkjb to 
+06.01.2016 0:00:00 | 22:49:05.2866778:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:49:07.3913763:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:49:30.9244553:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : sdvedv to  
+ 
+            Description : Unity3D developers to 
+06.01.2016 0:00:00 | 22:50:42.6932301:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:50:44.7907759:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:50:47.9494622:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers to Unity3D developers
+06.01.2016 0:00:00 | 22:50:53.9963262:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers to Unity3D developers
+06.01.2016 0:00:00 | 22:50:57.2093853:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:51:00.5475990:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers to Unity3D developers
+06.01.2016 0:00:00 | 22:51:02.6177132:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:51:06.1798690:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers to Unity3D developers
+06.01.2016 0:00:00 | 22:51:08.7607249:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:51:12.6676214:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers2 to Unity3D developers2
+06.01.2016 0:00:00 | 22:51:15.1938202:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:51:19.8611427:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:51:34.9867355:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:51:40.4358924:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:51:44.6152423:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:51:44.6187446:Info | User details screen | Details of user khrystyna1204 has been loaded
+06.01.2016 0:00:00 | 22:51:44.7503389:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:51:48.4362594:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystyna to Khrystyna
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Male to Male
+
+                Country : Ukraine to Ukraine
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+06.01.2016 0:00:00 | 22:51:48.4482661:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:51:54.4153227:Info | Team details screen | Team details have been loaded
+06.01.2016 0:00:00 | 22:52:07.3570515:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:52:11.2030456:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:54:10.5014877:Info | Details screen | Project details have been loaded
+06.01.2016 0:00:00 | 22:54:15.2155117:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:54:17.3047840:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:54:23.4791394:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+06.01.2016 0:00:00 | 22:54:33.9186193:Info | Order screen | Details of Android Matches Puzzle game have been loaded

@@ -23,10 +23,6 @@ namespace PMView.View
 
         private List<string> _employeesPositions = new List<string>();
 
-        private string _name;
-
-        private string _description;
-
         private bool _buttonsActive = false;
 
         private TeamVM _currentTeam;
@@ -41,7 +37,6 @@ namespace PMView.View
             Logger.Info("Team details screen", "Team details have been loaded");
             _projectsUserControlVM = control;
             CurrentTeam = team;
-            ButtonRetrieveClick();
             OnPropertyChanged("Name");
             OnPropertyChanged("Description");
             OnPropertyChanged("OrdersCollection");
@@ -74,20 +69,20 @@ namespace PMView.View
 
         public string Name
         {
-            get { return _name; }
+            get { return _currentTeam.Name; }
             set
             {
-                _name = value;
+                _currentTeam.Name = value;
                 ButtonsActive = true;
             }
         }
 
         public string Description
         {
-            get { return _description; }
+            get { return _currentTeam.Description; }
             set
             {
-                _description = value;
+                _currentTeam.Description = value;
                 ButtonsActive = true;
             }
         }
@@ -236,21 +231,14 @@ namespace PMView.View
             }
 
             Logger.Info("Team details screen", $@"Details of team has been changed: {Environment.NewLine} 
-            Name : {CurrentTeam.Name} to {_name} {Environment.NewLine} 
-            Description : {CurrentTeam.Description} to {_description}");
-            _savePositions(positions);
-            CurrentTeam.Name = _name;
-            CurrentTeam.Description = _description;
-            _projectsUserControlVM.OnPropertyChanged("TeamsCollection");
-            OnPropertyChanged("Name");
-            OnPropertyChanged("Description");
-            ButtonsActive = false;
-        }
+            Name : {CurrentTeam.Name} to {Name} {Environment.NewLine} 
+            Description : {CurrentTeam.Description} to {Description}");
+            if (positions!=null)
+                _savePositions(positions);
 
-        public void ButtonRetrieveClick()
-        {
-            Name = CurrentTeam.Name;
-            Description = CurrentTeam.Description;
+            CurrentTeam.Name = Name;
+            CurrentTeam.Description = Description;
+            _projectsUserControlVM.OnPropertyChanged("TeamsCollection");
             OnPropertyChanged("Name");
             OnPropertyChanged("Description");
             ButtonsActive = false;

@@ -72,18 +72,16 @@ namespace PMView
         {
             try
             {
-                _teamDetailsVM.ButtonSaveClick(_positions.Where(items => items.IsChecked == true).Select(item => item.Content.ToString()).ToArray());
+                if (_positions != null)
+                    _teamDetailsVM.ButtonSaveClick(_positions.Where(items => items.IsChecked == true).Select(item => item.Content.ToString()).ToArray());
+                else
+                    _teamDetailsVM.ButtonSaveClick(null);
                 _teamDetailsVM.LoadData();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void RetrieveButton_Click(object sender, RoutedEventArgs e)
-        {
-            _teamDetailsVM.ButtonRetrieveClick();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
