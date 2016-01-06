@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using PMDataLayer;
 using PMView.View.WrapperVM;
 
@@ -35,6 +36,8 @@ namespace PMView.View
         private ILoadData _lastScreen;
         private bool _saveButton;
         private ProjectModuleEditVM _projectModuleEditVM;
+        private ObservableCollection<string> _employeesPositions = new ObservableCollection<string>();
+        private ObservableCollection<string> _savedEmployeesPositions;
 
         public AddEmployeeToTheProjectVM(ILoadData lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
@@ -47,6 +50,41 @@ namespace PMView.View
             _lastScreen = lastScreen;
             LoadData();
         }
+
+        public ObservableCollection<string> EmployeesPositions
+        {
+            get
+            {
+                _employeesPositions.Clear();
+                if (_savedEmployeesPositions != null)
+                {
+                    var copy = new ObservableCollection<string>();
+                    foreach (var item in _savedEmployeesPositions)
+                        copy.Add(item);
+
+                    _savedEmployeesPositions.Clear();
+                    foreach (var item in copy)
+                        _savedEmployeesPositions.Add(item);
+
+                    return _savedEmployeesPositions; 
+                }
+
+                var user = _employeesCollection.FirstOrDefault(item => item.User == SelectedEmployeeToDelete.User);
+                foreach (var item in Position.Items)
+                {
+                    var userInProject = User_Project.Items.FirstOrDefault(up => up.Project.Id == _projectModuleEditVM.ProjectVM.Project.Id && up.Position.Name == item.Name && up.User.Id == user.User.Id);
+                    if (userInProject != null && _employeesPositions.Count(pos => pos == userInProject.Position.Name) == 0)
+                         _employeesPositions.Add(item.Name);
+                }
+
+                _savedEmployeesPositions = new ObservableCollection<string>();
+                foreach (var item in _employeesPositions)
+                    _savedEmployeesPositions.Add(item);
+
+                return _employeesPositions;
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -236,6 +274,11 @@ namespace PMView.View
                 filterEmployeesCollection();
                 return _employeesCollection;
             }
+        }
+
+        internal void SavePositionsClick(List<string> _positions)
+        {
+            throw new NotImplementedException();
         }
 
         public ObservableCollection<UserVM> EmployeesToAddCollection

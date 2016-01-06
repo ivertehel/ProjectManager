@@ -31,5 +31,10 @@ namespace PMDataLayer
             get { return Position.Items.Where(items => items.Id == _positionId).FirstOrDefault(); }
             set { _positionId = value.Id; }
         }
+
+        public IEnumerable<Position> Positions
+        {
+            get { return from items in User_Project.Items where items.User.Id == _userId select items.Position; }
+        }
     }
 }

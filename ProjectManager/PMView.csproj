@@ -64,6 +64,7 @@
     <Compile Include="View\DetailWindows\SkillWindow.xaml.cs">
       <DependentUpon>SkillWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewModel\Data\User_ProjectVM.cs" />
     <Compile Include="View\ViewModel\SkillWindowVM.cs" />
     <Compile Include="View\UserControls\EmployeeDetailsUserControl.xaml.cs">
       <DependentUpon>EmployeeDetailsUserControl.xaml</DependentUpon>

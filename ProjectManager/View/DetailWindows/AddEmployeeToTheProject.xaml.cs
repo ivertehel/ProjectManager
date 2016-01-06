@@ -31,6 +31,7 @@ namespace PMView
         private ProjectModuleEditVM _projectModuleEditVM;
 
         private UserVM _selectedEmployeeToAdd;
+        private List<CheckBox> _positions;
 
         public AddEmployeeToTheProject(ILoadData lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
@@ -158,10 +159,34 @@ namespace PMView
             {
                 _selectedEmployeeToAdd = (UserVM)EmployeesToAddListBox.SelectedItem;
                 _addEmployeeToTheProjectVM.ActivateButtons(_selectedEmployeeToAdd);
+                PositionsGrid.Visibility = Visibility.Visible;
+                _addEmployeeToTheProjectVM.SelectedEmployeeToDelete = (EmployeesToAddListBox.SelectedItem as UserVM);
+                _positions = new List<CheckBox>();
+                var employeesPositions = _addEmployeeToTheProjectVM.EmployeesPositions;
+
+                foreach (var item in Position.Items)
+                {
+                    var cb = new CheckBox();
+                    cb.Content = item.Name;
+                    _positions.Add(cb);
+                    cb.IsChecked = employeesPositions.Contains(item.Name) ? true : false;
+                    cb.Click += new System.Windows.RoutedEventHandler(this.PositionCheckBox_Checked);
+                }
+
+                PositionListBox.Items.Clear();
+                foreach (var item in _positions)
+                {
+                    PositionListBox.Items.Add(item);
+                }
             }
 
             EmployeesCollectionDataGrid.SelectedItem = null;
             EmployeesToAddListBox.SelectedItem = null;
+        }
+
+        private void PositionCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
@@ -173,6 +198,16 @@ namespace PMView
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
             _addEmployeeToTheProjectVM.SaveButtonClick();
+        }
+
+        private void RetrievePositionsButton_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void SavePositionsButton_Click(object sender, RoutedEventArgs e)
+        {
+            _addEmployeeToTheProjectVM.SavePositionsClick((from items in _positions where items.IsChecked == true select items.Content.ToString()).ToList());
         }
     }
 }
