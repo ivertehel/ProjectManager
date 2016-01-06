@@ -83,6 +83,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0">
@@ -210,7 +211,7 @@
                     </Grid>
 
                     <Grid Grid.Row="3">
-                        <Grid.ColumnDefinitions>
+                        <!--<Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
@@ -223,11 +224,11 @@
                                     <DrawingBrush Opacity="0.5"/>
                                 </Button.Background>
                             </Button>
-                        </Grid>
+                        </Grid>-->
                     </Grid>
 
                     <Grid Grid.Row="4">
-                        <DataGrid
+                        <!--<DataGrid
                       ItemsSource="{Binding EmployeesCollection}" ColumnWidth="*"
                       IsReadOnly="True" AutoGenerateColumns="False"
                       HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300"
@@ -242,7 +243,23 @@
                                 <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
                             </DataGrid.Columns>
 
-                        </DataGrid>
+                        </DataGrid>-->
+                    </Grid>
+                    <Grid Grid.Row="5" HorizontalAlignment="Right">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Name="CancelButton" MinWidth="100" IsEnabled="{Binding Path=CancelAllChangesButton}"  Content="Cancel"  Margin="10,5,0,5">
+                            <Button.Background>
+                                <SolidColorBrush Color="White" Opacity="0.5"/>
+                            </Button.Background>
+                        </Button>
+                        <Button Grid.Column="1" Name="SaveButton" MinWidth="100" IsEnabled="{Binding Path=SaveAllChangesButton}" Content="Save"  Margin="10,5,0,5">
+                            <Button.Background>
+                                <SolidColorBrush Color="White" Opacity="0.5"/>
+                            </Button.Background>
+                        </Button>
                     </Grid>
                 </Grid>
             </Grid>
