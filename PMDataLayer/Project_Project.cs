@@ -15,7 +15,11 @@ namespace PMDataLayer
         public Project ParrentProject
         {
             get { return Project.Items.Where(items => items.Id == _parrentId).FirstOrDefault(); }
-            set { _parrentId = value.Id; }
+            set
+            {
+                if (value != null)
+                    _parrentId = value.Id;
+            }
         }
 
         public Project ChildProject

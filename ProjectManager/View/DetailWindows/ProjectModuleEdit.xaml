@@ -254,12 +254,12 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Name="CancelButton" MinWidth="100" IsEnabled="{Binding Path=CancelAllChangesButton}"  Content="Cancel"  Margin="10,5,0,5">
+                        <Button Grid.Column="0" Name="CancelButton" MinWidth="100" Click="CancelButton_Click"  Content="Cancel"  Margin="10,5,0,5">
                             <Button.Background>
                                 <SolidColorBrush Color="White" Opacity="0.5"/>
                             </Button.Background>
                         </Button>
-                        <Button Grid.Column="1" Name="SaveButton" MinWidth="100" IsEnabled="{Binding Path=SaveAllChangesButton}" Click="SaveButton_Click" Content="Add module"  Margin="10,5,0,5">
+                        <Button Grid.Column="1" Name="SaveButton" MinWidth="100" Click="SaveButton_Click" Content="Save module"  Margin="10,5,0,5">
                             <Button.Background>
                                 <SolidColorBrush Color="White" Opacity="0.5"/>
                             </Button.Background>

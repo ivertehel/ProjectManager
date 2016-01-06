@@ -96,5 +96,10 @@ namespace PMView
         {
             _projectModuleEditVM.SelectedLeader = LeadersCollection.SelectedItem as UserVM;
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

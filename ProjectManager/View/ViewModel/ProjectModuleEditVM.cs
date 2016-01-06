@@ -25,6 +25,7 @@ namespace PMView.View
         private ObservableCollection<UserVM> _leadersCollection = new ObservableCollection<UserVM>();
         private UserVM _selectedLeader;
         private Project.Statuses _status;
+        private Project _project;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -134,17 +135,37 @@ namespace PMView.View
             {
                 throw new Exception("Module or project must contain leader");
             }
-
-            //Project p = new Project()
-            //{
-            //    Name = Name,
-            //    Description = Description,
-            //    Leader = SelectedLeader.User,
-            //    StartDate = StartDate,
-            //    ReleaseDate = ReleaseDate,
-            //    Order = CurrentOrder.Order,
-            //    Status = Status.Value
-            //};
+            if (_project == null)
+            {
+                _project = new Project();
+                _project.Name = Name;
+                _project.Description = Description;
+                if (SelectedLeader != null)
+                    _project.Leader = SelectedLeader.User;
+                _project.StartDate = StartDate;
+                _project.ReleaseDate = ReleaseDate;
+                _project.Order = CurrentOrder.Order;
+                _project.Status = Status;
+                Project.Items.Add(_project);
+                Project_Project p = new Project_Project()
+                {
+                    ParrentProject = null,
+                    ChildProject = _project
+                };
+                Project_Project.Items.Add(p);
+            }
+            else
+            {
+                _project.Name = Name;
+                _project.Description = Description;
+                if (SelectedLeader != null)
+                    _project.Leader = SelectedLeader.User;
+                _project.StartDate = StartDate;
+                _project.ReleaseDate = ReleaseDate;
+                _project.Order = CurrentOrder.Order;
+                _project.Status = Status;
+            }
+            LoadData();
         }
 
         public void LoadData()

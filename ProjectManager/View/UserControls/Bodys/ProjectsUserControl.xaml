@@ -7,14 +7,13 @@
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
              mc:Ignorable="d" 
              >
-    <Grid>
+    <Grid VerticalAlignment="Stretch">
 
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
 
 
         </Grid.RowDefinitions>
@@ -205,7 +204,7 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="2" HorizontalAlignment="Stretch" Grid.Column="0"  Margin="18,0,18,0">
-            <Grid>
+            <Grid VerticalAlignment="Stretch">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -230,12 +229,13 @@
                     <DataGrid Grid.Row="0"
                       ItemsSource="{Binding ProjectsCollection}" ColumnWidth="*"
                       IsReadOnly="True" AutoGenerateColumns="False"
-                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="100">
                         <DataGrid.Columns>
                             <DataGridTextColumn  Header="Module name" Binding="{Binding Path=Name, Mode=OneWay}"/>
                             <DataGridTextColumn  Header="Description" Binding="{Binding Path=Description, Mode=OneWay}"/>
                             <DataGridTextColumn  Header="Start date" Binding="{Binding Path=StartDate, Mode=OneWay}"/>
                             <DataGridTextColumn  Header="Release date" Binding="{Binding Path=ReleaseDate, Mode=OneWay}"/>
+                            <DataGridTextColumn  Header="Leader" Binding="{Binding Path=Leader, Mode=OneWay}"/>
                             <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
                         </DataGrid.Columns>
                     </DataGrid>
@@ -244,29 +244,6 @@
           
            
         </Grid>
-        <Grid Grid.Row="3" HorizontalAlignment="Stretch" Grid.Column="0"  Margin="18,0,18,0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Label Content="Tasks:" TextBlock.FontSize="18"/>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <DataGrid Name="TasksDataGrid" ItemsSource="{Binding TasksCollection}" ColumnWidth="*"
-                      IsReadOnly="True" AutoGenerateColumns="False"
-                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn  Header="Priority" Binding="{Binding Path=Priority, Mode=OneWay}"/>
-                            <DataGridTextColumn  Header="Task name" Binding="{Binding Path=Name, Mode=OneWay}"/>
-                            <DataGridTextColumn  Header="Description" Binding="{Binding Path=Description, Mode=OneWay}"/>
-                            <DataGridTextColumn  Header="Hours" Binding="{Binding Path=Hours, Mode=OneWay}"/>
-                            <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
-            </Grid>
-        </Grid>
+      
     </Grid>
 </UserControl>
