@@ -26,12 +26,22 @@ namespace PMView
 
         private ProjectModuleEditVM _projectModuleEditVM;
         private List<CheckBox> _skills = new List<CheckBox>();
+        private ProjectVM _projectVM;
 
         public ProjectModuleEdit(ProjectsUserControlVM projectsUserControlVM)
         {
             InitializeComponent();
             _lastScreen = projectsUserControlVM;
             _projectModuleEditVM = new ProjectModuleEditVM(this, projectsUserControlVM);
+            DataContext = _projectModuleEditVM;
+            fillCheckboxList();
+        }
+
+        public ProjectModuleEdit(ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM)
+        {
+            InitializeComponent();
+            _lastScreen = projectsUserControlVM;
+            _projectModuleEditVM = new ProjectModuleEditVM(this, projectsUserControlVM, projectVM);
             DataContext = _projectModuleEditVM;
             fillCheckboxList();
         }

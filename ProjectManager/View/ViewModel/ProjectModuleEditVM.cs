@@ -45,6 +45,13 @@ namespace PMView.View
             }
         }
 
+        public ProjectModuleEditVM(ILoadData lastScreen, ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM) : this(lastScreen, projectsUserControlVM)
+        {
+            _projectVM = projectVM;
+            
+
+        }
+
         public Project.Statuses Status
         {
             get { return _status; }

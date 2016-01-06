@@ -74,5 +74,15 @@ namespace PMView.View
         {
             (new ProjectModuleEdit(_projectsUserControlVM)).Show();
         }
+
+        private void EditProject_Click(object sender, RoutedEventArgs e)
+        {
+            (new ProjectModuleEdit(_projectsUserControlVM, ModulesDataGrid.SelectedItem as ProjectVM)).Show();
+        }
+
+        private void RemoveProject_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -24,6 +24,9 @@ namespace PMView.View
         private ObservableCollection<TaskVM> _tasksCollection = new ObservableCollection<TaskVM>();
 
         private OrderVM _selectedOrder;
+        private bool _editButton;
+        private bool _removeButton;
+        private ProjectVM _selectedModule;
 
         public ProjectsUserControlVM()
         {
@@ -81,6 +84,17 @@ namespace PMView.View
                 if (SelectedOrder == null)
                     return string.Empty;
                 return "Customer: " + SelectedOrder.Client.User.Name + " " + SelectedOrder.Client.User.Surname;
+            }
+        }
+
+        public ProjectVM SelectedModule
+        {
+            get { return _selectedModule; }
+            set
+            {
+                _selectedModule = value;
+                EditButton = true;
+                RemoveButton = true;
             }
         }
 
@@ -147,6 +161,26 @@ namespace PMView.View
                     return string.Empty;
 
                 return SelectedOrder.Name;
+            }
+        }
+
+        public bool EditButton
+        {
+            get { return _editButton; }
+            set
+            {
+                _editButton = value;
+                OnPropertyChanged("EditButton");
+            }
+        }
+
+        public bool RemoveButton
+        {
+            get { return _removeButton; }
+            set
+            {
+                _removeButton = value;
+                OnPropertyChanged("RemoveButton");
             }
         }
 
