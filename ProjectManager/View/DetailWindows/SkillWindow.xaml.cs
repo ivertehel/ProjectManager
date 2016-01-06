@@ -40,6 +40,7 @@ namespace PMView
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             _skillWindowVM.Editing = true;
+            SkillNameTextBoxBackground.Background = Brushes.LightSkyBlue;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -54,12 +55,15 @@ namespace PMView
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
-            _skillWindowVM.SaveAllButtonClick();
+            if (MessageBox.Show("All your changes may change exist emloyees skills", "Are you sure?", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning, MessageBoxResult.No, MessageBoxOptions.DefaultDesktopOnly) == MessageBoxResult.Yes)
+                _skillWindowVM.SaveAllButtonClick();
         }
 
         private void SkillNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             _skillWindowVM.Name = SkillNameTextBox.Text;
+            if (!_skillWindowVM.Editing)
+                SkillNameTextBoxBackground.Background = Brushes.White;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)

@@ -46,7 +46,19 @@ namespace PMView
             get
             {
                 if (_savedCollection != null)
+                {
+                    ObservableCollection<SkillVM> _newCol = new ObservableCollection<SkillVM>();
+                    foreach (var item in _savedCollection)
+                    {
+                        _newCol.Add(item);
+                    }
+                    _savedCollection.Clear();
+                    foreach (var item in _newCol)
+                    {
+                        _savedCollection.Add(item);
+                    }
                     return _savedCollection;
+                }
 
                 _skillsCollection.Clear();
                 _savedCollection = new ObservableCollection<SkillVM>();
@@ -129,6 +141,7 @@ namespace PMView
         {
             SaveAllChangesButton = true;
             SaveButton = false;
+            _somethingChanged = true;
             getSkillByName(SelectedSkill.Name).Name = Name;
             OnPropertyChanged("SkillsCollection");
             Name = string.Empty;
@@ -237,8 +250,9 @@ namespace PMView
                     AddButton = false;
                     EditButton = false;
                     RemoveButton = false;
+                    SaveButton = false;
                     if (!_somethingChanged)
-                        SaveButton = false;
+                        SaveAllChangesButton = false;
                     Editing = false;
                     return;
                 }
@@ -256,7 +270,8 @@ namespace PMView
                     else
                     {
                         RemoveButton = false;
-                        AddButton = true;
+                        if (value[0] != ' ')
+                            AddButton = true;
                         EditButton = false;
                     }
                 }
@@ -271,7 +286,8 @@ namespace PMView
                     }
                     else
                     {
-                        SaveButton = true;
+                        if (value[0] != ' ')
+                            SaveButton = true;
                     }
                 }
                 OnPropertyChanged("Name");
