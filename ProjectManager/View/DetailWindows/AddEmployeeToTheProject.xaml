@@ -57,9 +57,9 @@
             </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
@@ -219,7 +219,78 @@
 
                 </DataGrid>
             </Grid>
+            
             <Grid Grid.Row="2">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBlock FontSize="14" Text="Click on employee to add positions in project for him:"></TextBlock>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <ListBox ItemsSource="{Binding EmployeesToAddCollection}" 
+                         FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" Name="EmployeesToAddListBox" SelectionChanged="EmployeesToAddListBox_SelectionChanged">
+                            <ListBox.BorderBrush>
+                                <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                            </ListBox.BorderBrush>
+                            <ListBox.Background>
+                                <SolidColorBrush Opacity="0"/>
+                            </ListBox.Background>
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                        </ListBox>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1"  Name="PositionsGrid" Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" HorizontalAlignment="Stretch">
+                        <TextBlock Text="Positions:" FontSize="18"/>
+                    </Grid>
+                    <Grid Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,5,5">
+                        <ListBox 
+                         FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <ListBox.BorderBrush>
+                                <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
+                            </ListBox.BorderBrush>
+                            <ListBox.Background>
+                                <SolidColorBrush Opacity="0.8" Color="White"/>
+                            </ListBox.Background>
+                        </ListBox>
+                    </Grid>
+                    <Grid Grid.Row="2" Margin="15,0,0,15" HorizontalAlignment="Right">
+
+                        <Button Name="SavePositionsButton" Width="100" Content="Save" Margin="20,0,10,0" Click="SavePositionsButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="IsEnabled" Value="{Binding Path=SavePositionButton}" />
+                                </Style>
+                            </Button.Style>
+                            <Button.Background>
+                                <SolidColorBrush Color="White" Opacity="0.5"/>
+                            </Button.Background>
+                        </Button>
+
+
+                    </Grid>
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -247,82 +318,6 @@
                     </Button.Background>
                 </Button>
             </Grid>
-              
-            <Grid Grid.Row="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <ListBox ItemsSource="{Binding EmployeesToAddCollection}" 
-                         FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" Name="EmployeesToAddListBox" SelectionChanged="EmployeesToAddListBox_SelectionChanged">
-                        <ListBox.BorderBrush>
-                            <SolidColorBrush Opacity="0" Color="SkyBlue"/>
-                        </ListBox.BorderBrush>
-                        <ListBox.Background>
-                            <SolidColorBrush Opacity="0"/>
-                        </ListBox.Background>
-                        <ListBox.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel />
-                            </ItemsPanelTemplate>
-                        </ListBox.ItemsPanel>
-                    </ListBox>
-                </Grid>
-                <Grid Grid.Column="1"  Name="PositionsGrid" Visibility="Hidden">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" HorizontalAlignment="Stretch">
-                        <TextBlock Text="Positions:" FontSize="18"/>
-                    </Grid>
-                    <Grid Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,5,5">
-                        <ListBox 
-                         FontSize="14" Name="PositionListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                            <ListBox.BorderBrush>
-                                <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
-                            </ListBox.BorderBrush>
-                            <ListBox.Background>
-                                <SolidColorBrush Opacity="0.8" Color="White"/>
-                            </ListBox.Background>
-                        </ListBox>
-                    </Grid>
-                    <Grid Grid.Row="2" Margin="15,0,15,15">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <Button Name="SavePositionsButton" Content="Save" Margin="20,0,10,0" Click="SavePositionsButton_Click">
-                                    <Button.Style>
-                                        <Style TargetType="Button">
-                                            <Setter Property="IsEnabled" Value="{Binding Path=ButtonsActive}" />
-                                        </Style>
-                                    </Button.Style>
-                                </Button>
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <Button Name="RetrievePositionsButton" Content="Retrieve" Margin="10,0,5,0" Click="RetrievePositionsButton_Click">
-                                    <Button.Style>
-                                        <Style TargetType="Button">
-                                            <Setter Property="IsEnabled" Value="{Binding Path=ButtonsActive}" />
-                                        </Style>
-                                    </Button.Style>
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
-               
-            </Grid>
-
         </Grid>
 
     </Grid>

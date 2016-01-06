@@ -179,14 +179,18 @@ namespace PMView
                     PositionListBox.Items.Add(item);
                 }
             }
+            else
+            {
+                PositionsGrid.Visibility = Visibility.Hidden;
+            }
 
             EmployeesCollectionDataGrid.SelectedItem = null;
-            //EmployeesToAddListBox.SelectedItem = null;
+            ////EmployeesToAddListBox.SelectedItem = null;
         }
 
         private void PositionCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            
+            _addEmployeeToTheProjectVM.SavePositionButton = true;
         }
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
@@ -208,6 +212,7 @@ namespace PMView
         private void SavePositionsButton_Click(object sender, RoutedEventArgs e)
         {
             _addEmployeeToTheProjectVM.SavePositionsClick((from items in _positions where items.IsChecked == true select items.Content.ToString()).ToList());
+            _addEmployeeToTheProjectVM.SavePositionButton = false;
         }
     }
 }

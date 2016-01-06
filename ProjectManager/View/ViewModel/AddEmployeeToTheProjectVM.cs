@@ -37,8 +37,8 @@ namespace PMView.View
         private bool _saveButton;
         private ProjectModuleEditVM _projectModuleEditVM;
         private ObservableCollection<string> _employeesPositions = new ObservableCollection<string>();
-        private ObservableCollection<string> _savedEmployeesPositions;
         private List<User_ProjectVM> _savedPositions;
+        private bool _savePositionButton;
 
         public AddEmployeeToTheProjectVM(ILoadData lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
@@ -297,6 +297,16 @@ namespace PMView.View
             set { _state = value; }
         }
 
+        public bool SavePositionButton
+        {
+            get { return _savePositionButton; }
+            set
+            {
+                _savePositionButton = value;
+                OnPropertyChanged("SavePositionButton");
+            }
+        }
+
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -351,6 +361,7 @@ namespace PMView.View
                 RemoveButton = false;
                 ProfileButton = false;
                 SaveButton = true;
+                _savedPositions.RemoveAll(item => item.User.Id == user.User.Id);
                 OnPropertyChanged("RemoveButton");
                 OnPropertyChanged("ProfileButton");
                 OnPropertyChanged("SaveButton");
