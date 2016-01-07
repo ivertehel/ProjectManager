@@ -207,6 +207,18 @@ namespace PMView.View
                     ChildProject = _project
                 };
                 Project_Project.Items.Add(p);
+
+                foreach (var item in _savedPositions)
+                {
+                    User_Project user_project = new User_Project()
+                    {
+                        Position = item.Position,
+                        Project = _project,
+                        User = item.User
+                    };
+
+                    User_Project.Items.Add(user_project);
+                }
             }
             else
             {
@@ -218,7 +230,14 @@ namespace PMView.View
                 _project.ReleaseDate = ReleaseDate;
                 _project.Order = CurrentOrder.Order;
                 _project.Status = Status;
+
+                foreach (var item in User_Project.Items.Where(user_project => user_project.Project.Id == _project.Id).ToList())
+                {
+                    _savedPositions.Add(new User_ProjectVM(item));
+                }
             }
+            
+
             LoadData();
             SaveButton = true;
         }
