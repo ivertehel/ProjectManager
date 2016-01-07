@@ -156,7 +156,11 @@ namespace PMView.View
         public bool SaveButton
         {
             get { return _saveButton; }
-            set { _saveButton = value; }
+            set
+            {
+                _saveButton = value;
+                OnPropertyChanged("SaveButton");
+            }
         }
 
         public bool ProfileButton

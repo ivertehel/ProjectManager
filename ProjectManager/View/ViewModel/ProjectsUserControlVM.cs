@@ -232,7 +232,8 @@ namespace PMView.View
                 _employeesCollection.Clear();
                 foreach (var item in e)
                 {
-                    _employeesCollection.Add(new UserVM(item));
+                    if (_employeesCollection.FirstOrDefault(user => user.User.Id == item.Id) == null)
+                        _employeesCollection.Add(new UserVM(item));
                 }
 
                 return _employeesCollection;

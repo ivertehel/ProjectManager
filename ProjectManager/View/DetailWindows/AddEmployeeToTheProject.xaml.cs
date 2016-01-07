@@ -201,6 +201,7 @@ namespace PMView
         {
             _addEmployeeToTheProjectVM.SavePositionsClick((from items in _positions where items.IsChecked == true select items.Content.ToString()).ToList());
             _addEmployeeToTheProjectVM.SavePositionButton = false;
+            _addEmployeeToTheProjectVM.SaveButton = true;
         }
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)

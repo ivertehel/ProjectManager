@@ -43,11 +43,15 @@ namespace PMView
             _lastScreen = projectsUserControlVM;
             _projectModuleEditVM = new ProjectModuleEditVM(this, projectsUserControlVM, projectVM);
             DataContext = _projectModuleEditVM;
+            _projectVM = projectVM;
             fillCheckboxList();
+
+           
         }
 
         private void fillCheckboxList()
         {
+            
             _skills.Clear();
             foreach (var item in SkillVM.Skills)
             {
@@ -61,6 +65,15 @@ namespace PMView
             foreach (var item in _skills)
             {
                 SkillsListBox.Items.Add(item);
+            }
+
+            if (_projectModuleEditVM != null && _projectModuleEditVM.ProjectVM != null)
+            {
+                var selectedSkills = _projectModuleEditVM.Skills;
+                foreach (var item in _skills)
+                {
+                    item.IsChecked = selectedSkills.FirstOrDefault(skill => skill == item.Content.ToString()) != null ? true : false;
+                }
             }
         }
 

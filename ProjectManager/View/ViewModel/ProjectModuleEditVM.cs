@@ -22,6 +22,7 @@ namespace PMView.View
         private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
         private ProjectVM _projectVM = new ProjectVM(new Project());
+
         private ObservableCollection<UserVM> _leadersCollection = new ObservableCollection<UserVM>();
         private UserVM _selectedLeader;
         private Project.Statuses _status;
@@ -50,11 +51,13 @@ namespace PMView.View
         {
             _projectVM = projectVM;
 
+            _project = ProjectVM.Project;
+
             foreach (var item in User_Project.Items)
             {
                 _savedPositions.Add(new User_ProjectVM(item));
                 
-                if (_employeesCollection.FirstOrDefault(employee => employee.User.Id == item.User.Id) == null)
+                if (_employeesCollection.FirstOrDefault(employee => employee.User.Id == item.User.Id) == null && item.Project.Id == _projectVM.Project.Id)
                     _employeesCollection.Add(new UserVM(item.User));
             }
 
@@ -69,6 +72,23 @@ namespace PMView.View
             {
                 _status = value;
                 SaveButton = true;
+            }
+        }
+
+        public List<string> Skills
+        {
+            get
+            {
+                List<string> skills = new List<string>();
+                if (_project == null)
+                    return skills;
+
+                foreach (var item in Project_Skill.Items.Where(skill => skill.Project.Id == _project.Id).ToList())
+                {
+                    skills.Add(item.Skill.Name);
+                }
+
+                return skills;
             }
         }
 
@@ -228,6 +248,9 @@ namespace PMView.View
 
                     User_Project.Items.Add(user_project);
                 }
+
+                
+                
             }
             else
             {
@@ -240,9 +263,10 @@ namespace PMView.View
                 _project.Order = CurrentOrder.Order;
                 _project.Status = Status;
 
-                foreach (var item in User_Project.Items.Where(user_project => user_project.Project.Id == _project.Id).ToList())
+                User_Project.Items.RemoveAll(item => item.Project.Id == _project.Id);
+                foreach (var item in _savedPositions)
                 {
-                    _savedPositions.Add(new User_ProjectVM(item));
+                    User_Project.Items.Add(item.User_Project);
                 }
 
                 Project_Skill.Items.RemoveAll(item => item.Project.Id == _project.Id);
@@ -258,6 +282,8 @@ namespace PMView.View
 
                 Project_Skill.Items.Add(project_skill);
             }
+
+            
 
             LoadData();
             SaveButton = true;
