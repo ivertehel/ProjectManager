@@ -27,6 +27,7 @@ namespace PMView.View
         private Project.Statuses _status;
         private Project _project;
         private bool _saveButton = false;
+        private List<User_ProjectVM> _savedPositions = new List<User_ProjectVM>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -172,6 +173,12 @@ namespace PMView.View
             }
         }
 
+        public List<User_ProjectVM> SavedPositions
+        {
+            get { return _savedPositions; }
+            set { _savedPositions = value; }
+        }
+
         public void AddProject()
         {
             if (string.IsNullOrEmpty(Name) || Name[0] == ' ')
@@ -221,6 +228,7 @@ namespace PMView.View
             _lastScreen.LoadData();
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("LeadersCollection");
+            OnPropertyChanged("SavedPositions");
         }
 
         public void OnPropertyChanged(string propertyName)

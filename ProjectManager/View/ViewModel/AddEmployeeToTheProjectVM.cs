@@ -47,6 +47,14 @@ namespace PMView.View
                 _employeesToAddCollection.Add(item);
             }
 
+            if (projectModuleEditVM.SavedPositions != null)
+            {
+                _savedPositions = new List<User_ProjectVM>();
+
+                foreach (var item in projectModuleEditVM.SavedPositions)
+                    _savedPositions.Add(item);
+            }
+
             _projectModuleEditVM = projectModuleEditVM;
             _lastScreen = lastScreen;
             LoadData();
@@ -345,6 +353,16 @@ namespace PMView.View
             foreach (var item in _employeesToAddCollection)
             {
                 _projectModuleEditVM.EmployeesCollection.Add(item);
+            }
+
+            if (_savedPositions != null)
+            {
+                _projectModuleEditVM.SavedPositions.Clear();
+
+                foreach (var item in _savedPositions)
+                {
+                    _projectModuleEditVM.SavedPositions.Add(item);
+                }
             }
 
             SaveButton = false;
