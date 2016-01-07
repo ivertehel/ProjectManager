@@ -49,8 +49,17 @@ namespace PMView.View
         public ProjectModuleEditVM(ILoadData lastScreen, ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM) : this(lastScreen, projectsUserControlVM)
         {
             _projectVM = projectVM;
-            
 
+            foreach (var item in User_Project.Items)
+            {
+                _savedPositions.Add(new User_ProjectVM(item));
+                
+                if (_employeesCollection.FirstOrDefault(employee => employee.User.Id == item.User.Id) == null)
+                    _employeesCollection.Add(new UserVM(item.User));
+            }
+
+
+            LoadData();
         }
 
         public Project.Statuses Status
@@ -179,7 +188,7 @@ namespace PMView.View
             set { _savedPositions = value; }
         }
 
-        public void AddProject()
+        public void AddProject(string[] skills)
         {
             if (string.IsNullOrEmpty(Name) || Name[0] == ' ')
                 throw new Exception("Name can't be empty or start from space");
@@ -235,8 +244,20 @@ namespace PMView.View
                 {
                     _savedPositions.Add(new User_ProjectVM(item));
                 }
+
+                Project_Skill.Items.RemoveAll(item => item.Project.Id == _project.Id);
             }
-            
+
+            foreach (var item in skills)
+            {
+                Project_Skill project_skill = new Project_Skill()
+                {
+                    Project = _project,
+                    Skill = Skill.Items.FirstOrDefault(skill => skill.Name == item)
+                };
+
+                Project_Skill.Items.Add(project_skill);
+            }
 
             LoadData();
             SaveButton = true;

@@ -94,7 +94,7 @@ namespace PMView
         {
             try
             {
-                _projectModuleEditVM.AddProject();
+                _projectModuleEditVM.AddProject((from items in _skills where items.IsChecked == true select items.Content.ToString()).ToArray());
                 MessageBox.Show("Module was saved", "Module information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
