@@ -26,6 +26,7 @@ namespace PMView
 
         private ProjectModuleEditVM _projectModuleEditVM;
         private List<CheckBox> _skills = new List<CheckBox>();
+        private List<CheckBox> _savedSkills;
         private ProjectVM _projectVM;
 
         public ProjectModuleEdit(ProjectsUserControlVM projectsUserControlVM)
@@ -35,6 +36,7 @@ namespace PMView
             _projectModuleEditVM = new ProjectModuleEditVM(this, projectsUserControlVM);
             DataContext = _projectModuleEditVM;
             fillCheckboxList();
+            FormTitle.Text = "Add module";
         }
 
         public ProjectModuleEdit(ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM)
@@ -45,13 +47,12 @@ namespace PMView
             DataContext = _projectModuleEditVM;
             _projectVM = projectVM;
             fillCheckboxList();
-
-           
+            FormTitle.Text = "Edit module";
         }
 
         private void fillCheckboxList()
         {
-            
+
             _skills.Clear();
             foreach (var item in SkillVM.Skills)
             {
@@ -72,8 +73,15 @@ namespace PMView
                 var selectedSkills = _projectModuleEditVM.Skills;
                 foreach (var item in _skills)
                 {
-                    item.IsChecked = selectedSkills.FirstOrDefault(skill => skill == item.Content.ToString()) != null ? true : false;
+                    if (_savedSkills == null)
+                        item.IsChecked = selectedSkills.FirstOrDefault(skill => skill == item.Content.ToString()) != null ? true : false;
+                    else
+                    {
+                        var isExist = _savedSkills.FirstOrDefault(skill => skill.Content.ToString() == item.Content.ToString());
+                        item.IsChecked = isExist == null ? false : isExist.IsChecked;
+                    }
                 }
+                _savedSkills = null;
             }
         }
 
@@ -94,6 +102,12 @@ namespace PMView
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)
         {
+            _savedSkills = new List<CheckBox>();
+            foreach (var item in _skills)
+            {
+                _savedSkills.Add(item);
+            }
+
             (new SkillWindow(_projectModuleEditVM)).Show();
         }
 

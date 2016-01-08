@@ -69,7 +69,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
-            <Label Content="Add module" FontSize="30" HorizontalAlignment="Center"/>
+            <TextBlock Name="FormTitle" Text="Add module" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,15,15,15">
             <Grid.Background>
@@ -259,7 +259,7 @@
                                 <SolidColorBrush Color="White" Opacity="0.5"/>
                             </Button.Background>
                         </Button>
-                        <Button Grid.Column="1" Name="SaveButton" MinWidth="100" IsEnabled="{Binding Path=SaveButton}" Click="SaveButton_Click" Content="Add module"  Margin="10,5,0,5">
+                        <Button Grid.Column="1" Name="SaveButton" MinWidth="100" IsEnabled="{Binding Path=SaveButton}" Click="SaveButton_Click" Content="Save module"  Margin="10,5,0,5">
                             <Button.Background>
                                 <SolidColorBrush Color="White" Opacity="0.5"/>
                             </Button.Background>
