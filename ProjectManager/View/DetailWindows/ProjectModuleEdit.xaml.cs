@@ -90,13 +90,10 @@ namespace PMView
             _projectModuleEditVM.SaveButton = true;
         }
 
-        private void LeadersCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            _projectModuleEditVM.SelectedLeader = LeadersCollection.SelectedItem as UserVM;
-        }
-
         private void AddEmployeeToTheProject_Click(object sender, RoutedEventArgs e)
         {
+            LeadersCollection.SelectedItem = null;
+
             (new AddEmployeeToTheProject(_projectModuleEditVM, _projectModuleEditVM)).Show();
         }
 
@@ -143,6 +140,12 @@ namespace PMView
         private void StateCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void LeadersCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+               _projectModuleEditVM.SelectedLeader = LeadersCollection.SelectedItem as UserVM;
         }
     }
 }

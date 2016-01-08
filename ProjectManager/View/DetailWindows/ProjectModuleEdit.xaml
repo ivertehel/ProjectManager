@@ -35,25 +35,9 @@
             <DataTemplate DataType="{x:Type WrapperVM:UserVM}">
                 <Border BorderBrush="Azure"  VerticalAlignment="Top">
                     <Grid VerticalAlignment="Top">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Text="{Binding User}" FontSize="14" />
-                        <ListBox Grid.Row="1" ItemsSource="{Binding Positions}"  VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                            <ListBox.BorderBrush>
-                                <SolidColorBrush Opacity="0" Color="SkyBlue"/>
-                            </ListBox.BorderBrush>
-                            <ListBox.Background>
-                                <SolidColorBrush Opacity="0"/>
-                            </ListBox.Background>
-                            <ListBox.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel />
-                                </ItemsPanelTemplate>
-                            </ListBox.ItemsPanel>
-                        </ListBox>
+                        <TextBlock Text="{Binding User}" FontSize="14" />
+                      
                     </Grid>
                 </Border>
             </DataTemplate>
@@ -123,7 +107,7 @@
                                 <TextBlock VerticalAlignment="Center" Text="Finish date:" FontSize="18" Margin="10,0,10,0" Grid.Column="2"/>
                                 <DatePicker Grid.Column="3" DisplayDate="{Binding ReleaseDate}" SelectedDate="{Binding ReleaseDate}"/>
                                 <TextBlock Grid.Column="4" VerticalAlignment="Center" Text="Leader:" FontSize="18" Margin="10,0,10,0"/>
-                                <ComboBox Grid.Column="5" MinWidth="100" VerticalAlignment="Center" SelectedItem="{Binding SelectedLeader}" SelectionChanged="LeadersCollection_SelectionChanged" Name="LeadersCollection" ItemsSource="{Binding Path=LeadersCollection}" Margin="10,0,10,0"/>
+                                <ComboBox Grid.Column="5" MinWidth="100" VerticalAlignment="Center" Name="LeadersCollection" ItemsSource="{Binding Path=LeadersCollection}" SelectionChanged="LeadersCollection_SelectionChanged" Margin="10,0,10,0"/>
                                 <Grid Grid.Column="6"  HorizontalAlignment="Right" MinWidth="100">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="auto"/>

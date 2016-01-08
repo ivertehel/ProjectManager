@@ -189,12 +189,14 @@ namespace PMView
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.SaveButtonClick();
-        }
-
-        private void RetrievePositionsButton_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
+            try
+            {
+                _addEmployeeToTheProjectVM.SaveButtonClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void SavePositionsButton_Click(object sender, RoutedEventArgs e)

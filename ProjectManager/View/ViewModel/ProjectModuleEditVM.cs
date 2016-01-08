@@ -45,6 +45,9 @@ namespace PMView.View
             {
                 _statuses.Add(status);
             }
+
+            _status = _statuses.Where(item => item == Project.Statuses.Opened).FirstOrDefault();
+
         }
 
         public ProjectModuleEditVM(ILoadData lastScreen, ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM) : this(lastScreen, projectsUserControlVM)
@@ -56,12 +59,12 @@ namespace PMView.View
             foreach (var item in User_Project.Items)
             {
                 _savedPositions.Add(new User_ProjectVM(item));
-                
+
                 if (_employeesCollection.FirstOrDefault(employee => employee.User.Id == item.User.Id) == null && item.Project.Id == _projectVM.Project.Id)
                     _employeesCollection.Add(new UserVM(item.User));
             }
 
-
+            _status = projectVM.Status;
             LoadData();
         }
 
@@ -94,7 +97,10 @@ namespace PMView.View
 
         public UserVM SelectedLeader
         {
-            get { return _selectedLeader; }
+            get
+            {
+                return _selectedLeader;
+            }
             set
             {
                 _selectedLeader = value;
@@ -112,6 +118,7 @@ namespace PMView.View
                     if (_leadersCollection.FirstOrDefault(leader => leader.User.Id == item.User.Id) == null)
                         _leadersCollection.Add(item);
                 }
+
                 return _leadersCollection;
             }
         }
@@ -223,12 +230,12 @@ namespace PMView.View
                 _project = new Project();
                 _project.Name = Name;
                 _project.Description = Description;
-                if (SelectedLeader != null)
-                    _project.Leader = SelectedLeader.User;
                 _project.StartDate = StartDate;
                 _project.ReleaseDate = ReleaseDate;
                 _project.Order = CurrentOrder.Order;
                 _project.Status = Status;
+                if (SelectedLeader != null)
+                    _project.Leader = SelectedLeader.User;
                 Project.Items.Add(_project);
                 Project_Project p = new Project_Project()
                 {
@@ -249,8 +256,8 @@ namespace PMView.View
                     User_Project.Items.Add(user_project);
                 }
 
-                
-                
+
+
             }
             else
             {
@@ -283,7 +290,7 @@ namespace PMView.View
                 Project_Skill.Items.Add(project_skill);
             }
 
-            
+
 
             LoadData();
             SaveButton = true;
@@ -294,6 +301,7 @@ namespace PMView.View
             _lastScreen.LoadData();
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("LeadersCollection");
+            OnPropertyChanged("SelectedLeader");
             OnPropertyChanged("SavedPositions");
         }
 
