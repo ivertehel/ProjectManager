@@ -353,13 +353,13 @@ namespace PMView.View
 
         public void SaveButtonClick()
         {
-            //foreach (var pos in _savedPositions)
-            //{
-            //    if (_employeesToAddCollection.FirstOrDefault(item => item.User.Id == pos.User.Id) == null)
-            //    {
-            //        throw new Exception("One or more users don't contain any position");
-            //    }
-            //}
+            foreach (var emp in _employeesToAddCollection)
+            {
+                if (_savedPositions.FirstOrDefault(item => item.User.Id == emp.User.Id) == null)
+                {
+                    throw new Exception("One or more users don't contain any position");
+                }
+            }
             //int a = 5;
 
             _projectModuleEditVM.EmployeesCollection.Clear();

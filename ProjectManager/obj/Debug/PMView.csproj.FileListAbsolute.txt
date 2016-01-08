@@ -1,8 +1,6 @@
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.exe.config
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.exe
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.pdb
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMDataLayer.dll
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMDataLayer.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\App.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager_MarkupCompile.cache
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager_MarkupCompile.lref

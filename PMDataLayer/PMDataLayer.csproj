@@ -44,24 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="Comment.cs" />
-    <Compile Include="User_Project.cs" />
-    <Compile Include="User_Skill.cs" />
-    <Compile Include="User_Team.cs" />
-    <Compile Include="Message.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Position.cs" />
-    <Compile Include="Project.cs" />
-    <Compile Include="Project_Project.cs" />
-    <Compile Include="Project_Skill.cs" />
-    <Compile Include="Report.cs" />
-    <Compile Include="Skill.cs" />
-    <Compile Include="Task.cs" />
-    <Compile Include="Team.cs" />
-    <Compile Include="Team_Project.cs" />
-    <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

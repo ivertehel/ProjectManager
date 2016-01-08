@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Client.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="Project_Project.cs" />
+    <Compile Include="Project_Skill.cs" />
+    <Compile Include="Report.cs" />
+    <Compile Include="Skill.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="Team.cs" />
+    <Compile Include="Team_Project.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="User_Project.cs" />
+    <Compile Include="User_Skill.cs" />
+    <Compile Include="User_Team.cs" />
     <Compile Include="View\DetailWindows\AddEmployeeToTheProject.xaml.cs">
       <DependentUpon>AddEmployeeToTheProject.xaml</DependentUpon>
     </Compile>
@@ -224,10 +243,6 @@
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{2b6b7b7b-e028-4410-9ad9-10199ae81aca}</Project>
       <Name>Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PMDataLayer\PMDataLayer.csproj">
-      <Project>{e07a5241-6bbd-46fc-a8fe-000b2bd7ab14}</Project>
-      <Name>PMDataLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
