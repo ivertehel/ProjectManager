@@ -24,7 +24,7 @@ namespace PMView
     {
         private AddEmployeeToTheProjectVM _addEmployeeToTheProjectVM;
 
-        private ILoadData _lastScreen;
+        private ILoadDataSender _lastScreen;
 
         private List<CheckBox> _skills = new List<CheckBox>();
 
@@ -33,7 +33,7 @@ namespace PMView
         private UserVM _selectedEmployeeToAdd;
         private List<CheckBox> _positions;
 
-        public AddEmployeeToTheProject(ILoadData lastScreen, ProjectModuleEditVM projectModuleEditVM)
+        public AddEmployeeToTheProject(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
             InitializeComponent();
             _lastScreen = lastScreen;
@@ -208,7 +208,7 @@ namespace PMView
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)
         {
-            (new SkillWindow(this)).Show();
+            (new SkillWindow(_lastScreen)).Show();
         }
 
         private void fillCheckboxList()
@@ -222,18 +222,12 @@ namespace PMView
                 cb.IsChecked = false;
                 cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
             }
-
-            SkillsListBox.Items.Clear();
-            foreach (var item in _skills)
-            {
-                SkillsListBox.Items.Add(item);
-            }
         }
 
         public void LoadData()
         {
             fillCheckboxList();
-            _lastScreen.LoadData();
+            _lastScreen.LoadData(this);
         }
     }
 }

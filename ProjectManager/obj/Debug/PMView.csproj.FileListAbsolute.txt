@@ -1,14 +1,5 @@
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.exe.config
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.exe
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\ProjectManager.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\App.g.cs
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager_MarkupCompile.cache
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager_MarkupCompile.lref
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.g.resources
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.Properties.Resources.resources
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.csproj.GenerateResource.Cache
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.exe
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\ProjectManager.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.csprojResolveAssemblyReference.cache
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UserControls\MenuBarUserControl.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UserControls\MenuBarUserControl.baml
@@ -43,3 +34,12 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\Use
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\UserControls\EmployeeDetailsUserControl.baml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\SkillWindow.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\SkillWindow.baml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMView.exe.config
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMView.exe
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\PMView.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView_MarkupCompile.cache
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView_MarkupCompile.lref
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.g.resources
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.Properties.Resources.resources
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.exe
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.pdb

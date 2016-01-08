@@ -18,6 +18,11 @@ namespace PMView.View.WrapperVM
             _userProject = userProject;
         }
 
+        public User_ProjectVM()
+        {
+
+        }
+
         public User_Project User_Project
         {
             get { return _userProject; }

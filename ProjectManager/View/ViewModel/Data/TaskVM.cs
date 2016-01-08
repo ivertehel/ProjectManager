@@ -17,6 +17,11 @@ namespace PMView.View.WrapperVM
             _task = task;
         }
 
+        public TaskVM()
+        {
+
+        }
+
         public Task Task
         {
             get { return _task; }

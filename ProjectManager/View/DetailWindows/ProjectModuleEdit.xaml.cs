@@ -20,7 +20,7 @@ namespace PMView
     /// <summary>
     /// Interaction logic for ProjectModuleEdit.xaml
     /// </summary>
-    public partial class ProjectModuleEdit : Window, ILoadData
+    public partial class ProjectModuleEdit : Window, ILoadDataSender
     {
         private ILoadData _lastScreen;
 
@@ -93,7 +93,6 @@ namespace PMView
         private void AddEmployeeToTheProject_Click(object sender, RoutedEventArgs e)
         {
             LeadersCollection.SelectedItem = null;
-
             (new AddEmployeeToTheProject(_projectModuleEditVM, _projectModuleEditVM)).Show();
         }
 
@@ -110,7 +109,6 @@ namespace PMView
 
         public void LoadData()
         {
-            fillCheckboxList();
             _lastScreen.LoadData();
         }
 
@@ -146,6 +144,17 @@ namespace PMView
         {
 
                _projectModuleEditVM.SelectedLeader = LeadersCollection.SelectedItem as UserVM;
+        }
+
+        public void LoadData(object sender)
+        {
+            var skillWindow = sender as SkillWindowVM;
+
+            if (skillWindow != null)
+            {
+                fillCheckboxList();
+            }
+            LoadData();
         }
     }
 }

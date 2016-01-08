@@ -12,6 +12,11 @@ namespace PMView.View.WrapperVM
     {
         private Project _project;
 
+        public ProjectVM()
+        {
+
+        }
+
         public ProjectVM(Project project)
         {
             _project = project;

@@ -11,7 +11,7 @@ using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
-    public class AddEmployeeToTheProjectVM : INotifyPropertyChanged, ILoadData
+    public class AddEmployeeToTheProjectVM : INotifyPropertyChanged, ILoadData, ILoadDataSender
     {
         private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
@@ -33,14 +33,14 @@ namespace PMView.View
         private bool _removeButton;
         private bool _addButton;
         private bool _profileButton;
-        private ILoadData _lastScreen;
+        private ILoadDataSender _lastScreen;
         private bool _saveButton;
         private ProjectModuleEditVM _projectModuleEditVM;
         private ObservableCollection<string> _employeesPositions = new ObservableCollection<string>();
         private List<User_ProjectVM> _savedPositions;
         private bool _savePositionButton;
 
-        public AddEmployeeToTheProjectVM(ILoadData lastScreen, ProjectModuleEditVM projectModuleEditVM)
+        public AddEmployeeToTheProjectVM(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
             foreach (var item in projectModuleEditVM.EmployeesCollection)
             {
@@ -407,7 +407,7 @@ namespace PMView.View
             OnPropertyChanged("EmployeesToAddCollection");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("SkillsCollection");
-            _lastScreen.LoadData();
+            _lastScreen.LoadData(this);
         }
 
         private void filterEmployeesCollection()
@@ -452,6 +452,12 @@ namespace PMView.View
             {
                 _employeesCollection.Add(item);
             }
+        }
+
+        public void LoadData(object sender)
+        {
+            LoadData();
+            _lastScreen.LoadData(sender);
         }
     }
 }

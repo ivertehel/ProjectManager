@@ -18,6 +18,11 @@ namespace PMView.View.WrapperVM
             _team = team;
         }
 
+        public TeamVM()
+        {
+
+        }
+
         public Team Team
         {
             get { return _team; }

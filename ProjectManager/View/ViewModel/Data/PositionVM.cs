@@ -12,6 +12,11 @@ namespace PMView.View.WrapperVM
     {
         private Position _position;
 
+        public PositionVM()
+        {
+
+        }
+
         public PositionVM(Position position)
         {
             _position = position;

@@ -26,9 +26,9 @@ namespace PMView
         private ObservableCollection<SkillVM> _savedCollection;
         private bool _saveAllChangesButton;
         private bool _cancelAllChangesButton;
-        private ILoadData _lastScreen;
+        private ILoadDataSender _lastScreen;
 
-        public SkillWindowVM(ILoadData lastScreen)
+        public SkillWindowVM(ILoadDataSender lastScreen)
         {
             _lastScreen = lastScreen;
             AddButton = false;
@@ -330,7 +330,7 @@ namespace PMView
         public void LoadData()
         {
             OnPropertyChanged("SkillsCollection");
-            _lastScreen.LoadData();
+            _lastScreen.LoadData(this);
         }
     }
 }

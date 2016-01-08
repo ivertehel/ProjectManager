@@ -60,7 +60,7 @@ namespace PMView.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProjectManager;component/view/usercontrols/bodys/clientsusercontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PMView;component/view/usercontrols/bodys/clientsusercontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\UserControls\Bodys\ClientsUserControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

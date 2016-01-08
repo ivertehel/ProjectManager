@@ -21,7 +21,7 @@ namespace PMView
     {
         private SkillWindowVM _skillWindowVM;
 
-        public SkillWindow(ILoadData lastScreen)
+        public SkillWindow(ILoadDataSender lastScreen)
         {
             InitializeComponent();
             _skillWindowVM = new SkillWindowVM(lastScreen);

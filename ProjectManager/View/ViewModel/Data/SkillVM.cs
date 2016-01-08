@@ -15,6 +15,10 @@ namespace PMView.View.WrapperVM
 
         private static List<SkillVM> _skills = new List<SkillVM>();
 
+        public SkillVM()
+        {
+
+        }
 
         public SkillVM(Skill skill)
         {

@@ -30,6 +30,11 @@ namespace PMView.View.WrapperVM
             set { _user.Name = value; }
         }
 
+        public UserVM()
+        {
+
+        }
+
         public string Surname
         {
             get { return _user.Surname; }
