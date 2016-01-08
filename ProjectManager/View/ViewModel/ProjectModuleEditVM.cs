@@ -58,10 +58,14 @@ namespace PMView.View
 
             foreach (var item in User_Project.Items)
             {
-                _savedPositions.Add(new User_ProjectVM(item));
+
 
                 if (_employeesCollection.FirstOrDefault(employee => employee.User.Id == item.User.Id) == null && item.Project.Id == _projectVM.Project.Id)
+                {
                     _employeesCollection.Add(new UserVM(item.User));
+                    _savedPositions.Add(new User_ProjectVM(item));
+
+                }
             }
 
             _status = projectVM.Status;
