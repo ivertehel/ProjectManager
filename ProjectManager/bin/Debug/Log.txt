@@ -772,3 +772,18 @@
 09.01.2016 0:00:00 | 21:03:27.7197622:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 09.01.2016 0:00:00 | 21:03:29.9276673:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 09.01.2016 0:00:00 | 21:03:34.0368195:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:04:47.7925236:Info | Details screen | Project details have been loaded
+09.01.2016 0:00:00 | 21:05:06.5955876:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:09:29.1347561:Info | Details screen | Project details have been loaded
+09.01.2016 0:00:00 | 21:09:47.7107759:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:09:56.0881376:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:09:58.3840010:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:09:59.4295602:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:10:04.0348233:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:10:06.1830620:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:10:11.9251635:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:10:23.1626887:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:10:25.1629731:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:10:26.2061786:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:10:28.5386367:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 21:10:39.7543162:Info | Order screen | Details of Android Matches Puzzle game have been loaded

@@ -335,7 +335,13 @@ namespace PMView.View
 
         public void LoadData(object sender)
         {
-            LoadData();
+            OnPropertyChanged("EmployeesCollection");
+            OnPropertyChanged("LeadersCollection");
+            OnPropertyChanged("SelectedLeader");
+            OnPropertyChanged("SavedPositions");
+            var l = (_lastScreen as ILoadDataSender);
+            if (l != null)
+                l.LoadData(sender);
         }
     }
 }
