@@ -356,7 +356,6 @@ namespace PMView.View
             {
                 Name = "Android game Matches Puzzle",
                 Description = "Unity3D game for Android 4.0.2 and more. 100 puzlles from book. Ads must exist. Like https://play.google.com/store/apps/details?id=vn.bigfox.pencils",
-                Leader = e1,
                 Order = o2,
                 StartDate = o2.StartDate,
                 ReleaseDate = o2.ReleaseDate,

@@ -265,22 +265,38 @@ namespace PMView.View
             }
             else
             {
+                Guid id = _project.Id;
+                User_Project.Items.RemoveAll(item => item.Project.Id == id);
+                Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == _project.Id));
+                Project_Skill.Items.RemoveAll(item => item.Project.Id == id);
+                Project.Items.Remove(Project.Items.FirstOrDefault(item => item.Id == _project.Id));
+                _project = new Project();
                 _project.Name = Name;
                 _project.Description = Description;
                 if (SelectedLeader != null)
                     _project.Leader = SelectedLeader.User;
+
                 _project.StartDate = StartDate;
                 _project.ReleaseDate = ReleaseDate;
                 _project.Order = CurrentOrder.Order;
                 _project.Status = Status;
 
-                User_Project.Items.RemoveAll(item => item.Project.Id == _project.Id);
+                User_Project.Items.RemoveAll(item => item.Project.Id == id);
                 foreach (var item in _savedPositions)
                 {
-                    User_Project.Items.Add(item.User_Project);
+                    User_Project user_project = new User_Project()
+                    {
+                        Position = item.Position,
+                        Project = _project,
+                        User = item.User
+                    };
+
+                    User_Project.Items.Add(user_project);
                 }
 
-                Project_Skill.Items.RemoveAll(item => item.Project.Id == _project.Id);
+                Project.Items.Add(_project);
+                Project_Project.Items.Add(new Project_Project() { ChildProject = _project });
+
             }
 
             foreach (var item in skills)
