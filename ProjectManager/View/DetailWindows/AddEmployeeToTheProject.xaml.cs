@@ -214,13 +214,15 @@ namespace PMView
         private void fillCheckboxList()
         {
             _skills.Clear();
-            foreach (var item in SkillVM.Skills)
+            SkillsListBox.Items.Clear();
+            foreach (var item in Skill.Items)
             {
                 var cb = new CheckBox();
                 cb.Content = item.Name;
                 _skills.Add(cb);
                 cb.IsChecked = false;
                 cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
+                SkillsListBox.Items.Add(cb);
             }
         }
 

@@ -559,3 +559,65 @@
 08.01.2016 0:00:00 | 20:40:40.6233809:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 08.01.2016 0:00:00 | 20:40:51.7223605:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 08.01.2016 0:00:00 | 20:41:24.9943084:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:02:58.0434397:Info | Details screen | Project details have been loaded
+09.01.2016 0:00:00 | 20:05:19.4908226:Info | Details screen | Project details have been loaded
+09.01.2016 0:00:00 | 20:05:25.3775544:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:05:33.6141683:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:05:35.1633340:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:08:19.2662106:Info | Details screen | Project details have been loaded
+09.01.2016 0:00:00 | 20:08:23.7926040:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:09:09.8986152:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:09:48.7071414:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:09:48.7912035:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:12:17.5086592:Info | Details screen | Project details have been loaded
+09.01.2016 0:00:00 | 20:12:21.8128498:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:12:41.2675727:Info | Details screen | Project details have been loaded
+09.01.2016 0:00:00 | 20:12:47.7647278:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:12:58.0821029:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:12:58.0866063:Info | User details screen | Details of user khrystyna1204 has been loaded
+09.01.2016 0:00:00 | 20:12:58.2056924:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:13:00.2389289:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystyna to Khrystyna
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : Ukraine to Ukraine
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+09.01.2016 0:00:00 | 20:13:00.2449333:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:13:05.8856254:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:13:05.8886274:Info | User details screen | Details of user hacapet89 has been loaded
+09.01.2016 0:00:00 | 20:13:05.8901288:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:13:07.9098679:Info | User details screen | Details of user has been changed:
+
+                Name : Panteleymon to Panteleymon
+
+                Surname : Golobudko to Golobudko
+
+                State : Male to Male
+
+                Country : Ukraine to Ukraine
+
+                Birthday : 01.03.1989 0:00:00 to 01.03.1989 0:00:00
+
+                Email : hacapet@haca.com to hacapet@haca.com
+
+                Login : hacapet89 to hacapet89
+
+                Description : Junior Java developer to Junior Java developer
+09.01.2016 0:00:00 | 20:13:07.9163718:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:13:12.3773368:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:13:13.6243734:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:18:51.5024110:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:18:58.3972564:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:19:03.0745072:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+09.01.2016 0:00:00 | 20:19:04.7939899:Info | Order screen | Details of Android Matches Puzzle game have been loaded

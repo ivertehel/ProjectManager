@@ -14,7 +14,7 @@ namespace PMView.View
     {
         private OrderVM _currentOrder;
 
-        private ILoadDataSender _lastScreen;
+        private ILoadData _lastScreen;
 
         private List<Project.Statuses> _statuses = new List<Project.Statuses>();
 
@@ -32,7 +32,7 @@ namespace PMView.View
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ProjectModuleEditVM(ILoadDataSender lastScreen, ProjectsUserControlVM projectsUserControlVM)
+        public ProjectModuleEditVM(ILoadData lastScreen, ProjectsUserControlVM projectsUserControlVM)
         {
             _projectVM.Order = projectsUserControlVM.SelectedOrder.Order;
             _projectsUserControlVM = projectsUserControlVM;
@@ -50,7 +50,7 @@ namespace PMView.View
 
         }
 
-        public ProjectModuleEditVM(ILoadDataSender lastScreen, ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM) : this(lastScreen, projectsUserControlVM)
+        public ProjectModuleEditVM(ILoadData lastScreen, ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM) : this(lastScreen, projectsUserControlVM)
         {
             _projectVM = projectVM;
 
@@ -306,6 +306,7 @@ namespace PMView.View
             OnPropertyChanged("LeadersCollection");
             OnPropertyChanged("SelectedLeader");
             OnPropertyChanged("SavedPositions");
+            _lastScreen.LoadData();
         }
 
         public void OnPropertyChanged(string propertyName)
@@ -318,7 +319,7 @@ namespace PMView.View
 
         public void LoadData(object sender)
         {
-            _lastScreen.LoadData(sender);
+            LoadData();
         }
     }
 }

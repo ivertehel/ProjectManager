@@ -360,7 +360,6 @@ namespace PMView.View
                     throw new Exception("One or more users don't contain any position");
                 }
             }
-            //int a = 5;
 
             _projectModuleEditVM.EmployeesCollection.Clear();
 

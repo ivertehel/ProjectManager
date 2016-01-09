@@ -20,7 +20,7 @@ namespace PMView
     /// <summary>
     /// Interaction logic for ProjectModuleEdit.xaml
     /// </summary>
-    public partial class ProjectModuleEdit : Window, ILoadDataSender
+    public partial class ProjectModuleEdit : Window, ILoadDataSender, ILoadData
     {
         private ILoadData _lastScreen;
 
