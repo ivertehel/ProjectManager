@@ -264,8 +264,16 @@ namespace PMView.View
                 List<Team> t = new List<Team>();
                 foreach (var item in SelectedOrder.Order.Projects)
                 {
-                    IEnumerable<Team> inProj = from items in item.Teams where !t.Exists(x => x.Id == items.Id) select items;
-                    t.AddRange(inProj);
+                    List<Team> inProj = new List<Team>();
+                    foreach (var team in item.Teams)
+                    {
+                        if (t.FirstOrDefault(x => x.Id == team.Id) == null)
+                            inProj.Add(team);
+                    }
+
+                    if (inProj !=null)
+                    foreach (var i in inProj)
+                        t.Add(i);
                 }
 
                 List<TeamVM> teams = new List<TeamVM>();

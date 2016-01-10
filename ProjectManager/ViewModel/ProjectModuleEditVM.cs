@@ -63,9 +63,10 @@ namespace PMView.View
                 if (_employeesCollection.FirstOrDefault(employee => employee.User.Id == item.User.Id) == null && item.Project.Id == _projectVM.Project.Id)
                 {
                     _employeesCollection.Add(new UserVM(item.User));
-                    _savedPositions.Add(new User_ProjectVM(item));
-
                 }
+
+                if (item.Project.Id == _project.Id)
+                    _savedPositions.Add(new User_ProjectVM(item));
             }
 
             _status = projectVM.Status;
@@ -225,6 +226,8 @@ namespace PMView.View
                 throw new Exception("Name can't be empty or start from space");
             if (CurrentOrder == null)
                 throw new Exception("Order was deleted");
+            if (ReleaseDate < StartDate)
+                throw new Exception("Release date can't be before stat date");
             if (Status == Project.Statuses.InProgress && SelectedLeader == null)
             {
                 throw new Exception("Module or project must contain leader");
@@ -296,6 +299,7 @@ namespace PMView.View
 
                 Project.Items.Add(_project);
                 Project_Project.Items.Add(new Project_Project() { ChildProject = _project });
+                
 
             }
 
