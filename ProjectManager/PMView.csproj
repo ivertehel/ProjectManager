@@ -56,24 +56,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Client.cs" />
-    <Compile Include="Comment.cs" />
-    <Compile Include="Entity.cs" />
-    <Compile Include="Message.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Position.cs" />
-    <Compile Include="Project.cs" />
-    <Compile Include="Project_Project.cs" />
-    <Compile Include="Project_Skill.cs" />
-    <Compile Include="Report.cs" />
-    <Compile Include="Skill.cs" />
-    <Compile Include="Task.cs" />
-    <Compile Include="Team.cs" />
-    <Compile Include="Team_Project.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="User_Project.cs" />
-    <Compile Include="User_Skill.cs" />
-    <Compile Include="User_Team.cs" />
+    <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\Comment.cs" />
+    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Model\Message.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\Position.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\Project_Project.cs" />
+    <Compile Include="Model\Project_Skill.cs" />
+    <Compile Include="Model\Report.cs" />
+    <Compile Include="Model\Skill.cs" />
+    <Compile Include="Model\Task.cs" />
+    <Compile Include="Model\Team.cs" />
+    <Compile Include="Model\Team_Project.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\User_Project.cs" />
+    <Compile Include="Model\User_Skill.cs" />
+    <Compile Include="Model\User_Team.cs" />
     <Compile Include="View\DetailWindows\AddEmployeeToTheProject.xaml.cs">
       <DependentUpon>AddEmployeeToTheProject.xaml</DependentUpon>
     </Compile>
@@ -83,34 +83,34 @@
     <Compile Include="View\DetailWindows\SkillWindow.xaml.cs">
       <DependentUpon>SkillWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewModel\Data\User_ProjectVM.cs" />
-    <Compile Include="View\ViewModel\ILoadDataSender.cs" />
-    <Compile Include="View\ViewModel\SkillWindowVM.cs" />
+    <Compile Include="ViewModel\Data\User_ProjectVM.cs" />
+    <Compile Include="ViewModel\ILoadDataSender.cs" />
+    <Compile Include="ViewModel\SkillWindowVM.cs" />
     <Compile Include="View\UserControls\EmployeeDetailsUserControl.xaml.cs">
       <DependentUpon>EmployeeDetailsUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewModel\AddEmployeeToTheProjectVM.cs" />
-    <Compile Include="View\ViewModel\ClientsUserControlVM.cs" />
-    <Compile Include="View\ViewModel\Data\BaseVM.cs" />
-    <Compile Include="View\ViewModel\EmployeeDetailsUserControlVM.cs" />
-    <Compile Include="View\ViewModel\IEmployee.cs" />
-    <Compile Include="View\ViewModel\ILoadData.cs" />
-    <Compile Include="View\ViewModel\Data\OrderVM.cs" />
-    <Compile Include="View\ViewModel\Data\PositionVM.cs" />
-    <Compile Include="View\ViewModel\Data\ProjectVM.cs" />
-    <Compile Include="View\ViewModel\Data\SkillVM.cs" />
-    <Compile Include="View\ViewModel\Data\TaskVM.cs" />
-    <Compile Include="View\ViewModel\Data\TeamVM.cs" />
-    <Compile Include="View\ViewModel\Data\UserVM.cs" />
-    <Compile Include="View\ViewModel\Data\User_TeamVM.cs" />
-    <Compile Include="View\ViewModel\ProjectModuleEditVM.cs" />
-    <Compile Include="View\ViewModel\ProjectsUserControlVM.cs" />
-    <Compile Include="View\ViewModel\TeamDetailsVM.cs" />
-    <Compile Include="View\ViewModel\UserDetailsVM.cs" />
+    <Compile Include="ViewModel\AddEmployeeToTheProjectVM.cs" />
+    <Compile Include="ViewModel\ClientsUserControlVM.cs" />
+    <Compile Include="ViewModel\Data\BaseVM.cs" />
+    <Compile Include="ViewModel\EmployeeDetailsUserControlVM.cs" />
+    <Compile Include="ViewModel\IEmployee.cs" />
+    <Compile Include="ViewModel\ILoadData.cs" />
+    <Compile Include="ViewModel\Data\OrderVM.cs" />
+    <Compile Include="ViewModel\Data\PositionVM.cs" />
+    <Compile Include="ViewModel\Data\ProjectVM.cs" />
+    <Compile Include="ViewModel\Data\SkillVM.cs" />
+    <Compile Include="ViewModel\Data\TaskVM.cs" />
+    <Compile Include="ViewModel\Data\TeamVM.cs" />
+    <Compile Include="ViewModel\Data\UserVM.cs" />
+    <Compile Include="ViewModel\Data\User_TeamVM.cs" />
+    <Compile Include="ViewModel\ProjectModuleEditVM.cs" />
+    <Compile Include="ViewModel\ProjectsUserControlVM.cs" />
+    <Compile Include="ViewModel\TeamDetailsVM.cs" />
+    <Compile Include="ViewModel\UserDetailsVM.cs" />
     <Compile Include="View\DetailWindows\EmptyWindow.xaml.cs">
       <DependentUpon>EmptyWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewModel\IUser.cs" />
+    <Compile Include="ViewModel\IUser.cs" />
     <Compile Include="View\DetailWindows\TeamsDetails.xaml.cs">
       <DependentUpon>TeamsDetails.xaml</DependentUpon>
     </Compile>
