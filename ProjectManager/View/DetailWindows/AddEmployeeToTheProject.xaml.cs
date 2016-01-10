@@ -38,7 +38,7 @@ namespace PMView
             InitializeComponent();
             _lastScreen = lastScreen;
             _projectModuleEditVM = projectModuleEditVM;
-            _addEmployeeToTheProjectVM = new AddEmployeeToTheProjectVM(lastScreen, projectModuleEditVM);
+            _addEmployeeToTheProjectVM = new AddEmployeeToTheProjectVM(lastScreen, projectModuleEditVM, this);
             DataContext = _addEmployeeToTheProjectVM;
             fillCheckboxList();
         }
@@ -229,11 +229,28 @@ namespace PMView
         {
             fillCheckboxList();
             _lastScreen.LoadData(this);
+            _positions = new List<CheckBox>();
+            var employeesPositions = _addEmployeeToTheProjectVM.EmployeesPositions;
+
+            foreach (var item in Position.Items)
+            {
+                var cb = new CheckBox();
+                cb.Content = item.Name;
+                _positions.Add(cb);
+                cb.IsChecked = employeesPositions.Contains(item.Name) ? true : false;
+                cb.Click += new System.Windows.RoutedEventHandler(this.PositionCheckBox_Checked);
+            }
+
+            PositionListBox.Items.Clear();
+            foreach (var item in _positions)
+            {
+                PositionListBox.Items.Add(item);
+            }
         }
 
         private void AddPositions_Click(object sender, RoutedEventArgs e)
         {
-            (new PositionWindow(_projectModuleEditVM)).Show();
+            (new PositionWindow(_addEmployeeToTheProjectVM)).Show();
         }
     }
 }

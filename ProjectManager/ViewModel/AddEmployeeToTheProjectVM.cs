@@ -39,9 +39,11 @@ namespace PMView.View
         private ObservableCollection<string> _employeesPositions = new ObservableCollection<string>();
         private List<User_ProjectVM> _savedPositions;
         private bool _savePositionButton;
+        private AddEmployeeToTheProject _screen;
 
-        public AddEmployeeToTheProjectVM(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM)
+        public AddEmployeeToTheProjectVM(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM, AddEmployeeToTheProject screen)
         {
+            _screen = screen;
             foreach (var item in projectModuleEditVM.EmployeesCollection)
             {
                 _employeesToAddCollection.Add(item);
@@ -403,6 +405,7 @@ namespace PMView.View
 
         public void LoadData()
         {
+            OnPropertyChanged("EmployeesPositions");
             OnPropertyChanged("EmployeesToAddCollection");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("SkillsCollection");
@@ -457,6 +460,7 @@ namespace PMView.View
         {
             LoadData();
             _lastScreen.LoadData(sender);
+            _screen.LoadData();
         }
     }
 }
