@@ -488,3 +488,9 @@
 08.01.2016 0:00:00 | 12:38:39.5740908:Info | Details screen | Project details have been loaded
 08.01.2016 0:00:00 | 12:47:36.7937873:Info | Details screen | Project details have been loaded
 08.01.2016 0:00:00 | 12:48:21.5166576:Info | Details screen | Project details have been loaded
+10.01.2016 0:00:00 | 09:57:06.1912427:Info | Details screen | Project details have been loaded
+10.01.2016 0:00:00 | 09:58:09.8661741:Info | Details screen | Project details have been loaded
+10.01.2016 0:00:00 | 09:58:35.9067962:Info | Details screen | Project details have been loaded
+10.01.2016 0:00:00 | 10:01:05.9127155:Info | Details screen | Project details have been loaded
+10.01.2016 0:00:00 | 10:01:29.0230339:Info | Details screen | Project details have been loaded
+10.01.2016 0:00:00 | 10:01:53.2183234:Info | Details screen | Project details have been loaded
