@@ -1,4 +1,4 @@
-﻿<Window x:Class="PMView.SkillWindow"
+﻿<Window x:Class="PMView.PositionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:PMView"
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
         mc:Ignorable="d"
-        Title="Skills" Name="Form"  Height="400" Width="550"  WindowStartupLocation="CenterScreen">
+        Title="Positions" Name="Form"  Height="400" Width="550"  WindowStartupLocation="CenterScreen">
 
     <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
         <Grid.Resources>
-            <DataTemplate DataType="{x:Type WrapperVM:SkillVM}">
+            <DataTemplate DataType="{x:Type WrapperVM:PositionVM}">
                 <Border BorderBrush="Azure"  VerticalAlignment="Top">
                     <Grid VerticalAlignment="Top">
                         <Grid.RowDefinitions>
@@ -35,7 +35,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
-            <TextBlock Text="Skills:" Name="Title" FontSize="30" HorizontalAlignment="Center"/>
+            <TextBlock Text="Positions:" Name="Title" FontSize="30" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15,15,15,15">
             <Grid.Background>
@@ -51,11 +51,11 @@
 
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" HorizontalAlignment="Stretch">
-                    <TextBlock Text="Skills:" FontSize="18"/>
+                    <TextBlock Text="Positions:" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <ListBox ItemsSource="{Binding EntityCollection}"
-                         FontSize="14" Name="SkillsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="SkillsListBox_SelectionChanged"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListBox ItemsSource="{Binding SkillsCollection}"
+                         FontSize="14" Name="PositionsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="PositionsListBox_SelectionChanged"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <ListBox.BorderBrush>
                             <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
                         </ListBox.BorderBrush>
@@ -70,9 +70,9 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Text="Add/Edit/Remove skill:" FontSize="18"/>
-                    <Grid Grid.Row="1" Name="SkillNameTextBoxBackground" Background="White">
-                        <TextBox Margin="3,3,3,3" Name="SkillNameTextBox" TextChanged="SkillNameTextBox_TextChanged" Text="{Binding Path=Name}">
+                    <TextBlock Grid.Row="0" Text="Add/Edit/Remove position:" FontSize="18"/>
+                    <Grid Grid.Row="1" Name="PositionNameTextBoxBackground" Background="White">
+                        <TextBox Margin="3,3,3,3" Name="PositionNameTextBox" TextChanged="PositionNameTextBox_TextChanged"  Text="{Binding Path=Name}">
                         </TextBox>
                     </Grid>
                 </Grid>
@@ -85,7 +85,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Name="AddButton" IsEnabled="{Binding Path=AddButton}" Click="AddButton_Click" Grid.Column="0" Content="Add" Margin="0,5,10,5">
+                    <Button Name="AddButton" IsEnabled="{Binding Path=AddButton}" Click="AddButton_Click"  Grid.Column="0" Content="Add" Margin="0,5,10,5">
                         <Button.Background>
                             <SolidColorBrush Color="White" Opacity="0.5"/>
                         </Button.Background>
@@ -95,12 +95,12 @@
                             <SolidColorBrush Color="White" Opacity="0.5"/>
                         </Button.Background>
                     </Button>
-                    <Button Grid.Column="2" Name="RemoveButton" IsEnabled="{Binding Path=RemoveButton}" Click="RemoveButton_Click" Content="Remove"  Margin="10,5,0,5">
+                    <Button Grid.Column="2" Name="RemoveButton" IsEnabled="{Binding Path=RemoveButton}" Click="RemoveButton_Click"  Content="Remove"  Margin="10,5,0,5">
                         <Button.Background>
                             <SolidColorBrush Color="White" Opacity="0.5"/>
                         </Button.Background>
                     </Button>
-                    <Button Grid.Column="3" Name="SaveButton" IsEnabled="{Binding Path=SaveButton}" Click="SaveButton_Click" Content="Save"  Margin="10,5,0,5">
+                    <Button Grid.Column="3" Name="SaveButton" IsEnabled="{Binding Path=SaveButton}" Click="SaveButton_Click"  Content="Save"  Margin="10,5,0,5">
                         <Button.Background>
                             <SolidColorBrush Color="White" Opacity="0.5"/>
                         </Button.Background>
@@ -110,7 +110,7 @@
                             <SolidColorBrush Color="White" Opacity="0.5"/>
                         </Button.Background>
                     </Button>
-                    <Button Grid.Column="5" Name="SaveAllButton" IsEnabled="{Binding Path=SaveAllChangesButton}" Click="SaveAllButton_Click" Content="Save all"  Margin="10,5,0,5">
+                    <Button Grid.Column="5" Name="SaveAllButton" IsEnabled="{Binding Path=SaveAllChangesButton}" Click="SaveAllButton_Click"  Content="Save all"  Margin="10,5,0,5">
                         <Button.Background>
                             <SolidColorBrush Color="White" Opacity="0.5"/>
                         </Button.Background>

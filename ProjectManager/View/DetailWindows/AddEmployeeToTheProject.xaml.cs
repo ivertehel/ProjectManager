@@ -173,7 +173,6 @@ namespace PMView
             }
 
             EmployeesCollectionDataGrid.SelectedItem = null;
-            ////EmployeesToAddListBox.SelectedItem = null;
         }
 
         private void PositionCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -208,7 +207,7 @@ namespace PMView
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)
         {
-            (new SkillWindow(_lastScreen)).Show();
+            (new SkillWindow(_projectModuleEditVM)).Show();
         }
 
         private void fillCheckboxList()
@@ -230,6 +229,11 @@ namespace PMView
         {
             fillCheckboxList();
             _lastScreen.LoadData(this);
+        }
+
+        private void AddPositions_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

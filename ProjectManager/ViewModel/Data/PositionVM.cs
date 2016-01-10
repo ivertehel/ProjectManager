@@ -34,12 +34,6 @@ namespace PMView.View.WrapperVM
             set { _position.Name = value; }
         }
 
-        public string Description
-        {
-            get { return _position.Description; }
-            set { _position.Description = value; }
-        }
-
         public IEnumerable<User_Team> UsersInTeams
         {
             get { return _position.UsersInTeams; }

@@ -43,3 +43,5 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.g
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.Properties.Resources.resources
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.exe
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\PositionWindow.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\PositionWindow.baml

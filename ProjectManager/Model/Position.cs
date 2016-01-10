@@ -10,8 +10,6 @@ namespace PMDataLayer
     {
         public string Name { get; set; }
 
-        public string Description { get; set; }
-
         public IEnumerable<User_Team> UsersInTeams
         {
             get { return User_Team.Items.Where(items => items.Position.Id == Id); }
