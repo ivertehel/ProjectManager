@@ -50,7 +50,7 @@ namespace PMView.View
         private void TeamsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (TeamsListBox.SelectedItem != null)
-            (new TeamsDetails(TeamsListBox.SelectedItem as TeamVM, _projectsUserControlVM)).Show();
+                (new TeamsDetails(TeamsListBox.SelectedItem as TeamVM, _projectsUserControlVM)).Show();
 
             TeamsListBox.SelectedItem = null;
         }
@@ -83,7 +83,13 @@ namespace PMView.View
 
         private void RemoveProject_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (ModulesDataGrid.SelectedItem != null)
+            {
+                if (MessageBox.Show("Are you sure?", "Are you sure?", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning, MessageBoxResult.No, MessageBoxOptions.DefaultDesktopOnly) == MessageBoxResult.Yes)
+                {
+                    _projectsUserControlVM.RemoveProject(ModulesDataGrid.SelectedItem as ProjectVM);
+                }
+            }
         }
     }
 }

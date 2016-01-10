@@ -93,8 +93,11 @@ namespace PMView.View
             set
             {
                 _selectedModule = value;
-                EditButton = true;
-                RemoveButton = true;
+                if (_selectedModule != null)
+                {
+                    EditButton = true;
+                    RemoveButton = true;
+                }
             }
         }
 
@@ -107,6 +110,17 @@ namespace PMView.View
 
                 return SelectedOrder.Status;
             }
+        }
+
+        internal void RemoveProject(ProjectVM projectVM)
+        {
+            User_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
+            Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == projectVM.Project.Id));
+            Project_Skill.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
+            Project.Items.Remove(Project.Items.FirstOrDefault(item => item.Id == projectVM.Project.Id));
+            EditButton = false;
+            RemoveButton = false;
+            LoadData();
         }
 
         public string ReleaseDate
