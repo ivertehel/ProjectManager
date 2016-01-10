@@ -21,51 +21,59 @@ namespace PMView
     {
         private PositionWindowVM _positionWindowVM;
 
-        public PositionWindow(ILoadData lastScreen)
+        public PositionWindow(ILoadDataSender lastScreen)
         {
             InitializeComponent();
-            _positionWindowVM = new PositionWindowVM();
+            _positionWindowVM = new PositionWindowVM(lastScreen);
             DataContext = _positionWindowVM;
         }
 
         private void PositionsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (PositionsListBox.SelectedItem != null)
+            {
+                _positionWindowVM.Name = PositionsListBox.SelectedItem.ToString();
+            }
+            PositionsListBox.SelectedItem = null;
         }
 
         private void PositionNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            _positionWindowVM.Name = PositionNameTextBox.Text;
+            if (!_positionWindowVM.Editing)
+                PositionNameTextBoxBackground.Background = Brushes.White;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _positionWindowVM.AddButtonClick();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _positionWindowVM.Editing = true;
+            PositionNameTextBoxBackground.Background = Brushes.LightSkyBlue;
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _positionWindowVM.RemoveButtonClick();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _positionWindowVM.SaveButtonClick();
         }
 
         private void CancelAllButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _positionWindowVM.CancelAllChangesButtonClick();
         }
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (MessageBox.Show("All your changes may change exist emloyees positions", "Are you sure?", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning, MessageBoxResult.No, MessageBoxOptions.DefaultDesktopOnly) == MessageBoxResult.Yes)
+                _positionWindowVM.SaveAllButtonClick();
         }
     }
 }

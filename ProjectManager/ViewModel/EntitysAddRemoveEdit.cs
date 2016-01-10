@@ -60,7 +60,6 @@ namespace PMView
         public virtual ObservableCollection<T> EntityCollection
         {
             get { return _entityCollection; }
-            set { _entityCollection = value; }
         }
 
 

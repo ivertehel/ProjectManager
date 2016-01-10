@@ -13,8 +13,6 @@ namespace PMView
 {
     public class SkillWindowVM : EntitysAddRemoveEdit<SkillVM>, INotifyPropertyChanged, ILoadDataSender
     {
-        private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
-
         public SkillWindowVM(ILoadDataSender lastScreen) : base(lastScreen)
         {
           
@@ -39,15 +37,15 @@ namespace PMView
                     return _savedCollection;
                 }
 
-                _skillsCollection.Clear();
+                _entityCollection.Clear();
                 _savedCollection = new ObservableCollection<SkillVM>();
                 foreach (var item in SkillVM.Skills)
                 {
-                    _skillsCollection.Add(item);
+                    _entityCollection.Add(item);
                     _savedCollection.Add(item.Clone());
                 }
 
-                return _skillsCollection;
+                return _entityCollection;
             }
         }
 

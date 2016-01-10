@@ -54,7 +54,7 @@
                     <TextBlock Text="Positions:" FontSize="18"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <ListBox ItemsSource="{Binding SkillsCollection}"
+                    <ListBox ItemsSource="{Binding EntityCollection}"
                          FontSize="14" Name="PositionsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="PositionsListBox_SelectionChanged"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <ListBox.BorderBrush>
                             <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>

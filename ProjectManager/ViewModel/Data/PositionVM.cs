@@ -11,6 +11,8 @@ namespace PMView.View.WrapperVM
     public class PositionVM : BaseVM
     {
         private Position _position;
+        private static List<PositionVM> _positions = new List<PositionVM>();
+
 
         public PositionVM()
         {
@@ -47,6 +49,25 @@ namespace PMView.View.WrapperVM
         public override string ToString()
         {
             return Name;
+        }
+
+        public PositionVM Clone()
+        {
+            return new PositionVM(new Position() { Name = Name, Id = Position.Id });
+        }
+
+        public static List<PositionVM> Positions
+        {
+            get
+            {
+                _positions.Clear();
+                foreach (var item in Position.Items)
+                {
+                    _positions.Add(new PositionVM(item));
+                }
+
+                return _positions;
+            }
         }
     }
 }

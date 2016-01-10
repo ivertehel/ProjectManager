@@ -911,3 +911,12 @@
 10.01.2016 0:00:00 | 07:27:55.4678497:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 10.01.2016 0:00:00 | 07:28:00.7333314:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 10.01.2016 0:00:00 | 07:28:06.7567602:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+10.01.2016 0:00:00 | 07:53:07.3585902:Info | Details screen | Project details have been loaded
+10.01.2016 0:00:00 | 07:53:16.2480174:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+10.01.2016 0:00:00 | 07:53:20.8813379:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+10.01.2016 0:00:00 | 07:53:43.4903483:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+10.01.2016 0:00:00 | 07:53:47.4009041:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+10.01.2016 0:00:00 | 07:53:47.4044073:Info | User details screen | Details of user datrax has been loaded
+10.01.2016 0:00:00 | 07:53:47.5313101:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+10.01.2016 0:00:00 | 07:54:02.9413289:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+10.01.2016 0:00:00 | 07:54:05.9683541:Info | Order screen | Details of Android Matches Puzzle game have been loaded

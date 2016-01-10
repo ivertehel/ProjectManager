@@ -233,7 +233,7 @@ namespace PMView
 
         private void AddPositions_Click(object sender, RoutedEventArgs e)
         {
-
+            (new PositionWindow(_projectModuleEditVM)).Show();
         }
     }
 }
