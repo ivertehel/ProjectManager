@@ -98,6 +98,7 @@ namespace PMView
 
         private void AddTeamToTheProject_Click(object sender, RoutedEventArgs e)
         {
+            (new AddTeamToTheProject(_projectModuleEditVM, _projectModuleEditVM)).Show();
         }
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)

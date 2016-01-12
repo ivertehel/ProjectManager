@@ -74,10 +74,14 @@
     <Compile Include="Model\User_Project.cs" />
     <Compile Include="Model\User_Skill.cs" />
     <Compile Include="Model\User_Team.cs" />
+    <Compile Include="ViewModel\AddTeamToTheProjectVM.cs" />
     <Compile Include="ViewModel\EntitysAddRemoveEdit.cs" />
     <Compile Include="ViewModel\PositionWindowVM.cs" />
     <Compile Include="View\DetailWindows\AddEmployeeToTheProject.xaml.cs">
       <DependentUpon>AddEmployeeToTheProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DetailWindows\AddTeamToTheProject.xaml.cs">
+      <DependentUpon>AddTeamToTheProject.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DetailWindows\PositionWindow.xaml.cs">
       <DependentUpon>PositionWindow.xaml</DependentUpon>
@@ -144,6 +148,10 @@
       <DependentUpon>UsersDetails.xaml</DependentUpon>
     </Compile>
     <Page Include="View\DetailWindows\AddEmployeeToTheProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DetailWindows\AddTeamToTheProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

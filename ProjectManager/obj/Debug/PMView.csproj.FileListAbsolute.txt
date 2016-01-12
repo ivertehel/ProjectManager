@@ -45,3 +45,5 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.e
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\PMView.pdb
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\PositionWindow.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\PositionWindow.baml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\AddTeamToTheProject.g.cs
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\AddTeamToTheProject.baml

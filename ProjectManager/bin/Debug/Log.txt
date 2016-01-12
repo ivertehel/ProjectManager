@@ -1749,3 +1749,12 @@
 12.01.2016 0:00:00 | 12:03:43.8376888:Info | Team details screen | Team details have been loaded
 12.01.2016 0:00:00 | 12:04:42.3886831:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 12.01.2016 0:00:00 | 12:05:46.0113039:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+12.01.2016 0:00:00 | 12:10:36.3723637:Info | Details screen | Project details have been loaded
+12.01.2016 0:00:00 | 12:10:40.8037047:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+12.01.2016 0:00:00 | 12:20:47.6326153:Info | Details screen | Project details have been loaded
+12.01.2016 0:00:00 | 12:28:39.1483353:Info | Details screen | Project details have been loaded
+12.01.2016 0:00:00 | 12:28:41.3084384:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+12.01.2016 0:00:00 | 12:29:00.3422284:Info | Details screen | Project details have been loaded
+12.01.2016 0:00:00 | 12:29:04.1204296:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+12.01.2016 0:00:00 | 12:30:29.4988672:Info | Details screen | Project details have been loaded
+12.01.2016 0:00:00 | 12:30:32.3375569:Info | Order screen | Details of Android Matches Puzzle game have been loaded
