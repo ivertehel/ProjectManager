@@ -19,7 +19,7 @@ namespace PMView
     /// <summary>
     /// Interaction logic for AddTeamToTheProject.xaml
     /// </summary>
-    public partial class AddTeamToTheProject : Window
+    public partial class AddTeamToTheProject : Window, ILoadDataSender
     {
         private ILoadDataSender _lastScreen;
         private ProjectModuleEditVM _projectModuleEditVM;
@@ -54,7 +54,9 @@ namespace PMView
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            _addTeamToTheProject.SelectedSkills.Clear();
+            _addTeamToTheProject.SelectedSkills.AddRange((from items in _skills where items.IsChecked == true select items.Content.ToString()).ToList());
+            _addTeamToTheProject.OnPropertyChanged("TeamsCollection");
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -69,12 +71,13 @@ namespace PMView
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            (new SkillWindow(this)).Show();
         }
 
         private void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            _addTeamToTheProject.Name = Name.Text;
+            _addTeamToTheProject.OnPropertyChanged("TeamsCollection");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -89,6 +92,12 @@ namespace PMView
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public void LoadData(object sender)
+        {
+            fillCheckboxList();
+            _lastScreen.LoadData(sender);
         }
     }
 }

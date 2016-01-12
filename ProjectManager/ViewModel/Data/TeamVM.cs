@@ -55,5 +55,28 @@ namespace PMView.View.WrapperVM
         {
             return _team.ToString();
         }
+
+        public IEnumerable<SkillVM> Skills
+        {
+            get
+            {
+                List<SkillVM> skills = new List<SkillVM>();
+                foreach (var employee in User.Items)
+                {
+                    if (employee.Role == User.Roles.Employee)
+                    {
+                        foreach (var skill in employee.Skills)
+                        {
+                            if (skills.FirstOrDefault(item => item.Name == skill.Name) == null)
+                            {
+                                skills.Add(new SkillVM(skill));
+                            }
+                        }
+                    }
+                }
+
+                return skills;
+            }
+        }
     }
 }

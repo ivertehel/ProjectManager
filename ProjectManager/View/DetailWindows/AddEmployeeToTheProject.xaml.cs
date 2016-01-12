@@ -20,7 +20,7 @@ namespace PMView
     /// <summary>
     /// Interaction logic for AddEmployeeToTheProject.xaml
     /// </summary>
-    public partial class AddEmployeeToTheProject : Window, ILoadData
+    public partial class AddEmployeeToTheProject : Window, ILoadData, ILoadDataSender
     {
         private AddEmployeeToTheProjectVM _addEmployeeToTheProjectVM;
 
@@ -207,7 +207,7 @@ namespace PMView
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)
         {
-            (new SkillWindow(_projectModuleEditVM)).Show();
+            (new SkillWindow(this)).Show();
         }
 
         private void fillCheckboxList()
@@ -251,6 +251,12 @@ namespace PMView
         private void AddPositions_Click(object sender, RoutedEventArgs e)
         {
             (new PositionWindow(_addEmployeeToTheProjectVM)).Show();
+        }
+
+        public void LoadData(object sender)
+        {
+            fillCheckboxList();
+            _lastScreen.LoadData(sender);
         }
     }
 }

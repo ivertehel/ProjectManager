@@ -53,87 +53,48 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.3"></SolidColorBrush>
             </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Text="Name:" FontSize="18"/>
-                    <TextBox Grid.Row="1" Name="Name" TextChanged="Name_TextChanged">
-                        <Binding Path="Name">
-                        </Binding>
-                    </TextBox>
-                </Grid>
-                <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Name:" FontSize="18"/>
+                <TextBox Grid.Row="1" Name="Name" TextChanged="Name_TextChanged">
+                    <Binding Path="Name">
+                    </Binding>
+                </TextBox>
+                <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" HorizontalAlignment="Stretch">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0">
-                            <TextBlock Text="Skills:" TextBlock.FontSize="18" Margin="0,0,0,10"/>
-                        </Grid>
-                        <Grid Grid.Column="1">
-                            <Button Content="Add/Edit" MinWidth="100" Margin="10,0,0,10" Name="AddSkill" Click="AddSkill_Click">
-                                <Button.Background>
-                                    <DrawingBrush Opacity="0.5"/>
-                                </Button.Background>
-                            </Button>
-                        </Grid>
+                    <Grid Grid.Row="0">
+                        <TextBlock FontSize="18" Text="Chose team to add it into module or to edit team"/>
                     </Grid>
-                    <Grid Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,5,5">
-                        <ListBox 
-                         FontSize="14" Name="SkillsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                            <ListBox.BorderBrush>
-                                <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
-                            </ListBox.BorderBrush>
-                            <ListBox.Background>
-                                <SolidColorBrush Opacity="0.8" Color="White"/>
-                            </ListBox.Background>
-                        </ListBox>
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <TextBlock FontSize="18" Text="Chose team to add it into module or to edit team"/>
-                </Grid>
-                <DataGrid
+                    <DataGrid
                       ItemsSource="{Binding TeamsCollection}" ColumnWidth="*"
                       IsReadOnly="True" AutoGenerateColumns="False"
                       HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300"
                       RowHeight="20">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Width="auto"  Header="Team" Binding="{Binding Path=Name, Mode=OneWay}"/>
-                        <DataGridTextColumn Width="*"  Header="Description" Binding="{Binding Path=Description, Mode=OneWay}"/>
-                    </DataGrid.Columns>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="auto"  Header="Team" Binding="{Binding Path=Name, Mode=OneWay}"/>
+                            <DataGridTextColumn Width="*"  Header="Description" Binding="{Binding Path=Description, Mode=OneWay}"/>
+                        </DataGrid.Columns>
 
-                </DataGrid>
-            </Grid>
+                    </DataGrid>
+                </Grid>
 
-            <Grid Grid.Row="2">
+                <Grid Grid.Row="3">
 
-                <!--<Grid.ColumnDefinitions>
+                    <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
@@ -213,37 +174,71 @@
                     </Grid>
                 </Grid>-->
 
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="AddButton" Click="AddButton_Click" IsEnabled="{Binding Path=AddButton}" Grid.Column="0" Content="Add" Margin="0,5,10,5">
+                        <Button.Background>
+                            <SolidColorBrush Color="White" Opacity="0.5"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Name="RemoveButton" Click="RemoveButton_Click" IsEnabled="{Binding Path=RemoveButton}"  Grid.Column="1" Content="Remove"  Margin="10,5,10,5">
+                        <Button.Background>
+                            <SolidColorBrush Color="White" Opacity="0.5"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Grid.Column="2" Name="DetailsButton" IsEnabled="{Binding Path=DetailsButton}"  Click="DetailsButton_Click" Content="Details"  Margin="10,5,10,5">
+                        <Button.Background>
+                            <SolidColorBrush Color="White" Opacity="0.5"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Grid.Column="3" Name="SaveAllButton" IsEnabled="{Binding Path=SaveButton}" Click="SaveAllButton_Click" Content="Save all"  Margin="10,5,0,5">
+                        <Button.Background>
+                            <SolidColorBrush Color="White" Opacity="0.5"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
             </Grid>
-            <Grid Grid.Row="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button Name="AddButton" Click="AddButton_Click" IsEnabled="{Binding Path=AddButton}" Grid.Column="0" Content="Add" Margin="0,5,10,5">
-                    <Button.Background>
-                        <SolidColorBrush Color="White" Opacity="0.5"/>
-                    </Button.Background>
-                </Button>
-                <Button Name="RemoveButton" Click="RemoveButton_Click" IsEnabled="{Binding Path=RemoveButton}"  Grid.Column="1" Content="Remove"  Margin="10,5,10,5">
-                    <Button.Background>
-                        <SolidColorBrush Color="White" Opacity="0.5"/>
-                    </Button.Background>
-                </Button>
-                <Button Grid.Column="2" Name="DetailsButton" IsEnabled="{Binding Path=DetailsButton}"  Click="DetailsButton_Click" Content="Details"  Margin="10,5,10,5">
-                    <Button.Background>
-                        <SolidColorBrush Color="White" Opacity="0.5"/>
-                    </Button.Background>
-                </Button>
-                <Button Grid.Column="3" Name="SaveAllButton" IsEnabled="{Binding Path=SaveButton}" Click="SaveAllButton_Click" Content="Save all"  Margin="10,5,0,5">
-                    <Button.Background>
-                        <SolidColorBrush Color="White" Opacity="0.5"/>
-                    </Button.Background>
-                </Button>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="Skills:" TextBlock.FontSize="18" Margin="0,0,0,10"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Button Content="Add/Edit" MinWidth="100" Margin="10,0,0,10" Name="AddSkill" Click="AddSkill_Click">
+                            <Button.Background>
+                                <DrawingBrush Opacity="0.5"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,5,5">
+                    <ListBox 
+                         FontSize="14" Name="SkillsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ListBox.BorderBrush>
+                            <SolidColorBrush Opacity="0.5" Color="SkyBlue"/>
+                        </ListBox.BorderBrush>
+                        <ListBox.Background>
+                            <SolidColorBrush Opacity="0.8" Color="White"/>
+                        </ListBox.Background>
+                    </ListBox>
+                </Grid>
             </Grid>
         </Grid>
-
     </Grid>
+   
 </Window>
 
