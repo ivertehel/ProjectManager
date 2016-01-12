@@ -55,10 +55,10 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Label Content="{Binding Path=Name}" TextBlock.FontSize="20" HorizontalAlignment="Left"/>
+                    <TextBlock Text="{Binding Path=Name}" TextBlock.FontSize="20" HorizontalAlignment="Left"/>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Label Content="{Binding Path=ProjectStatus}" TextBlock.FontSize="18" FontWeight="Bold"  HorizontalAlignment="Right"/>
+                    <TextBlock Text="{Binding Path=ProjectStatus}" TextBlock.FontSize="18" FontWeight="Bold"  HorizontalAlignment="Right"/>
                 </Grid>
             </Grid>
 
@@ -72,7 +72,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0" HorizontalAlignment="Stretch">
-                    <Label Content="Description:" TextBlock.FontSize="18"/>
+                    <TextBlock Text="Description:" TextBlock.FontSize="18"/>
                 </Grid>
 
                 <Grid Grid.Row="1" HorizontalAlignment="Stretch">
@@ -102,21 +102,26 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Row="0" Grid.Column="0">
-                                <Label Content="Skills:" FontSize="14"/>
+                                <TextBlock Text="Skills:" FontSize="14"/>
                             </Grid>
                             <Grid Grid.Row="0" Grid.Column="1">
-                                <TextBox MaxLines="5" TextWrapping="Wrap" Text="{Binding Path=Skills, Mode=OneWay}" IsReadOnly="True" FontSize="14">
-                                    <TextBox.BorderBrush>
-                                        <DrawingBrush Opacity="0"></DrawingBrush>
-                                    </TextBox.BorderBrush>
-                                    <TextBox.Background>
-                                        <SolidColorBrush Color="White" Opacity="0"/>
-                                    </TextBox.Background>
-                                </TextBox>
+                                <ListBox FontSize="14" Name="SkillsListBox" ItemsSource="{Binding Skills}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                    <ListBox.BorderBrush>
+                                        <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                                    </ListBox.BorderBrush>
+                                    <ListBox.Background>
+                                        <SolidColorBrush Opacity="0"/>
+                                    </ListBox.Background>
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel />
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                </ListBox>
                             </Grid>
 
                             <Grid Grid.Row="1" Grid.Column="0">
-                                <Label Content="Teams:" FontSize="14"/>
+                                <TextBlock Text="Teams:" FontSize="14"/>
                             </Grid>
                             <Grid Grid.Row="1" Grid.Column="1">
                                 <ListBox FontSize="14" Name="TeamsListBox" ItemsSource="{Binding TeamsCollection}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="TeamsListBox_SelectionChanged">
@@ -135,7 +140,7 @@
                             </Grid>
 
                             <Grid Grid.Row="2" Grid.Column="0" Margin="0,5,0,0">
-                                <Label Content="Employees:"  FontSize="14"/>
+                                <TextBlock Text="Employees:"  FontSize="14"/>
                             </Grid>
                             <Grid Grid.Row="2" Grid.Column="1" Margin="0,5,0,0">
                                 <ListBox FontSize="14" Name="EmployeesListBox" ItemsSource="{Binding EmployeesCollection}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
@@ -217,7 +222,7 @@
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                    <Label Content="Modules:" TextBlock.FontSize="18"/>
+                        <TextBlock Text="Modules:" TextBlock.FontSize="18"/>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Button Content="Add" MinWidth="50" Margin="10,10,0,10" Click="AddProject_Click">

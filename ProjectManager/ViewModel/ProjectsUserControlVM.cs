@@ -23,6 +23,9 @@ namespace PMView.View
 
         private ObservableCollection<TaskVM> _tasksCollection = new ObservableCollection<TaskVM>();
 
+        private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
+
+
         private OrderVM _selectedOrder;
         private bool _editButton;
         private bool _removeButton;
@@ -53,27 +56,23 @@ namespace PMView.View
             set { _selectedOrder = value; }
         }
 
-        public string Skills
+        public ObservableCollection<SkillVM> Skills
         {
             get
             {
                 if (SelectedOrder == null)
-                    return string.Empty;
+                    return new ObservableCollection<SkillVM>();
 
-                string skills = string.Empty;
-                List<Skill> s = new List<Skill>();
+                _skillsCollection.Clear();
+                
                 foreach (var item in SelectedOrder.Order.Projects)
                 {
-                    IEnumerable<Skill> inProj = from items in item.Skills where !s.Exists(x => x.Id == items.Id) select items;
-                    s.AddRange(inProj);
+                    IEnumerable<Skill> inProj = from items in item.Skills where _skillsCollection.FirstOrDefault(x => x.Skill.Id == items.Id) == null select items;
+                    foreach (var s in inProj)
+                        _skillsCollection.Add(new SkillVM(s));
                 }
 
-                for (int i = 0; i < s.Count; i++)
-                {
-                    skills += s[i].Name + (i < s.Count - 1 ? ", " : " ");
-                }
-
-                return skills;
+                return _skillsCollection;
             }
         }
 
