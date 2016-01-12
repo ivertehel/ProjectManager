@@ -274,6 +274,7 @@ namespace PMView.View
                 Project_Skill.Items.RemoveAll(item => item.Project.Id == id);
                 Project.Items.Remove(Project.Items.FirstOrDefault(item => item.Id == _project.Id));
                 _project = new Project();
+                _project.Id = id;
                 _project.Name = Name;
                 _project.Description = Description;
                 if (SelectedLeader != null)
