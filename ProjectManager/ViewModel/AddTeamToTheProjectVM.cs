@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMView.View
 {
-    class AddTeamToTheProjectVM : INotifyPropertyChanged
+    class AddTeamToTheProjectVM : INotifyPropertyChanged, ILoadData
     {
         private AddTeamToTheProject _addTeamToTheProject;
         private ILoadDataSender _lastScreen;
@@ -18,12 +18,18 @@ namespace PMView.View
         private List<string> _selectedSkills = new List<string>();
         private ObservableCollection<TeamVM> _teamsCollection = new ObservableCollection<TeamVM>();
         private string _name;
+        private ObservableCollection<TeamVM> _teamsToAddCollection = new ObservableCollection<TeamVM>();
+        private bool _addButton;
+        private bool _detailsButton;
+        private bool _saveButton;
+        private bool _removeButton;
 
         public AddTeamToTheProjectVM(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM, AddTeamToTheProject addTeamToTheProject)
         {
             _lastScreen = lastScreen;
             _projectModuleEditVM = projectModuleEditVM;
             _addTeamToTheProject = addTeamToTheProject;
+            AddButton = true;
         }
 
         public List<string> SelectedSkills
@@ -45,12 +51,73 @@ namespace PMView.View
             }
         }
 
+        public ObservableCollection<TeamVM> TeamsToAddCollection
+        {
+            get
+            {
+                return _teamsToAddCollection;
+            }
+        }
+
         public string Name
         {
             get { return _name; }
             set { _name = value; }
         }
 
+        public bool AddButton
+        {
+            get { return _addButton; }
+            set
+            {
+                _addButton = value;
+                OnPropertyChanged("AddButton");
+            }
+        }
+        public bool DetailsButton
+        {
+            get { return _detailsButton; }
+            set
+            {
+                _detailsButton = value;
+                OnPropertyChanged("DetailsButton");
+            }
+        }
+        public bool SaveButton
+        {
+            get { return _saveButton; }
+            set
+            {
+                _saveButton = value;
+                OnPropertyChanged("SaveButton");
+            }
+        }
+
+        public bool RemoveButton
+        {
+            get { return _removeButton; }
+            set
+            {
+                _removeButton = value;
+                OnPropertyChanged("RemoveButton");
+            }
+        }
+
+        public void RemoveButtonClick(TeamVM team)
+        {
+            if (_teamsToAddCollection.Where(item => item.Team.Id == team.Team.Id ).Count() != 0)
+            {
+                var toDelete = _teamsToAddCollection.First(item => item.Team.Id == team.Team.Id);
+                _teamsToAddCollection.Remove(toDelete);
+                RemoveButton = false;
+                DetailsButton = false;
+                SaveButton = true;
+                OnPropertyChanged("RemoveButton");
+                OnPropertyChanged("DetailsButton");
+                OnPropertyChanged("SaveButton");
+                LoadData();
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -84,5 +151,53 @@ namespace PMView.View
                 _teamsCollection.Add(item);
             }
         }
+
+        public void ActivateButtons(TeamVM selectedTeamToAdd)
+        {
+            if (selectedTeamToAdd != null)
+            {
+                if (_teamsToAddCollection.Where(item => item.Name == selectedTeamToAdd.Name).Count() > 0)
+                {
+                    RemoveButton = true;
+                    AddButton = false;
+                }
+                else
+                {
+                    RemoveButton = false;
+                    AddButton = true;
+                }
+
+                DetailsButton = true;
+                OnPropertyChanged("RemoveButton");
+                OnPropertyChanged("AddButton");
+                OnPropertyChanged("DetailsButton");
+            }
+        }
+
+        public void AddButtonClick(TeamVM team)
+        {
+            if (_teamsToAddCollection.Where(item => item.Equals(team)).Count() == 0)
+            {
+                _teamsToAddCollection.Add(team);
+                AddButton = false;
+                DetailsButton = false;
+                SaveButton = true;
+                OnPropertyChanged("AddButton");
+                OnPropertyChanged("DetailsButton");
+                OnPropertyChanged("SaveButton");
+                LoadData();
+            }
+            else
+            {
+                throw new Exception("This team is already exist");
+            }
+        }
+
+        public void LoadData()
+        {
+            OnPropertyChanged("TeamsToAddCollection");
+            OnPropertyChanged("TeamsCollection");
+        }
+
     }
 }

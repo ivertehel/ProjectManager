@@ -178,7 +178,7 @@ namespace PMView.View
             {
                 if (value != null)
                 {
-                    if (_employeesToAddCollection.Where(item => item.Name == value.Name && item.Surname == value.Surname && item.Login == value.Login).Count() > 0)
+                    if (_employeesToAddCollection.Where(item => item.User.Id == value.User.Id).Count() > 0)
                     {
                         RemoveButton = true;
                         AddButton = false;
@@ -388,9 +388,9 @@ namespace PMView.View
 
         public void RemoveButtonClick(UserVM user)
         {
-            if (_employeesToAddCollection.Where(item => item.Name == user.Name && item.Surname == user.Surname && item.Login == user.Login).Count() != 0)
+            if (_employeesToAddCollection.Where(item => item.User.Id == user.User.Id).Count() != 0)
             {
-                var toDelete = _employeesToAddCollection.First(item => item.Equals(user));
+                var toDelete = _employeesToAddCollection.First(item => item.User.Id == user.User.Id);
                 _employeesToAddCollection.Remove(toDelete);
                 RemoveButton = false;
                 ProfileButton = false;

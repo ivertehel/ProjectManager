@@ -1,5 +1,6 @@
 ﻿using PMDataLayer;
 using PMView.View;
+using PMView.View.WrapperVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace PMView
         private ProjectModuleEditVM _projectModuleEditVM;
         private AddTeamToTheProjectVM _addTeamToTheProject;
         private List<CheckBox> _skills = new List<CheckBox>();
-
+        private TeamVM _selectedTeamToAdd;
 
         public AddTeamToTheProject(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
@@ -59,14 +60,28 @@ namespace PMView
             _addTeamToTheProject.OnPropertyChanged("TeamsCollection");
         }
 
+
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _addTeamToTheProject.AddButtonClick(_selectedTeamToAdd);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            var select = (TeamVM)TeamsCollectionDataGrid.SelectedItem;
+            if (select == null)
+                select = (TeamVM)TeamsToAddListBox.SelectedItem;
+            if (select == null)
+                select = _selectedTeamToAdd;
+            if (select != null)
+                _addTeamToTheProject.RemoveButtonClick(select);
         }
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)
@@ -94,10 +109,33 @@ namespace PMView
 
         }
 
+
         public void LoadData(object sender)
         {
             fillCheckboxList();
             _lastScreen.LoadData(sender);
+        }
+
+        private void TeamsToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (TeamsToAddListBox.SelectedItem != null)
+            {
+                _selectedTeamToAdd = (TeamVM)TeamsToAddListBox.SelectedItem;
+
+                _addTeamToTheProject.ActivateButtons(_selectedTeamToAdd);
+            }
+
+            TeamsToAddListBox.SelectedItem = null;
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (TeamsCollectionDataGrid.SelectedItem != null)
+            {
+                _selectedTeamToAdd = (TeamVM)TeamsCollectionDataGrid.SelectedItem;
+
+                _addTeamToTheProject.ActivateButtons(_selectedTeamToAdd);
+            }
         }
     }
 }
