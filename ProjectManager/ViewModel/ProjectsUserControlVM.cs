@@ -97,6 +97,11 @@ namespace PMView.View
                     EditButton = true;
                     RemoveButton = true;
                 }
+                else
+                {
+                    EditButton = false;
+                    RemoveButton = false;
+                }
             }
         }
 

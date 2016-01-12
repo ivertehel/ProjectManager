@@ -29,6 +29,7 @@ namespace PMView.View
         private Project _project;
         private bool _saveButton = false;
         private List<User_ProjectVM> _savedPositions = new List<User_ProjectVM>();
+        private ObservableCollection<TeamVM> _teamsCollection = new ObservableCollection<TeamVM>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -58,8 +59,6 @@ namespace PMView.View
 
             foreach (var item in User_Project.Items)
             {
-
-
                 if (_employeesCollection.FirstOrDefault(employee => employee.User.Id == item.User.Id) == null && item.Project.Id == _projectVM.Project.Id)
                 {
                     _employeesCollection.Add(new UserVM(item.User));
@@ -67,6 +66,14 @@ namespace PMView.View
 
                 if (item.Project.Id == _project.Id)
                     _savedPositions.Add(new User_ProjectVM(item));
+            }
+
+            foreach (var item in Team_Project.Items)
+            {
+                if (_teamsCollection.FirstOrDefault(team => team.Team.Id == item.Team.Id) == null && item.Project.Id == _projectVM.Project.Id)
+                {
+                    _teamsCollection.Add(new TeamVM(item.Team));
+                }
             }
 
             _status = projectVM.Status;
@@ -152,6 +159,16 @@ namespace PMView.View
             set
             {
                 _employeesCollection = value;
+                SaveButton = true;
+            }
+        }
+
+        public ObservableCollection<TeamVM> TeamsCollection
+        {
+            get { return _teamsCollection; }
+            set
+            {
+                _teamsCollection = value;
                 SaveButton = true;
             }
         }

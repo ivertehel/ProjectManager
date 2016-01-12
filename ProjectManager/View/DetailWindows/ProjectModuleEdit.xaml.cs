@@ -96,6 +96,10 @@ namespace PMView
             (new AddEmployeeToTheProject(_projectModuleEditVM, _projectModuleEditVM)).Show();
         }
 
+        private void AddTeamToTheProject_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
         private void AddSkill_Click(object sender, RoutedEventArgs e)
         {
             _savedSkills = new List<CheckBox>();
