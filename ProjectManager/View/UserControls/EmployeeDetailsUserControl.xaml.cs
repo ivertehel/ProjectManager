@@ -30,7 +30,7 @@ namespace PMView.View
 
         private UserDetailsVM _userDetailsVM;
 
-        public EmployeeDetailsUserControl(IEmployee employee, ILoadData lastScreen, UserDetailsVM userDetailsVM)
+        public EmployeeDetailsUserControl(IEmployee employee, ILoadDataSender lastScreen, UserDetailsVM userDetailsVM)
         {
             InitializeComponent();
             _userDetailsVM = userDetailsVM;

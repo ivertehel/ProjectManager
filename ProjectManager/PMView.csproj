@@ -103,7 +103,6 @@
     <Compile Include="ViewModel\Data\BaseVM.cs" />
     <Compile Include="ViewModel\EmployeeDetailsUserControlVM.cs" />
     <Compile Include="ViewModel\IEmployee.cs" />
-    <Compile Include="ViewModel\ILoadData.cs" />
     <Compile Include="ViewModel\Data\OrderVM.cs" />
     <Compile Include="ViewModel\Data\PositionVM.cs" />
     <Compile Include="ViewModel\Data\ProjectVM.cs" />

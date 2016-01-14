@@ -21,6 +21,8 @@ namespace PMView.View
 
         private ProjectsUserControlVM _projectsUserControlVM;
 
+        private ILoadDataSender _lastScreen;
+
         private List<string> _employeesPositions = new List<string>();
 
         private bool _buttonsActive = false;
@@ -41,6 +43,20 @@ namespace PMView.View
             OnPropertyChanged("Description");
             OnPropertyChanged("OrdersCollection");
             OnPropertyChanged("EmployeesCollection");
+        }
+
+        public TeamDetailsVM(TeamVM team, ILoadDataSender lastScreen)
+        {
+            if (team == null)
+                return;
+
+            Logger.Info("Team details screen", "Team details have been loaded");
+            CurrentTeam = team;
+            OnPropertyChanged("Name");
+            OnPropertyChanged("Description");
+            OnPropertyChanged("OrdersCollection");
+            OnPropertyChanged("EmployeesCollection");
+            _lastScreen = lastScreen;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -238,7 +254,9 @@ namespace PMView.View
 
             CurrentTeam.Name = Name;
             CurrentTeam.Description = Description;
-            _projectsUserControlVM.OnPropertyChanged("TeamsCollection");
+            if (_projectsUserControlVM != null)
+                _projectsUserControlVM.OnPropertyChanged("TeamsCollection");
+            else _lastScreen.LoadData(this);
             OnPropertyChanged("Name");
             OnPropertyChanged("Description");
             ButtonsActive = false;

@@ -20,9 +20,9 @@ namespace PMView
     /// <summary>
     /// Interaction logic for ProjectModuleEdit.xaml
     /// </summary>
-    public partial class ProjectModuleEdit : Window, ILoadDataSender, ILoadData
+    public partial class ProjectModuleEdit : Window, ILoadDataSender
     {
-        private ILoadData _lastScreen;
+        private ILoadDataSender _lastScreen;
 
         private ProjectModuleEditVM _projectModuleEditVM;
         private List<CheckBox> _skills = new List<CheckBox>();
@@ -112,11 +112,6 @@ namespace PMView
             (new SkillWindow(_projectModuleEditVM)).Show();
         }
 
-        public void LoadData()
-        {
-            _lastScreen.LoadData();
-        }
-
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -161,7 +156,8 @@ namespace PMView
             {
                 fillCheckboxList();
             }
-            LoadData();
+
+            _lastScreen.LoadData(sender);
         }
     }
 }

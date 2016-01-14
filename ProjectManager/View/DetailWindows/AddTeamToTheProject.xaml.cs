@@ -102,6 +102,8 @@ namespace PMView
 
         private void DetailsButton_Click(object sender, RoutedEventArgs e)
         {
+            if (_selectedTeamToAdd != null)
+                (new TeamsDetails(_selectedTeamToAdd, this)).Show();
         }
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)

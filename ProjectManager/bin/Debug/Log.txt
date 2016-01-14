@@ -1898,3 +1898,309 @@
 12.01.2016 0:00:00 | 14:43:55.5347598:Info | Details screen | Project details have been loaded
 12.01.2016 0:00:00 | 14:48:30.7752543:Info | Details screen | Project details have been loaded
 12.01.2016 0:00:00 | 14:48:39.7473426:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 13:32:41.3535696:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 13:32:53.8315963:Info | Team details screen | Team details have been loaded
+14.01.2016 0:00:00 | 13:32:57.2084298:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 13:35:37.9134386:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 13:35:43.6611812:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 13:37:03.0043227:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 13:37:05.7973689:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 13:37:07.7721975:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 13:58:30.6683415:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 13:58:34.9868958:Info | Team details screen | Team details have been loaded
+14.01.2016 0:00:00 | 13:58:39.7190426:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-12 to Unity3D-12 
+ 
+            Description : Unity3D developers to Unity3D developers
+14.01.2016 0:00:00 | 13:58:51.5526708:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 13:58:58.7985633:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystyna to Khrystynas
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:02:53.8237616:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 14:03:08.5211572:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 14:03:13.7476487:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystynas to Khrystyna
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:05:22.5690355:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 14:05:32.8099383:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 14:05:38.6178559:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystyna to Khrystynaergerg
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:08:35.9120586:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 14:08:45.7779056:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 14:08:49.5123813:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystynaergerg to Khrystyna
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:09:59.3978156:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystyna to Khrystynaw
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:10:52.8120534:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 14:11:10.5042088:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 14:11:14.0779459:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystynaw to Khrystynawsfwaedfgwsdgv
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:13:05.8206843:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 14:13:21.9999083:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 14:13:27.6611773:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystynawsfwaedfgwsdgv to Khrystyna
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:14:31.9725204:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 14:14:39.3050900:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:14:47.6559529:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:14:53.6895833:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:14:53.6955873:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 14:14:53.7726457:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:15:00.6993022:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystyna to Khrystynawergwerg
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:15:00.7323305:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:15:00.7393326:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:16:45.9869929:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 14:16:50.4567606:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:16:54.8573766:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:16:58.8613955:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:16:58.8664074:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 14:16:58.9878250:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:17:03.3539797:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystynawergwerg to Khrystyn
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:17:03.4542923:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:17:03.4622981:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:18:37.7464172:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:18:37.7519217:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 14:18:38.6202160:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:18:42.4318642:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystyn to Khrystynjk
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:18:44.8804154:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:18:45.3990480:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:20:37.9119855:Info | Details screen | Project details have been loaded
+14.01.2016 0:00:00 | 14:20:42.1399220:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:20:48.7429730:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:20:58.2021688:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:20:58.2066727:Info | User details screen | Details of user khrystyna1204 has been loaded
+14.01.2016 0:00:00 | 14:20:58.2942495:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:21:02.8238210:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystynjk to Khry
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:21:02.9429038:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:21:02.9484070:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:22:12.4052184:Info | User details screen | Details of user has been changed:
+
+                Name : Khry to Khrystynas
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:22:12.4717680:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:22:12.4787735:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:22:26.2370158:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystynas to Khrystyna
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:22:48.7702774:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:22:57.9609722:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:23:09.5564686:Info | User details screen | Details of user has been changed:
+
+                Name : Khrystyna to Khrystynahtrytj
+
+                Surname : Romanyshyn to Romanyshyn
+
+                State : Female to Female
+
+                Country : United Arab Emirates to United Arab Emirates
+
+                Birthday : 12.04.1995 0:00:00 to 12.04.1995 0:00:00
+
+                Email : khrystyna1204@gmail.com to khrystyna1204@gmail.com
+
+                Login : khrystyna1204 to khrystyna1204
+
+                Description : QA Engineer to QA Engineer
+14.01.2016 0:00:00 | 14:23:11.6886250:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:23:11.6956301:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:23:42.8880281:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+14.01.2016 0:00:00 | 14:23:50.2534139:Info | Team details screen | Team details have been loaded
+14.01.2016 0:00:00 | 14:23:52.8130412:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Unity3D-1w to Unity3D-1w 
+ 
+            Description : Unity3D developers to Unity3D developers

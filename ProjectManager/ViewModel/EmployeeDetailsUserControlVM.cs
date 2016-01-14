@@ -11,21 +11,21 @@ using Core;
 
 namespace PMView.View
 {
-    public class EmployeeDetailsUserControlVM : ILoadData
+    public class EmployeeDetailsUserControlVM : ILoadDataSender
     {
         private UserVM _currentEmployee;
 
-        private ILoadData _lastScreen;
+        private ILoadDataSender _lastScreen;
 
-        public EmployeeDetailsUserControlVM(IEmployee employee, ILoadData lastScreen)
+        public EmployeeDetailsUserControlVM(IEmployee employee, ILoadDataSender lastScreen)
         {
             _currentEmployee = employee as UserVM;
             _lastScreen = lastScreen;
         }
 
-        public void LoadData()
+        public void LoadData(object sender)
         {
-            _lastScreen.LoadData();
+            _lastScreen.LoadData(this);
         }
 
         public List<string> GetSkills(UserVM user)
@@ -53,6 +53,8 @@ namespace PMView.View
 
                 User_Skill.Items.Add(new User_Skill() { Skill = existSkill, User = _currentEmployee.User });
             }
+
+            LoadData(this);
         }
     }
 }

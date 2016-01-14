@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMView.View
 {
-    class AddTeamToTheProjectVM : INotifyPropertyChanged, ILoadData
+    class AddTeamToTheProjectVM : INotifyPropertyChanged, ILoadDataSender
     {
         private AddTeamToTheProject _addTeamToTheProject;
         private ILoadDataSender _lastScreen;
@@ -115,7 +115,7 @@ namespace PMView.View
                 OnPropertyChanged("RemoveButton");
                 OnPropertyChanged("DetailsButton");
                 OnPropertyChanged("SaveButton");
-                LoadData();
+                LoadData(this);
             }
         }
 
@@ -185,7 +185,7 @@ namespace PMView.View
                 OnPropertyChanged("AddButton");
                 OnPropertyChanged("DetailsButton");
                 OnPropertyChanged("SaveButton");
-                LoadData();
+                LoadData(this);
             }
             else
             {
@@ -193,7 +193,7 @@ namespace PMView.View
             }
         }
 
-        public void LoadData()
+        public void LoadData(object sender)
         {
             OnPropertyChanged("TeamsToAddCollection");
             OnPropertyChanged("TeamsCollection");

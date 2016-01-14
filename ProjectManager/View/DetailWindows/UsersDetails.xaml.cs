@@ -30,7 +30,7 @@ namespace PMView
 
         private EmployeeDetailsUserControl _employeeDetailsUserControl;
 
-        public UsersDetails(IUser user, ILoadData lastScreen)
+        public UsersDetails(IUser user, ILoadDataSender lastScreen)
         {
             InitializeComponent();
             _user = user;
@@ -38,7 +38,7 @@ namespace PMView
             DataContext = _userDetailsVM;
         }
 
-        public UsersDetails(IEmployee employee, ILoadData lastScreen) : this(employee as IUser, lastScreen)
+        public UsersDetails(IEmployee employee, ILoadDataSender lastScreen) : this(employee as IUser, lastScreen)
         {
             InitializeComponent();
             Form.MinHeight = 650;

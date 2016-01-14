@@ -11,7 +11,7 @@ using Core;
 
 namespace PMView.View
 {
-    public class UserDetailsVM : INotifyPropertyChanged, IDataErrorInfo, ILoadData
+    public class UserDetailsVM : INotifyPropertyChanged, IDataErrorInfo, ILoadDataSender
     {
         private UserVM _currentEmployee;
 
@@ -35,11 +35,11 @@ namespace PMView.View
 
         private bool _buttonsActive = false;
 
-        private ILoadData _lastScreen;
+        private ILoadDataSender _lastScreen;
 
         private ObservableCollection<User.States> _states = new ObservableCollection<User.States>();
 
-        public UserDetailsVM(IUser user, ILoadData lastScreen)
+        public UserDetailsVM(IUser user, ILoadDataSender lastScreen)
         {
             if (user == null)
                 return;
@@ -49,7 +49,7 @@ namespace PMView.View
             ButtonRetrieveClick();
             Logger.Info("User details screen", "Details of user " + CurrentUser.Login + " has been loaded");
             User.Update();
-            LoadData();
+            LoadData(this);
             ButtonsActive = false;
         }
 
@@ -217,7 +217,7 @@ namespace PMView.View
             CurrentUser.Skype = _skype;
             CurrentUser.Description = _description;
             User.Update();
-            LoadData();
+            LoadData(this);
         }
 
         public void ButtonRetrieveClick()
@@ -231,10 +231,10 @@ namespace PMView.View
             _email = CurrentUser.Email;
             _login = CurrentUser.Login;
             _description = CurrentUser.Description;
-            LoadData();
+            LoadData(this);
         }
 
-        public void LoadData()
+        public void LoadData(object sender)
         {
             OnPropertyChanged("Name");
             OnPropertyChanged("Surname");
@@ -245,7 +245,7 @@ namespace PMView.View
             OnPropertyChanged("Email");
             OnPropertyChanged("Login");
             OnPropertyChanged("Description");
-            _lastScreen.LoadData();
+            _lastScreen.LoadData(this);
             ButtonsActive = false;
         }
 

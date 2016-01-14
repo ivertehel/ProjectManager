@@ -34,6 +34,13 @@ namespace PMView
             DataContext = _teamDetailsVM;
         }
 
+        public TeamsDetails(TeamVM team, ILoadDataSender lastScreen)
+        {
+            InitializeComponent();
+            _teamDetailsVM = new TeamDetailsVM(team, lastScreen);
+            DataContext = _teamDetailsVM;
+        }
+
         private void EmployeesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (EmployeesListBox.SelectedItem == null)

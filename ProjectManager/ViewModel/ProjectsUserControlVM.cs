@@ -11,7 +11,7 @@ using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
-    public class ProjectsUserControlVM : INotifyPropertyChanged, ILoadData
+    public class ProjectsUserControlVM : INotifyPropertyChanged, ILoadDataSender
     {
         private ObservableCollection<OrderVM> _ordersCollection = new ObservableCollection<OrderVM>();
 
@@ -604,6 +604,11 @@ namespace PMView.View
             };
 
             Project_Skill.Items.AddRange(new[] { ps1, ps2, ps3, ps4, ps5 });
+        }
+
+        public void LoadData(object sender)
+        {
+            LoadData();
         }
     }
 }

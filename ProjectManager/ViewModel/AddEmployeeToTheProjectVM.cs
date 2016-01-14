@@ -11,7 +11,7 @@ using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
-    public class AddEmployeeToTheProjectVM : INotifyPropertyChanged, ILoadData, ILoadDataSender
+    public class AddEmployeeToTheProjectVM : INotifyPropertyChanged, ILoadDataSender
     {
         private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
@@ -59,7 +59,7 @@ namespace PMView.View
 
             _projectModuleEditVM = projectModuleEditVM;
             _lastScreen = lastScreen;
-            LoadData();
+            LoadData(this);
         }
 
         public List<User_ProjectVM> SavedPositions
@@ -345,7 +345,7 @@ namespace PMView.View
                 OnPropertyChanged("AddButton");
                 OnPropertyChanged("ProfileButton");
                 OnPropertyChanged("SaveButton");
-                LoadData();
+                LoadData(this);
             }
             else
             {
@@ -382,7 +382,7 @@ namespace PMView.View
 
             SaveButton = false;
             OnPropertyChanged("SaveButton");
-            LoadData();
+            LoadData(this);
         }
 
 
@@ -399,17 +399,8 @@ namespace PMView.View
                 OnPropertyChanged("RemoveButton");
                 OnPropertyChanged("ProfileButton");
                 OnPropertyChanged("SaveButton");
-                LoadData();
+                LoadData(this);
             }
-        }
-
-        public void LoadData()
-        {
-            OnPropertyChanged("EmployeesPositions");
-            OnPropertyChanged("EmployeesToAddCollection");
-            OnPropertyChanged("EmployeesCollection");
-            OnPropertyChanged("SkillsCollection");
-            _lastScreen.LoadData(this);
         }
 
         private void filterEmployeesCollection()
@@ -458,9 +449,11 @@ namespace PMView.View
 
         public void LoadData(object sender)
         {
-            LoadData();
+            OnPropertyChanged("EmployeesPositions");
+            OnPropertyChanged("EmployeesToAddCollection");
+            OnPropertyChanged("EmployeesCollection");
+            OnPropertyChanged("SkillsCollection");
             _lastScreen.LoadData(sender);
-            _screen.LoadData();
         }
     }
 }
