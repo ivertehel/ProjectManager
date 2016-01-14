@@ -118,6 +118,10 @@ namespace PMView
             try
             {
                 _addEmployeeVM.AddButtonClick(_selectedEmployeeToAdd);
+
+                if (_addEmployeeVM is AddEmployeeToTheTeamVM)
+                    HelpText.Visibility = Visibility.Hidden;
+                else
                 HelpText.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
@@ -139,6 +143,9 @@ namespace PMView
 
         private void EmployeesCollectionDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (_addEmployeeVM is AddEmployeeToTheTeamVM)
+                HelpText.Visibility = Visibility.Hidden;
+
             if (EmployeesCollectionDataGrid.SelectedItem != null)
             {
                 _selectedEmployeeToAdd = (UserVM)EmployeesCollectionDataGrid.SelectedItem;
@@ -151,12 +158,19 @@ namespace PMView
 
         private void EmployeesToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+
             if (EmployeesToAddListBox.SelectedItem != null)
             {
                 _selectedEmployeeToAdd = (UserVM)EmployeesToAddListBox.SelectedItem;
                 _addEmployeeVM.ActivateButtons(_selectedEmployeeToAdd);
-                PositionsGrid.Visibility = Visibility.Visible;
+
+
                 _addEmployeeVM.SelectedEmployeeToDelete = (EmployeesToAddListBox.SelectedItem as UserVM);
+                if (_addEmployeeVM is AddEmployeeToTheTeamVM)
+                    return;
+
+                PositionsGrid.Visibility = Visibility.Visible;
                 _positions = new List<CheckBox>();
                 var employeesPositions = _addEmployeeVM.EmployeesPositions;
 
@@ -196,9 +210,10 @@ namespace PMView
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
+            _addEmployeeVM.SaveButtonClick();
+
             try
             {
-                _addEmployeeVM.SaveButtonClick();
             }
             catch (Exception ex)
             {
@@ -243,6 +258,8 @@ namespace PMView
         {
             fillCheckboxList();
             _positions = new List<CheckBox>();
+            if (_addEmployeeVM == null)
+                return;
             var employeesPositions = _addEmployeeVM.EmployeesPositions;
 
             foreach (var item in Position.Items)

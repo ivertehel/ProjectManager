@@ -83,6 +83,7 @@ namespace PMView.View
                     }
                 }
                 _employeesPositions.Clear();
+                if (SelectedEmployeeToDelete != null)
                 foreach (var elem in (from items in _savedPositions where items.User.Id == SelectedEmployeeToDelete.User.Id select items.Position.Name).ToList())
                 {
                     _employeesPositions.Add(elem);

@@ -30,7 +30,7 @@ namespace PMView.View
         private TeamVM _currentTeam;
 
         private UserVM _selectedEmployee;
-        private List<User_TeamVM> _savedPositions;
+        private ObservableCollection<User_TeamVM> _savedPositions;
 
         public TeamDetailsVM(TeamVM team, ProjectsUserControlVM control)
         {
@@ -61,6 +61,7 @@ namespace PMView.View
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
 
         public UserVM SelectedEmployee
         {
@@ -122,7 +123,7 @@ namespace PMView.View
             }
         }
 
-        public List<User_TeamVM> SavedPositions
+        public ObservableCollection<User_TeamVM> SavedPositions
         {
             get { return _savedPositions; }
             set { _savedPositions = value; }

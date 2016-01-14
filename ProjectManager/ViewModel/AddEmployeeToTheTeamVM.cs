@@ -21,7 +21,7 @@ namespace PMView.View
         private string _email;
         private string _skype;
         private string _country;
-        private List<User_TeamVM> _savedPositions;
+        private ObservableCollection<UserVM> _savedEmployees;
         private ObservableCollection<string> _employeesPositions = new ObservableCollection<string>();
         private bool _saveButton;
         private bool _savePositionButton;
@@ -88,7 +88,16 @@ namespace PMView.View
         {
             get
             {
-                return _employeesToAddCollection;
+                if (_savedEmployees == null)
+                {
+                    _savedEmployees = new ObservableCollection<UserVM>();
+                    foreach (var item in _teamDetailsVM.EmployeesCollection)
+                    {
+                        _savedEmployees.Add(item);
+                    }
+                }
+
+                return _savedEmployees;
             }
         }
 
@@ -229,25 +238,6 @@ namespace PMView.View
         {
             get
             {
-                if (_savedPositions == null)
-                {
-                    _savedPositions = new List<User_TeamVM>();
-
-                    foreach (var item in User_Team.Items)
-                    {
-                        _savedPositions.Add(new User_TeamVM(item));
-                    }
-                }
-
-                _employeesPositions.Clear();
-                if (SelectedEmployeeToDelete != null)
-                {
-                    foreach (var elem in (from items in _savedPositions where items.User.Id == SelectedEmployeeToDelete.User.Id select items.Position.Name).ToList())
-                    {
-                        _employeesPositions.Add(elem);
-                    }
-                }
-
                 return _employeesPositions;
             }
         }
@@ -299,7 +289,7 @@ namespace PMView.View
             {
                 if (value != null)
                 {
-                    if (_employeesToAddCollection.Where(item => item.User.Id == value.User.Id).Count() > 0)
+                    if (_savedEmployees.Where(item => item.User.Id == value.User.Id).Count() > 0)
                     {
                         RemoveButton = true;
                         AddButton = false;
@@ -345,9 +335,9 @@ namespace PMView.View
 
         public void AddButtonClick(UserVM user)
         {
-            if (_employeesToAddCollection.Where(item => item.Equals(user)).Count() == 0)
+            if (_savedEmployees.Where(item => item.Equals(user)).Count() == 0)
             {
-                _employeesToAddCollection.Add(user);
+                _savedEmployees.Add(user);
                 AddButton = false;
                 ProfileButton = false;
                 SaveButton = true;
@@ -364,7 +354,6 @@ namespace PMView.View
 
         public void LoadData(object sender)
         {
-            OnPropertyChanged("EmployeesPositions");
             OnPropertyChanged("EmployeesToAddCollection");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("SkillsCollection");
@@ -382,34 +371,18 @@ namespace PMView.View
 
         public void RemoveButtonClick(UserVM select)
         {
-            throw new NotImplementedException();
+            _savedEmployees.Remove(_savedEmployees.FirstOrDefault(item => item.User.Id == select.User.Id));
+            SaveButton = true;
+            OnPropertyChanged("EmployeesToAddCollection");
         }
 
         public void SaveButtonClick()
         {
-            foreach (var emp in _employeesToAddCollection)
-            {
-                if (_savedPositions.FirstOrDefault(item => item.User.Id == emp.User.Id) == null)
-                {
-                    throw new Exception("One or more users don't contain any position");
-                }
-            }
-
             _teamDetailsVM.EmployeesCollection.Clear();
 
-            foreach (var item in _employeesToAddCollection)
+            foreach (var item in _savedEmployees)
             {
                 _teamDetailsVM.EmployeesCollection.Add(item);
-            }
-
-            if (_savedPositions != null)
-            {
-                _teamDetailsVM.SavedPositions.Clear();
-
-                foreach (var item in _savedPositions)
-                {
-                    _teamDetailsVM.SavedPositions.Add(item);
-                }
             }
 
             SaveButton = false;
@@ -417,9 +390,8 @@ namespace PMView.View
             LoadData(this);
         }
 
-        public void SavePositionsClick(List<string> list)
+        public void SavePositionsClick(List<string> positions)
         {
-            throw new NotImplementedException();
         }
     }
 }
