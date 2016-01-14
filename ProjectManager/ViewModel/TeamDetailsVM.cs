@@ -23,7 +23,7 @@ namespace PMView.View
 
         private ILoadDataSender _lastScreen;
 
-        private List<string> _employeesPositions = new List<string>();
+        private ObservableCollection<User_TeamVM> _employeesPositions = new ObservableCollection<User_TeamVM>();
 
         private bool _buttonsActive = false;
 
@@ -128,7 +128,7 @@ namespace PMView.View
             set { _savedPositions = value; }
         }
 
-        public List<string> EmployeesPositions
+        public ObservableCollection<User_TeamVM> EmployeesPositions
         {
             get
             {
@@ -137,9 +137,9 @@ namespace PMView.View
 
                 foreach (var item in User_Team.Items)
                 {
-                    if (_employeesPositions.FirstOrDefault(pos => item.Position.Name == pos) == null
+                    if (_employeesPositions.FirstOrDefault(pos => item.Position.Id == pos.Position.Id) == null
                         && item.User.Id == user.User.Id)
-                        _employeesPositions.Add(item.Position.Name);
+                        _employeesPositions.Add(new User_TeamVM(item));
                 }
 
                 return _employeesPositions;             

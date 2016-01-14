@@ -22,7 +22,7 @@ namespace PMView.View
         private string _skype;
         private string _country;
         private List<User_TeamVM> _savedPositions;
-        private ObservableCollection<string> _employeesPositions;
+        private ObservableCollection<string> _employeesPositions = new ObservableCollection<string>();
         private bool _saveButton;
         private bool _savePositionButton;
         private UserVM _selectedEmployeeToDelete;
@@ -30,9 +30,13 @@ namespace PMView.View
         private bool _removeButton;
         private bool _addButton;
         private bool _profileButton;
-        private List<string> _selectedSkills;
+        private List<string> _selectedSkills = new List<string>();
         private User.States _state;
         private User.Statuses _status;
+        private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
+        private ObservableCollection<User.States> _states = new ObservableCollection<User.States>();
+        private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
+        private ObservableCollection<User.Statuses> _statuses = new ObservableCollection<User.Statuses>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -79,6 +83,148 @@ namespace PMView.View
             set { _country = value; }
         }
 
+
+        public ObservableCollection<UserVM> EmployeesToAddCollection
+        {
+            get
+            {
+                return _employeesToAddCollection;
+            }
+        }
+
+        public List<string> Countries
+        {
+            get
+            {
+                List<string> usedCountries = (from items in User.Items where items.Role == User.Roles.Employee select items.Country).ToList();
+                usedCountries.RemoveAll(item => usedCountries.Count(value => value == item) == 0);
+                usedCountries.Add("NotChosen");
+                usedCountries.Sort();
+
+                // repeats deleting
+                for (int i = 0; i < usedCountries.Count; i++)
+                {
+                    var save = usedCountries[i];
+                    if (usedCountries.Count(items => items == save) > 1)
+                    {
+                        usedCountries.RemoveAll(items => items == save);
+                        usedCountries.Add(save);
+                    }
+                }
+
+                return usedCountries;
+            }
+        }
+
+
+        public ObservableCollection<User.Statuses> Statuses
+        {
+            get
+            {
+                if (_statuses.Count == 0)
+                    foreach (User.Statuses status in Enum.GetValues(typeof(User.Statuses)))
+                    {
+                        if (status != User.Statuses.UnInvited)
+                            _statuses.Add(status);
+                    }
+
+                return _statuses;
+            }
+        }
+
+        public ObservableCollection<SkillVM> SkillsCollection
+        {
+            get
+            {
+                _skillsCollection.Clear();
+                foreach (var employee in _employeesCollection)
+                {
+                    var skills = from items in User_Skill.Items where items.User.Id == employee.User.Id select items;
+                    foreach (var item in skills)
+                    {
+                        while (_skillsCollection.All(items => item.Skill != items.Skill))
+                            _skillsCollection.Add(new SkillVM(item.Skill));
+                    }
+                }
+
+                return _skillsCollection;
+            }
+        }
+
+        public ObservableCollection<User.States> States
+        {
+            get
+            {
+                if (_states.Count == 0)
+                    foreach (User.States state in Enum.GetValues(typeof(User.States)))
+                    {
+                        _states.Add(state);
+                    }
+
+                return _states;
+            }
+        }
+
+        public ObservableCollection<UserVM> EmployeesCollection
+        {
+            get
+            {
+                var users = User.Items.Where(item => item.Role == User.Roles.Employee);
+                _employeesCollection.Clear();
+                foreach (var item in users)
+                {
+                    _employeesCollection.Add(new UserVM(item));
+                }
+
+                filterEmployeesCollection();
+                return _employeesCollection;
+            }
+        }
+
+        private void filterEmployeesCollection()
+        {
+            var employees = _employeesCollection.ToList();
+            if (!string.IsNullOrEmpty(Name))
+                employees.RemoveAll(item => !item.Name.ToUpper().StartsWith(Name.ToUpper()));
+
+            if (!string.IsNullOrEmpty(Surname))
+                employees.RemoveAll(item => !item.Surname.ToUpper().StartsWith(Surname.ToUpper()));
+
+            if (!string.IsNullOrEmpty(Login))
+                employees.RemoveAll(item => !item.Login.ToUpper().StartsWith(Login.ToUpper()));
+
+            if (!string.IsNullOrEmpty(Skype))
+                employees.RemoveAll(item => !item.Skype.ToUpper().StartsWith(Skype.ToUpper()));
+
+            if (!string.IsNullOrEmpty(Email))
+                employees.RemoveAll(item => !item.Email.ToUpper().StartsWith(Email.ToUpper()));
+
+            if (Country != "NotChosen")
+                employees.RemoveAll(item => item.Country != Country);
+
+            if (Status != User.Statuses.NotChosen)
+                employees.RemoveAll(item => item.Status != Status);
+
+            if (State != User.States.NotChosen)
+                employees.RemoveAll(item => item.State != State);
+
+            if (_selectedSkills.Count != 0)
+            {
+                List<string> skillNames = new List<string>();
+
+                foreach (var item in _selectedSkills)
+                {
+                    employees.RemoveAll(employee => employee.Skills.Where(skill => skill.Name == item).FirstOrDefault() == null);
+                }
+            }
+
+            _employeesCollection.Clear();
+            foreach (var item in employees)
+            {
+                _employeesCollection.Add(item);
+            }
+        }
+
         public ObservableCollection<string> EmployeesPositions
         {
             get
@@ -94,9 +240,12 @@ namespace PMView.View
                 }
 
                 _employeesPositions.Clear();
-                foreach (var elem in (from items in _savedPositions where items.User.Id == SelectedEmployeeToDelete.User.Id select items.Position.Name).ToList())
+                if (SelectedEmployeeToDelete != null)
                 {
-                    _employeesPositions.Add(elem);
+                    foreach (var elem in (from items in _savedPositions where items.User.Id == SelectedEmployeeToDelete.User.Id select items.Position.Name).ToList())
+                    {
+                        _employeesPositions.Add(elem);
+                    }
                 }
 
                 return _employeesPositions;
@@ -219,7 +368,8 @@ namespace PMView.View
             OnPropertyChanged("EmployeesToAddCollection");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("SkillsCollection");
-            _lastScreen.LoadData(sender);
+            if (_lastScreen != null)
+                _lastScreen.LoadData(sender);
         }
 
         public void OnPropertyChanged(string propertyName)

@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMView"
-        xmlns:localData="clr-namespace:PMDataLayer;assembly=PMDataLayer"
         xmlns:WrapperVM="clr-namespace:PMView.View.WrapperVM"
         mc:Ignorable="d"
         Title="Team Details" Height="500" Width="850"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
@@ -72,7 +71,24 @@
             <DataTemplate DataType="{x:Type WrapperVM:User_TeamVM}">
                 <Border BorderBrush="Azure"  VerticalAlignment="Top">
                     <Grid VerticalAlignment="Top">
-                        <TextBlock Text="{Binding User}" FontSize="14" FontWeight="Bold" />
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="{Binding User}" FontSize="14" FontWeight="Bold" />
+                        <ListBox Grid.Row="1" ItemsSource="{Binding Positions}"  VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <ListBox.BorderBrush>
+                                <SolidColorBrush Opacity="0" Color="SkyBlue"/>
+                            </ListBox.BorderBrush>
+                            <ListBox.Background>
+                                <SolidColorBrush Opacity="0"/>
+                            </ListBox.Background>
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                        </ListBox>
                     </Grid>
                 </Border>
             </DataTemplate>
@@ -128,7 +144,20 @@
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="4" VerticalAlignment="Top" Margin="15,0,0,0">
-                    <TextBlock Text="Employees:" FontSize="18"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="Employees:" TextBlock.FontSize="18" Margin="0,0,0,10"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Button Content="Add/Edit" MinWidth="100" Margin="10,0,0,10" Name="AddEmployee" Click="AddEmployee_Click">
+                            <Button.Background>
+                                <DrawingBrush Opacity="0.5"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
                 </Grid>
 
                 <Grid Grid.Row="5" VerticalAlignment="Stretch" Margin="15,0,0,0">

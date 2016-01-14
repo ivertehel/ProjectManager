@@ -21,23 +21,26 @@ namespace PMView
     /// <summary>
     /// Interaction logic for TeamsDetails.xaml
     /// </summary>
-    public partial class TeamsDetails : Window
+    public partial class TeamsDetails : Window, ILoadDataSender
     {
         private TeamDetailsVM _teamDetailsVM;
 
         private List<CheckBox> _positions;
+        private ILoadDataSender _lastScreen;
 
         public TeamsDetails(TeamVM team, ProjectsUserControlVM projectsUserControlVM)
         {
             InitializeComponent();
             _teamDetailsVM = new TeamDetailsVM(team, projectsUserControlVM);
+            _lastScreen = projectsUserControlVM;
             DataContext = _teamDetailsVM;
         }
 
         public TeamsDetails(TeamVM team, ILoadDataSender lastScreen)
         {
             InitializeComponent();
-            _teamDetailsVM = new TeamDetailsVM(team, lastScreen);
+            _lastScreen = lastScreen;
+            _teamDetailsVM = new TeamDetailsVM(team, this);
             DataContext = _teamDetailsVM;
         }
 
@@ -56,7 +59,7 @@ namespace PMView
                 var cb = new CheckBox();
                 cb.Content = item.Name;
                 _positions.Add(cb);
-                cb.IsChecked = employeesPositions.Contains(item.Name) ? false : true;
+                cb.IsChecked = employeesPositions.FirstOrDefault(pos => item.Id == pos.Position.Id) == null ? false : true;
                 cb.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
             }
 
@@ -104,6 +107,17 @@ namespace PMView
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             _teamDetailsVM.ButtonsActive = true;
+        }
+
+        private void AddEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            (new AttachEmployee(this, _teamDetailsVM)).Show();
+        }
+
+        public void LoadData(object sender)
+        {
+            _teamDetailsVM.LoadData();
+            _lastScreen.LoadData(this);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace PMView
         {
             InitializeComponent();
             _lastScreen = lastScreen;
-            _addEmployeeVM = new AddEmployeeToTheProjectVM(lastScreen, projectModuleEditVM, this);
+            _addEmployeeVM = new AddEmployeeToTheProjectVM(this, projectModuleEditVM, this);
             DataContext = _addEmployeeVM;
             fillCheckboxList();
         }
@@ -45,7 +45,7 @@ namespace PMView
         {
             InitializeComponent();
             _lastScreen = lastScreen;
-            _addEmployeeVM = new AddEmployeeToTheTeamVM(lastScreen, teamDetailsVM, this);
+            _addEmployeeVM = new AddEmployeeToTheTeamVM(this, teamDetailsVM, this);
             DataContext = _addEmployeeVM;
             fillCheckboxList();
         }
@@ -110,6 +110,7 @@ namespace PMView
             States.SelectedIndex = 0;
             Statuses.SelectedIndex = 0;
             Countries.SelectedItem = "NotChosen";
+            _addEmployeeVM.LoadData(this);
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -260,7 +261,6 @@ namespace PMView
             }
             
             _lastScreen.LoadData(sender);
-
         }
     }
 }

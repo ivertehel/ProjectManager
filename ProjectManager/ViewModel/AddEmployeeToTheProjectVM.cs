@@ -454,7 +454,8 @@ namespace PMView.View
             OnPropertyChanged("EmployeesToAddCollection");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("SkillsCollection");
-            _lastScreen.LoadData(sender);
+            if (_lastScreen != null)
+                _lastScreen.LoadData(sender);
         }
     }
 }

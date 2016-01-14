@@ -23,12 +23,11 @@ namespace PMView.View
     /// </summary>
     public partial class ProjectsUserControl : UserControl
     {
-        private ProjectsUserControlVM _projectsUserControlVM;
+        private ProjectsUserControlVM _projectsUserControlVM = new ProjectsUserControlVM();
 
         public ProjectsUserControl()
         {
             InitializeComponent();
-            _projectsUserControlVM = new ProjectsUserControlVM();
             DataContext = _projectsUserControlVM;
         }
 
