@@ -47,7 +47,7 @@ namespace PMView
                 return;
 
             PositionsGrid.Visibility = Visibility.Visible;
-            _teamDetailsVM.SelectedEmployee = new UserVM((EmployeesListBox.SelectedItem as User_TeamVM).User);
+            _teamDetailsVM.SelectedEmployee = EmployeesListBox.SelectedItem as UserVM;
             _positions = new List<CheckBox>();
             var employeesPositions = _teamDetailsVM.EmployeesPositions;
 

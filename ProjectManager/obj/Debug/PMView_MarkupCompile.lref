@@ -1,7 +1,9 @@
 ﻿
 
-FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\AddEmployeeToTheProject.xaml;;
+FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\AttachEmployee.xaml;;
+FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\AddTeamToTheProject.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\EmptyWindow.xaml;;
+FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\PositionWindow.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\ProjectModuleEdit.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\SkillWindow.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\TeamsDetails.xaml;;
@@ -15,6 +17,4 @@ FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\UserControls
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\UserControls\Bodys\ReportsUserControl.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\UserControls\Bodys\TeamsUserControl.xaml;;
 FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\UsersDetails.xaml;;
-FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\PositionWindow.xaml;;
-FC:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\View\DetailWindows\AddTeamToTheProject.xaml;;
 

@@ -93,7 +93,7 @@ namespace PMView
         private void AddEmployeeToTheProject_Click(object sender, RoutedEventArgs e)
         {
             LeadersCollection.SelectedItem = null;
-            (new AddEmployeeToTheProject(_projectModuleEditVM, _projectModuleEditVM)).Show();
+            (new AttachEmployee(_projectModuleEditVM, _projectModuleEditVM)).Show();
         }
 
         private void AddTeamToTheProject_Click(object sender, RoutedEventArgs e)

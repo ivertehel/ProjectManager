@@ -13,7 +13,7 @@ namespace PMView.View
 {
     public class TeamDetailsVM : INotifyPropertyChanged, IDataErrorInfo
     {
-        private ObservableCollection<User_TeamVM> _employeesCollection = new ObservableCollection<User_TeamVM>();
+        private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
         private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
 
@@ -30,6 +30,7 @@ namespace PMView.View
         private TeamVM _currentTeam;
 
         private UserVM _selectedEmployee;
+        private List<User_TeamVM> _savedPositions;
 
         public TeamDetailsVM(TeamVM team, ProjectsUserControlVM control)
         {
@@ -121,23 +122,31 @@ namespace PMView.View
             }
         }
 
+        public List<User_TeamVM> SavedPositions
+        {
+            get { return _savedPositions; }
+            set { _savedPositions = value; }
+        }
+
         public List<string> EmployeesPositions
         {
             get
             {
                 _employeesPositions.Clear();
-                var user = _employeesCollection.FirstOrDefault(item => item.User == SelectedEmployee.User);
-                foreach (var item in Position.Items)
+                var user = _employeesCollection.FirstOrDefault(item => item.User.Id == SelectedEmployee.User.Id);
+
+                foreach (var item in User_Team.Items)
                 {
-                    if (!user.Positions.Contains(item))
-                        _employeesPositions.Add(item.Name);
+                    if (_employeesPositions.FirstOrDefault(pos => item.Position.Name == pos) == null
+                        && item.User.Id == user.User.Id)
+                        _employeesPositions.Add(item.Position.Name);
                 }
 
                 return _employeesPositions;             
             }
         }
 
-        public ObservableCollection<User_TeamVM> EmployeesCollection
+        public ObservableCollection<UserVM> EmployeesCollection
         {
             get
             {
@@ -156,7 +165,7 @@ namespace PMView.View
                     }
 
                     if (!exist)
-                        _employeesCollection.Add(new User_TeamVM(users[i]));
+                        _employeesCollection.Add(new UserVM(users[i].User));
                 }
 
                 return _employeesCollection;

@@ -11,7 +11,7 @@ using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
-    public class AddEmployeeToTheProjectVM : INotifyPropertyChanged, ILoadDataSender
+    public class AddEmployeeToTheProjectVM : INotifyPropertyChanged, ILoadDataSender, IAddEmployee
     {
         private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
@@ -39,9 +39,9 @@ namespace PMView.View
         private ObservableCollection<string> _employeesPositions = new ObservableCollection<string>();
         private List<User_ProjectVM> _savedPositions;
         private bool _savePositionButton;
-        private AddEmployeeToTheProject _screen;
+        private AttachEmployee _screen;
 
-        public AddEmployeeToTheProjectVM(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM, AddEmployeeToTheProject screen)
+        public AddEmployeeToTheProjectVM(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM, AttachEmployee screen)
         {
             _screen = screen;
             foreach (var item in projectModuleEditVM.EmployeesCollection)
@@ -287,7 +287,7 @@ namespace PMView.View
             }
         }
 
-        internal void SavePositionsClick(List<string> positions)
+        public void SavePositionsClick(List<string> positions)
         {
 
             _savedPositions.RemoveAll(item => item.User.Id == SelectedEmployeeToDelete.User.Id);
@@ -336,6 +336,7 @@ namespace PMView.View
 
         public void AddButtonClick(UserVM user)
         {
+            
             if (_employeesToAddCollection.Where(item => item.Equals(user)).Count() == 0)
             {
                 _employeesToAddCollection.Add(user);

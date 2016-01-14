@@ -20,82 +20,89 @@ namespace PMView
     /// <summary>
     /// Interaction logic for AddEmployeeToTheProject.xaml
     /// </summary>
-    public partial class AddEmployeeToTheProject : Window, ILoadDataSender
+    public partial class AttachEmployee : Window, ILoadDataSender
     {
-        private AddEmployeeToTheProjectVM _addEmployeeToTheProjectVM;
-
         private ILoadDataSender _lastScreen;
 
         private List<CheckBox> _skills = new List<CheckBox>();
 
-        private ProjectModuleEditVM _projectModuleEditVM;
+        private TeamDetailsVM _teamDetailsVM;
 
         private UserVM _selectedEmployeeToAdd;
         private List<CheckBox> _positions;
+        private IAddEmployee _addEmployeeVM;
 
-        public AddEmployeeToTheProject(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM)
+        public AttachEmployee(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM)
         {
             InitializeComponent();
             _lastScreen = lastScreen;
-            _projectModuleEditVM = projectModuleEditVM;
-            _addEmployeeToTheProjectVM = new AddEmployeeToTheProjectVM(lastScreen, projectModuleEditVM, this);
-            DataContext = _addEmployeeToTheProjectVM;
+            _addEmployeeVM = new AddEmployeeToTheProjectVM(lastScreen, projectModuleEditVM, this);
+            DataContext = _addEmployeeVM;
+            fillCheckboxList();
+        }
+
+        public AttachEmployee(ILoadDataSender lastScreen, TeamDetailsVM teamDetailsVM)
+        {
+            InitializeComponent();
+            _lastScreen = lastScreen;
+            _addEmployeeVM = new AddEmployeeToTheTeamVM(lastScreen, teamDetailsVM, this);
+            DataContext = _addEmployeeVM;
             fillCheckboxList();
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.SelectedSkills.Clear();
-            _addEmployeeToTheProjectVM.SelectedSkills.AddRange((from items in _skills where items.IsChecked == true select items.Content.ToString()).ToList());
-            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+            _addEmployeeVM.SelectedSkills.Clear();
+            _addEmployeeVM.SelectedSkills.AddRange((from items in _skills where items.IsChecked == true select items.Content.ToString()).ToList());
+            _addEmployeeVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.Name = Name.Text;
-            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+            _addEmployeeVM.Name = Name.Text;
+            _addEmployeeVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void Surname_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.Surname = Surname.Text;
-            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+            _addEmployeeVM.Surname = Surname.Text;
+            _addEmployeeVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void Login_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.Login = Login.Text;
-            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+            _addEmployeeVM.Login = Login.Text;
+            _addEmployeeVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void Skype_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.Skype = Skype.Text;
-            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+            _addEmployeeVM.Skype = Skype.Text;
+            _addEmployeeVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void Email_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.Email = Email.Text;
-            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+            _addEmployeeVM.Email = Email.Text;
+            _addEmployeeVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void Countries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.Country = Countries.SelectedValue.ToString();
-            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+            _addEmployeeVM.Country = Countries.SelectedValue.ToString();
+            _addEmployeeVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void Statuses_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.Status = (User.Statuses)Statuses.SelectedValue;
-            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+            _addEmployeeVM.Status = (User.Statuses)Statuses.SelectedValue;
+            _addEmployeeVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void States_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.State = (User.States)States.SelectedValue;
-            _addEmployeeToTheProjectVM.OnPropertyChanged("EmployeesCollection");
+            _addEmployeeVM.State = (User.States)States.SelectedValue;
+            _addEmployeeVM.OnPropertyChanged("EmployeesCollection");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -109,7 +116,7 @@ namespace PMView
         {
             try
             {
-                _addEmployeeToTheProjectVM.AddButtonClick(_selectedEmployeeToAdd);
+                _addEmployeeVM.AddButtonClick(_selectedEmployeeToAdd);
                 HelpText.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
@@ -126,7 +133,7 @@ namespace PMView
             if (select == null)
                 select = _selectedEmployeeToAdd;
             if (select != null)
-                _addEmployeeToTheProjectVM.RemoveButtonClick(select);
+                _addEmployeeVM.RemoveButtonClick(select);
         }
 
         private void EmployeesCollectionDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -134,7 +141,7 @@ namespace PMView
             if (EmployeesCollectionDataGrid.SelectedItem != null)
             {
                 _selectedEmployeeToAdd = (UserVM)EmployeesCollectionDataGrid.SelectedItem;
-                _addEmployeeToTheProjectVM.ActivateButtons(_selectedEmployeeToAdd);
+                _addEmployeeVM.ActivateButtons(_selectedEmployeeToAdd);
             }
 
             EmployeesToAddListBox.SelectedItem = null;
@@ -146,11 +153,11 @@ namespace PMView
             if (EmployeesToAddListBox.SelectedItem != null)
             {
                 _selectedEmployeeToAdd = (UserVM)EmployeesToAddListBox.SelectedItem;
-                _addEmployeeToTheProjectVM.ActivateButtons(_selectedEmployeeToAdd);
+                _addEmployeeVM.ActivateButtons(_selectedEmployeeToAdd);
                 PositionsGrid.Visibility = Visibility.Visible;
-                _addEmployeeToTheProjectVM.SelectedEmployeeToDelete = (EmployeesToAddListBox.SelectedItem as UserVM);
+                _addEmployeeVM.SelectedEmployeeToDelete = (EmployeesToAddListBox.SelectedItem as UserVM);
                 _positions = new List<CheckBox>();
-                var employeesPositions = _addEmployeeToTheProjectVM.EmployeesPositions;
+                var employeesPositions = _addEmployeeVM.EmployeesPositions;
 
                 foreach (var item in Position.Items)
                 {
@@ -177,20 +184,20 @@ namespace PMView
 
         private void PositionCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.SavePositionButton = true;
+            _addEmployeeVM.SavePositionButton = true;
         }
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
             if (_selectedEmployeeToAdd != null)
-                (new UsersDetails(_selectedEmployeeToAdd as IEmployee, _addEmployeeToTheProjectVM)).Show();
+                (new UsersDetails(_selectedEmployeeToAdd as IEmployee, _addEmployeeVM)).Show();
         }
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                _addEmployeeToTheProjectVM.SaveButtonClick();
+                _addEmployeeVM.SaveButtonClick();
             }
             catch (Exception ex)
             {
@@ -200,9 +207,9 @@ namespace PMView
 
         private void SavePositionsButton_Click(object sender, RoutedEventArgs e)
         {
-            _addEmployeeToTheProjectVM.SavePositionsClick((from items in _positions where items.IsChecked == true select items.Content.ToString()).ToList());
-            _addEmployeeToTheProjectVM.SavePositionButton = false;
-            _addEmployeeToTheProjectVM.SaveButton = true;
+            _addEmployeeVM.SavePositionsClick((from items in _positions where items.IsChecked == true select items.Content.ToString()).ToList());
+            _addEmployeeVM.SavePositionButton = false;
+            _addEmployeeVM.SaveButton = true;
         }
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)
@@ -228,14 +235,14 @@ namespace PMView
 
         private void AddPositions_Click(object sender, RoutedEventArgs e)
         {
-            (new PositionWindow(_addEmployeeToTheProjectVM)).Show();
+            (new PositionWindow(_addEmployeeVM)).Show();
         }
 
         public void LoadData(object sender)
         {
             fillCheckboxList();
             _positions = new List<CheckBox>();
-            var employeesPositions = _addEmployeeToTheProjectVM.EmployeesPositions;
+            var employeesPositions = _addEmployeeVM.EmployeesPositions;
 
             foreach (var item in Position.Items)
             {

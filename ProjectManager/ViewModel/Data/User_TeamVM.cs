@@ -13,14 +13,14 @@ namespace PMView.View.WrapperVM
     {
         private User_Team _userTeam;
 
-        public User_TeamVM(User_Team userTeam)
-        {
-            _userTeam = userTeam;
-        }
-
         public User_TeamVM()
         {
 
+        }
+
+        public User_TeamVM(User_Team userTeam)
+        {
+            _userTeam = userTeam;
         }
 
         public User_Team User_Team
