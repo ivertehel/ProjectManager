@@ -21,15 +21,15 @@ namespace PMView.View
         User.Statuses Status { get; set; }
         string Surname { get; set; }
         UserVM SelectedEmployeeToDelete { get; set; }
-        ObservableCollection<string> EmployeesPositions { get; }
+        ObservableCollection<IEmployee> EmployeesPositions { get; }
         bool SavePositionButton { get; set; }
         bool SaveButton { get; set; }
 
         void OnPropertyChanged(string v);
-        void RemoveButtonClick(UserVM select);
-        void ActivateButtons(UserVM _selectedEmployeeToAdd);
+        void RemoveButtonClick(IEmployee select);
+        void ActivateButtons(IEmployee _selectedEmployeeToAdd);
         void SaveButtonClick();
-        void SavePositionsClick(List<string> list);
-        void AddButtonClick(UserVM _selectedEmployeeToAdd);
+        void SavePositionsClick(List<PositionVM> list);
+        void AddButtonClick(IEmployee _selectedEmployeeToAdd);
     }
 }

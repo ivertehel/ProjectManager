@@ -9,7 +9,7 @@ using PMDataLayer;
 
 namespace PMView.View.WrapperVM
 {
-    public class User_TeamVM : BaseVM
+    public class User_TeamVM : BaseVM, IEmployee
     {
         private User_Team _userTeam;
 

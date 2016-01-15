@@ -19,17 +19,16 @@ namespace PMView.View
         private List<Project.Statuses> _statuses = new List<Project.Statuses>();
 
         private ProjectsUserControlVM _projectsUserControlVM;
-        private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
+        private ObservableCollection<User_ProjectVM> _employeesCollection = new ObservableCollection<User_ProjectVM>();
 
         private ProjectVM _projectVM = new ProjectVM(new Project());
 
-        private ObservableCollection<UserVM> _leadersCollection = new ObservableCollection<UserVM>();
         private UserVM _selectedLeader;
         private Project.Statuses _status;
-        private Project _project;
         private bool _saveButton = false;
-        private List<User_ProjectVM> _savedPositions = new List<User_ProjectVM>();
+        private ObservableCollection<User_ProjectVM> _savedPositions = new ObservableCollection<User_ProjectVM>();
         private ObservableCollection<TeamVM> _teamsCollection = new ObservableCollection<TeamVM>();
+        private ObservableCollection<UserVM> _leadersCollection = new ObservableCollection<UserVM>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -54,18 +53,10 @@ namespace PMView.View
         public ProjectModuleEditVM(ILoadDataSender lastScreen, ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM) : this(lastScreen, projectsUserControlVM)
         {
             _projectVM = projectVM;
-
-            _project = ProjectVM.Project;
-
             foreach (var item in User_Project.Items)
             {
-                if (_employeesCollection.FirstOrDefault(employee => employee.User.Id == item.User.Id) == null && item.Project.Id == _projectVM.Project.Id)
-                {
-                    _employeesCollection.Add(new UserVM(item.User));
-                }
-
-                if (item.Project.Id == _project.Id)
-                    _savedPositions.Add(new User_ProjectVM(item));
+                if (item.Project.Id == ProjectVM.Project.Id)
+                    SavedPositions.Add(new User_ProjectVM(item));
             }
 
             foreach (var item in Team_Project.Items)
@@ -95,10 +86,10 @@ namespace PMView.View
             get
             {
                 List<string> skills = new List<string>();
-                if (_project == null)
+                if (ProjectVM.Project == null)
                     return skills;
 
-                foreach (var item in Project_Skill.Items.Where(skill => skill.Project.Id == _project.Id).ToList())
+                foreach (var item in Project_Skill.Items.Where(skill => skill.Project.Id == ProjectVM.Project.Id).ToList())
                 {
                     skills.Add(item.Skill.Name);
                 }
@@ -125,10 +116,10 @@ namespace PMView.View
             get
             {
                 _leadersCollection.Clear();
-                foreach (var item in EmployeesCollection)
+                foreach (var item in _savedPositions)
                 {
                     if (_leadersCollection.FirstOrDefault(leader => leader.User.Id == item.User.Id) == null)
-                        _leadersCollection.Add(item);
+                        _leadersCollection.Add(new UserVM(item.User));
                 }
 
                 return _leadersCollection;
@@ -153,9 +144,12 @@ namespace PMView.View
             }
         }
 
-        public ObservableCollection<UserVM> EmployeesCollection
+        public ObservableCollection<User_ProjectVM> EmployeesCollection
         {
-            get { return _employeesCollection; }
+            get
+            {
+                return _employeesCollection;
+            }
             set
             {
                 _employeesCollection = value;
@@ -231,7 +225,7 @@ namespace PMView.View
             }
         }
 
-        public List<User_ProjectVM> SavedPositions
+        public ObservableCollection<User_ProjectVM> SavedPositions
         {
             get { return _savedPositions; }
             set { _savedPositions = value; }
@@ -249,22 +243,22 @@ namespace PMView.View
             {
                 throw new Exception("Module or project must contain leader");
             }
-            if (_project == null)
+            if (ProjectVM.Project == null)
             {
-                _project = new Project();
-                _project.Name = Name;
-                _project.Description = Description;
-                _project.StartDate = StartDate;
-                _project.ReleaseDate = ReleaseDate;
-                _project.Order = CurrentOrder.Order;
-                _project.Status = Status;
+                ProjectVM.Project = new Project();
+                ProjectVM.Project.Name = Name;
+                ProjectVM.Project.Description = Description;
+                ProjectVM.Project.StartDate = StartDate;
+                ProjectVM.Project.ReleaseDate = ReleaseDate;
+                ProjectVM.Project.Order = CurrentOrder.Order;
+                ProjectVM.Project.Status = Status;
                 if (SelectedLeader != null)
-                    _project.Leader = SelectedLeader.User;
-                Project.Items.Add(_project);
+                    ProjectVM.Project.Leader = SelectedLeader.User;
+                Project.Items.Add(ProjectVM.Project);
                 Project_Project p = new Project_Project()
                 {
                     ParrentProject = null,
-                    ChildProject = _project
+                    ChildProject = ProjectVM.Project
                 };
                 Project_Project.Items.Add(p);
 
@@ -273,7 +267,7 @@ namespace PMView.View
                     User_Project user_project = new User_Project()
                     {
                         Position = item.Position,
-                        Project = _project,
+                        Project = ProjectVM.Project,
                         User = item.User
                     };
 
@@ -285,22 +279,20 @@ namespace PMView.View
             }
             else
             {
-                Guid id = _project.Id;
+                Guid id = ProjectVM.Project.Id;
                 User_Project.Items.RemoveAll(item => item.Project.Id == id);
-                Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == _project.Id));
+                Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == ProjectVM.Project.Id));
                 Project_Skill.Items.RemoveAll(item => item.Project.Id == id);
-                Project.Items.Remove(Project.Items.FirstOrDefault(item => item.Id == _project.Id));
-                _project = new Project();
-                _project.Id = id;
-                _project.Name = Name;
-                _project.Description = Description;
+                ProjectVM.Project.Id = id;
+                ProjectVM.Project.Name = Name;
+                ProjectVM.Project.Description = Description;
                 if (SelectedLeader != null)
-                    _project.Leader = SelectedLeader.User;
+                    ProjectVM.Project.Leader = SelectedLeader.User;
 
-                _project.StartDate = StartDate;
-                _project.ReleaseDate = ReleaseDate;
-                _project.Order = CurrentOrder.Order;
-                _project.Status = Status;
+                ProjectVM.Project.StartDate = StartDate;
+                ProjectVM.Project.ReleaseDate = ReleaseDate;
+                ProjectVM.Project.Order = CurrentOrder.Order;
+                ProjectVM.Project.Status = Status;
 
                 User_Project.Items.RemoveAll(item => item.Project.Id == id);
                 foreach (var item in _savedPositions)
@@ -308,15 +300,15 @@ namespace PMView.View
                     User_Project user_project = new User_Project()
                     {
                         Position = item.Position,
-                        Project = _project,
+                        Project = ProjectVM.Project,
                         User = item.User
                     };
 
                     User_Project.Items.Add(user_project);
                 }
 
-                Project.Items.Add(_project);
-                Project_Project.Items.Add(new Project_Project() { ChildProject = _project });
+                Project.Items.Add(ProjectVM.Project);
+                Project_Project.Items.Add(new Project_Project() { ChildProject = ProjectVM.Project });
                 
 
             }
@@ -325,7 +317,7 @@ namespace PMView.View
             {
                 Project_Skill project_skill = new Project_Skill()
                 {
-                    Project = _project,
+                    Project = ProjectVM.Project,
                     Skill = Skill.Items.FirstOrDefault(skill => skill.Name == item)
                 };
 

@@ -328,6 +328,14 @@ namespace PMView.View
             set { _status = value; }
         }
 
+        ObservableCollection<IEmployee> IAddEmployee.EmployeesPositions
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public void ActivateButtons(UserVM selectedEmployeeToDelete)
         {
             SelectedEmployeeToDelete = selectedEmployeeToDelete;
@@ -392,6 +400,26 @@ namespace PMView.View
 
         public void SavePositionsClick(List<string> positions)
         {
+        }
+
+        public void RemoveButtonClick(IEmployee select)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ActivateButtons(IEmployee _selectedEmployeeToAdd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SavePositionsClick(List<PositionVM> list)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddButtonClick(IEmployee _selectedEmployeeToAdd)
+        {
+            throw new NotImplementedException();
         }
     }
 }
