@@ -248,15 +248,6 @@
                     </Grid>
 
                     <Grid Grid.Row="1">
-                        <Grid.Resources>
-                            <DataTemplate DataType="{x:Type WrapperVM:UserVM}">
-                                <Border BorderBrush="Azure"  VerticalAlignment="Top">
-
-                                    <TextBlock Text="{Binding User}" FontSize="14" FontWeight="Bold" />
-
-                                </Border>
-                            </DataTemplate>
-                        </Grid.Resources>
                         <ListBox ItemsSource="{Binding EmployeesToAddCollection}" 
                          FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" Name="EmployeesToAddListBox" SelectionChanged="EmployeesToAddListBox_SelectionChanged">
                             <ListBox.BorderBrush>

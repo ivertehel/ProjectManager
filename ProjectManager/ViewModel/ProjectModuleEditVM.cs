@@ -225,21 +225,6 @@ namespace PMView.View
             }
         }
 
-        public ObservableCollection<UserVM> Employees
-        {
-            get
-            {
-                ObservableCollection<UserVM> employees = new ObservableCollection<UserVM>();
-                foreach (var item in SavedPositions)
-                {
-                    if (employees.FirstOrDefault(emp => emp.User.Id == item.User.Id) == null)
-                        employees.Add(new UserVM(item.User));
-                }
-
-                return employees;
-            }
-        }
-
         public ObservableCollection<User_ProjectVM> SavedPositions
         {
             get { return _savedPositions; }
@@ -367,7 +352,7 @@ namespace PMView.View
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("LeadersCollection");
             OnPropertyChanged("SelectedLeader");
-            OnPropertyChanged("Employees");
+            OnPropertyChanged("SavedPositions");
             var l = (_lastScreen as ILoadDataSender);
             if (l != null)
                 l.LoadData(sender);
