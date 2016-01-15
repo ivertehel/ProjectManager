@@ -243,6 +243,9 @@ namespace PMView
         {
             fillCheckboxList();
             _positions = new List<CheckBox>();
+            if (_addEmployeeVM == null)
+                return;
+
             var employeesPositions = _addEmployeeVM.EmployeesPositions;
 
             foreach (var item in Position.Items)
