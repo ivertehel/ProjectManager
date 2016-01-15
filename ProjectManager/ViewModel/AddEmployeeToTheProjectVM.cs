@@ -41,7 +41,7 @@ namespace PMView.View
         public AddEmployeeToTheProjectVM(ILoadDataSender lastScreen, ProjectModuleEditVM projectModuleEditVM, AttachEmployee screen)
         {
             _screen = screen;
-            foreach (var item in projectModuleEditVM.EmployeesCollection)
+            foreach (var item in projectModuleEditVM.SavedPositions)
             {
                 _employeesToAddCollection.Add(item);
             }
@@ -237,18 +237,31 @@ namespace PMView.View
 
         public void SavePositionsClick(List<PositionVM> positions)
         {
-            _employeesPositions.RemoveAll(item => item.User.Id == SelectedEmployeeToDelete.User.Id);
+            while (_employeesPositions.FirstOrDefault(item => item.User.Id == SelectedEmployeeToDelete.User.Id) != null)
+            {
+                _employeesPositions.Remove(_employeesPositions.FirstOrDefault(item => item.User.Id == SelectedEmployeeToDelete.User.Id));
+            }
+
             foreach (var item in positions)
             {
                 _employeesPositions.Add(new User_ProjectVM(new User_Project() { User = SelectedEmployeeToDelete.User, Project = _projectModuleEditVM.ProjectVM.Project, Position = item.Position }));
             }
+
+            LoadData(this);
         }
 
-        public ObservableCollection<User_ProjectVM> EmployeesToAddCollection
+        public ObservableCollection<UserVM> EmployeesToAddCollection
         {
             get
             {
-                return _employeesToAddCollection;
+                ObservableCollection<UserVM> employees = new ObservableCollection<UserVM>();
+                foreach (var item in _employeesToAddCollection)
+                {
+                    if (employees.FirstOrDefault(emp => emp.User.Id == item.User.Id) == null)
+                        employees.Add(new UserVM(item.User));
+                }
+
+                return employees;
             }
         }
 
@@ -268,15 +281,32 @@ namespace PMView.View
             }
         }
 
+        public ObservableCollection<UserVM> EmployeesCollection
+        {
+            get
+            {
+                var employees = new ObservableCollection<UserVM>();
+                foreach (var item in User.Items)
+                {
+                    if (item.Role == User.Roles.Employee)
+                        employees.Add(new UserVM(item));
+                }
+
+                return employees;
+            }
+        }
+
         public ObservableCollection<IEmployee> EmployeesPositions
         {
             get
             {
                 ObservableCollection<IEmployee> employeesInProject = new ObservableCollection<IEmployee>();
-                foreach (var item in _employeesPositions)
-                {
-                    employeesInProject.Add(item);
-                }
+                if (SelectedEmployeeToDelete != null)
+                    foreach (var item in _employeesPositions)
+                    {
+                        if (item.User.Id == SelectedEmployeeToDelete.User.Id)
+                            employeesInProject.Add(item);
+                    }
 
                 return employeesInProject;
             }
@@ -297,8 +327,8 @@ namespace PMView.View
 
         public void AddButtonClick(IEmployee user)
         {
-            
-            if (_employeesToAddCollection.Where(item => item.Equals(user)).Count() == 0)
+
+            if (_employeesToAddCollection.Where(item => item.Equals(user as User_ProjectVM)).Count() == 0)
             {
                 _employeesToAddCollection.Add(user as User_ProjectVM);
                 AddButton = false;
@@ -325,21 +355,11 @@ namespace PMView.View
                 }
             }
 
-            _projectModuleEditVM.EmployeesCollection.Clear();
+            _projectModuleEditVM.SavedPositions.Clear();
 
-            foreach (var item in _employeesToAddCollection)
+            foreach (var item in _employeesPositions)
             {
-                _projectModuleEditVM.EmployeesCollection.Add(item);
-            }
-
-            if (_employeesPositions != null)
-            {
-                _projectModuleEditVM.SavedPositions.Clear();
-
-                foreach (var item in _employeesPositions)
-                {
-                    _projectModuleEditVM.SavedPositions.Add(item);
-                }
+                _projectModuleEditVM.SavedPositions.Add(item);
             }
 
             SaveButton = false;
@@ -350,7 +370,7 @@ namespace PMView.View
 
         public void RemoveButtonClick(IEmployee employee)
         {
-            var user = employee as UserVM;
+            var user = employee as User_ProjectVM;
 
             if (_employeesToAddCollection.Where(item => item.User.Id == user.User.Id).Count() != 0)
             {

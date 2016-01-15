@@ -166,7 +166,7 @@ namespace PMView
                 _addEmployeeVM.ActivateButtons(_selectedEmployeeToAdd);
 
 
-                _addEmployeeVM.SelectedEmployeeToDelete = (EmployeesToAddListBox.SelectedItem as UserVM);
+                _addEmployeeVM.SelectedEmployeeToDelete = EmployeesToAddListBox.SelectedItem as UserVM;
                 if (_addEmployeeVM is AddEmployeeToTheTeamVM)
                     return;
 

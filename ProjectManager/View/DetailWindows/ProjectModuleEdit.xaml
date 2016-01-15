@@ -205,7 +205,7 @@
                                 </Border>
                             </DataTemplate>
                         </Grid.Resources>
-                        <ListBox ItemsSource="{Binding SavedPositions}"                          
+                        <ListBox ItemsSource="{Binding Employees}"                          
                                  FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top">
                             <ListBox.BorderBrush>
                                 <SolidColorBrush Opacity="0" Color="SkyBlue"/>
