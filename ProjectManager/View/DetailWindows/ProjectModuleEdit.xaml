@@ -179,48 +179,22 @@
                     </Grid>
 
                     <Grid Grid.Row="2">
-                        <Grid.Resources>
-                            <DataTemplate DataType="{x:Type WrapperVM:User_ProjectVM}">
-                                <Border BorderBrush="Azure"  VerticalAlignment="Top">
-                                    <Grid VerticalAlignment="Top">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="auto"/>
-                                            <RowDefinition Height="*"/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Grid.Row="0" Text="{Binding User}" FontSize="14" FontWeight="Bold" />
-                                        <ListBox Grid.Row="1" ItemsSource="{Binding Positions}"  VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                                            <ListBox.BorderBrush>
-                                                <SolidColorBrush Opacity="0" Color="SkyBlue"/>
-                                            </ListBox.BorderBrush>
-                                            <ListBox.Background>
-                                                <SolidColorBrush Opacity="0"/>
-                                            </ListBox.Background>
-                                            <ListBox.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <WrapPanel />
-                                                </ItemsPanelTemplate>
-                                            </ListBox.ItemsPanel>
-                                        </ListBox>
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </Grid.Resources>
-                        <ListBox ItemsSource="{Binding SavedPositions}"                          
-                                 FontSize="14" Name="EmployeesListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top">
-                            <ListBox.BorderBrush>
-                                <SolidColorBrush Opacity="0" Color="SkyBlue"/>
-                            </ListBox.BorderBrush>
-                            <ListBox.Background>
-                                <SolidColorBrush Opacity="0"/>
-                            </ListBox.Background>
-                            <ListBox.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel />
-                                </ItemsPanelTemplate>
-                            </ListBox.ItemsPanel>
-                        </ListBox>
+                        <DataGrid Name="EmployeesInModuleDataGrid"
+                      ItemsSource="{Binding EmployeesCollection}" ColumnWidth="*"
+                      IsReadOnly="True" AutoGenerateColumns="False"
+                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" MaxHeight="300"
+                      RowHeight="20">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn  Header="Name" Binding="{Binding Path=Name, Mode=OneWay}"/>
+                                <DataGridTextColumn  Header="Surname" Binding="{Binding Path=Surname, Mode=OneWay}"/>
+                                <DataGridTextColumn  Header="Login" Binding="{Binding Path=Login, Mode=OneWay}"/>
+                                <DataGridTextColumn  Header="E-mail" Binding="{Binding Path=Email, Mode=OneWay}"/>
+                                <DataGridTextColumn  Header="Skype" Binding="{Binding Path=Skype, Mode=OneWay}"/>
+                                <DataGridTextColumn  Header="Nationality" Binding="{Binding Path=Country, Mode=OneWay}"/>
+                                <DataGridTextColumn  Header="Status" Binding="{Binding Path=Status, Mode=OneWay}"/>
+                            </DataGrid.Columns>
 
-
+                        </DataGrid>
                     </Grid>
 
                     <Grid Grid.Row="3">

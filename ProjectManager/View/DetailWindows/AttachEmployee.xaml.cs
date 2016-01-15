@@ -179,7 +179,7 @@ namespace PMView
                     var cb = new CheckBox();
                     cb.Content = item.Name;
                     _positions.Add(cb);
-                    cb.IsChecked = _addEmployeeVM.EmployeesPositions.FirstOrDefault(pos => (pos as User_ProjectVM).User.Id == _selectedEmployeeToAdd.User.Id && (pos as User_ProjectVM).Position.Id == item.Id) == null ? false : true;
+                    cb.IsChecked = employeesPositions.Contains(item.Name) ? true : false;
                     cb.Click += new System.Windows.RoutedEventHandler(this.PositionCheckBox_Checked);
                 }
 
@@ -210,11 +210,10 @@ namespace PMView
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
+            _addEmployeeVM.SaveButtonClick();
 
             try
             {
-                _addEmployeeVM.SaveButtonClick();
-
             }
             catch (Exception ex)
             {
@@ -224,9 +223,7 @@ namespace PMView
 
         private void SavePositionsButton_Click(object sender, RoutedEventArgs e)
         {
-            var positions = (from items in _positions where items.IsChecked == true select new PositionVM(Position.Items.FirstOrDefault(pos => pos.Name == items.Content.ToString()))).ToList();
-
-            _addEmployeeVM.SavePositionsClick(positions);
+            _addEmployeeVM.SavePositionsClick((from items in _positions where items.IsChecked == true select items.Content.ToString()).ToList());
             _addEmployeeVM.SavePositionButton = false;
             _addEmployeeVM.SaveButton = true;
         }
@@ -270,7 +267,7 @@ namespace PMView
                 var cb = new CheckBox();
                 cb.Content = item.Name;
                 _positions.Add(cb);
-                cb.IsChecked = employeesPositions.FirstOrDefault(pos => item.Id == (pos as User_ProjectVM).Position.Id) == null ? false : true;
+                cb.IsChecked = employeesPositions.Contains(item.Name) ? true : false;
                 cb.Click += new System.Windows.RoutedEventHandler(this.PositionCheckBox_Checked);
             }
 
