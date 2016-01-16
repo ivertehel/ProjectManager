@@ -235,16 +235,18 @@ namespace PMView.View
 
                     foreach (var item in User_Team.Items)
                     {
-                        _savedPositions.Add(new User_TeamVM(item));
+                        if (item.Team.Id == _teamDetailsVM.CurrentTeam.Team.Id)
+                            _savedPositions.Add(new User_TeamVM(item));
                     }
                 }
 
                 _employeesPositions.Clear();
                 if (SelectedEmployeeToDelete != null)
                 {
-                    foreach (var elem in (from items in _savedPositions where items.User.Id == SelectedEmployeeToDelete.User.Id select items.Position.Name).ToList())
+                    foreach (var elem in _savedPositions)
                     {
-                        _employeesPositions.Add(elem);
+                        if (elem.User.Id == SelectedEmployeeToDelete.User.Id)
+                            _employeesPositions.Add(elem.Position.Name);
                     }
                 }
 
@@ -417,9 +419,13 @@ namespace PMView.View
             LoadData(this);
         }
 
-        public void SavePositionsClick(List<string> list)
+        public void SavePositionsClick(List<string> positions)
         {
-            
+            _savedPositions.RemoveAll(item => item.User.Id == SelectedEmployeeToDelete.User.Id);
+            foreach (var item in positions)
+            {
+                _savedPositions.Add(new User_TeamVM(new User_Team() { Position = Position.Items.FirstOrDefault(pos => pos.Name == item), IsLeader = false, Team = _teamDetailsVM.CurrentTeam.Team, User = SelectedEmployeeToDelete.User }));
+            }
         }
     }
 }
