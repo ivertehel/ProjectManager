@@ -195,10 +195,11 @@ namespace PMView
         }
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
-        {
+        { 
+                _addEmployeeVM.SaveButtonClick();
+
             try
             {
-                _addEmployeeVM.SaveButtonClick();
             }
             catch (Exception ex)
             {

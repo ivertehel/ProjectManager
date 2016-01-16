@@ -45,6 +45,8 @@ namespace PMView.View
             _lastScreen = lastScreen;
             _teamDetailsVM = teamDetailsVM;
             _attachEmployee = attachEmployee;
+            foreach (var item in _teamDetailsVM.EmployeesCollection)
+                _employeesToAddCollection.Add(item);
         }
 
         public string Name
@@ -397,21 +399,11 @@ namespace PMView.View
                 }
             }
 
-            _teamDetailsVM.EmployeesCollection.Clear();
-
-            foreach (var item in _employeesToAddCollection)
-            {
-                _teamDetailsVM.EmployeesCollection.Add(item);
-            }
-
             if (_savedPositions != null)
             {
-                _teamDetailsVM.SavedPositions.Clear();
-
+                User_Team.Items.RemoveAll(item => item.Team.Id == _teamDetailsVM.CurrentTeam.Team.Id);
                 foreach (var item in _savedPositions)
-                {
-                    _teamDetailsVM.SavedPositions.Add(item);
-                }
+                    User_Team.Items.Add(item.User_Team);
             }
 
             SaveButton = false;
