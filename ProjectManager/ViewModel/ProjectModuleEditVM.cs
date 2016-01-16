@@ -12,33 +12,32 @@ namespace PMView.View
 {
     public class ProjectModuleEditVM : INotifyPropertyChanged, ILoadDataSender
     {
-        private OrderVM _currentOrder;
-
         private ILoadDataSender _lastScreen;
 
         private List<Project.Statuses> _statuses = new List<Project.Statuses>();
 
-        private ProjectsUserControlVM _projectsUserControlVM;
         private ObservableCollection<UserVM> _employeesCollection = new ObservableCollection<UserVM>();
 
-        private ProjectVM _projectVM = new ProjectVM(new Project());
+        private ProjectVM _projectVM;
 
         private ObservableCollection<UserVM> _leadersCollection = new ObservableCollection<UserVM>();
         private UserVM _selectedLeader;
         private Project.Statuses _status;
-        private Project _project;
+        private Project _project = new Project();
         private bool _saveButton = false;
         private List<User_ProjectVM> _savedPositions = new List<User_ProjectVM>();
         private ObservableCollection<TeamVM> _teamsCollection = new ObservableCollection<TeamVM>();
+        private ObservableCollection<ProjectVM> _projectsCollection = new ObservableCollection<ProjectVM>();
+        private ProjectVM _parentProject;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ProjectModuleEditVM(ILoadDataSender lastScreen, ProjectsUserControlVM projectsUserControlVM)
+        public ProjectModuleEditVM(ILoadDataSender lastScreen, OrderVM order, ProjectVM parentProject = null)
         {
-            _projectVM.Order = projectsUserControlVM.SelectedOrder.Order;
-            _projectsUserControlVM = projectsUserControlVM;
+            _projectVM = new ProjectVM(_project);
+            _parentProject = parentProject;
+            _projectVM.Order = order.Order;
             _lastScreen = lastScreen;
-            _currentOrder = projectsUserControlVM.SelectedOrder;
             _projectVM.StartDate = DateTime.Now;
             _projectVM.ReleaseDate = DateTime.Now.AddDays(31);
 
@@ -51,11 +50,12 @@ namespace PMView.View
 
         }
 
-        public ProjectModuleEditVM(ILoadDataSender lastScreen, ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM) : this(lastScreen, projectsUserControlVM)
+        public ProjectModuleEditVM(ILoadDataSender lastScreen, OrderVM order, ProjectVM projectVM, ProjectVM parentProject = null) : this(lastScreen, order)
         {
+            _parentProject = parentProject;
             _projectVM = projectVM;
 
-            _project = ProjectVM.Project;
+            _project = _projectVM.Project;
 
             foreach (var item in User_Project.Items)
             {
@@ -135,11 +135,6 @@ namespace PMView.View
             }
         }
 
-        public ProjectsUserControlVM ProjectUserControlVM
-        {
-            get { return _projectsUserControlVM; }
-        }
-
         public ProjectVM ProjectVM
         {
             get { return _projectVM; }
@@ -171,12 +166,6 @@ namespace PMView.View
                 _teamsCollection = value;
                 SaveButton = true;
             }
-        }
-
-        public OrderVM CurrentOrder
-        {
-            get { return _currentOrder; }
-            set { _currentOrder = value; }
         }
 
         public string Name
@@ -237,33 +226,47 @@ namespace PMView.View
             set { _savedPositions = value; }
         }
 
+        public ObservableCollection<ProjectVM> ProjectsCollection
+        {
+            get
+            {
+                _projectsCollection.Clear();
+                var projects = from items in Project_Project.Items where items.ParrentProject?.Id == ProjectVM.Project.Id && items.ChildProject.Order == ProjectVM.Order select items.ChildProject;
+                foreach (var item in projects)
+                {
+                    _projectsCollection.Add(new ProjectVM(item));
+                }
+
+                return _projectsCollection;
+            }
+        }
+
         public void AddProject(string[] skills)
         {
             if (string.IsNullOrEmpty(Name) || Name[0] == ' ')
                 throw new Exception("Name can't be empty or start from space");
-            if (CurrentOrder == null)
+            if (ProjectVM.Order == null)
                 throw new Exception("Order was deleted");
             if (ReleaseDate < StartDate)
                 throw new Exception("Release date can't be before stat date");
-            if (Status == Project.Statuses.InProgress && SelectedLeader == null)
-            {
-                throw new Exception("Module or project must contain leader");
-            }
+            ////if (Status == Project.Statuses.InProgress && SelectedLeader == null)
+            ////{
+            ////    throw new Exception("Module or project must contain leader");
+            ////}
             if (_project == null)
             {
-                _project = new Project();
                 _project.Name = Name;
                 _project.Description = Description;
                 _project.StartDate = StartDate;
                 _project.ReleaseDate = ReleaseDate;
-                _project.Order = CurrentOrder.Order;
+                _project.Order = ProjectVM.Order;
                 _project.Status = Status;
                 if (SelectedLeader != null)
                     _project.Leader = SelectedLeader.User;
                 Project.Items.Add(_project);
                 Project_Project p = new Project_Project()
                 {
-                    ParrentProject = null,
+                    ParrentProject = _parentProject?.Project,
                     ChildProject = _project
                 };
                 Project_Project.Items.Add(p);
@@ -304,7 +307,7 @@ namespace PMView.View
 
                 _project.StartDate = StartDate;
                 _project.ReleaseDate = ReleaseDate;
-                _project.Order = CurrentOrder.Order;
+                _project.Order = ProjectVM.Order;
                 _project.Status = Status;
 
                 User_Project.Items.RemoveAll(item => item.Project.Id == id);
@@ -321,7 +324,7 @@ namespace PMView.View
                 }
 
                 Project.Items.Add(_project);
-                Project_Project.Items.Add(new Project_Project() { ChildProject = _project });
+                Project_Project.Items.Add(new Project_Project() { ChildProject = _project, ParrentProject = _parentProject?.Project });
 
 
                 foreach (var item in TeamsCollection)
@@ -354,6 +357,8 @@ namespace PMView.View
             OnPropertyChanged("SelectedLeader");
             OnPropertyChanged("SavedPositions");
             OnPropertyChanged("TeamsCollection");
+            OnPropertyChanged("ProjectsCollection");
+
             _lastScreen.LoadData(this);
         }
 
@@ -371,6 +376,8 @@ namespace PMView.View
             OnPropertyChanged("LeadersCollection");
             OnPropertyChanged("SelectedLeader");
             OnPropertyChanged("SavedPositions");
+            OnPropertyChanged("ProjectsCollection");
+
             var l = (_lastScreen as ILoadDataSender);
             if (l != null)
                 l.LoadData(sender);

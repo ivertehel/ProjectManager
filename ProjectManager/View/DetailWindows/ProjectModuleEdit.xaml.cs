@@ -28,22 +28,28 @@ namespace PMView
         private List<CheckBox> _skills = new List<CheckBox>();
         private List<CheckBox> _savedSkills;
         private ProjectVM _projectVM;
+        private ProjectVM _parentProject;
+        private OrderVM _order;
 
-        public ProjectModuleEdit(ProjectsUserControlVM projectsUserControlVM)
+        public ProjectModuleEdit(ILoadDataSender lastScreen, OrderVM order, ProjectVM parentProject = null)
         {
             InitializeComponent();
-            _lastScreen = projectsUserControlVM;
-            _projectModuleEditVM = new ProjectModuleEditVM(this, projectsUserControlVM);
+            _order = order;
+            _lastScreen = lastScreen;
+            _parentProject = parentProject;
+            _projectModuleEditVM = new ProjectModuleEditVM(this, order, parentProject);
             DataContext = _projectModuleEditVM;
             fillCheckboxList();
             FormTitle.Text = "Add module";
         }
 
-        public ProjectModuleEdit(ProjectsUserControlVM projectsUserControlVM, ProjectVM projectVM)
+        public ProjectModuleEdit(ILoadDataSender lastScreen, OrderVM order, ProjectVM projectVM, ProjectVM parentProject = null)
         {
             InitializeComponent();
-            _lastScreen = projectsUserControlVM;
-            _projectModuleEditVM = new ProjectModuleEditVM(this, projectsUserControlVM, projectVM);
+            _order = order;
+            _lastScreen = lastScreen;
+            _parentProject = parentProject;
+            _projectModuleEditVM = new ProjectModuleEditVM(this, order, projectVM, parentProject);
             DataContext = _projectModuleEditVM;
             _projectVM = projectVM;
             fillCheckboxList();
@@ -158,6 +164,29 @@ namespace PMView
             }
 
             _lastScreen.LoadData(sender);
+        }
+
+        private void AddProject_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _projectModuleEditVM.AddProject((from items in _skills where items.IsChecked == true select items.Content.ToString()).ToArray());
+                (new ProjectModuleEdit(_projectModuleEditVM, _order, _projectModuleEditVM.ProjectVM)).Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void EditProject_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveProject_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

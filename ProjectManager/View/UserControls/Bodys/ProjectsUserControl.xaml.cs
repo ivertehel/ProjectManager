@@ -71,13 +71,13 @@ namespace PMView.View
 
         private void AddProject_Click(object sender, RoutedEventArgs e)
         {
-            (new ProjectModuleEdit(_projectsUserControlVM)).Show();
+            (new ProjectModuleEdit(_projectsUserControlVM, _projectsUserControlVM.SelectedOrder)).Show();
         }
 
         private void EditProject_Click(object sender, RoutedEventArgs e)
         {
             if (ModulesDataGrid.SelectedItem != null)
-                (new ProjectModuleEdit(_projectsUserControlVM, ModulesDataGrid.SelectedItem as ProjectVM)).Show();
+                (new ProjectModuleEdit(_projectsUserControlVM, _projectsUserControlVM.SelectedOrder, ModulesDataGrid.SelectedItem as ProjectVM, null)).Show();
         }
 
         private void RemoveProject_Click(object sender, RoutedEventArgs e)

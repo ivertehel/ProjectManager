@@ -299,37 +299,6 @@ namespace PMView.View
             }
         }
 
-        ////public ObservableCollection<TaskVM> TasksCollection
-        ////{
-        ////    get
-        ////    {
-        ////        if (SelectedOrder == null)
-        ////            return _tasksCollection;
-
-        ////        List<Task> t = new List<Task>();
-        ////        foreach (var team in _teamsCollection)
-        ////        {
-        ////            var tasks = from items in Task.TeamsTasks where items.OwnerId == team.Team.Id select items;
-        ////            t.AddRange(tasks);
-        ////        }
-
-        ////        foreach (var employee in _employeesCollection)
-        ////        {
-        ////            var tasks = from items in Task.UsersTasks where items.OwnerId == employee.User.Id select items;
-        ////            t.AddRange(tasks);
-        ////        }
-
-        ////        _tasksCollection.Clear();
-
-        ////        foreach (var item in t)
-        ////        {
-        ////            _tasksCollection.Add(new TaskVM(item));
-        ////        }
-
-        ////        return _tasksCollection;
-        ////    }
-        ////}
-
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
