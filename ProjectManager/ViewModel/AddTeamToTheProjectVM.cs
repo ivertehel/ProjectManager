@@ -30,6 +30,8 @@ namespace PMView.View
             _projectModuleEditVM = projectModuleEditVM;
             _addTeamToTheProject = addTeamToTheProject;
             AddButton = true;
+            foreach (var item in projectModuleEditVM.TeamsCollection)
+                _teamsToAddCollection.Add(item);
         }
 
         public List<string> SelectedSkills

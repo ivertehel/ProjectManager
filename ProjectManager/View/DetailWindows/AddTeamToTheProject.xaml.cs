@@ -126,7 +126,6 @@ namespace PMView
                 _addTeamToTheProject.ActivateButtons(_selectedTeamToAdd);
             }
 
-            TeamsToAddListBox.SelectedItem = null;
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
