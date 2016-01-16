@@ -419,7 +419,7 @@ namespace PMView.View
 
         public void SavePositionsClick(List<string> list)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

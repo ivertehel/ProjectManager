@@ -108,7 +108,7 @@ namespace PMView
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _addTeamToTheProject.SaveButton_Click();
         }
 
         public void LoadData(object sender)

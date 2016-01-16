@@ -2627,3 +2627,16 @@
 15.01.2016 0:00:00 | 16:38:04.8572444:Info | Team details screen | Team details have been loaded
 15.01.2016 0:00:00 | 16:38:05.9984397:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 15.01.2016 0:00:00 | 16:38:09.0643826:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+15.01.2016 0:00:00 | 18:28:15.0227075:Info | Details screen | Project details have been loaded
+15.01.2016 0:00:00 | 18:28:18.0853341:Info | Team details screen | Team details have been loaded
+15.01.2016 0:00:00 | 18:28:20.1428962:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+15.01.2016 0:00:00 | 18:28:29.8705900:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+16.01.2016 0:00:00 | 17:11:20.9461448:Info | Details screen | Project details have been loaded
+16.01.2016 0:00:00 | 17:11:36.9894428:Info | Team details screen | Team details have been loaded
+16.01.2016 0:00:00 | 17:17:30.7896184:Info | Details screen | Project details have been loaded
+16.01.2016 0:00:00 | 17:17:41.5885681:Info | Details screen | Project details have been loaded
+16.01.2016 0:00:00 | 17:17:45.3230151:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+16.01.2016 0:00:00 | 17:18:08.7275243:Info | Team details screen | Team details have been loaded
+16.01.2016 0:00:00 | 17:18:10.5147910:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+16.01.2016 0:00:00 | 17:18:12.4260185:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+16.01.2016 0:00:00 | 17:18:13.8469821:Info | Order screen | Details of Android Matches Puzzle game have been loaded

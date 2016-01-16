@@ -344,6 +344,7 @@ namespace PMView.View
             OnPropertyChanged("LeadersCollection");
             OnPropertyChanged("SelectedLeader");
             OnPropertyChanged("SavedPositions");
+            OnPropertyChanged("TeamsCollection");
             _lastScreen.LoadData(this);
         }
 

@@ -121,6 +121,15 @@ namespace PMView.View
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public void SaveButton_Click()
+        {
+            _projectModuleEditVM.TeamsCollection.Clear();
+            foreach (var item in TeamsToAddCollection)
+            {
+                _projectModuleEditVM.TeamsCollection.Add(item);
+            }
+        }
+
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
