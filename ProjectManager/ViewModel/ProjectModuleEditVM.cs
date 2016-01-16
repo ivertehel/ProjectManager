@@ -281,6 +281,10 @@ namespace PMView.View
                 }
 
 
+                foreach (var item in TeamsCollection)
+                {
+                    Team_Project.Items.Add(new Team_Project() { Project = _project, Team = item.Team });
+                }
 
             }
             else
@@ -289,6 +293,7 @@ namespace PMView.View
                 User_Project.Items.RemoveAll(item => item.Project.Id == id);
                 Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == _project.Id));
                 Project_Skill.Items.RemoveAll(item => item.Project.Id == id);
+                Team_Project.Items.RemoveAll(item => item.Project.Id == _project.Id);
                 Project.Items.Remove(Project.Items.FirstOrDefault(item => item.Id == _project.Id));
                 _project = new Project();
                 _project.Id = id;
@@ -317,8 +322,12 @@ namespace PMView.View
 
                 Project.Items.Add(_project);
                 Project_Project.Items.Add(new Project_Project() { ChildProject = _project });
-                
 
+
+                foreach (var item in TeamsCollection)
+                {
+                    Team_Project.Items.Add(new Team_Project() { Project = _project, Team = item.Team });
+                }
             }
 
             foreach (var item in skills)
