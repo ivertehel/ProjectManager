@@ -6,12 +6,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMDataLayer;
+using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace PMView.View.WrapperVM
 {
     public class UserVM : BaseVM, IUser, IEmployee
     {
         private User _user;
+
+
+        public static byte[] GetJPGImageBytes(BitmapImage imageC)
+        {
+            MemoryStream memStream = new MemoryStream();
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageC));
+            encoder.Save(memStream);
+            return memStream.ToArray();
+        }
+
+        public static byte[] GetPNGImageBytes(BitmapImage imageC)
+        {
+            MemoryStream memStream = new MemoryStream();
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageC));
+            encoder.Save(memStream);
+            return memStream.ToArray();
+        }
+
+
+        public static string TypeOfImage(string file)
+        {
+            string fileType = file.Remove(0, file.LastIndexOf('.'));
+            if (fileType == ".jpg" || fileType == ".jpeg" || fileType == ".JPG" || fileType == ".JPEG" || fileType == ".png" || fileType == ".PNG")
+            {
+                return fileType.Remove(0, 1).ToUpper();
+            }
+            return string.Empty;
+        }
 
         public UserVM(User user)
         {
@@ -81,6 +113,35 @@ namespace PMView.View.WrapperVM
         {
             get { return _user.Image; }
             set { _user.Image = value; }
+        }
+
+        public BitmapImage BitmapImage
+        {
+            get
+            {
+                if (Image == null || Image.Length == 0) return null;
+                var image = new BitmapImage();
+                try
+                {
+                    using (var mem = new MemoryStream(Image))
+                    {
+                        mem.Position = 0;
+                        image.BeginInit();
+                        image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                        image.CacheOption = BitmapCacheOption.OnLoad;
+                        image.UriSource = null;
+                        image.StreamSource = mem;
+                        image.EndInit();
+                    }
+                    image.Freeze();
+                }
+                catch
+                {
+                    image = new BitmapImage(new Uri(Environment.CurrentDirectory + @"//Assets//MaleAvatar.jpg"));
+
+                }
+                return image;
+            }
         }
 
         public User.Roles Role
@@ -172,6 +233,24 @@ namespace PMView.View.WrapperVM
             }
 
             return false;
+        }
+
+        private byte[] getJPGImageBytes(BitmapImage imageC)
+        {
+            MemoryStream memStream = new MemoryStream();
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageC));
+            encoder.Save(memStream);
+            return memStream.ToArray();
+        }
+
+        private byte[] getPNGImageBytes(BitmapImage imageC)
+        {
+            MemoryStream memStream = new MemoryStream();
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageC));
+            encoder.Save(memStream);
+            return memStream.ToArray();
         }
     }
 }

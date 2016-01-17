@@ -8,6 +8,8 @@ using System.Windows;
 using PMDataLayer;
 using PMView.View.WrapperVM;
 using Core;
+using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace PMView.View
 {
@@ -38,6 +40,7 @@ namespace PMView.View
         private ILoadDataSender _lastScreen;
 
         private ObservableCollection<User.States> _states = new ObservableCollection<User.States>();
+        private BitmapImage _bitmapImage;
 
         public UserDetailsVM(IUser user, ILoadDataSender lastScreen)
         {
@@ -87,6 +90,16 @@ namespace PMView.View
         {
             get { return _state; }
             set { _state = value; }
+        }
+
+        public BitmapImage BitmapImage
+        {
+            get { return _bitmapImage; }
+            set
+            {
+                _bitmapImage = value;
+                OnPropertyChanged("BitmapImage");
+            }
         }
 
         public ObservableCollection<User.States> States
@@ -216,6 +229,7 @@ namespace PMView.View
             CurrentUser.Login = _login;
             CurrentUser.Skype = _skype;
             CurrentUser.Description = _description;
+            CurrentUser.Image = UserVM.GetJPGImageBytes(_bitmapImage);
             User.Update();
             LoadData(this);
         }
@@ -231,6 +245,7 @@ namespace PMView.View
             _email = CurrentUser.Email;
             _login = CurrentUser.Login;
             _description = CurrentUser.Description;
+            _bitmapImage = CurrentUser.BitmapImage;
             LoadData(this);
         }
 
@@ -244,6 +259,7 @@ namespace PMView.View
             OnPropertyChanged("Birthday");
             OnPropertyChanged("Email");
             OnPropertyChanged("Login");
+            OnPropertyChanged("BitmapImage");
             OnPropertyChanged("Description");
             _lastScreen.LoadData(this);
             ButtonsActive = false;

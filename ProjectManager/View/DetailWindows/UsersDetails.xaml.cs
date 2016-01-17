@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using PMView.View;
 using PMView.View.WrapperVM;
 using Core;
+using Microsoft.Win32;
 
 namespace PMView
 {
@@ -56,11 +57,12 @@ namespace PMView
 
         protected void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            _userDetailsVM.ButtonSaveClick();
+            if (_employeeDetailsVM != null)
+                _employeeDetailsUserControl.SaveChanges();
             try
             {
-                _userDetailsVM.ButtonSaveClick();
-                if (_employeeDetailsVM != null)
-                    _employeeDetailsUserControl.SaveChanges();
+
             }
             catch (Exception ex)
             {
@@ -81,6 +83,26 @@ namespace PMView
         protected void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _userDetailsVM.OneOrMoreFieldsWereUpdated();
+        }
+
+        private void LoadProfileImage_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == false) return;
+            string type = UserVM.TypeOfImage(openFileDialog1.FileName);
+            if (type == "JPG" || type == "PNG")
+            {
+                BitmapImage b = new BitmapImage();
+                b.BeginInit();
+                b.UriSource = new Uri(openFileDialog1.FileName);
+                b.EndInit();
+                _userDetailsVM.BitmapImage = b;
+            }
+            else
+            {
+                _userDetailsVM.BitmapImage = new BitmapImage(new Uri(Environment.CurrentDirectory + @"//Assets//MaleAvatar.jpg"));
+            }
+            _userDetailsVM.ButtonsActive = true;
         }
     }
 }
