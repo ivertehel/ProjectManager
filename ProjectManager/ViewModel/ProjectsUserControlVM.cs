@@ -116,7 +116,7 @@ namespace PMView.View
             }
         }
 
-        internal void RemoveProject(ProjectVM projectVM)
+        public void RemoveProject(ProjectVM projectVM)
         {
             User_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
             Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == projectVM.Project.Id));

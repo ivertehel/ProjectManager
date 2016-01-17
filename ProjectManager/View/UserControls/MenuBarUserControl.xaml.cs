@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,7 +27,7 @@ namespace PMView.View
         {
             InitializeComponent();
             _menuBarButtons = new[] { ProjectsButton, ClientsButton, EmployeesButton, TeamsButton, ReportsButton, MessagesButton };
-            loadUserControl(new ProjectsUserControl(), ProjectsButton);
+            _loadProjectsUserControl();
         }
 
         private void loadUserControl(UIElement userControl, Button button)
@@ -44,7 +45,7 @@ namespace PMView.View
 
         private void ProjectsButton_Click(object sender, RoutedEventArgs e)
         {
-            loadUserControl(new ProjectsUserControl(), ProjectsButton);
+            _loadProjectsUserControl();
         }
 
         private void ClientsButton_Click(object sender, RoutedEventArgs e)
@@ -70,6 +71,22 @@ namespace PMView.View
         private void MessagesButton_Click(object sender, RoutedEventArgs e)
         {
             loadUserControl(new MessagesUserControl(), MessagesButton);
+        }
+
+        private void _loadProjectsUserControl()
+        {
+            try
+            {
+                var path = Environment.CurrentDirectory + @"\ProjectsScreenPlugin.dll";
+                var DLL = Assembly.LoadFile(path);
+                var classType = DLL.GetType("ProjectsScreenPlugin.ProjectsUserControl");
+                dynamic c = Activator.CreateInstance(classType);
+                loadUserControl(c as UIElement, ProjectsButton);
+            }
+            catch
+            {
+                loadUserControl(new ProjectsUserControl(), ProjectsButton);
+            }
         }
     }
 }

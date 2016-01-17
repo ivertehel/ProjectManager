@@ -2866,3 +2866,7 @@
 16.01.2016 0:00:00 | 21:17:51.7655709:Info | Details screen | Project details have been loaded
 16.01.2016 0:00:00 | 21:18:01.0689502:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 16.01.2016 0:00:00 | 21:18:11.6656867:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+17.01.2016 0:00:00 | 08:06:20.2544638:Info | Details screen | Project details have been loaded
+17.01.2016 0:00:00 | 08:41:13.1967559:Info | Details screen | Project details have been loaded
+17.01.2016 0:00:00 | 08:41:41.5428105:Info | Details screen | Project details have been loaded
+17.01.2016 0:00:00 | 08:44:39.5061062:Info | Details screen | Project details have been loaded
