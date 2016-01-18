@@ -128,16 +128,31 @@ namespace PMView.View
                     generalProjects.Add(item.Id);
 
             Project.Items.Remove(Project.Items.FirstOrDefault(item => item.Id == projectVM.Project.Id));
-            //var toDelete = from item in Project_Project.Items where item.ParrentProject == null &&
-            //    generalProjects.FirstOrDefault(proj => proj == item.Id) != null select item;
+            var toDelete = (from item in Project_Project.Items
+                            where item.ParrentProject == null
+                            select item).ToList();
 
-            //foreach (var item in toDelete)
-            //{
-            //    Project_Skill.Items.RemoveAll(ps => ps.Project.Id == item.ChildProject.Id);
-            //    Team_Project.Items.RemoveAll(tp => tp.Project.Id == item.ChildProject.Id);
-            //    User_Project.Items.RemoveAll(user => user.Project.Id == item.ChildProject.Id);
-            //    Project.Items.Remove(Project.Items.FirstOrDefault(p => p.Id == item.ChildProject.Id));
-            //}
+            foreach (var item in generalProjects)
+                toDelete.RemoveAll(p => p.Id == item);
+
+            while (toDelete.Count() > 0)
+            {
+                toDelete = (from item in Project_Project.Items
+                                where item.ParrentProject == null
+                                select item).ToList();
+
+                foreach (var item in generalProjects)
+                    toDelete.RemoveAll(p => p.Id == item);
+
+                foreach (var item in toDelete)
+                {
+                    Project_Skill.Items.RemoveAll(ps => ps.Project.Id == item.ChildProject.Id);
+                    Team_Project.Items.RemoveAll(tp => tp.Project.Id == item.ChildProject.Id);
+                    User_Project.Items.RemoveAll(user => user.Project.Id == item.ChildProject.Id);
+                    Project.Items.Remove(Project.Items.FirstOrDefault(p => p.Id == item.ChildProject.Id));
+                    Project_Project.Items.RemoveAll(project => project.Id == item.Id);
+                }
+            }
 
             EditButton = false;
             RemoveButton = false;

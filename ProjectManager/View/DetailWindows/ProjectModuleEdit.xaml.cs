@@ -195,7 +195,13 @@ namespace PMView
 
         private void RemoveProject_Click(object sender, RoutedEventArgs e)
         {
-
+            if (ModulesDataGrid.SelectedItem != null)
+            {
+                if (MessageBox.Show("Are you sure?", "Are you sure?", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning, MessageBoxResult.No, MessageBoxOptions.DefaultDesktopOnly) == MessageBoxResult.Yes)
+                {
+                    _projectModuleEditVM.RemoveProject(ModulesDataGrid.SelectedItem as ProjectVM);
+                }
+            }
         }
     }
 }
