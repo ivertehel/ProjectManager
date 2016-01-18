@@ -31,6 +31,7 @@ namespace PMView.View
         private ProjectVM _parentProject;
         private bool _editButton;
         private bool _removeButton;
+        private ProjectVM _selectedModule;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -265,31 +266,63 @@ namespace PMView.View
         }
 
 
+        public ProjectVM SelectedModule
+        {
+            get { return _selectedModule; }
+            set
+            {
+                _selectedModule = value;
+                if (_selectedModule != null)
+                {
+                    EditButton = true;
+                    RemoveButton = true;
+                }
+                else
+                {
+                    EditButton = false;
+                    RemoveButton = false;
+                }
+            }
+        }
+
         public void RemoveProject(ProjectVM projectVM)
         {
             User_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
             Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == projectVM.Project.Id));
             Team_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
             Project_Skill.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
-            //List<Guid> generalProjects = new List<Guid>();
-            //foreach (var item in Project_Project.Items)
-            //    if (item.ParrentProject == null)
-            //        generalProjects.Add(item.Id);
+            List<Guid> generalProjects = new List<Guid>();
+            foreach (var item in Project_Project.Items)
+                if (item.ParrentProject == null)
+                    generalProjects.Add(item.Id);
 
             Project.Items.Remove(Project.Items.FirstOrDefault(item => item.Id == projectVM.Project.Id));
-            //var toDelete = from item in Project_Project.Items where item.ParrentProject == null &&
-            //    generalProjects.FirstOrDefault(proj => proj == item.Id) != null select item;
+            var toDelete = (from item in Project_Project.Items
+                            where item.ParrentProject == null
+                            select item).ToList();
 
-            //foreach (var item in toDelete)
-            //{
-            //    Project_Skill.Items.RemoveAll(ps => ps.Project.Id == item.ChildProject.Id);
-            //    Team_Project.Items.RemoveAll(tp => tp.Project.Id == item.ChildProject.Id);
-            //    User_Project.Items.RemoveAll(user => user.Project.Id == item.ChildProject.Id);
-            //    Project.Items.Remove(Project.Items.FirstOrDefault(p => p.Id == item.ChildProject.Id));
-            //}
+            foreach (var item in generalProjects)
+                toDelete.RemoveAll(p => p.Id == item);
 
-            EditButton = false;
-            RemoveButton = false;
+            while (toDelete.Count() > 0)
+            {
+                toDelete = (from item in Project_Project.Items
+                            where item.ParrentProject == null
+                            select item).ToList();
+
+                foreach (var item in generalProjects)
+                    toDelete.RemoveAll(p => p.Id == item);
+
+                foreach (var item in toDelete)
+                {
+                    Project_Skill.Items.RemoveAll(ps => ps.Project.Id == item.ChildProject.Id);
+                    Team_Project.Items.RemoveAll(tp => tp.Project.Id == item.ChildProject.Id);
+                    User_Project.Items.RemoveAll(user => user.Project.Id == item.ChildProject.Id);
+                    Project.Items.Remove(Project.Items.FirstOrDefault(p => p.Id == item.ChildProject.Id));
+                    Project_Project.Items.RemoveAll(project => project.Id == item.Id);
+                }
+            }
+
             LoadData();
         }
 
