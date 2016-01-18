@@ -16,13 +16,13 @@ namespace PMDataLayer
 
         public User User
         {
-            get { return User.Items.Where(items => items.Id == _userId).FirstOrDefault(); }
+            get { return User.Items.Where(items => items?.Id == _userId).FirstOrDefault(); }
             set { _userId = value.Id; }
         }
 
         public Project Project
         {
-            get { return Project.Items.Where(items => items.Id == _projectId).FirstOrDefault(); }
+            get { return Project.Items.Where(items => items?.Id == _projectId).FirstOrDefault(); }
             set { _projectId = value.Id; }
         }
 

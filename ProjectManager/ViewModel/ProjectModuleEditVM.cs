@@ -50,7 +50,7 @@ namespace PMView.View
 
         }
 
-        public ProjectModuleEditVM(ILoadDataSender lastScreen, OrderVM order, ProjectVM projectVM, ProjectVM parentProject = null) : this(lastScreen, order)
+        public ProjectModuleEditVM(ILoadDataSender lastScreen, OrderVM order, ProjectVM projectVM, ProjectVM parentProject = null) : this(lastScreen, order, parentProject)
         {
             _parentProject = parentProject;
             _projectVM = projectVM;
@@ -234,7 +234,8 @@ namespace PMView.View
                 var projects = from items in Project_Project.Items where items.ParrentProject?.Id == ProjectVM.Project.Id && items.ChildProject.Order == ProjectVM.Order select items.ChildProject;
                 foreach (var item in projects)
                 {
-                    _projectsCollection.Add(new ProjectVM(item));
+                    if (_projectsCollection.FirstOrDefault(proj => proj.Project.Id == item.Id) == null)
+                        _projectsCollection.Add(new ProjectVM(item));
                 }
 
                 return _projectsCollection;

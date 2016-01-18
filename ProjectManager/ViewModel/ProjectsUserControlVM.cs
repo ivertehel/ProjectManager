@@ -120,8 +120,25 @@ namespace PMView.View
         {
             User_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
             Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == projectVM.Project.Id));
+            Team_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
             Project_Skill.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
+            List<Guid> generalProjects = new List<Guid>();
+            foreach (var item in Project_Project.Items)
+                if (item.ParrentProject == null)
+                    generalProjects.Add(item.Id);
+
             Project.Items.Remove(Project.Items.FirstOrDefault(item => item.Id == projectVM.Project.Id));
+            //var toDelete = from item in Project_Project.Items where item.ParrentProject == null &&
+            //    generalProjects.FirstOrDefault(proj => proj == item.Id) != null select item;
+
+            //foreach (var item in toDelete)
+            //{
+            //    Project_Skill.Items.RemoveAll(ps => ps.Project.Id == item.ChildProject.Id);
+            //    Team_Project.Items.RemoveAll(tp => tp.Project.Id == item.ChildProject.Id);
+            //    User_Project.Items.RemoveAll(user => user.Project.Id == item.ChildProject.Id);
+            //    Project.Items.Remove(Project.Items.FirstOrDefault(p => p.Id == item.ChildProject.Id));
+            //}
+
             EditButton = false;
             RemoveButton = false;
             LoadData();
@@ -224,7 +241,8 @@ namespace PMView.View
                 var projects = from items in Project_Project.Items where items.ParrentProject == null && items.ChildProject.Order == SelectedOrder.Order select items.ChildProject;
                 foreach (var item in projects)
                 {
-                    _projectsCollection.Add(new ProjectVM(item));
+                    if (_projectsCollection.FirstOrDefault(proj => proj.Project.Id == item.Id) == null)
+                        _projectsCollection.Add(new ProjectVM(item));
                 }
 
                 return _projectsCollection;

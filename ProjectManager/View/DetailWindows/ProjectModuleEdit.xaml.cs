@@ -181,7 +181,16 @@ namespace PMView
 
         private void EditProject_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (ModulesDataGrid.SelectedItem != null)
+                    (new ProjectModuleEdit(_projectModuleEditVM, _order, ModulesDataGrid.SelectedItem as ProjectVM, _projectModuleEditVM.ProjectVM)).Show();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void RemoveProject_Click(object sender, RoutedEventArgs e)

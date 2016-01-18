@@ -14,7 +14,7 @@ namespace PMDataLayer
 
         public Project Project
         {
-            get { return Project.Items.Where(items => items.Id == _projectId).FirstOrDefault(); }
+            get { return Project.Items.Where(items => items?.Id == _projectId).FirstOrDefault(); }
             set { _projectId = value.Id; }
         }
 
