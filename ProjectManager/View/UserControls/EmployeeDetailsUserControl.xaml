@@ -11,7 +11,22 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Skills:"  FontSize="18"/>
+        <Grid Grid.Row="0" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock Text="Skills:" TextBlock.FontSize="18" Margin="0,10,0,10"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button Content="Add/Edit" MinWidth="100" Margin="10,10,0,10" Name="AddSkill" Click="AddSkill_Click">
+                    <Button.Background>
+                        <DrawingBrush Opacity="0.5"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Grid>
         <ListBox Grid.Row="1"
             FontSize="14" Name="SkillsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListBox.BorderBrush>

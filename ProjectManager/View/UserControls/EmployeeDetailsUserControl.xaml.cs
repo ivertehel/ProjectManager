@@ -20,7 +20,7 @@ namespace PMView.View
     /// <summary>
     /// Interaction logic for EmployeeDetailsUserControl.xaml
     /// </summary>
-    public partial class EmployeeDetailsUserControl : UserControl
+    public partial class EmployeeDetailsUserControl : UserControl, ILoadDataSender
     {
         private EmployeeDetailsUserControlVM _employeeDetailsUserControlVM;
 
@@ -29,10 +29,13 @@ namespace PMView.View
         private List<CheckBox> _skills = new List<CheckBox>();
 
         private UserDetailsVM _userDetailsVM;
+        private List<CheckBox> _savedSkills;
+        private ILoadDataSender _lastScreen;
 
         public EmployeeDetailsUserControl(IEmployee employee, ILoadDataSender lastScreen, UserDetailsVM userDetailsVM)
         {
             InitializeComponent();
+            _lastScreen = lastScreen;
             _userDetailsVM = userDetailsVM;
             _currentUser = employee as UserVM;
             _employeeDetailsUserControlVM = new EmployeeDetailsUserControlVM(employee, lastScreen);
@@ -74,6 +77,56 @@ namespace PMView.View
             }
 
             _employeeDetailsUserControlVM.SaveChanges(newSkills);
+        }
+
+        private void fillCheckboxList()
+        {
+
+            _skills.Clear();
+            foreach (var item in SkillVM.Skills)
+            {
+                var cb = new CheckBox();
+                cb.Content = item.Name;
+                _skills.Add(cb);
+                cb.IsChecked = false;
+            }
+
+            SkillsListBox.Items.Clear();
+            foreach (var item in _skills)
+            {
+                SkillsListBox.Items.Add(item);
+            }
+
+            foreach (var item in _skills)
+            {
+                if (_savedSkills == null)
+                    item.IsChecked = false;
+                else
+                {
+                    item.Click += new System.Windows.RoutedEventHandler(this.CheckBox_Checked);
+                    var isExist = _savedSkills.FirstOrDefault(skill => skill.Content.ToString() == item.Content.ToString());
+                    item.IsChecked = isExist == null ? false : isExist.IsChecked;
+                }
+            }
+            _savedSkills = null;
+
+        }
+
+        private void AddSkill_Click(object sender, RoutedEventArgs e)
+        {
+            _savedSkills = new List<CheckBox>();
+            foreach (var item in _skills)
+            {
+                _savedSkills.Add(item);
+            }
+
+            (new SkillWindow(this)).Show();
+        }
+
+        public void LoadData(object sender)
+        {
+            fillCheckboxList();
+            _lastScreen.LoadData(this);
         }
     }
 }

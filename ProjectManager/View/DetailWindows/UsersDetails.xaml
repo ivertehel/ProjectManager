@@ -53,7 +53,7 @@
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
