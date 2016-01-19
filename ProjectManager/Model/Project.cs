@@ -11,7 +11,7 @@ namespace PMDataLayer
     {
         private Guid _orderId;
 
-        private Guid _leaderId;
+        private Guid? _leaderId;
 
         public enum Statuses
         {
@@ -40,7 +40,7 @@ namespace PMDataLayer
         public User Leader
         {
             get { return User.Items.Where(items => items.Id == _leaderId).FirstOrDefault(); }
-            set { _leaderId = value.Id; }
+            set { _leaderId = value?.Id; }
         }
 
         public IEnumerable<Project> ChildProjects

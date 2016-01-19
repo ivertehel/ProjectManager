@@ -242,7 +242,9 @@ namespace PMView
 
         public void LoadData(object sender)
         {
-            fillCheckboxList();
+            if (sender is SkillWindowVM)
+                fillCheckboxList();
+
             _positions = new List<CheckBox>();
             if (_addEmployeeVM == null)
                 return;

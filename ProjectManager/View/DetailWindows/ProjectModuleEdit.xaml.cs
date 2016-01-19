@@ -120,6 +120,7 @@ namespace PMView
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+
             try
             {
                 _projectModuleEditVM.AddProject((from items in _skills where items.IsChecked == true select items.Content.ToString()).ToArray());
@@ -146,12 +147,6 @@ namespace PMView
         private void StateCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
-
-        private void LeadersCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-               _projectModuleEditVM.SelectedLeader = LeadersCollection.SelectedItem as UserVM;
         }
 
         public void LoadData(object sender)

@@ -58,7 +58,7 @@ namespace PMView.View.WrapperVM
 
         public string Name
         {
-            get { return _user.Name; }
+            get { return _user?.Name; }
             set { _user.Name = value; }
         }
 
@@ -69,7 +69,7 @@ namespace PMView.View.WrapperVM
 
         public string Surname
         {
-            get { return _user.Surname; }
+            get { return _user?.Surname; }
             set { _user.Surname = value; }
         }
 

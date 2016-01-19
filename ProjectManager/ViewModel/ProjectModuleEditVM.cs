@@ -80,6 +80,7 @@ namespace PMView.View
             }
 
             _status = projectVM.Status;
+            _selectedLeader = new UserVM(_projectVM.Leader);
             LoadData();
         }
 
@@ -119,7 +120,9 @@ namespace PMView.View
             set
             {
                 _selectedLeader = value;
+                _projectVM.Leader = _selectedLeader?.User;
                 SaveButton = true;
+                OnPropertyChanged("SelectedLeader");
             }
         }
 
@@ -133,6 +136,7 @@ namespace PMView.View
                     if (_leadersCollection.FirstOrDefault(leader => leader.User.Id == item.User.Id) == null)
                         _leadersCollection.Add(item);
                 }
+                _selectedLeader = new UserVM(ProjectVM.Leader);
 
                 return _leadersCollection;
             }
@@ -347,7 +351,7 @@ namespace PMView.View
                 _project.Order = ProjectVM.Order;
                 _project.Status = Status;
                 if (SelectedLeader != null)
-                    _project.Leader = SelectedLeader.User;
+                    _project.Leader = _selectedLeader.User;
                 Project.Items.Add(_project);
                 Project_Project p = new Project_Project()
                 {
@@ -388,7 +392,7 @@ namespace PMView.View
                 _project.Name = Name;
                 _project.Description = Description;
                 if (SelectedLeader != null)
-                    _project.Leader = SelectedLeader.User;
+                    _project.Leader = _selectedLeader.User;
 
                 _project.StartDate = StartDate;
                 _project.ReleaseDate = ReleaseDate;
@@ -458,8 +462,9 @@ namespace PMView.View
         public void LoadData(object sender)
         {
             OnPropertyChanged("EmployeesCollection");
-            OnPropertyChanged("LeadersCollection");
             OnPropertyChanged("SelectedLeader");
+
+            OnPropertyChanged("LeadersCollection");
             OnPropertyChanged("SavedPositions");
             OnPropertyChanged("ProjectsCollection");
 
