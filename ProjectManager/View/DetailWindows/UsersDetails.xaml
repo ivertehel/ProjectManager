@@ -52,13 +52,12 @@
 
 
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" VerticalAlignment="Stretch">
+                <Grid Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
@@ -124,18 +123,25 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Name="ProfileImage" Source="{Binding BitmapImage}" Width="100"  HorizontalAlignment="Stretch" Margin="0,5,10,20"/>
-                        <Button Grid.Column="1" VerticalAlignment="Top" Content="Browse" Margin="0,5,0,0" Click="LoadProfileImage_Click"></Button>
+                        <Image Grid.Column="0" Name="ProfileImage" VerticalAlignment="Top" Source="{Binding BitmapImage}" Width="100"  HorizontalAlignment="Stretch" Margin="0,5,0,0"/>
+                        <Button Grid.Column="1" VerticalAlignment="Top" Content="Browse" Margin="10,5,10,0" Click="LoadProfileImage_Click">
+                            <Button.Background>
+                                <DrawingBrush Opacity="0.5"/>
+                            </Button.Background>
+                        </Button>
+                        <Grid Grid.Column="2" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="Description:" FontSize="18"/>
+                            <TextBox Grid.Row="1" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Description}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16" TextChanged="SomeProperty_Changed"/>
+                        </Grid>
                     </Grid>
-                    <Grid Grid.Row="2" VerticalAlignment="Stretch">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Text="Description:" FontSize="18"/>
-                        <TextBox Grid.Row="1" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Description}" VerticalScrollBarVisibility="Auto" TextBlock.FontSize="16" TextChanged="SomeProperty_Changed"/>
-                    </Grid>
+
                 </Grid>
                 <Grid Grid.Row="1" Name="EmployeesGrid"></Grid>
                 <Grid Grid.Row="2" Margin="0,5,0,5" VerticalAlignment="Top">

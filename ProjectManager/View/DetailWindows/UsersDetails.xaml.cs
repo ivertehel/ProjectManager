@@ -42,8 +42,6 @@ namespace PMView
         public UsersDetails(IEmployee employee, ILoadDataSender lastScreen) : this(employee as IUser, lastScreen)
         {
             InitializeComponent();
-            Form.MinHeight = 650;
-            Form.MinWidth = 800;
             Title.Text = "Employee properties";
             _employeeDetailsVM = new EmployeeDetailsUserControlVM(employee, lastScreen);
             _employeeDetailsUserControl = new EmployeeDetailsUserControl(employee, lastScreen, _userDetailsVM);
