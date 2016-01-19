@@ -143,7 +143,7 @@
                                 <TextBlock Text="Employees:"  FontSize="14"/>
                             </Grid>
                             <Grid Grid.Row="2" Grid.Column="1" Margin="0,5,0,0">
-                                <ListBox FontSize="14" Name="EmployeesListBox" ItemsSource="{Binding EmployeesCollection}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <ListBox FontSize="14" Name="EmployeesListBox" SelectionChanged="EmployeesListBox_SelectionChanged" ItemsSource="{Binding EmployeesCollection}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                     <ListBox.BorderBrush>
                                         <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                                     </ListBox.BorderBrush>
@@ -169,7 +169,7 @@
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <Image Name="ProfileImage" Source="/Assets/MaleAvatar.jpg" Width="100"  HorizontalAlignment="Stretch" Margin="20,5,20,20"/>
+                                <Image Name="ProfileImage" Source="{Binding Image}" Width="100"  HorizontalAlignment="Stretch" Margin="20,5,20,20"/>
                             </Grid>
                             <Grid Grid.Row="1"/>
                             <Grid Grid.Row="2"/>

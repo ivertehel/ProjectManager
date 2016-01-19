@@ -8,6 +8,7 @@ using System.Windows;
 using PMDataLayer;
 using Core;
 using PMView.View.WrapperVM;
+using System.Windows.Media.Imaging;
 
 namespace PMView.View
 {
@@ -30,6 +31,7 @@ namespace PMView.View
         private bool _editButton;
         private bool _removeButton;
         private ProjectVM _selectedModule;
+        private UserVM _customer;
 
         public ProjectsUserControlVM()
         {
@@ -53,7 +55,16 @@ namespace PMView.View
         public OrderVM SelectedOrder
         {
             get { return _selectedOrder; }
-            set { _selectedOrder = value; }
+            set
+            {
+                _selectedOrder = value;
+                _customer = new UserVM(_selectedOrder.Client.User);
+            }
+        }
+
+        public BitmapImage Image
+        {
+            get { return _customer.BitmapImage; }
         }
 
         public ObservableCollection<SkillVM> Skills

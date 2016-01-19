@@ -90,5 +90,13 @@ namespace PMView.View
                 }
             }
         }
+
+        private void EmployeesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (EmployeesListBox.SelectedItem != null)
+                (new UsersDetails(EmployeesListBox.SelectedItem as IEmployee, _projectsUserControlVM)).Show();
+
+            EmployeesListBox.SelectedItem = null;
+        }
     }
 }

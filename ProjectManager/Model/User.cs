@@ -135,7 +135,7 @@ namespace PMDataLayer
                     user.Email = row["Email"].ToString();
                     user.Skype = row["Skype"].ToString();
                     user.Country = row["Country"].ToString();
-                    //user.Image = Entity<User>.GetBytes(row["Image"].ToString());
+                    user.Image = (byte[])row["Image"];
                     string role = row["Role"].ToString();
                     user.Role = role == "Administrator" ? Roles.Administrator : role == "Client" ? Roles.Client : Roles.Employee;
                     string status = row["Status"].ToString();
@@ -160,7 +160,7 @@ namespace PMDataLayer
                     rows[i]["Email"] = User.Items[i].Email;
                     rows[i]["Skype"] = User.Items[i].Skype;
                     rows[i]["Country"] = User.Items[i].Country;
-                    //rows[i]["Image"] = User.Items[i].Image;
+                    rows[i]["Image"] = User.Items[i].Image;
                     rows[i]["Role"] = User.Items[i].Role;
                     rows[i]["Status"] = User.Items[i].Status;
                     rows[i]["Description"] = User.Items[i].Description;
