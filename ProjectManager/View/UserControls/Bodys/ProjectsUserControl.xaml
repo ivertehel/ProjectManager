@@ -105,7 +105,7 @@
                                 <TextBlock Text="Skills:" FontSize="14"/>
                             </Grid>
                             <Grid Grid.Row="0" Grid.Column="1">
-                                <ListBox FontSize="14" Name="SkillsListBox" ItemsSource="{Binding Skills}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <ListBox FontSize="14" Name="SkillsListBox" ItemsSource="{Binding Skills}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="SkillsListBox_SelectionChanged">
                                     <ListBox.BorderBrush>
                                         <SolidColorBrush Opacity="0" Color="SkyBlue"/>
                                     </ListBox.BorderBrush>

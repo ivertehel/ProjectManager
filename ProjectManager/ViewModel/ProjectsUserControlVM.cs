@@ -363,6 +363,7 @@ namespace PMView.View
         {
             Logger.Info("Order screen", "Details of " + SelectedOrder.Name + " have been loaded");
             OnPropertyChanged("TeamsCollection");
+            OnPropertyChanged("Image");
             OnPropertyChanged("EmployeesCollection");
             OnPropertyChanged("ProjectsCollection");
             ////OnPropertyChanged("TasksCollection");

@@ -98,5 +98,10 @@ namespace PMView.View
 
             EmployeesListBox.SelectedItem = null;
         }
+
+        private void SkillsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SkillsListBox.SelectedItem = null;
+        }
     }
 }
