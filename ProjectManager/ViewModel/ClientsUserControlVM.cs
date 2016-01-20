@@ -6,18 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMDataLayer;
+using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
     public class ClientsUserControlVM : INotifyPropertyChanged
     {
-        private ObservableCollection<Client> _clientsColletction = new ObservableCollection<Client>();
+        private ObservableCollection<ClientVM> _clientsColletction = new ObservableCollection<ClientVM>();
 
         public ClientsUserControlVM()
         {
             foreach (var item in Client.Items)
             {
-                ClientsCollection.Add(item);
+                ClientsCollection.Add(new ClientVM(item));
             }
 
             SelectedClient = ClientsCollection[0];
@@ -25,9 +26,9 @@ namespace PMView.View
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Client SelectedClient { get; set; }
+        public ClientVM SelectedClient { get; set; }
 
-        public ObservableCollection<Client> ClientsCollection
+        public ObservableCollection<ClientVM> ClientsCollection
         {
             get { return _clientsColletction; }
         }
@@ -50,7 +51,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return string.Empty;
 
-                return SelectedClient.User.Name;
+                return SelectedClient.Client.User.Name;
             }
         }
 
@@ -61,7 +62,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return string.Empty;
 
-                return SelectedClient.User.Surname;
+                return SelectedClient.Client.User.Surname;
             }
         }
 
@@ -72,7 +73,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return string.Empty;
 
-                return SelectedClient.User.Login;
+                return SelectedClient.Client.User.Login;
             }
         }
 
@@ -83,7 +84,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return string.Empty;
 
-                return SelectedClient.User.Birthday.ToShortDateString();
+                return SelectedClient.Client.User.Birthday.ToShortDateString();
             }
         }
 
@@ -94,7 +95,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return string.Empty;
 
-                return SelectedClient.User.Email;
+                return SelectedClient.Client.User.Email;
             }
         }
 
@@ -105,7 +106,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return string.Empty;
 
-                return SelectedClient.User.Skype;
+                return SelectedClient.Client.User.Skype;
             }
         }
 
@@ -116,7 +117,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return string.Empty;
 
-                return SelectedClient.User.Country;
+                return SelectedClient.Client.User.Country;
             }
         }
 
@@ -124,7 +125,7 @@ namespace PMView.View
         {
             get
             {
-                return SelectedClient.User.Role;
+                return SelectedClient.Client.User.Role;
             }
         }
 
@@ -135,7 +136,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return string.Empty;
 
-                return SelectedClient.User.Description;
+                return SelectedClient.Client.User.Description;
             }
         }
 
@@ -146,7 +147,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return User.States.Male;
 
-                return SelectedClient.User.State;
+                return SelectedClient.Client.User.State;
             }
         }
 
@@ -158,7 +159,7 @@ namespace PMView.View
                     return string.Empty;
 
                 string orders = string.Empty;
-                var ordersList = SelectedClient.Orders.ToList();
+                var ordersList = SelectedClient.Client.Orders.ToList();
                 for (int i = 0; i < ordersList.Count; i++)
                 {
                     orders += ordersList[i] + (i < ordersList.Count - 1 ? ", " : " ");

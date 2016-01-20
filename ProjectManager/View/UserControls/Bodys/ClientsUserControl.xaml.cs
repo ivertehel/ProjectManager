@@ -20,10 +20,33 @@ namespace PMView.View
     /// </summary>
     public partial class ClientsUserControl : UserControl
     {
+        private ClientsUserControlVM _clientsUserControlVM;
+
         public ClientsUserControl()
         {
             InitializeComponent();
-            ////ClientsDataGrid.ItemsSource = from items in _projectsUserControlVM.OrdersCollection select new { Name = items.Name, Description = items.Description, StartDate = items.StartDate.ToShortDateString(), ReleaseDate = items.ReleaseDate.ToShortDateString(), Price = items.Price, Status = items.Status };
+            _clientsUserControlVM = new ClientsUserControlVM();
+            DataContext = _clientsUserControlVM;
+        }
+
+        private void ClientsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+
+        }
+
+        private void AddProject_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void EditProject_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RemoveProject_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -76,6 +76,7 @@
     <Compile Include="Model\User_Team.cs" />
     <Compile Include="ViewModel\AddTeamToTheProjectVM.cs" />
     <Compile Include="ViewModel\AddEmployeeToTheTeamVM.cs" />
+    <Compile Include="ViewModel\Data\ClientVM.cs" />
     <Compile Include="ViewModel\EntitysAddRemoveEdit.cs" />
     <Compile Include="ViewModel\IAddEmployee.cs" />
     <Compile Include="ViewModel\PositionWindowVM.cs" />
