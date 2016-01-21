@@ -387,7 +387,7 @@ namespace PMView.View
             User e2 = User.Items.Where(item => item.Login == "datrax").FirstOrDefault();
             User e3 = User.Items.Where(item => item.Login == "khrystyna1204").FirstOrDefault();
             User e4 = User.Items.Where(item => item.Login == "hacapet89").FirstOrDefault();
-            User u1 = User.Items.Where(item => item.Role == User.Roles.Client).FirstOrDefault();
+            User u1 = User.Items.Where(item => item.RoleType == User.Roles.Client).FirstOrDefault();
             Client c1 = Client.Items.Where(item => item.User.Id == u1.Id).FirstOrDefault();
             Order.Update();
             Order o2 = Order.Items[0];

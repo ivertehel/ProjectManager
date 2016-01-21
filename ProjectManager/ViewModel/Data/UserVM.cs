@@ -146,14 +146,14 @@ namespace PMView.View.WrapperVM
 
         public User.Roles Role
         {
-            get { return _user.Role; }
-            set { _user.Role = value; }
+            get { return _user.RoleType; }
+            set { _user.RoleType = value; }
         }
 
         public User.Statuses Status
         {
-            get { return _user.Status; }
-            set { _user.Status = value; }
+            get { return _user.StatusType; }
+            set { _user.StatusType = value; }
         }
 
         public string Description
@@ -164,8 +164,8 @@ namespace PMView.View.WrapperVM
 
         public User.States State
         {
-            get { return _user.State; }
-            set { _user.State = value; }
+            get { return _user.StateType; }
+            set { _user.StateType = value; }
         }
 
         public IEnumerable<Skill> Skills

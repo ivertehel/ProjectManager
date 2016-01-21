@@ -56,6 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Base.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\Entity.cs" />
@@ -77,6 +78,8 @@
     <Compile Include="ViewModel\AddTeamToTheProjectVM.cs" />
     <Compile Include="ViewModel\AddEmployeeToTheTeamVM.cs" />
     <Compile Include="ViewModel\Data\ClientVM.cs" />
+    <Compile Include="Model\ColumnAttribute.cs" />
+    <Compile Include="Model\TableAttribute.cs" />
     <Compile Include="ViewModel\EntitysAddRemoveEdit.cs" />
     <Compile Include="ViewModel\IAddEmployee.cs" />
     <Compile Include="ViewModel\PositionWindowVM.cs" />

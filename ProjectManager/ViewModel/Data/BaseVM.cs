@@ -16,5 +16,7 @@ namespace PMView.View.WrapperVM
             if (PropertyChanged != null)
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
     }
 }

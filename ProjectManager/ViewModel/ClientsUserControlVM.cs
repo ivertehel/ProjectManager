@@ -125,7 +125,7 @@ namespace PMView.View
         {
             get
             {
-                return SelectedClient.Client.User.Role;
+                return SelectedClient.Client.User.RoleType;
             }
         }
 
@@ -147,7 +147,7 @@ namespace PMView.View
                 if (SelectedClient == null)
                     return User.States.Male;
 
-                return SelectedClient.Client.User.State;
+                return SelectedClient.Client.User.StateType;
             }
         }
 

@@ -98,7 +98,7 @@ namespace PMView.View
         {
             get
             {
-                List<string> usedCountries = (from items in User.Items where items.Role == User.Roles.Employee select items.Country).ToList();
+                List<string> usedCountries = (from items in User.Items where items.RoleType == User.Roles.Employee select items.Country).ToList();
                 usedCountries.RemoveAll(item => usedCountries.Count(value => value == item) == 0);
                 usedCountries.Add("NotChosen");
                 usedCountries.Sort();
@@ -171,7 +171,7 @@ namespace PMView.View
         {
             get
             {
-                var users = User.Items.Where(item => item.Role == User.Roles.Employee);
+                var users = User.Items.Where(item => item.RoleType == User.Roles.Employee);
                 _employeesCollection.Clear();
                 foreach (var item in users)
                 {

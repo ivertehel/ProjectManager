@@ -63,7 +63,7 @@ namespace PMView.View.WrapperVM
                 List<SkillVM> skills = new List<SkillVM>();
                 foreach (var employee in User.Items)
                 {
-                    if (employee.Role == User.Roles.Employee)
+                    if (employee.RoleType == User.Roles.Employee)
                     {
                         foreach (var skill in employee.Skills)
                         {
