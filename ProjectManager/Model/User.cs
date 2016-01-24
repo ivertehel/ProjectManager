@@ -73,15 +73,15 @@ namespace PMDataLayer
             get { return _role.ToString(); }
             set
             {
-                if (value == Roles.Administrator.ToString())
+                if (value == "Administrator")
                 {
                     _role = Roles.Administrator;
                 }
-                else if (value == Roles.Client.ToString())
+                else if (value == "Client")
                 {
                     _role = Roles.Client;
                 }
-                else if (value == Roles.Employee.ToString())
+                else if (value == "Employee")
                 {
                     _role = Roles.Employee;
                 }
@@ -104,19 +104,19 @@ namespace PMDataLayer
             get { return _status.ToString(); }
             set
             {
-                if (value == Statuses.InWork.ToString())
+                if (value == "InWork")
                 {
                     _status = Statuses.InWork;
                 }
-                else if (value == Statuses.NotReady.ToString())
+                else if (value == "NotReady")
                 {
                     _status = Statuses.NotReady;
                 }
-                else if (value == Statuses.Ready.ToString())
+                else if (value == "Ready")
                 {
                     _status = Statuses.Ready;
                 }
-                else if (value == Statuses.UnInvited.ToString())
+                else if (value == "UnInvited")
                 {
                     _status = Statuses.UnInvited;
                 }

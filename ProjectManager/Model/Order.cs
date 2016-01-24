@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
+    [Table]
     public class Order : Entity<Order>, ICloneable
     {
         public enum Statuses
@@ -17,19 +18,65 @@ namespace PMDataLayer
             Discarded
         }
 
+        [Column]
         public string Name { get; set; }
 
+        [Column]
         public string Description { get; set; }
 
+        [Column]
         public decimal Price { get; set; }
 
+        [Column]
         public DateTime StartDate { get; set; }
 
+        [Column]
         public DateTime ReleaseDate { get; set; }
 
-        public Statuses Status { get; set; }
+        [Column]
+        public string Status
+        {
+            get { return _status.ToString(); }
+            set
+            {
+                if (value == "Discarded")
+                {
+                    _status = Statuses.Discarded;
+                }
+                else if (value == "Done")
+                {
+                    _status = Statuses.Done;
+                }
+                else if (value == "InProgress")
+                {
+                    _status = Statuses.InProgress;
+                }
+                else
+                {
+                    _status = Statuses.Open;
+                }
+            }
+        }
 
-        public bool IsPrivate { get; set; }
+        public Statuses StatusType
+        {
+            get { return _status; }
+            set { _status = value; }
+        }
+
+        [Column]
+        public int IsPrivate
+        {
+            get { return _isPrivate == true ? 1 : 0; }
+            set { _isPrivate = value == 1 ? true : false; }
+        }
+
+        [Column]
+        public Guid Client_Id
+        {
+            get { return _clientId; }
+            set { _clientId = value; }
+        }
 
         public Client Client
         {
@@ -54,75 +101,8 @@ namespace PMDataLayer
             return newOrder;
         }
 
-        public static void Update()
-        {
-            if (_adapter == null)
-            {
-                createAdapter("SELECT * FROM Orders");
-
-                _adapter.Fill(_dataSet, "Orders");
-                Order.Items.Clear();
-                foreach (DataRow row in _dataSet.Tables["Orders"].Rows)
-                {
-                    Order order = new Order();
-                    order.Id = (Guid)row["Id"];
-                    order.Price = Convert.ToDecimal(row["Price"]);
-                    order._clientId = (Guid)row["Client_Id"];
-                    order.Description = row["Description"].ToString();
-                    order.StartDate = Convert.ToDateTime(row["StartDate"]);
-                    order.ReleaseDate = Convert.ToDateTime(row["ReleaseDate"]);
-                    string status = row["Status"].ToString();
-                    order.Status = status == "Done" ? Statuses.Done : status == "Discarded" ? Statuses.Discarded : status == "Open" ? Statuses.Open : Statuses.InProgress;
-                    int isPrivate = Convert.ToInt32(row["IsPrivate"]);
-                    order.IsPrivate = isPrivate == 1 ? true : false;
-                    order.Name = row["Name"].ToString();
-                    Order.Items.Add(order);
-                }
-            }
-            else
-            {
-                var rows = _dataSet.Tables["Orders"].Rows;
-                for (int i = 0; i < rows.Count; i++)
-                {
-                    rows[i]["Id"] = Order.Items[i].Id;
-                    rows[i]["Price"] = Order.Items[i].Price;
-                    rows[i]["Client_Id"] = Order.Items[i]._clientId;
-                    rows[i]["Description"] = Order.Items[i].Description;
-                    rows[i]["StartDate"] = Order.Items[i].StartDate;
-                    rows[i]["ReleaseDate"] = Order.Items[i].ReleaseDate;
-                    rows[i]["Status"] = Order.Items[i].Status;
-                    rows[i]["IsPrivate"] = Convert.ToInt32(Order.Items[i].IsPrivate);
-                    rows[i]["Name"] = Order.Items[i].Name;
-                }
-                _adapter.Update(_dataSet, "Orders");
-            }
-        }
-
-        public static void Insert(Order order)
-        {
-            if (_adapter == null)
-                createAdapter("SELECT * FROM Orders");
-
-            _adapter.Fill(_dataSet, "Orders");
-            _adapter.Update(_dataSet.Tables["Orders"]);
-
-
-            DataRow newOrdersRow = _dataSet.Tables["Orders"].NewRow();
-            newOrdersRow["Id"] = order.Id;
-            newOrdersRow["Price"] = order.Price;
-            newOrdersRow["Client_Id"] = order._clientId;
-            newOrdersRow["Description"] = order.Description;
-            newOrdersRow["StartDate"] = order.StartDate;
-            newOrdersRow["ReleaseDate"] = order.ReleaseDate;
-            newOrdersRow["Status"] = order.Status;
-            newOrdersRow["IsPrivate"] = order.IsPrivate == true ? 1 : 0;
-            newOrdersRow["Name"] = order.Name;
-
-            _dataSet.Tables["Orders"].Rows.Add(newOrdersRow);
-            _adapter.Update(_dataSet.Tables["Orders"]);
-            Order.Items.Add(order);
-        }
-
         private Guid _clientId;
+        private Statuses _status;
+        private bool _isPrivate;
     }
 }

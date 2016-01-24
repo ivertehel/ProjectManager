@@ -7,11 +7,20 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
+    [Table]
     public class Client : Entity<Client>
     {
         private Guid _userId;
 
+        [Column]
         public decimal Account { get; set; }
+
+        [Column]
+        public Guid User_Id
+        {
+            get { return _userId; }
+            set { _userId = value; }
+        }
 
         public User User
         {

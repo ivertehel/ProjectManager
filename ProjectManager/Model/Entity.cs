@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
+    [Table]
     public class Entity<T> where T : Entity<T>
     {
         static Entity()
@@ -24,6 +25,7 @@ namespace PMDataLayer
 
         public static List<T> Items { get; set; }
 
+        [Column]
         public Guid Id { get; set; }
 
         public static byte[] GetBytes(string str)
@@ -35,13 +37,12 @@ namespace PMDataLayer
 
         public static void Update()
         {
+            Type type = typeof(T);
+            string tableName = type.Name + "s";
+
             if (_adapter == null)
             {
-                Type type = typeof(T);
-                string tableName = type.Name + "s";
-
                 createAdapter($@"SELECT * FROM {tableName}");
-
                 _adapter.Fill(_dataSet, tableName);
 
                 foreach (DataRow row in _dataSet.Tables[tableName].Rows)
@@ -58,23 +59,25 @@ namespace PMDataLayer
                         }
                     }
                     Items.Add(instance as T);
-                    //client.Id = (Guid)row["Id"];
-                    //client.Name = (row["Name"]).ToString();
-                    //client._userId = (Guid)row["User_Id"];
-
-                    //Client.Items.Add(client);
                 }
             }
             else
             {
-                var rows = _dataSet.Tables["Clients"].Rows;
+                var rows = _dataSet.Tables[tableName].Rows;
+
                 for (int i = 0; i < rows.Count; i++)
                 {
-                    rows[i]["Id"] = Client.Items[i].Id;
-                    rows[i]["Account"] = Client.Items[i].Account;
-                    rows[i]["User_Id"] = Client.Items[i].User.Id;
+                    foreach (var property in typeof(T).GetProperties())
+                    {
+                        if (property.CustomAttributes.FirstOrDefault(atribute => atribute.AttributeType == typeof(ColumnAttribute)) != null)
+                        {
+                            var prop = type.GetProperty(property.Name);
+                            var item = Items[i].GetType();
+                            rows[i][property.Name] = item.GetProperty(property.Name).GetValue(Items[i]);
+                        }
+                    }
                 }
-                _adapter.Update(_dataSet, "Clients");
+                _adapter.Update(_dataSet, tableName);
             }
         }
 

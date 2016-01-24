@@ -59,14 +59,14 @@ namespace PMView.View.WrapperVM
 
         public Order.Statuses Status
         {
-            get { return _order.Status; }
-            set { _order.Status = value; }
+            get { return _order.StatusType; }
+            set { _order.StatusType = value; }
         }
 
         public bool IsPrivate
         {
-            get { return _order.IsPrivate; }
-            set { _order.IsPrivate = value; }
+            get { return _order.IsPrivate == 1 ? true : false; }
+            set { _order.IsPrivate = value == true ? 1 : 0; }
         }
 
         public Client Client
