@@ -391,17 +391,8 @@ namespace PMView.View
             Client c1 = Client.Items.Where(item => item.User.Id == u1.Id).FirstOrDefault();
             Order.Update();
             Order o2 = Order.Items[0];
-            
-            Project p1 = new Project()
-            {
-                Name = "Android game Matches Puzzle",
-                Description = "Unity3D game for Android 4.0.2 and more. 100 puzlles from book. Ads must exist. Like https://play.google.com/store/apps/details?id=vn.bigfox.pencils",
-                Order = o2,
-                StartDate = o2.StartDate,
-                ReleaseDate = o2.ReleaseDate,
-                Status = Project.Statuses.InProgress
-            };
-            Project.Items.Add(p1);
+            Project.Update();
+            Project p1 = Project.Items[0];
 
             Project_Project pp1 = new Project_Project()
             {

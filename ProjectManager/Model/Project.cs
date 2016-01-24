@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
+    [Table]
     public class Project : Entity<Project>, ICloneable
     {
         private Guid _orderId;
 
         private Guid? _leaderId;
+        private Statuses _status;
 
         public enum Statuses
         {
@@ -21,15 +23,56 @@ namespace PMDataLayer
             Discarded
         }
 
+        [Column]
         public string Name { get; set; }
 
+        [Column]
         public string Description { get; set; }
 
+        [Column]
         public DateTime StartDate { get; set; }
 
+        [Column]
         public DateTime ReleaseDate { get; set; }
 
-        public Statuses Status { get; set; }
+        [Column]
+        public string Status
+        {
+            get { return _status.ToString(); }
+            set
+            {
+                if (value == "Discarded")
+                {
+                    _status = Statuses.Discarded;
+                }
+                else if (value == "Done")
+                {
+                    _status = Statuses.Done;
+                }
+                else if (value == "InProgress")
+                {
+                    _status = Statuses.InProgress;
+                }
+                else
+                {
+                    _status = Statuses.Opened;
+                }
+            }
+        }
+
+        [Column]
+        public Guid Order_Id
+        {
+            get { return _orderId; }
+            set { _orderId = value; }
+        }
+
+        [Column]
+        public Guid? Leader_Id
+        {
+            get { return _leaderId; }
+            set { _leaderId = value; }
+        }
 
         public Order Order
         {
@@ -41,6 +84,12 @@ namespace PMDataLayer
         {
             get { return User.Items.Where(items => items.Id == _leaderId).FirstOrDefault(); }
             set { _leaderId = value?.Id; }
+        }
+
+        public Statuses StatusType
+        {
+            get { return _status; }
+            set { _status = value; }
         }
 
         public IEnumerable<Project> ChildProjects

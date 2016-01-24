@@ -349,7 +349,7 @@ namespace PMView.View
                 _project.StartDate = StartDate;
                 _project.ReleaseDate = ReleaseDate;
                 _project.Order = ProjectVM.Order;
-                _project.Status = Status;
+                _project.StatusType = Status;
                 if (SelectedLeader != null)
                     _project.Leader = _selectedLeader.User;
                 Project.Items.Add(_project);
@@ -397,7 +397,7 @@ namespace PMView.View
                 _project.StartDate = StartDate;
                 _project.ReleaseDate = ReleaseDate;
                 _project.Order = ProjectVM.Order;
-                _project.Status = Status;
+                _project.StatusType = Status;
 
                 User_Project.Items.RemoveAll(item => item.Project.Id == id);
                 foreach (var item in _savedPositions)

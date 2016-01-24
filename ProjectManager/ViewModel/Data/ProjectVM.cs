@@ -54,8 +54,8 @@ namespace PMView.View.WrapperVM
 
         public Project.Statuses Status
         {
-            get { return _project.Status; }
-            set { _project.Status = value; }
+            get { return _project.StatusType; }
+            set { _project.StatusType = value; }
         }
 
         public Order Order

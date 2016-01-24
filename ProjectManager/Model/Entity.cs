@@ -55,7 +55,7 @@ namespace PMDataLayer
                             var prop = type.GetProperty(property.Name);
                             
                             var r = row[property.Name];
-                            prop.SetValue(instance, r);
+                            prop.SetValue(instance, r == DBNull.Value ? null : r);
                         }
                     }
                     Items.Add(instance as T);
@@ -81,21 +81,31 @@ namespace PMDataLayer
             }
         }
 
-        public static void Insert(Client client)
+        public static void Insert(T instance)
         {
-            //if (_adapter == null)
-            //    createAdapter("SELECT * FROM Clients");
+            Type type = typeof(T);
+            string tableName = type.Name + "s";
+            if (_adapter == null)
+                createAdapter($@"SELECT * FROM {tableName}");
 
-            //_adapter.Fill(_dataSet, "Clients");
+            _adapter.Fill(_dataSet, tableName);
 
-            //DataRow newClientsRow = _dataSet.Tables["Clients"].NewRow();
-            //newClientsRow["Id"] = client.Id;
-            //newClientsRow["Account"] = client.Account;
-            //newClientsRow["User_Id"] = client._userId;
+            DataRow newRow = _dataSet.Tables[tableName].NewRow();
+            foreach (var property in typeof(T).GetProperties())
+            {
+                if (property.CustomAttributes.FirstOrDefault(atribute => atribute.AttributeType == typeof(ColumnAttribute)) != null)
+                {
+                    object prop = type.GetProperty(property.Name).GetValue(instance);
+                    if (prop == null)
+                    {
+                        newRow[property.Name] = DBNull.Value;
+                    }
+                    else newRow[property.Name] = prop;
+                }
+            }
 
-            //_dataSet.Tables["Clients"].Rows.Add(newClientsRow);
-            //_adapter.Update(_dataSet.Tables["Clients"]);
-
+            _dataSet.Tables[tableName].Rows.Add(newRow);
+            _adapter.Update(_dataSet.Tables[tableName]);
         }
 
         protected static SqlDataAdapter _adapter;
