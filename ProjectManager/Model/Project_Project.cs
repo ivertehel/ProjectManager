@@ -6,11 +6,26 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
+    [Table]
     public class Project_Project : Entity<Project_Project>
     {
-        private Guid _parrentId;
+        private Guid? _parrentId;
 
         private Guid _childId;
+
+        [Column]
+        public Guid? ParrentProject_Id
+        {
+            get { return _parrentId; }
+            set { _parrentId = value; }
+        }
+
+        [Column]
+        public Guid ChildProject_Id
+        {
+            get { return _childId; }
+            set { _childId = value; }
+        }
 
         public Project ParrentProject
         {

@@ -393,13 +393,7 @@ namespace PMView.View
             Order o2 = Order.Items[0];
             Project.Update();
             Project p1 = Project.Items[0];
-
-            Project_Project pp1 = new Project_Project()
-            {
-                ChildProject = p1
-            };
-
-            Project_Project.Items.Add(pp1);
+            Project_Project.Update();
 
             Team t1 = new Team()
             {
