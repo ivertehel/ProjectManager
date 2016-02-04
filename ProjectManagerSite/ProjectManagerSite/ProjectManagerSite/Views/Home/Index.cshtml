@@ -1,42 +1,15 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+
 }
+<script>
+
+    $.ajax({
+        url: "@Url.Action("MyProfile", "Home")",
+        success: function (result) {
+            $("#AjaxBody").html(result); /*<--div id where the results are showing*/
+        }
+    });
+</script>
 
 
-<div class="row">
-
-    <div id="blockLeft">
-        <img src="~/Assets/MaleAvatar.jpg" width="200" />
-        <div id="blockDown">
-            <button type="button" class="btn-block btn btn-primary btn-lg">Edit profile</button>
-        </div>
-        <h4><img src="~/Assets/Flags/Ukraine.png" width="25"></img> Ukraine</h4>
-        <h4>
-            <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-            Done projects: 12
-        </h4>
-        <h4>
-            <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
-            In progress: 2
-        </h4>
-    </div>
-    <div id="blockRight">
-        <h1>Name Surname</h1>
-        <div id="skillsSector">
-            <h4>.NET, WPF, ASP.NET, MS SQL, Windows Forms, HTML, CSS, JavaScript, JQuery, JSON, XML, C#, Unity3D, 3D Max </h4>
-            <h5>
-
-                We are a team of IT engineers. Our purpose is to develop and support hight quality software on time.
-
-                Our team consists of young ambitious certified specialists ready to create new program products and maintain them. Every task means a great deal to us and we put quality above all else. Our team is constantly improving learning new technologies to achieve better results. Each of us has great spatial reasoning and mathematical skills. It helps us find satisfactory solution.
-
-                More than 2 years of .NET development experience. Good knowledge of the following technologies: WPF, Windows Forms, LINQ, Entity Framework, MS SQL, SQL, Unity3D, Photon Cloud, NGUI, JavaScript, JQuery, Scrum, Agile, Git, 3D Max
-
-                Our principles are the Agile Manifesto.
-
-                Contact us for more details
-            </h5>
-        </div>
-    </div>
-
-</div>

@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script src="~/Scripts/jquery-2.2.0.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,8 +32,8 @@
     <![endif]-->
     <style type="text/css">
         #blockLeft, #blockRight {
-            padding-bottom: 15px;
-            padding-left: 15px;
+            padding-bottom: 10px;
+            padding-left: 10px;
             padding-right: 15px;
         }
 
@@ -92,16 +94,16 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class=@ViewBag.ProfilePage>
-                        @Html.ActionLink("My profile", "Index", "Home")
+                        @Ajax.ActionLink("My profile", "MyProfile", new AjaxOptions { UpdateTargetId = "AjaxBody" })
                     </li>
                     <li class=@ViewBag.TeamsPage>
-                        @Html.ActionLink("My teams", "Teams", "Home")
+                        @Ajax.ActionLink("My teams", "MyTeams", new AjaxOptions { UpdateTargetId = "AjaxBody" })
                     </li>
                     <li class=@ViewBag.ProjectsPage>
-                        @Html.ActionLink("My projects", "Projects", "Home")
+                        @Ajax.ActionLink("My projects", "MyProjects", new AjaxOptions { UpdateTargetId = "AjaxBody" })
                     </li>
                     <li class=@ViewBag.TasksPage>
-                        @Html.ActionLink("My tasks", "Tasks", "Home")
+                        @Ajax.ActionLink("My tasks", "MyTasks", new AjaxOptions { UpdateTargetId = "AjaxBody" })
                     </li>
                 </ul>
             </div>
@@ -112,7 +114,8 @@
 
             <div class="container-fluid">
                 
-                <div class="row">
+                <div class="row" style="padding-left: 20px; width:100%">
+                    <div id="AjaxBody"/>
                     @RenderBody()
                 </div>
             </div>
