@@ -57,6 +57,11 @@
             width: 100%;
         }
     </style>
+    <script>
+        $(".menuLinks").click(function() {
+            history.pushState(stateObj, $(this).html, $(this).attr("href"));
+        })
+    </script>
 </head>
 
 <body>
@@ -94,7 +99,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class=@ViewBag.ProfilePage>
-                        @Ajax.ActionLink("My profile", "MyProfile", new AjaxOptions { UpdateTargetId = "AjaxBody" })
+                        @Ajax.ActionLink("My profile", "MyProfile", new AjaxOptions { UpdateTargetId = "AjaxBody"})
                     </li>
                     <li class=@ViewBag.TeamsPage>
                         @Ajax.ActionLink("My teams", "MyTeams", new AjaxOptions { UpdateTargetId = "AjaxBody" })

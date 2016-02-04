@@ -66,3 +66,4 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\ProjectManager
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\ProjectManagerSite\ProjectManagerSite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\ProjectManagerSite\ProjectManagerSite\obj\Debug\ProjectManagerSite.dll
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\ProjectManagerSite\ProjectManagerSite\obj\Debug\ProjectManagerSite.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\ProjectManagerSite\ProjectManagerSite\obj\Debug\ProjectManagerSite.csprojResolveAssemblyReference.cache

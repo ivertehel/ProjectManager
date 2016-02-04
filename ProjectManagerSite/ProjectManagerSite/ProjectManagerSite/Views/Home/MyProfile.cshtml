@@ -4,7 +4,16 @@
     <div id="blockLeft">
         <img src="~/Assets/MaleAvatar.jpg" width="200" />
         <div id="blockDown">
-            <button type="button" class="btn-block btn btn-primary btn-lg">Edit profile</button>
+           @* @Ajax.ActionLink("My profile", "MyProfile", new AjaxOptions { UpdateTargetId = "AjaxBody" })*@
+
+
+
+
+            @Ajax.ActionLink(
+    "Edit profile",
+    "MyProfileEdit", "Home", null,
+    new AjaxOptions() { UpdateTargetId = "AjaxBody" }, new { @class = "btn-block btn btn-primary btn-lg" }
+    )
         </div>
         <h4><img src="~/Assets/Flags/Ukraine.png" width="25"></img> Ukraine</h4>
         <h4>

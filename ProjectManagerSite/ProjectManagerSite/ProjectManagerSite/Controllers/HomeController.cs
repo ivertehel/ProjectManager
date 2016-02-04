@@ -18,6 +18,11 @@ namespace ProjectManagerSite.Controllers
             return PartialView("MyProfile");
         }
 
+        public ActionResult MyProfileEdit()
+        {
+            return PartialView("MyProfileEdit");
+        }
+
         public ActionResult MyTeams()
         {
             return PartialView("MyTeams");
