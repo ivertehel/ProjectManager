@@ -8,22 +8,29 @@ namespace ProjectManagerSite.Controllers
 {
     public class HomeController : Controller
     {
+        private string _activePage = "active";
+
         public ActionResult Index()
         {
+            ViewBag.ProfilePage = _activePage;
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Teams()
         {
-            ViewBag.Message = "Your application description page.";
-
+            ViewBag.TeamsPage = _activePage;
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Projects()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.ProjectsPage = _activePage;
+            return View();
+        }
 
+        public ActionResult Tasks()
+        {
+            ViewBag.TasksPage = _activePage;
             return View();
         }
     }

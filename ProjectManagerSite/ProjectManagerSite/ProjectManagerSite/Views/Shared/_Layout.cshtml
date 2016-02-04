@@ -91,17 +91,17 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <a href="index.html">My profile</a>
+                    <li class=@ViewBag.ProfilePage>
+                        @Html.ActionLink("My profile", "Index", "Home")
                     </li>
-                    <li>
-                        <a href="charts.html">My teams</a>
+                    <li class=@ViewBag.TeamsPage>
+                        @Html.ActionLink("My teams", "Teams", "Home")
                     </li>
-                    <li>
-                        <a href="charts.html">My projects</a>
+                    <li class=@ViewBag.ProjectsPage>
+                        @Html.ActionLink("My projects", "Projects", "Home")
                     </li>
-                    <li>
-                        <a href="charts.html">My tasks</a>
+                    <li class=@ViewBag.TasksPage>
+                        @Html.ActionLink("My tasks", "Tasks", "Home")
                     </li>
                 </ul>
             </div>
