@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PMDataLayer;
 
 namespace ProjectManagerSite.Controllers
 {
@@ -20,7 +21,7 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult MyProfileEdit()
         {
-            return PartialView("MyProfileEdit");
+            return PartialView("MyProfileEdit", Skill.Items);
         }
 
         public ActionResult MyProfileSave()

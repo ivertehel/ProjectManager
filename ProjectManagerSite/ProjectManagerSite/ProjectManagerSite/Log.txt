@@ -1,0 +1,15 @@
+05.02.2016 0:00:00 | 14:00:28.7035156:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 14:05:06.3133438:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 14:07:32.0572526:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 14:09:05.9852906:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 14:10:05.7280525:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 14:42:25.8348256:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 14:44:34.3982130:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 14:52:14.0433416:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 14:55:47.6243339:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 15:02:35.2164024:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 15:07:01.3956053:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 15:08:56.4524837:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 15:15:24.9707091:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 15:23:51.3097213:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 15:30:52.4195170:Info | Details screen | Project details have been loaded
