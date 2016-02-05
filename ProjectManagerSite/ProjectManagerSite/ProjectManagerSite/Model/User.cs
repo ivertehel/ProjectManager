@@ -157,6 +157,11 @@ namespace PMDataLayer
             set { _state = value; }
         }
 
+        public IEnumerable<Skill> AllSkills
+        {
+            get { return Skill.Items; }
+        }
+
         public IEnumerable<Skill> Skills
         {
             get { return from items in User_Skill.Items where items.User.Id == Id select items.Skill; }
@@ -209,89 +214,6 @@ namespace PMDataLayer
         {
             get { return _countries; }
         }
-
-        //public static void Update()
-        //{
-        //    if (_adapter == null)
-        //    {
-        //        createAdapter("SELECT * FROM Users");
-        //        _adapter.Fill(_dataSet, "Users");
-
-        //        foreach (DataRow row in _dataSet.Tables["Users"].Rows)
-        //        {
-        //            User user = new User();
-        //            user.Id = (Guid)row["Id"];
-        //            user.Name = row["Name"].ToString();
-        //            user.Surname = row["Surname"].ToString();
-        //            user.Password = row["Password"].ToString();
-        //            user.Login = row["Login"].ToString();
-        //            user.Birthday = Convert.ToDateTime(row["Birthday"]);
-        //            user.Email = row["Email"].ToString();
-        //            user.Skype = row["Skype"].ToString();
-        //            user.Country = row["Country"].ToString();
-        //            user.Image = (byte[])row["Image"];
-        //            string role = row["Role"].ToString();
-        //            user.Role = role == "Administrator" ? Roles.Administrator : role == "Client" ? Roles.Client : Roles.Employee;
-        //            string status = row["Status"].ToString();
-        //            user.Status = status == null || status == string.Empty ? Statuses.Ready : status == "InWork" ? Statuses.InWork :
-        //                status == "NotReady" ? Statuses.NotReady : status == "Ready" ? Statuses.Ready : Statuses.UnInvited;
-        //            user.Description = row["Description"].ToString();
-        //            user.State = row["State"].ToString() == "Male" ? States.Male : States.Female;
-        //            User.Items.Add(user);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        var rows = _dataSet.Tables["Users"].Rows;
-        //        for (int i = 0; i < rows.Count; i++)
-        //        {
-        //            rows[i]["Id"] = User.Items[i].Id;
-        //            rows[i]["Name"] = User.Items[i].Name;
-        //            rows[i]["Surname"] = User.Items[i].Surname;
-        //            rows[i]["Password"] = User.Items[i].Password;
-        //            rows[i]["Login"] = User.Items[i].Login;
-        //            rows[i]["Birthday"] = User.Items[i].Birthday;
-        //            rows[i]["Email"] = User.Items[i].Email;
-        //            rows[i]["Skype"] = User.Items[i].Skype;
-        //            rows[i]["Country"] = User.Items[i].Country;
-        //            rows[i]["Image"] = User.Items[i].Image;
-        //            rows[i]["Role"] = User.Items[i].Role;
-        //            rows[i]["Status"] = User.Items[i].Status;
-        //            rows[i]["Description"] = User.Items[i].Description;
-        //            rows[i]["State"] = User.Items[i].State;
-        //        }
-                
-        //        _adapter.Update(_dataSet, "Users");
-        //    }
-        //}
-
-        //public static void Insert(User user)
-        //{
-        //    if (_adapter == null)
-        //        createAdapter("SELECT * FROM Users");
-
-        //    _adapter.Fill(_dataSet, "Users");
-
-        //    DataRow newUsersRow = _dataSet.Tables["Users"].NewRow();
-        //    newUsersRow["Id"] = user.Id;
-        //    newUsersRow["Name"] = user.Name;
-        //    newUsersRow["Surname"] = user.Surname;
-        //    newUsersRow["Password"] = user.Password;
-        //    newUsersRow["Login"] = user.Login;
-        //    newUsersRow["Birthday"] = user.Birthday;
-        //    newUsersRow["Email"] = user.Email;
-        //    newUsersRow["Skype"] = user.Skype;
-        //    newUsersRow["Country"] = user.Country;
-        //    newUsersRow["Image"] = user.Image;
-        //    newUsersRow["Role"] = user.Role;
-        //    newUsersRow["Status"] = user.Status;
-        //    newUsersRow["Description"] = user.Description;
-        //    newUsersRow["State"] = user.State;
-
-        //    _dataSet.Tables["Users"].Rows.Add(newUsersRow);
-        //    _adapter.Update(_dataSet.Tables["Users"]);
-            
-        //}
 
         public override string ToString()
         {

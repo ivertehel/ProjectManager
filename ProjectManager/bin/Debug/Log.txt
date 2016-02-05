@@ -4674,3 +4674,8 @@
 27.01.2016 0:00:00 | 18:19:23.0085976:Info | Details screen | Project details have been loaded
 27.01.2016 0:00:00 | 19:03:03.1902322:Info | Details screen | Project details have been loaded
 27.01.2016 0:00:00 | 19:03:19.5743998:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+05.02.2016 0:00:00 | 20:42:00.9036958:Info | Details screen | Project details have been loaded
+05.02.2016 0:00:00 | 20:42:06.7692987:Info | Team details screen | Team details have been loaded
+05.02.2016 0:00:00 | 20:42:14.3435229:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+05.02.2016 0:00:00 | 20:42:14.7153761:Info | User details screen | Details of user khrystyna1204 has been loaded
+05.02.2016 0:00:00 | 20:42:14.8616075:Info | Order screen | Details of Android Matches Puzzle game have been loaded

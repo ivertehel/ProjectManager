@@ -21,7 +21,7 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult MyProfileEdit()
         {
-            return PartialView("MyProfileEdit", Skill.Items);
+            return PartialView("MyProfileEdit", PMDataLayer.User.Items[0]);
         }
 
         public ActionResult MyProfileSave()

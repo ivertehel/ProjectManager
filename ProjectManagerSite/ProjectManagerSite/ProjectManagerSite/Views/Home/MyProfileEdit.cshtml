@@ -1,5 +1,5 @@
 ﻿@using PMDataLayer
-@model List<PMDataLayer.Skill>
+@model User
 
 <div class="row" id="MyProfileEdit">
     <div class="container-fluid">
@@ -38,9 +38,19 @@
                     <div class="col-md-12">
                         <h3>Skills:</h3>
                         <div style="border:2px solid #ccc; width:100%; height: 100px; overflow-y: scroll;">
-                            @foreach (var item in Model)
-                            { 
-                                <input type="checkbox"/> @item.Name<br />
+
+
+                            @foreach (var m in Model.AllSkills)
+                            {
+                                if (Model.Skills.FirstOrDefault(item => item.Id == m.Id) != null)
+                                {
+                                     <input type="checkbox" checked>@m.Name<br>
+                                }
+                                else
+                                {
+                                    <input type="checkbox">@m.Name<br>
+                                }
+                                @*@Html.CheckBoxFor(model => model.Skills.FirstOrDefault(item => item.Id == m.Id) != null);*@
                             }
                         </div>
                     </div>
