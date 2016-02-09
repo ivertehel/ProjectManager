@@ -9,11 +9,8 @@
                 <img src="~/Assets/MaleAvatar.jpg" width="100%" />
                 <div id="blockDown">
 
-                    @Ajax.ActionLink(
-    "Save changes",
-    "MyProfileSave", "Home", null,
-    new AjaxOptions() { UpdateTargetId = "AjaxBody" }, new { @class = "btn-block btn btn-primary btn-lg" }
-    )
+                    @Html.ActionLink("My profile", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" } )
+
                 </div>
                 <h4><img src="~/Assets/Flags/Ukraine.png" width="25"></img> Ukraine</h4>
                 <h4>

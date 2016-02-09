@@ -11,12 +11,7 @@ namespace ProjectManagerSite.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult MyProfile()
-        {
-            return PartialView("MyProfile");
+            return View("MyProfile");
         }
 
         public ActionResult MyProfileEdit()
@@ -26,22 +21,25 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult MyProfileSave()
         {
-            return PartialView("MyProfile");
+            return View("MyProfile");
         }
 
         public ActionResult MyTeams()
         {
-            return PartialView("MyTeams");
+            ViewBag.TeamsPage = "active";
+            return View("MyTeams");
         }
 
         public ActionResult MyProjects()
         {
-            return PartialView("MyProjects");
+            ViewBag.ProjectsPage = "active";
+            return View("MyProjects");
         }
 
         public ActionResult MyTasks()
         {
-            return PartialView("MyTasks");
+            ViewBag.TasksPage = "active";
+            return View("MyTasks");
         }
     }
 }
