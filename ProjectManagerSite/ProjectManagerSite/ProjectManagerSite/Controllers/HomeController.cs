@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PMDataLayer;
+using ProjectManagerSite.Filters;
 
 namespace ProjectManagerSite.Controllers
 {
@@ -11,9 +12,12 @@ namespace ProjectManagerSite.Controllers
     {
         public ActionResult Index()
         {
+            PMSession session = new PMSession();
+            if (!session.LoadCookies(Request))
+                return RedirectToAction("Login", "Account");
+
             return View("MyProfile");
         }
-
         public ActionResult MyProfileEdit()
         {
             return PartialView("MyProfileEdit", PMDataLayer.User.Items[0]);
