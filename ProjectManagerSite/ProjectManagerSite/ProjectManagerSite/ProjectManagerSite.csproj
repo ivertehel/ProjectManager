@@ -164,29 +164,26 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Model\Base.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\ColumnAttribute.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\Entity.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Model\Message.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Position.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\Project_Project.cs" />
     <Compile Include="Model\Project_Skill.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Model\Report.cs" />
     <Compile Include="Model\Skill.cs" />
     <Compile Include="Model\TableAttribute.cs" />
@@ -198,7 +195,6 @@
     <Compile Include="Model\User_Skill.cs" />
     <Compile Include="Model\User_Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Flags\Abkhazia.png" />
@@ -564,28 +560,12 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\MyProfile.cshtml" />
@@ -593,6 +573,8 @@
     <Content Include="Views\Home\MyProjects.cshtml" />
     <Content Include="Views\Home\MyTasks.cshtml" />
     <Content Include="Views\Home\MyProfileEdit.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\SuccessRegister.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -603,6 +585,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\UserStore\UserStore.BLL\UserStore.BLL.csproj">
+      <Project>{e7d185da-e5db-4e1b-8958-930429f6d310}</Project>
+      <Name>UserStore.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UserStore\UserStore.DAL\UserStore.DAL.csproj">
+      <Project>{c7fc9eb3-7680-4d0d-826c-913867fb8f96}</Project>
+      <Name>UserStore.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

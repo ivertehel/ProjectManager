@@ -1,0 +1,14 @@
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\BookStore.DAL.dll.config
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\BookStore.DAL.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\BookStore.DAL.pdb
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\obj\Debug\BookStore.DAL.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\obj\Debug\BookStore.DAL.pdb
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.DAL\obj\Debug\BookStore.DAL.csprojResolveAssemblyReference.cache

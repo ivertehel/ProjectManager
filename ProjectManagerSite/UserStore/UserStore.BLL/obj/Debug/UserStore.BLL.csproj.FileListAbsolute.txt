@@ -1,0 +1,64 @@
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\UserStore.BLL.dll.config
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\UserStore.BLL.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\UserStore.BLL.pdb
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\UserStore.DAL.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\UserStore.DAL.pdb
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\obj\Debug\UserStore.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\obj\Debug\UserStore.BLL.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\BookStore\BookStore.BLL\obj\Debug\UserStore.BLL.pdb
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\UserStore.BLL.dll.config
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\UserStore.BLL.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\UserStore.BLL.pdb
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\UserStore.DAL.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\UserStore.DAL.pdb
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\obj\Debug\UserStore.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\obj\Debug\UserStore.BLL.dll
+C:\Users\Eugene\Documents\Visual Studio 2015\Projects\CSharp\MVC5\UserStore\UserStore.BLL\obj\Debug\UserStore.BLL.pdb
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\UserStore.BLL.dll.config
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\UserStore.BLL.dll
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\UserStore.BLL.pdb
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\EntityFramework.dll
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\UserStore.DAL.dll
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\UserStore.DAL.pdb
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\EntityFramework.xml
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\obj\Debug\UserStore.BLL.csprojResolveAssemblyReference.cache
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\obj\Debug\UserStore.BLL.dll
+C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.BLL\obj\Debug\UserStore.BLL.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\UserStore.BLL.dll.config
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\UserStore.BLL.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\UserStore.BLL.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\EntityFramework.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\UserStore.DAL.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\UserStore.DAL.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\EntityFramework.xml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\obj\Debug\UserStore.BLL.csprojResolveAssemblyReference.cache
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\obj\Debug\UserStore.BLL.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.BLL\obj\Debug\UserStore.BLL.pdb
