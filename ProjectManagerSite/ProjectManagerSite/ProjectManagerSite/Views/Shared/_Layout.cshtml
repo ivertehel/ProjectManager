@@ -65,24 +65,71 @@
 </head>
 
 <body>
-        
-        <div style="background-color: white">
-            <div class="container">
-                <div class="col-md-12">
 
-                        <div class="row" style="width:100%">
-                            @RenderBody()
-                            @RenderSection("scripts", required: false)
-                        </div>
-                </div>
+    <div id="wrapper">
 
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Project Manager</a>
             </div>
-           
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Name <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Edit profile</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class=@ViewBag.ProfilePage>
+                        @Html.ActionLink("My profile", "Index", "Home")
+                    </li>
+                    <li class=@ViewBag.TeamsPage>
+                        @Html.ActionLink("My teams", "MyTeams", "Home")
+                    </li>
+                    <li class=@ViewBag.ProjectsPage>
+                        @Html.ActionLink("My projects", "MyProjects", "Home")
+                    </li>
+                    <li class=@ViewBag.TasksPage>
+                        @Html.ActionLink("My tasks", "MyTasks", "Home")
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                
+                <div class="row" style="padding-left: 20px; width:100%">
+                    <div id="AjaxBody"/>
+                    @RenderBody()
+                </div>
+            </div>
             <!-- /.container-fluid -->
 
         </div>
         <!-- /#page-wrapper -->
 
+    </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
     <script src="~/Scripts/jquery.js"></script>
