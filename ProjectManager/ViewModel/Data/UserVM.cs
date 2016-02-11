@@ -119,7 +119,7 @@ namespace PMView.View.WrapperVM
         {
             get
             {
-                if (Image == null || Image.Length == 0) return null;
+                if (Image == null || Image.Length == 0) return  new BitmapImage(new Uri(Environment.CurrentDirectory + @"//Assets//MaleAvatar.jpg"));
                 var image = new BitmapImage();
                 try
                 {

@@ -10,18 +10,13 @@ using PMView.View.WrapperVM;
 
 namespace PMView.View
 {
-    public class ClientsUserControlVM : INotifyPropertyChanged
+    public class ClientsUserControlVM : INotifyPropertyChanged, ILoadDataSender
     {
         private ObservableCollection<ClientVM> _clientsColletction = new ObservableCollection<ClientVM>();
 
         public ClientsUserControlVM()
         {
-            foreach (var item in Client.Items)
-            {
-                ClientsCollection.Add(new ClientVM(item));
-            }
-
-            SelectedClient = ClientsCollection[0];
+            LoadData(this);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -30,7 +25,17 @@ namespace PMView.View
 
         public ObservableCollection<ClientVM> ClientsCollection
         {
-            get { return _clientsColletction; }
+            get
+            {
+                _clientsColletction.Clear();
+                foreach (var item in Client.Items)
+                {
+                    _clientsColletction.Add(new ClientVM(item));
+                }
+
+                SelectedClient = _clientsColletction[0];
+                return _clientsColletction;
+            }            
         }
 
         public string Account
@@ -173,6 +178,14 @@ namespace PMView.View
         {
             if (PropertyChanged != null)
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void LoadData(object sender)
+        {
+
+            OnPropertyChanged("ClientsCollection");
+
+            
         }
     }
 }

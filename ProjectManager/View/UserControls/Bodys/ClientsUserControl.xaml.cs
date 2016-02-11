@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PMDataLayer;
+using PMView.View.WrapperVM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +26,8 @@ namespace PMView.View
 
         public ClientsUserControl()
         {
+            User.Update();
+            Client.Update();
             InitializeComponent();
             _clientsUserControlVM = new ClientsUserControlVM();
             DataContext = _clientsUserControlVM;
@@ -34,19 +38,19 @@ namespace PMView.View
 
         }
 
-        private void AddProject_Click(object sender, RoutedEventArgs e)
+        private void AddClient_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            (new UsersDetails(new UserVM(new PMDataLayer.User()) as IUser, _clientsUserControlVM)).Show();
         }
 
-        private void EditProject_Click(object sender, RoutedEventArgs e)
+        private void EditClient_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+
         }
 
-        private void RemoveProject_Click(object sender, RoutedEventArgs e)
+        private void RemoveClient_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

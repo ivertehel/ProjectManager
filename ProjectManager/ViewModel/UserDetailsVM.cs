@@ -230,6 +230,13 @@ namespace PMView.View
             CurrentUser.Skype = _skype;
             CurrentUser.Description = _description;
             CurrentUser.Image = UserVM.GetJPGImageBytes(_bitmapImage);
+
+            if (User.Items.FirstOrDefault(item => item.Id == CurrentUser.User.Id) == null)
+            {
+                User.Insert(CurrentUser.User);
+                Client.Insert(new Client() { Account = 0, User_Id = CurrentUser.User.Id });
+            }
+
             User.Update();
             LoadData(this);
         }

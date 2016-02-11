@@ -4679,3 +4679,182 @@
 05.02.2016 0:00:00 | 20:42:14.3435229:Info | Order screen | Details of Android Matches Puzzle game have been loaded
 05.02.2016 0:00:00 | 20:42:14.7153761:Info | User details screen | Details of user khrystyna1204 has been loaded
 05.02.2016 0:00:00 | 20:42:14.8616075:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+11.02.2016 0:00:00 | 17:06:15.6405162:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:08:19.1194941:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:08:44.2861306:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:18:17.7253993:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:18:23.8742513:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+11.02.2016 0:00:00 | 17:18:24.2685116:Info | User details screen | Details of user 1 has been loaded
+11.02.2016 0:00:00 | 17:18:24.2950301:Info | Order screen | Details of Android Matches Puzzle game have been loaded
+11.02.2016 0:00:00 | 17:26:40.5284205:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:26:46.9373431:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 17:32:37.2019581:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:38:44.7921333:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:38:50.5108816:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 17:42:36.4754812:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:42:42.2300443:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 17:43:16.2739246:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Huevich
+
+                State : NotChosen to Male
+
+                Country :  to Albania
+
+                Birthday : 11.02.2016 17:42:42 to 11.02.2016 17:42:42
+
+                Email :  to huevich
+
+                Login :  to hui
+
+                Description :  to 
+11.02.2016 0:00:00 | 17:45:03.6146101:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:45:09.1445492:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 17:45:31.3972093:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Huevich
+
+                State : NotChosen to Male
+
+                Country :  to Afghanistan
+
+                Birthday : 11.02.2016 17:45:09 to 11.02.2016 17:45:09
+
+                Email :  to hui
+
+                Login :  to hui
+
+                Description :  to 
+11.02.2016 0:00:00 | 17:46:43.9493678:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:46:50.1532528:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 17:47:06.8942419:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Hui
+
+                State : NotChosen to Male
+
+                Country :  to Afghanistan
+
+                Birthday : 11.02.2016 17:46:50 to 11.02.2016 17:46:50
+
+                Email :  to wergwreg
+
+                Login :  to wsdfsd
+
+                Description :  to 
+11.02.2016 0:00:00 | 17:47:10.2373885:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:47:13.9648938:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:47:25.8445188:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:48:16.0509611:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:48:26.9737142:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:52:29.7658770:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:52:33.9119481:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 17:53:12.4135333:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to huev
+
+                State : NotChosen to Male
+
+                Country :  to Afghanistan
+
+                Birthday : 11.02.2016 17:52:33 to 11.02.2016 17:52:33
+
+                Email :  to hui
+
+                Login :  to hui
+
+                Description :  to 
+11.02.2016 0:00:00 | 17:55:00.4499835:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:55:04.9669837:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 17:55:26.4299575:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Hui
+
+                State : NotChosen to Male
+
+                Country :  to Andorra
+
+                Birthday : 11.02.2016 17:55:04 to 11.02.2016 17:55:04
+
+                Email :  to sdf
+
+                Login :  to Yuf
+
+                Description :  to 
+11.02.2016 0:00:00 | 17:55:36.3337852:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:58:07.1824123:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 17:58:11.3490107:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 17:58:31.1224991:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Hui
+
+                State : NotChosen to Male
+
+                Country :  to Algeria
+
+                Birthday : 11.02.2016 17:58:11 to 11.02.2016 17:58:11
+
+                Email :  to Hui
+
+                Login :  to Hui
+
+                Description :  to 
+11.02.2016 0:00:00 | 17:59:20.3888606:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 18:01:29.8687686:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 18:01:59.6090479:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 18:04:15.5132301:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 18:05:12.9904864:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 18:05:24.6126841:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 18:05:39.7889346:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Hui
+
+                State : NotChosen to Male
+
+                Country :  to Afghanistan
+
+                Birthday : 11.02.2016 18:05:24 to 11.02.2016 18:05:24
+
+                Email :  to Hui
+
+                Login :  to Hui
+
+                Description :  to 
+11.02.2016 0:00:00 | 18:05:51.4223806:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 18:06:09.5107456:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 18:10:19.0114803:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 18:10:29.4834318:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 18:10:43.5778926:Info | User details screen | Details of user has been changed:
+
+                Name :  to Aasd
+
+                Surname :  to Aasdf
+
+                State : NotChosen to Male
+
+                Country :  to Algeria
+
+                Birthday : 11.02.2016 18:10:29 to 11.02.2016 18:10:29
+
+                Email :  to sdgsdgsdg
+
+                Login :  to asfasdfsdf
+
+                Description :  to 
+11.02.2016 0:00:00 | 18:10:52.0357844:Info | Details screen | Project details have been loaded
+11.02.2016 0:00:00 | 18:11:06.6642729:Info | User details screen | Details of user  has been loaded
+11.02.2016 0:00:00 | 18:11:12.1528662:Info | User details screen | Details of user  has been loaded
