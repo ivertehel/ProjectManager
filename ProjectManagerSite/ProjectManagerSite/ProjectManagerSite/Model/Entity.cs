@@ -42,9 +42,10 @@ namespace PMDataLayer
 
             if (_adapter == null)
             {
+
                 createAdapter($@"SELECT * FROM {tableName}");
                 _adapter.Fill(_dataSet, tableName);
-
+                Items.Clear();
                 foreach (DataRow row in _dataSet.Tables[tableName].Rows)
                 {
                     object instance = Activator.CreateInstance(type);
@@ -73,7 +74,8 @@ namespace PMDataLayer
                         {
                             var prop = type.GetProperty(property.Name);
                             var item = Items[i].GetType();
-                            rows[i][property.Name] = item.GetProperty(property.Name).GetValue(Items[i]);
+                            var value = item.GetProperty(property.Name).GetValue(Items[i]);
+                            rows[i][property.Name] = value == null ? DBNull.Value : value;
                         }
                     }
                 }
@@ -105,7 +107,9 @@ namespace PMDataLayer
             }
 
             _dataSet.Tables[tableName].Rows.Add(newRow);
-            _adapter.Update(_dataSet.Tables[tableName]);
+            _adapter = null;
+            Update();
+            //_adapter.Update(_dataSet.Tables[tableName]);
         }
 
         protected static SqlDataAdapter _adapter;
