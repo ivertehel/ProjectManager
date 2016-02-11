@@ -108,7 +108,7 @@ namespace UserStore.Controllers
                 Name = "Семен Семенович Горбунков",
                 Address = "ул. Спортивная, д.30, кв.75",
                 Role = "admin",
-            }, new List<string> { "user", "admin" });
+            }, new List<string> { "user", "admin", "client", "employee" });
         }
     }
 }

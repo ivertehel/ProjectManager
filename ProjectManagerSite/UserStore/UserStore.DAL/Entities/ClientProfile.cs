@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UserStore.DAL.Entities
@@ -9,8 +10,7 @@ namespace UserStore.DAL.Entities
         [ForeignKey("ApplicationUser")]
         public string Id { get; set; }
 
-        public string Name { get; set; }
-        public string Address { get; set; }
+        public Guid User_Id { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
     }
