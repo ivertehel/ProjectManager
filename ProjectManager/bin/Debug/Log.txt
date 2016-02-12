@@ -5032,3 +5032,77 @@
                 Login :  to asdasfqeqwfqwegqegqegqegqegq
 
                 Description :  to 
+12.02.2016 0:00:00 | 19:26:19.7608835:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 19:26:32.6465073:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 19:26:58.2208189:Info | User details screen | Details of user has been changed:
+
+                Name :  to Pes
+
+                Surname :  to Da
+
+                State : NotChosen to NotChosen
+
+                Country :  to Argentina
+
+                Birthday : 12.02.2016 19:26:32 to 12.02.2016 19:26:32
+
+                Email :  to qwerty
+
+                Login :  to wedfwefwef
+
+                Description :  to 
+12.02.2016 0:00:00 | 19:31:57.9067498:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 19:32:23.0617837:Info | User details screen | Details of user has been changed:
+
+                Name :  to Huiak
+
+                Surname :  to Azaza
+
+                State : NotChosen to NotChosen
+
+                Country :  to 
+
+                Birthday : 12.02.2016 19:31:57 to 12.02.2016 19:31:57
+
+                Email :  to azaza@aza.za
+
+                Login :  to Huyak
+
+                Description :  to 
+12.02.2016 0:00:00 | 20:14:56.1595022:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 20:15:24.6468571:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Huevich
+
+                State : NotChosen to Male
+
+                Country :  to 
+
+                Birthday : 12.02.2016 20:14:56 to 12.02.2016 20:14:56
+
+                Email :  to hui@hui.hui
+
+                Login :  to hui
+
+                Description :  to 
+12.02.2016 0:00:00 | 20:16:07.4742394:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 20:31:54.3974321:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 20:32:24.8337202:Info | User details screen | Details of user has been changed:
+
+                Name :  to AAA
+
+                Surname :  to BBB
+
+                State : NotChosen to Male
+
+                Country :  to 
+
+                Birthday : 12.02.2016 20:31:54 to 12.02.2016 20:31:54
+
+                Email :  to 123456
+
+                Login :  to asd
+
+                Description :  to 

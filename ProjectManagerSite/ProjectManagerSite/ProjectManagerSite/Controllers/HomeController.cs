@@ -9,6 +9,7 @@ using UserStore.BLL.Interfaces;
 
 namespace ProjectManagerSite.Controllers
 {
+    [Authorize(Roles = "client")]
     public class HomeController : Controller
     {
         private IUserService UserService
@@ -19,7 +20,6 @@ namespace ProjectManagerSite.Controllers
             }
         }
 
-        //[Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             return View("MyProfile");

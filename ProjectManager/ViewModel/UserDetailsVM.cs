@@ -235,6 +235,8 @@ namespace PMView.View
             {
                 User.Insert(CurrentUser.User);
                 Client.Insert(new Client() { Account = 0, User_Id = CurrentUser.User.Id });
+
+
                 CurrentUser.User.RegisterUser();
             }
 
