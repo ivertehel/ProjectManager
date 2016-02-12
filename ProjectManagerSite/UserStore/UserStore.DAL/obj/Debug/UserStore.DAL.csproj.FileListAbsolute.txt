@@ -39,3 +39,17 @@ C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.DAL\bin\Debug\Microsoft.A
 C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.DAL\obj\Debug\UserStore.DAL.csprojResolveAssemblyReference.cache
 C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.DAL\obj\Debug\UserStore.DAL.dll
 C:\Users\ivanv\Downloads\UserStore\UserStore\UserStore.DAL\obj\Debug\UserStore.DAL.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\UserStore.DAL.dll.config
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\UserStore.DAL.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\UserStore.DAL.pdb
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\EntityFramework.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\EntityFramework.xml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\obj\Debug\UserStore.DAL.csprojResolveAssemblyReference.cache
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\obj\Debug\UserStore.DAL.dll
+C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManagerSite\UserStore\UserStore.DAL\obj\Debug\UserStore.DAL.pdb

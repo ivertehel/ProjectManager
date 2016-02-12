@@ -9,6 +9,7 @@ using UserStore.BLL.DTO;
 using System.Security.Claims;
 using UserStore.BLL.Interfaces;
 using UserStore.BLL.Infrastructure;
+using System;
 
 namespace UserStore.Controllers
 {
@@ -85,9 +86,8 @@ namespace UserStore.Controllers
                 {
                     Email = model.Email,
                     Password = model.Password,
-                    Address = model.Address,
-                    Name = model.Name,
-                    Role = "user"
+                    Role = "user",
+                    UserId = Guid.NewGuid().ToString()
                 };
                 OperationDetails operationDetails = await UserService.Create(userDto);
                 if (operationDetails.Succedeed)
@@ -105,8 +105,6 @@ namespace UserStore.Controllers
                 Email = "somemail@mail.ru",
                 UserName = "somemail@mail.ru",
                 Password = "ad46D_ewr3",
-                Name = "Семен Семенович Горбунков",
-                Address = "ул. Спортивная, д.30, кв.75",
                 Role = "admin",
             }, new List<string> { "user", "admin", "client", "employee" });
         }

@@ -65,14 +65,6 @@ namespace PMView
             _userDetailsVM.ButtonSaveClick();
             if (_employeeDetailsVM != null)
                 _employeeDetailsUserControl.SaveChanges();
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         protected void SomeProperty_Changed(object sender, TextChangedEventArgs e)

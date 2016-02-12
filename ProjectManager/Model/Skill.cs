@@ -8,6 +8,9 @@ namespace PMDataLayer
 {
     public class Skill : Entity<Skill>
     {
+        [Column]
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public string Name { get; set; }
 
         public IEnumerable<User> Users

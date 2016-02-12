@@ -14,6 +14,9 @@ namespace PMDataLayer
 
         private Guid _positionId;
 
+        [Column]
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public bool IsLeader { get; set; }
 
         public Team Team

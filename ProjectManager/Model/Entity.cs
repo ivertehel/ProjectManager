@@ -18,15 +18,7 @@ namespace PMDataLayer
             Items = new List<T>();
         }
 
-        public Entity()
-        {
-            Id = Guid.NewGuid();
-        }
-
         public static List<T> Items { get; set; }
-
-        [Column]
-        public Guid Id { get; set; }
 
         public static byte[] GetBytes(string str)
         {

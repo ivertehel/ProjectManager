@@ -13,6 +13,9 @@ namespace PMDataLayer
         private Guid _userId;
 
         [Column]
+        public Guid Id { get; set; } = Guid.NewGuid();
+
+        [Column]
         public decimal Account { get; set; }
 
         [Column]

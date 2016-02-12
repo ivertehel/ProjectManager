@@ -41,6 +41,9 @@ namespace PMDataLayer
         }
 
         [Column]
+        public Guid Id { get; set; } = Guid.NewGuid();
+
+        [Column]
         public string Name { get; set; }
 
         [Column]
@@ -203,6 +206,13 @@ namespace PMDataLayer
                 }
                 reader.Close();
             }
+        }
+
+        public void RegisterUser()
+        {
+            var aspUser = new AspNetUser(Login) { Email = Email };
+            AspNetUser.Insert(aspUser);
+            ClientProfile.Insert(new ClientProfile(aspUser.Id)  { UserId = Id.ToString() });
         }
 
         public static List<string> Countries

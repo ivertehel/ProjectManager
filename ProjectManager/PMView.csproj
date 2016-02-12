@@ -56,8 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\AspNetUser.cs" />
     <Compile Include="Model\Base.cs" />
     <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\ClientProfile.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Message.cs" />

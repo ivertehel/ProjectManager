@@ -14,6 +14,9 @@ namespace PMDataLayer
         private Guid _childId;
 
         [Column]
+        public Guid Id { get; set; } = Guid.NewGuid();
+
+        [Column]
         public Guid? ParrentProject_Id
         {
             get { return _parrentId; }

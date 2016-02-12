@@ -29,7 +29,7 @@ namespace UserStore.BLL.Services
                 // добавляем роль
                 await Database.UserManager.AddToRoleAsync(user.Id, userDto.Role);
                 // создаем профиль клиента
-                ClientProfile clientProfile = new ClientProfile { Id = user.Id, Address = userDto.Address, Name = userDto.Name };
+                ClientProfile clientProfile = new ClientProfile { Id = user.Id, UserId = userDto.UserId };
                 Database.ClientManager.Create(clientProfile);
                 await Database.SaveAsync();
                 return new OperationDetails(true, "Регистрация успешно пройдена", "");
@@ -47,8 +47,8 @@ namespace UserStore.BLL.Services
             // находим пользователя
             ApplicationUser user = await Database.UserManager.FindAsync(userDto.Email, userDto.Password);
             // авторизуем его и возвращаем объект ClaimsIdentity
-            if(user!=null)
-                claim= await Database.UserManager.CreateIdentityAsync(user,
+            if (user != null)
+                claim = await Database.UserManager.CreateIdentityAsync(user,
                                             DefaultAuthenticationTypes.ApplicationCookie);
             return claim;
         }
@@ -75,5 +75,5 @@ namespace UserStore.BLL.Services
         }
     }
 
-    
+
 }

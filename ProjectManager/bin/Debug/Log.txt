@@ -4858,3 +4858,177 @@
 11.02.2016 0:00:00 | 18:10:52.0357844:Info | Details screen | Project details have been loaded
 11.02.2016 0:00:00 | 18:11:06.6642729:Info | User details screen | Details of user  has been loaded
 11.02.2016 0:00:00 | 18:11:12.1528662:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 17:23:30.5106383:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 17:23:40.3885095:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 17:24:10.2288832:Info | User details screen | Details of user has been changed:
+
+                Name :  to Pizda
+
+                Surname :  to Pizdovaya
+
+                State : NotChosen to Female
+
+                Country :  to Armenia
+
+                Birthday : 12.02.2016 17:23:40 to 12.02.2016 17:23:40
+
+                Email :  to sdgsdgeagergergerg
+
+                Login :  to asdasfasfasgf
+
+                Description :  to 
+12.02.2016 0:00:00 | 17:38:04.3702363:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 17:38:25.2748098:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 17:38:44.1303419:Info | User details screen | Details of user has been changed:
+
+                Name :  to Pidor
+
+                Surname :  to Volosatiy
+
+                State : NotChosen to Male
+
+                Country :  to Australia
+
+                Birthday : 12.02.2016 17:38:25 to 12.02.2016 17:38:25
+
+                Email :  to asdasd
+
+                Login :  to asdasd
+
+                Description :  to 
+12.02.2016 0:00:00 | 17:41:20.7392914:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 17:41:31.0181933:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 17:41:49.8963262:Info | User details screen | Details of user has been changed:
+
+                Name :  to Pisdec
+
+                Surname :  to Pisdecovity
+
+                State : NotChosen to Male
+
+                Country :  to Armenia
+
+                Birthday : 12.02.2016 17:41:30 to 12.02.2016 17:41:30
+
+                Email :  to asdasd
+
+                Login :  to asdasd
+
+                Description :  to 
+12.02.2016 0:00:00 | 17:58:38.7837187:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 17:59:41.3407856:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 18:00:35.0613475:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 18:01:03.3932455:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 18:01:11.0481550:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 18:01:25.8102234:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Huiev
+
+                State : NotChosen to Male
+
+                Country :  to Andorra
+
+                Birthday : 12.02.2016 18:01:10 to 12.02.2016 18:01:10
+
+                Email :  to asd
+
+                Login :  to asd
+
+                Description :  to 
+12.02.2016 0:00:00 | 18:02:16.0177049:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 18:02:42.6638384:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 18:03:01.1445410:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Huiev
+
+                State : NotChosen to Male
+
+                Country :  to Algeria
+
+                Birthday : 12.02.2016 18:02:42 to 12.02.2016 18:02:42
+
+                Email :  to asda
+
+                Login :  to asd
+
+                Description :  to 
+12.02.2016 0:00:00 | 18:04:06.1337134:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 18:04:10.0043059:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 18:04:25.1516355:Info | User details screen | Details of user has been changed:
+
+                Name :  to HuiTwo
+
+                Surname :  to Pisda
+
+                State : NotChosen to Male
+
+                Country :  to Andorra
+
+                Birthday : 12.02.2016 18:04:09 to 12.02.2016 18:04:09
+
+                Email :  to asdasdasd
+
+                Login :  to asdasd
+
+                Description :  to 
+12.02.2016 0:00:00 | 18:05:28.0337082:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 18:05:32.9986795:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 18:05:50.6066955:Info | User details screen | Details of user has been changed:
+
+                Name :  to PizdaBleat
+
+                Surname :  to Bleat
+
+                State : NotChosen to Male
+
+                Country :  to Angola
+
+                Birthday : 12.02.2016 18:05:32 to 12.02.2016 18:05:32
+
+                Email :  to dasdasdasd
+
+                Login :  to asdasdas
+
+                Description :  to 
+12.02.2016 0:00:00 | 18:07:18.4236178:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 18:07:26.9866232:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 18:07:39.5091689:Info | User details screen | Details of user has been changed:
+
+                Name :  to Suka
+
+                Surname :  to Yobanaya
+
+                State : NotChosen to Male
+
+                Country :  to Albania
+
+                Birthday : 12.02.2016 18:07:26 to 12.02.2016 18:07:26
+
+                Email :  to sdfsdfsdfsdf
+
+                Login :  to dsfsdf
+
+                Description :  to 
+12.02.2016 0:00:00 | 18:12:45.8818696:Info | Details screen | Project details have been loaded
+12.02.2016 0:00:00 | 18:12:53.3153867:Info | User details screen | Details of user  has been loaded
+12.02.2016 0:00:00 | 18:13:13.3056131:Info | User details screen | Details of user has been changed:
+
+                Name :  to Pizda
+
+                Surname :  to Ebanaya
+
+                State : NotChosen to Female
+
+                Country :  to Australia
+
+                Birthday : 12.02.2016 18:12:53 to 12.02.2016 18:12:53
+
+                Email :  to qweqweqwewwwwwwwwwwwwwwwwww
+
+                Login :  to asdasfqeqwfqwegqegqegqegqegq
+
+                Description :  to 

@@ -12,6 +12,9 @@ namespace PMDataLayer
 
         private Guid _skillId;
 
+        [Column]
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public Project Project
         {
             get { return Project.Items.Where(items => items?.Id == _projectId).FirstOrDefault(); }
