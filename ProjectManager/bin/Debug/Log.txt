@@ -5171,3 +5171,5 @@
                 Login :  to nedotrax
 
                 Description :  to 
+13.02.2016 0:00:00 | 21:45:42.6056238:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 21:45:47.9478941:Info | User details screen | Details of user  has been loaded

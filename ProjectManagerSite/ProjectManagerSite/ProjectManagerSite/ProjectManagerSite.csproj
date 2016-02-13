@@ -195,6 +195,7 @@
     <Compile Include="Model\User_Skill.cs" />
     <Compile Include="Model\User_Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HomeControllerVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Flags\Abkhazia.png" />

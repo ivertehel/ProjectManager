@@ -14,6 +14,12 @@ namespace UserStore
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+    name: "MyRoute",
+    url: "{id}",
+    defaults: new { controller = "Home", action = "UserPage", id = "" }
+);
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
