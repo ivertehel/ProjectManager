@@ -212,9 +212,13 @@ namespace PMDataLayer
         public void RegisterUser()
         {
             string hash = getPassHash(Password);
-            var aspUser = new AspNetUser(Login) { Email = Email, PasswordHash = hash };
+            var aspUser = new AspNetUser(Login) { Email = Email, PasswordHash = hash, SecurityStamp = Guid.NewGuid().ToString() };
+            AspNetRole.Update();
             AspNetUser.Insert(aspUser);
-            ClientProfile.Insert(new ClientProfile(aspUser.Id)  { UserId = Id.ToString() });
+
+            ClientProfile.Insert(new ClientProfile(aspUser.Id) { UserId = Id.ToString() });
+            AspNetUserRole.Insert(new AspNetUserRole() { UserId = aspUser.Id, RoleId = AspNetRole.Items.FirstOrDefault(item => item.Name == Role.ToLower()).Id });
+
         }
 
         public string getPassHash(string password)

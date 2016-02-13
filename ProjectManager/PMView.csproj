@@ -57,7 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\AspNetRole.cs" />
     <Compile Include="Model\AspNetUser.cs" />
+    <Compile Include="Model\AspNetUserRole.cs" />
     <Compile Include="Model\Base.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\ClientProfile.cs" />

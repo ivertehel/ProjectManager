@@ -5106,3 +5106,68 @@
                 Login :  to asd
 
                 Description :  to 
+13.02.2016 0:00:00 | 15:29:12.3483158:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:29:55.0393932:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:30:24.1326113:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:31:15.3175390:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:32:22.1417225:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:33:34.6920930:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:35:43.1364699:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:36:29.5818653:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:38:06.6512151:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:38:20.4012371:Info | User details screen | Details of user  has been loaded
+13.02.2016 0:00:00 | 15:38:43.8896295:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Huievich
+
+                State : NotChosen to Male
+
+                Country :  to Argentina
+
+                Birthday : 13.02.2016 15:38:20 to 13.02.2016 15:38:20
+
+                Email :  to huievich
+
+                Login :  to hui
+
+                Description :  to 
+13.02.2016 0:00:00 | 15:43:43.2176450:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:43:56.4698711:Info | User details screen | Details of user  has been loaded
+13.02.2016 0:00:00 | 15:44:21.7479754:Info | User details screen | Details of user has been changed:
+
+                Name :  to Hui
+
+                Surname :  to Huevich
+
+                State : NotChosen to Male
+
+                Country :  to Algeria
+
+                Birthday : 13.02.2016 15:43:56 to 13.02.2016 15:43:56
+
+                Email :  to asdasd
+
+                Login :  to hui
+
+                Description :  to 
+13.02.2016 0:00:00 | 15:55:26.7613577:Info | Details screen | Project details have been loaded
+13.02.2016 0:00:00 | 15:55:39.9937168:Info | User details screen | Details of user  has been loaded
+13.02.2016 0:00:00 | 15:56:29.3550211:Info | User details screen | Details of user has been changed:
+
+                Name :  to Deniska
+
+                Surname :  to Nedatrax
+
+                State : NotChosen to Male
+
+                Country :  to Fiji
+
+                Birthday : 13.02.2016 15:55:39 to 13.02.2016 15:55:39
+
+                Email :  to 
+
+                Login :  to nedotrax
+
+                Description :  to 
