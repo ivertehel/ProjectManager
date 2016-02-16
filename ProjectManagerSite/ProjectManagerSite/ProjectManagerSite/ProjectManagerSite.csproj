@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -166,35 +168,26 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="AspNetRoles.cs" />
+    <Compile Include="AspNetUserClaims.cs" />
+    <Compile Include="AspNetUserLogins.cs" />
+    <Compile Include="AspNetUsers.cs" />
+    <Compile Include="ClientProfiles.cs" />
+    <Compile Include="Clients.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="C__MigrationHistory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Model\Base.cs" />
-    <Compile Include="Model\Client.cs" />
-    <Compile Include="Model\ColumnAttribute.cs" />
-    <Compile Include="Model\Comment.cs" />
-    <Compile Include="Model\Entity.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Model\Message.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\Position.cs" />
-    <Compile Include="Model\Project.cs" />
-    <Compile Include="Model\Project_Project.cs" />
-    <Compile Include="Model\Project_Skill.cs" />
     <Compile Include="Models\RegisterModel.cs" />
-    <Compile Include="Model\Report.cs" />
-    <Compile Include="Model\Skill.cs" />
-    <Compile Include="Model\TableAttribute.cs" />
-    <Compile Include="Model\Task.cs" />
-    <Compile Include="Model\Team.cs" />
-    <Compile Include="Model\Team_Project.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="Model\User_Project.cs" />
-    <Compile Include="Model\User_Skill.cs" />
-    <Compile Include="Model\User_Team.cs" />
+    <Compile Include="Orders.cs" />
+    <Compile Include="PMDataModel.cs" />
+    <Compile Include="Projects.cs" />
+    <Compile Include="Project_Projects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users.cs" />
     <Compile Include="ViewModels\HomeControllerVM.cs" />
   </ItemGroup>
   <ItemGroup>

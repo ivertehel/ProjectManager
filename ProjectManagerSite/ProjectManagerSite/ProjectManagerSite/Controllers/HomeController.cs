@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PMDataLayer;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
 using UserStore.BLL.Interfaces;
@@ -14,19 +13,22 @@ namespace ProjectManagerSite.Controllers
     [Authorize(Roles = "client")]
     public class HomeController : Controller
     {
-        private HomeControllerVM _homeControllerVM = new HomeControllerVM();
+        private HomeControllerVM _homeControllerVM;
+
+        private PMDataModel _model = new PMDataModel(); 
 
         private IUserService UserService
         {
             get
             {
+                
                 return HttpContext.GetOwinContext().GetUserManager<IUserService>();
             }
         }
 
         public HomeController()
         {
-
+            _homeControllerVM = new HomeControllerVM(_model);
         }
 
         public ActionResult Index()
@@ -37,7 +39,15 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult UserPage(string id)
         {
-            var user = _homeControllerVM.GetUserByLogin(id);
+            Users user;
+
+            if (id == string.Empty)
+            {
+                user = _homeControllerVM.GetUserById(new Guid(User.Identity.GetUserId()));
+            }
+            else
+                user = _homeControllerVM.GetUserByLogin(id);
+
             if (user != null)
             {
                 return View("MyProfile", user);
@@ -48,7 +58,7 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult MyProfileEdit()
         {
-            return PartialView("MyProfileEdit", PMDataLayer.User.Items[0]);
+            return null;// PartialView("MyProfileEdit", PMDataLayer.User.Items[0]);
         }
 
         public ActionResult MyProfileSave()
