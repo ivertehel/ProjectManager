@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
+    [Table]
     public class User_Team : Entity<User_Team>
     {
         private Guid _teamId;
@@ -17,6 +18,28 @@ namespace PMDataLayer
         [Column]
         public Guid Id { get; set; } = Guid.NewGuid();
 
+        [Column]
+        public Guid TeamId
+        {
+            get { return _teamId; }
+            set { _teamId = value; }
+        }
+
+        [Column]
+        public Guid UserId
+        {
+            get { return _userId; }
+            set { _userId = value; }
+        }
+
+        [Column]
+        public Guid PositionId
+        {
+            get { return _positionId; }
+            set { _positionId = value; }
+        }
+
+        [Column]
         public bool IsLeader { get; set; }
 
         public Team Team

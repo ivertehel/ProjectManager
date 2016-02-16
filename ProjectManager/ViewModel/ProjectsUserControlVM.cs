@@ -395,6 +395,7 @@ namespace PMView.View
             Project p1 = Project.Items[0];
             Project_Project.Update();
 
+
             Team t1 = new Team()
             {
                 Name = "Unity3D-1",
@@ -406,22 +407,23 @@ namespace PMView.View
                 Name = "Java-1",
                 Description = "Java developers"
             };
-            Team.Items.Add(t1);
-            Team.Items.Add(t2);
 
-            Task task1 = new Task()
-            {
-                Name = "Create a main menu",
-                Description = "Main menu with the next buttons: Start game, Continue game, Levels, Settings, Quit",
-                Hours = 5,
-                Owner = Task.Owners.Team,
-                OwnerId = t1.Id,
-                Priority = 1,
-                Project = p1,
-                Status = "Active"
-            };
+            Team.Insert(t1);
+            Team.Insert(t2);
 
-            Task.Items.Add(task1);
+            //Task task1 = new Task()
+            //{
+            //    Name = "Create a main menu",
+            //    Description = "Main menu with the next buttons: Start game, Continue game, Levels, Settings, Quit",
+            //    Hours = 5,
+            //    Owner = Task.Owners.Team,
+            //    OwnerId = t1.Id,
+            //    Priority = 1,
+            //    Project = p1,
+            //    Status = "Active"
+            //};
+
+            //Task.Items.Add(task1);
 
             Team_Project tp1 = new Team_Project()
             {
@@ -429,7 +431,7 @@ namespace PMView.View
                 Project = p1
             };
 
-            Team_Project.Items.Add(tp1);
+            Team_Project.Insert(tp1);
 
             Position teamLeadPosition = new Position()
             {
@@ -456,7 +458,14 @@ namespace PMView.View
                 Name = "Junior Java developer"
             };
 
-            Position.Items.AddRange(new[] { teamLeadPosition, position1, position2, position4, position3 });
+            //Position.Items.AddRange(new[] { teamLeadPosition, position1, position2, position4, position3 });
+            Position.Insert(teamLeadPosition);
+            Position.Insert(position1);
+            Position.Insert(position2);
+            Position.Insert(position3);
+            Position.Insert(position4);
+
+
 
             User_Team ut1 = new User_Team()
             {
@@ -489,7 +498,11 @@ namespace PMView.View
                 Team = t1
             };
 
-            User_Team.Items.AddRange(new[] { ut1, ut2, ut3, ut4 });
+            //User_Team.Items.AddRange(new[] { ut1, ut2, ut3, ut4 });
+            User_Team.Insert(ut1);
+            User_Team.Insert(ut2);
+            User_Team.Insert(ut3);
+            User_Team.Insert(ut4);
 
             User_Project up = new User_Project()
             {

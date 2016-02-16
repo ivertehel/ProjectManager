@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
+    [Table]
     public class Team_Project : Entity<Team_Project>
     {
         [Column]
@@ -14,6 +15,20 @@ namespace PMDataLayer
         private Guid _projectId;
 
         private Guid _teamId;
+
+        [Column]
+        public Guid TeamId
+        {
+            get { return _teamId; }
+            set { _teamId = value; }
+        }
+
+        [Column]
+        public Guid ProjectId
+        {
+            get { return _projectId; }
+            set { _projectId = value; }
+        }
 
         public Project Project
         {

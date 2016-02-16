@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
+    [Table]
     public class Team : Entity<Team>
     {
         [Column]
         public Guid Id { get; set; } = Guid.NewGuid();
 
+        [Column]
         public string Name { get; set; }
 
+        [Column]
         public string Description { get; set; }
 
         public IEnumerable<Project> Projects

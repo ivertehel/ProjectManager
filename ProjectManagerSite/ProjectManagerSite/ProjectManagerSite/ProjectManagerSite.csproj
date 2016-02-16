@@ -170,6 +170,26 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="EF\AspNetRoles.cs" />
+    <Compile Include="EF\AspNetUserClaims.cs" />
+    <Compile Include="EF\AspNetUserLogins.cs" />
+    <Compile Include="EF\AspNetUsers.cs" />
+    <Compile Include="EF\ClientProfiles.cs" />
+    <Compile Include="EF\Clients.cs" />
+    <Compile Include="EF\C__MigrationHistory.cs" />
+    <Compile Include="EF\Orders.cs" />
+    <Compile Include="EF\PMDataModel.cs" />
+    <Compile Include="EF\Positions.cs" />
+    <Compile Include="EF\Projects.cs" />
+    <Compile Include="EF\Projects_Skills.cs" />
+    <Compile Include="EF\Project_Projects.cs" />
+    <Compile Include="EF\Skills.cs" />
+    <Compile Include="EF\Teams.cs" />
+    <Compile Include="EF\Teams_Projects.cs" />
+    <Compile Include="EF\Users.cs" />
+    <Compile Include="EF\Users_Projects.cs" />
+    <Compile Include="EF\Users_Skills.cs" />
+    <Compile Include="EF\Users_Teams.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -532,7 +552,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -560,7 +582,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="EF\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
