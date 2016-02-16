@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
 using UserStore.BLL.Interfaces;
 using ProjectManagerSite.ViewModels;
+using ProjectManagerSite.EF;
 
 namespace ProjectManagerSite.Controllers
 {
@@ -33,9 +34,13 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult Index()
         {
-            
-            return View("MyProfile");
+            return RedirectToAction("UserPage");
         }
+
+        //public ActionResult Skills()
+        //{
+            
+        //}
 
         public ActionResult UserPage(string id)
         {
@@ -44,6 +49,7 @@ namespace ProjectManagerSite.Controllers
             if (id == string.Empty)
             {
                 user = _homeControllerVM.GetUserById(new Guid(User.Identity.GetUserId()));
+                return Redirect(@"/" + user.Login);
             }
             else
                 user = _homeControllerVM.GetUserByLogin(id);

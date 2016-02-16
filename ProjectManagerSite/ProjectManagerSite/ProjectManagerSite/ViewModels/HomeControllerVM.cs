@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
+using ProjectManagerSite.EF;
 
 namespace ProjectManagerSite.ViewModels
 {
@@ -36,5 +37,7 @@ namespace ProjectManagerSite.ViewModels
             else
                 return null;
         }
+        
+        
     }
 }
