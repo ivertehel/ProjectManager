@@ -36,7 +36,7 @@ namespace PMView.View
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ProjectModuleEditVM(ILoadDataSender lastScreen, OrderVM order, ProjectVM parentProject = null)
-        {
+        { 
             _projectVM = new ProjectVM(_project);
             _parentProject = parentProject;
             _projectVM.Order = order.Order;

@@ -5173,3 +5173,14 @@
                 Description :  to 
 13.02.2016 0:00:00 | 21:45:42.6056238:Info | Details screen | Project details have been loaded
 13.02.2016 0:00:00 | 21:45:47.9478941:Info | User details screen | Details of user  has been loaded
+17.02.2016 0:00:00 | 09:30:47.5829250:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:31:15.0295676:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:31:52.7725047:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:32:07.8301912:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:32:28.9522237:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:33:01.0092516:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:50:24.0804304:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:52:00.3116582:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:52:07.0338987:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:53:21.7484897:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 09:54:26.4267053:Info | Details screen | Project details have been loaded

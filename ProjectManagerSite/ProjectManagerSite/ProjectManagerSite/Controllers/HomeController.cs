@@ -29,7 +29,7 @@ namespace ProjectManagerSite.Controllers
 
         public HomeController()
         {
-            _homeControllerVM = new HomeControllerVM(_model);
+            _homeControllerVM = new HomeControllerVM(_model, User.Identity.GetUserId());
         }
 
         public ActionResult Index()
@@ -49,10 +49,14 @@ namespace ProjectManagerSite.Controllers
             if (id == string.Empty)
             {
                 user = _homeControllerVM.GetUserById(new Guid(User.Identity.GetUserId()));
+                _homeControllerVM.User = user;
                 return Redirect(@"/" + user.Login);
             }
             else
+            {
                 user = _homeControllerVM.GetUserByLogin(id);
+                _homeControllerVM.User = user;
+            }
 
             if (user != null)
             {

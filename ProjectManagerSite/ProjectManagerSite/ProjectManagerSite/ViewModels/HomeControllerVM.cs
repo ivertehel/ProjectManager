@@ -15,6 +15,8 @@ namespace ProjectManagerSite.ViewModels
     {
         private PMDataModel _model;
 
+        public Users User { get; set; }
+
         public HomeControllerVM(PMDataModel model)
         {
             _model = model;
@@ -37,7 +39,11 @@ namespace ProjectManagerSite.ViewModels
             else
                 return null;
         }
-        
-        
+
+        public List<Skills> GetSkills()
+        {
+            
+        }
+
     }
 }

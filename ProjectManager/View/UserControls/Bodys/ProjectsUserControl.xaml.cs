@@ -71,6 +71,9 @@ namespace PMView.View
 
         private void AddProject_Click(object sender, RoutedEventArgs e)
         {
+            if (_projectsUserControlVM.SelectedOrder == null)
+                return;
+
             (new ProjectModuleEdit(_projectsUserControlVM, _projectsUserControlVM.SelectedOrder)).Show();
         }
 
@@ -102,6 +105,21 @@ namespace PMView.View
         private void SkillsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SkillsListBox.SelectedItem = null;
+        }
+
+        private void AddOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveOrder_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
