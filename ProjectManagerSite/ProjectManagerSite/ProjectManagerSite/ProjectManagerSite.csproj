@@ -195,6 +195,31 @@
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Model\AspNetRole.cs" />
+    <Compile Include="Model\AspNetUser.cs" />
+    <Compile Include="Model\AspNetUserRole.cs" />
+    <Compile Include="Model\Base.cs" />
+    <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\ClientProfile.cs" />
+    <Compile Include="Model\ColumnAttribute.cs" />
+    <Compile Include="Model\Comment.cs" />
+    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Model\Message.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\Position.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\Project_Project.cs" />
+    <Compile Include="Model\Project_Skill.cs" />
+    <Compile Include="Model\Report.cs" />
+    <Compile Include="Model\Skill.cs" />
+    <Compile Include="Model\TableAttribute.cs" />
+    <Compile Include="Model\Task.cs" />
+    <Compile Include="Model\Team.cs" />
+    <Compile Include="Model\Team_Project.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\User_Project.cs" />
+    <Compile Include="Model\User_Skill.cs" />
+    <Compile Include="Model\User_Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\HomeControllerVM.cs" />
   </ItemGroup>
@@ -579,6 +604,8 @@
     <Content Include="Views\Home\MyProfileEdit.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\SuccessRegister.cshtml" />
+    <Content Include="Views\Home\Skills.cshtml" />
+    <Content Include="Views\Home\SkillsEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

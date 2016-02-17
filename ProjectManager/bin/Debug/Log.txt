@@ -5184,3 +5184,24 @@
 17.02.2016 0:00:00 | 09:52:07.0338987:Info | Details screen | Project details have been loaded
 17.02.2016 0:00:00 | 09:53:21.7484897:Info | Details screen | Project details have been loaded
 17.02.2016 0:00:00 | 09:54:26.4267053:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 10:24:59.1320290:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 10:25:09.4782929:Info | User details screen | Details of user  has been loaded
+17.02.2016 0:00:00 | 10:25:46.0669732:Info | User details screen | Details of user has been changed:
+
+                Name :  to Ivan
+
+                Surname :  to Vertegel
+
+                State : NotChosen to Male
+
+                Country :  to Ukraine
+
+                Birthday : 17.02.2016 10:25:09 to 17.02.2016 10:25:09
+
+                Email :  to sirius9764@gmail.com
+
+                Login :  to vsailor
+
+                Description :  to 
+17.02.2016 0:00:00 | 18:42:45.8232592:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 18:42:49.7488983:Info | User details screen | Details of user  has been loaded

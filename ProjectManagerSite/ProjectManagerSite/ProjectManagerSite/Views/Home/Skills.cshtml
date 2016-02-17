@@ -1,0 +1,17 @@
+﻿@model List<string>
+<h4> 
+    @{  
+        foreach (var item in Model)
+        {
+
+            if (Model.Last() != item)
+            {
+                @item@:,
+            }
+            else
+            {
+                @item
+            }
+        }
+    } 
+</h4>

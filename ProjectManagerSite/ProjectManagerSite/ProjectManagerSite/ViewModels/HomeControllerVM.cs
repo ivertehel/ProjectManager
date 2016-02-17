@@ -8,18 +8,23 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
 using ProjectManagerSite.EF;
+using System.Security.Principal;
 
 namespace ProjectManagerSite.ViewModels
 {
     public class HomeControllerVM
     {
-        private PMDataModel _model;
+        private Entities _model;
 
         public Users User { get; set; }
 
-        public HomeControllerVM(PMDataModel model)
+        public HomeControllerVM(Entities model, IPrincipal user)
         {
             _model = model;
+            if (user.Identity.GetUserId() == null)
+                User = null;
+            else
+                User = getUserById(new Guid(user.Identity.GetUserId()));
         }
 
         public Users GetUserByLogin(string login)
@@ -27,7 +32,7 @@ namespace ProjectManagerSite.ViewModels
             return _model.Users.FirstOrDefault(item => item.Login == login);
         }
 
-        public Users GetUserById(Guid id)
+        private Users getUserById(Guid id)
         {
             string stringId = id.ToString();
             var clientProfileUserId = _model.ClientProfiles.FirstOrDefault(item => item.Id == stringId)?.UserId;
@@ -40,10 +45,18 @@ namespace ProjectManagerSite.ViewModels
                 return null;
         }
 
-        public List<Skills> GetSkills()
+        public List<string> GetSkills()
         {
-            
-        }
+            var userSkills = _model.Users_Skills.ToList().FindAll(item => item.UserId == User.Id);
+            List<string> skills = new List<string>();
+            foreach (var item in userSkills)
+            {
+                var s = _model.Skills.FirstOrDefault(skill => skill.Id == item.SkillId);
+                if (s != null)
+                    skills.Add(s.Name);
+            }
 
+            return skills;
+        }
     }
 }

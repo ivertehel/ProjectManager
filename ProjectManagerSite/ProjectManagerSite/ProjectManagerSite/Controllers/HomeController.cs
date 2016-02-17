@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity;
 using UserStore.BLL.Interfaces;
 using ProjectManagerSite.ViewModels;
 using ProjectManagerSite.EF;
+using ProjectManagerSite.Models;
 
 namespace ProjectManagerSite.Controllers
 {
@@ -16,7 +17,7 @@ namespace ProjectManagerSite.Controllers
     {
         private HomeControllerVM _homeControllerVM;
 
-        private PMDataModel _model = new PMDataModel(); 
+        private Entities _model = new Entities(); 
 
         private IUserService UserService
         {
@@ -29,7 +30,6 @@ namespace ProjectManagerSite.Controllers
 
         public HomeController()
         {
-            _homeControllerVM = new HomeControllerVM(_model, User.Identity.GetUserId());
         }
 
         public ActionResult Index()
@@ -37,30 +37,28 @@ namespace ProjectManagerSite.Controllers
             return RedirectToAction("UserPage");
         }
 
-        //public ActionResult Skills()
-        //{
-            
-        //}
+        public ActionResult Skills()
+        {
+            _homeControllerVM = new HomeControllerVM(_model, User);
+            return PartialView(_homeControllerVM.GetSkills());
+        }
 
         public ActionResult UserPage(string id)
         {
-            Users user;
+            _homeControllerVM = new HomeControllerVM(_model, User);
 
             if (id == string.Empty)
             {
-                user = _homeControllerVM.GetUserById(new Guid(User.Identity.GetUserId()));
-                _homeControllerVM.User = user;
-                return Redirect(@"/" + user.Login);
+                return Redirect(@"/" + _homeControllerVM.User.Login);
             }
             else
             {
-                user = _homeControllerVM.GetUserByLogin(id);
-                _homeControllerVM.User = user;
+                _homeControllerVM.User = _homeControllerVM.GetUserByLogin(id);
             }
 
-            if (user != null)
+            if (_homeControllerVM.User != null)
             {
-                return View("MyProfile", user);
+                return View("MyProfile", _homeControllerVM.User);
             }
             else
                 return HttpNotFound();
@@ -68,7 +66,18 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult MyProfileEdit()
         {
-            return null;// PartialView("MyProfileEdit", PMDataLayer.User.Items[0]);
+            _homeControllerVM = new HomeControllerVM(_model, User);
+            return PartialView("MyProfileEdit", _homeControllerVM.User);
+        }
+
+        public ActionResult SkillsEdit()
+        {
+            _homeControllerVM = new HomeControllerVM(_model, User);
+            ViewBag.User = User;
+            var skillsVm = new SkillsVM(_model, _homeControllerVM.User);
+            
+                
+            return PartialView("SkillEdit", null);
         }
 
         public ActionResult MyProfileSave()

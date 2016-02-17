@@ -1,0 +1,13 @@
+﻿@model List<string>
+@foreach (var m in Model)
+{
+    if (ViewBag.User != null)
+    {
+        <input type="checkbox" checked>@m.Name<br>
+    }
+    else
+    {
+        <input type="checkbox">@m.Name<br>
+    }
+}
+@Html.CheckBoxFor(model => model.Skills.FirstOrDefault(item => item.Id == m.Id) != null);

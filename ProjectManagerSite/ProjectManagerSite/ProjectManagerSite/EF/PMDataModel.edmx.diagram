@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7d27552643c041d2b23b7a3b58fc6bda" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetRoles" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserClaims" Width="1.5" PointX="16.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserLogins" Width="1.5" PointX="16.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUsers" Width="1.5" PointX="14" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ClientProfiles" Width="1.5" PointX="16.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Clients" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Orders" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Positions" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Project_Projects" Width="1.5" PointX="9.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Projects" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Projects_Skills" Width="1.5" PointX="9.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Skills" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Teams" Width="1.5" PointX="7.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Teams_Projects" Width="1.5" PointX="9.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Users" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Users_Projects" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Users_Skills" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Users_Teams" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_ClientProfiles_dbo_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Clients_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Orders_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Projects_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Users_Teams_Positions" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Project_Projects_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Project_Projects_Projects1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Projects_Skills_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Projects_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Teams_Projects_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Projects_Skills_Skills" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Users_Skills_Skills" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Teams_Projects_Teams" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Users_Teams_Teams" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Users_Skills_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Users_Teams_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
