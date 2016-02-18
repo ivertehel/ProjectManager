@@ -72,9 +72,14 @@ namespace ProjectManagerSite.Controllers
         [HttpPost]
         public ActionResult MyProfileEdit(UserVM user, SkillsVM skillVM)
         {
-            var model = new UserVM(User, user, skillVM);
-            model.SaveChanges();
-            return View("Profile", model);
+            if (ModelState.IsValid)
+            {
+                var model = new UserVM(User, user, skillVM);
+                model.SaveChanges();
+                return View("Profile", model);
+            }
+
+            return PartialView("MyProfileEdit", user);
         }
 
         public ActionResult SkillsEdit()

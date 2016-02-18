@@ -8,7 +8,6 @@
 
                     <img src="~/Assets/MaleAvatar.jpg" width="100%" />
                     <div id="blockDown">
-
                         @* @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })*@
                         <input type="submit" value="Save changes" class="btn-block btn btn-primary btn-lg" />
                     </div>
@@ -24,8 +23,14 @@
                             </div>
                         </div>
                         <div class="row">
+             
+
                             <div class="col-md-6">
+                                                        
+
                                 @Html.TextBoxFor(item => item.Name, new { @class = "form-control", placeholder = "Name" })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                
                                 @*<input type="text" class="form-control" id="NameEditTextBox" value="@Model.Name" placeholder="Name" />*@
                             </div>
                             <div class="col-md-6">
