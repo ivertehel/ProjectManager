@@ -5205,3 +5205,22 @@
                 Description :  to 
 17.02.2016 0:00:00 | 18:42:45.8232592:Info | Details screen | Project details have been loaded
 17.02.2016 0:00:00 | 18:42:49.7488983:Info | User details screen | Details of user  has been loaded
+17.02.2016 0:00:00 | 19:45:38.0476045:Info | Details screen | Project details have been loaded
+17.02.2016 0:00:00 | 20:22:05.5480554:Info | User details screen | Details of user  has been loaded
+17.02.2016 0:00:00 | 20:22:30.1052581:Info | User details screen | Details of user has been changed:
+
+                Name :  to Ddgfsdg
+
+                Surname :  to Gdgsdgsrdhwreh
+
+                State : NotChosen to Male
+
+                Country :  to Andorra
+
+                Birthday : 17.02.2016 20:22:05 to 17.02.2016 20:22:05
+
+                Email :  to erherh
+
+                Login :  to sfdgdfhedfheh
+
+                Description :  to 

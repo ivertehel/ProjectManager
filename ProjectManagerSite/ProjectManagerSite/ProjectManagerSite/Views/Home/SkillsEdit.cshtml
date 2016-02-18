@@ -1,13 +1,13 @@
-﻿@model List<string>
-@foreach (var m in Model)
+﻿@model ProjectManagerSite.Models.SkillsVM
+
+@foreach (var skill in Model.AllSkills)
 {
-    if (ViewBag.User != null)
+    if (Model.UserSkills.FirstOrDefault(item => item == skill) != null)
     {
-        <input type="checkbox" checked>@m.Name<br>
+        <input type="checkbox" checked>@skill<br>
     }
     else
     {
-        <input type="checkbox">@m.Name<br>
+        <input type="checkbox">@skill<br>
     }
 }
-@Html.CheckBoxFor(model => model.Skills.FirstOrDefault(item => item.Id == m.Id) != null);

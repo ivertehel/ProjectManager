@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
 using UserStore.BLL.Interfaces;
-using ProjectManagerSite.ViewModels;
 using ProjectManagerSite.EF;
 using ProjectManagerSite.Models;
 
@@ -15,8 +14,6 @@ namespace ProjectManagerSite.Controllers
     [Authorize(Roles = "client")]
     public class HomeController : Controller
     {
-        private HomeControllerVM _homeControllerVM;
-
         private Entities _model = new Entities(); 
 
         private IUserService UserService
@@ -39,26 +36,25 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult Skills()
         {
-            _homeControllerVM = new HomeControllerVM(_model, User);
-            return PartialView(_homeControllerVM.GetSkills());
+            var skillVM = new SkillsVM(User);
+            return PartialView(skillVM.UserSkills);
         }
 
-        public ActionResult UserPage(string id)
+        public ActionResult UserPage(string login)
         {
-            _homeControllerVM = new HomeControllerVM(_model, User);
-
-            if (id == string.Empty)
+            var model = new BaseVM(User);
+            if (login == string.Empty)
             {
-                return Redirect(@"/" + _homeControllerVM.User.Login);
+                return Redirect(@"/" + model.User.Login);
             }
             else
             {
-                _homeControllerVM.User = _homeControllerVM.GetUserByLogin(id);
+                model.User = model.GetUserByLogin(login);
             }
 
-            if (_homeControllerVM.User != null)
+            if (model.User != null)
             {
-                return View("MyProfile", _homeControllerVM.User);
+                return View("MyProfile", model.User);
             }
             else
                 return HttpNotFound();
@@ -66,18 +62,17 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult MyProfileEdit()
         {
-            _homeControllerVM = new HomeControllerVM(_model, User);
-            return PartialView("MyProfileEdit", _homeControllerVM.User);
+            var model = new BaseVM(User);
+
+            return PartialView("MyProfileEdit", model.User);
         }
 
         public ActionResult SkillsEdit()
         {
-            _homeControllerVM = new HomeControllerVM(_model, User);
-            ViewBag.User = User;
-            var skillsVm = new SkillsVM(_model, _homeControllerVM.User);
+            var skillsVM = new SkillsVM(User);
             
                 
-            return PartialView("SkillEdit", null);
+            return PartialView(skillsVM);
         }
 
         public ActionResult MyProfileSave()

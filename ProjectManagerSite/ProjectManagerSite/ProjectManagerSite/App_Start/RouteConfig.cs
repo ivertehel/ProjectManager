@@ -15,8 +15,8 @@ namespace UserStore
 
             routes.MapRoute(
     name: "MyRoute",
-    url: "{id}",
-    defaults: new { controller = "Home", action = "UserPage", id = "" }
+    url: "{login}",
+    defaults: new { controller = "Home", action = "UserPage", login = "" }
 );
 
             routes.MapRoute(
