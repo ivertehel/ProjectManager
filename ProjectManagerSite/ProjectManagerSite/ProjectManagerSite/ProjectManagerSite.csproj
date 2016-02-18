@@ -249,6 +249,7 @@
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\SkillsVM.cs" />
+    <Compile Include="Models\UserVM.cs" />
     <Compile Include="Model\AspNetRole.cs" />
     <Compile Include="Model\AspNetUser.cs" />
     <Compile Include="Model\AspNetUserRole.cs" />
@@ -277,6 +278,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Email.png" />
     <Content Include="Assets\Flags\Abkhazia.png" />
     <Content Include="Assets\Flags\Afghanistan.png" />
     <Content Include="Assets\Flags\Aland.png" />
@@ -538,6 +540,7 @@
     <Content Include="Assets\Flags\Zambia.png" />
     <Content Include="Assets\Flags\Zimbabwe.png" />
     <Content Include="Assets\MaleAvatar.jpg" />
+    <Content Include="Assets\Skype.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\bootstrap-rtl.css" />
@@ -670,7 +673,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\MyProfile.cshtml" />
+    <Content Include="Views\Home\Profile.cshtml" />
     <Content Include="Views\Home\MyTeams.cshtml" />
     <Content Include="Views\Home\MyProjects.cshtml" />
     <Content Include="Views\Home\MyTasks.cshtml" />

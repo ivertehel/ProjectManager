@@ -5,7 +5,7 @@
 <script>
 
     $.ajax({
-        url: "@Url.Action("MyProfile", "Home")",
+        url: "@Url.Action("Profile", "Home")",
         success: function (result) {
             $("#AjaxBody").html(result); /*<--div id where the results are showing*/
         }

@@ -1,0 +1,67 @@
+﻿@model ProjectManagerSite.Models.UserVM
+<div class="row" id="Profile">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+
+                <img src="~/Assets/MaleAvatar.jpg" width="100%"  style="padding-top:15px"/>
+                <div id="blockDown">
+                    @if (Model.User.Login == Model.AuthorizeUser.Login)
+                    {
+                    @Ajax.ActionLink(
+         "Edit profile",
+         "MyProfileEdit", "Home", null,
+         new AjaxOptions() { UpdateTargetId = "AjaxBody" }, new { @class = "btn-block btn btn-primary btn-lg" }
+         )
+                    }
+                </div>
+                <h4>
+                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    Done projects: 12
+                </h4>
+                <h4>
+                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+                    In progress: 2
+                </h4>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 style="padding-top:0px">@Model.User.Name @Model.User.Surname</h2>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-1">
+                        <a href="skype:@Model.User.Skype?chat"><img src="~/Assets/Skype.png" height="30px" ></a> 
+                    </div>
+                    <div class="col-md-11">
+                        <h5><a href="skype:@Model.User.Skype?chat">@Model.User.Skype</a></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <a href="mailto:@Model.User.Email"><img src="~/Assets/Email.png" height="30px"></a> 
+                    </div>
+                    <div class="col-md-11" style="vertical-align:central">
+                        <h5><a href="mailto:@Model.User.Email">@Model.User.Email</a></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="skillsSector">
+                            @Html.Action("Skills")
+                            <h5>
+                                @Model.User.Description
+                               
+                            </h5>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

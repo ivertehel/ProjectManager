@@ -11,7 +11,7 @@ using ProjectManagerSite.Models;
 
 namespace ProjectManagerSite.Controllers
 {
-    [Authorize(Roles = "client")]
+    [Authorize(Roles = "client, admin, employee")]
     public class HomeController : Controller
     {
         private Entities _model = new Entities(); 
@@ -42,7 +42,7 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult UserPage(string login)
         {
-            var model = new BaseVM(User);
+            var model = new UserVM(User);
             if (login == string.Empty)
             {
                 return Redirect(@"/" + model.User.Login);
@@ -54,7 +54,7 @@ namespace ProjectManagerSite.Controllers
 
             if (model.User != null)
             {
-                return View("MyProfile", model.User);
+                return View("Profile", model);
             }
             else
                 return HttpNotFound();
@@ -77,7 +77,7 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult MyProfileSave()
         {
-            return View("MyProfile");
+            return View("Profile");
         }
 
         public ActionResult MyTeams()
