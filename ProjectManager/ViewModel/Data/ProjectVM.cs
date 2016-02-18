@@ -80,7 +80,7 @@ namespace PMView.View.WrapperVM
             get { return _project.ParrentProjects; }
         }
 
-        public IEnumerable<User_Project> Users
+        public IEnumerable<Users_Project> Users
         {
             get { return _project.Users; }
         }

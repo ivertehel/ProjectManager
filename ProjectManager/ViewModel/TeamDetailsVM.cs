@@ -135,7 +135,7 @@ namespace PMView.View
                 _employeesPositions.Clear();
                 var user = _employeesCollection.FirstOrDefault(item => item.User.Id == SelectedEmployee.User.Id);
 
-                foreach (var item in User_Team.Items)
+                foreach (var item in Users_Team.Items)
                 {
                     if (_employeesPositions.FirstOrDefault(pos => item.Position.Id == pos.Position.Id) == null
                         && item.User.Id == user.User.Id)
@@ -284,17 +284,17 @@ namespace PMView.View
         {
             if (positions.Count() == 0)
                 throw new Exception("Employee must have at least one position");
-            User_Team.Items.RemoveAll(items => items.User == SelectedEmployee.User);
+            Users_Team.Items.RemoveAll(items => items.User == SelectedEmployee.User);
             for (int i = 0; i < positions.Count(); i++)
             {
-                User_Team ut = new User_Team()
+                Users_Team ut = new Users_Team()
                 {
                     IsLeader = false,
                     Position = Position.Items.Where(item => item.Name == positions[i]).FirstOrDefault(),
                     Team = CurrentTeam.Team,
                     User = SelectedEmployee.User
                 };
-                User_Team.Items.Add(ut);
+                Users_Team.Items.Add(ut);
             }
         }
     }

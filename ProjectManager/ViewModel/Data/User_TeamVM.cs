@@ -11,19 +11,19 @@ namespace PMView.View.WrapperVM
 {
     public class User_TeamVM : BaseVM
     {
-        private User_Team _userTeam;
+        private Users_Team _userTeam;
 
         public User_TeamVM()
         {
 
         }
 
-        public User_TeamVM(User_Team userTeam)
+        public User_TeamVM(Users_Team userTeam)
         {
             _userTeam = userTeam;
         }
 
-        public User_Team User_Team
+        public Users_Team User_Team
         {
             get { return _userTeam; }
             set { _userTeam = value; }

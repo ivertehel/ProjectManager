@@ -1,75 +1,83 @@
 ﻿@model ProjectManagerSite.EF.Users
+@using (Html.BeginForm("MyProfileEdit", "Home"))
+{
+    <div class="row" id="MyProfileEdit">
+        <div class="container-fluid">
+            <div class="row" style="padding-top:15px">
+                <div class="col-md-3">
 
-<div class="row" id="MyProfileEdit">
-    <div class="container-fluid">
-        <div class="row" style="padding-top:15px">
-            <div class="col-md-3">
+                    <img src="~/Assets/MaleAvatar.jpg" width="100%" />
+                    <div id="blockDown">
 
-                <img src="~/Assets/MaleAvatar.jpg" width="100%" />
-                <div id="blockDown">
-
-                    @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })
-
+                        @* @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })*@
+                        <input type="submit" value="Save changes" class="btn-block btn btn-primary btn-lg" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-9">
-                <div class="row">
+                <div class="col-md-9">
                     <div class="row">
-                        <div class="col-md-6">
-                            <h4>Name:</h4>
-                        </div>
-                        <div class="col-md-6">
-                            <h4>Surname:</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="NameEditTextBox" value="@Model.Name" placeholder="Name" />
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="SurnameEditTextBox" value="@Model.Surname" placeholder="Surname" />
-                        </div>
-                    </div>
-                    <div class="row" style="padding-top:10px">
-                        <div class="col-md-1">
-                            <img src="~/Assets/Skype.png" width="30px">
-
-                        </div>
-                        <div class="col-md-11">
-                            <input type="text" class="form-control" id="SkypeEditTextBox" value="@Model.Skype" placeholder="Surname" />
-                        </div>
-                    </div>
-                    <div class="row"  style="padding-top:10px">
-                        <div class="col-md-1">
-                            <img src="~/Assets/Email.png" width="30px">
-                        </div>
-                        <div class="col-md-11">
-                            <input type="text" class="form-control" id="EmailEditTextBox" value="@Model.Email" placeholder="E-mail" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Skills:</h3>
-                            <div style="border:2px solid #ccc; width:100%; max-height: 200px; overflow-y: scroll;">
-                                @Html.Action("SkillsEdit")
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Name:</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Surname:</h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="skillsSector">
-                                <h3>Details:</h3>
-                                <textarea cols="20" style="resize:none; height: 200px" id="skillsSector">
-                                    @Model.Description
-                                </textarea>
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(item => item.Name, new { @class = "form-control", placeholder = "Name" })
+                                @*<input type="text" class="form-control" id="NameEditTextBox" value="@Model.Name" placeholder="Name" />*@
                             </div>
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(item => item.Surname, new { @class = "form-control", placeholder = "Surname" })
+                                @*<input type="text" class="form-control" id="SurnameEditTextBox" value="@Model.Surname" placeholder="Surname" />*@
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:10px">
+                            <div class="col-md-1">
+                                <img src="~/Assets/Skype.png" width="30px">
+
+                            </div>
+                            <div class="col-md-11">
+                                @*<input type="text" class="form-control" id="SkypeEditTextBox" value="@Model.Skype" placeholder="Surname" />*@
+                                @Html.TextBoxFor(item => item.Skype, new { @class = "form-control", placeholder = "Skype" })
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:10px">
+                            <div class="col-md-1">
+                                <img src="~/Assets/Email.png" width="30px">
+                            </div>
+                            <div class="col-md-11">
+                                @*<input type="text" class="form-control" id="EmailEditTextBox" value="@Model.Email" placeholder="E-mail" />*@
+                                @Html.TextBoxFor(item => item.Email, new { @class = "form-control", placeholder = "Email" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Skills:</h3>
+                                <div style="border:2px solid #ccc; width:100%; max-height: 200px; overflow-y: scroll;">
+                                    @Html.Action("SkillsEdit")
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="skillsSector">
+                                    <h3>Details:</h3>
+                                    @Html.TextAreaFor(item => item.Description, new { @class = "form-control", placeholder = "Description", style = "resize:none; height: 200px" })
+                                    @*<textarea cols="20" style="resize:none; height: 200px" id="skillsSector">
+
+                                        </textarea>*@
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
             </div>
+
+
         </div>
-
-
     </div>
+}

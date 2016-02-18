@@ -129,10 +129,10 @@ namespace PMView.View
 
         public void RemoveProject(ProjectVM projectVM)
         {
-            User_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
+            Users_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
             Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == projectVM.Project.Id));
             Team_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
-            Project_Skill.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
+            Projects_Skill.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
             List<Guid> generalProjects = new List<Guid>();
             foreach (var item in Project_Project.Items)
                 if (item.ParrentProject == null)
@@ -157,9 +157,9 @@ namespace PMView.View
 
                 foreach (var item in toDelete)
                 {
-                    Project_Skill.Items.RemoveAll(ps => ps.Project.Id == item.ChildProject.Id);
+                    Projects_Skill.Items.RemoveAll(ps => ps.Project.Id == item.ChildProject.Id);
                     Team_Project.Items.RemoveAll(tp => tp.Project.Id == item.ChildProject.Id);
-                    User_Project.Items.RemoveAll(user => user.Project.Id == item.ChildProject.Id);
+                    Users_Project.Items.RemoveAll(user => user.Project.Id == item.ChildProject.Id);
                     Project.Items.Remove(Project.Items.FirstOrDefault(p => p.Id == item.ChildProject.Id));
                     Project_Project.Items.RemoveAll(project => project.Id == item.Id);
                 }
@@ -381,6 +381,19 @@ namespace PMView.View
 
         public void GenerateData()
         {
+            User.Update();
+            Client.Update();
+            Order.Update();
+            Project.Update();
+            Project_Project.Update();
+            Team.Update();
+            Position.Update();
+            Users_Team.Update();
+            Skill.Update();
+            Users_Project.Update();
+            Projects_Skill.Update();
+
+
             //User.Update();
             //Client.Update();
             //User e1 = User.Items.Where(item => item.Login == "vsailor").FirstOrDefault();
@@ -411,7 +424,7 @@ namespace PMView.View
             //Team.Insert(t1);
             //Team.Insert(t2);
 
-           
+
             //Team_Project tp1 = new Team_Project()
             //{
             //    Team = t1,

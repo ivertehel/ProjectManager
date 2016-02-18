@@ -20,7 +20,7 @@ namespace PMDataLayer
 
         public IEnumerable<Project> Projects
         {
-            get { return from items in Project_Skill.Items where items.Skill.Id == Id select items.Project; }
+            get { return from items in Projects_Skill.Items where items.Skill.Id == Id select items.Project; }
         }
 
         public override string ToString()

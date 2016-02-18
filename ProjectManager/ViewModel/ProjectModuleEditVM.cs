@@ -60,7 +60,7 @@ namespace PMView.View
 
             _project = _projectVM.Project;
 
-            foreach (var item in User_Project.Items)
+            foreach (var item in Users_Project.Items)
             {
                 if (_employeesCollection.FirstOrDefault(employee => employee.User.Id == item.User.Id) == null && item.Project.Id == _projectVM.Project.Id)
                 {
@@ -102,7 +102,7 @@ namespace PMView.View
                 if (_project == null)
                     return skills;
 
-                foreach (var item in Project_Skill.Items.Where(skill => skill.Project.Id == _project.Id).ToList())
+                foreach (var item in Projects_Skill.Items.Where(skill => skill.Project.Id == _project.Id).ToList())
                 {
                     skills.Add(item.Skill.Name);
                 }
@@ -291,10 +291,10 @@ namespace PMView.View
 
         public void RemoveProject(ProjectVM projectVM)
         {
-            User_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
+            Users_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
             Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == projectVM.Project.Id));
             Team_Project.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
-            Project_Skill.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
+            Projects_Skill.Items.RemoveAll(item => item.Project.Id == projectVM.Project.Id);
             List<Guid> generalProjects = new List<Guid>();
             foreach (var item in Project_Project.Items)
                 if (item.ParrentProject == null)
@@ -319,9 +319,9 @@ namespace PMView.View
 
                 foreach (var item in toDelete)
                 {
-                    Project_Skill.Items.RemoveAll(ps => ps.Project.Id == item.ChildProject.Id);
+                    Projects_Skill.Items.RemoveAll(ps => ps.Project.Id == item.ChildProject.Id);
                     Team_Project.Items.RemoveAll(tp => tp.Project.Id == item.ChildProject.Id);
-                    User_Project.Items.RemoveAll(user => user.Project.Id == item.ChildProject.Id);
+                    Users_Project.Items.RemoveAll(user => user.Project.Id == item.ChildProject.Id);
                     Project.Items.Remove(Project.Items.FirstOrDefault(p => p.Id == item.ChildProject.Id));
                     Project_Project.Items.RemoveAll(project => project.Id == item.Id);
                 }
@@ -362,14 +362,14 @@ namespace PMView.View
 
                 foreach (var item in _savedPositions)
                 {
-                    User_Project user_project = new User_Project()
+                    Users_Project user_project = new Users_Project()
                     {
                         Position = item.Position,
                         Project = _project,
                         User = item.User
                     };
 
-                    User_Project.Items.Add(user_project);
+                    Users_Project.Items.Add(user_project);
                 }
 
 
@@ -382,9 +382,9 @@ namespace PMView.View
             else
             {
                 Guid id = _project.Id;
-                User_Project.Items.RemoveAll(item => item.Project.Id == id);
+                Users_Project.Items.RemoveAll(item => item.Project.Id == id);
                 Project_Project.Items.Remove(Project_Project.Items.FirstOrDefault(item => item.ChildProject.Id == _project.Id));
-                Project_Skill.Items.RemoveAll(item => item.Project.Id == id);
+                Projects_Skill.Items.RemoveAll(item => item.Project.Id == id);
                 Team_Project.Items.RemoveAll(item => item.Project.Id == _project.Id);
                 Project.Items.Remove(Project.Items.FirstOrDefault(item => item.Id == _project.Id));
                 _project = new Project();
@@ -399,17 +399,17 @@ namespace PMView.View
                 _project.Order = ProjectVM.Order;
                 _project.StatusType = Status;
 
-                User_Project.Items.RemoveAll(item => item.Project.Id == id);
+                Users_Project.Items.RemoveAll(item => item.Project.Id == id);
                 foreach (var item in _savedPositions)
                 {
-                    User_Project user_project = new User_Project()
+                    Users_Project user_project = new Users_Project()
                     {
                         Position = item.Position,
                         Project = _project,
                         User = item.User
                     };
 
-                    User_Project.Items.Add(user_project);
+                    Users_Project.Items.Add(user_project);
                 }
 
                 Project.Items.Add(_project);
@@ -424,13 +424,13 @@ namespace PMView.View
 
             foreach (var item in skills)
             {
-                Project_Skill project_skill = new Project_Skill()
+                Projects_Skill project_skill = new Projects_Skill()
                 {
                     Project = _project,
                     Skill = Skill.Items.FirstOrDefault(skill => skill.Name == item)
                 };
 
-                Project_Skill.Items.Add(project_skill);
+                Projects_Skill.Items.Add(project_skill);
             }
 
 

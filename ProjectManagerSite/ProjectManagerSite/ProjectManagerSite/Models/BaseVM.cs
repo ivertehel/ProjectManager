@@ -25,6 +25,9 @@ namespace ProjectManagerSite.Models
 
         public BaseVM(IPrincipal user)
         {
+            if (user == null)
+                return;
+
             if (user.Identity.GetUserId() == null)
                 User = null;
             else

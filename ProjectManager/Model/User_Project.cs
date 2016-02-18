@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class User_Project : Entity<User_Project>
+    public class Users_Project : Entity<Users_Project>
     {
         private Guid _userId;
 
@@ -37,7 +37,7 @@ namespace PMDataLayer
 
         public IEnumerable<Position> Positions
         {
-            get { return from items in User_Project.Items where items.User.Id == _userId select items.Position; }
+            get { return from items in Users_Project.Items where items.User.Id == _userId select items.Position; }
         }
     }
 }

@@ -45,6 +45,10 @@ namespace ProjectManagerSite.Controllers
             var model = new UserVM(User);
             if (login == string.Empty)
             {
+                if (model.User == null)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
                 return Redirect(@"/" + model.User.Login);
             }
             else
@@ -65,6 +69,14 @@ namespace ProjectManagerSite.Controllers
             var model = new BaseVM(User);
 
             return PartialView("MyProfileEdit", model.User);
+        }
+
+        [HttpPost]
+        public ActionResult MyProfileEdit(Users user, SkillsVM skillVM)
+        {
+            
+            var model = new UserVM(User);
+            return View("Profile", model);
         }
 
         public ActionResult SkillsEdit()

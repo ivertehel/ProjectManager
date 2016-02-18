@@ -105,14 +105,14 @@ namespace PMDataLayer
             get { return from items in Project_Project.Items where items.ChildProject.Id == Id select items.ParrentProject; }
         }
 
-        public IEnumerable<User_Project> Users
+        public IEnumerable<Users_Project> Users
         {
-            get { return from items in User_Project.Items where items.Project.Id == Id select items; }
+            get { return from items in Users_Project.Items where items.Project.Id == Id select items; }
         }
 
         public IEnumerable<Skill> Skills
         {
-            get { return from items in Project_Skill.Items where items.Project.Id == Id select items.Skill; }
+            get { return from items in Projects_Skill.Items where items.Project.Id == Id select items.Skill; }
         }
 
         public IEnumerable<Team> Teams

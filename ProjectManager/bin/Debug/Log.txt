@@ -5224,3 +5224,130 @@
                 Login :  to sfdgdfhedfheh
 
                 Description :  to 
+18.02.2016 0:00:00 | 14:32:29.5043255:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 14:32:34.5221394:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 14:39:05.1489066:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 14:39:24.0507017:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 14:40:36.7729185:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 14:40:46.3195941:Info | Order screen | Details of I need mobile app for website have been loaded
+18.02.2016 0:00:00 | 14:40:50.1473594:Info | Order screen | Details of I need mobile app for website have been loaded
+18.02.2016 0:00:00 | 14:40:50.1488612:Info | User details screen | Details of user ming has been loaded
+18.02.2016 0:00:00 | 14:40:50.1908882:Info | Order screen | Details of I need mobile app for website have been loaded
+18.02.2016 0:00:00 | 14:55:41.3509743:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 14:55:44.3965438:Info | User details screen | Details of user  has been loaded
+18.02.2016 0:00:00 | 15:08:34.2264520:Info | User details screen | Details of user  has been loaded
+18.02.2016 0:00:00 | 15:15:14.7101294:Info | User details screen | Details of user has been changed:
+
+                Name :  to Abdul
+
+                Surname :  to Wahab
+
+                State : NotChosen to Male
+
+                Country :  to Poland
+
+                Birthday : 18.02.2016 15:08:34 to 18.02.2016 15:08:34
+
+                Email :  to wahab1983pk@gmail.com
+
+                Login :  to wahab1983pk
+
+                Description :  to  I am an experienced Website Designer and Developer specialized in  Wordpress, Magento, Joomla and Drupal Programmer looking to be hired. I have worked in the areas of CSS, Drupal and HTML for many employers and companies around the world I have a strong foundation in these areas. If my qualifications are suitable for you, please consider me for your next job or project. I am ready to be hired by you today and start work.
+18.02.2016 0:00:00 | 15:15:59.6941376:Info | User details screen | Details of user  has been loaded
+18.02.2016 0:00:00 | 15:17:34.1543379:Info | User details screen | Details of user has been changed:
+
+                Name :  to Gev
+
+                Surname :  to Anyan
+
+                State : NotChosen to Male
+
+                Country :  to Armenia
+
+                Birthday : 18.02.2016 15:15:59 to 18.02.2016 15:15:59
+
+                Email :  to gevkhanyan@gmail.com
+
+                Login :  to gevkhanyan
+
+                Description :  to  I am a professional full-stack web developer,  building complex applications. I specialize in HTML, CSS, Javascript, jQuery, Bootstrap,  Cordova, Framework7, MySql, PostgreSql, MongoDB, SqLite and a whole host of other technologies, platforms, and libraries. I’m passionate about learning new tools and programming languages and I quickly adapt to new environments. I’m seeking long-term relationships and new challenges.
+18.02.2016 0:00:00 | 15:17:54.9222337:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 15:17:57.8505400:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 15:18:11.6577302:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 15:18:20.4827672:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 15:18:44.9641196:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 15:19:23.2270575:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 15:20:25.4651842:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 15:21:11.7442935:Info | Details screen | Project details have been loaded
+18.02.2016 0:00:00 | 15:21:15.6224204:Info | User details screen | Details of user  has been loaded
+18.02.2016 0:00:00 | 15:22:40.6962300:Info | User details screen | Details of user has been changed:
+
+                Name :  to Amr
+
+                Surname :  to Elsekilly
+
+                State : NotChosen to Male
+
+                Country :  to Egypt
+
+                Birthday : 18.02.2016 15:21:15 to 18.02.2016 15:21:15
+
+                Email :  to amrsekilly@gmail.com
+
+                Login :  to amrsekilly
+
+                Description :  to  I create responsive websites, and web applications using different javascript libraries and frameworks. I offer all the support needed to my clients, and I always keep them updated with the latest edits, using cloud services or version control systems. I usually communicate with my clients on a daily basis on the form of a progress report, either written or using VoIP services.
+18.02.2016 0:00:00 | 15:25:01.6205470:Info | User details screen | Details of user  has been loaded
+18.02.2016 0:00:00 | 15:26:44.9796495:Info | User details screen | Details of user has been changed:
+
+                Name :  to Tuff
+
+                Surname :  to Geekers
+
+                State : NotChosen to Female
+
+                Country :  to India
+
+                Birthday : 18.02.2016 15:25:01 to 18.02.2016 15:25:01
+
+                Email :  to Tuffgeekers@gmail.com
+
+                Login :  to Tuffgeekers
+
+                Description :  to I'm a excellent developer who has high skills in developing iPhone, iPad and Android apps. I have developed many iPhone/Android apps over the last 6 years. I have rich experiences in REST API, SOAP API, JSON/XML, PHP & MySQL Web Service API,  GPS and Geolocation API, Facebook API, Twitter API, Foursquare API, MapKit, GPS, Payment Gateway APIs, eCommerce platforms.
+18.02.2016 0:00:00 | 15:27:08.6590862:Info | User details screen | Details of user  has been loaded
+18.02.2016 0:00:00 | 15:28:03.7795348:Info | User details screen | Details of user has been changed:
+
+                Name :  to Devendra
+
+                Surname :  to Kag
+
+                State : NotChosen to Male
+
+                Country :  to India
+
+                Birthday : 18.02.2016 15:27:08 to 18.02.2016 15:27:08
+
+                Email :  to deven004@gmail.com
+
+                Login :  to deven004
+
+                Description :  to Over the last 8 years, I have design a wide range of web applications, corporate websites, business portals, e-commerce stores and CMS websites, Landing Pages.  I am expert in end to end management of any newer website design or re-design the older websites in modern style and on modern responsive cross-browser platform for multi-size screen devices and various popular designing frameworks . If you are looking for a reliable, responsible, prompt and an honest person that can handle all your design project in a positive manner, then you are on the right profile page. Please have a look of my skills and expertise listed below.
+18.02.2016 0:00:00 | 15:28:41.2590022:Info | User details screen | Details of user  has been loaded
+18.02.2016 0:00:00 | 15:29:50.7857069:Info | User details screen | Details of user has been changed:
+
+                Name :  to Gaurav
+
+                Surname :  to Dubey
+
+                State : NotChosen to Male
+
+                Country :  to India
+
+                Birthday : 18.02.2016 15:28:41 to 18.02.2016 15:28:41
+
+                Email :  to gauravalwaysur@gmail.com
+
+                Login :  to gauravalwaysur
+
+                Description :  to At Shift Boolean we strive to provide our clients solutions that adhere to their specific requirements and are custom-made according to their needs.We focus on making technology an integral part of your business, in a simplistic way, that it becomes an asset and not a problem, hence propelling your business to grow faster. As your technology partners we aim at providing you with solutions that are at par with the current trends and designed to be unique, helping your business stand out. We offer complete mobile app & website design and development. From a simple brochure website to an advanced e-Commerce solution with an integrated forum or membership website, we can create the ultimate solution to meet your marketing goals and objectives.

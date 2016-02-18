@@ -36,12 +36,12 @@ namespace PMView.View.WrapperVM
             set { _position.Name = value; }
         }
 
-        public IEnumerable<User_Team> UsersInTeams
+        public IEnumerable<Users_Team> UsersInTeams
         {
             get { return _position.UsersInTeams; }
         }
 
-        public IEnumerable<User_Project> UsersInProjects
+        public IEnumerable<Users_Project> UsersInProjects
         {
             get { return _position.UsersInProjects; }
         }

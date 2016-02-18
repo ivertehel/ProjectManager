@@ -46,9 +46,9 @@ namespace PMView.View.WrapperVM
             get { return _team.Projects; }
         }
 
-        public IEnumerable<User_Team> Users
+        public IEnumerable<Users_Team> Users
         {
-            get { return from items in User_Team.Items where items.Team.Id == _team.Id select items; }
+            get { return from items in Users_Team.Items where items.Team.Id == _team.Id select items; }
         }
 
         public override string ToString()

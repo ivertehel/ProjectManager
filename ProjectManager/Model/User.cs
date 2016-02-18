@@ -183,7 +183,7 @@ namespace PMDataLayer
 
         public IEnumerable<Project> Projects
         {
-            get { return from items in User_Project.Items where items.User.Id == Id select items.Project; }
+            get { return from items in Users_Project.Items where items.User.Id == Id select items.Project; }
         }
 
         public IEnumerable<Comment> Comments
@@ -193,7 +193,7 @@ namespace PMDataLayer
 
         public IEnumerable<Team> Teams
         {
-            get { return from items in User_Team.Items where items.User.Id == Id select items.Team; }
+            get { return from items in Users_Team.Items where items.User.Id == Id select items.Team; }
         }
 
         static User()

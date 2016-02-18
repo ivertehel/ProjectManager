@@ -10,9 +10,25 @@ namespace ProjectManagerSite.Models
 {
     public class SkillsVM : BaseVM
     {
-        public SkillsVM(IPrincipal user) : base(user)
+        public class CheckBox
+        {
+            public string Name { get; set; }
+            public bool Enabled { get; set; }
+        }
+
+        public List<CheckBox> CheckBoxes = new List<CheckBox>();
+
+        public SkillsVM() : base(null)
         {
 
+        }
+
+        public SkillsVM(IPrincipal user) : base(user)
+        {
+            foreach (var item in AllSkills)
+            {
+                CheckBoxes.Add(new CheckBox() { Name = item, Enabled = UserSkills.FirstOrDefault(skill => skill == item) != null ? true : false });
+            }
         }
 
         public List<string> AllSkills

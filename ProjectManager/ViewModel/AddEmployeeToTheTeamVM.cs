@@ -235,7 +235,7 @@ namespace PMView.View
                 {
                     _savedPositions = new List<User_TeamVM>();
 
-                    foreach (var item in User_Team.Items)
+                    foreach (var item in Users_Team.Items)
                     {
                         if (item.Team.Id == _teamDetailsVM.CurrentTeam.Team.Id)
                             _savedPositions.Add(new User_TeamVM(item));
@@ -401,9 +401,9 @@ namespace PMView.View
 
             if (_savedPositions != null)
             {
-                User_Team.Items.RemoveAll(item => item.Team.Id == _teamDetailsVM.CurrentTeam.Team.Id);
+                Users_Team.Items.RemoveAll(item => item.Team.Id == _teamDetailsVM.CurrentTeam.Team.Id);
                 foreach (var item in _savedPositions)
-                    User_Team.Items.Add(item.User_Team);
+                    Users_Team.Items.Add(item.User_Team);
             }
 
             SaveButton = false;
@@ -416,7 +416,7 @@ namespace PMView.View
             _savedPositions.RemoveAll(item => item.User.Id == SelectedEmployeeToDelete.User.Id);
             foreach (var item in positions)
             {
-                _savedPositions.Add(new User_TeamVM(new User_Team() { Position = Position.Items.FirstOrDefault(pos => pos.Name == item), IsLeader = false, Team = _teamDetailsVM.CurrentTeam.Team, User = SelectedEmployeeToDelete.User }));
+                _savedPositions.Add(new User_TeamVM(new Users_Team() { Position = Position.Items.FirstOrDefault(pos => pos.Name == item), IsLeader = false, Team = _teamDetailsVM.CurrentTeam.Team, User = SelectedEmployeeToDelete.User }));
             }
         }
     }

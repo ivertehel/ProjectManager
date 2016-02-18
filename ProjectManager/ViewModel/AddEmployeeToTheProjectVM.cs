@@ -76,7 +76,7 @@ namespace PMView.View
                 {
                     _savedPositions = new List<User_ProjectVM>();
 
-                    foreach (var item in User_Project.Items)
+                    foreach (var item in Users_Project.Items)
                     {
                         if (_projectModuleEditVM.ProjectVM != null && _projectModuleEditVM.ProjectVM.Project.Id == item.Project.Id)
                         _savedPositions.Add(new User_ProjectVM(item));
@@ -294,7 +294,7 @@ namespace PMView.View
             _savedPositions.RemoveAll(item => item.User.Id == SelectedEmployeeToDelete.User.Id);
             foreach (var item in positions)
             {
-                _savedPositions.Add(new User_ProjectVM(new User_Project() { Position = Position.Items.FirstOrDefault(pos => pos.Name == item), Project = _projectModuleEditVM.ProjectVM.Project, User = SelectedEmployeeToDelete.User }));
+                _savedPositions.Add(new User_ProjectVM(new Users_Project() { Position = Position.Items.FirstOrDefault(pos => pos.Name == item), Project = _projectModuleEditVM.ProjectVM.Project, User = SelectedEmployeeToDelete.User }));
             }
         }
 

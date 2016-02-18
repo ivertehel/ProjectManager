@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PMDataLayer
 {
     [Table]
-    public class User_Team : Entity<User_Team>
+    public class Users_Team : Entity<Users_Team>
     {
         private Guid _teamId;
 
@@ -62,7 +62,7 @@ namespace PMDataLayer
 
         public IEnumerable<Position> Positions
         {
-            get { return from items in User_Team.Items where items._userId == _userId select items.Position; }
+            get { return from items in Users_Team.Items where items._userId == _userId select items.Position; }
         }
 
         public override string ToString()
@@ -72,7 +72,7 @@ namespace PMDataLayer
 
         public override bool Equals(object obj)
         {
-            var item = obj as User_Team;
+            var item = obj as Users_Team;
             if (item == null)
                 return false;
             if (item.Id == Id)

@@ -11,9 +11,9 @@ namespace PMView.View.WrapperVM
 {
     public class User_ProjectVM : BaseVM
     {
-        private User_Project _userProject;
+        private Users_Project _userProject;
 
-        public User_ProjectVM(User_Project userProject)
+        public User_ProjectVM(Users_Project userProject)
         {
             _userProject = userProject;
         }
@@ -23,7 +23,7 @@ namespace PMView.View.WrapperVM
 
         }
 
-        public User_Project User_Project
+        public Users_Project User_Project
         {
             get { return _userProject; }
             set { _userProject = value; }

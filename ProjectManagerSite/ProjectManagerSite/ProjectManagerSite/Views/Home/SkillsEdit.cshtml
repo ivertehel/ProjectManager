@@ -1,13 +1,6 @@
 ﻿@model ProjectManagerSite.Models.SkillsVM
 
-@foreach (var skill in Model.AllSkills)
+@for (int i = 0; i < Model.CheckBoxes.Count; i++)
 {
-    if (Model.UserSkills.FirstOrDefault(item => item == skill) != null)
-    {
-        <input type="checkbox" checked>@skill<br>
-    }
-    else
-    {
-        <input type="checkbox">@skill<br>
-    }
+    @Html.CheckBoxFor(item => item.CheckBoxes[i].Enabled)@Model.CheckBoxes[i].Name <br />;
 }

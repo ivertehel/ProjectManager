@@ -104,8 +104,8 @@ namespace PMView
             }
             foreach (var item in toDelete)
             {
-                User_Team.Items.RemoveAll(position => position.Position.Id == item.Id);
-                User_Project.Items.RemoveAll(position => position.Position.Id == item.Id);
+                Users_Team.Items.RemoveAll(position => position.Position.Id == item.Id);
+                Users_Project.Items.RemoveAll(position => position.Position.Id == item.Id);
                 Position.Items.RemoveAll(position => position.Id == item.Id);
             }
             _savedCollection = null;
