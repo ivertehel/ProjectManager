@@ -16,7 +16,7 @@ namespace ProjectManagerSite.Models
             public bool Enabled { get; set; }
         }
 
-        public List<CheckBox> CheckBoxes = new List<CheckBox>();
+        public List<CheckBox> CheckBoxes { get; set; } = new List<CheckBox>();
 
         public SkillsVM() : base(null)
         {

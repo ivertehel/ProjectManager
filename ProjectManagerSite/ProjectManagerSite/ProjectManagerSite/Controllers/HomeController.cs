@@ -66,16 +66,14 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult MyProfileEdit()
         {
-            var model = new BaseVM(User);
-
-            return PartialView("MyProfileEdit", model.User);
+            return PartialView("MyProfileEdit", new UserVM(User));
         }
 
         [HttpPost]
-        public ActionResult MyProfileEdit(Users user, SkillsVM skillVM)
+        public ActionResult MyProfileEdit(UserVM user, SkillsVM skillVM)
         {
-            
-            var model = new UserVM(User);
+            var model = new UserVM(User, user, skillVM);
+            model.SaveChanges();
             return View("Profile", model);
         }
 

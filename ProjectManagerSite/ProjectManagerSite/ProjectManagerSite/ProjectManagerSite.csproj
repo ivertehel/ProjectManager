@@ -250,6 +250,7 @@
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\SkillsVM.cs" />
     <Compile Include="Models\UserVM.cs" />
+    <Compile Include="Models\User_SkillVM.cs" />
     <Compile Include="Model\AspNetRole.cs" />
     <Compile Include="Model\AspNetUser.cs" />
     <Compile Include="Model\AspNetUserRole.cs" />
