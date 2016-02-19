@@ -1,6 +1,6 @@
 ﻿@model ProjectManagerSite.Models.UserVM
 
-@using (Html.BeginForm("MyProfileEdit", "Home"))
+@using (Html.BeginForm("MyProfileEdit", "Home", FormMethod.Post, new { id = "myForm" }))
 {
     <div class="row" id="MyProfileEdit">
         <div class="container-fluid">
@@ -10,7 +10,7 @@
                     <img src="~/Assets/MaleAvatar.jpg" width="100%" />
                     <div id="blockDown">
                         @* @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })*@
-                        <input type="submit" value="Save changes" class="btn-block btn btn-primary btn-lg" />
+                        <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="Save()"/>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -91,17 +91,27 @@
 }
 <script src="~/Scripts/jquery-2.2.0.min.js"></script>
 <script type="text/javascript">
-        $(document).ready(function () {
-            
-            @*if ($('#wrapper').length) {
-                alert('hui');
+    function Save() {
+        var form = $('#myForm');
+        var formData = new FormData(form[0]);
+        $.ajax({
+            url: '/Home/MyProfileEdit',
+            type: 'Post',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                if (data.result == 'Redirect') {
+                    window.location = data.url;
+                }
+                else {
+                    var div = document.getElementById("AjaxBody");
+                    var oldScrollTop = div.scrollTop;
+                    div.innerHTML = data;
+                    div.scrollTop = oldScrollTop;
+                    return false;
+                }
             }
-            else
-            {
-                $('#MyProfileEdit').empty();
-                @Ajax.BeginForm("")
-
-            }*@
-
-        })
+        });
+    }
 </script>

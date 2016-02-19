@@ -76,7 +76,9 @@ namespace ProjectManagerSite.Controllers
             {
                 var model = new UserVM(User, user, skillVM);
                 model.SaveChanges();
-                return View("Profile", model);
+                return Json(new { result = "Redirect", url = "/" + model.User.Login });
+
+                //return View("Profile", model);
             }
 
             return PartialView("MyProfileEdit", user);

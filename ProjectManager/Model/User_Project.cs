@@ -17,6 +17,28 @@ namespace PMDataLayer
         [Column]
         public Guid Id { get; set; } = Guid.NewGuid();
 
+        [Column]
+        public Guid UserId
+        {
+            get { return _userId; }
+            set { _userId = value; }
+        }
+
+        [Column]
+        public Guid ProjectId
+        {
+            get { return _projectId; }
+            set { _projectId = value; }
+        }
+
+        [Column]
+        public Guid PositionId
+        { 
+            get { return _positionId; }
+            set { _positionId = value; }    
+        }
+
+
         public User User
         {
             get { return User.Items.Where(items => items?.Id == _userId).FirstOrDefault(); }

@@ -11,6 +11,7 @@ namespace PMDataLayer
         [Column]
         public Guid Id { get; set; } = Guid.NewGuid();
 
+        [Column]
         public string Name { get; set; }
 
         public IEnumerable<User> Users

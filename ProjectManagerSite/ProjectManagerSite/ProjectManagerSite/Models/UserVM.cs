@@ -111,6 +111,9 @@ namespace ProjectManagerSite.Models
         private int getProjectsCountByStatus(string status)
         {
             int count = 0;
+            if (User == null)
+                return 0;
+
             foreach (var order in Model.Orders)
             {
                 foreach (var project in order.Projects)
