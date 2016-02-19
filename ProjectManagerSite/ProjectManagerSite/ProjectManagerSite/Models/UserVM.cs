@@ -23,6 +23,7 @@ namespace ProjectManagerSite.Models
             Skype = User.Skype;
             Email = User.Email;
             Description = User.Description;
+            Image = User.Image;
         }
 
         public UserVM() : base(null)
@@ -46,7 +47,7 @@ namespace ProjectManagerSite.Models
             Skype = User.Skype = _editedUser.Skype;
             Email = User.Email = _editedUser.Email;
             Description = User.Description = _editedUser.Description;
-
+            Image = User.Image = _editedUser.Image;
             Model.Users_Skills.RemoveRange(Model.Users_Skills.ToList().FindAll(item => item.UserId == User.Id));
             
             foreach (var item in _editedSkills.CheckBoxes)
@@ -89,6 +90,8 @@ namespace ProjectManagerSite.Models
         [Required(ErrorMessage = "The email address is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
+
+        public byte[] Image { get; set; }
 
         public string Description { get; set; }
 

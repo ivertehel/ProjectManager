@@ -84,6 +84,15 @@ namespace ProjectManagerSite.Controllers
             return PartialView("MyProfileEdit", user);
         }
 
+        public ActionResult ViewImage(string login)
+        {
+            var item = new UserVM(User);
+            if (item == null)
+                return new EmptyResult();
+            byte[] buffer = item.Image;
+            return File(buffer, "image/jpg", string.Format("{0}.jpg", login));
+        }
+
         public ActionResult SkillsEdit()
         {
             var skillsVM = new SkillsVM(User);
