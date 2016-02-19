@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity;
 using UserStore.BLL.Interfaces;
 using ProjectManagerSite.EF;
 using ProjectManagerSite.Models;
+using System.IO;
 
 namespace ProjectManagerSite.Controllers
 {
@@ -70,11 +71,19 @@ namespace ProjectManagerSite.Controllers
         }
 
         [HttpPost]
-        public ActionResult MyProfileEdit(UserVM user, SkillsVM skillVM)
+        public ActionResult MyProfileEdit(UserVM user, SkillsVM skillVM, HttpPostedFileBase Image)
         {
             if (ModelState.IsValid)
             {
+                if (Image != null)
+                {
+                    using (var binaryReader = new BinaryReader(Image.InputStream))
+                    {
+                        user.Avatar = binaryReader.ReadBytes(Image.ContentLength);
+                    }
+                }
                 var model = new UserVM(User, user, skillVM);
+
                 model.SaveChanges();
                 return Json(new { result = "Redirect", url = "/" + model.User.Login });
 
@@ -89,7 +98,7 @@ namespace ProjectManagerSite.Controllers
             var item = new UserVM(User);
             if (item == null)
                 return new EmptyResult();
-            byte[] buffer = item.Image;
+            byte[] buffer = item.Avatar;
             return File(buffer, "image/jpg", string.Format("{0}.jpg", login));
         }
 

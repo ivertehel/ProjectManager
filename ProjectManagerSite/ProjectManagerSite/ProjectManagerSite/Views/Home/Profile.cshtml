@@ -3,8 +3,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-
-                <img src="~/Assets/MaleAvatar.jpg" width="100%"  style="padding-top:15px"/>
+                <img src="/Home/ViewImage/@Model.User.Login" onerror="this.src = '/Assets/MaleAvatar.jpg'"
+                     width="100%" />
+                @*<img src="~/Assets/MaleAvatar.jpg" width="100%"  style="padding-top:15px"/>*@
                 <div id="blockDown">
                     @if (Model.User.Login == Model.AuthorizeUser.Login)
                     {
@@ -33,7 +34,7 @@
                 </div>
                 <div class="row"> 
                     <div class="col-md-1">
-                        <a href="skype:@Model.User.Skype?chat"><img src="~/Assets/Skype.png" height="30px" ></a> 
+                        <a href="skype:@Model.User.Skype?chat"><img src="/Assets/Skype.png" height="30px" ></a> 
                     </div>
                     <div class="col-md-11">
                         <h5><a href="skype:@Model.User.Skype?chat">@Model.User.Skype</a></h5>

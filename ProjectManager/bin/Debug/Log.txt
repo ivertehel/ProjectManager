@@ -5433,3 +5433,38 @@
 19.02.2016 0:00:00 | 12:37:22.4323919:Info | Order screen | Details of Bank system have been loaded
 19.02.2016 0:00:00 | 12:37:23.2793674:Info | Order screen | Details of Android app have been loaded
 19.02.2016 0:00:00 | 12:37:23.9199572:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 23:02:18.8099162:Info | Details screen | Project details have been loaded
+19.02.2016 0:00:00 | 23:02:21.7498730:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 23:02:22.5561406:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 23:02:23.3792866:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 23:02:26.1795550:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 23:02:26.1865258:Info | User details screen | Details of user gevkhanyan has been loaded
+19.02.2016 0:00:00 | 23:02:26.1900277:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 23:02:51.3808513:Info | User details screen | Details of user has been changed:
+
+                Name : Gev to Gev
+
+                Surname : Anyan to Anyan
+
+                State : Male to Male
+
+                Country : Armenia to Armenia
+
+                Birthday : 18.02.2016 0:00:00 to 18.02.2016 0:00:00
+
+                Email : gevkhanyan@gmail.com to gevkhanyan@gmail.com
+
+                Login : gevkhanyan to gevkhanyan
+
+                Description :  I am a professional full-stack web developer,  building complex applications. I specialize in HTML, CSS, Javascript, jQuery, Bootstrap,  Cordova, Framework7, MySql, PostgreSql, MongoDB, SqLite and a whole host of other technologies, platforms, and libraries. I’m passionate about learning new tools and programming languages and I quickly adapt to new environments. I’m seeking long-term relationships and new challenges.hui to  I am a professional full-stack web developer,  building complex applications. I specialize in HTML, CSS, Javascript, jQuery, Bootstrap,  Cordova, Framework7, MySql, PostgreSql, MongoDB, SqLite and a whole host of other technologies, platforms, and libraries. I’m passionate about learning new tools and programming languages and I quickly adapt to new environments. I’m seeking long-term relationships and new challenges.hui
+19.02.2016 0:00:00 | 23:02:51.8263878:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 23:02:51.8366942:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 23:03:01.3186673:Info | Details screen | Project details have been loaded
+19.02.2016 0:00:00 | 23:03:03.7896776:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 23:03:04.3076938:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 23:03:05.2348023:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 23:03:05.9629874:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 23:03:06.4277067:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 23:03:09.4843357:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 23:03:09.4903389:Info | User details screen | Details of user gevkhanyan has been loaded
+19.02.2016 0:00:00 | 23:03:09.4948410:Info | Order screen | Details of Game for PlayMarket have been loaded
