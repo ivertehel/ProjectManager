@@ -97,14 +97,13 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult MyTeams()
         {
-            ViewBag.TeamsPage = "active";
             return View("MyTeams");
         }
 
         public ActionResult MyProjects()
         {
-            ViewBag.ProjectsPage = "active";
-            return View("MyProjects");
+            var model = new UserVM(User);
+            return View("MyProjects", model);
         }
 
         public ActionResult MyTasks()
@@ -112,5 +111,7 @@ namespace ProjectManagerSite.Controllers
             ViewBag.TasksPage = "active";
             return View("MyTasks");
         }
+
+        
     }
 }

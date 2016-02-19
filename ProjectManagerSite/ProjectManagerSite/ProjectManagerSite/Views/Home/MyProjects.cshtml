@@ -1,4 +1,136 @@
-﻿<div class="row" id="MyProjects">
-    Projects
-</div>
+﻿@model ProjectManagerSite.Models.UserVM
 
+<div class="row" id="MyProjects">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Start date
+                            </th>
+                            <th>
+                                Release date
+                            </th>
+                            <th>
+                                Client
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Orders.Count; i++)
+                        {
+                            if (Model.Orders[i].Status == "Done")
+                            {
+                                <tr class="success">
+                                    <td>
+                                        @(i + 1)
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Name
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].StartDate.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].ReleaseDate.Value.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Clients.Users.Name @Model.Orders[i].Clients.Users.Surname
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Status
+                                    </td>
+
+                                </tr>
+                            }
+                            else if (Model.Orders[i].Status == "InProgress")
+                            {
+                                <tr class="warning">
+                                    <td>
+                                        @(i + 1)
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Name
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].StartDate.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].ReleaseDate.Value.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Clients.Users.Name @Model.Orders[i].Clients.Users.Surname
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Status
+                                    </td>
+
+                                </tr>
+                            }
+                            else if (Model.Orders[i].Status == "Discarded")
+                            {
+                                <tr class="disabled">
+                                    <td>
+                                        @(i + 1)
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Name
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].StartDate.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].ReleaseDate.Value.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Clients.Users.Name @Model.Orders[i].Clients.Users.Surname
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Status
+                                    </td>
+
+                                </tr>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td>
+                                        @(i + 1)
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Name
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].StartDate.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].ReleaseDate.Value.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Clients.Users.Name @Model.Orders[i].Clients.Users.Surname
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Status
+                                    </td>
+
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

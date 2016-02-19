@@ -1,4 +1,5 @@
 ﻿@model ProjectManagerSite.Models.UserVM
+
 @using (Html.BeginForm("MyProfileEdit", "Home"))
 {
     <div class="row" id="MyProfileEdit">
@@ -84,5 +85,23 @@
 
 
         </div>
+
     </div>
+
 }
+<script src="~/Scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            
+            @*if ($('#wrapper').length) {
+                alert('hui');
+            }
+            else
+            {
+                $('#MyProfileEdit').empty();
+                @Ajax.BeginForm("")
+
+            }*@
+
+        })
+</script>

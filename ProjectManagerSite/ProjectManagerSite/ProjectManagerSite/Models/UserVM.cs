@@ -91,5 +91,62 @@ namespace ProjectManagerSite.Models
         public string Email { get; set; }
 
         public string Description { get; set; }
+
+        public int DoneProjects
+        {
+            get
+            {
+                return getProjectsCountByStatus("Done");
+            }
+        }
+
+        public int InProgress
+        {
+            get
+            {
+                return getProjectsCountByStatus("InProgress");
+            }
+        }
+
+        private int getProjectsCountByStatus(string status)
+        {
+            int count = 0;
+            foreach (var order in Model.Orders)
+            {
+                foreach (var project in order.Projects)
+                {
+                    if (Model.Users_Projects.FirstOrDefault(item => item.ProjectId == project.Id && item.UserId == User.Id) != null && order.Status == status)
+                    {
+                        count++;
+                        break;
+                    }
+                }
+            }
+
+            return count;
+        }
+
+        public List<Orders> Orders
+        {
+            get
+            {
+                List<Orders> orders = new List<EF.Orders>();
+                foreach (var order in Model.Orders)
+                {
+                    foreach (var project in order.Projects)
+                    {
+                        if (Model.Users_Projects.FirstOrDefault(item => item.ProjectId == project.Id && item.UserId == User.Id) != null)
+                        {
+                            orders.Add(order);
+                            break;
+                        }
+                    }
+                }
+
+                return orders;
+            }
+        }
+
+
     }
 }

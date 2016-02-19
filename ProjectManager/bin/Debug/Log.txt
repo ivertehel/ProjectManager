@@ -5351,3 +5351,48 @@
                 Login :  to gauravalwaysur
 
                 Description :  to At Shift Boolean we strive to provide our clients solutions that adhere to their specific requirements and are custom-made according to their needs.We focus on making technology an integral part of your business, in a simplistic way, that it becomes an asset and not a problem, hence propelling your business to grow faster. As your technology partners we aim at providing you with solutions that are at par with the current trends and designed to be unique, helping your business stand out. We offer complete mobile app & website design and development. From a simple brochure website to an advanced e-Commerce solution with an integrated forum or membership website, we can create the ultimate solution to meet your marketing goals and objectives.
+19.02.2016 0:00:00 | 12:21:53.3068193:Info | Details screen | Project details have been loaded
+19.02.2016 0:00:00 | 12:21:56.5736087:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:21:57.8177783:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:21:58.5063239:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:21:59.7692688:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:00.4413239:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:00.9772212:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:01.8732035:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:02.2812113:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:02.8424806:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:03.3457439:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:03.8492346:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:04.2731804:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:04.7948161:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:05.3293958:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:06.4093856:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:07.4976048:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:07.8972045:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:08.4345446:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:08.9212978:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:09.3466744:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:10.3612734:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:11.1290497:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:12.6574771:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:13.3770941:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:14.0730848:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:14.7462360:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:15.2971386:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:15.7370859:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:16.7694458:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:17.3370496:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:20.0662705:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:20.5339640:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:21.4968291:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:22.1770311:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:24.2249697:Info | Details screen | Project details have been loaded
+19.02.2016 0:00:00 | 12:22:25.6817013:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:26.4128893:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:26.9331638:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:30.4329030:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:30.8569812:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:31.2569375:Info | Order screen | Details of Game for PlayMarket have been loaded
+19.02.2016 0:00:00 | 12:22:31.8019704:Info | Order screen | Details of Android app have been loaded
+19.02.2016 0:00:00 | 12:22:32.1157268:Info | Order screen | Details of Bank system have been loaded
+19.02.2016 0:00:00 | 12:22:32.5851479:Info | Order screen | Details of Android app have been loaded
