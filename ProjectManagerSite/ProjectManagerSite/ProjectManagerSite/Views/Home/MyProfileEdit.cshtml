@@ -6,9 +6,21 @@
         <div class="container-fluid">
             <div class="row" style="padding-top:15px">
                 <div class="col-md-3">
-                    <input type="file" name="Image"/>
-                    <img src="/Home/ViewImage/@Model.User.Login" onerror="this.src = '/Assets/MaleAvatar.jpg'"
-                        width="100%" />
+                    <div style="height:0px;overflow:hidden">
+                        <input type="file" name="Image" id="fileInput" accept="image/*" />
+
+                    </div>
+                    <div type="button" class="btn-img"  onclick="chooseFile();" width="100%">
+    <div class="img-wrap">
+    <img src="/Home/ViewImage/@Model.User.Login" width="100%"/>
+    </div>
+</div>
+                    <script>
+   function chooseFile() {
+      $("#fileInput").click();
+   }
+                    </script>
+                    
                     <div id="blockDown">
                         @* @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })*@
                         <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="Save()"/>
