@@ -4,6 +4,110 @@
     ViewBag.Title = "Orders";
     Layout = "~/Views/Home/_Layout.cshtml";
 }
+<div class="row" id="MyProjects">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10"  align="left">
+                <h4>
+                    @Model.Order.Name
+                </h4>
 
+            </div>
+            <div class="col-md-2"  align="right">
+                <h4>
+                    @Model.Order.Status
+                </h4>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <b>Order description:</b>
+                @Model.Order.Description
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"  align="left">
+                <b>Start date:</b> @Model.Order.StartDate.ToShortDateString()
+            </div>
+            <div class="col-md-4"  align="center">
+                <b>Release date:</b> @Model.Order.ReleaseDate.Value.ToShortDateString()
+            </div>
+            <div class="col-md-4" align="right">
+                <b>Price:</b> @Model.Order.Price USD
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row" id="MyProjects">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Start date
+                                </th>
+                                <th>
+                                    Release date
+                                </th>
+                                <th>
+                                    Client
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*@for (int i = 0; i < Model.Order.Projects.Count; i++)
+                            {
+                                <tr class="TableTr @(Model.Order.Projects[i] == "Done" ? "Done" : Model.Orders[i].Status == "InProgress" ?
+                             "InProgress" : Model.Orders[i].Status == "Discarded" ? "Discarded" : string.Empty)"
+                                    onclick="Click('@Model.Orders[i].Id')"
+                                    style="cursor:pointer;">
+                                    <td>
+                                        @(i + 1)
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Name
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].StartDate.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].ReleaseDate.Value.ToShortDateString()
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Clients.Users.Name @Model.Orders[i].Clients.Users.Surname
+                                    </td>
+                                    <td>
+                                        @Model.Orders[i].Status
+                                    </td>
+                                </tr>
+                            }*@
+                        </tbody>
+                    </table>
+                    <script>
+                        function Click(order)
+                        {
+                            window.location.href = "/Project/LoadOrder?OrderId=" + order;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 

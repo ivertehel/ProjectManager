@@ -19,6 +19,7 @@ namespace ProjectManagerSite.EF
         {
             this.Clients = new HashSet<Clients>();
             this.Projects = new HashSet<Projects>();
+            this.Users_Projects = new HashSet<Users_Projects>();
             this.Users_Skills = new HashSet<Users_Skills>();
             this.Users_Teams = new HashSet<Users_Teams>();
         }
@@ -43,6 +44,8 @@ namespace ProjectManagerSite.EF
         public virtual ICollection<Clients> Clients { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Projects> Projects { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Users_Projects> Users_Projects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Users_Skills> Users_Skills { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

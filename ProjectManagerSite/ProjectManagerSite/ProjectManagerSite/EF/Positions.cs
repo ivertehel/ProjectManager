@@ -17,6 +17,7 @@ namespace ProjectManagerSite.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Positions()
         {
+            this.Users_Projects = new HashSet<Users_Projects>();
             this.Users_Teams = new HashSet<Users_Teams>();
         }
     
@@ -24,6 +25,8 @@ namespace ProjectManagerSite.EF
         public string Name { get; set; }
         public string Description { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Users_Projects> Users_Projects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Users_Teams> Users_Teams { get; set; }
     }

@@ -18,5 +18,9 @@ namespace ProjectManagerSite.EF
         public System.Guid UserId { get; set; }
         public System.Guid ProjectId { get; set; }
         public System.Guid PositionId { get; set; }
+    
+        public virtual Positions Positions { get; set; }
+        public virtual Projects Projects { get; set; }
+        public virtual Users Users { get; set; }
     }
 }
