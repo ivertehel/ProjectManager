@@ -32,7 +32,8 @@
                         @for (int i = 0; i < Model.Orders.Count; i++)
                         {
                             <tr class="TableTr @(Model.Orders[i].Status == "Done" ? "Done" : Model.Orders[i].Status == "InProgress" ?
-                         "InProgress" : Model.Orders[i].Status == "Discarded" ? "Discarded" : string.Empty)" 
+                         "InProgress" : Model.Orders[i].Status == "Discarded" ? "Discarded" : string.Empty)"
+                                onclick="Click('@Model.Orders[i].Id')"
                                 style="cursor:pointer;">
                                 <td>
                                     @(i + 1)
@@ -56,7 +57,12 @@
                         }
                     </tbody>
                 </table>
-
+                <script>
+                    function Click(order)
+                    {
+                        window.location.href = "/Project/LoadOrder?OrderId=" + order;
+                    }
+                </script>
             </div>
         </div>
     </div>
