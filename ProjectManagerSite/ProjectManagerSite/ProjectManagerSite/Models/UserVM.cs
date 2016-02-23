@@ -17,6 +17,11 @@ namespace ProjectManagerSite.Models
 
         public UserVM(IPrincipal user) : base(user)
         {
+            init(user);
+        }
+
+        private void init(IPrincipal user)
+        {
             _authorizeUser = User;
             Name = User.Name;
             Surname = User.Surname;
@@ -29,6 +34,17 @@ namespace ProjectManagerSite.Models
         public UserVM() : base(null)
         {
 
+        }
+
+        public UserVM(string id) : base(null)
+        {
+            User = GetUserByLogin(id);
+            Name = User.Name;
+            Surname = User.Surname;
+            Skype = User.Skype;
+            Email = User.Email;
+            Description = User.Description;
+            Avatar = User.Image;
         }
 
         public UserVM(IPrincipal user, UserVM editedUser, SkillsVM skill) : this(user)
