@@ -74,7 +74,7 @@ namespace ProjectManagerSite.Controllers
         [HttpPost]
         public ActionResult MyProfileEdit(UserVM user, SkillsVM skillVM, HttpPostedFileBase Image)
         {
-            if (!IsImage(Image))
+            if (Image != null && !IsImage(Image))
             {
                 return Json(new { result = "Error", message = "Wrong image" });
             }

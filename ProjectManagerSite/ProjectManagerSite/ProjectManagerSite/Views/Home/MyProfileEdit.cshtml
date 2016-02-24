@@ -11,7 +11,7 @@
                     </div>
                     <div type="button" class="btn-img" onclick="chooseFile();" width="100%">
                         <div class="img-wrap">
-                            <img src="/Home/ViewImage/@Model.User.Login" width="100%" />
+                            <img id="Avatar" src="/Home/ViewImage/@Model.User.Login" width="100%" />
                             @*/Home/ViewImage/@Model.User.Login*@
                         </div>
                     </div>
@@ -21,6 +21,7 @@
                         }
 
                         function previewFile() {
+                            var oldImgSrc = $("#Avatar").attr("src");
                             if (ValidateFileUpload()) {
                                 var preview = document.querySelector('img'); //selects the query named img
                                 var file = document.querySelector('input[type=file]').files[0]; //sames as here
@@ -39,7 +40,8 @@
                             else
                             {
                                 alert("Wrong image type");
-                                $("#fileInput").val(null);
+                                $("#Avatar").attr("src", oldImgSrc);
+                                $("#fileInput").val('');
                             }
                         }
 
@@ -86,7 +88,7 @@
                     <div id="blockDown">
                         @* @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })*@
                         <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="Save()" />
-                        <h2 id="ErrorMessage"></h2>
+                        <h4 id="ErrorMessage" style="color:brown"></h4>
 
                     </div>
                 </div>
