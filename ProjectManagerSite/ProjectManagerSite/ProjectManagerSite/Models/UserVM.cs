@@ -47,6 +47,7 @@ namespace ProjectManagerSite.Models
             Avatar = User.Image;
         }
 
+
         public UserVM(IPrincipal user, UserVM editedUser, SkillsVM skill) : this(user)
         {
             _editedUser = editedUser;
@@ -66,7 +67,7 @@ namespace ProjectManagerSite.Models
             if (_editedUser.Avatar != null)
                 Avatar = User.Image = _editedUser.Avatar;
             Model.Users_Skills.RemoveRange(Model.Users_Skills.ToList().FindAll(item => item.UserId == User.Id));
-            
+
             foreach (var item in _editedSkills.CheckBoxes)
             {
                 if (item.Enabled)
@@ -117,6 +118,32 @@ namespace ProjectManagerSite.Models
             get
             {
                 return getProjectsCountByStatus("Done");
+            }
+        }
+
+
+        public int OrderedProjects
+        {
+            get
+            {
+                return Model.Orders.ToList().FindAll(item => item.Clients.Users.Id == User.Id).Count;
+            }
+        }
+
+        public int OrdersInProgress
+        {
+            get
+            {
+                return Model.Orders.ToList().FindAll(item => item.Clients.Users.Id == User.Id && item.Status == "InProgress").Count;
+            }
+        }
+
+
+        public int OrdersDone
+        {
+            get
+            {
+                return Model.Orders.ToList().FindAll(item => item.Clients.Users.Id == User.Id && item.Status == "Done").Count;
             }
         }
 

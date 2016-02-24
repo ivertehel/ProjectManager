@@ -133,23 +133,16 @@
                 <a class="navbar-brand" href="/">Project Manager</a>
             </div>
             <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Name <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        @*<li>
-                                <a href="#"><i class="fa fa-fw fa-user"></i> Edit profile</a>
-                            </li>*@
-                        <li onclick="Logout()"
-                                   style="cursor:pointer;">
-                            <a href="#">
-                                <i class="fa fa-fw fa-power-off"></i> Log Out
-                            </a>
-
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="nav navbar-right top-nav" style="padding-top: 10px; padding-right:30px">
+                @*<button type="button" class="btn btn-default" aria-label="Left Align" >
+                    <b> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log out</b>
+                </button>*@
+                <a href="#" style="color:whitesmoke" onclick="Logout()">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    Log out
+                </a>
+                @*<a href="#" onclick="Logout()">Log Out</a>*@ 
+            </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">

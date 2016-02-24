@@ -35,9 +35,9 @@ namespace ProjectManagerSite.Controllers
             return RedirectToAction("UserPage");
         }
 
-        public ActionResult Skills()
+        public ActionResult Skills(string Login)
         {
-            var skillVM = new SkillsVM(User);
+            var skillVM = new SkillsVM(Login);
             return PartialView(skillVM.UserSkills);
         }
 
@@ -64,6 +64,7 @@ namespace ProjectManagerSite.Controllers
             else
                 return HttpNotFound();
         }
+
 
         public ActionResult MyProfileEdit()
         {

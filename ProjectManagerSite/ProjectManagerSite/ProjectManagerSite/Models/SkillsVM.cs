@@ -23,6 +23,11 @@ namespace ProjectManagerSite.Models
 
         }
 
+        public SkillsVM(string login) : base(null)
+        {
+            User = GetUserByLogin(login);
+        }
+
         public SkillsVM(IPrincipal user) : base(user)
         {
             foreach (var item in AllSkills)

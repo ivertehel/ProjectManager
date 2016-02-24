@@ -69,6 +69,7 @@ namespace UserStore.Controllers
             return View(model);
         }
 
+
         public ActionResult Register()
         {
             return View();
