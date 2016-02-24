@@ -126,6 +126,8 @@ namespace ProjectManagerSite.Models
         {
             get
             {
+                if (User == null)
+                    return 0;
                 return Model.Orders.ToList().FindAll(item => item.Clients.Users.Id == User.Id).Count;
             }
         }
@@ -134,6 +136,8 @@ namespace ProjectManagerSite.Models
         {
             get
             {
+                if (User == null)
+                    return 0;
                 return Model.Orders.ToList().FindAll(item => item.Clients.Users.Id == User.Id && item.Status == "InProgress").Count;
             }
         }
@@ -143,6 +147,8 @@ namespace ProjectManagerSite.Models
         {
             get
             {
+                if (User == null)
+                    return 0;
                 return Model.Orders.ToList().FindAll(item => item.Clients.Users.Id == User.Id && item.Status == "Done").Count;
             }
         }

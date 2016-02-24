@@ -7,23 +7,87 @@
             <div class="row" style="padding-top:15px">
                 <div class="col-md-3">
                     <div style="height:0px;overflow:hidden">
-                        <input type="file" name="Image" id="fileInput" accept="image/*" />
-
+                        <input type="file" name="Image" id="fileInput" onchange="previewFile()" accept="image/*" />
                     </div>
-                    <div type="button" class="btn-img"  onclick="chooseFile();" width="100%">
-    <div class="img-wrap">
-    <img src="/Home/ViewImage/@Model.User.Login" width="100%"/>
-    </div>
-</div>
+                    <div type="button" class="btn-img" onclick="chooseFile();" width="100%">
+                        <div class="img-wrap">
+                            <img src="/Home/ViewImage/@Model.User.Login" width="100%" />
+                            @*/Home/ViewImage/@Model.User.Login*@
+                        </div>
+                    </div>
                     <script>
-   function chooseFile() {
-      $("#fileInput").click();
-   }
+                        function chooseFile() {
+                            $("#fileInput").click();
+                        }
+
+                        function previewFile() {
+                            if (ValidateFileUpload()) {
+                                var preview = document.querySelector('img'); //selects the query named img
+                                var file = document.querySelector('input[type=file]').files[0]; //sames as here
+                                var reader = new FileReader();
+
+                                reader.onloadend = function () {
+                                    preview.src = reader.result;
+                                }
+
+                                if (file) {
+                                    reader.readAsDataURL(file); //reads the data as a URL
+                                } else {
+                                    preview.src = "";
+                                }
+                            }
+                            else
+                            {
+                                alert("Wrong image type");
+                                $("#fileInput").val(null);
+                            }
+                        }
+
+                        function ValidateFileUpload() {
+                            var fuData = document.getElementById('fileInput');
+                            var FileUploadPath = fuData.value;
+
+                            //To check if user upload any file
+                            if (FileUploadPath == '') {
+                                alert("Please upload an image");
+
+                            } else {
+                                var Extension = FileUploadPath.substring(
+                                        FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+
+                                //The file uploaded is an image
+
+                                if (Extension == "gif" || Extension == "png" || Extension == "bmp"
+                                                    || Extension == "jpeg" || Extension == "jpg") {
+
+                                    // To Display
+                                    if (fuData.files && fuData.files[0]) {
+                                        var reader = new FileReader();
+
+                                        reader.onload = function (e) {
+                                            $('#blah').attr('src', e.target.result);
+                                        }
+
+                                        reader.readAsDataURL(fuData.files[0]);
+                                    }
+
+                                }
+
+                                    //The file upload is NOT an image
+                                else {
+                                    return false;
+
+                                }
+                            }
+                            return true;
+                        }
                     </script>
-                    
+
                     <div id="blockDown">
                         @* @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })*@
-                        <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="Save()"/>
+                        <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="Save()" />
+                        <h2 id="ErrorMessage"></h2>
+
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -37,14 +101,14 @@
                             </div>
                         </div>
                         <div class="row">
-             
+
 
                             <div class="col-md-6">
-                                                        
+
 
                                 @Html.TextBoxFor(item => item.Name, new { @class = "form-control", placeholder = "Name" })
                                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                                
+
                                 @*<input type="text" class="form-control" id="NameEditTextBox" value="@Model.Name" placeholder="Name" />*@
                             </div>
                             <div class="col-md-6">
@@ -116,6 +180,10 @@
             success: function (data) {
                 if (data.result == 'Redirect') {
                     window.location = data.url;
+                }
+                else if (data.result == 'Error')
+                {
+                    $("#ErrorMessage").html(data.message);
                 }
                 else {
                     var div = document.getElementById("AjaxBody");

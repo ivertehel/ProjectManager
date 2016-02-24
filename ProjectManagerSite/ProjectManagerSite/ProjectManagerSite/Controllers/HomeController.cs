@@ -15,13 +15,13 @@ namespace ProjectManagerSite.Controllers
     [Authorize(Roles = "client, admin, employee")]
     public class HomeController : Controller
     {
-        private Entities _model = new Entities(); 
+        private Entities _model = new Entities();
 
         private IUserService UserService
         {
             get
             {
-                
+
                 return HttpContext.GetOwinContext().GetUserManager<IUserService>();
             }
         }
@@ -74,6 +74,10 @@ namespace ProjectManagerSite.Controllers
         [HttpPost]
         public ActionResult MyProfileEdit(UserVM user, SkillsVM skillVM, HttpPostedFileBase Image)
         {
+            if (!IsImage(Image))
+            {
+                return Json(new { result = "Error", message = "Wrong image" });
+            }
             if (ModelState.IsValid)
             {
                 if (Image != null)
@@ -90,6 +94,8 @@ namespace ProjectManagerSite.Controllers
 
                 //return View("Profile", model);
             }
+
+
 
             return PartialView("MyProfileEdit", user);
         }
@@ -112,8 +118,8 @@ namespace ProjectManagerSite.Controllers
         public ActionResult SkillsEdit()
         {
             var skillsVM = new SkillsVM(User);
-            
-                
+
+
             return PartialView(skillsVM);
         }
 
@@ -139,6 +145,17 @@ namespace ProjectManagerSite.Controllers
             return View("MyTasks");
         }
 
-        
+        private bool IsImage(HttpPostedFileBase file)
+        {
+            if (file.ContentType.Contains("image"))
+            {
+                return true;
+            }
+
+            string[] formats = new string[] { ".jpg", ".png", ".jpeg" }; // add more if u like...
+
+            // linq from Henrik Stenbæk
+            return formats.Any(item => file.FileName.EndsWith(item, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }
