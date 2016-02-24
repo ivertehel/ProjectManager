@@ -25,6 +25,11 @@ namespace ProjectManagerSite.Models
             OrderId = new Guid(orderId);
         }
 
+        public UserVM Customer
+        {
+            get { return (new UserVM(Order.Clients.Users.Login)); }
+        }
+
         public OrderVM() : base(null)
         {
             

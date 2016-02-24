@@ -36,9 +36,9 @@ namespace ProjectManagerSite.Models
 
         }
 
-        public UserVM(string id) : base(null)
+        public UserVM(string login) : base(null)
         {
-            User = GetUserByLogin(id);
+            User = GetUserByLogin(login);
             Name = User.Name;
             Surname = User.Surname;
             Skype = User.Skype;

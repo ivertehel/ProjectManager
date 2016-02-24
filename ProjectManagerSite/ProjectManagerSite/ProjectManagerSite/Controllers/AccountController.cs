@@ -36,6 +36,12 @@ namespace UserStore.Controllers
             return View();
         }
 
+        public ActionResult Logout()
+        {
+            AuthenticationManager.SignOut();
+            return RedirectToAction("Login");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginModel model)
@@ -48,7 +54,7 @@ namespace UserStore.Controllers
                 ClaimsIdentity claim = await UserService.Authenticate(userDto);
                 if (claim == null)
                 {
-                    ModelState.AddModelError("", "Неверный логин или пароль.");
+                    ModelState.AddModelError("", "Wrong login or password.");
                 }
                 else
                 {
@@ -61,12 +67,6 @@ namespace UserStore.Controllers
                 }
             }
             return View(model);
-        }
-
-        public ActionResult Logout()
-        {
-            AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Register()

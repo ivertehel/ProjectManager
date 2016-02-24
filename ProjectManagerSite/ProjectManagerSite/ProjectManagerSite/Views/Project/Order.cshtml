@@ -7,34 +7,98 @@
 <div class="row" id="MyProjects">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-10"  align="left">
-                <h4>
-                    @Model.Order.Name
+            <div class="col-md-10" align="left">
+                <h4 style="font-size: 30px; vertical-align:top">
+                    <b>@Model.Order.Name</b>
                 </h4>
 
             </div>
-            <div class="col-md-2"  align="right">
-                <h4>
-                    @Model.Order.Status
-                </h4>
+            <div class="col-md-2" align="center">
+                <ul class="list-group">
+                    @if (Model.Order.Status == "Done")
+                    {
+                        <li class="list-group-item list-group-item-success">
+                            <b>@Model.Order.Status</b>
+                        </li>
+                    }
+                    else if (Model.Order.Status == "InProgress")
+                    {
+                        <li class="list-group-item list-group-item-warning">
+                            <b>@Model.Order.Status</b>
+                        </li>
+                    }
+                    else if (Model.Order.Status == "Discarded")
+                    {
+                        <li class="list-group-item list-group-item-danger">
+                            <b>@Model.Order.Status</b>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="list-group-item">
+                            <b>@Model.Order.Status</b>
+                        </li>
+                    }
+                </ul>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Order description</h3>
+                    </div>
+                    <div class="panel-body">
+                        @Model.Order.Description
+                    </div>
+                </div>
             </div>
         </div>
         <hr />
         <div class="row">
-            <div class="col-md-12">
-                <b>Order description:</b>
-                @Model.Order.Description
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"  align="left">
+            <div class="col-md-6" align="left">
                 <b>Start date:</b> @Model.Order.StartDate.ToShortDateString()
-            </div>
-            <div class="col-md-4"  align="center">
+                <br />
                 <b>Release date:</b> @Model.Order.ReleaseDate.Value.ToShortDateString()
-            </div>
-            <div class="col-md-4" align="right">
+                <br />
                 <b>Price:</b> @Model.Order.Price USD
+            </div>
+
+            <div class="col-md-6" align="right">
+                <div class="col-md-4" align="right">
+                    <img src="/Home/ViewImage/@Model.Customer.User.Login" onerror="this.src = '/Assets/MaleAvatar.jpg'"
+                         width="100%" />
+                </div>
+                <div class="col-md-8" align="left">
+                    <div class="row">
+                        <b>Customer:</b> <br />
+                        @Model.Order.Clients.Users.Name @Model.Order.Clients.Users.Surname<br />
+                    </div>
+                    <div class="row">
+                        @if (Model.Customer.Skype != string.Empty)
+                        {
+                            <span>
+                                <a href="skype:@Model.Customer.Skype?chat"><img src="/Assets/Skype.png" height="20px"></a>
+                                <a href="skype:@Model.Customer.Skype?chat">@Model.Customer.Skype</a>
+                            </span>
+                        }
+                    </div>
+                    <div class="row">
+                        @if (Model.Customer.Email != string.Empty)
+                        {
+                            <span>
+                                <a href="mailto:@Model.Customer.Email"><img src="~/Assets/Email.png" height="20px"></a>
+                                <a href="mailto:@Model.Customer.Email">@Model.Customer.Email</a>
+                            </span>
+                        }
+                    </div>
+                    <div class="row">
+                        <a href="/@Model.Customer.User.Login">View more</a>    
+                    
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -42,35 +106,35 @@
 </div>
 
 <div class="row" id="MyProjects">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <table class="table">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
 
-                        <thead>
-                            <tr>
-                                <th>
-                                    #
-                                </th>
-                                <th>
-                                    Name
-                                </th>
-                                <th>
-                                    Start date
-                                </th>
-                                <th>
-                                    Release date
-                                </th>
-                                <th>
-                                    Client
-                                </th>
-                                <th>
-                                    Status
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @*@for (int i = 0; i < Model.Order.Projects.Count; i++)
+                    <thead>
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Start date
+                            </th>
+                            <th>
+                                Release date
+                            </th>
+                            <th>
+                                Client
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*@for (int i = 0; i < Model.Order.Projects.Count; i++)
                             {
                                 <tr class="TableTr @(Model.Order.Projects[i] == "Done" ? "Done" : Model.Orders[i].Status == "InProgress" ?
                              "InProgress" : Model.Orders[i].Status == "Discarded" ? "Discarded" : string.Empty)"
@@ -96,18 +160,17 @@
                                     </td>
                                 </tr>
                             }*@
-                        </tbody>
-                    </table>
-                    <script>
-                        function Click(order)
-                        {
-                            window.location.href = "/Project/LoadOrder?OrderId=" + order;
-                        }
-                    </script>
-                </div>
+                    </tbody>
+                </table>
+                <script>
+                    function Click(order) {
+                        window.location.href = "/Project/LoadOrder?OrderId=" + order;
+                    }
+                </script>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 
