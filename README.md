@@ -1,4 +1,3 @@
-# ProjectManager
 # ProjectManagerSite
 ProjectManagerSite is the folder with ASP.NET application.
 # ProjectManager
