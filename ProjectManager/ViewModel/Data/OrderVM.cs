@@ -10,11 +10,11 @@ namespace PMView.View.WrapperVM
 {
     public class OrderVM : BaseVM, INotifyPropertyChanged
     {
+        private Order _order;
+
         public OrderVM()
         {
-
         }
-        private Order _order;
 
         public OrderVM(Order order)
         {

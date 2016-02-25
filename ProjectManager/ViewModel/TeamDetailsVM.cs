@@ -258,7 +258,7 @@ namespace PMView.View
             Logger.Info("Team details screen", $@"Details of team has been changed: {Environment.NewLine} 
             Name : {CurrentTeam.Name} to {Name} {Environment.NewLine} 
             Description : {CurrentTeam.Description} to {Description}");
-            if (positions!=null)
+            if (positions != null)
                 _savePositions(positions);
 
             CurrentTeam.Name = Name;

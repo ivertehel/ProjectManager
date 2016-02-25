@@ -56,9 +56,20 @@ namespace PMView
             FormTitle.Text = "Edit module";
         }
 
+        public void LoadData(object sender)
+        {
+            var skillWindow = sender as SkillWindowVM;
+
+            if (skillWindow != null)
+            {
+                fillCheckboxList();
+            }
+
+            _lastScreen.LoadData(sender);
+        }
+
         private void fillCheckboxList()
         {
-
             _skills.Clear();
             foreach (var item in SkillVM.Skills)
             {
@@ -87,6 +98,7 @@ namespace PMView
                         item.IsChecked = isExist == null ? false : isExist.IsChecked;
                     }
                 }
+
                 _savedSkills = null;
             }
         }
@@ -120,7 +132,6 @@ namespace PMView
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
                 _projectModuleEditVM.AddProject((from items in _skills where items.IsChecked == true select items.Content.ToString()).ToArray());
@@ -141,24 +152,10 @@ namespace PMView
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-
         }
 
         private void StateCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-        }
-
-        public void LoadData(object sender)
-        {
-            var skillWindow = sender as SkillWindowVM;
-
-            if (skillWindow != null)
-            {
-                fillCheckboxList();
-            }
-
-            _lastScreen.LoadData(sender);
         }
 
         private void AddProject_Click(object sender, RoutedEventArgs e)
@@ -180,7 +177,6 @@ namespace PMView
             {
                 if (ModulesDataGrid.SelectedItem != null)
                     (new ProjectModuleEdit(_projectModuleEditVM, _order, ModulesDataGrid.SelectedItem as ProjectVM, _projectModuleEditVM.ProjectVM)).Show();
-
             }
             catch (Exception ex)
             {
@@ -198,6 +194,5 @@ namespace PMView
                 }
             }
         }
-
     }
 }

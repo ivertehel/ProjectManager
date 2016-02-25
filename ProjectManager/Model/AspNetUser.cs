@@ -16,7 +16,6 @@ namespace PMDataLayer
 
         public AspNetUser()
         {
-
         }
 
         [Column]

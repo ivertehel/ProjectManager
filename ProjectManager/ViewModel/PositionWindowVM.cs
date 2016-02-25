@@ -13,7 +13,6 @@ namespace PMView
     {
         public PositionWindowVM(ILoadDataSender lastScreen) : base(lastScreen)
         {
-
         }
 
         public override ObservableCollection<PositionVM> EntityCollection
@@ -73,6 +72,7 @@ namespace PMView
             {
                 _savedCollection.Remove(_savedCollection.First(item => item.Name == SelectedEntity.Name));
             }
+
             Name = string.Empty;
             SelectedEntity = null;
             OnPropertyChanged("EntityCollection");
@@ -93,6 +93,7 @@ namespace PMView
                     find.Name = item.Name;
                 }
             }
+
             List<Position> toDelete = new List<Position>();
             foreach (var item in Position.Items)
             {
@@ -102,12 +103,14 @@ namespace PMView
                     toDelete.Add(item);
                 }
             }
+
             foreach (var item in toDelete)
             {
                 Users_Team.Items.RemoveAll(position => position.Position.Id == item.Id);
                 Users_Project.Items.RemoveAll(position => position.Position.Id == item.Id);
                 Position.Items.RemoveAll(position => position.Id == item.Id);
             }
+
             _savedCollection = null;
             SaveAllChangesButton = false;
             LoadData(_lastScreen);

@@ -34,13 +34,14 @@ namespace PMView
         public UsersDetails(IUser user, ILoadDataSender lastScreen)
         {
             InitializeComponent();
-            var u = (user as UserVM);
+            var u = user as UserVM;
             if (u.Login == null)
             {
                 u.Birthday = DateTime.Now;
                 u.Password = Guid.NewGuid().ToString();
                 u.Role = PMDataLayer.User.Roles.Client;
             }
+
             _user = user;
             _userDetailsVM = new UserDetailsVM(user as UserVM, lastScreen);
             DataContext = _userDetailsVM;
@@ -99,6 +100,7 @@ namespace PMView
             {
                 _userDetailsVM.BitmapImage = new BitmapImage(new Uri(Environment.CurrentDirectory + @"//Assets//MaleAvatar.jpg"));
             }
+
             _userDetailsVM.ButtonsActive = true;
         }
     }

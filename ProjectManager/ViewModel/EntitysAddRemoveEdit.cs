@@ -10,42 +10,6 @@ namespace PMView
 {
     public abstract class EntitysAddRemoveEdit<T> : INotifyPropertyChanged, ILoadDataSender
     {
-        protected ObservableCollection<T> _entityCollection = new ObservableCollection<T>();
-
-        protected string _name;
-
-        protected bool _addButton;
-
-        protected bool _editButton;
-
-        protected bool _removeButton;
-
-        protected bool _saveButton;
-
-        protected T _selectedEntity;
-
-        protected bool _editing;
-
-        protected bool _somethingChanged = false;
-
-        protected ObservableCollection<T> _savedCollection;
-
-        protected bool _saveAllChangesButton;
-
-        protected bool _cancelAllChangesButton;
-
-        protected ILoadDataSender _lastScreen;
-
-        public abstract void AddButtonClick();
-
-        public abstract void RemoveButtonClick();
-
-        public abstract void SaveButtonClick();
-
-        public abstract void SaveAllButtonClick();
-
-        protected abstract T getEntityByName(string name);
-
         public EntitysAddRemoveEdit(ILoadDataSender lastScreen)
         {
             _lastScreen = lastScreen;
@@ -57,23 +21,11 @@ namespace PMView
             SaveAllChangesButton = false;
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public virtual ObservableCollection<T> EntityCollection
         {
             get { return _entityCollection; }
-        }
-
-
-        public void CancelAllChangesButtonClick()
-        {
-            Name = string.Empty;
-            OnPropertyChanged("Name");
-            _savedCollection = null;
-            _somethingChanged = false;
-            CancelAllChangesButton = false;
-            SaveAllChangesButton = false;
-            OnPropertyChanged("CancelAllChangesButton");
-            OnPropertyChanged("EntityCollection");
-
         }
 
         public bool AddButton
@@ -85,7 +37,6 @@ namespace PMView
                 OnPropertyChanged("AddButton");
             }
         }
-
 
         public bool SaveAllChangesButton
         {
@@ -206,6 +157,7 @@ namespace PMView
                             SaveButton = true;
                     }
                 }
+
                 OnPropertyChanged("Name");
             }
         }
@@ -216,23 +168,69 @@ namespace PMView
             set { _selectedEntity = value; }
         }
 
+        protected string _name { get; set; }
+
+        protected bool _addButton { get; set; }
+
+        protected bool _editButton { get; set; }
+
+        protected bool _removeButton { get; set; }
+
+        protected bool _saveButton { get; set; }
+
+        protected T _selectedEntity { get; set; }
+
+        protected bool _editing { get; set; }
+
+        protected bool _somethingChanged { get; set; } = false;
+
+        protected ObservableCollection<T> _savedCollection { get; set; }
+
+        protected bool _saveAllChangesButton { get; set; }
+
+        protected bool _cancelAllChangesButton { get; set; }
+
+        protected ILoadDataSender _lastScreen { get; set; }
+
+        protected ObservableCollection<T> _entityCollection { get; set; } = new ObservableCollection<T>();
+
+        public abstract void AddButtonClick();
+
+        public abstract void RemoveButtonClick();
+
+        public abstract void SaveButtonClick();
+
+        public abstract void SaveAllButtonClick();
+
+        public void CancelAllChangesButtonClick()
+        {
+            Name = string.Empty;
+            OnPropertyChanged("Name");
+            _savedCollection = null;
+            _somethingChanged = false;
+            CancelAllChangesButton = false;
+            SaveAllChangesButton = false;
+            OnPropertyChanged("CancelAllChangesButton");
+            OnPropertyChanged("EntityCollection");
+        }
+
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private bool IsExist(string name)
-        {
-            return getEntityByName(name) == null ? false : true;
-        }
-
         public void LoadData(object sender)
         {
             OnPropertyChanged("EntityCollection");
             _lastScreen.LoadData(this);
+        }
+
+        protected abstract T getEntityByName(string name);
+
+        private bool IsExist(string name)
+        {
+            return getEntityByName(name) == null ? false : true;
         }
     }
 }

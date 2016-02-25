@@ -5497,3 +5497,10 @@
 25.02.2016 0:00:00 | 15:08:29.2876960:Info | Order screen | Details of Game for PlayMarket have been loaded
 25.02.2016 0:00:00 | 15:08:29.7527530:Info | Order screen | Details of Android app have been loaded
 25.02.2016 0:00:00 | 15:08:30.0903610:Info | Order screen | Details of Bank system have been loaded
+25.02.2016 0:00:00 | 16:31:15.1224117:Info | Details screen | Project details have been loaded
+25.02.2016 0:00:00 | 16:31:22.9974695:Info | Order screen | Details of Bank system have been loaded
+25.02.2016 0:00:00 | 16:31:23.6537930:Info | Order screen | Details of Android app have been loaded
+25.02.2016 0:00:00 | 16:33:30.9335852:Info | Details screen | Project details have been loaded
+25.02.2016 0:00:00 | 16:36:47.6210392:Info | Order screen | Details of Android app have been loaded
+25.02.2016 0:00:00 | 16:36:48.0595559:Info | Order screen | Details of Game for PlayMarket have been loaded
+25.02.2016 0:00:00 | 16:36:48.5068413:Info | Order screen | Details of Bank system have been loaded

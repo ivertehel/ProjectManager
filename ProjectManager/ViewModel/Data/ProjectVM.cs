@@ -14,7 +14,6 @@ namespace PMView.View.WrapperVM
 
         public ProjectVM()
         {
-
         }
 
         public ProjectVM(Project project)

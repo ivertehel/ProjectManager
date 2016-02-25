@@ -38,7 +38,6 @@ namespace PMDataLayer
             set { _positionId = value; }    
         }
 
-
         public User User
         {
             get { return User.Items.Where(items => items?.Id == _userId).FirstOrDefault(); }

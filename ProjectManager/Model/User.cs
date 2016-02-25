@@ -17,6 +17,20 @@ namespace PMDataLayer
         private Statuses _status;
         private States _state;
 
+        static User()
+        {
+            _countries = new List<string>();
+            using (StreamReader reader = new StreamReader("Countries.txt"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    _countries.Add(reader.ReadLine());
+                }
+
+                reader.Close();
+            }
+        }
+
         public enum Roles
         {
             NotChosen,
@@ -39,6 +53,11 @@ namespace PMDataLayer
             NotReady,
             Ready,
             UnInvited
+        }
+
+        public static List<string> Countries
+        {
+            get { return _countries; }
         }
 
         [Column]
@@ -196,29 +215,14 @@ namespace PMDataLayer
             get { return from items in Users_Team.Items where items.User.Id == Id select items.Team; }
         }
 
-        static User()
-        {
-            _countries = new List<string>();
-            using (StreamReader reader = new StreamReader("Countries.txt"))
-            {
-                while (!reader.EndOfStream)
-                {
-                    _countries.Add(reader.ReadLine());
-                }
-                reader.Close();
-            }
-        }
-
         public void RegisterUser()
         {
             string hash = getPassHash(Password);
             var aspUser = new AspNetUser(Login) { Email = Email, PasswordHash = hash, SecurityStamp = Guid.NewGuid().ToString() };
             AspNetRole.Update();
             AspNetUser.Insert(aspUser);
-
             ClientProfile.Insert(new ClientProfile(aspUser.Id) { UserId = Id.ToString() });
             AspNetUserRole.Insert(new AspNetUserRole() { UserId = aspUser.Id, RoleId = AspNetRole.Items.FirstOrDefault(item => item.Name == Role.ToLower()).Id });
-
         }
 
         public string getPassHash(string password)
@@ -229,20 +233,17 @@ namespace PMDataLayer
             {
                 throw new ArgumentNullException("password");
             }
+
             using (Rfc2898DeriveBytes bytes = new Rfc2898DeriveBytes(password, 0x10, 0x3e8))
             {
                 salt = bytes.Salt;
                 buffer2 = bytes.GetBytes(0x20);
             }
+
             byte[] dst = new byte[0x31];
             Buffer.BlockCopy(salt, 0, dst, 1, 0x10);
             Buffer.BlockCopy(buffer2, 0, dst, 0x11, 0x20);
             return Convert.ToBase64String(dst);
-        }
-
-        public static List<string> Countries
-        {
-            get { return _countries; }
         }
 
         public override string ToString()

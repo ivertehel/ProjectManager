@@ -109,17 +109,14 @@ namespace PMView.View
 
         private void AddOrder_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void EditOrder_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void RemoveOrder_Click(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

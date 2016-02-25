@@ -35,7 +35,6 @@ namespace PMView.View
 
         private void ClientsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-
         }
 
         private void AddClient_Click(object sender, RoutedEventArgs e)
@@ -45,12 +44,10 @@ namespace PMView.View
 
         private void EditClient_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void RemoveClient_Click(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

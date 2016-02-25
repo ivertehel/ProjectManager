@@ -11,13 +11,12 @@ namespace PMView.View.WrapperVM
 {
     public class SkillVM : BaseVM
     {
-        private Skill _skill;
-
         private static List<SkillVM> _skills = new List<SkillVM>();
+
+        private Skill _skill;
 
         public SkillVM()
         {
-
         }
 
         public SkillVM(Skill skill)
@@ -25,12 +24,6 @@ namespace PMView.View.WrapperVM
             _skill = skill;
         }
 
-        public Skill Skill
-        {
-            get { return _skill; }
-            set { _skill = value; }
-        }
-       
         public static List<SkillVM> Skills
         {
             get
@@ -41,8 +34,14 @@ namespace PMView.View.WrapperVM
                     _skills.Add(new SkillVM(item));
                 }
 
-                return _skills; 
+                return _skills;
             }
+        }
+
+        public Skill Skill
+        {
+            get { return _skill; }
+            set { _skill = value; }
         }
 
         public string Name

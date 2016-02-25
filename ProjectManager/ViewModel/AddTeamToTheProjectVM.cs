@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMView.View
 {
-    class AddTeamToTheProjectVM : INotifyPropertyChanged, ILoadDataSender
+    public class AddTeamToTheProjectVM : INotifyPropertyChanged, ILoadDataSender
     {
         private AddTeamToTheProject _addTeamToTheProject;
         private ILoadDataSender _lastScreen;
@@ -33,6 +33,8 @@ namespace PMView.View
             foreach (var item in projectModuleEditVM.TeamsCollection)
                 _teamsToAddCollection.Add(item);
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public List<string> SelectedSkills
         {
@@ -76,6 +78,7 @@ namespace PMView.View
                 OnPropertyChanged("AddButton");
             }
         }
+
         public bool DetailsButton
         {
             get { return _detailsButton; }
@@ -85,6 +88,7 @@ namespace PMView.View
                 OnPropertyChanged("DetailsButton");
             }
         }
+
         public bool SaveButton
         {
             get { return _saveButton; }
@@ -107,7 +111,7 @@ namespace PMView.View
 
         public void RemoveButtonClick(TeamVM team)
         {
-            if (_teamsToAddCollection.Where(item => item.Team.Id == team.Team.Id ).Count() != 0)
+            if (_teamsToAddCollection.Where(item => item.Team.Id == team.Team.Id).Count() != 0)
             {
                 var toDelete = _teamsToAddCollection.First(item => item.Team.Id == team.Team.Id);
                 _teamsToAddCollection.Remove(toDelete);
@@ -120,8 +124,6 @@ namespace PMView.View
                 LoadData(this);
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public void SaveButton_Click()
         {
@@ -137,29 +139,6 @@ namespace PMView.View
             if (PropertyChanged != null)
             {
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        private void filterTeamsCollection()
-        {
-            var teams = _teamsCollection.ToList();
-            if (!string.IsNullOrEmpty(Name))
-                teams.RemoveAll(item => !item.Name.ToUpper().StartsWith(Name.ToUpper()));
-
-            if (_selectedSkills.Count != 0)
-            {
-                List<string> skillNames = new List<string>();
-
-                foreach (var item in _selectedSkills)
-                {
-                    teams.RemoveAll(team => team.Skills.Where(skill => skill.Name == item).FirstOrDefault() == null);
-                }
-            }
-
-            _teamsCollection.Clear();
-            foreach (var item in teams)
-            {
-                _teamsCollection.Add(item);
             }
         }
 
@@ -210,5 +189,27 @@ namespace PMView.View
             OnPropertyChanged("TeamsCollection");
         }
 
+        private void filterTeamsCollection()
+        {
+            var teams = _teamsCollection.ToList();
+            if (!string.IsNullOrEmpty(Name))
+                teams.RemoveAll(item => !item.Name.ToUpper().StartsWith(Name.ToUpper()));
+
+            if (_selectedSkills.Count != 0)
+            {
+                List<string> skillNames = new List<string>();
+
+                foreach (var item in _selectedSkills)
+                {
+                    teams.RemoveAll(team => team.Skills.Where(skill => skill.Name == item).FirstOrDefault() == null);
+                }
+            }
+
+            _teamsCollection.Clear();
+            foreach (var item in teams)
+            {
+                _teamsCollection.Add(item);
+            }
+        }
     }
 }

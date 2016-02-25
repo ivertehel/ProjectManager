@@ -15,7 +15,6 @@ namespace PMView
     {
         public SkillWindowVM(ILoadDataSender lastScreen) : base(lastScreen)
         {
-          
         }
 
         public override ObservableCollection<SkillVM> EntityCollection
@@ -29,11 +28,13 @@ namespace PMView
                     {
                         _newCol.Add(item);
                     }
+
                     _savedCollection.Clear();
                     foreach (var item in _newCol)
                     {
                         _savedCollection.Add(item);
                     }
+
                     return _savedCollection;
                 }
 
@@ -71,8 +72,9 @@ namespace PMView
             _somethingChanged = true;
             if (SelectedEntity != null)
             {
-                _savedCollection.Remove(_savedCollection.First(item=>item.Name == SelectedEntity.Name));
+                _savedCollection.Remove(_savedCollection.First(item => item.Name == SelectedEntity.Name));
             }
+
             Name = string.Empty;
             SelectedEntity = null;
             OnPropertyChanged("EntityCollection");
@@ -104,6 +106,7 @@ namespace PMView
                     find.Name = item.Name;
                 }
             }
+
             List<Skill> toDelete = new List<Skill>();
             foreach (var item in Skill.Items)
             {
@@ -113,12 +116,14 @@ namespace PMView
                     toDelete.Add(item);
                 }
             }
+
             foreach (var item in toDelete)
             {
                 User_Skill.Items.RemoveAll(skill => skill.Skill.Id == item.Id);
                 Projects_Skill.Items.RemoveAll(skill => skill.Skill.Id == item.Id);
                 Skill.Items.RemoveAll(skill => skill.Id == item.Id);
             }
+
             _savedCollection = null;
             SaveAllChangesButton = false;
             LoadData(_lastScreen);

@@ -10,6 +10,12 @@ namespace PMDataLayer
     [Table]
     public class Order : Entity<Order>, ICloneable
     {
+        private Guid _clientId;
+
+        private Statuses _status;
+
+        private bool _isPrivate;
+
         public enum Statuses
         {
             Done,
@@ -103,9 +109,5 @@ namespace PMDataLayer
             newOrder.Id = new Guid();
             return newOrder;
         }
-
-        private Guid _clientId;
-        private Statuses _status;
-        private bool _isPrivate;
     }
 }

@@ -15,7 +15,6 @@ namespace PMView.View.WrapperVM
 
         public User_TeamVM()
         {
-
         }
 
         public User_TeamVM(Users_Team userTeam)

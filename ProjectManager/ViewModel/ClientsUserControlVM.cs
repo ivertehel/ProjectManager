@@ -182,10 +182,7 @@ namespace PMView.View
 
         public void LoadData(object sender)
         {
-
             OnPropertyChanged("ClientsCollection");
-
-            
         }
     }
 }

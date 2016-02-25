@@ -62,6 +62,8 @@ namespace PMView.View
             LoadData(this);
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public List<User_ProjectVM> SavedPositions
         {
             get { return _savedPositions; }
@@ -82,6 +84,7 @@ namespace PMView.View
                         _savedPositions.Add(new User_ProjectVM(item));
                     }
                 }
+
                 _employeesPositions.Clear();
                 if (SelectedEmployeeToDelete != null)
                 foreach (var elem in (from items in _savedPositions where items.User.Id == SelectedEmployeeToDelete.User.Id select items.Position.Name).ToList())
@@ -92,9 +95,6 @@ namespace PMView.View
                 return _employeesPositions; 
             }
         }
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public List<string> SelectedSkills
         {
@@ -288,16 +288,6 @@ namespace PMView.View
             }
         }
 
-        public void SavePositionsClick(List<string> positions)
-        {
-
-            _savedPositions.RemoveAll(item => item.User.Id == SelectedEmployeeToDelete.User.Id);
-            foreach (var item in positions)
-            {
-                _savedPositions.Add(new User_ProjectVM(new Users_Project() { Position = Position.Items.FirstOrDefault(pos => pos.Name == item), Project = _projectModuleEditVM.ProjectVM.Project, User = SelectedEmployeeToDelete.User }));
-            }
-        }
-
         public ObservableCollection<UserVM> EmployeesToAddCollection
         {
             get
@@ -322,6 +312,15 @@ namespace PMView.View
             }
         }
 
+        public void SavePositionsClick(List<string> positions)
+        {
+            _savedPositions.RemoveAll(item => item.User.Id == SelectedEmployeeToDelete.User.Id);
+            foreach (var item in positions)
+            {
+                _savedPositions.Add(new User_ProjectVM(new Users_Project() { Position = Position.Items.FirstOrDefault(pos => pos.Name == item), Project = _projectModuleEditVM.ProjectVM.Project, User = SelectedEmployeeToDelete.User }));
+            }
+        }
+
         public void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -337,7 +336,6 @@ namespace PMView.View
 
         public void AddButtonClick(UserVM user)
         {
-            
             if (_employeesToAddCollection.Where(item => item.Equals(user)).Count() == 0)
             {
                 _employeesToAddCollection.Add(user);
@@ -387,7 +385,6 @@ namespace PMView.View
             LoadData(this);
         }
 
-
         public void RemoveButtonClick(UserVM user)
         {
             if (_employeesToAddCollection.Where(item => item.User.Id == user.User.Id).Count() != 0)
@@ -403,6 +400,16 @@ namespace PMView.View
                 OnPropertyChanged("SaveButton");
                 LoadData(this);
             }
+        }
+
+        public void LoadData(object sender)
+        {
+            OnPropertyChanged("EmployeesPositions");
+            OnPropertyChanged("EmployeesToAddCollection");
+            OnPropertyChanged("SkillsCollection");
+            OnPropertyChanged("EmployeesCollection");
+            if (_lastScreen != null)
+                _lastScreen.LoadData(sender);
         }
 
         private void filterEmployeesCollection()
@@ -447,16 +454,6 @@ namespace PMView.View
             {
                 _employeesCollection.Add(item);
             }
-        }
-
-        public void LoadData(object sender)
-        {
-            OnPropertyChanged("EmployeesPositions");
-            OnPropertyChanged("EmployeesToAddCollection");
-            OnPropertyChanged("SkillsCollection");
-            OnPropertyChanged("EmployeesCollection");
-            if (_lastScreen != null)
-                _lastScreen.LoadData(sender);
         }
     }
 }

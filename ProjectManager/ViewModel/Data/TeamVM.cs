@@ -20,7 +20,6 @@ namespace PMView.View.WrapperVM
 
         public TeamVM()
         {
-
         }
 
         public Team Team
@@ -51,11 +50,6 @@ namespace PMView.View.WrapperVM
             get { return from items in Users_Team.Items where items.Team.Id == _team.Id select items; }
         }
 
-        public override string ToString()
-        {
-            return _team.ToString();
-        }
-
         public IEnumerable<SkillVM> Skills
         {
             get
@@ -77,6 +71,11 @@ namespace PMView.View.WrapperVM
 
                 return skills;
             }
+        }
+
+        public override string ToString()
+        {
+            return _team.ToString();
         }
     }
 }

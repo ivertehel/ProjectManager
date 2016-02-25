@@ -19,7 +19,6 @@ namespace PMView.View.WrapperVM
 
         public TaskVM()
         {
-
         }
 
         public Task Task

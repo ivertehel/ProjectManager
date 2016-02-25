@@ -38,8 +38,6 @@ namespace PMView.View
         private ObservableCollection<SkillVM> _skillsCollection = new ObservableCollection<SkillVM>();
         private ObservableCollection<User.Statuses> _statuses = new ObservableCollection<User.Statuses>();
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public AddEmployeeToTheTeamVM(ILoadDataSender lastScreen, TeamDetailsVM teamDetailsVM, AttachEmployee attachEmployee)
         {
             _lastScreen = lastScreen;
@@ -48,6 +46,8 @@ namespace PMView.View
             foreach (var item in _teamDetailsVM.EmployeesCollection)
                 _employeesToAddCollection.Add(item);
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name
         {
@@ -85,7 +85,6 @@ namespace PMView.View
             set { _country = value; }
         }
 
-
         public ObservableCollection<UserVM> EmployeesToAddCollection
         {
             get
@@ -117,7 +116,6 @@ namespace PMView.View
                 return usedCountries;
             }
         }
-
 
         public ObservableCollection<User.Statuses> Statuses
         {
@@ -183,50 +181,6 @@ namespace PMView.View
             }
         }
 
-        private void filterEmployeesCollection()
-        {
-            var employees = _employeesCollection.ToList();
-            if (!string.IsNullOrEmpty(Name))
-                employees.RemoveAll(item => !item.Name.ToUpper().StartsWith(Name.ToUpper()));
-
-            if (!string.IsNullOrEmpty(Surname))
-                employees.RemoveAll(item => !item.Surname.ToUpper().StartsWith(Surname.ToUpper()));
-
-            if (!string.IsNullOrEmpty(Login))
-                employees.RemoveAll(item => !item.Login.ToUpper().StartsWith(Login.ToUpper()));
-
-            if (!string.IsNullOrEmpty(Skype))
-                employees.RemoveAll(item => !item.Skype.ToUpper().StartsWith(Skype.ToUpper()));
-
-            if (!string.IsNullOrEmpty(Email))
-                employees.RemoveAll(item => !item.Email.ToUpper().StartsWith(Email.ToUpper()));
-
-            if (Country != "NotChosen")
-                employees.RemoveAll(item => item.Country != Country);
-
-            if (Status != User.Statuses.NotChosen)
-                employees.RemoveAll(item => item.Status != Status);
-
-            if (State != User.States.NotChosen)
-                employees.RemoveAll(item => item.State != State);
-
-            if (_selectedSkills.Count != 0)
-            {
-                List<string> skillNames = new List<string>();
-
-                foreach (var item in _selectedSkills)
-                {
-                    employees.RemoveAll(employee => employee.Skills.Where(skill => skill.Name == item).FirstOrDefault() == null);
-                }
-            }
-
-            _employeesCollection.Clear();
-            foreach (var item in employees)
-            {
-                _employeesCollection.Add(item);
-            }
-        }
-
         public ObservableCollection<string> EmployeesPositions
         {
             get
@@ -256,7 +210,6 @@ namespace PMView.View
             }
         }
 
-
         public bool RemoveButton
         {
             get { return _removeButton; }
@@ -284,7 +237,6 @@ namespace PMView.View
             get { return _profileButton; }
             set { _profileButton = value; }
         }
-
 
         public bool SavePositionButton
         {
@@ -417,6 +369,50 @@ namespace PMView.View
             foreach (var item in positions)
             {
                 _savedPositions.Add(new User_TeamVM(new Users_Team() { Position = Position.Items.FirstOrDefault(pos => pos.Name == item), IsLeader = false, Team = _teamDetailsVM.CurrentTeam.Team, User = SelectedEmployeeToDelete.User }));
+            }
+        }
+
+        private void filterEmployeesCollection()
+        {
+            var employees = _employeesCollection.ToList();
+            if (!string.IsNullOrEmpty(Name))
+                employees.RemoveAll(item => !item.Name.ToUpper().StartsWith(Name.ToUpper()));
+
+            if (!string.IsNullOrEmpty(Surname))
+                employees.RemoveAll(item => !item.Surname.ToUpper().StartsWith(Surname.ToUpper()));
+
+            if (!string.IsNullOrEmpty(Login))
+                employees.RemoveAll(item => !item.Login.ToUpper().StartsWith(Login.ToUpper()));
+
+            if (!string.IsNullOrEmpty(Skype))
+                employees.RemoveAll(item => !item.Skype.ToUpper().StartsWith(Skype.ToUpper()));
+
+            if (!string.IsNullOrEmpty(Email))
+                employees.RemoveAll(item => !item.Email.ToUpper().StartsWith(Email.ToUpper()));
+
+            if (Country != "NotChosen")
+                employees.RemoveAll(item => item.Country != Country);
+
+            if (Status != User.Statuses.NotChosen)
+                employees.RemoveAll(item => item.Status != Status);
+
+            if (State != User.States.NotChosen)
+                employees.RemoveAll(item => item.State != State);
+
+            if (_selectedSkills.Count != 0)
+            {
+                List<string> skillNames = new List<string>();
+
+                foreach (var item in _selectedSkills)
+                {
+                    employees.RemoveAll(employee => employee.Skills.Where(skill => skill.Name == item).FirstOrDefault() == null);
+                }
+            }
+
+            _employeesCollection.Clear();
+            foreach (var item in employees)
+            {
+                _employeesCollection.Add(item);
             }
         }
     }

@@ -11,13 +11,13 @@ namespace PMDataLayer
     {
         public ClientProfile()
         {
-
         }
 
         public ClientProfile(string id)
         {
             Id = id;
         }
+
         [Column]
         public string Id { get; set; }
 

@@ -41,7 +41,6 @@ namespace PMView.View
             _employeeDetailsUserControlVM = new EmployeeDetailsUserControlVM(employee, lastScreen);
             DataContext = _employeeDetailsUserControlVM;
             LoadSkills();
-
         }
 
         public void LoadSkills()
@@ -62,11 +61,6 @@ namespace PMView.View
             }
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            _userDetailsVM.OneOrMoreFieldsWereUpdated();
-        }
-
         public void SaveChanges()
         {
             List<string> newSkills = new List<string>();
@@ -79,9 +73,19 @@ namespace PMView.View
             _employeeDetailsUserControlVM.SaveChanges(newSkills);
         }
 
+        public void LoadData(object sender)
+        {
+            fillCheckboxList();
+            _lastScreen.LoadData(this);
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            _userDetailsVM.OneOrMoreFieldsWereUpdated();
+        }
+
         private void fillCheckboxList()
         {
-
             _skills.Clear();
             foreach (var item in SkillVM.Skills)
             {
@@ -108,8 +112,8 @@ namespace PMView.View
                     item.IsChecked = isExist == null ? false : isExist.IsChecked;
                 }
             }
-            _savedSkills = null;
 
+            _savedSkills = null;
         }
 
         private void AddSkill_Click(object sender, RoutedEventArgs e)
@@ -121,12 +125,6 @@ namespace PMView.View
             }
 
             (new SkillWindow(this)).Show();
-        }
-
-        public void LoadData(object sender)
-        {
-            fillCheckboxList();
-            _lastScreen.LoadData(this);
         }
     }
 }

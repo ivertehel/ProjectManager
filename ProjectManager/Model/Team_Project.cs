@@ -9,12 +9,12 @@ namespace PMDataLayer
     [Table]
     public class Team_Project : Entity<Team_Project>
     {
-        [Column]
-        public Guid Id { get; set; } = Guid.NewGuid();
-
         private Guid _projectId;
 
         private Guid _teamId;
+
+        [Column]
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         [Column]
         public Guid TeamId

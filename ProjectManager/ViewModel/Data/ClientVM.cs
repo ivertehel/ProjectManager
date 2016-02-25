@@ -87,6 +87,5 @@ namespace PMView.View.WrapperVM
                 return (new UserVM(_client.User)).BitmapImage;
             }
         }
-
     }
 }

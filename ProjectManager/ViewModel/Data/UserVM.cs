@@ -15,34 +15,8 @@ namespace PMView.View.WrapperVM
     {
         private User _user;
 
-
-        public static byte[] GetJPGImageBytes(BitmapImage imageC)
+        public UserVM()
         {
-            MemoryStream memStream = new MemoryStream();
-            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(imageC));
-            encoder.Save(memStream);
-            return memStream.ToArray();
-        }
-
-        public static byte[] GetPNGImageBytes(BitmapImage imageC)
-        {
-            MemoryStream memStream = new MemoryStream();
-            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(imageC));
-            encoder.Save(memStream);
-            return memStream.ToArray();
-        }
-
-
-        public static string TypeOfImage(string file)
-        {
-            string fileType = file.Remove(0, file.LastIndexOf('.'));
-            if (fileType == ".jpg" || fileType == ".jpeg" || fileType == ".JPG" || fileType == ".JPEG" || fileType == ".png" || fileType == ".PNG")
-            {
-                return fileType.Remove(0, 1).ToUpper();
-            }
-            return string.Empty;
         }
 
         public UserVM(User user)
@@ -60,11 +34,6 @@ namespace PMView.View.WrapperVM
         {
             get { return _user?.Name; }
             set { _user.Name = value; }
-        }
-
-        public UserVM()
-        {
-
         }
 
         public string Surname
@@ -119,7 +88,7 @@ namespace PMView.View.WrapperVM
         {
             get
             {
-                if (Image == null || Image.Length == 0) return  new BitmapImage(new Uri(Environment.CurrentDirectory + @"//Assets//MaleAvatar.jpg"));
+                if (Image == null || Image.Length == 0) return new BitmapImage(new Uri(Environment.CurrentDirectory + @"//Assets//MaleAvatar.jpg"));
                 var image = new BitmapImage();
                 try
                 {
@@ -133,13 +102,14 @@ namespace PMView.View.WrapperVM
                         image.StreamSource = mem;
                         image.EndInit();
                     }
+
                     image.Freeze();
                 }
                 catch
                 {
                     image = new BitmapImage(new Uri(Environment.CurrentDirectory + @"//Assets//MaleAvatar.jpg"));
-
                 }
+
                 return image;
             }
         }
@@ -203,36 +173,38 @@ namespace PMView.View.WrapperVM
             get { return _user.Teams; }
         }
 
+        public static byte[] GetJPGImageBytes(BitmapImage imageC)
+        {
+            MemoryStream memStream = new MemoryStream();
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageC));
+            encoder.Save(memStream);
+            return memStream.ToArray();
+        }
+
+        public static byte[] GetPNGImageBytes(BitmapImage imageC)
+        {
+            MemoryStream memStream = new MemoryStream();
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageC));
+            encoder.Save(memStream);
+            return memStream.ToArray();
+        }
+
+        public static string TypeOfImage(string file)
+        {
+            string fileType = file.Remove(0, file.LastIndexOf('.'));
+            if (fileType == ".jpg" || fileType == ".jpeg" || fileType == ".JPG" || fileType == ".JPEG" || fileType == ".png" || fileType == ".PNG")
+            {
+                return fileType.Remove(0, 1).ToUpper();
+            }
+
+            return string.Empty;
+        }
+
         public override string ToString()
         {
             return Name + " " + Surname;
-        }
-
-        public override bool Equals(object obj)
-        {
-            var item = obj as User;
-            if (item != null)
-            {
-                if (item.Id == User.Id)
-                    return true;
-            }
-            var userVM = obj as UserVM;
-
-            if (item != null)
-            {
-                if (item.Name == Name && item.Surname == Surname && item.Skype == Skype && item.State.ToString() == State.ToString()
-               && item.Status.ToString() == Status.ToString() && item.Description == Description && item.Country == Country)
-                    return true;
-            }
-
-            if (userVM != null)
-            {
-                if (userVM.Name == Name && userVM.Surname == Surname && userVM.Skype == Skype && userVM.State.ToString() == State.ToString()
-               && userVM.Status.ToString() == Status.ToString() && userVM.Description == Description && userVM.Country == Country)
-                    return true;
-            }
-
-            return false;
         }
 
         private byte[] getJPGImageBytes(BitmapImage imageC)

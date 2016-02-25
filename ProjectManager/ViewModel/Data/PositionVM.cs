@@ -10,18 +10,31 @@ namespace PMView.View.WrapperVM
 {
     public class PositionVM : BaseVM
     {
-        private Position _position;
         private static List<PositionVM> _positions = new List<PositionVM>();
 
+        private Position _position;
 
         public PositionVM()
         {
-
         }
 
         public PositionVM(Position position)
         {
             _position = position;
+        }
+
+        public static List<PositionVM> Positions
+        {
+            get
+            {
+                _positions.Clear();
+                foreach (var item in Position.Items)
+                {
+                    _positions.Add(new PositionVM(item));
+                }
+
+                return _positions;
+            }
         }
 
         public Position Position
@@ -54,20 +67,6 @@ namespace PMView.View.WrapperVM
         public PositionVM Clone()
         {
             return new PositionVM(new Position() { Name = Name, Id = Position.Id });
-        }
-
-        public static List<PositionVM> Positions
-        {
-            get
-            {
-                _positions.Clear();
-                foreach (var item in Position.Items)
-                {
-                    _positions.Add(new PositionVM(item));
-                }
-
-                return _positions;
-            }
         }
     }
 }

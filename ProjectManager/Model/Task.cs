@@ -10,9 +10,6 @@ namespace PMDataLayer
     {
         private Guid _projectId;
 
-        [Column]
-        public Guid Id { get; set; } = Guid.NewGuid();
-
         public enum Owners
         {
             Team,
@@ -28,6 +25,9 @@ namespace PMDataLayer
         {
             get { return Task.Items.Where(items => items.Owner == Owners.Team); }
         }
+
+        [Column]
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         public Guid OwnerId { get; set; }
 

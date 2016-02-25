@@ -50,6 +50,35 @@ namespace PMView
             fillCheckboxList();
         }
 
+        public void LoadData(object sender)
+        {
+            if (sender is SkillWindowVM)
+                fillCheckboxList();
+
+            _positions = new List<CheckBox>();
+            if (_addEmployeeVM == null)
+                return;
+
+            var employeesPositions = _addEmployeeVM.EmployeesPositions;
+
+            foreach (var item in Position.Items)
+            {
+                var cb = new CheckBox();
+                cb.Content = item.Name;
+                _positions.Add(cb);
+                cb.IsChecked = employeesPositions.Contains(item.Name) ? true : false;
+                cb.Click += new System.Windows.RoutedEventHandler(this.PositionCheckBox_Checked);
+            }
+
+            PositionListBox.Items.Clear();
+            foreach (var item in _positions)
+            {
+                PositionListBox.Items.Add(item);
+            }
+            
+            _lastScreen.LoadData(sender);
+        }
+
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             _addEmployeeVM.SelectedSkills.Clear();
@@ -156,7 +185,7 @@ namespace PMView
                 _selectedEmployeeToAdd = (UserVM)EmployeesToAddListBox.SelectedItem;
                 _addEmployeeVM.ActivateButtons(_selectedEmployeeToAdd);
                 PositionsGrid.Visibility = Visibility.Visible;
-                _addEmployeeVM.SelectedEmployeeToDelete = (EmployeesToAddListBox.SelectedItem as UserVM);
+                _addEmployeeVM.SelectedEmployeeToDelete = EmployeesToAddListBox.SelectedItem as UserVM;
                 _positions = new List<CheckBox>();
                 var employeesPositions = _addEmployeeVM.EmployeesPositions;
 
@@ -195,8 +224,7 @@ namespace PMView
         }
 
         private void SaveAllButton_Click(object sender, RoutedEventArgs e)
-        { 
-
+        {
             try
             {
                 _addEmployeeVM.SaveButtonClick();
@@ -234,39 +262,9 @@ namespace PMView
             }
         }
 
-
         private void AddPositions_Click(object sender, RoutedEventArgs e)
         {
             (new PositionWindow(_addEmployeeVM)).Show();
-        }
-
-        public void LoadData(object sender)
-        {
-            if (sender is SkillWindowVM)
-                fillCheckboxList();
-
-            _positions = new List<CheckBox>();
-            if (_addEmployeeVM == null)
-                return;
-
-            var employeesPositions = _addEmployeeVM.EmployeesPositions;
-
-            foreach (var item in Position.Items)
-            {
-                var cb = new CheckBox();
-                cb.Content = item.Name;
-                _positions.Add(cb);
-                cb.IsChecked = employeesPositions.Contains(item.Name) ? true : false;
-                cb.Click += new System.Windows.RoutedEventHandler(this.PositionCheckBox_Checked);
-            }
-
-            PositionListBox.Items.Clear();
-            foreach (var item in _positions)
-            {
-                PositionListBox.Items.Add(item);
-            }
-            
-            _lastScreen.LoadData(sender);
         }
     }
 }

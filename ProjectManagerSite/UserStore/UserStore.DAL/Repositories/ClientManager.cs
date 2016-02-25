@@ -7,6 +7,7 @@ namespace UserStore.DAL.Repositories
     public class ClientManager : IClientManager
     {
         public ApplicationContext Database { get; set; }
+
         public ClientManager(ApplicationContext db)
         {
             Database = db;

@@ -34,6 +34,7 @@ namespace PMView
             {
                 _positionWindowVM.Name = PositionsListBox.SelectedItem.ToString();
             }
+
             PositionsListBox.SelectedItem = null;
         }
 

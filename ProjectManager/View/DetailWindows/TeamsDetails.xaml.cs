@@ -44,6 +44,12 @@ namespace PMView
             DataContext = _teamDetailsVM;
         }
 
+        public void LoadData(object sender)
+        {
+            _teamDetailsVM.LoadData();
+            _lastScreen.LoadData(this);
+        }
+
         private void EmployeesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (EmployeesListBox.SelectedItem == null)
@@ -112,12 +118,6 @@ namespace PMView
         private void AddEmployee_Click(object sender, RoutedEventArgs e)
         {
             (new AttachEmployee(this, _teamDetailsVM)).Show();
-        }
-
-        public void LoadData(object sender)
-        {
-            _teamDetailsVM.LoadData();
-            _lastScreen.LoadData(this);
         }
     }
 }

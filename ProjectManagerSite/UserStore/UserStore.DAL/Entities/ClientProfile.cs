@@ -8,7 +8,9 @@ namespace UserStore.DAL.Entities
         [Key]
         [ForeignKey("ApplicationUser")]
         public string Id { get; set; }
+
         public string UserId { get; set; }
+
         public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

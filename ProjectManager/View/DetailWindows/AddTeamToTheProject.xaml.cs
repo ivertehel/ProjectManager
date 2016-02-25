@@ -38,6 +38,12 @@ namespace PMView
             fillCheckboxList();
         }
 
+        public void LoadData(object sender)
+        {
+            fillCheckboxList();
+            _lastScreen.LoadData(sender);
+        }
+
         private void fillCheckboxList()
         {
             _skills.Clear();
@@ -59,7 +65,6 @@ namespace PMView
             _addTeamToTheProject.SelectedSkills.AddRange((from items in _skills where items.IsChecked == true select items.Content.ToString()).ToList());
             _addTeamToTheProject.OnPropertyChanged("TeamsCollection");
         }
-
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
@@ -97,7 +102,6 @@ namespace PMView
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void DetailsButton_Click(object sender, RoutedEventArgs e)
@@ -111,12 +115,6 @@ namespace PMView
             _addTeamToTheProject.SaveButton_Click();
         }
 
-        public void LoadData(object sender)
-        {
-            fillCheckboxList();
-            _lastScreen.LoadData(sender);
-        }
-
         private void TeamsToAddListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (TeamsToAddListBox.SelectedItem != null)
@@ -125,7 +123,6 @@ namespace PMView
 
                 _addTeamToTheProject.ActivateButtons(_selectedTeamToAdd);
             }
-
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

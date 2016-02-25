@@ -13,8 +13,12 @@ namespace UserStore.DAL.Repositories
         private ApplicationContext db;
 
         private ApplicationUserManager userManager;
+
         private ApplicationRoleManager roleManager;
+
         private IClientManager clientManager;
+
+        private bool disposed = false;
 
         public IdentityUnitOfWork(string connectionString)
         {
@@ -49,7 +53,6 @@ namespace UserStore.DAL.Repositories
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-        private bool disposed = false;
 
         public virtual void Dispose(bool disposing)
         {
@@ -61,6 +64,7 @@ namespace UserStore.DAL.Repositories
                     roleManager.Dispose();
                     clientManager.Dispose();
                 }
+
                 this.disposed = true;
             }
         }

@@ -1,10 +1,10 @@
 <stylecopresultscache>
   <version>12</version>
-  <sourcecode name="Logger.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2015.11.27 19:51:34.398</styleCop>
       <settingsFile>2015.11.27 19:51:34.371</settingsFile>
-      <sourceFile>2015.12.21 05:56:44.708</sourceFile>
+      <sourceFile>2016.01.25 20:27:27.779</sourceFile>
       <parser>2015.11.27 19:51:34.398</parser>
       <StyleCop.CSharp.DocumentationRules>2015.11.27 19:51:34.398</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1511543750</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -21,19 +21,13 @@
       <StyleCop.CSharp.SpacingRules>2015.11.27 19:51:34.398</StyleCop.CSharp.SpacingRules>
       <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
     </timestamps>
-    <violations>
-      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="AccessModifierMustBeDeclared" ruleCheckId="SA1400">
-        <context>The field must have an access modifier.</context>
-        <line>15</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
+    <violations />
   </sourcecode>
-  <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
+  <sourcecode name="Logger.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2015.11.27 19:51:34.398</styleCop>
       <settingsFile>2015.11.27 19:51:34.371</settingsFile>
-      <sourceFile>2015.12.09 18:56:36.595</sourceFile>
+      <sourceFile>2016.02.25 15:43:58.795</sourceFile>
       <parser>2015.11.27 19:51:34.398</parser>
       <StyleCop.CSharp.DocumentationRules>2015.11.27 19:51:34.398</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1511543750</StyleCop.CSharp.DocumentationRules.FilesHashCode>

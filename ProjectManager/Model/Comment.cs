@@ -10,9 +10,6 @@ namespace PMDataLayer
     {
         private Guid _userId;
 
-        [Column]
-        public Guid Id { get; set; } = Guid.NewGuid();
-
         public enum Owners
         {
             /// <summary>
@@ -35,6 +32,9 @@ namespace PMDataLayer
             /// </summary>
             Report
         }
+
+        [Column]
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         public string Message { get; set; }
 

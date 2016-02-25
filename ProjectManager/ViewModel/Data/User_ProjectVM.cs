@@ -20,7 +20,6 @@ namespace PMView.View.WrapperVM
 
         public User_ProjectVM()
         {
-
         }
 
         public Users_Project User_Project

@@ -20,6 +20,10 @@ namespace PMDataLayer
 
         public static List<T> Items { get; set; }
 
+        protected static SqlDataAdapter _adapter { get; set; }
+
+        protected static DataSet _dataSet { get; set; } = new DataSet();
+
         public static byte[] GetBytes(string str)
         {
             byte[] bytes = new byte[str.Length * sizeof(char)];
@@ -34,7 +38,6 @@ namespace PMDataLayer
 
             if (_adapter == null)
             {
-
                 createAdapter($@"SELECT * FROM {tableName}");
                 _dataSet = new DataSet();
                 _adapter.Fill(_dataSet, tableName);
@@ -52,6 +55,7 @@ namespace PMDataLayer
                             prop.SetValue(instance, r == DBNull.Value ? null : r);
                         }
                     }
+
                     Items.Add(instance as T);
                 }
             }
@@ -72,6 +76,7 @@ namespace PMDataLayer
                         }
                     }
                 }
+
                 _adapter.Update(_dataSet, tableName);
             }
         }
@@ -103,12 +108,7 @@ namespace PMDataLayer
             _adapter.Update(_dataSet.Tables[tableName]);
             _adapter = null;
             Update();
-            //_adapter.Update(_dataSet.Tables[tableName]);
         }
-
-        protected static SqlDataAdapter _adapter;
-
-        protected static DataSet _dataSet = new DataSet();
 
         protected static void createCommand(SqlDataAdapter adapter)
         {

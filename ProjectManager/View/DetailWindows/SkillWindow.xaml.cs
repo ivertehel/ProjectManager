@@ -34,6 +34,7 @@ namespace PMView
             {
                 _skillWindowVM.Name = SkillsListBox.SelectedItem.ToString();
             }
+
             SkillsListBox.SelectedItem = null;
         }
 
