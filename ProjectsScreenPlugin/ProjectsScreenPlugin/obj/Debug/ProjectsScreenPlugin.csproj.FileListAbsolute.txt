@@ -1,0 +1,15 @@
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\bin\Debug\ProjectsScreenPlugin.dll
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\bin\Debug\ProjectsScreenPlugin.pdb
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\obj\Debug\ProjectsUserControl.g.cs
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\obj\Debug\ProjectsScreenPlugin_MarkupCompile.cache
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\obj\Debug\ProjectsUserControl.baml
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\obj\Debug\ProjectsScreenPlugin.g.resources
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\obj\Debug\ProjectsScreenPlugin.Properties.Resources.resources
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\obj\Debug\ProjectsScreenPlugin.csproj.GenerateResource.Cache
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\obj\Debug\ProjectsScreenPlugin.dll
+c:\users\ivanv\documents\visual studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\obj\Debug\ProjectsScreenPlugin.pdb
+C:\Users\ivanv\Documents\Visual Studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\bin\Debug\PMView.exe
+C:\Users\ivanv\Documents\Visual Studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\bin\Debug\Core.dll
+C:\Users\ivanv\Documents\Visual Studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\bin\Debug\PMView.pdb
+C:\Users\ivanv\Documents\Visual Studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\bin\Debug\Core.pdb
+C:\Users\ivanv\Documents\Visual Studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\obj\Debug\ProjectsScreenPlugin.csprojResolveAssemblyReference.cache
