@@ -5504,3 +5504,5 @@
 25.02.2016 0:00:00 | 16:36:47.6210392:Info | Order screen | Details of Android app have been loaded
 25.02.2016 0:00:00 | 16:36:48.0595559:Info | Order screen | Details of Game for PlayMarket have been loaded
 25.02.2016 0:00:00 | 16:36:48.5068413:Info | Order screen | Details of Bank system have been loaded
+26.02.2016 0:00:00 | 18:23:09.2598823:Info | Details screen | Project details have been loaded
+26.02.2016 0:00:00 | 18:24:13.5368698:Info | Details screen | Project details have been loaded

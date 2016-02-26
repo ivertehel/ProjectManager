@@ -38,7 +38,8 @@ namespace PMView.View
             if (User.Items.Count == 0)
                 GenerateData();
 
-            ////SelectedOrder = OrdersCollection.FirstOrDefault();
+            if (OrdersCollection.Count > 0)
+                SelectedOrder = OrdersCollection.FirstOrDefault();
         }
 
         public ProjectsUserControlVM(Order order) : this()
