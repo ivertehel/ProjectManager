@@ -40,7 +40,7 @@ namespace ProjectManagerSite.Models
             get
             {
                 var pp = Model.Project_Projects.ToList().FirstOrDefault(item => item.ChildProject_Id.ToString() == _projectId);
-                if (pp.ParrentProject_Id != null)
+                if (pp?.ParrentProject_Id != null)
                 {
                     return Model.Projects.FirstOrDefault(item => item.Id == pp.ParrentProject_Id);
                 }

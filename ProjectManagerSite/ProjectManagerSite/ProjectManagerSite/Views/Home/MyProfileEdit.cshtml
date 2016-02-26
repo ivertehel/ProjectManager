@@ -13,12 +13,13 @@
                         <div class="img-wrap">
                             <img id="Avatar" src="/Home/ViewImage/@Model.User.Login" width="100%" />
                             @*/Home/ViewImage/@Model.User.Login*@
-                            <h4 style="color:brown; visibility:hidden">Wrong image type</h4>
                         </div>
                     </div>
+
                     <script>
                         function chooseFile() {
                             $("#fileInput").click();
+                            $("#ErrorMessage").empty();
                         }
 
                         function previewFile() {
@@ -40,7 +41,7 @@
                             }
                             else
                             {
-                                alert("Wrong image type");
+                                $("#ErrorMessage").append("Wrong image type");
                                 $("#Avatar").attr("src", oldImgSrc);
                                 $("#fileInput").val('');
                             }
@@ -85,12 +86,11 @@
                             return true;
                         }
                     </script>
+                    <h4 id="ErrorMessage" style="color:brown"></h4>
 
                     <div id="blockDown">
                         @* @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })*@
                         <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="Save()" />
-                        <h4 id="ErrorMessage" style="color:brown"></h4>
-
                     </div>
                 </div>
                 <div class="col-md-9">
