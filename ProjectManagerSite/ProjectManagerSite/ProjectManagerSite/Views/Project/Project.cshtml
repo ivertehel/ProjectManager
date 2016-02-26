@@ -7,6 +7,19 @@
 <div class="row">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-12">
+                @if (Model.ParrentProject == null)
+                {
+                    <h5><a href="@(string.Format($@"/Project/LoadOrder?OrderId={Model.CurrentOrder.Id}"))"><< Back</a></h5>
+                }
+                else
+                {
+                    <h5><a href="@(string.Format($@"/Project/LoadProject?OrderId={Model.CurrentOrder.Id}&ProjectId={Model.ParrentProject.Id}"))"><< Back</a></h5>
+                }
+
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-10" align="left">
                 <h4 style="font-size: 30px; vertical-align:top">
                     <b>@Model.CurrentProject.Name</b>

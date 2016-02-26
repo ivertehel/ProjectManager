@@ -24,9 +24,9 @@ namespace ProjectManagerSite.Controllers
             return View("Order", model);
         }
 
-        public ActionResult LoadProject(string ProjectId)
+        public ActionResult LoadProject(string OrderId, string ProjectId, string ParrentProjectId)
         {
-            var model = new ProjectVM(User, ProjectId);
+            var model = new ProjectVM(User, OrderId, ProjectId);
             if (model.CurrentProject == null)
                 return HttpNotFound();
             return View("Project", model);

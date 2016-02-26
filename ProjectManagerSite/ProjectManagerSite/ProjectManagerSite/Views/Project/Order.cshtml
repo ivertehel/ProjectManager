@@ -7,6 +7,11 @@
 <div class="row" id="MyProjects">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-12">
+                <h5><a href="/Home/MyProjects"><< Back</a></h5>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-10" align="left">
                 <h4 style="font-size: 30px; vertical-align:top">
                     <b>@Model.Order.Name</b>
@@ -143,7 +148,7 @@
                             {
                             <tr class="TableTr @(Model.OrderProjects[i].Status == "Done" ? "Done" : Model.OrderProjects[i].Status == "InProgress" ?
                              "InProgress" : Model.OrderProjects[i].Status == "Discarded" ? "Discarded" : string.Empty)"
-                                onclick="Click('@Model.OrderProjects[i].Id')"
+                                onclick="Click('@Model.OrderProjects[i].Id','@Model.OrderId')"
                                 style="cursor:pointer;">
                                 <td>
                                     @(i + 1)
@@ -168,8 +173,8 @@
                         </tbody>
                     </table>
                     <script>
-                        function Click(project) {
-                            window.location.href = "/Project/LoadProject?ProjectId=" + project;
+                        function Click(project, order) {
+                            window.location.href = "/Project/LoadProject?OrderId=" + order +"&ProjectId=" + project;
                         }
                     </script>
                 </div>
