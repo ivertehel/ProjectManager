@@ -30,6 +30,14 @@ namespace ProjectManagerSite.Models
             get { return (new UserVM(Order.Clients.Users.Login)); }
         }
 
+        public List<Projects> OrderProjects
+        {
+            get
+            {
+                return (from items in Model.Projects where items.Orders.Id == Order.Id orderby items.StartDate select items).ToList();
+            }
+        }
+
         public OrderVM() : base(null)
         {
             
