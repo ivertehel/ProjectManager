@@ -94,8 +94,8 @@
                         }
                     </div>
                     <div class="row">
-                        <a href="/@Model.Customer.User.Login">View more</a>    
-                    
+                        <a href="/@Model.Customer.User.Login">View more</a>
+
                     </div>
 
                 </div>
@@ -109,67 +109,72 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <table class="table">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Modules list</h3>
+                    </div>
+                    <table class="table">
 
-                    <thead>
-                        <tr>
-                            <th>
-                                #
-                            </th>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Start date
-                            </th>
-                            <th>
-                                Release date
-                            </th>
-                            <th>
-                                Leader
-                            </th>
-                            <th>
-                                Status
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for (int i = 0; i < Model.OrderProjects.Count; i++)
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Start date
+                                </th>
+                                <th>
+                                    Release date
+                                </th>
+                                <th>
+                                    Leader
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.OrderProjects.Count; i++)
                             {
-                                <tr class="TableTr @(Model.OrderProjects[i].Status == "Done" ? "Done" : Model.OrderProjects[i].Status == "InProgress" ?
+                            <tr class="TableTr @(Model.OrderProjects[i].Status == "Done" ? "Done" : Model.OrderProjects[i].Status == "InProgress" ?
                              "InProgress" : Model.OrderProjects[i].Status == "Discarded" ? "Discarded" : string.Empty)"
-                                    onclick="Click('@Model.OrderProjects[i].Id')"
-                                    style="cursor:pointer;">
-                                    <td>
-                                        @(i + 1)
-                                    </td>
-                                    <td>
-                                        @Model.OrderProjects[i].Name
-                                    </td>
-                                    <td>
-                                        @Model.OrderProjects[i].StartDate.ToShortDateString()
-                                    </td>
-                                    <td>
-                                        @Model.OrderProjects[i].ReleaseDate.Value.ToShortDateString()
-                                    </td>
-                                    <td>
-                                        @Model.OrderProjects[i].Users.Name @Model.OrderProjects[i].Users.Surname
-                                    </td>
-                                    <td>
-                                        @Model.OrderProjects[i].Status
-                                    </td>
-                                </tr>
+                                onclick="Click('@Model.OrderProjects[i].Id')"
+                                style="cursor:pointer;">
+                                <td>
+                                    @(i + 1)
+                                </td>
+                                <td>
+                                    @Model.OrderProjects[i].Name
+                                </td>
+                                <td>
+                                    @Model.OrderProjects[i].StartDate.ToShortDateString()
+                                </td>
+                                <td>
+                                    @Model.OrderProjects[i].ReleaseDate.Value.ToShortDateString()
+                                </td>
+                                <td>
+                                    @Model.OrderProjects[i].Users.Name @Model.OrderProjects[i].Users.Surname
+                                </td>
+                                <td>
+                                    @Model.OrderProjects[i].Status
+                                </td>
+                            </tr>
                             }
-                    </tbody>
-                </table>
-                <script>
-                    function Click(order) {
-                        window.location.href = "/Project/LoadOrder?OrderId=" + order;
-                    }
-                </script>
+                        </tbody>
+                    </table>
+                    <script>
+                        function Click(project) {
+                            window.location.href = "/Project/LoadProject?ProjectId=" + project;
+                        }
+                    </script>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 

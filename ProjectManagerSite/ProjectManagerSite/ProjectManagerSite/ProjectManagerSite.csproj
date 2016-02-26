@@ -249,6 +249,7 @@
     <Compile Include="Models\BaseVM.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\OrderVM.cs" />
+    <Compile Include="Models\ProjectVM.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\SkillsVM.cs" />
     <Compile Include="Models\UserVM.cs" />
@@ -653,7 +654,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Error.html" />
+    <Content Include="Error.aspx" />
     <Content Include="Views\Home\HtmlPage1.html" />
     <Content Include="Views\Home\JavaScript.js" />
     <Content Include="Views\Home\jquery-2.2.0.min.js" />
@@ -688,6 +689,7 @@
     <Content Include="Views\Home\SkillsEdit.cshtml" />
     <Content Include="Views\Project\Order.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Project\Project.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -112,8 +112,8 @@
     <Property Name="Id" Type="Guid" Nullable="false" />
     <Property Name="ParrentProject_Id" Type="Guid" />
     <Property Name="ChildProject_Id" Type="Guid" Nullable="false" />
-    <NavigationProperty Name="Projects" Relationship="Self.FK_Project_Projects_Projects" FromRole="Project_Projects" ToRole="Projects" />
-    <NavigationProperty Name="Projects1" Relationship="Self.FK_Project_Projects_Projects1" FromRole="Project_Projects" ToRole="Projects" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_Project_ChildProject" FromRole="Project_Projects" ToRole="Projects" />
+    <NavigationProperty Name="Projects1" Relationship="Self.FK_Project_ParrentProject" FromRole="Project_Projects" ToRole="Projects" />
   </EntityType>
   <EntityType Name="Projects">
     <Key>
@@ -128,8 +128,8 @@
     <Property Name="Order_Id" Type="Guid" Nullable="false" />
     <Property Name="Leader_Id" Type="Guid" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Projects_Orders" FromRole="Projects" ToRole="Orders" />
-    <NavigationProperty Name="Project_Projects" Relationship="Self.FK_Project_Projects_Projects" FromRole="Projects" ToRole="Project_Projects" />
-    <NavigationProperty Name="Project_Projects1" Relationship="Self.FK_Project_Projects_Projects1" FromRole="Projects" ToRole="Project_Projects" />
+    <NavigationProperty Name="Project_Projects" Relationship="Self.FK_Project_ChildProject" FromRole="Projects" ToRole="Project_Projects" />
+    <NavigationProperty Name="Project_Projects1" Relationship="Self.FK_Project_ParrentProject" FromRole="Projects" ToRole="Project_Projects" />
     <NavigationProperty Name="Projects_Skills" Relationship="Self.FK_Projects_Skills_Projects" FromRole="Projects" ToRole="Projects_Skills" />
     <NavigationProperty Name="Users" Relationship="Self.FK_Projects_Users" FromRole="Projects" ToRole="Users" />
     <NavigationProperty Name="Teams_Projects" Relationship="Self.FK_Teams_Projects_Projects" FromRole="Projects" ToRole="Teams_Projects" />
@@ -344,7 +344,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Project_Projects_Projects">
+  <Association Name="FK_Project_ChildProject">
     <End Role="Projects" Type="Self.Projects" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -358,7 +358,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Project_Projects_Projects1">
+  <Association Name="FK_Project_ParrentProject">
     <End Role="Projects" Type="Self.Projects" Multiplicity="0..1" />
     <End Role="Project_Projects" Type="Self.Project_Projects" Multiplicity="*" />
     <ReferentialConstraint>
@@ -566,11 +566,11 @@
       <End Role="Positions" EntitySet="Positions" />
       <End Role="Users_Teams" EntitySet="Users_Teams" />
     </AssociationSet>
-    <AssociationSet Name="FK_Project_Projects_Projects" Association="Self.FK_Project_Projects_Projects">
+    <AssociationSet Name="FK_Project_ChildProject" Association="Self.FK_Project_ChildProject">
       <End Role="Projects" EntitySet="Projects" />
       <End Role="Project_Projects" EntitySet="Project_Projects" />
     </AssociationSet>
-    <AssociationSet Name="FK_Project_Projects_Projects1" Association="Self.FK_Project_Projects_Projects1">
+    <AssociationSet Name="FK_Project_ParrentProject" Association="Self.FK_Project_ParrentProject">
       <End Role="Projects" EntitySet="Projects" />
       <End Role="Project_Projects" EntitySet="Project_Projects" />
     </AssociationSet>

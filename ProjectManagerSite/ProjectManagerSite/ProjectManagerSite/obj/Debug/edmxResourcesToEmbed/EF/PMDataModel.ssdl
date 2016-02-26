@@ -294,7 +294,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Project_Projects_Projects">
+  <Association Name="FK_Project_ChildProject">
     <End Role="Projects" Type="Self.Projects" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -308,7 +308,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Project_Projects_Projects1">
+  <Association Name="FK_Project_ParrentProject">
     <End Role="Projects" Type="Self.Projects" Multiplicity="0..1" />
     <End Role="Project_Projects" Type="Self.Project_Projects" Multiplicity="*" />
     <ReferentialConstraint>
@@ -551,11 +551,11 @@
       <End Role="Clients" EntitySet="Clients" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK_Project_Projects_Projects" Association="Self.FK_Project_Projects_Projects">
+    <AssociationSet Name="FK_Project_ChildProject" Association="Self.FK_Project_ChildProject">
       <End Role="Projects" EntitySet="Projects" />
       <End Role="Project_Projects" EntitySet="Project_Projects" />
     </AssociationSet>
-    <AssociationSet Name="FK_Project_Projects_Projects1" Association="Self.FK_Project_Projects_Projects1">
+    <AssociationSet Name="FK_Project_ParrentProject" Association="Self.FK_Project_ParrentProject">
       <End Role="Projects" EntitySet="Projects" />
       <End Role="Project_Projects" EntitySet="Project_Projects" />
     </AssociationSet>

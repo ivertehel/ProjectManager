@@ -1,0 +1,131 @@
+﻿@model ProjectManagerSite.Models.ProjectVM
+
+@{
+    ViewBag.Title = "Project";
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+<div class="row">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10" align="left">
+                <h4 style="font-size: 30px; vertical-align:top">
+                    <b>@Model.CurrentProject.Name</b>
+                </h4>
+
+            </div>
+            <div class="col-md-2" align="center">
+                <ul class="list-group">
+                    @if (Model.CurrentProject.Status == "Done")
+                    {
+                        <li class="list-group-item list-group-item-success">
+                            <b>@Model.CurrentProject.Status</b>
+                        </li>
+                    }
+                    else if (Model.CurrentProject.Status == "InProgress")
+                    {
+                        <li class="list-group-item list-group-item-warning">
+                            <b>@Model.CurrentProject.Status</b>
+                        </li>
+                    }
+                    else if (Model.CurrentProject.Status == "Discarded")
+                    {
+                        <li class="list-group-item list-group-item-danger">
+                            <b>@Model.CurrentProject.Status</b>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="list-group-item">
+                            <b>@Model.CurrentProject.Status</b>
+                        </li>
+                    }
+                </ul>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Module description</h3>
+                    </div>
+                    <div class="panel-body">
+                        @Model.CurrentProject.Description
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Submodules list</h3>
+                            </div>
+                            <table class="table">
+
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            #
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Start date
+                                        </th>
+                                        <th>
+                                            Release date
+                                        </th>
+                                        <th>
+                                            Leader
+                                        </th>
+                                        <th>
+                                            Status
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.ChildProjects.Count; i++)
+                                    {
+                                    <tr class="TableTr @(Model.ChildProjects[i].Status == "Done" ? "Done" : Model.ChildProjects[i].Status == "InProgress" ?
+                             "InProgress" : Model.ChildProjects[i].Status == "Discarded" ? "Discarded" : string.Empty)"
+                                        onclick="Click('@Model.ChildProjects[i].Id')"
+                                        style="cursor:pointer;">
+                                        <td>
+                                            @(i + 1)
+                                        </td>
+                                        <td>
+                                            @Model.ChildProjects[i].Name
+                                        </td>
+                                        <td>
+                                            @Model.ChildProjects[i].StartDate.ToShortDateString()
+                                        </td>
+                                        <td>
+                                            @Model.ChildProjects[i].ReleaseDate.Value.ToShortDateString()
+                                        </td>
+                                        <td>
+                                            @Model.ChildProjects[i].Users.Name @Model.ChildProjects[i].Users.Surname
+                                        </td>
+                                        <td>
+                                            @Model.ChildProjects[i].Status
+                                        </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <script>
+                                function Click(order) {
+                                    window.location.href = "/Project/LoadOrder?OrderId=" + order;
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

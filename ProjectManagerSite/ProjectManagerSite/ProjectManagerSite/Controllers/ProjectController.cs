@@ -19,7 +19,17 @@ namespace ProjectManagerSite.Controllers
         public ActionResult LoadOrder(string OrderId)
         {
             var model = new OrderVM(User, OrderId);
+            if (model.Order == null)
+                return HttpNotFound();
             return View("Order", model);
+        }
+
+        public ActionResult LoadProject(string ProjectId)
+        {
+            var model = new ProjectVM(User, ProjectId);
+            if (model.CurrentProject == null)
+                return HttpNotFound();
+            return View("Project", model);
         }
     }
 }
