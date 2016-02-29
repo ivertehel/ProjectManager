@@ -624,6 +624,7 @@
     <Content Include="EF\PMDataModel.edmx.diagram">
       <DependentUpon>PMDataModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\bower.json" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -636,6 +637,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.webcam.js" />
+    <Content Include="Scripts\jscam.swf" />
+    <Content Include="Scripts\jscam_canvas_only.swf" />
     <Content Include="Scripts\js\bootstrap.js" />
     <Content Include="Scripts\js\bootstrap.min.js" />
     <Content Include="Scripts\js\jquery.js" />
@@ -690,6 +694,9 @@
     <Content Include="Views\Project\Order.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Project\Project.cshtml" />
+    <Content Include="Scripts\Makefile" />
+    <Content Include="Scripts\webcam.jquery.json" />
+    <Content Include="Views\Home\Capture.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

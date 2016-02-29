@@ -9,6 +9,7 @@ using UserStore.BLL.Interfaces;
 using ProjectManagerSite.EF;
 using ProjectManagerSite.Models;
 using System.IO;
+using System.Net;
 
 namespace ProjectManagerSite.Controllers
 {
@@ -65,21 +66,28 @@ namespace ProjectManagerSite.Controllers
                 return HttpNotFound();
         }
 
-
+        [HttpGet]
         public ActionResult MyProfileEdit()
         {
             return PartialView("MyProfileEdit", new UserVM(User));
         }
 
         [HttpPost]
-        public ActionResult MyProfileEdit(UserVM user, SkillsVM skillVM, HttpPostedFileBase Image)
+        public ActionResult MyProfileEdit(UserVM user, SkillsVM skillVM, HttpPostedFileBase Image, string WebcamImage)
         {
+            if (WebcamImage != "null")
+            {
+                var path = HttpContext.Server.MapPath("~/WebImages/" + WebcamImage + ".jpg");
+                user.Avatar = System.IO.File.ReadAllBytes(path);
+            }
+
             if (Image != null && !IsImage(Image))
             {
                 return Json(new { result = "Error", message = "Wrong image" });
             }
             if (ModelState.IsValid)
             {
+
                 if (Image != null)
                 {
                     using (var binaryReader = new BinaryReader(Image.InputStream))
@@ -87,8 +95,9 @@ namespace ProjectManagerSite.Controllers
                         user.Avatar = binaryReader.ReadBytes(Image.ContentLength);
                     }
                 }
-                var model = new UserVM(User, user, skillVM);
 
+                var model = new UserVM(User, user, skillVM);
+                System.IO.File.Delete(HttpContext.Server.MapPath("~/WebImages/" + WebcamImage + ".jpg"));
                 model.SaveChanges();
                 return Json(new { result = "Redirect", url = "/" + model.User.Login });
 
@@ -108,6 +117,19 @@ namespace ProjectManagerSite.Controllers
                 item = new UserVM(id);
                 byte[] buffer = item.Avatar;
                 return File(buffer, "image/jpg", string.Format("{0}.jpg", id));
+            }
+            catch
+            {
+                return new EmptyResult();
+            }
+        }
+
+        public ActionResult ViewImageFromWebCam()
+        {
+            try
+            {
+                byte[] buffer = String_To_Bytes2(Session["Avatar"].ToString());
+                return File(buffer, "image/jpg", string.Format("{0}.jpg"));
             }
             catch
             {
@@ -156,6 +178,39 @@ namespace ProjectManagerSite.Controllers
 
             // linq from Henrik Stenbæk
             return formats.Any(item => file.FileName.EndsWith(item, StringComparison.OrdinalIgnoreCase));
+        }
+
+        [HttpPost]
+        public ActionResult Capture(string imgId, string oldImg)
+        {
+            if (oldImg != "null")
+            {
+                var p = HttpContext.Server.MapPath("~/WebImages/" + oldImg + ".jpg");
+                System.IO.File.Delete(p);
+            }
+            var stream = Request.InputStream;
+            string dump;
+            string path = string.Empty;
+            using (var reader = new StreamReader(stream))
+            {
+                dump = reader.ReadToEnd();
+                DateTime nm = DateTime.Now;
+                string date = nm.ToString("yyyymmddMMss");
+                path = Server.MapPath("~/WebImages/" + imgId + ".jpg");
+                System.IO.File.WriteAllBytes(path, String_To_Bytes2(dump));
+            }
+            return Json(new { result = "imagePath", imagePath = path });
+        }
+
+        private byte[] String_To_Bytes2(string strInput)
+        {
+            int numBytes = (strInput.Length) / 2;
+            byte[] bytes = new byte[numBytes];
+            for (int x = 0; x < numBytes; ++x)
+            {
+                bytes[x] = Convert.ToByte(strInput.Substring(x * 2, 2), 16);
+            }
+            return bytes;
         }
     }
 }

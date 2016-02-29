@@ -8,6 +8,7 @@
                 <div class="col-md-3">
                     <div style="height:0px;overflow:hidden">
                         <input type="file" name="Image" id="fileInput" onchange="previewFile()" accept="image/*" />
+                        <input type="hidden" name="WebcamImage" id="WebcamImage" value=""/>
                     </div>
                     <div type="button" class="btn-img" onclick="chooseFile();" width="100%">
                         <div class="img-wrap">
@@ -39,8 +40,7 @@
                                     preview.src = "";
                                 }
                             }
-                            else
-                            {
+                            else {
                                 $("#ErrorMessage").append("Wrong image type");
                                 $("#Avatar").attr("src", oldImgSrc);
                                 $("#fileInput").val('');
@@ -91,6 +91,7 @@
                     <div id="blockDown">
                         @* @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })*@
                         <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="Save()" />
+
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -139,6 +140,15 @@
                             </div>
                         </div>
                         <div class="row">
+
+                            <div style="margin: 0 auto; width: 980px; text-align: center">
+                                <div style="float: left; border: 4px solid #ccc; padding: 5px">
+                                    <div id="Camera"></div><br>
+                                    <input type="button" value="Capture" name="WebCamera" onclick="webcam.capture();" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <h3>Skills:</h3>
                                 <div style="border:2px solid #ccc; width:100%; max-height: 200px; overflow-y: scroll;">
@@ -169,7 +179,9 @@
     </div>
 
 }
-<script src="~/Scripts/jquery-2.2.0.min.js"></script>
+<script src="@Url.Content("~/Scripts/jquery.webcam.js")">
+
+</script>
 <script type="text/javascript">
     function Save() {
         var form = $('#myForm');
@@ -180,12 +192,14 @@
             data: formData,
             contentType: false,
             processData: false,
+            failor: function (data) {
+            },
             success: function (data) {
+
                 if (data.result == 'Redirect') {
                     window.location = data.url;
                 }
-                else if (data.result == 'Error')
-                {
+                else if (data.result == 'Error') {
                     $("#ErrorMessage").html(data.message);
                 }
                 else {
@@ -198,4 +212,44 @@
             }
         });
     }
+
+    var imgId = "null";
+
+    $("#Camera").webcam({
+        width: 320,
+        height: 240,
+        mode: "save",
+        swffile: "@Url.Content("~/Scripts/jscam.swf")",
+        onCapture: function () {
+            var oldImg = imgId;
+            imgId = guid();
+            document.getElementById("WebcamImage").value = imgId;
+            webcam.save("/Home/Capture?imgId=" + imgId.toString() + "&oldImg="+oldImg.toString());
+        },
+        onSave: function (data) {
+            document.getElementById("Avatar").src = "/WebImages/" + imgId + ".jpg";
+            $("#fileInput").val('');
+        },
+        debug: function () { },
+        onLoad: function () { }
+    });
+
+    function guid() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+          s4() + '-' + s4() + s4() + s4();
+    }
 </script>
+<script type="text/javascript">
+
+    window.onload = load();
+    function load() {
+        debugger;
+        document.getElementById('Submit1').disabled = true;
+    }
+</script>
+<script src="~/Scripts/jquery-2.2.0.min.js"></script>
