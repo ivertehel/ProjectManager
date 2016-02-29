@@ -5,18 +5,31 @@
     <div class="row" id="MyProfileEdit">
         <div class="container-fluid">
             <div class="row" style="padding-top:15px">
-                <div class="col-md-3">
-                    <div style="height:0px;overflow:hidden">
+                <div class="col-md-3" align="center">
+
+                    <div style="height:0px;overflow:hidden;padding-top:0px;z-index: 0;position:absolute">
+
+
                         <input type="file" name="Image" id="fileInput" onchange="previewFile()" accept="image/*" />
-                        <input type="hidden" name="WebcamImage" id="WebcamImage" value=""/>
+                        <input type="hidden" name="WebcamImage" id="WebcamImage" value="" />
+
                     </div>
                     <div type="button" class="btn-img" onclick="chooseFile();" width="100%">
                         <div class="img-wrap">
-                            <img id="Avatar" src="/Home/ViewImage/@Model.User.Login" width="100%" />
+                            <img id="Avatar" src="/Home/ViewImage/@Model.User.Login" width="100%"/>
                             @*/Home/ViewImage/@Model.User.Login*@
                         </div>
                     </div>
-
+                    <span style="padding-top:0px;">
+                        <button type="button" class="btn btn-default" style="border:hidden">
+                            <div class="glyphicon glyphicon-folder-open" aria-hidden="true"></div>
+                        </button>
+                    </span>
+                    <span style="padding-top:0px;">
+                        <button type="button" class="btn btn-default" style="border:hidden">
+                            <div class="glyphicon glyphicon-camera" aria-hidden="true"></div>
+                        </button>
+                    </span>
                     <script>
                         function chooseFile() {
                             $("#fileInput").click();
@@ -224,7 +237,7 @@
             var oldImg = imgId;
             imgId = guid();
             document.getElementById("WebcamImage").value = imgId;
-            webcam.save("/Home/Capture?imgId=" + imgId.toString() + "&oldImg="+oldImg.toString());
+            webcam.save("/Home/Capture?imgId=" + imgId.toString() + "&oldImg=" + oldImg.toString());
         },
         onSave: function (data) {
             document.getElementById("Avatar").src = "/WebImages/" + imgId + ".jpg";
