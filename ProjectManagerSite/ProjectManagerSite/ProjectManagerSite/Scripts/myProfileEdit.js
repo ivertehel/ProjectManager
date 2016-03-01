@@ -108,3 +108,12 @@ function guid() {
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
       s4() + '-' + s4() + s4() + s4();
 }
+
+function takePicture() {
+    document.getElementById('cameraBlock').style = "display:initial";
+}
+
+function takeFile() {
+    document.getElementById('cameraBlock').style = "display:none";
+    chooseFile();
+}

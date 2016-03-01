@@ -4,34 +4,48 @@
 {
     <div class="row" id="MyProfileEdit">
         <div class="container-fluid">
-            <div class="row" style="padding-top:15px">
+            <div class="row">
                 <div class="col-md-3" align="center">
                     <div style="height:0px;overflow:hidden;padding-top:0px;z-index: 0;position:absolute">
                         <input type="file" name="Image" id="fileInput" onchange="previewFile()" accept="image/*" />
                         <input type="hidden" name="WebcamImage" id="WebcamImage" value="" />
                     </div>
-                    <div type="button" class="btn-img" onclick="chooseFile();" width="100%">
+                    <div type="button" class="btn-img" onclick="chooseFile();" width="100%" style="padding-top:10px">
                         <div class="img-wrap">
                             <img id="Avatar" src="/Home/ViewImage/@Model.User.Login" width="100%"/>
                         </div>
                     </div>
-                    <span style="padding-top:0px;">
-                        <button type="button" class="btn btn-default" style="border:hidden">
-                            <div class="glyphicon glyphicon-folder-open" aria-hidden="true"></div>
-                        </button>
-                    </span>
-                    <span style="padding-top:0px;">
-                        <button type="button" class="btn btn-default" style="border:hidden">
-                            <div class="glyphicon glyphicon-camera" aria-hidden="true"></div>
-                        </button>
-                    </span>
-                    <h4 id="ErrorMessage" style="color:brown"></h4>
+                    <div style="padding-top:10px;">
+                        <span>
+                            <button type="button" class="btn btn-default" style="border:hidden"  onclick="takeFile()">
+                                <div class="glyphicon glyphicon-folder-open" aria-hidden="true"></div>
+                            </button>
+                        </span>
+                        <span>
+                            <button type="button" class="btn btn-default" style="border:hidden" onclick="takePicture()">
+                                <div class="glyphicon glyphicon-camera" aria-hidden="true"></div>
+                            </button>
+                        </span>
+                    </div>
 
-                    <div id="blockDown">
+                    <div style="padding-top:10px">
                         <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="Save()" />
                     </div>
+                    <h4 id="ErrorMessage" style="color:brown"></h4>
+
                 </div>
                 <div class="col-md-9">
+                    <div class="row" style="display:none" id="cameraBlock">
+
+                        <div style="margin: 0 auto; width: 980px; text-align: center">
+                            <div style="float: left; border: 4px solid #ccc; padding: 5px">
+                                <div id="Camera"></div><br>
+                                <button type="button" class="btn btn-default" value="Capture" name="WebCamera" onclick="webcam.capture();">
+                                    <div class="glyphicon glyphicon-camera" aria-hidden="true"></div> Capture
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="row">
                             <div class="col-md-6">
@@ -66,15 +80,7 @@
                                 @Html.TextBoxFor(item => item.Email, new { @class = "form-control", placeholder = "Email" })
                             </div>
                         </div>
-                        <div class="row">
 
-                            <div style="margin: 0 auto; width: 980px; text-align: center">
-                                <div style="float: left; border: 4px solid #ccc; padding: 5px">
-                                    <div id="Camera"></div><br>
-                                    <input type="button" value="Capture" name="WebCamera" onclick="webcam.capture();" />
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <h3>Skills:</h3>
