@@ -93,17 +93,16 @@ namespace ProjectManagerSite.Models
             }
         }
 
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
+        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Name is not valid")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Surname is required")]
-        [RegularExpression(@"^[a-zA-Z]+[ a-zA-Z-_]*$", ErrorMessage = "Use Characters only")]
+        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Surname is not valid")]
         public string Surname { get; set; }
 
-        [Required]
         public string Skype { get; set; }
 
-        [Display(Name = "Email address")]
         [Required(ErrorMessage = "The email address is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }

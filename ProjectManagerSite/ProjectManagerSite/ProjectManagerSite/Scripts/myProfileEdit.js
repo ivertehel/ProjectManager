@@ -117,3 +117,4 @@ function takeFile() {
     document.getElementById('cameraBlock').style = "display:none";
     chooseFile();
 }
+

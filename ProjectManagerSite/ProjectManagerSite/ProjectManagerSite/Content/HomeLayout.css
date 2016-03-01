@@ -1,4 +1,26 @@
-﻿  #blockLeft, #blockRight {
+﻿  
+
+.tooltip2 {
+
+    position: relative;
+    display: initial;
+}
+
+.tooltip2 .tooltiptext2 {
+    visibility: hidden;
+    width: 120px;
+    background-color: white;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    border:groove;
+}
+
+.tooltip2:hover .tooltiptext2 {
+    visibility: visible;
+}
+
+        #blockLeft, #blockRight {
             padding-bottom: 10px;
             padding-left: 10px;
             padding-right: 15px;
@@ -23,3 +45,55 @@
         #skillsSector {
             width: 100%;
         }
+
+        .TableTr:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .Discarded {
+            background-color: rgba(219, 0, 0, 0.30);
+        }
+
+            .Discarded:hover {
+                background-color: rgba(219, 0, 0, 0.40);
+            }
+
+        .InProgress {
+            background-color: rgba(242, 255, 0, 0.30);
+        }
+
+            .InProgress:hover {
+                background-color: rgba(242, 255, 0, 0.40);
+            }
+
+        .Done {
+            background-color: rgba(0, 255, 0, 0.30);
+        }
+
+            .Done:hover {
+                background-color: rgba(0, 255, 0, 0.40);
+            }
+
+        .btn-img {
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            cursor: pointer;
+            background-color: white;
+        }
+
+            .btn-img .img-wrap {
+            }
+
+            .btn-img img {
+                display: block;
+            }
+
+            .btn-img:hover .img-wrap {
+                background-color: black;
+            }
+
+            .btn-img:hover img {
+                opacity: 0.8;
+            }

@@ -109,10 +109,8 @@ namespace ProjectManagerSite.Controllers
             }
             else
             {
-                ViewBag.Error = ModelState.Values.SelectMany(v => v.Errors).FirstOrDefault().ErrorMessage;
+                return Json(new { result = "Error", message = ModelState.Values.SelectMany(v => v.Errors).FirstOrDefault().ErrorMessage });
             }
-
-            return PartialView("MyProfileEdit", user);
         }
 
         [HttpGet]

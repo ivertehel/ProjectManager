@@ -3,6 +3,8 @@
     <div class="row" id="MyProfileEdit">
         <div class="container-fluid">
             <div class="row">
+
+
                 <div class="col-md-3" align="center">
                     <div style="height:0px;overflow:hidden;padding-top:0px;z-index: 0;position:absolute">
                         <input type="file" name="Image" id="fileInput" onchange="previewFile()" accept="image/*" />
@@ -14,10 +16,12 @@
                         </div>
                     </div>
                     <div style="padding-top:10px;">
-                        <span>
+
+                        <span class="tooltip2" style="display:inline-block">
                             <button type="button" class="btn btn-default" style="border:hidden" onclick="takeFile()">
                                 <div class="glyphicon glyphicon-folder-open" aria-hidden="true"></div>
                             </button>
+
                         </span>
                         <span>
                             <button type="button" class="btn btn-default" style="border:hidden" onclick="takePicture()">
@@ -25,14 +29,10 @@
                             </button>
                         </span>
                     </div>
-
                     <div style="padding-top:10px">
                         <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="SaveForm()" />
                     </div>
-                    <h4 id="ErrorMessage" style="color:brown">
-                        @ViewBag.Error
-                    </h4>
-
+                    <h4 id="ErrorMessage" style="color:brown"></h4>
                 </div>
                 <div class="col-md-9">
                     <div class="row" style="display:none" id="cameraBlock">
@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-md-6">
                                 @Html.TextBoxFor(item => item.Surname, new { @class = "form-control", placeholder = "Surname" })
-                                
+
                             </div>
                         </div>
                         <div class="row" style="padding-top:10px">
@@ -123,14 +123,14 @@
             var oldImg = imgId;
             imgId = "@Model.User.Id" + guid();
             document.getElementById("WebcamImage").value = imgId;
-            webcam.save("/Home/Capture?imgId=" + imgId.toString() );
+            webcam.save("/Home/Capture?imgId=" + imgId.toString());
         },
         onSave: function (data) {
-        document.getElementById("Avatar").src = "/WebImages/" + imgId + ".jpg";
-        $("#fileInput").val('');
-    },
-    debug: function () { },
-    onLoad: function () { }
+            document.getElementById("Avatar").src = "/WebImages/" + imgId + ".jpg";
+            $("#fileInput").val('');
+        },
+        debug: function () { },
+        onLoad: function () { }
     });
 </script>
 <script src="~/Scripts/jquery-2.2.0.min.js"></script>

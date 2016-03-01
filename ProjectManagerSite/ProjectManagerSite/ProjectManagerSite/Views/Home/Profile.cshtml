@@ -50,14 +50,17 @@
                         <h2 style="padding-top:0px">@Model.User.Name @Model.User.Surname</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <a href="skype:@Model.User.Skype?chat"><img src="/Assets/Skype.png" height="30px"></a>
+                @if (!string.IsNullOrEmpty(Model.Skype))
+                {
+                    <div class="row">
+                        <div class="col-md-1">
+                            <a href="skype:@Model.User.Skype?chat"><img src="/Assets/Skype.png" height="30px"></a>
+                        </div>
+                        <div class="col-md-11">
+                            <h5><a href="skype:@Model.User.Skype?chat">@Model.User.Skype</a></h5>
+                        </div>
                     </div>
-                    <div class="col-md-11">
-                        <h5><a href="skype:@Model.User.Skype?chat">@Model.User.Skype</a></h5>
-                    </div>
-                </div>
+                }
                 <div class="row">
                     <div class="col-md-1">
                         <a href="mailto:@Model.User.Email"><img src="~/Assets/Email.png" height="30px"></a>

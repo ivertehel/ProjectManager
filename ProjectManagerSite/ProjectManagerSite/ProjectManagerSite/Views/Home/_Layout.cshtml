@@ -4,7 +4,6 @@
 <head>
     <script src="~/Scripts/jquery-2.2.0.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,85 +29,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-        #blockLeft, #blockRight {
-            padding-bottom: 10px;
-            padding-left: 10px;
-            padding-right: 15px;
-        }
 
-        #blockLeft {
-            padding-top: 15px;
-            float: left;
-            width: auto;
-            height: 100%;
-        }
+    <link href="~/Content/HomeLayout.css" rel="stylesheet" />
 
-        #blockRight {
-            width: auto;
-            height: 100%;
-        }
-
-        #blockDown {
-            padding-top: 10px;
-        }
-
-        #skillsSector {
-            width: 100%;
-        }
-
-        .TableTr:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
-        .Discarded {
-            background-color: rgba(219, 0, 0, 0.30);
-        }
-
-            .Discarded:hover {
-                background-color: rgba(219, 0, 0, 0.40);
-            }
-
-        .InProgress {
-            background-color: rgba(242, 255, 0, 0.30);
-        }
-
-            .InProgress:hover {
-                background-color: rgba(242, 255, 0, 0.40);
-            }
-
-        .Done {
-            background-color: rgba(0, 255, 0, 0.30);
-        }
-
-            .Done:hover {
-                background-color: rgba(0, 255, 0, 0.40);
-            }
-
-        .btn-img {
-            display: block;
-            margin: 0;
-            padding: 0;
-            border: 0;
-            cursor: pointer;
-            background-color: white;
-        }
-
-            .btn-img .img-wrap {
-            }
-
-            .btn-img img {
-                display: block;
-            }
-
-            .btn-img:hover .img-wrap {
-                background-color: black;
-            }
-
-            .btn-img:hover img {
-                opacity: 0.8;
-            }
-    </style>
     <script>
         $(".menuLinks").click(function () {
             history.pushState(stateObj, $(this).html, $(this).attr("href"));
