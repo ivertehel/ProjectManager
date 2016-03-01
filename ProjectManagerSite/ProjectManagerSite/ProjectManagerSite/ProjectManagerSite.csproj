@@ -554,6 +554,7 @@
     <Content Include="Content\css\morris.css" />
     <Content Include="Content\css\sb-admin-rtl.css" />
     <Content Include="Content\css\sb-admin.css" />
+    <Content Include="Content\HomeLayout.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -655,6 +656,7 @@
     <Content Include="Scripts\js\plugins\morris\morris.min.js" />
     <Content Include="Scripts\js\plugins\morris\raphael.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\myProfileEdit.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />

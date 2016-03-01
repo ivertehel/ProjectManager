@@ -6,18 +6,13 @@
         <div class="container-fluid">
             <div class="row" style="padding-top:15px">
                 <div class="col-md-3" align="center">
-
                     <div style="height:0px;overflow:hidden;padding-top:0px;z-index: 0;position:absolute">
-
-
                         <input type="file" name="Image" id="fileInput" onchange="previewFile()" accept="image/*" />
                         <input type="hidden" name="WebcamImage" id="WebcamImage" value="" />
-
                     </div>
                     <div type="button" class="btn-img" onclick="chooseFile();" width="100%">
                         <div class="img-wrap">
                             <img id="Avatar" src="/Home/ViewImage/@Model.User.Login" width="100%"/>
-                            @*/Home/ViewImage/@Model.User.Login*@
                         </div>
                     </div>
                     <span style="padding-top:0px;">
@@ -30,81 +25,10 @@
                             <div class="glyphicon glyphicon-camera" aria-hidden="true"></div>
                         </button>
                     </span>
-                    <script>
-                        function chooseFile() {
-                            $("#fileInput").click();
-                            $("#ErrorMessage").empty();
-                        }
-
-                        function previewFile() {
-                            var oldImgSrc = $("#Avatar").attr("src");
-                            if (ValidateFileUpload()) {
-                                var preview = document.querySelector('img'); //selects the query named img
-                                var file = document.querySelector('input[type=file]').files[0]; //sames as here
-                                var reader = new FileReader();
-
-                                reader.onloadend = function () {
-                                    preview.src = reader.result;
-                                }
-
-                                if (file) {
-                                    reader.readAsDataURL(file); //reads the data as a URL
-                                } else {
-                                    preview.src = "";
-                                }
-                            }
-                            else {
-                                $("#ErrorMessage").append("Wrong image type");
-                                $("#Avatar").attr("src", oldImgSrc);
-                                $("#fileInput").val('');
-                            }
-                        }
-
-                        function ValidateFileUpload() {
-                            var fuData = document.getElementById('fileInput');
-                            var FileUploadPath = fuData.value;
-
-                            //To check if user upload any file
-                            if (FileUploadPath == '') {
-                                alert("Please upload an image");
-
-                            } else {
-                                var Extension = FileUploadPath.substring(
-                                        FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
-
-                                //The file uploaded is an image
-
-                                if (Extension == "gif" || Extension == "png" || Extension == "bmp"
-                                                    || Extension == "jpeg" || Extension == "jpg") {
-
-                                    // To Display
-                                    if (fuData.files && fuData.files[0]) {
-                                        var reader = new FileReader();
-
-                                        reader.onload = function (e) {
-                                            $('#blah').attr('src', e.target.result);
-                                        }
-
-                                        reader.readAsDataURL(fuData.files[0]);
-                                    }
-
-                                }
-
-                                    //The file upload is NOT an image
-                                else {
-                                    return false;
-
-                                }
-                            }
-                            return true;
-                        }
-                    </script>
                     <h4 id="ErrorMessage" style="color:brown"></h4>
 
                     <div id="blockDown">
-                        @* @Html.ActionLink("Save changes", "Index", "Home", new { @class = "btn-block btn btn-primary btn-lg" })*@
                         <input type="button" value="Save changes" class="btn-block btn btn-primary btn-lg" onclick="Save()" />
-
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -118,28 +42,19 @@
                             </div>
                         </div>
                         <div class="row">
-
-
                             <div class="col-md-6">
-
-
                                 @Html.TextBoxFor(item => item.Name, new { @class = "form-control", placeholder = "Name" })
                                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-
-                                @*<input type="text" class="form-control" id="NameEditTextBox" value="@Model.Name" placeholder="Name" />*@
                             </div>
                             <div class="col-md-6">
                                 @Html.TextBoxFor(item => item.Surname, new { @class = "form-control", placeholder = "Surname" })
-                                @*<input type="text" class="form-control" id="SurnameEditTextBox" value="@Model.Surname" placeholder="Surname" />*@
                             </div>
                         </div>
                         <div class="row" style="padding-top:10px">
                             <div class="col-md-1">
                                 <img src="~/Assets/Skype.png" width="30px">
-
                             </div>
                             <div class="col-md-11">
-                                @*<input type="text" class="form-control" id="SkypeEditTextBox" value="@Model.Skype" placeholder="Surname" />*@
                                 @Html.TextBoxFor(item => item.Skype, new { @class = "form-control", placeholder = "Skype" })
                             </div>
                         </div>
@@ -148,7 +63,6 @@
                                 <img src="~/Assets/Email.png" width="30px">
                             </div>
                             <div class="col-md-11">
-                                @*<input type="text" class="form-control" id="EmailEditTextBox" value="@Model.Email" placeholder="E-mail" />*@
                                 @Html.TextBoxFor(item => item.Email, new { @class = "form-control", placeholder = "Email" })
                             </div>
                         </div>
@@ -174,9 +88,6 @@
                                 <div id="skillsSector">
                                     <h3>Details:</h3>
                                     @Html.TextAreaFor(item => item.Description, new { @class = "form-control", placeholder = "Description", style = "resize:none; height: 200px" })
-                                    @*<textarea cols="20" style="resize:none; height: 200px" id="skillsSector">
-
-                                        </textarea>*@
                                 </div>
                             </div>
 
@@ -192,40 +103,9 @@
     </div>
 
 }
-<script src="@Url.Content("~/Scripts/jquery.webcam.js")">
-
-</script>
+<script src="~/Scripts/myProfileEdit.js"></script>
+<script src="@Url.Content("~/Scripts/jquery.webcam.js")"></script>
 <script type="text/javascript">
-    function Save() {
-        var form = $('#myForm');
-        var formData = new FormData(form[0]);
-        $.ajax({
-            url: '/Home/MyProfileEdit',
-            type: 'Post',
-            data: formData,
-            contentType: false,
-            processData: false,
-            failor: function (data) {
-            },
-            success: function (data) {
-
-                if (data.result == 'Redirect') {
-                    window.location = data.url;
-                }
-                else if (data.result == 'Error') {
-                    $("#ErrorMessage").html(data.message);
-                }
-                else {
-                    var div = document.getElementById("AjaxBody");
-                    var oldScrollTop = div.scrollTop;
-                    div.innerHTML = data;
-                    div.scrollTop = oldScrollTop;
-                    return false;
-                }
-            }
-        });
-    }
-
     var imgId = "null";
 
     $("#Camera").webcam({
@@ -239,30 +119,12 @@
             document.getElementById("WebcamImage").value = imgId;
             webcam.save("/Home/Capture?imgId=" + imgId.toString() + "&oldImg=" + oldImg.toString());
         },
-        onSave: function (data) {
-            document.getElementById("Avatar").src = "/WebImages/" + imgId + ".jpg";
-            $("#fileInput").val('');
-        },
-        debug: function () { },
-        onLoad: function () { }
+    onSave: function (data) {
+        document.getElementById("Avatar").src = "/WebImages/" + imgId + ".jpg";
+        $("#fileInput").val('');
+    },
+    debug: function () { },
+    onLoad: function () { }
     });
-
-    function guid() {
-        function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000)
-              .toString(16)
-              .substring(1);
-        }
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-          s4() + '-' + s4() + s4() + s4();
-    }
-</script>
-<script type="text/javascript">
-
-    window.onload = load();
-    function load() {
-        debugger;
-        document.getElementById('Submit1').disabled = true;
-    }
 </script>
 <script src="~/Scripts/jquery-2.2.0.min.js"></script>

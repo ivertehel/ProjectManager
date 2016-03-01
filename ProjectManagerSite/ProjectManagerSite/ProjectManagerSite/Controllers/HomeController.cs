@@ -100,8 +100,6 @@ namespace ProjectManagerSite.Controllers
                 System.IO.File.Delete(HttpContext.Server.MapPath("~/WebImages/" + WebcamImage + ".jpg"));
                 model.SaveChanges();
                 return Json(new { result = "Redirect", url = "/" + model.User.Login });
-
-                //return View("Profile", model);
             }
 
 
@@ -117,19 +115,6 @@ namespace ProjectManagerSite.Controllers
                 item = new UserVM(id);
                 byte[] buffer = item.Avatar;
                 return File(buffer, "image/jpg", string.Format("{0}.jpg", id));
-            }
-            catch
-            {
-                return new EmptyResult();
-            }
-        }
-
-        public ActionResult ViewImageFromWebCam()
-        {
-            try
-            {
-                byte[] buffer = String_To_Bytes2(Session["Avatar"].ToString());
-                return File(buffer, "image/jpg", string.Format("{0}.jpg"));
             }
             catch
             {
@@ -197,12 +182,12 @@ namespace ProjectManagerSite.Controllers
                 DateTime nm = DateTime.Now;
                 string date = nm.ToString("yyyymmddMMss");
                 path = Server.MapPath("~/WebImages/" + imgId + ".jpg");
-                System.IO.File.WriteAllBytes(path, String_To_Bytes2(dump));
+                System.IO.File.WriteAllBytes(path, convertStringToBytes(dump));
             }
             return Json(new { result = "imagePath", imagePath = path });
         }
 
-        private byte[] String_To_Bytes2(string strInput)
+        private byte[] convertStringToBytes(string strInput)
         {
             int numBytes = (strInput.Length) / 2;
             byte[] bytes = new byte[numBytes];

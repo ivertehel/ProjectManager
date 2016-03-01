@@ -1,0 +1,25 @@
+﻿  #blockLeft, #blockRight {
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 15px;
+        }
+
+        #blockLeft {
+            padding-top: 15px;
+            float: left;
+            width: auto;
+            height: 100%;
+        }
+
+        #blockRight {
+            width: auto;
+            height: 100%;
+        }
+
+        #blockDown {
+            padding-top: 10px;
+        }
+
+        #skillsSector {
+            width: 100%;
+        }
