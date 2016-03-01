@@ -67,7 +67,7 @@ function validateFileUpload() {
 
 
 
-function Save() {
+function SaveForm() {
     var form = $('#myForm');
     var formData = new FormData(form[0]);
 

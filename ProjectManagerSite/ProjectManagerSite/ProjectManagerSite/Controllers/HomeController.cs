@@ -107,10 +107,32 @@ namespace ProjectManagerSite.Controllers
                 model.SaveChanges();
                 return Json(new { result = "Redirect", url = "/" + model.User.Login });
             }
+            else
+            {
+                ModelState.AddModelError("e", "Sample Error");
+            }
 
 
 
             return PartialView("MyProfileEdit", user);
+        }
+
+        [HttpGet]
+        public ActionResult Test()
+        {
+            UserVM user = new UserVM(User);
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult Test(UserVM user)
+        {
+            if (ModelState.IsValid)
+            {
+                throw new Exception("Valid");
+            }
+            return View("Test", user);
+
         }
 
         public ActionResult ViewImage(string id)

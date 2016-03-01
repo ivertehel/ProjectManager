@@ -93,8 +93,7 @@ namespace ProjectManagerSite.Models
             }
         }
 
-        [Required(ErrorMessage = "Name is required")]
-        [RegularExpression(@"^[a-zA-Z]+[ a-zA-Z-_]*$", ErrorMessage = "Use Characters only")]
+        [Required]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Surname is required")]
