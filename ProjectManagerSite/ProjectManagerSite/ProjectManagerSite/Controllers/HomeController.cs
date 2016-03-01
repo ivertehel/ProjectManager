@@ -109,10 +109,8 @@ namespace ProjectManagerSite.Controllers
             }
             else
             {
-                ModelState.AddModelError("e", "Sample Error");
+                ViewBag.Error = ModelState.Values.SelectMany(v => v.Errors).FirstOrDefault().ErrorMessage;
             }
-
-
 
             return PartialView("MyProfileEdit", user);
         }
@@ -155,7 +153,7 @@ namespace ProjectManagerSite.Controllers
             var skillsVM = new SkillsVM(User);
 
 
-            return PartialView(skillsVM);
+            return PartialView("SkillsEdit", skillsVM);
         }
 
         public ActionResult MyProfileSave()
