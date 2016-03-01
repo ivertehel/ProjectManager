@@ -75,7 +75,7 @@ namespace ProjectManagerSite.Controllers
         [HttpPost]
         public ActionResult MyProfileEdit(UserVM user, SkillsVM skillVM, HttpPostedFileBase Image, string WebcamImage)
         {
-            if (WebcamImage != "null")
+            if (WebcamImage != "null" && WebcamImage != string.Empty)
             {
                 var path = HttpContext.Server.MapPath("~/WebImages/" + WebcamImage + ".jpg");
                 user.Avatar = System.IO.File.ReadAllBytes(path);

@@ -1,4 +1,6 @@
-﻿function chooseFile() {
+﻿var oldFileInput;
+
+function chooseFile() {
     $("#fileInput").click();
     $("#ErrorMessage").empty();
 }
@@ -9,7 +11,6 @@ function previewFile() {
         var preview = document.querySelector('img'); //selects the query named img
         var file = document.querySelector('input[type=file]').files[0]; //sames as here
         var reader = new FileReader();
-
         reader.onloadend = function () {
             preview.src = reader.result;
         }
@@ -17,50 +18,48 @@ function previewFile() {
         if (file) {
             reader.readAsDataURL(file); //reads the data as a URL
         } else {
-            preview.src = "";
+            preview.src = oldImgSrc;
         }
     }
     else {
-        $("#ErrorMessage").append("Wrong image type");
         $("#Avatar").attr("src", oldImgSrc);
-        $("#fileInput").val('');
     }
 }
 
 function validateFileUpload() {
     var fuData = document.getElementById('fileInput');
-    var FileUploadPath = fuData.value;
+    if (fuData.value) {
+        oldFileInput = fuData.value;
+        var FileUploadPath = fuData.value;
 
-    //To check if user upload any file
-    if (FileUploadPath == '') {
-        alert("Please upload an image");
+        //To check if user upload any file
+        if (FileUploadPath == '') {
+            return false;
+        } else {
+            var Extension = FileUploadPath.substring(
+                    FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
 
-    } else {
-        var Extension = FileUploadPath.substring(
-                FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+            //The file uploaded is an image
 
-        //The file uploaded is an image
+            if (Extension == "gif" || Extension == "png" || Extension == "bmp"
+                                || Extension == "jpeg" || Extension == "jpg") {
 
-        if (Extension == "gif" || Extension == "png" || Extension == "bmp"
-                            || Extension == "jpeg" || Extension == "jpg") {
+                // To Display
+                if (fuData.files && fuData.files[0]) {
+                    var reader = new FileReader();
 
-            // To Display
-            if (fuData.files && fuData.files[0]) {
-                var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                    }
 
-                reader.onload = function (e) {
-                    $('#blah').attr('src', e.target.result);
+                    reader.readAsDataURL(fuData.files[0]);
                 }
 
-                reader.readAsDataURL(fuData.files[0]);
             }
+            else {
+                return false;
 
-        }
-
-            //The file upload is NOT an image
-        else {
-            return false;
-
+            }
         }
     }
     return true;
@@ -71,6 +70,7 @@ function validateFileUpload() {
 function Save() {
     var form = $('#myForm');
     var formData = new FormData(form[0]);
+
     $.ajax({
         url: '/Home/MyProfileEdit',
         type: 'Post',
