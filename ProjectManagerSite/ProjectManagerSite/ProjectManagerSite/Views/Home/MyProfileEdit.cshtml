@@ -115,11 +115,11 @@
         swffile: "@Url.Content("~/Scripts/jscam.swf")",
         onCapture: function () {
             var oldImg = imgId;
-            imgId = guid();
+            imgId = "@Model.User.Id" + guid();
             document.getElementById("WebcamImage").value = imgId;
-            webcam.save("/Home/Capture?imgId=" + imgId.toString() + "&oldImg=" + oldImg.toString());
+            webcam.save("/Home/Capture?imgId=" + imgId.toString() );
         },
-    onSave: function (data) {
+        onSave: function (data) {
         document.getElementById("Avatar").src = "/WebImages/" + imgId + ".jpg";
         $("#fileInput").val('');
     },

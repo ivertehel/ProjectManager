@@ -56,6 +56,12 @@ namespace ProjectManagerSite.Controllers
             else
             {
                 model.User = model.GetUserByLogin(login);
+                var dir = Directory.GetFiles(HttpContext.Server.MapPath("~/WebImages/"));
+                var toDelete = (from items in dir where items.Contains(model.User.Id.ToString()) select items).ToList();
+                for (int i = 0; i < toDelete.Count(); i++)
+                {
+                    System.IO.File.Delete(toDelete[i]);
+                }
             }
 
             if (model.User != null)
@@ -166,13 +172,8 @@ namespace ProjectManagerSite.Controllers
         }
 
         [HttpPost]
-        public ActionResult Capture(string imgId, string oldImg)
+        public ActionResult Capture(string imgId)
         {
-            if (oldImg != "null")
-            {
-                var p = HttpContext.Server.MapPath("~/WebImages/" + oldImg + ".jpg");
-                System.IO.File.Delete(p);
-            }
             var stream = Request.InputStream;
             string dump;
             string path = string.Empty;
