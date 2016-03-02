@@ -63,9 +63,17 @@ namespace PMView
 
         protected void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            _userDetailsVM.ButtonSaveClick();
-            if (_employeeDetailsVM != null)
-                _employeeDetailsUserControl.SaveChanges();
+            try
+            {
+                _userDetailsVM.ButtonSaveClick();
+                if (_employeeDetailsVM != null)
+                    _employeeDetailsUserControl.SaveChanges();
+                MessageBox.Show("Changes were saved", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         protected void SomeProperty_Changed(object sender, TextChangedEventArgs e)

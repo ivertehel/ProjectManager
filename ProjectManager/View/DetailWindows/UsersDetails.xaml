@@ -112,9 +112,21 @@
                             <TextBlock Grid.Row="0" Text="Birthday:" FontSize="18"/>
                             <DatePicker Grid.Row="1" DisplayDate="{Binding Birthday}" SelectedDate="{Binding Birthday}" SelectedDateChanged="ComboBox_SelectionChanged"/>
                             <TextBlock Grid.Row="2" Text="Login:" FontSize="18"/>
-                            <TextBox Grid.Row="3" Text="{Binding Login}" TextChanged="SomeProperty_Changed"/>
+                            <TextBox Grid.Row="3"  Validation.ErrorTemplate="{StaticResource validationFailed}" TextChanged="SomeProperty_Changed">
+                                <Binding Path="Login">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
                             <TextBlock Grid.Row="4" Text="E-mail:" FontSize="18"/>
-                            <TextBox Grid.Row="5" Text="{Binding Email}" TextChanged="SomeProperty_Changed"/>
+                            <TextBox Grid.Row="5" Validation.ErrorTemplate="{StaticResource validationFailed}" TextChanged="SomeProperty_Changed">
+                                <Binding Path="Email">
+                                    <Binding.ValidationRules>
+                                        <DataErrorValidationRule />
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox>
                             <TextBlock Grid.Row="6" Text="Skype:" FontSize="18"/>
                             <TextBox Grid.Row="7" Text="{Binding Skype}" TextChanged="SomeProperty_Changed"/>
                         </Grid>

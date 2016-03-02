@@ -224,5 +224,17 @@ namespace PMView.View.WrapperVM
             encoder.Save(memStream);
             return memStream.ToArray();
         }
+
+        public override bool Equals(object obj)
+        {
+            UserVM user = obj as UserVM;
+            if (user != null)
+            {
+                if (user.User.Id == User.Id)
+                    return true;
+            }
+
+            return false;
+        }
     }
 }

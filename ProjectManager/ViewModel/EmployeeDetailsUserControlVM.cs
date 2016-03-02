@@ -30,7 +30,7 @@ namespace PMView.View
 
         public List<string> GetSkills(UserVM user)
         {
-            var skills = Users_Skill.Items.Where(user_skill => user.Equals(user_skill.User) == true).ToList();
+            var skills = Users_Skill.Items.FindAll(user_skill => user.User.Id == user_skill.UserId).ToList();
             var result = new List<string>();
             foreach (var item in skills)
             {

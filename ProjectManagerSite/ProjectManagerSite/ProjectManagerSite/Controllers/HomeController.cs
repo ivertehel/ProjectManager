@@ -44,7 +44,16 @@ namespace ProjectManagerSite.Controllers
 
         public ActionResult UserPage(string login)
         {
-            var model = new UserVM(User);
+            UserVM model;
+            try
+            {
+                model = new UserVM(User);
+            }
+            catch
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             if (login == string.Empty)
             {
                 if (model.User == null)
@@ -75,6 +84,8 @@ namespace ProjectManagerSite.Controllers
         [HttpGet]
         public ActionResult MyProfileEdit()
         {
+            if (User == null)
+                return RedirectToAction("Login", "Account");
             return PartialView("MyProfileEdit", new UserVM(User));
         }
 

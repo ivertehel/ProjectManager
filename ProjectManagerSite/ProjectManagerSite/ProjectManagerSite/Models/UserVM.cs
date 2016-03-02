@@ -17,6 +17,8 @@ namespace ProjectManagerSite.Models
 
         public UserVM(IPrincipal user) : base(user)
         {
+            if (User == null)
+                throw new NullReferenceException();
             init(user);
         }
 

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -218,11 +221,18 @@ namespace PMDataLayer
         public void RegisterUser()
         {
             string hash = getPassHash(Password);
+
             var aspUser = new AspNetUser(Login) { Email = Email, PasswordHash = hash, SecurityStamp = Guid.NewGuid().ToString() };
+            var pass = Password;
+            Password = string.Empty;
+            Insert(this);
+            Client.Insert(new Client() { Account = 0, User_Id = Id });
             AspNetRole.Update();
             AspNetUser.Insert(aspUser);
             ClientProfile.Insert(new ClientProfile(aspUser.Id) { UserId = Id.ToString() });
             AspNetUserRole.Insert(new AspNetUserRole() { UserId = aspUser.Id, RoleId = AspNetRole.Items.FirstOrDefault(item => item.Name == Role.ToLower()).Id });
+            sendEmail(Email, "Your password from Project Manager", $@"Hi, {Name}! <br/>" + "Your login is: <b>" + Login + "</b><br/>Your password is: <b>"  + pass + "</b>");
+            
         }
 
         public string getPassHash(string password)
@@ -249,6 +259,33 @@ namespace PMDataLayer
         public override string ToString()
         {
             return Name + " " + Surname;
+        }
+
+        private void sendEmail(string emailTo, string subject, string body)
+        {
+            string smtpAddress = "smtp.mail.yahoo.com";
+            int portNumber = 587;
+            bool enableSSL = true;
+
+            string emailFrom = ConfigurationManager.AppSettings["Email"];
+            string password = ConfigurationManager.AppSettings["Password"];
+
+            using (MailMessage mail = new MailMessage())
+            {
+                mail.From = new MailAddress(emailFrom, "Project Manager");
+                mail.To.Add(emailTo);
+                mail.Subject = subject;
+                mail.Body = body;
+                mail.IsBodyHtml = true;
+
+
+                using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
+                {
+                    smtp.Credentials = new NetworkCredential(emailFrom, password);
+                    smtp.EnableSsl = enableSSL;
+                    smtp.Send(mail);
+                }
+            }
         }
     }
 }

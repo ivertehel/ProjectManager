@@ -10,6 +10,7 @@ using PMView.View.WrapperVM;
 using Core;
 using System.Windows.Media.Imaging;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace PMView.View
 {
@@ -164,7 +165,7 @@ namespace PMView.View
         {
             get
             {
-                throw new NotImplementedException();
+                return string.Empty;
             }
         }
 
@@ -181,7 +182,29 @@ namespace PMView.View
                     case "Surname":
                         error = _checkNameTemplate(columnName, Surname);
                         break;
+                    case "Email":
+                        error = _checkEmailTemplate(columnName, Email);
+                        break;
+                    case "Login":
+                        if (string.IsNullOrEmpty(Login))
+                            return $"{columnName} is not valid";
+                        var exist = User.Items.FirstOrDefault(item => item.Login == Login);
+                        if (exist != null && exist.Id != CurrentUser.User.Id)
+                        {
+                            error = "This user is already exist";
+                            break;
+                        }
+                        if (Login.Length < 4)
+                        {
+                            error = "The login is too short";
+                            break;
+                        }
+                        error = string.Empty;
+                        break;
                 }
+
+                if (error != string.Empty)
+                    ButtonsActive = false;
 
                 return error;
             }
@@ -195,6 +218,7 @@ namespace PMView.View
 
         public void OneOrMoreFieldsWereUpdated()
         {
+
             ButtonsActive = true;
         }
 
@@ -203,6 +227,10 @@ namespace PMView.View
             var error = this["Name"];
             if (error == string.Empty)
                 error = this["Surname"];
+            if (error == string.Empty)
+                error = this["Email"];
+            if (error == string.Empty)
+                error = this["Login"];
             if (error != string.Empty)
             {
                 throw new Exception(error);
@@ -233,8 +261,6 @@ namespace PMView.View
 
             if (User.Items.FirstOrDefault(item => item.Id == CurrentUser.User.Id) == null)
             {
-                User.Insert(CurrentUser.User);
-                Client.Insert(new Client() { Account = 0, User_Id = CurrentUser.User.Id });
                 CurrentUser.User.RegisterUser();
             }
 
@@ -273,9 +299,23 @@ namespace PMView.View
             ButtonsActive = false;
         }
 
+        public string _checkEmailTemplate(string columnName, string email)
+        {   
+            if (string.IsNullOrEmpty(email))
+                return $"{columnName} is not valid";
+
+            Regex regex = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
+            Match match = regex.Match(email);
+            if (!match.Success)
+            {
+                return $"{columnName} is not valid";
+            }
+            return string.Empty;
+        }
+
         private string _checkNameTemplate(string fieldName, string value)
         {
-            if (value == string.Empty)
+            if (string.IsNullOrEmpty(value))
                 return $"{fieldName} can't be empty";
             if (value[0] == ' ')
                 return $"{fieldName} can't start off space";
