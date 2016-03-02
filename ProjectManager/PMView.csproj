@@ -272,10 +272,6 @@
       <Project>{2b6b7b7b-e028-4410-9ad9-10199ae81aca}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProjectManagerSite\UserStore\UserStore.DAL\UserStore.DAL.csproj">
-      <Project>{c7fc9eb3-7680-4d0d-826c-913867fb8f96}</Project>
-      <Name>UserStore.DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

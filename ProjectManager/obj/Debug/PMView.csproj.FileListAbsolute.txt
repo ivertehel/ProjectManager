@@ -47,11 +47,3 @@ C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\Det
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\AddTeamToTheProject.baml
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\AttachEmployee.g.cs
 C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\obj\Debug\View\DetailWindows\AttachEmployee.baml
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\UserStore.DAL.dll
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\EntityFramework.dll
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\UserStore.DAL.pdb
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\ivanv\Documents\GitHub\ProjectManager\ProjectManager\bin\Debug\EntityFramework.xml

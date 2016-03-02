@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectsScreenPlugin", "..\..\Visual Studio 2015\Projects\ProjectsScreenPlugin\ProjectsScreenPlugin\ProjectsScreenPlugin.csproj", "{ACAB1769-FD25-44BA-AB47-BAE9759AC70E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserStore.DAL", "ProjectManagerSite\UserStore\UserStore.DAL\UserStore.DAL.csproj", "{C7FC9EB3-7680-4D0D-826C-913867FB8F96}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{ACAB1769-FD25-44BA-AB47-BAE9759AC70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACAB1769-FD25-44BA-AB47-BAE9759AC70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACAB1769-FD25-44BA-AB47-BAE9759AC70E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7FC9EB3-7680-4D0D-826C-913867FB8F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7FC9EB3-7680-4D0D-826C-913867FB8F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7FC9EB3-7680-4D0D-826C-913867FB8F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7FC9EB3-7680-4D0D-826C-913867FB8F96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
