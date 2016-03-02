@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMDataLayer
 {
-    public class User_Skill : Entity<User_Skill>
+    public class Users_Skill : Entity<Users_Skill>
     {
         private Guid _skillId;
 
@@ -14,6 +14,20 @@ namespace PMDataLayer
 
         [Column]
         public Guid Id { get; set; } = Guid.NewGuid();
+
+        [Column]
+        public Guid UserId
+        {
+            get { return _userId; }
+            set { _userId = value; }
+        }
+
+        [Column]
+        public Guid SkillId
+        {
+            get { return _skillId; }
+            set { _skillId = value; }
+        }
 
         public Skill Skill
         {

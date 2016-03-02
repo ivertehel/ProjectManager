@@ -30,7 +30,7 @@ namespace PMView.View
 
         public List<string> GetSkills(UserVM user)
         {
-            var skills = User_Skill.Items.Where(user_skill => user.Equals(user_skill.User) == true).ToList();
+            var skills = Users_Skill.Items.Where(user_skill => user.Equals(user_skill.User) == true).ToList();
             var result = new List<string>();
             foreach (var item in skills)
             {
@@ -42,7 +42,7 @@ namespace PMView.View
 
         public void SaveChanges(List<string> newSkills)
         {
-            User_Skill.Items.RemoveAll(user_skill => user_skill.User.Id == _currentEmployee.User.Id);
+            Users_Skill.Items.RemoveAll(user_skill => user_skill.User.Id == _currentEmployee.User.Id);
             foreach (var item in newSkills)
             {
                 var existSkill = Skill.Items.FirstOrDefault(skill => skill.Name == item);
@@ -51,7 +51,7 @@ namespace PMView.View
                     existSkill = new Skill() { Name = item };
                 }
 
-                User_Skill.Items.Add(new User_Skill() { Skill = existSkill, User = _currentEmployee.User });
+                Users_Skill.Items.Add(new Users_Skill() { Skill = existSkill, User = _currentEmployee.User });
             }
 
             LoadData(this);

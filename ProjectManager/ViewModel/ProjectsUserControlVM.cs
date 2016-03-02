@@ -391,6 +391,7 @@ namespace PMView.View
             Users_Team.Update();
             Skill.Update();
             Users_Project.Update();
+            Users_Skill.Update();
             Projects_Skill.Update();
         }
 

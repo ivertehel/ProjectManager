@@ -119,7 +119,7 @@ namespace PMView
 
             foreach (var item in toDelete)
             {
-                User_Skill.Items.RemoveAll(skill => skill.Skill.Id == item.Id);
+                Users_Skill.Items.RemoveAll(skill => skill.Skill.Id == item.Id);
                 Projects_Skill.Items.RemoveAll(skill => skill.Skill.Id == item.Id);
                 Skill.Items.RemoveAll(skill => skill.Id == item.Id);
             }

@@ -246,7 +246,7 @@ namespace PMView.View
                 _skillsCollection.Clear();
                 foreach (var employee in _employeesCollection)
                 {
-                    var skills = from items in User_Skill.Items where items.User.Id == employee.User.Id select items;
+                    var skills = from items in Users_Skill.Items where items.User.Id == employee.User.Id select items;
                     foreach (var item in skills)
                     {
                         while (_skillsCollection.All(items => item.Skill != items.Skill))

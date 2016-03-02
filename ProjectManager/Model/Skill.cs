@@ -16,7 +16,7 @@ namespace PMDataLayer
 
         public IEnumerable<User> Users
         {
-            get { return from items in User_Skill.Items where items.Skill.Id == Id select items.User; }
+            get { return from items in Users_Skill.Items where items.Skill.Id == Id select items.User; }
         }
 
         public IEnumerable<Project> Projects
