@@ -225,6 +225,8 @@ namespace PMDataLayer
             var aspUser = new AspNetUser(Login) { Email = Email, PasswordHash = hash, SecurityStamp = Guid.NewGuid().ToString() };
             var pass = Password;
             Password = string.Empty;
+            Status = "Ready";
+            StatusType = Statuses.Ready;
             Insert(this);
             Client.Insert(new Client() { Account = 0, User_Id = Id });
             AspNetRole.Update();

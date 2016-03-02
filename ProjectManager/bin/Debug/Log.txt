@@ -6405,3 +6405,345 @@
 02.03.2016 0:00:00 | 20:17:38.5468815:Info | Order screen | Details of Bank system have been loaded
 02.03.2016 0:00:00 | 20:17:40.6268744:Info | Order screen | Details of Bank system have been loaded
 02.03.2016 0:00:00 | 20:17:45.4870247:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:38:55.8236757:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:39:37.2131542:Info | User details screen | Details of user  has been loaded
+02.03.2016 0:00:00 | 20:40:25.1141025:Info | User details screen | Details of user has been changed:
+
+                Name :  to Ivan
+
+                Surname :  to Vertegel
+
+                State : NotChosen to Male
+
+                Country :  to Ukraine
+
+                Birthday : 02.03.2016 20:39:37 to 02.03.2016 20:39:37
+
+                Email :  to sirius9764@gmail.com
+
+                Login :  to vsailor2
+
+                Description :  to 
+02.03.2016 0:00:00 | 20:41:10.5728120:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:41:20.6649023:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:41:21.0965511:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 20:41:21.6657550:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 20:41:22.1847943:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 20:41:22.8486731:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:41:25.7913102:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:41:25.7963122:Info | User details screen | Details of user amrsekilly has been loaded
+02.03.2016 0:00:00 | 20:41:25.8018155:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:41:37.0794966:Info | User details screen | Details of user has been changed:
+
+                Name : Amr to Amra
+
+                Surname : Elsekilly to Elsekilly
+
+                State : Male to Male
+
+                Country : Egypt to Egypt
+
+                Birthday : 18.02.2016 0:00:00 to 18.02.2016 0:00:00
+
+                Email : amrsekilly@gmail.com to amrsekilly@gmail.com
+
+                Login : amrsekilly to amrsekilly
+
+                Description :  I create responsive websites, and web applications using different javascript libraries and frameworks. I offer all the support needed to my clients, and I always keep them updated with the latest edits, using cloud services or version control systems. I usually communicate with my clients on a daily basis on the form of a progress report, either written or using VoIP services. to  I create responsive websites, and web applications using different javascript libraries and frameworks. I offer all the support needed to my clients, and I always keep them updated with the latest edits, using cloud services or version control systems. I usually communicate with my clients on a daily basis on the form of a progress report, either written or using VoIP services.
+02.03.2016 0:00:00 | 20:41:37.4717791:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:41:43.4084006:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 20:41:43.9760706:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:42:01.7039333:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 20:42:02.2723328:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 20:42:02.7120725:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 20:42:03.1849278:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:42:43.7619860:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:42:56.3407095:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:43:03.2492902:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:43:04.4317345:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 20:43:05.4647834:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 20:43:05.9673751:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:44:02.4595466:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:44:08.4705770:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:44:12.4810934:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:44:22.2388636:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:44:22.2448680:Info | User details screen | Details of user gevkhanyan has been loaded
+02.03.2016 0:00:00 | 20:44:22.2523730:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:44:25.3189985:Info | User details screen | Details of user has been changed:
+
+                Name : Gev to Gev
+
+                Surname : Akhanyan to Akhanyan
+
+                State : Male to Male
+
+                Country : Armenia to Armenia
+
+                Birthday : 18.02.2016 0:00:00 to 18.02.2016 0:00:00
+
+                Email : gevkhanyan@gmail.com to gevkhanyan@gmail.com
+
+                Login : gevkhanyan to gevkhanyan
+
+                Description :  I am a professional full-stack web developer,  building complex applications. I specialize in HTML, CSS, Javascript, jQuery, Bootstrap,  Cordova, Framework7, MySql, PostgreSql, MongoDB, SqLite and a whole host of other technologies, platforms, and libraries. I’m passionate about learning new tools and programming languages and I quickly adapt to new environments. I’m seeking long-term relationships and new challenges. to  I am a professional full-stack web developer,  building complex applications. I specialize in HTML, CSS, Javascript, jQuery, Bootstrap,  Cordova, Framework7, MySql, PostgreSql, MongoDB, SqLite and a whole host of other technologies, platforms, and libraries. I’m passionate about learning new tools and programming languages and I quickly adapt to new environments. I’m seeking long-term relationships and new challenges.
+02.03.2016 0:00:00 | 20:44:25.5261353:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:44:25.5721663:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:44:38.7960441:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:45:06.1972423:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:45:13.8058032:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:46:25.4044980:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:46:34.1887495:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:48:10.0790544:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:48:44.3373350:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:49:02.4927199:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:49:04.6721763:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:49:10.5432684:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:50:02.3744712:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:50:04.2960841:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:50:07.6262381:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:51:46.0560960:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:52:00.1612971:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:52:02.4683174:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:52:05.9578226:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:53:32.7847362:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:54:00.9734753:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:54:33.6531509:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:54:44.5215480:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:54:47.6559878:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:54:51.6884568:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:54:58.7879498:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:55:05.0000951:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:55:05.0050980:Info | User details screen | Details of user gevkhanyan has been loaded
+02.03.2016 0:00:00 | 20:55:05.0621397:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:55:18.3535856:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:55:23.6285144:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:55:32.5847298:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:59:31.1699661:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 21:00:07.1254275:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:11.2612665:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:25.6310721:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:25.6360758:Info | User details screen | Details of user gevkhanyan has been loaded
+02.03.2016 0:00:00 | 21:00:25.6415791:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:30.5016314:Info | User details screen | Details of user has been changed:
+
+                Name : Gev to Gev
+
+                Surname : Akhanyan to Akhanyan
+
+                State : Male to Male
+
+                Country : Armenia to Armenia
+
+                Birthday : 18.02.2016 0:00:00 to 18.02.2016 0:00:00
+
+                Email : gevkhanyan@gmail.com to gevkhanyan@gmail.com
+
+                Login : gevkhanyan to gevkhanyan
+
+                Description :  I am a professional full-stack web developer,  building complex applications. I specialize in HTML, CSS, Javascript, jQuery, Bootstrap,  Cordova, Framework7, MySql, PostgreSql, MongoDB, SqLite and a whole host of other technologies, platforms, and libraries. I’m passionate about learning new tools and programming languages and I quickly adapt to new environments. I’m seeking long-term relationships and new challenges. to  I am a professional full-stack web developer,  building complex applications. I specialize in HTML, CSS, Javascript, jQuery, Bootstrap,  Cordova, Framework7, MySql, PostgreSql, MongoDB, SqLite and a whole host of other technologies, platforms, and libraries. I’m passionate about learning new tools and programming languages and I quickly adapt to new environments. I’m seeking long-term relationships and new challenges.
+02.03.2016 0:00:00 | 21:00:30.7395284:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:30.7660460:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:35.6825191:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:35.6875224:Info | User details screen | Details of user deven004 has been loaded
+02.03.2016 0:00:00 | 21:00:35.6925258:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:39.7722103:Info | User details screen | Details of user has been changed:
+
+                Name : Devendra to Devendra
+
+                Surname : Kag to Kag
+
+                State : Male to Male
+
+                Country : India to India
+
+                Birthday : 18.02.2016 0:00:00 to 18.02.2016 0:00:00
+
+                Email : deven004@gmail.com to deven004@gmail.com
+
+                Login : deven004 to deven004
+
+                Description : Over the last 8 years, I have design a wide range of web applications, corporate websites, business portals, e-commerce stores and CMS websites, Landing Pages.  I am expert in end to end management of any newer website design or re-design the older websites in modern style and on modern responsive cross-browser platform for multi-size screen devices and various popular designing frameworks . If you are looking for a reliable, responsible, prompt and an honest person that can handle all your design project in a positive manner, then you are on the right profile page. Please have a look of my skills and expertise listed below. to Over the last 8 years, I have design a wide range of web applications, corporate websites, business portals, e-commerce stores and CMS websites, Landing Pages.  I am expert in end to end management of any newer website design or re-design the older websites in modern style and on modern responsive cross-browser platform for multi-size screen devices and various popular designing frameworks . If you are looking for a reliable, responsible, prompt and an honest person that can handle all your design project in a positive manner, then you are on the right profile page. Please have a look of my skills and expertise listed below.
+02.03.2016 0:00:00 | 21:00:39.8392536:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:39.8882866:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:44.3479720:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:44.3523809:Info | User details screen | Details of user vsailor has been loaded
+02.03.2016 0:00:00 | 21:00:44.3578867:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:47.7721103:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:47.7766137:Info | User details screen | Details of user Tuffgeekers has been loaded
+02.03.2016 0:00:00 | 21:00:47.7831176:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:51.1479156:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:51.1527081:Info | User details screen | Details of user ashishram1985 has been loaded
+02.03.2016 0:00:00 | 21:00:51.1592184:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:56.0997968:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:00:56.1042981:Info | User details screen | Details of user deven004 has been loaded
+02.03.2016 0:00:00 | 21:00:56.1113028:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:01:00.0301629:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:01:00.0351641:Info | User details screen | Details of user chadnanraza has been loaded
+02.03.2016 0:00:00 | 21:01:00.0416685:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:01:12.6049552:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:01:19.5662264:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:01:37.6859864:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:01:45.5521821:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:02:03.8643147:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 21:02:05.6952648:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:02:10.5439852:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:02:14.9962383:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:02:20.0875840:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:02:35.2042885:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 21:02:35.2132928:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:05.6117721:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 21:03:07.9780877:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:11.2986935:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:13.2134835:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:13.2184932:Info | User details screen | Details of user Tuffgeekers has been loaded
+02.03.2016 0:00:00 | 21:03:13.2264985:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:17.5064897:Info | User details screen | Details of user has been changed:
+
+                Name : Tuff to Tuff
+
+                Surname : Geekers to Geekers
+
+                State : Female to Female
+
+                Country : India to India
+
+                Birthday : 18.02.2016 0:00:00 to 18.02.2016 0:00:00
+
+                Email : Tuffgeekers@gmail.com to Tuffgeekers@gmail.com
+
+                Login : Tuffgeekers to Tuffgeekers
+
+                Description : I'm a excellent developer who has high skills in developing iPhone, iPad and Android apps. I have developed many iPhone/Android apps over the last 6 years. I have rich experiences in REST API, SOAP API, JSON/XML, PHP & MySQL Web Service API,  GPS and Geolocation API, Facebook API, Twitter API, Foursquare API, MapKit, GPS, Payment Gateway APIs, eCommerce platforms. to I'm a excellent developer who has high skills in developing iPhone, iPad and Android apps. I have developed many iPhone/Android apps over the last 6 years. I have rich experiences in REST API, SOAP API, JSON/XML, PHP & MySQL Web Service API,  GPS and Geolocation API, Facebook API, Twitter API, Foursquare API, MapKit, GPS, Payment Gateway APIs, eCommerce platforms.
+02.03.2016 0:00:00 | 21:03:17.6405823:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:17.6696003:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:28.4028140:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 21:03:28.4103190:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:50.8563261:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:56.1455315:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:03:58.9570648:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:04.2839547:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:06.7636628:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:17.2668155:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:19.9428391:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:22.5931777:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:26.1710703:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:31.2758087:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:34.7948091:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:48.3955211:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:54.9419821:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:04:59.3364562:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:05:15.0359809:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:05:18.5987459:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:05:36.1330685:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:05:38.8910055:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:05:44.8772152:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:05:48.2697769:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:06:06.4433576:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:06:13.5371477:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:06:42.6597818:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:07:01.1720269:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:07:01.1815332:Info | User details screen | Details of user chadnanraza has been loaded
+02.03.2016 0:00:00 | 21:07:01.1870368:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:07:06.4711658:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:07:06.4806713:Info | User details screen | Details of user Tuffgeekers has been loaded
+02.03.2016 0:00:00 | 21:07:06.4861771:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:07:09.8356769:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:07:09.8451832:Info | User details screen | Details of user deven004 has been loaded
+02.03.2016 0:00:00 | 21:07:09.8506877:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:52:23.2615171:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:52:23.2715238:Info | User details screen | Details of user amrsekilly has been loaded
+02.03.2016 0:00:00 | 21:52:23.2785284:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:54:43.5855115:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 21:54:51.9764178:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 21:54:52.8608534:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 21:54:54.6773605:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:54:55.2682028:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 21:54:56.1323334:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 21:54:56.5721060:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 21:54:56.9575219:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:54:58.3257504:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 21:54:58.7412680:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 21:54:59.9412684:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 21:55:00.3571426:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 21:55:00.9329505:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 21:55:03.9014770:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:00:11.6926288:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 22:04:53.8359360:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:04:54.3265676:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:04:55.0312350:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:04:55.7994690:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:04:56.3830526:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:04:56.8783300:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:04:57.3758495:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:07:06.5930571:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:09:25.0305311:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:09:52.1953342:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 22:10:05.0530281:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:10:05.5816700:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:10:07.1320909:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:10:08.3402818:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:10:08.9399628:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:10:09.4363585:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:10:10.7084975:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:10:11.3875376:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:10:12.5493075:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:10:13.5958333:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:10:14.8682643:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:10:15.5550498:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:10:16.8831366:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:10:18.1395083:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:10:20.1554727:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:10:21.4748431:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:10:22.6833487:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:10:24.0123207:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:10:32.6186908:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:10:33.3407792:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:10:34.2363431:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:12:16.5866306:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:12:17.2270904:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:12:17.9620626:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:12:18.7231696:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:12:20.0345599:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:12:22.0580208:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:12:56.5625407:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:12:57.6496267:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:12:59.3460015:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:13:03.4661108:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:13:05.7784264:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:13:07.1380911:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:13:08.5371097:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:13:11.5154012:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:13:12.3458347:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:13:13.2423599:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:13:13.9703989:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:13:20.2492286:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:13:21.1694833:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:13:57.2091460:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:14:10.4815642:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:14:11.0649006:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:14:14.1769900:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:14:14.9134503:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:14:15.2887044:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:14:15.7460117:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:15:31.4542807:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:16:02.5713568:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:16:50.7645954:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:19:44.6563624:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 22:19:59.0313543:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:19:59.8211082:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:20:00.3810876:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:20:00.9822213:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:20:03.7089559:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 22:20:08.0224801:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:20:09.8386164:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 22:20:12.3675722:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:20:14.8544205:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 22:20:26.4034123:Info | Order screen | Details of Bank system have been loaded

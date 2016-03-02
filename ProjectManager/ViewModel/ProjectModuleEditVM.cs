@@ -391,7 +391,7 @@ namespace PMView.View
                 _project.Id = id;
                 _project.Name = Name;
                 _project.Description = Description;
-                if (SelectedLeader != null)
+                if (SelectedLeader != null && SelectedLeader.User != null)
                     _project.Leader = _selectedLeader.User;
 
                 _project.StartDate = StartDate;
