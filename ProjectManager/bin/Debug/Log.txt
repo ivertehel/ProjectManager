@@ -6266,3 +6266,142 @@
 02.03.2016 0:00:00 | 19:16:15.9705284:Info | Order screen | Details of Bank system have been loaded
 02.03.2016 0:00:00 | 19:16:15.9760325:Info | User details screen | Details of user Tuffgeekers has been loaded
 02.03.2016 0:00:00 | 19:16:15.9815358:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:39:02.0607606:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 19:40:55.8763535:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 19:41:22.7412051:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 19:41:47.7291031:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 19:44:51.0660346:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 19:45:02.2148549:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 19:45:02.8425827:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:45:03.4512462:Info | Order screen | Details of Android app have been loaded
+02.03.2016 0:00:00 | 19:45:03.9704733:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 19:45:04.6749500:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:45:17.3777726:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 19:45:27.1651082:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:45:29.1606723:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:45:30.9282991:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:45:57.8512757:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:46:03.3561274:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:46:24.2101017:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description : Java employees to Java employees
+02.03.2016 0:00:00 | 19:46:24.2191137:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:46:59.5444440:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 19:47:03.2183440:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 19:58:26.4890316:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 19:59:06.0351487:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 19:59:07.7891763:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:59:10.5519747:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 19:59:20.0188486:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:01:41.4490644:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:03:39.6299838:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 20:03:41.3268888:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:03:43.1164357:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:03:47.8728182:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:05:48.9307469:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:06:02.3429289:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 20:06:37.5378542:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:06:44.9029840:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 20:07:15.2417672:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:07:21.8322464:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 20:07:27.2693223:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:07:29.4912839:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:07:32.8644216:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:09:15.5377840:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:10:15.4214383:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 20:10:28.1892524:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:10:30.2262522:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:10:34.3026312:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:10:43.4864444:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:10:43.5069567:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:10:50.8422569:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:10:50.8492607:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:12:35.6104109:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:12:42.7676612:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 20:12:44.2076895:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:12:45.6270271:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:12:49.6208880:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:12:54.7958495:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:12:54.8138624:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:12:56.2092691:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:12:56.2147728:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:12:56.9047245:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:12:56.9102281:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:12:57.1052244:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:12:57.1122273:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:12:57.2888442:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:12:57.2938480:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:13:19.7193376:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:13:21.5955699:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:13:21.6010838:Info | User details screen | Details of user gevkhanyan has been loaded
+02.03.2016 0:00:00 | 20:13:21.6651349:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:13:29.4817780:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 20:13:31.0899407:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:13:32.9451462:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:13:37.7976593:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:13:42.3615002:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:13:45.5522355:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:13:45.5597384:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:13:50.6118123:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:14:01.1892747:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:14:12.6642424:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:14:12.6707472:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:14:13.6235376:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:14:24.5898524:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:14:42.3516300:Info | Team details screen | Details of team has been changed: 
+ 
+            Name : Java-1 to Java-1 
+ 
+            Description :  to 
+02.03.2016 0:00:00 | 20:14:42.3586329:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:14:43.4389269:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:14:47.2012181:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:14:47.2067196:Info | User details screen | Details of user gevkhanyan has been loaded
+02.03.2016 0:00:00 | 20:14:47.2147245:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:17:29.2172984:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 20:17:36.9915826:Info | Team details screen | Team details have been loaded
+02.03.2016 0:00:00 | 20:17:38.5468815:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:17:40.6268744:Info | Order screen | Details of Bank system have been loaded
+02.03.2016 0:00:00 | 20:17:45.4870247:Info | Order screen | Details of Bank system have been loaded

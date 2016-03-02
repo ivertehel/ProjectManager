@@ -55,11 +55,11 @@ namespace PMView.View.WrapperVM
             get
             {
                 List<SkillVM> skills = new List<SkillVM>();
-                foreach (var employee in User.Items)
+                foreach (var employee in Users)
                 {
-                    if (employee.RoleType == User.Roles.Employee)
+                    if (employee.User.RoleType == User.Roles.Employee)
                     {
-                        foreach (var skill in employee.Skills)
+                        foreach (var skill in employee.User.Skills)
                         {
                             if (skills.FirstOrDefault(item => item.Name == skill.Name) == null)
                             {

@@ -207,7 +207,7 @@ namespace PMView.View
                 switch (columnName)
                 {
                     case "Name":
-                        if (Name == string.Empty)
+                        if (string.IsNullOrEmpty(Name))
                         {
                             error = "Name can't be empty";
                         }
@@ -223,9 +223,9 @@ namespace PMView.View
 
                         break;
                     case "Description":
-                        if (Description == string.Empty)
+                        if (string.IsNullOrEmpty(Description))
                         {
-                            error = "Description can't be empty";
+                            error = string.Empty;
                         }
                         else if (Description[0] == ' ')
                         {
@@ -248,9 +248,7 @@ namespace PMView.View
         public void ButtonSaveClick(string[] positions)
         {
             var error = this["Name"];
-            if (error == string.Empty)
-                error = this["Description"];
-            if (error != string.Empty)
+            if (!string.IsNullOrEmpty(error))
             {
                 throw new Exception(error);
             }

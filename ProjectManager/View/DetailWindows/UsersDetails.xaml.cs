@@ -99,6 +99,7 @@ namespace PMView
             if (type == "JPG" || type == "PNG")
             {
                 BitmapImage b = new BitmapImage();
+
                 b.BeginInit();
                 b.UriSource = new Uri(openFileDialog1.FileName);
                 b.EndInit();
