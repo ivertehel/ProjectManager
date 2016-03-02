@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="~/Scripts/jquery-2.2.0.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Project Manager</title>
+    <link rel="stylesheet" href="flags.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="~/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="~/Content/HomeLayout.css" rel="stylesheet" />
+
+    <script>
+        $(".menuLinks").click(function () {
+            history.pushState(stateObj, $(this).html, $(this).attr("href"));
+        })
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Project Manager</a>
+            </div>
+            <!-- Top Menu Items -->
+            <div class="nav navbar-right top-nav" style="padding-top: 10px; padding-right:30px">
+                @*<button type="button" class="btn btn-default" aria-label="Left Align" >
+                        <b> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log out</b>
+                    </button>*@
+                <a href="#" style="color:whitesmoke" onclick="Logout()">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    Log out
+                </a>
+                @*<a href="#" onclick="Logout()">Log Out</a>*@
+            </div>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class=@ViewBag.ProfilePage>
+                        @Html.ActionLink("My profile", "Index", "Home")
+                    </li>
+                    <li class=@ViewBag.ProjectsPage>
+                        @Html.ActionLink("My projects", "MyProjects", "Home")
+                    </li>
+                </ul>
+            </div>
+
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="row" style="padding-left: 20px; width:100%" id="Body">
+                    <div id="AjaxBody" />
+                    @RenderBody()
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <script>
+        function Logout() {
+            window.location.href = "/Account/Logout";
+
+                                }
+    </script>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="~/Scripts/js/plugins/morris/raphael.min.js"></script>
+    <script src="~/Scripts/js/plugins/morris/morris.min.js"></script>
+    <script src="~/Scripts/js/plugins/morris/morris-data.js"></script>
+
+</body>
+
+</html>

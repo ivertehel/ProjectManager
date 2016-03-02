@@ -113,24 +113,6 @@ namespace ProjectManagerSite.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult Test()
-        {
-            UserVM user = new UserVM(User);
-            return View(user);
-        }
-
-        [HttpPost]
-        public ActionResult Test(UserVM user)
-        {
-            if (ModelState.IsValid)
-            {
-                throw new Exception("Valid");
-            }
-            return View("Test", user);
-
-        }
-
         public ActionResult ViewImage(string id)
         {
             UserVM item;
@@ -146,6 +128,7 @@ namespace ProjectManagerSite.Controllers
             }
         }
 
+        [Authorize(Roles = "employee")]
         public ActionResult SkillsEdit()
         {
             var skillsVM = new SkillsVM(User);
@@ -159,6 +142,7 @@ namespace ProjectManagerSite.Controllers
             return View("Profile");
         }
 
+        [Authorize(Roles = "employee")]
         public ActionResult MyTeams()
         {
             return View("MyTeams");
@@ -170,6 +154,7 @@ namespace ProjectManagerSite.Controllers
             return View("MyProjects", model);
         }
 
+        [Authorize(Roles = "employee")]
         public ActionResult MyTasks()
         {
             ViewBag.TasksPage = "active";

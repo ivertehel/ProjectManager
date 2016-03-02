@@ -1,4 +1,5 @@
 ﻿@model ProjectManagerSite.Models.UserVM
+
 <form id="myForm" enctype="multipart/form-data" method="post">
     <div class="row" id="MyProfileEdit">
         <div class="container-fluid">
@@ -81,15 +82,17 @@
                                 @Html.TextBoxFor(item => item.Email, new { @class = "form-control", placeholder = "Email" })
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3>Skills:</h3>
-                                <div style="border:2px solid #ccc; width:100%; max-height: 200px; overflow-y: scroll;">
-                                    @Html.Action("SkillsEdit")
+                        @if (Model.User.Role == "Employee")
+                        {
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Skills:</h3>
+                                    <div style="border:2px solid #ccc; width:100%; max-height: 200px; overflow-y: scroll;">
+                                        @Html.Action("SkillsEdit")
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                         <div class="row">
                             <div class="col-md-12">
                                 <div id="skillsSector">

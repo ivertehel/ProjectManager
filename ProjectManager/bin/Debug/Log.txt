@@ -5629,3 +5629,22 @@
 02.03.2016 0:00:00 | 12:38:12.2431391:Info | Order screen | Details of Bank system have been loaded
 02.03.2016 0:00:00 | 12:38:13.0989954:Info | Order screen | Details of Android app have been loaded
 02.03.2016 0:00:00 | 12:38:13.5068203:Info | Order screen | Details of Game for PlayMarket have been loaded
+02.03.2016 0:00:00 | 13:00:33.9219774:Info | Details screen | Project details have been loaded
+02.03.2016 0:00:00 | 13:00:39.4013327:Info | User details screen | Details of user  has been loaded
+02.03.2016 0:00:00 | 13:01:31.5500294:Info | User details screen | Details of user has been changed:
+
+                Name :  to Ivan
+
+                Surname :  to Vertegel
+
+                State : NotChosen to Male
+
+                Country :  to Ukraine
+
+                Birthday : 02.03.2016 13:00:39 to 02.03.2016 13:00:39
+
+                Email :  to ivanvertegel@outlook.com
+
+                Login :  to vsailor
+
+                Description :  to 

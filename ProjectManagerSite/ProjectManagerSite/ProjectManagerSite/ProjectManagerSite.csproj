@@ -693,7 +693,7 @@
     <Content Include="Views\Project\Project.cshtml" />
     <Content Include="Scripts\Makefile" />
     <Content Include="Scripts\webcam.jquery.json" />
-    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Home\_ClientLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

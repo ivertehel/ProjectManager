@@ -1,4 +1,15 @@
 ﻿@model ProjectManagerSite.Models.UserVM
+@{
+    if (Model.AuthorizeUser.Role == "Employee")
+    {
+        Layout = "~/Views/Home/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Home/_ClientLayout.cshtml";
+    }
+
+}
 <div class="row" id="Profile">
     <div class="container-fluid">
         <div class="row">

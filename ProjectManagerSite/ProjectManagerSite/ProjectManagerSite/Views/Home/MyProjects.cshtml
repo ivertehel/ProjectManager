@@ -1,5 +1,15 @@
 ﻿@model ProjectManagerSite.Models.UserVM
+@{
+    if (Model.AuthorizeUser.Role == "Employee")
+    {
+        Layout = "~/Views/Home/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Home/_ClientLayout.cshtml";
+    }
 
+}
 <div class="row" id="MyProjects">
     <div class="container-fluid">
         <div class="row"  style="padding-top:15px">
